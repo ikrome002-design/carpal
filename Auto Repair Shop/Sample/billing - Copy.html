@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="billing - Copy.css">
+</head>
+<body>
+    <header class="settings-header">
+        <h1>Settings</h1>
+    </header>
+
+    <main class="settings-content">
+        <!-- Administrator Access Button -->
+        <button class="admin-access-btn" onclick="showLoginModal()">Access Administrator Features</button>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="hideLoginModal()">&times;</span>
+            <h2>Administrator Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showLoginModal() {
+            document.getElementById("adminLoginModal").style.display = "flex";
+        }
+
+        function hideLoginModal() {
+            document.getElementById("adminLoginModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

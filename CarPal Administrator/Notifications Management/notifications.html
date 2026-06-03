@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | CarPal Administrator</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="notifications.css">
+</head>
+<body>
+    <!-- Header with User Profile -->
+    <!-- <header class="top-nav">
+        <div class="logo">
+            <img src="path/to/carpal-logo.png" alt="CarPal Logo">
+        </div>
+        <div class="user-profile">
+            <span>John Doe</span>
+            <div class="logout-popup">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Log Out</span>
+            </div>
+        </div>
+    </header> -->
+
+    <!-- Notifications Management Modal -->
+    <div class="notifications-modal">
+        <div class="modal-header">
+            <h1 class="modal-title">Notifications Management</h1>
+            <span class="close-modal">&times;</span>
+        </div>
+
+        <div class="nav-tabs">
+            <div class="nav-tab active">System Notifications</div>
+            <div class="nav-tab">Incident Reports</div>
+            <div class="nav-tab">Notification Templates</div>
+            <div class="nav-tab">Notification History</div>
+        </div>
+
+        <div class="content-area">
+            <!-- System Notifications Content -->
+            <div class="filters">
+                <select class="filter-select">
+                    <option value="">Filter by Date</option>
+                    <option value="today">Today</option>
+                    <option value="week">This Week</option>
+                    <option value="month">This Month</option>
+                </select>
+                <select class="filter-select">
+                    <option value="">Filter by Priority</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                <button class="btn btn-primary">Compose New</button>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Recipients</th>
+                        <th>Priority</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>System Maintenance Notice</td>
+                        <td>All Users</td>
+                        <td>High</td>
+                        <td>2025-01-17</td>
+                        <td>Sent</td>
+                    </tr>
+                    <!-- Add more sample rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- <footer class="footer">
+        <div class="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="corporate-info">
+            <a href="https://citruslabs.co.ke/" target="_blank">Visit our website</a>
+            <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+        </div>
+    </footer> -->
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Toggle user profile popup
+        document.querySelector('.user-profile').addEventListener('click', function() {
+            this.querySelector('.logout-popup').classList.toggle('active');
+        });
+
+        // Tab switching functionality
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                // Add content switching logic here
+            });
+        });
+
+        // Close modal functionality
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            document.querySelector('.notifications-modal').style.display = 'none';
+        });
+
+        // Dark mode toggle
+        document.querySelector('.dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            // Add dark mode implementation logic here
+        });
+    </script>
+</body>
+</html>

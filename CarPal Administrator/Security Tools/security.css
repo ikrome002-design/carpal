@@ -1,0 +1,186 @@
+:root {
+    --yellow: #FFD700;
+    --black: #000000;
+    --charcoal: #2D2D2D;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+}
+
+/* Header and Navigation styles from provided CSS */
+/* Navigation Styles */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: #2D2D2D;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #FFD700;
+}
+
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #FFD700;
+}
+
+.logout-popup {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.logout-popup.active {
+    display: block;
+}
+
+.logout-popup.active {
+    display: block;
+}
+
+/* Main Content Styles */
+main {
+    margin-top: 80px;
+    padding: 2rem;
+    flex: 1;
+}
+
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.security-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.security-card h3 {
+    color: var(--black);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.security-card ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.security-card li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.security-card li:hover {
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Footer styles from provided CSS */
+.footer {
+    background: var(--charcoal);
+    color: var(--white);
+    padding: 1rem 2rem;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons a {
+    color: var(--white);
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--yellow);
+}
+
+.dark-mode-toggle {
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.corporate-info {
+    text-align: right;
+}
+
+.corporate-info a {
+    color: var(--white);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.corporate-info a:hover {
+    color: var(--yellow);
+}

@@ -1,0 +1,134 @@
+<!-- HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Invoice | CarPal</title>
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="create_invoice.css">
+</head>
+
+<body>
+    <div class="invoice-modal">
+        <div class="modal-header">
+            <h2>Create Invoice</h2>
+            <button class="close-button">&times;</button>
+        </div>
+
+        <form id="invoiceForm">
+            <!-- Vehicle Selection Section -->
+            <div class="form-section">
+                <h3 class="section-title">Vehicle Information</h3>
+                <div class="form-group">
+                    <label for="vehicleSelect">Select Vehicle</label>
+                    <select class="form-control" id="vehicleSelect">
+                        <option value="">-- Select Vehicle --</option>
+                        <option value="new">+ Add New Vehicle</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Service Details Section -->
+            <div class="form-section">
+                <h3 class="section-title">Service Details</h3>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>Service Item</th>
+                            <th>Parts</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="serviceItems">
+                        <!-- Service items will be added here dynamically -->
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-secondary">+ Add Service Item</button>
+            </div>
+
+            <!-- Payment Details Section -->
+            <div class="form-section">
+                <h3 class="section-title">Payment Details</h3>
+                <div class="form-group">
+                    <label for="paymentType">Payment Type</label>
+                    <select class="form-control" id="paymentType">
+                        <option value="individual">Individual Payment</option>
+                        <option value="business">Business Payment</option>
+                        <option value="insurance">Insurance Coverage</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn btn-secondary"><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\invoices.html">Cancel</a></button>
+                <button type="submit" class="btn btn-primary"><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\invoices.html">Generate
+                        Invoice</a></button>
+            </div>
+        </form>
+
+        <!-- Footer -->
+        <footer class="modal-footer">
+            <div class="footer-content">
+                <button class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+
+                <div class="legal-links">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                        of Service</a>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                        Policy</a>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                        Policy</a>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                    <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+                </div>
+
+                <div class="copyright">
+                    &copy; 2025 Citrus Labs. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

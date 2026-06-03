@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Set Service Charges</title>
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="set_charges.css">
+</head>
+
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="nav-logo">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png"
+                alt="CarPal Logo">
+        </div>
+
+        <div class="nav-right">
+            <div class="notifications">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Notification\notification.html">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </a>
+            </div>
+
+            <div class="user-profile">
+                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                    alt="Profile">
+                <span class="username">John's Auto Shop</span>
+
+                <!-- User Profile Popup -->
+                <div class="user-popup">
+                    <div class="popup-header">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="Profile">
+                        <span>John's Auto Shop</span>
+                    </div>
+                    <div class="popup-content">
+                        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+                            class="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Charges Popup -->
+    <div class="popup-overlay">
+        <div class="popup-container">
+            <div class="popup-header">
+                <h2>Set Service Charges</h2>
+                <button class="close-btn"><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\Administrator Features\admin_user_settings.html">&times;</a></button>
+            </div>
+
+            <div class="popup-content">
+                <!-- Service Charge Tiers -->
+                <section class="service-tiers">
+                    <h3>Service Charge Tiers</h3>
+                    <div class="tier-grid">
+                        <div class="tier-card">
+                            <h4>Tier 1</h4>
+                            <p class="tier-range">KES. 10 - 24,999</p>
+                            <input type="number" value="5" min="0" max="100" step="0.1">
+                            <span class="percentage">%</span>
+                        </div>
+                        <div class="tier-card">
+                            <h4>Tier 2</h4>
+                            <p class="tier-range">KES. 25,000 - 49,999</p>
+                            <input type="number" value="7.5" min="0" max="100" step="0.1">
+                            <span class="percentage">%</span>
+                        </div>
+                        <div class="tier-card">
+                            <h4>Tier 3</h4>
+                            <p class="tier-range">KES. 50,000 - 99,999</p>
+                            <input type="number" value="10" min="0" max="100" step="0.1">
+                            <span class="percentage">%</span>
+                        </div>
+                        <div class="tier-card">
+                            <h4>Tier 4</h4>
+                            <p class="tier-range">KES. 100,000+</p>
+                            <input type="number" value="12.5" min="0" max="100" step="0.1">
+                            <span class="percentage">%</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Rate History -->
+                <section class="rate-history">
+                    <h3>Service Charge History</h3>
+                    <div class="history-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tier</th>
+                                    <th>Previous Rate</th>
+                                    <th>New Rate</th>
+                                    <th>Modified By</th>
+                                    <th>Date Modified</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tier 1</td>
+                                    <td>4.5%</td>
+                                    <td>5%</td>
+                                    <td>John Smith</td>
+                                    <td>2024-12-28 14:30</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 2</td>
+                                    <td>7%</td>
+                                    <td>7.5%</td>
+                                    <td>John Smith</td>
+                                    <td>2024-12-28 14:30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <div class="action-buttons">
+                    <button class="cancel-btn"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\Administrator Features\admin_user_settings.html">Cancel</a></button>
+                    <button class="save-btn"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\Administrator Features\admin_user_settings.html">Save
+                            Changes</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section social-media">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section legal">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                            of Service</a></li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                            Policy</a></li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                            Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section help">
+                <h4>Help</h4>
+                <ul>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                    </li>
+                    <li><a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

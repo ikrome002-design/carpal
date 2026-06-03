@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Service Details</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="view_details.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png" alt="CarPal Logo">
+        </div>
+        
+        <nav class="nav-links">
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Dashboard\dashboard.html">Dashboard</a>
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\vehicles.html">Vehicles</a>
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Service Hub\service_hub.html">Service Hub</a>
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\invoices.html">Invoices</a>
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\customers.html">Customers</a>
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\settings.html">Settings</a>
+        </nav>
+        
+        <div class="user-section">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png" alt="User Profile" class="profile-icon">
+            <span class="username">John Doe</span>
+        </div>
+    </header>
+
+    <!-- Profile Popup -->
+    <div class="profile-popup">
+        <div class="popup-header">
+            <h3>John Doe</h3>
+            <p>john.doe@example.com</p>
+        </div>
+        <div class="popup-actions">
+            <button class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Vehicle Overview Card -->
+        <div class="service-card">
+            <div class="vehicle-info">
+                <div>
+                    <h2>Toyota Camry 2022</h2>
+                    <p>VIN: 1HGCM82633A123456</p>
+                    <p>License Plate: KDG 123A</p>
+                    <p>Mileage: 45,230 km</p>
+                </div>
+                <div>
+                    <p><strong>Service Advisor:</strong> Jane Cooper</p>
+                    <p><strong>Service Start:</strong> Jan 14, 2025 09:00 AM</p>
+                    <p><strong>Expected Completion:</strong> Jan 14, 2025 05:00 PM</p>
+                    <span class="status-badge in-progress">In Progress</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active">Service Logs</button>
+            <button class="tab">Customer Info</button>
+            <button class="tab">Vehicle History</button>
+            <button class="tab">Billing</button>
+        </div>
+
+        <!-- Service Logs Tab Content -->
+        <div class="tab-content active">
+            <div class="service-card">
+                <h3>Current Service Progress</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="time">09:00 AM</span>
+                        <p><strong>Vehicle Check-in</strong></p>
+                        <p>Initial inspection completed by Tech: John Smith</p>
+                        <span class="status-badge completed">Completed</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">10:30 AM</span>
+                        <p><strong>Oil Change Service</strong></p>
+                        <p>- Oil filter replaced</p>
+                        <p>- 5W-30 Synthetic oil added</p>
+                        <p>- Oil level verified</p>
+                        <span class="status-badge completed">Completed</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">11:45 AM</span>
+                        <p><strong>Brake Inspection</strong></p>
+                        <p>- Front brake pads: 4mm (Replacement recommended)</p>
+                        <p>- Rear brake pads: 6mm (Good condition)</p>
+                        <p>- Brake fluid level: Optimal</p>
+                        <span class="status-badge in-progress">In Progress</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Repair Images</h3>
+                <div class="repair-images">
+                    <img src="/api/placeholder/300/200" alt="Brake inspection" class="repair-image">
+                    <img src="/api/placeholder/300/200" alt="Oil change" class="repair-image">
+                    <img src="/api/placeholder/300/200" alt="Engine overview" class="repair-image">
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Technician Comments</h3>
+                <div class="comment">
+                    <p><strong>John Smith (Lead Technician)</strong></p>
+                    <p>Front brake pads showing significant wear. Recommended replacement within next 1,000 km. Customer notified and approved replacement.</p>
+                    <p><small>Posted at 11:50 AM</small></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customer Info Tab Content -->
+        <div class="tab-content" style="display: none;">
+            <div class="service-card">
+                <h3>Customer Details</h3>
+                <div class="customer-info">
+                    <p><strong>Name:</strong> Michael Johnson</p>
+                    <p><strong>Phone:</strong> +254 712 345 678</p>
+                    <p><strong>Email:</strong> michael.j@example.com</p>
+                    <p><strong>Preferred Contact Method:</strong> SMS</p>
+                    <p><strong>Customer Since:</strong> March 2023</p>
+                    <p><strong>Service History:</strong> 5 previous visits</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Communication Preferences</h3>
+                <div class="preferences">
+                    <p><i class="fas fa-check text-success"></i> Receive service updates via SMS</p>
+                    <p><i class="fas fa-check text-success"></i> Email invoices</p>
+                    <p><i class="fas fa-times text-danger"></i> Marketing communications</p>
+                    <p><i class="fas fa-check text-success"></i> Appointment reminders</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vehicle History Tab Content -->
+        <div class="tab-content" style="display: none;">
+            <div class="service-card">
+                <h3>Service History</h3>
+                <div class="service-history">
+                    <div class="timeline-item">
+                        <span class="time">Dec 15, 2024</span>
+                        <p><strong>Routine Maintenance</strong></p>
+                        <p>- Oil change</p>
+                        <p>- Tire rotation</p>
+                        <p>- Air filter replacement</p>
+                        <p><strong>Technician:</strong> Sarah Wilson</p>
+                        <p><strong>Cost:</strong> KES. 15,000</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">Sep 30, 2024</span>
+                        <p><strong>Brake Service</strong></p>
+                        <p>- Rear brake pad replacement</p>
+                        <p>- Brake fluid flush</p>
+                        <p><strong>Technician:</strong> John Smith</p>
+                        <p><strong>Cost:</strong> KES. 25,000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Billing Tab Content -->
+        <div class="tab-content" style="display: none;">
+            <div class="service-card">
+                <h3>Current Invoice</h3>
+                <div class="invoice-summary">
+                    <div class="invoice-item">
+                        <span>Oil Change Service</span>
+                        <span>KES. 8,000</span>
+                    </div>
+                    <div class="invoice-item">
+                        <span>Brake Inspection</span>
+                        <span>KES. 2,500</span>
+                    </div>
+                    <div class="invoice-item">
+                        <span>Front Brake Pads (Pending)</span>
+                        <span>KES. 12,000</span>
+                    </div>
+                    <div class="invoice-item">
+                        <strong>Total</strong>
+                        <strong>KES. 22,500</strong>
+                    </div>
+                </div>
+                <div class="payment-status">
+                    <p><strong>Status:</strong> <span class="status-badge pending">Pending</span></p>
+                    <p><strong>Payment Due:</strong> Upon completion</p>
+                    <p><strong>Payment Method:</strong> M-PESA</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Payment History</h3>
+                <div class="payment-history">
+                    <div class="invoice-item">
+                        <span>Dec 15, 2024 - Routine Maintenance</span>
+                        <span>KES. 15,000 (Paid)</span>
+                    </div>
+                    <div class="invoice-item">
+                        <span>Sep 30, 2024 - Brake Service</span>
+                        <span>KES. 25,000 (Paid)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms of Service</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data Policy</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Help</h3>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                <a href="https://citruslabs.co.ke/">Corporate Website</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/LabsCitrus"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@citrus-labs"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com/company/citrus-labs"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <button class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <p>© 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // User Profile Popup Toggle
+        const profileIcon = document.querySelector('.profile-icon');
+        const profilePopup = document.querySelector('.profile-popup');
+        
+        profileIcon.addEventListener('click', () => {
+            profilePopup.classList.toggle('show');
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            darkModeToggle.querySelector('i').classList.toggle('fa-sun');
+            darkModeToggle.querySelector('i').classList.toggle('fa-moon');
+        });
+
+        // Tab Switching
+        const tabs = document.querySelectorAll('.tab');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                // Add logic to show corresponding content
+            });
+        });
+
+                // Enhanced tab switching functionality
+                const tabButtons = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.style.display = 'none');
+
+                // Add active class to clicked button and show corresponding content
+                button.classList.add('active');
+                tabContents[index].style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header.settings-header {
+    background-color: #000000;
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFD700;
+    text-align: center;
+    border-bottom: 2px solid #FFD700;
+}
+
+.settings-content {
+    margin: 50px auto;
+}
+
+.admin-access-btn {
+    background-color: #FFD700;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-access-btn:hover {
+    background-color: #FFC000;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #FFFFFF;
+    color: #000000;
+    padding: 30px;
+    width: 300px;
+    border-radius: 8px;
+    text-align: left;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.modal-content h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2D2D2D;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #2D2D2D;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-btn {
+    background-color: #FFD700;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #FFC000;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #2D2D2D;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    color: #000000;
+}

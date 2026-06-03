@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CarPal - Vehicle Management System for Auto Repair Shops">
+    <meta name="author" content="Citrus Labs">
+    <title>Vehicles | CarPal</title>
+
+    <!-- Favicon Configuration -->
+    <!-- Consider using relative paths instead of absolute paths for better portability -->
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+
+    <!-- External Resources -->
+    <!-- Google Fonts - Consider reducing to only necessary font weights -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Application Styles -->
+    <link rel="stylesheet" href="vehicles.css">
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <!-- Brand Logo -->
+        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png"
+            alt="CarPal Logo" class="logo">
+
+        <!-- Navigation Links -->
+        <!-- Consider using a <ul> for better semantic structure -->
+        <ul class="nav-list">
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Dashboard\dashboard.html"
+                    class="nav-item">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span>Dashboard</span>
+                </a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\vehicles.html"
+                    class="nav-item active">
+                    <i class="fas fa-car" aria-hidden="true"></i>
+                    <span>Vehicles</span>
+                </a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Service Hub\service_hub.html"
+                    class="nav-item">
+                    <i class="fas fa-tools" aria-hidden="true"></i>
+                    <span>Service Hub</span>
+                </a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\invoices.html"
+                    class="nav-item">
+                    <i class="fas fa-file-invoice" aria-hidden="true"></i>
+                    <span>Invoices</span>
+                </a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\customers.html"
+                    class="nav-item">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <span>Customers</span>
+                </a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\Staff User Features\staff_user_settings.html"
+                    class="nav-item">
+                    <i class="fas fa-cog" aria-hidden="true"></i>
+                    <span>Settings</span>
+                </a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content" role="main">
+        <!-- Header Section with Search and Actions -->
+        <header class="header">
+            <!-- Search Functionality -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search vehicles..." aria-label="Search vehicles">
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\Checkin\checkin.html"
+                    class="btn btn-primary">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Check-In Vehicle
+                </a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\Create Invoice\create_invoice.html"
+                    class="btn btn-outline">
+                    <i class="fas fa-file-invoice" aria-hidden="true"></i> Create Invoice
+                </a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\Checkout\checkout.html"
+                    class="btn btn-primary">
+                    <i class="fas fa-sign-out-alt" aria-hidden="true"></i> Check-Out Vehicle
+                </a>
+            </div>
+
+            <!-- User Profile Section -->
+            <div class="user-profile">
+                <button class="profile-trigger" aria-expanded="false" aria-controls="profile-popup">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                        alt="User profile" width="40">
+                </button>
+                <div id="profile-popup" class="profile-popup">
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+                        class="logout-btn">
+                        <i class="fas fa-sign-out-alt" aria-hidden="true"></i> Log Out
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section class="vehicles-summary">
+            <div class="summary-card">
+                <h2>Vehicles Overview</h2>
+                <div class="summary-details">
+                    <div class="total-vehicles">
+                        <p><strong>Total Vehicles:</strong> 25</p>
+                        <p><strong>In Service:</strong> 10</p>
+                        <p><strong>Completed:</strong> 8</p>
+                        <p><strong>Pending Assessment:</strong> 5</p>
+                    </div>
+
+                    <div class="service-status">
+                        <p><strong>Upcoming Services:</strong> 5 vehicles</p>
+                        <p><strong>Recent Service Activity:</strong> 10 vehicles serviced within the past 14 days</p>
+                    </div>
+
+                    <div class="payment-status">
+                        <p><strong>Total Outstanding Payments:</strong> KES. 150,000</p>
+                        <p><strong>Invoices Sent:</strong> 50 this month</p>
+                        <p><strong>Invoices Paid:</strong> 30</p>
+                        <p><strong>Invoices Pending:</strong> 20</p>
+                    </div>
+
+                    <div class="contact-summary">
+                        <p><strong>Total Owner as Payee:</strong> 10</p>
+                        <p><strong>Total Business as Payee:</strong> 10</p>
+                        <p><strong>Total Insurance as Payee:</strong> 20</p>
+
+                    </div>
+
+                    <div class="fleet-breakdown">
+                        <p><strong>Fleet Categories:</strong> 33% Sedans, <br> 15% Hatchbacks, 14% Wagons, <br> 13%
+                            SUVs, 7% Trucks, 13% Vans, <br> 3% Minibuses, 1% Buses, <br> 1% Motorcycles</p>
+                    </div>
+
+                    <div class="performance-indicators">
+                        <p><strong>Average Repair Turnaround:</strong> 2 days</p>
+                        <p><strong>Average Repair Cost:</strong> KES. 5,000</p>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Vehicle List Section -->
+        <section class="vehicle-list" aria-label="Vehicle list">
+            <!-- Vehicle Card Template -->
+            <!-- Consider using a template system or JavaScript to generate these dynamically -->
+            <article class="vehicle-item">
+                <div class="vehicle-info">
+                    <h3>Toyota Mark X</h3>
+                    <p>License: KCV 511X</p>
+                </div>
+                <span class="status-badge status-pending" aria-label="Status: Pending Assessment">
+                    Pending Assessment
+                </span>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\Start Assessment\assessment.html"
+                    class="btn btn-outline">Start Assessment</a>
+            </article>
+
+            <!-- Additional vehicle cards follow the same pattern -->
+            <!-- Consider using a data-driven approach to populate these -->
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-left">
+            <!-- Dark Mode Toggle -->
+            <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+            </button>
+
+            <!-- Social Media Links -->
+            <div class="social-links" aria-label="Social media links">
+                <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
+                </a>
+
+                <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                    <span class="sr-only">X</span>
+                </a>
+
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                    <span class="sr-only">Facebook</span>
+                </a>
+
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span class="sr-only">YouTube</span>
+                </a>
+
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <span class="sr-only">LinkedIn</span>
+                </a>
+                <!-- Additional social links follow the same pattern -->
+            </div>
+        </div>
+
+        <!-- Footer Links and Copyright -->
+        <div class="footer-right">
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                    of Service</a>
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                    Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                    Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer">
+                    Corporate Website
+                </a>
+            </nav>
+            <p class="copyright">&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // DOM Elements
+        const profileButton = document.querySelector('.profile-trigger');
+        const profilePopup = document.querySelector('.profile-popup');
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+
+        // Toggle Profile Popup
+        profileButton.addEventListener('click', () => {
+            const isExpanded = profileButton.getAttribute('aria-expanded') === 'true';
+            profileButton.setAttribute('aria-expanded', !isExpanded);
+            profilePopup.classList.toggle('active');
+        });
+
+        // Dark Mode Toggle
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            // Consider saving preference to localStorage
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+        });
+
+        // Initialize Dark Mode from saved preference
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (savedDarkMode) {
+                document.body.classList.add('dark-mode');
+            }
+        });
+    </script>
+</body>
+
+</html>

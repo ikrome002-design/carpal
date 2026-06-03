@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Pickup Notification - CarPal</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --yellow: #FFD700;
+            --black: #000000;
+            --charcoal: #2D2D2D;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 250px;
+            background-color: var(--black);
+            padding: 2rem 0;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar .logo {
+            padding: 0 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar .logo img {
+            width: 120px;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            padding: 0.5rem 2rem;
+        }
+
+        .nav-links li.active {
+            background-color: var(--yellow);
+        }
+
+        .nav-links li.active a {
+            color: var(--black);
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Main Content */
+        .main-container {
+            margin-left: 250px;
+            flex: 1;
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .button {
+            background-color: var(--yellow);
+            color: var(--black);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .button.outline {
+            background-color: transparent;
+            border: 2px solid var(--yellow);
+            color: var(--black);
+        }
+
+        .notification-form {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .vehicle-search-container {
+            position: relative;
+        }
+
+        .vehicle-search-input {
+            width: 100%;
+            padding: 0.75rem;
+            padding-right: 2.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .vehicle-search-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .vehicle-search-dropdown.active {
+            display: block;
+        }
+
+        .vehicle-option {
+            padding: 0.75rem;
+            cursor: pointer;
+        }
+
+        .vehicle-option:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: auto;
+            padding: 2rem;
+            background-color: var(--white);
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--black);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--black);
+            font-size: 1.25rem;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+            color: var(--black);
+        }
+
+        .notification {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            background-color: var(--yellow);
+            color: var(--black);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo">
+            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png" alt="CarPal Logo">
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/Auto Repair Shop/Dashboard/dashboard.html">
+                <i class="fas fa-home"></i> Dashboard
+            </a></li>
+            <li class="active"><a href="C:/Users/nderu/Documents/Development/Product/CarPal/Auto Repair Shop/Vehicles/vehicles.html">
+                <i class="fas fa-car"></i> Vehicles
+            </a></li>
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/Auto Repair Shop/Service Hub/service_hub.html">
+                <i class="fas fa-wrench"></i> Service Hub
+            </a></li>
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/Auto Repair Shop/Invoices/invoices.html">
+                <i class="fas fa-file-invoice"></i> Invoices
+            </a></li>
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/Auto Repair Shop/Customers/customers.html">
+                <i class="fas fa-users"></i> Customers
+            </a></li>
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/Auto Repair Shop/Settings/settings.html">
+                <i class="fas fa-cog"></i> Settings
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <!-- <div class="action-buttons">
+                <a href="#" class="button">
+                    <i class="fas fa-plus"></i>
+                    Check-In Vehicle
+                </a>
+                <a href="#" class="button outline">
+                    <i class="fas fa-file-invoice"></i>
+                    Create Invoice
+                </a>
+                <a href="#" class="button">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Check-Out Vehicle
+                </a>
+            </div> -->
+            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png" alt="Profile" style="width: 40px; height: 40px; cursor: pointer;" onclick="toggleProfilePopup()">
+        </div>
+
+        <div class="notification" id="notification"></div>
+
+        <form class="notification-form" onsubmit="sendNotification(event)">
+            <div class="form-group">
+                <label for="vehicleLicense">Vehicle License Plate</label>
+                <div class="vehicle-search-container">
+                    <input type="text" id="vehicleSearch" class="vehicle-search-input" 
+                           placeholder="Search by license plate or select from dropdown..." 
+                           oninput="filterVehicles(this.value)">
+                    <div id="vehicleSearchDropdown" class="vehicle-search-dropdown">
+                        <!-- Dropdown options will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="customerName">Customer Name</label>
+                <input type="text" id="customerName" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicleInfo">Vehicle Information</label>
+                <input type="text" id="vehicleInfo" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="pickupInstructions">Pickup Instructions</label>
+                <textarea id="pickupInstructions" required placeholder="Enter detailed pickup instructions..."></textarea>
+            </div>
+
+            <button type="submit" class="button">Send Notification</button>
+        </form>
+    </div>
+
+    <script>
+        // Sample completed service vehicles data
+        const completedVehicles = [
+            {
+                licensePlate: 'KCV 511X',
+                customer: 'John Doe',
+                vehicle: 'Toyota Mark X (2015)',
+                phone: '+254 712 345 678'
+            },
+            {
+                licensePlate: 'KDG 223M',
+                customer: 'Jane Smith',
+                vehicle: 'Honda Civic (2018)',
+                phone: '+254 723 456 789'
+            },
+            {
+                licensePlate: 'KBZ 445P',
+                customer: 'Mike Johnson',
+                vehicle: 'Mazda Demio (2017)',
+                phone: '+254 734 567 890'
+            }
+        ];
+
+        function filterVehicles(searchTerm) {
+            const dropdown = document.getElementById('vehicleSearchDropdown');
+            dropdown.innerHTML = '';
+            
+            if (searchTerm.length === 0) {
+                dropdown.classList.remove('active');
+                return;
+            }
+
+            const filteredVehicles = completedVehicles.filter(vehicle => 
+                vehicle.licensePlate.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                vehicle.vehicle.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+
+            if (filteredVehicles.length > 0) {
+                dropdown.classList.add('active');
+                filteredVehicles.forEach(vehicle => {
+                    const option = document.createElement('div');
+                    option.className = 'vehicle-option';
+                    option.textContent = `${vehicle.licensePlate} - ${vehicle.vehicle}`;
+                    option.onclick = () => selectVehicle(vehicle);
+                    dropdown.appendChild(option);
+                });
+            } else {
+                dropdown.classList.remove('active');
+            }
+        }
+
+        function selectVehicle(vehicle) {
+            document.getElementById('vehicleSearch').value = vehicle.licensePlate;
+            document.getElementById('customerName').value = vehicle.customer;
+            document.getElementById('vehicleInfo').value = vehicle.vehicle;
+            document.getElementById('vehicleSearchDropdown').classList.remove('active');
+        }
+
+        function sendNotification(event) {
+            event.preventDefault();
+            
+            const licensePlate = document.getElementById('vehicleSearch').value;
+            const vehicle = completedVehicles.find(v => v.licensePlate === licensePlate);
+            
+            if (!vehicle) {
+                alert('Please select a valid vehicle');
+                return;
+            }
+
+            const instructions = document.getElementById('pickupInstructions').value;
+            
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            notification.textContent = `Pickup notification sent to ${vehicle.customer} via SMS (${vehicle.phone}) and email.`;
+            
+            // Reset form
+            document.getElementById('pickupInstructions').value = '';
+            
+            // Hide notification after 5 seconds
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 5000);
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('vehicleSearchDropdown');
+            const searchInput = document.getElementById('vehicleSearch');
+            
+            if (!event.target.closest('.vehicle-search-container')) {
+                dropdown.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(45, 45, 45, 0.9);
+    padding: 20px;
+}
+
+/* Modal styling */
+.auth-modal {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo styling */
+.logo {
+    display: block;
+    width: 180px;
+    margin: 0 auto 30px;
+    animation: logoFloat 6s ease-in-out infinite;
+}
+
+/* Heading styles */
+h1 {
+    color: #2D2D2D;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Input group styling */
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    color: #2D2D2D;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #F9FAFB;
+}
+
+input:focus {
+    outline: none;
+    border-color: #FFD700;
+    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.1);
+}
+
+input::placeholder {
+    color: #9CA3AF;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 15px;
+    background: #FFD700;
+    border: none;
+    border-radius: 12px;
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: #F7C600;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 215, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Message styling */
+.message {
+    text-align: center;
+    color: #6B7280;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Step transitions */
+.step {
+    display: none;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.4s ease-out;
+}
+
+.step.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* OTP input styling */
+#otp {
+    letter-spacing: 8px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Animations */
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .auth-modal {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    input, button {
+        padding: 12px;
+    }
+}
+
+/* Loading state for button */
+button.loading {
+    background: #E5E7EB;
+    pointer-events: none;
+}
+
+button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid transparent;
+    border-top-color: #000000;
+    border-radius: 50%;
+    animation: buttonSpin 1s linear infinite;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes buttonSpin {
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}

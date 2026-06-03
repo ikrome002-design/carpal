@@ -1,0 +1,250 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-yellow: #FFD700;
+    --primary-black: #000000;
+    --charcoal-gray: #2D2D2D;
+    --white: #FFFFFF;
+    --error-red: #FF4444;
+    --success-green: #00C851;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Container */
+.invoice-modal {
+    background-color: var(--white);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal Header */
+.modal-header {
+    background-color: var(--primary-black);
+    color: var(--white);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: var(--primary-yellow);
+}
+
+/* Form Sections */
+.form-section {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    color: var(--charcoal-gray);
+    margin-bottom: 1rem;
+}
+
+/* Form Controls */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--charcoal-gray);
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding: 1.5rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+}
+
+.btn-primary:hover {
+    background-color: #e6c200;
+}
+
+.btn-secondary {
+    background-color: var(--charcoal-gray);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #404040;
+}
+
+/* Service Items Table */
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.service-table th,
+.service-table td {
+    padding: 0.75rem;
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+.service-table th {
+    background-color: #f8f8f8;
+    font-weight: 600;
+}
+
+/* Footer */
+.modal-footer {
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-radius: 0 0 12px 12px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: var(--charcoal-gray);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-yellow);
+}
+
+.legal-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.legal-links a {
+    color: var(--charcoal-gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: var(--primary-yellow);
+}
+
+.copyright {
+    color: var(--charcoal-gray);
+    font-size: 0.9rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    color: var(--charcoal-gray);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    color: var(--primary-yellow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .invoice-modal {
+        width: 95%;
+        margin: 1rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .legal-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}

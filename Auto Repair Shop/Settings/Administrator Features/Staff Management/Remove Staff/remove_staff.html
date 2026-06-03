@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Remove Staff</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="remove_staff.css">
+</head>
+
+<body>
+    <!-- Main Content -->
+    <div class="popup">
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Remove Staff Member</h2>
+        </div>
+
+        <!-- Popup Content -->
+        <div class="popup-content">
+            <div class="warning-message">
+                <p><strong>Warning:</strong> This action cannot be undone. The staff member will permanently lose access
+                    to the system.</p>
+            </div>
+
+            <form id="removeStaffForm">
+                <div class="form-group">
+                    <label for="staffId">Staff ID:</label>
+                    <input type="text" id="staffId" name="staffId" required placeholder="Enter Staff ID">
+                </div>
+
+                <div class="form-group">
+                    <label for="adminUsername">Admin Username:</label>
+                    <input type="text" id="adminUsername" name="adminUsername" required
+                        placeholder="Enter your admin username">
+                </div>
+
+                <div class="form-group">
+                    <label for="adminPassword">Admin Password:</label>
+                    <input type="password" id="adminPassword" name="adminPassword" required
+                        placeholder="Enter your admin password">
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-cancel"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\Administrator Features\admin_user_settings.html">Cancel</a></button>
+                    <button type="submit" class="btn btn-confirm"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\Administrator Features\admin_user_settings.html">Confirm
+                            Removal</a></button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+
+                <div class="footer-links">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                        of Service</a>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                        Policy</a>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                        Policy</a>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                    <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- User Profile Popup -->
+    <div class="profile-popup" id="profilePopup">
+        <div class="profile-menu">
+            <a
+                href="C:/Users/nderu/Documents/Development/Product/CarPal/Auto Repair Shop/Landing Page/landing_page.html">
+                <i class="fas fa-sign-out-alt"></i> Log Out
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Profile Popup
+        document.querySelector('.user-profile').addEventListener('click', function () {
+            document.getElementById('profilePopup').classList.toggle('active');
+        });
+
+        // Close Profile Popup when clicking outside
+        document.addEventListener('click', function (event) {
+            const profilePopup = document.getElementById('profilePopup');
+            const userProfile = document.querySelector('.user-profile');
+
+            if (!userProfile.contains(event.target) && !profilePopup.contains(event.target)) {
+                profilePopup.classList.remove('active');
+            }
+        });
+
+        // Form Submission Handler
+        document.getElementById('removeStaffForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Add your form submission logic here
+        });
+
+        // Cancel Button Handler
+        document.querySelector('.btn-cancel').addEventListener('click', function () {
+            // Add your cancel logic here
+            window.close();
+        });
+    </script>
+</body>
+
+</html>

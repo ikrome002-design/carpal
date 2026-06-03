@@ -1,0 +1,235 @@
+/* Global Styles */
+:root {
+    --primary-yellow: #FFD700;
+    --primary-black: #000000;
+    --charcoal-gray: #2D2D2D;
+    --white: #FFFFFF;
+    --success-green: #28a745;
+    --warning-orange: #ffa500;
+    --danger-red: #dc3545;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--charcoal-gray);
+}
+
+/* Popup Container */
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px 12px 0 0;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Notifications */
+.notifications {
+    position: relative;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--danger-red);
+    color: var(--white);
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* User Profile */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 100;
+}
+
+.user-profile:hover .user-menu {
+    display: block;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+.vehicle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    border: none;
+    background: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--charcoal-gray);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    color: var(--primary-yellow);
+    border-bottom: 2px solid var(--primary-yellow);
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-group {
+    margin-bottom: 1.5rem;
+}
+
+.info-group label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--charcoal-gray);
+    margin-bottom: 0.5rem;
+}
+
+.info-group span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    padding: 1.5rem 2rem;
+    background-color: var(--charcoal-gray);
+    color: var(--white);
+    border-radius: 0 0 12px 12px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-media {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-media a {
+    color: var(--white);
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--primary-yellow);
+}
+
+.legal a {
+    color: var(--white);
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 0.875rem;
+}
+
+.legal a:hover {
+    color: var(--primary-yellow);
+}
+
+.copyright {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--charcoal-gray);
+    color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tabs {
+        flex-wrap: wrap;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,305 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Brand Colors */
+    --yellow-primary: #FFD700;
+    --black-primary: #000000;
+    --charcoal-gray: #2D2D2D;
+    --white: #FFFFFF;
+    
+    /* Additional UI Colors */
+    --yellow-hover: #E6C200;
+    --gray-light: #F5F5F5;
+    --gray-medium: #757575;
+    --error-red: #FF3B30;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--white);
+    color: var(--charcoal-gray);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Logo Styles */
+/* Previous CSS remains the same until logo section */
+
+/* Logo Section Styles - Updated */
+.logo {
+    padding: 1.5rem;
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--black-primary);
+    letter-spacing: -0.5px;
+}
+
+
+
+/* Container Styles */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+}
+
+/* Form Styles */
+form {
+    display: none;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+}
+
+form.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--black-primary);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--charcoal-gray);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: var(--gray-medium);
+    margin-bottom: 2rem;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--charcoal-gray);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--gray-light);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--yellow-primary);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: var(--yellow-primary);
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="button"] {
+    background: var(--gray-light);
+    color: var(--charcoal-gray);
+}
+
+button[type="button"]:hover {
+    background: #E0E0E0;
+}
+
+button[type="submit"],
+.cta-button {
+    background: var(--yellow-primary);
+    color: var(--black-primary);
+}
+
+button[type="submit"]:hover,
+.cta-button:hover {
+    background: var(--yellow-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Error Messages */
+.error-message {
+    color: var(--error-red);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+/* Links */
+a {
+    color: var(--yellow-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+.footer {
+    background: var(--charcoal-gray);
+    color: var(--white);
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column-reverse;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--yellow-primary);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Add this to your media queries section */
+@media (max-width: 768px) {
+    .logo {
+        padding: 1rem;
+    }
+    
+    .logo img {
+        width: 100px;
+    }
+    
+    .logo-text {
+        font-size: 1.25rem;
+    }
+}
+
+/* Rest of the previous CSS remains the same */

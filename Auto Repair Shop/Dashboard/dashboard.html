@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CarPal - Auto Repair Shop Management Dashboard">
+    <title>Dashboard | CarPal</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png"
+                    alt="CarPal Logo">
+            </div>
+            <ul class="nav-links">
+                <li class="active"><i class="fas fa-home"></i><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Dashboard\dashboard.html">Dashboard</a>
+                </li>
+                <li><i class="fas fa-car"></i><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\vehicles.html">Vehicles</a>
+                </li>
+                <li><i class="fas fa-tools"></i><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Service Hub\service_hub.html">Service
+                        Hub</a>
+                </li>
+                <li><i class="fas fa-file-invoice"></i><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\invoices.html">Invoices</a>
+                </li>
+                <li><i class="fas fa-users"></i><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\customers.html">Customers</a>
+                </li>
+                <li><i class="fas fa-cog"></i><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\Staff User Features\staff_user_settings.html">Settings</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Bar with Search and User Profile -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search..." id="searchInput">
+                </div>
+                <div class="user-area">
+                    <div class="notifications">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Notification\notification.html">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge" id="notificationCount">3</span>
+                        </a>
+                    </div>
+                    <!-- User Profile Popup -->
+                    <div id="userProfilePopup" class="user-profile-popup">
+                        <div class="popup-content">
+                            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                                alt="Profile">
+                            <span id="shopName">John's Auto Shop</span>
+                            <hr>
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+                                class="logout-button">
+                                <i class="fas fa-sign-out-alt"></i> Log Out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Quick Actions Buttons -->
+            <section class="quick-actions">
+                <button class="primary-button" id="checkInBtn">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\Checkin\checkin.html"><i
+                            class="fas fa-plus"></i> Check-In Vehicle</a>
+                </button>
+                <button class="secondary-button" id="createInvoiceBtn">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\Create Invoice\create_invoice.html"><i
+                            class="fas fa-file-invoice"></i>Create Invoice</a>
+                </button>
+            </section>
+
+            <!-- Dashboard Overview Section -->
+            <div class="overview-grid">
+                <!-- Performance Metrics Panel -->
+                <section class="metrics-panel">
+                    <h2>Performance Metrics</h2>
+                    <div class="metrics-grid" id="metricsGrid">
+                        <!-- Metrics cards will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Recent Check-ins Section -->
+                <section class="recent-checkins">
+                    <h2>Recent Check-ins</h2>
+                    <div class="vehicle-list" id="vehicleList">
+                        <!-- Vehicle cards will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Pending Invoices Section -->
+                <section class="pending-invoices">
+                    <h2>Pending Invoices</h2>
+                    <div class="invoice-list" id="invoiceList">
+                        <!-- Invoice cards will be populated by JavaScript -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="theme-toggle">
+                <button id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/@citruske" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" target="_blank" title="X (Twitter)">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="legal-links">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                    of Service</a>
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                    Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                    Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Sample Data
+        const sampleData = {
+            metrics: {
+                checkIns: { value: 24, trend: '+12%', isPositive: true },
+                completedServices: { value: 18, trend: '+8%', isPositive: true },
+                pendingAssessments: { value: 6, trend: '+2', isPositive: false },
+                averageServiceTime: { value: '2.5h', trend: '-30min', isPositive: true }
+            },
+            vehicles: [
+                {
+                    model: 'Toyota Mark X',
+                    license: 'KCV 511X',
+                    status: 'pending',
+                    action: 'Start Assessment'
+                },
+                {
+                    model: 'Mercedes-Benz E-Class',
+                    license: 'KBZ 991Q',
+                    status: 'in-progress',
+                    action: 'View Details'
+                }
+            ],
+            invoices: [
+                {
+                    id: 'INV-2024-001',
+                    amount: 'KES. 8,641,951.00',
+                    status: 'unpaid',
+                    action: 'Send Reminder'
+                },
+                {
+                    id: 'INV-2024-004',
+                    amount: 'KES. 2,225,000.50',
+                    status: 'partial',
+                    action: 'View Invoice'
+                }
+            ]
+        };
+
+        // DOM Elements
+        const metricsGrid = document.getElementById('metricsGrid');
+        const vehicleList = document.getElementById('vehicleList');
+        const invoiceList = document.getElementById('invoiceList');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const searchInput = document.getElementById('searchInput');
+
+        // Populate Metrics
+        function populateMetrics() {
+            const metrics = sampleData.metrics;
+            for (const [key, data] of Object.entries(metrics)) {
+                const card = document.createElement('div');
+                card.className = 'metric-card';
+                card.innerHTML = `
+                    <h3>${key.replace(/([A-Z])/g, ' $1').trim()}</h3>
+                    <p class="metric-value">${data.value}</p>
+                    <span class="trend ${data.isPositive ? 'positive' : 'negative'}">
+                        ${data.trend} 
+                        <i class="fas fa-arrow-${data.isPositive ? 'up' : 'down'}"></i>
+                    </span>
+                `;
+                metricsGrid.appendChild(card);
+            }
+        }
+
+        // Populate Vehicles
+        function populateVehicles() {
+            vehicleList.innerHTML = sampleData.vehicles.map(vehicle => `
+                <div class="vehicle-card">
+                    <div class="vehicle-info">
+                        <h3>${vehicle.model}</h3>
+                        <p>License: ${vehicle.license}</p>
+                        <span class="status ${vehicle.status}">${vehicle.status}</span>
+                    </div>
+                    <button class="action-button">${vehicle.action}</button>
+                </div>
+            `).join('');
+        }
+
+        // Populate Invoices
+        function populateInvoices() {
+            invoiceList.innerHTML = sampleData.invoices.map(invoice => `
+                <div class="invoice-card">
+                    <div class="invoice-info">
+                        <h3>${invoice.id}</h3>
+                        <p>${invoice.amount}</p>
+                        <span class="status ${invoice.status}">${invoice.status}</span>
+                    </div>
+                    <button class="action-button">${invoice.action}</button>
+                </div>
+            `).join('');
+        }
+
+        // Dark Mode Toggle
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = darkModeToggle.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+
+        // Search Functionality
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            // Implement search logic here
+        });
+
+        // Initialize Dashboard
+        document.addEventListener('DOMContentLoaded', () => {
+            populateMetrics();
+            populateVehicles();
+            populateInvoices();
+        });
+    </script>
+</body>
+
+</html>

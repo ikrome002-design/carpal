@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | View Customer</title>
+    
+<!-- Favicon configuration -->
+<link rel="icon" type="image/png" sizes="32x32"
+href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+<link rel="shortcut icon"
+href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+<link rel="apple-touch-icon"
+href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="view_customer.css">
+</head>
+<body>
+    <!-- Main Popup Container -->
+    <div class="popup-overlay">
+        <div class="popup-container">
+            <!-- Header Section -->
+            <header class="popup-header">
+                <div class="header-left">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png" alt="CarPal Logo" class="logo">
+                    <h1>Customer Details</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png" alt="User Profile" class="profile-pic">
+                        <span class="username">John Doe</span>
+                        <div class="profile-dropdown">
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+                        </div>
+                    </div>
+                    <button class="close-popup"><i class="fas fa-times"></i></button>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="popup-content">
+                <!-- Navigation Tabs -->
+                <nav class="content-tabs">
+                    <button class="tab-btn active" data-tab="customer-details">Customer Details</button>
+                    <button class="tab-btn" data-tab="vehicle-history">Vehicle History</button>
+                    <button class="tab-btn" data-tab="service-records">Service Records</button>
+                    <button class="tab-btn" data-tab="payment-history">Payment History</button>
+                </nav>
+
+                <!-- Tab Content Sections -->
+                <div class="tab-content" id="customer-details">
+                    <!-- Basic Info Section -->
+                    <section class="info-section">
+                        <h2>Personal Information</h2>
+                        <div class="info-grid">
+                            <!-- Content will be dynamically populated -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Other tab contents follow similar structure -->
+                <div class="tab-content hidden" id="vehicle-history">
+                    <!-- Vehicle History Content -->
+                </div>
+
+                <div class="tab-content hidden" id="service-records">
+                    <!-- Service Records Content -->
+                </div>
+
+                <div class="tab-content hidden" id="payment-history">
+                    <!-- Payment History Content -->
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="popup-footer">
+                <div class="footer-top">
+                    <div class="mode-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="legal-links">
+                        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms of Service</a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy Policy</a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data Policy</a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                        <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+                    </div>
+                    <div class="copyright">
+                        © 2025 Citrus Labs. All Rights Reserved.
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

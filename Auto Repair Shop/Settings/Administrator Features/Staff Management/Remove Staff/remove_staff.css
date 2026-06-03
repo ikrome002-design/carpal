@@ -1,0 +1,185 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-yellow: #FFD700;
+    --primary-black: #000000;
+    --charcoal-gray: #2D2D2D;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-black);
+}
+
+.logo img {
+    height: 40px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+/* Pop-up Styles */
+.popup {
+    background-color: var(--white);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.popup-header {
+    background-color: var(--primary-black);
+    color: var(--primary-yellow);
+    padding: 1rem;
+    border-radius: 8px 8px 0 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.popup-content {
+    padding: 2rem;
+}
+
+.warning-message {
+    color: #FF0000;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--charcoal-gray);
+    border-radius: 4px;
+}
+
+/* Button Styles */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s;
+}
+
+.btn-confirm {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+}
+
+.btn-cancel {
+    background-color: var(--charcoal-gray);
+    color: var(--white);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--primary-black);
+    color: var(--white);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: var(--primary-yellow);
+    font-size: 1.5rem;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--charcoal-gray);
+}
+
+/* User Profile Popup */
+.profile-popup {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.profile-popup.active {
+    display: block;
+}
+
+/* CSS code to center the warning message */
+.warning-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh; /* Full height of the viewport */
+    text-align: center; /* Center the text inside the div */
+}
+
+.warning-message p {
+    background-color: #ffdddd; /* Light red background for the warning */
+    color: #d8000c; /* Dark red text color */
+    padding: 20px; /* Padding around the text */
+    border: 1px solid #d8000c; /* Border with the same color as text */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+}

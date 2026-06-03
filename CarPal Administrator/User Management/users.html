@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management | CarPal Administrator</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="users.css">
+    <link rel="stylesheet" href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\common_css.css">
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <nav class="top-nav">
+        <div>
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Administrator Dashboard\dashboard.html"
+                class="logo">
+                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                    alt="CarPal Logo">
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Administrator Dashboard\dashboard.html"
+                    class="nav-link"><i class="fas fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\User Management\users.html"
+                    class="nav-link active"><i class="fas fa-users"></i> Users</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Business Management\businesses.html"
+                    class="nav-link"><i class="fas fa-building"></i> Businesses</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Financial Oversight\finance.html"
+                    class="nav-link"><i class="fas fa-money-bill"></i> Finance</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Reports & Analytics\reports.html"
+                    class="nav-link"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Platform Settings\settings.html"
+                    class="nav-link"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Security Tools\security.html"
+                    class="nav-link"><i class="fas fa-shield"></i> Security</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Customer Support Tools\support.html"
+                    class="nav-link"><i class="fas fa-headset"></i> Support</a></li>
+        </ul>
+
+        <div class="notifications">
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Notifications Management\notifications.html"
+                class="nav-link" id="notificationsToggle">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </a>
+        </div>
+
+        <div class="user-profile">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                alt="Profile Picture">
+            <div class="logout-popup">
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Landing Page\landing_page.html"
+                    class="nav-link">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1 class="section-title">User Management</h1>
+
+        <!-- Quick Actions with Sample Stats -->
+        <div class="card">
+            <h2>Quick Actions</h2>
+            <div style="margin-bottom: 1rem;">
+                <p>Total Users: 1,234 | Active: 1,089 | Suspended: 145</p>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-primary">Add New User</button>
+                <button class="btn btn-primary">Import Users</button>
+                <button class="btn btn-primary">Export Users</button>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card">
+            <h2>Recent Activity</h2>
+            <ul style="list-style: none; margin-top: 1rem;">
+                <li style="margin-bottom: 0.5rem;">
+                    <span style="color: var(--charcoal);">2 minutes ago:</span> New administrator account created for
+                    John Doe
+                </li>
+                <li style="margin-bottom: 0.5rem;">
+                    <span style="color: var(--charcoal);">1 hour ago:</span> User permissions updated for Sarah Smith
+                </li>
+                <li style="margin-bottom: 0.5rem;">
+                    <span style="color: var(--charcoal);">3 hours ago:</span> Bulk import completed - 50 new business
+                    users added
+                </li>
+            </ul>
+        </div>
+
+        <!-- User Categories with Sample Data -->
+        <div class="user-grid">
+            <!-- Administrator Users -->
+            <div class="card">
+                <h3>Administrator Users</h3>
+                <p>Total Administrators: 15</p>
+                <ul style="list-style: none; margin: 1rem 0;">
+                    <li>Super Admins: 3</li>
+                    <li>System Admins: 7</li>
+                    <li>Support Admins: 5</li>
+                </ul>
+                <div class="action-buttons">
+                    <button class="btn btn-primary">View List</button>
+                </div>
+            </div>
+
+            <!-- Business Users -->
+            <div class="card">
+                <h3>Business Users</h3>
+                <p>Total Business Users: 1,219</p>
+                <ul style="list-style: none; margin: 1rem 0;">
+                    <li>Business Owners: 342</li>
+                    <li>Managers: 528</li>
+                    <li>Staff: 349</li>
+                </ul>
+                <div class="action-buttons">
+                    <button class="btn btn-primary">Select Business</button>
+                </div>
+            </div>
+
+            <!-- Search Users -->
+            <div class="card">
+                <h3>Search Users</h3>
+                <div style="margin: 1rem 0;">
+                    <input type="text" placeholder="Search by name, email, or role"
+                        style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px;">
+                    <select
+                        style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <option value="">Filter by Business</option>
+                        <option value="1">AutoCare Plus</option>
+                        <option value="2">Premium Motors</option>
+                        <option value="3">City Garage</option>
+                    </select>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Users Table -->
+        <div class="card">
+            <h3>Recently Added Users</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th style="text-align: left; padding: 0.5rem; border-bottom: 2px solid #ddd;">Name</th>
+                        <th style="text-align: left; padding: 0.5rem; border-bottom: 2px solid #ddd;">Email</th>
+                        <th style="text-align: left; padding: 0.5rem; border-bottom: 2px solid #ddd;">Role</th>
+                        <th style="text-align: left; padding: 0.5rem; border-bottom: 2px solid #ddd;">Business</th>
+                        <th style="text-align: left; padding: 0.5rem; border-bottom: 2px solid #ddd;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">John Doe</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">john.doe@example.com</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Administrator</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">CarPal System</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Active</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Sarah Smith</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">sarah.s@autocare.com</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Business Owner</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">AutoCare Plus</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Active</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Mike Johnson</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">mike.j@citygarage.com</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Manager</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">City Garage</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="corporate-info">
+            <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+            <p>© 2025 Citrus Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle logout popup
+        document.querySelector('.user-profile').addEventListener('click', function () {
+            document.querySelector('.logout-popup').classList.toggle('active');
+        });
+
+        // Close logout popup when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.user-profile')) {
+                document.querySelector('.logout-popup').classList.remove('active');
+            }
+        });
+
+        // Dark mode toggle
+        document.querySelector('.dark-mode-toggle').addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+
+</html>

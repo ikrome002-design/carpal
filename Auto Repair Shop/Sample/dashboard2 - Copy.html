@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - CarPal</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F9F9F9;
+            color: #2D2D2D;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            background: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #FFD700;
+        }
+
+        form {
+            display: none;
+            /* Hide all sections initially */
+        }
+
+        form.active {
+            display: block;
+            /* Display the active section */
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        button {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .navigation-buttons button {
+            background-color: #FFD700;
+            color: #000000;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #E6C200;
+        }
+    </style>
+    <script>
+        function navigateSection(current, target) {
+            document.getElementById(current).classList.remove('active');
+            document.getElementById(target).classList.add('active');
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create Your Account</h1>
+
+        <!-- Business Details Section -->
+
+        <form id="businessDetails" class="active">
+            <h2>Set the Foundation for Success</h2>
+            <p>Your journey starts here! <br> Tell us about your auto repair shop, and we'll tailor your CarPal
+                experience to
+                perfectly fit your business needs. Provide your business details to unlock tools that streamline
+                operations and boost efficiency.</p>
+            <!-- Form Inputs -->
+        </form>
+
+        <form id="businessDetails" class="active">
+            <h2>Business Details</h2>
+            <label for="businessName">Business Name</label>
+            <input type="text" id="businessName" name="businessName" required>
+
+            <label for="registrationNumber">Business Registration Number</label>
+            <input type="text" id="registrationNumber" name="registrationNumber">
+
+            <label for="shopType">Auto Repair Shop Type</label>
+            <select id="shopType" name="shopType">
+                <option value="general">General Repair Shops</option>
+                <option value="specialty">Specialty Shops</option>
+                <option value="body">Auto Body Shops</option>
+                <option value="tire">Tire and Wheel Shops</option>
+                <option value="oil">Oil Change and Lube Shops</option>
+                <option value="glass">Glass Repair Shops</option>
+                <option value="transmission">Transmission Shops</option>
+                <option value="exhaust">Exhaust and Muffler Shops</option>
+                <option value="performance">Performance and Customization Shops</option>
+                <option value="fleet">Commercial Fleet Maintenance Shops</option>
+                <option value="mobile">Mobile Repair Services</option>
+                <option value="electric">Electric and Hybrid Vehicle Repair Shops</option>
+            </select>
+
+            <label for="email">Business Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+
+            <div class="navigation-buttons">
+                <button type="button" onclick="navigateSection('businessDetails', 'ownerDetails')">Next</button>
+            </div>
+        </form>
+
+        <!-- Owner's Details Section -->
+
+        <!-- Owner's Details Section -->
+
+
+
+        <form id="ownerDetails">
+
+            <h1>Create Your Account</h1>
+
+            <h2>Let’s Get to Know You</h2>
+            <p>As the backbone of your business, your details help us ensure you're in the driver’s seat. Share your
+                information to personalize your CarPal dashboard and keep everything running smoothly.</p>
+            <!-- Form Inputs -->
+        </form>
+
+        <form id="ownerDetails">
+            <h2>Owner's Details</h2>
+            <label for="ownerName">Full Name</label>
+            <input type="text" id="ownerName" name="ownerName" required>
+
+            <label for="ownerEmail">Owner Email</label>
+            <input type="email" id="ownerEmail" name="ownerEmail" required>
+
+            <div class="navigation-buttons">
+                <button type="button" onclick="navigateSection('ownerDetails', 'businessDetails')">Back</button>
+                <button type="button" onclick="navigateSection('ownerDetails', 'security')">Next</button>
+            </div>
+        </form>
+
+        <!-- Security Section -->
+
+        <!-- Security Section -->
+
+
+
+        <form id="security">
+
+            <h1>Create Your Account</h1>
+
+            <h2>Keep Your Business Safe and Secure</h2>
+            <p>Protect what matters most. <br> Create a strong password to safeguard your business data and ensure only
+                authorized access to your CarPal account. Security is our priority, and it should be yours too!</p>
+            <!-- Form Inputs -->
+        </form>
+
+        <form id="security">
+            <h2>Security</h2>
+            <label for="password">Create Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <div class="navigation-buttons">
+                <button type="button" onclick="navigateSection('security', 'ownerDetails')">Back</button>
+                <button type="button" onclick="navigateSection('security', 'legal')">Next</button>
+            </div>
+        </form>
+
+        <!-- Legal Section -->
+
+        <!-- Legal Section -->
+
+
+
+        <form id="legal">
+
+            <h1>Create Your Account</h1>
+
+            <h2>Let’s Make It Official</h2>
+            <p>Almost there! <br> By agreeing to our Terms of Service and Privacy Policy, you join a community committed
+                to
+                innovation and excellence. Review and confirm to start enjoying CarPal’s seamless solutions.</p>
+            <!-- Form Inputs -->
+        </form>
+
+        <form id="legal">
+            <h2>Legal</h2>
+            <label>
+                <input type="checkbox" name="terms" required>
+                I agree to the <a href="#">Data Policy</a>.
+            </label>
+
+            <label>
+                <input type="checkbox" name="terms" required>
+                I agree to the <a href="#">Privacy Policy</a>.
+            </label>
+
+            <label>
+                <input type="checkbox" name="terms" required>
+                I agree to the <a href="#">Terms of Service</a>.
+            </label>
+
+            <div class="navigation-buttons">
+                <button type="button" onclick="navigateSection('legal', 'security')">Back</button>
+                <button type="submit" class="cta-button">Create My Account</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

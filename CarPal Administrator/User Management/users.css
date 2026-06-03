@@ -1,0 +1,358 @@
+/* Root Variables */
+:root {
+    --yellow: #FFD700;
+    --black: #000000;
+    --charcoal: #2D2D2D;
+    --white: #FFFFFF;
+    --light-gray: #f5f5f5;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-gray);
+    color: var(--charcoal);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Header and Navigation styles from provided CSS */
+/* Navigation Styles */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: #2D2D2D;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #FFD700;
+}
+
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #FFD700;
+}
+
+.logout-popup {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.logout-popup.active {
+    display: block;
+}
+
+.logout-popup.active {
+    display: block;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-top: 80px;
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--black);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--yellow);
+}
+
+/* Card Styles */
+.card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: var(--transition-speed);
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Button Styles */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-speed);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: var(--yellow);
+    color: var(--black);
+}
+
+.btn-primary:hover {
+    background: #e6c200;
+    transform: translateY(-1px);
+}
+
+/* Form Elements */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    transition: var(--transition-speed);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: var(--white);
+}
+
+th, td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--light-gray);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+}
+
+tr:hover {
+    background-color: var(--light-gray);
+}
+
+
+
+/* Footer Styles */
+.footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 1rem 2rem;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons a {
+    color: var(--white);
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    transition: var(--transition-speed);
+}
+
+.social-icons a:hover {
+    color: var(--yellow);
+}
+
+.dark-mode-toggle {
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: var(--transition-speed);
+}
+
+.dark-mode-toggle:hover {
+    color: var(--yellow);
+}
+
+.corporate-info {
+    text-align: right;
+}
+
+.corporate-info a {
+    color: var(--white);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+    transition: var(--transition-speed);
+}
+
+.corporate-info a:hover {
+    color: var(--yellow);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: var(--charcoal);
+    color: var(--white);
+}
+
+body.dark-mode .card {
+    background-color: #3d3d3d;
+    color: var(--white);
+}
+
+body.dark-mode .section-title {
+    color: var(--white);
+}
+
+body.dark-mode input,
+body.dark-mode select {
+    background-color: #2d2d2d;
+    color: var(--white);
+    border-color: #4d4d4d;
+}
+
+body.dark-mode th {
+    background-color: #2d2d2d;
+    color: var(--white);
+}
+
+body.dark-mode tr:hover {
+    background-color: #3d3d3d;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .user-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .corporate-info {
+        text-align: center;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logout-popup.active {
+    animation: fadeIn 0.3s ease-out;
+}

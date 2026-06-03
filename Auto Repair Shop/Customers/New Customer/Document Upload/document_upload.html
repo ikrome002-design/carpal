@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Document Upload</title>
+    
+<!-- Favicon configuration -->
+<link rel="icon" type="image/png" sizes="32x32"
+href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+<link rel="shortcut icon"
+href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+<link rel="apple-touch-icon"
+href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\New Customer\new_customer.css">
+</head>
+<body>
+    <!-- Main Popup Container -->
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <!-- Header -->
+            <header class="popup-header">
+                <h2>New Customer</h2>
+                <button class="close-btn" aria-label="Close popup"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\customers.html"><i class="fas fa-times"></i></a></button>
+            </header>
+
+            <!-- Multi-step Form -->
+            <form id="newCustomerForm" class="multi-step-form">
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress" id="formProgress"></div>
+                    <div class="step-indicators">
+                        <span class="step"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\New Customer\new_customer.html">1</a></span>
+                        <span class="step"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\New Customer\Owner Information\owner_information.html">2</a></span>
+                        <span class="step"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\New Customer\Service Information\service_information.html">3</a></span>
+                        <span class="step active"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\New Customer\Document Upload\document_upload.html">4</a></span>
+                    </div>
+                </div>
+
+                <!-- Step 1: Basic Vehicle Info -->
+                <div class="form-step active" id="step1">
+                    <h3>Basic Vehicle Information</h3>
+                    <div class="form-group">
+                        <label for="vehicleMake">Make</label>
+                        <input type="text" id="vehicleMake" name="vehicleMake" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleModel">Model</label>
+                        <input type="text" id="vehicleModel" name="vehicleModel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleYear">Year</label>
+                        <input type="number" id="vehicleYear" name="vehicleYear" min="1900" max="2025" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleVIN">VIN</label>
+                        <input type="text" id="vehicleVIN" name="vehicleVIN" maxlength="17" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="licensePlate">License Plate</label>
+                        <input type="text" id="licensePlate" name="licensePlate" required>
+                    </div>
+                </div>
+
+                <!-- Step 2: Owner Information -->
+                <div class="form-step" id="step2">
+                    <h3>Owner Information</h3>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <!-- Step 3: Service Information -->
+                <div class="form-step" id="step3">
+                    <h3>Service Information</h3>
+                    <div class="form-group">
+                        <label for="mileage">Current Mileage</label>
+                        <input type="number" id="mileage" name="mileage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceCategory">Service Category</label>
+                        <select id="serviceCategory" name="serviceCategory" required>
+                            <option value="">Select a category</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="repair">Repair</option>
+                            <option value="diagnostic">Diagnostic</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="issues">Specific Issues</label>
+                        <textarea id="issues" name="issues" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- Step 4: Document Upload -->
+                <div class="form-step" id="step4">
+                    <h3>Document Upload</h3>
+                    <div class="upload-section">
+                        <div class="upload-box">
+                            <i class="fas fa-file-upload"></i>
+                            <p>Drop files here or click to upload</p>
+                            <input type="file" multiple accept=".pdf,.jpg,.png" class="file-input">
+                        </div>
+                        <div class="upload-list" id="uploadedFiles">
+                            <!-- Uploaded files will be listed here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary" id="prevBtn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\New Customer\Service Information\service_information.html">Previous</a></button>
+
+                    <button type="submit" class="btn btn-submit" id="submitBtn" ><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\customers.html">Submit</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+        <div class="footer-content">
+            <div class="mode-toggle">
+                <button id="darkModeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/@citruske" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" target="_blank" aria-label="X">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <div class="legal-links">
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms of Service</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+            </div>
+            <div class="copyright">
+                © 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

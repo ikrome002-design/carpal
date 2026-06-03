@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | API Credentials</title>
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="api.css">
+</head>
+
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="nav-left">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png"
+                alt="CarPal Logo" class="logo">
+        </div>
+        <div class="nav-right">
+            <div class="notifications">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Notification\notification.html">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </a>
+            </div>
+            <div class="user-profile">
+                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png
+                " alt="User Profile" class="profile-pic">
+                <span class="username">John's Auto Shop</span>
+                <div class="profile-dropdown">
+                    <ul>
+                        <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+                                class="fas fa-sign-out-alt">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- API Credentials Pop-up -->
+    <div class="popup-overlay">
+        <div class="popup-container">
+            <header class="popup-header">
+                <h2>API Credentials</h2>
+                <button class="close-btn"><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\Administrator Features\admin_user_settings.html"><i
+                            class="fas fa-times"></i></a></button>
+            </header>
+
+            <div class="popup-content">
+                <!-- Credential Management Section -->
+                <section class="credentials-section">
+                    <h3>Current API Keys</h3>
+                    <div class="api-key-display">
+                        <div class="key-item">
+                            <span class="key-label">Production API Key:</span>
+                            <div class="key-value">
+                                <input type="password" value="pk_live_123456789abcdef" readonly>
+                                <button class="copy-btn"><i class="fas fa-copy"></i></button>
+                                <button class="show-btn"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="key-item">
+                            <span class="key-label">Test API Key:</span>
+                            <div class="key-value">
+                                <input type="password" value="pk_test_987654321zyxwvu" readonly>
+                                <button class="copy-btn"><i class="fas fa-copy"></i></button>
+                                <button class="show-btn"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-actions">
+                        <button class="generate-btn">Generate New Key</button>
+                        <button class="revoke-btn">Revoke Key</button>
+                    </div>
+                </section>
+
+                <!-- Integration Status Section -->
+                <section class="integration-section">
+                    <h3>Integration Status</h3>
+                    <div class="status-container">
+                        <div class="status-item">
+                            <span class="status-label">Connection Status:</span>
+                            <span class="status-value connected">Connected</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Last Sync:</span>
+                            <span class="status-value">2024-12-28 14:30:45</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Security Settings Section -->
+                <section class="security-section">
+                    <h3>Security Settings</h3>
+                    <div class="security-container">
+                        <div class="ip-whitelist">
+                            <h4>IP Whitelisting</h4>
+                            <div class="ip-list">
+                                <div class="ip-item">
+                                    <span>192.168.1.1</span>
+                                    <button class="remove-btn"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <button class="add-ip-btn">Add IP Address</button>
+                            </div>
+                        </div>
+                        <div class="rate-limit">
+                            <h4>Rate Limiting</h4>
+                            <div class="limit-setting">
+                                <label>Requests per minute:</label>
+                                <input type="number" value="60" min="1" max="100">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Footer -->
+            <footer class="popup-footer">
+                <div class="footer-content">
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/@citruske" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="legal-links">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                            of Service</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                            Policy</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                            Policy</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                        <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+                    </div>
+                    <div class="copyright">
+                        &copy; 2025 Citrus Labs. All Rights Reserved.
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Update Business Info</title>
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="update _business_info.css">
+</head>
+
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="nav-left">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png"
+                alt="CarPal Logo" class="logo">
+        </div>
+        <div class="nav-right">
+            <a href="../Notification/notification.html" class="notification-icon">
+                <i class="fas fa-bell"></i>
+            </a>
+            <div class="user-profile">
+                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                    alt="User Profile" class="profile-img">
+                <div class="user-dropdown">
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+                        class="logout-option">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Log Out
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <ul class="nav-links">
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Dashboard\dashboard.html"><i
+                        class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\vehicles.html"><i
+                        class="fas fa-car"></i> Vehicles</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\invoices.html"><i
+                        class="fas fa-file-invoice"></i> Invoices</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\customers.html"><i
+                        class="fas fa-users"></i> Customers</a></li>
+            <li class="active"><a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\Staff User Features\staff_user_settings.html"><i
+                        class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Update Business Info Pop-up -->
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2>Update Business Information</h2>
+            <form id="businessInfoForm">
+                <!-- Basic Information -->
+                <section class="form-section">
+                    <h3>Basic Information</h3>
+                    <div class="form-group">
+                        <label for="businessName">Business Name</label>
+                        <input type="text" id="businessName" name="businessName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regNumber">Business Registration Number</label>
+                        <input type="text" id="regNumber" name="regNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taxPin">Tax PIN</label>
+                        <input type="text" id="taxPin" name="taxPin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="businessLogo">Business Logo</label>
+                        <input type="file" id="businessLogo" name="businessLogo" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Business Description</label>
+                        <textarea id="description" name="description" rows="4"></textarea>
+                    </div>
+                </section>
+
+                <!-- Contact Details -->
+                <section class="form-section">
+                    <h3>Contact Details</h3>
+                    <div class="form-group">
+                        <label for="primaryPhone">Primary Phone Number</label>
+                        <input type="tel" id="primaryPhone" name="primaryPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alternativePhone">Alternative Phone Number</label>
+                        <input type="tel" id="alternativePhone" name="alternativePhone">
+                    </div>
+                    <div class="form-group">
+                        <label for="businessEmail">Business Email</label>
+                        <input type="email" id="businessEmail" name="businessEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website URL</label>
+                        <input type="url" id="website" name="website">
+                    </div>
+                </section>
+
+                <!-- Business Hours -->
+                <section class="form-section">
+                    <h3>Business Hours</h3>
+                    <div class="form-group">
+                        <label for="weekdayHours">Weekday Hours</label>
+                        <input type="text" id="weekdayHours" name="weekdayHours" placeholder="e.g., 9:00 AM - 5:00 PM">
+                    </div>
+                    <div class="form-group">
+                        <label for="weekendHours">Weekend Hours</label>
+                        <input type="text" id="weekendHours" name="weekendHours" placeholder="e.g., 10:00 AM - 3:00 PM">
+                    </div>
+                    <div class="form-group">
+                        <label for="holidaySchedule">Holiday Schedule</label>
+                        <textarea id="holidaySchedule" name="holidaySchedule" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialHours">Special Hours</label>
+                        <textarea id="specialHours" name="specialHours" rows="3"></textarea>
+                    </div>
+                </section>
+
+                <!-- Location Details -->
+                <section class="form-section">
+                    <h3>Location Details</h3>
+                    <div class="form-group">
+                        <label for="address">Physical Address</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City/Town</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="county">County</label>
+                        <input type="text" id="county" name="county" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gpsCoordinates">GPS Coordinates</label>
+                        <input type="text" id="gpsCoordinates" name="gpsCoordinates">
+                    </div>
+                    <div class="form-group">
+                        <div id="mapLocation" class="map-container"></div>
+                    </div>
+                </section>
+
+                <!-- Social Media -->
+                <section class="form-section">
+                    <h3>Social Media</h3>
+                    <div class="form-group">
+                        <label for="facebook">Facebook URL</label>
+                        <input type="url" id="facebook" name="facebook">
+                    </div>
+                    <div class="form-group">
+                        <label for="instagram">Instagram Handle</label>
+                        <input type="text" id="instagram" name="instagram">
+                    </div>
+                    <div class="form-group">
+                        <label for="twitter">Twitter Handle</label>
+                        <input type="text" id="twitter" name="twitter">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn URL</label>
+                        <input type="url" id="linkedin" name="linkedin">
+                    </div>
+                </section>
+
+                <!-- Form Controls -->
+                <div class="form-controls">
+                    <button type="submit" class="btn-save">Save Changes</button>
+                    <button type="button" class="btn-cancel">Cancel</button>
+                    <button type="reset" class="btn-reset">Reset Form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+            <div class="footer-section social-media">
+                <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="footer-section legal">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                    of Service</a>
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                    Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                    Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+            </div>
+            <div class="footer-section copyright">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,444 @@
+/* Base Styles and CSS Reset */
+:root {
+    --primary-yellow: #FFD700;
+    --primary-black: #000000;
+    --charcoal-gray: #2D2D2D;
+    --white: #FFFFFF;
+    --light-gray: #F8F9FA;
+    --border-gray: #DDDDDD;
+    --success-green: #28A745;
+    --warning-orange: #FFC107;
+    --danger-red: #DC3545;
+    --transition-speed: 0.3s;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 12px;
+    --shadow-default: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-large: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--light-gray);
+    color: var(--charcoal-gray);
+    min-height: 100vh;
+}
+
+/* Layout Components */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--primary-black);
+    padding: 1.5rem;
+    z-index: 1000;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    min-height: calc(100vh - 70px);
+    position: relative;
+}
+
+/* Navigation Elements */
+.logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.nav-item i {
+    width: 20px;
+    text-align: center;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    font-weight: 500;
+}
+
+/* Header Components */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.search-bar {
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-gray);
+    border-radius: var(--border-radius-sm);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.875rem;
+    transition: border-color var(--transition-speed) ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+}
+
+/* Button Styles */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    border: none;
+}
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-outline {
+    border: 2px solid var(--charcoal-gray);
+    background-color: transparent;
+    color: var(--charcoal-gray);
+}
+
+.btn-outline:hover {
+    background-color: var(--charcoal-gray);
+    color: var(--white);
+}
+
+/* Vehicle List Styles */
+.vehicle-list {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-default);
+}
+
+.vehicle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.vehicle-item:last-child {
+    border-bottom: none;
+}
+
+.vehicle-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--charcoal-gray);
+}
+
+.vehicle-info p {
+    font-size: 0.875rem;
+    color: #666666;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background-color: var(--warning-orange);
+    color: var(--primary-black);
+}
+
+.status-progress {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+}
+
+/* Footer Components */
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 250px;
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    border-top: 1px solid var(--border-gray);
+    z-index: 900;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--charcoal-gray);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-yellow);
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-right a {
+    color: var(--charcoal-gray);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-right a:hover {
+    color: var(--primary-yellow);
+}
+
+/* Utility Components */
+.dark-mode-toggle {
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--charcoal-gray);
+    color: var(--white);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+}
+
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-popup {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background-color: var(--white);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-large);
+    padding: 1rem;
+    min-width: 200px;
+    display: none;
+}
+
+.profile-popup.active {
+    display: block;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: var(--charcoal-gray);
+    color: var(--white);
+}
+
+body.dark-mode .vehicle-list,
+body.dark-mode .footer,
+body.dark-mode .profile-popup {
+    background-color: #1A1A1A;
+    border-color: #333333;
+}
+
+body.dark-mode .footer-right a,
+body.dark-mode .social-links a {
+    color: var(--white);
+}
+
+body.dark-mode .btn-outline {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+body.dark-mode .vehicle-info h3 {
+    color: var(--white);
+}
+
+body.dark-mode .vehicle-info p {
+    color: #BBBBBB;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content,
+    .footer {
+        margin-left: 200px;
+    }
+    
+    .btn {
+        padding: 0.625rem 1.25rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform var(--transition-speed) ease;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main-content,
+    .footer {
+        margin-left: 0;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .search-bar {
+        max-width: 100%;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .footer {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .footer-left,
+    .footer-right {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* CSS code for Vehicles Overview section based on CarPal brand identity */
+.vehicles-summary {
+    background-color: #2D2D2D; /* Charcoal Gray background */
+    color: #FFFFFF; /* White text color for contrast */
+    font-family: 'Poppins', sans-serif; /* Primary font */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vehicles-summary h2 {
+    color: #FFD700; /* Vibrant Yellow for headings */
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.summary-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.summary-details div {
+    background-color: #000000; /* Deep Black for cards */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.summary-details p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.summary-details p strong {
+    color: #FFD700; /* Vibrant Yellow for emphasis */
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.action-btn {
+    background-color: #FFD700; /* Vibrant Yellow for buttons */
+    color: #000000; /* Deep Black text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+    background-color: #FFA500; /* Slightly darker yellow on hover */
+}

@@ -1,0 +1,72 @@
+:root {
+    --yellow: #FFD700;
+    --black: #000000;
+    --charcoal: #2D2D2D;
+    --white: #FFFFFF;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--charcoal);
+}
+
+/* Header styles */
+header {
+    background: var(--black);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* .user-profile {
+    position: relative;
+    cursor: pointer;
+    color: var(--white);
+} */
+
+/* Popup styles */
+/* .popup {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+} */
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+h1,
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+

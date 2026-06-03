@@ -1,0 +1,851 @@
+<!-- Bulk Status Update Modal -->
+<div class="modal" id="bulk-status-update-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Bulk Status Update</h2>
+            <button class="close-modal-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <!-- Recipient Selection Section -->
+            <div class="bulk-update-section">
+                <h3>Recipient Selection</h3>
+                <div class="recipient-options">
+                    <div class="recipient-type">
+                        <h4>Select User Type</h4>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="select-shop-owners" checked>
+                                <label for="select-shop-owners">Shop Owners</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="select-technicians">
+                                <label for="select-technicians">Technicians</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="select-customers">
+                                <label for="select-customers">Customers</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="select-all-users">
+                                <label for="select-all-users">All Users</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipient-filters">
+                        <h4>Additional Filters</h4>
+                        <div class="filter-row">
+                            <div class="filter-field">
+                                <label for="filter-location">Location</label>
+                                <select id="filter-location">
+                                    <option value="">All Locations</option>
+                                    <option value="nairobi">Nairobi</option>
+                                    <option value="mombasa">Mombasa</option>
+                                    <option value="kisumu">Kisumu</option>
+                                    <option value="eldoret">Eldoret</option>
+                                    <option value="nakuru">Nakuru</option>
+                                </select>
+                            </div>
+                            <div class="filter-field">
+                                <label for="filter-industry">Industry</label>
+                                <select id="filter-industry">
+                                    <option value="">All Industries</option>
+                                    <option value="auto-repair">Auto Repair</option>
+                                    <option value="car-wash">Car Wash</option>
+                                    <option value="parts-supplier">Parts Supplier</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter-row">
+                            <div class="filter-field">
+                                <label for="filter-status">Current Status</label>
+                                <select id="filter-status">
+                                    <option value="">All Statuses</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    <option value="suspended">Suspended</option>
+                                </select>
+                            </div>
+                            <div class="filter-field">
+                                <label for="filter-role">User Role</label>
+                                <select id="filter-role">
+                                    <option value="">All Roles</option>
+                                    <option value="owner">Owner</option>
+                                    <option value="manager">Manager</option>
+                                    <option value="staff">Staff</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="save-filter-group">
+                            <input type="text" id="filter-group-name" placeholder="Filter group name">
+                            <button class="save-filter-btn">Save Filter Group</button>
+                        </div>
+                        <div class="saved-filter-groups">
+                            <label for="load-filter-group">Saved Filter Groups</label>
+                            <select id="load-filter-group">
+                                <option value="">Select a saved group</option>
+                                <option value="group-1">Regional Managers</option>
+                                <option value="group-2">Nairobi Businesses</option>
+                                <option value="group-3">Premium Accounts</option>
+                            </select>
+                            <button class="load-filter-btn">Load</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipient-preview">
+                    <h4>Selected Recipients Preview</h4>
+                    <div class="recipient-count">
+                        <span class="count-label">Total Recipients:</span>
+                        <span class="count-value">254</span>
+                    </div>
+                    <button class="view-recipients-btn">View Full List</button>
+                </div>
+            </div>
+
+            <!-- Message Composition Section -->
+            <div class="bulk-update-section">
+                <h3>Message Composition</h3>
+                <div class="template-selection">
+                    <label for="message-template">Message Template</label>
+                    <select id="message-template">
+                        <option value="">Select a template</option>
+                        <option value="maintenance">Scheduled Maintenance</option>
+                        <option value="outage">Service Outage</option>
+                        <option value="update">Platform Update</option>
+                        <option value="promotion">Promotion Announcement</option>
+                        <option value="custom">Custom Message</option>
+                    </select>
+                </div>
+
+                <div class="message-editor">
+                    <label for="message-subject">Subject</label>
+                    <input type="text" id="message-subject" value="Important Update: Scheduled Maintenance">
+                    
+                    <label for="message-body">Message</label>
+                    <textarea id="message-body" rows="6">Dear {user_name},
+
+We are writing to inform you that CarPal will be undergoing scheduled maintenance on {maintenance_date} from {start_time} to {end_time} EAT. During this period, the platform may experience brief interruptions or limited functionality.
+
+We apologize for any inconvenience this may cause to your business operations. Should you have any questions or concerns, please don't hesitate to reach out to our support team.
+
+Thank you for your understanding and continued partnership.
+
+Best regards,
+The CarPal Team</textarea>
+                    
+                    <div class="dynamic-fields">
+                        <h4>Dynamic Fields</h4>
+                        <div class="dynamic-field-options">
+                            <button class="dynamic-field-btn" data-field="{user_name}">User Name</button>
+                            <button class="dynamic-field-btn" data-field="{business_name}">Business Name</button>
+                            <button class="dynamic-field-btn" data-field="{maintenance_date}">Date</button>
+                            <button class="dynamic-field-btn" data-field="{start_time}">Start Time</button>
+                            <button class="dynamic-field-btn" data-field="{end_time}">End Time</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification Scheduling Section -->
+            <div class="bulk-update-section">
+                <h3>Notification Scheduling</h3>
+                <div class="schedule-options">
+                    <div class="schedule-option">
+                        <input type="radio" id="send-immediately" name="send-timing" checked>
+                        <label for="send-immediately">Send Immediately</label>
+                    </div>
+                    <div class="schedule-option">
+                        <input type="radio" id="schedule-later" name="send-timing">
+                        <label for="schedule-later">Schedule for Later</label>
+                    </div>
+                </div>
+                
+                <div class="schedule-details" id="schedule-details-panel">
+                    <div class="schedule-row">
+                        <div class="schedule-field">
+                            <label for="schedule-date">Date</label>
+                            <input type="date" id="schedule-date">
+                        </div>
+                        <div class="schedule-field">
+                            <label for="schedule-time">Time</label>
+                            <input type="time" id="schedule-time">
+                        </div>
+                    </div>
+                    <div class="timezone-note">All times are in East Africa Time (EAT)</div>
+                </div>
+
+                <div class="scheduled-notifications">
+                    <h4>Scheduled Notifications</h4>
+                    <table class="scheduled-table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Recipients</th>
+                                <th>Scheduled For</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Platform Update v2.5</td>
+                                <td>All Users (1,243)</td>
+                                <td>1 Apr 2025, 08:00 AM</td>
+                                <td>
+                                    <button class="action-btn edit">Edit</button>
+                                    <button class="action-btn cancel">Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Payment System Maintenance</td>
+                                <td>Shop Owners (842)</td>
+                                <td>5 Apr 2025, 10:00 PM</td>
+                                <td>
+                                    <button class="action-btn edit">Edit</button>
+                                    <button class="action-btn cancel">Cancel</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Preview & History Section -->
+            <div class="bulk-update-section">
+                <div class="preview-panel">
+                    <h3>Message Preview</h3>
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <div class="preview-subject">Important Update: Scheduled Maintenance</div>
+                            <div class="preview-from">From: CarPal Administrator</div>
+                            <div class="preview-to">To: John Doe (AutoFix Kenya)</div>
+                        </div>
+                        <div class="preview-body">
+                            Dear John Doe,<br><br>
+                            
+                            We are writing to inform you that CarPal will be undergoing scheduled maintenance on April 2, 2025 from 2:00 AM to 5:00 AM EAT. During this period, the platform may experience brief interruptions or limited functionality.<br><br>
+                            
+                            We apologize for any inconvenience this may cause to your business operations. Should you have any questions or concerns, please don't hesitate to reach out to our support team.<br><br>
+                            
+                            Thank you for your understanding and continued partnership.<br><br>
+                            
+                            Best regards,<br>
+                            The CarPal Team
+                        </div>
+                    </div>
+                    <button class="refresh-preview-btn">Refresh Preview</button>
+                </div>
+
+                <div class="history-panel">
+                    <h3>Notification History</h3>
+                    <div class="history-filters">
+                        <input type="text" placeholder="Search notifications..." class="history-search">
+                        <select class="history-filter">
+                            <option value="">All Types</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="outage">Service Outage</option>
+                            <option value="update">Platform Update</option>
+                            <option value="promotion">Promotion</option>
+                        </select>
+                    </div>
+                    <div class="history-list">
+                        <div class="history-item">
+                            <div class="history-header">
+                                <span class="history-subject">Platform Update v2.4 Features</span>
+                                <span class="history-date">22 Mar 2025</span>
+                            </div>
+                            <div class="history-details">
+                                <span class="history-recipients">All Users (1,237)</span>
+                                <span class="history-sent-by">Sent by: Admin User</span>
+                            </div>
+                            <button class="view-notification-btn">View Details</button>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-header">
+                                <span class="history-subject">New Payment Options Available</span>
+                                <span class="history-date">15 Mar 2025</span>
+                            </div>
+                            <div class="history-details">
+                                <span class="history-recipients">Shop Owners (835)</span>
+                                <span class="history-sent-by">Sent by: Admin User</span>
+                            </div>
+                            <button class="view-notification-btn">View Details</button>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-header">
+                                <span class="history-subject">Emergency Maintenance Notice</span>
+                                <span class="history-date">10 Mar 2025</span>
+                            </div>
+                            <div class="history-details">
+                                <span class="history-recipients">All Users (1,212)</span>
+                                <span class="history-sent-by">Sent by: System</span>
+                            </div>
+                            <button class="view-notification-btn">View Details</button>
+                        </div>
+                    </div>
+                    <button class="view-all-history-btn">View Full History</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <div class="notification-metrics">
+                <div class="metric-item">
+                    <span class="metric-label">Recipients:</span>
+                    <span class="metric-value">254</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Estimated Delivery:</span>
+                    <span class="metric-value">< 1 minute</span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="send-notification-btn">Send Notification</button>
+                <button class="save-draft-btn">Save Draft</button>
+                <button class="cancel-modal-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional CSS to be added to your businesses.css file -->
+<style>
+/* Bulk Status Update Modal Styles */
+#bulk-status-update-modal .modal-content {
+    max-width: 900px;
+}
+
+.bulk-update-section {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-gray-medium);
+}
+
+.bulk-update-section:last-child {
+    border-bottom: none;
+}
+
+.bulk-update-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.bulk-update-section h4 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Recipient Selection Styles */
+.recipient-options {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.recipient-type {
+    flex: 1;
+}
+
+.recipient-filters {
+    flex: 2;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.filter-row {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.filter-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.filter-field label {
+    font-weight: 500;
+}
+
+.filter-field select,
+.filter-field input {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-gray-medium);
+    border-radius: var(--border-radius-sm);
+}
+
+.save-filter-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.save-filter-group input {
+    flex: 2;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-gray-medium);
+    border-radius: var(--border-radius-sm);
+}
+
+.save-filter-btn {
+    flex: 1;
+    background-color: var(--color-charcoal);
+    color: var(--color-white);
+    border: none;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+}
+
+.save-filter-btn:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+}
+
+.saved-filter-groups {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--spacing-sm);
+}
+
+.saved-filter-groups label {
+    font-weight: 500;
+    margin-right: var(--spacing-xs);
+}
+
+.saved-filter-groups select {
+    flex: 2;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-gray-medium);
+    border-radius: var(--border-radius-sm);
+}
+
+.load-filter-btn {
+    background-color: var(--color-charcoal);
+    color: var(--color-white);
+    border: none;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+}
+
+.load-filter-btn:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+}
+
+.recipient-preview {
+    background-color: var(--color-gray-light);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+}
+
+.recipient-count {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    font-weight: 500;
+}
+
+.count-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+}
+
+.view-recipients-btn {
+    width: 100%;
+    background-color: var(--color-charcoal);
+    color: var(--color-white);
+    border: none;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+}
+
+.view-recipients-btn:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+}
+
+/* Message Composition Styles */
+.template-selection {
+    margin-bottom: var(--spacing-md);
+}
+
+.template-selection label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.template-selection select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-gray-medium);
+    border-radius: var(--border-radius-sm);
+}
+
+.message-editor label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.message-editor input,
+.message-editor textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-gray-medium);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--spacing-md);
+    resize: vertical;
+}
+
+.dynamic-fields {
+    margin-top: var(--spacing-md);
+}
+
+.dynamic-field-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.dynamic-field-btn {
+    background-color: var(--color-gray-medium);
+    color: var(--color-charcoal);
+    border: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.dynamic-field-btn:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+}
+
+/* Notification Scheduling Styles */
+.schedule-options {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.schedule-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.schedule-details {
+    background-color: var(--color-gray-light);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.schedule-row {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.schedule-field {
+    flex: 1;
+}
+
+.schedule-field label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.schedule-field input {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-gray-medium);
+    border-radius: var(--border-radius-sm);
+}
+
+.timezone-note {
+    font-size: 0.8rem;
+    color: var(--color-gray-dark);
+    margin-top: var(--spacing-xs);
+}
+
+.scheduled-notifications {
+    margin-top: var(--spacing-lg);
+}
+
+.scheduled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--spacing-md);
+}
+
+.scheduled-table th,
+.scheduled-table td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--color-gray-medium);
+}
+
+.scheduled-table th {
+    background-color: var(--color-gray-light);
+    font-weight: 600;
+}
+
+/* Preview and History Styles */
+.preview-panel,
+.history-panel {
+    margin-bottom: var(--spacing-lg);
+}
+
+.preview-container {
+    background-color: var(--color-gray-light);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.preview-header {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-gray-medium);
+}
+
+.preview-subject {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.preview-from,
+.preview-to {
+    font-size: 0.9rem;
+    color: var(--color-gray-dark);
+}
+
+.preview-body {
+    line-height: 1.6;
+}
+
+.refresh-preview-btn {
+    background-color: var(--color-charcoal);
+    color: var(--color-white);
+    border: none;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+}
+
+.refresh-preview-btn:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+}
+
+.history-filters {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.history-search {
+    flex: 2;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-gray-medium);
+    border-radius: var(--border-radius-sm);
+}
+
+.history-filter {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-gray-medium);
+    border-radius: var(--border-radius-sm);
+}
+
+.history-list {
+    margin-bottom: var(--spacing-md);
+}
+
+.history-item {
+    background-color: var(--color-gray-light);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xs);
+}
+
+.history-subject {
+    font-weight: 600;
+}
+
+.history-date {
+    font-size: 0.9rem;
+    color: var(--color-gray-dark);
+}
+
+.history-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.view-notification-btn {
+    width: 100%;
+    background-color: var(--color-charcoal);
+    color: var(--color-white);
+    border: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.9rem;
+}
+
+.view-notification-btn:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+}
+
+.view-all-history-btn {
+    width: 100%;
+    background-color: var(--color-charcoal);
+    color: var(--color-white);
+    border: none;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+}
+
+.view-all-history-btn:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+}
+
+/* Footer Metrics and Actions */
+.notification-metrics {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-right: auto;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: var(--color-gray-dark);
+}
+
+.metric-value {
+    font-weight: 600;
+}
+
+.modal-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.send-notification-btn,
+.save-draft-btn,
+.cancel-modal-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    font-weight: 500;
+    border: none;
+}
+
+.send-notification-btn {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+}
+
+.save-draft-btn {
+    background-color: var(--color-gray-medium);
+    color: var(--color-charcoal);
+}
+
+.cancel-modal-btn {
+    background-color: transparent;
+    color: var(--color-gray-dark);
+    border: 1px solid var(--color-gray-medium);
+}
+
+.send-notification-btn:hover {
+    background-color: #e6c300; /* Slightly darker yellow */
+}
+
+.save-draft-btn:hover {
+    background-color: var(--color-gray-dark);
+    color: var(--color-white);
+}
+
+.cancel-modal-btn:hover {
+    background-color: var(--color-gray-light);
+}
+
+/* Responsive Styles for Bulk Status Update Modal */
+@media (max-width: 768px) {
+    .recipient-options {
+        flex-direction: column;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-row {
+        flex-direction: column;
+    }
+    
+    .saved-filter-groups {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .notification-metrics {
+        margin-right: 0;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .modal-actions button {
+        width: 100%;
+    }
+}
+</style>
+
+
+</script>

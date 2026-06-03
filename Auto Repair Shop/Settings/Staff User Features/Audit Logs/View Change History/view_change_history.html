@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | View Change History</title>
+
+    <!-- Favicon setup -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="view_change_history.css">
+</head>
+
+<body>
+    <!-- Main Popup Container -->
+    <div class="popup-overlay">
+        <div class="popup-container">
+            <!-- Header -->
+            <header class="popup-header">
+                <h1>Change History</h1>
+                <div class="header-controls">
+                    <div class="user-profile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile">
+                        <span class="username">John Smith</span>
+                        <!-- User Dropdown -->
+                        <div class="user-dropdown">
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+                                class="logout-btn">
+                                <i class="fas fa-sign-out-alt"></i> Log Out
+                            </a>
+                        </div>
+                    </div>
+                    <button class="close-btn" aria-label="Close">×</button>
+                </div>
+            </header>
+
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <div class="filter-group">
+                    <div class="date-range">
+                        <label for="date-from">From:</label>
+                        <input type="date" id="date-from">
+                        <label for="date-to">To:</label>
+                        <input type="date" id="date-to">
+                    </div>
+                    <div class="user-filter">
+                        <label for="user-select">User:</label>
+                        <select id="user-select">
+                            <option value="">All Users</option>
+                            <option value="john">John Smith</option>
+                            <option value="jane">Jane Doe</option>
+                        </select>
+                    </div>
+                    <div class="change-type">
+                        <label for="change-type">Change Type:</label>
+                        <select id="change-type">
+                            <option value="">All Changes</option>
+                            <option value="create">Create</option>
+                            <option value="update">Update</option>
+                            <option value="delete">Delete</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Change History Table -->
+            <section class="history-table-container">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>User</th>
+                            <th>Change Description</th>
+                            <th>Previous Value</th>
+                            <th>New Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025-01-15 14:30:22</td>
+                            <td>John Smith</td>
+                            <td>Updated customer phone number</td>
+                            <td>+254 712 345 678</td>
+                            <td>+254 724 345 678</td>
+                        </tr>
+                        <tr>
+                            <td>2025-01-14 09:15:45</td>
+                            <td>Jane Doe</td>
+                            <td>Modified service price</td>
+                            <td>KES 5,000</td>
+                            <td>KES 5,500</td>
+                        </tr>
+                        <!-- More sample data rows -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Navigation Controls -->
+            <section class="navigation-controls">
+                <div class="items-per-page">
+                    <label for="items-select">Show:</label>
+                    <select id="items-select">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                    <span>entries</span>
+                </div>
+
+                <div class="pagination">
+                    <button class="prev-page">Previous</button>
+                    <div class="page-numbers">
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                    </div>
+                    <button class="next-page">Next</button>
+                </div>
+            </section>
+
+            <!-- Export Options -->
+            <section class="export-options">
+                <button class="export-btn pdf">
+                    <i class="fas fa-file-pdf"></i> Export to PDF
+                </button>
+                <button class="export-btn csv">
+                    <i class="fas fa-file-csv"></i> Export to CSV
+                </button>
+            </section>
+
+            <!-- Footer -->
+            <footer class="popup-footer">
+                <div class="footer-content">
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/@citruske" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="legal-links">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                            of Service</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                            Policy</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                            Policy</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                        <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+                    </div>
+                    <div class="copyright">
+                        &copy; 2025 Citrus Labs. All Rights Reserved.
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Active Customers</title>
+    
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- Icon libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="active_customer.css">
+</head>
+<body>
+    <!-- Main navigation -->
+    <nav class="sidebar">
+        <div class="logo-container">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png" alt="CarPal Logo" class="logo">
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Dashboard\dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\vehicles.html"><i class="fas fa-car"></i>Vehicles</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\invoices.html"><i class="fas fa-file-invoice"></i>Invoices</a></li>
+            <li class="active"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\customers.html"><i class="fas fa-users"></i>Customers</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\Staff User Features\staff_user_settings.html"><i class="fas fa-cog"></i>Settings</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="top-header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="header-right">
+                <div class="notifications">
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Notification\notification.html">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </a>
+                </div>
+                
+                <div class="user-profile">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png" alt="Profile Picture" class="profile-pic">
+                    <span class="user-name">John's Auto Shop</span>
+                    <div class="profile-dropdown">
+                        <div class="dropdown-content">
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main customer management section -->
+        <section class="customer-section">
+            <div class="section-header">
+                <h1>Customer Management</h1>
+                <div class="action-buttons">
+                    <button class="btn-primary"><i class="fas fa-plus"></i>                     
+                        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\New Customer\new_customer.html">New Customer</a> </button>
+                    <button class="btn-secondary"><i class="fas fa-upload"></i> <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Import\import_customer.html">Import</a> </button>
+                </div>
+            </div>
+
+            <!-- Customer navigation tabs -->
+            <div class="tabs">
+                <button class="tab-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\customers.html">All Customers</a></button>
+                <button class="tab-btn active"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Active Customer\active_customer.html">Active</a></button>
+                <button class="tab-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Inactive Customer\inactive_customer.html">Inactive</a></button>
+            </div>
+
+            <!-- Customer list -->
+            <div class="customer-list">
+                <div class="list-header">
+                    <div class="header-item">Name</div>
+                    <div class="header-item">Vehicle</div>
+                    <div class="header-item">Last Service</div>
+                    <div class="header-item">Status</div>
+                    <div class="header-item">Actions</div>
+                </div>
+                
+                <!-- Sample customer entries -->
+                <div class="customer-item">
+                    <div class="item-data">Elon Paul</div>
+                    <div class="item-data">Toyota Mark X</div>
+                    <div class="item-data">2024-08-30</div>
+                    <div class="item-data"><span class="status-active">Active</span></div>
+                    <div class="item-actions">
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Edit Customer\edit_customer.html"><i class="fas fa-edit"></i></a>
+                        </button>
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Message\message_customer.html"><i class="fas fa-envelope"></i></a></button>
+                        <button class="action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                </div>
+
+                <!-- Sample customer entries -->
+                <div class="customer-item">
+                    <div class="item-data">Sarah Williams</div>
+                    <div class="item-data">Honda Civic</div>
+                    <div class="item-data">2024-01-15</div>
+                    <div class="item-data"><span class="status-active">Active</span></div>
+                    <div class="item-actions">
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Edit Customer\edit_customer.html"><i class="fas fa-edit"></i></a>
+                        </button>
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Message\message_customer.html"><i class="fas fa-envelope"></i></a></button>
+                        <button class="action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                </div>
+
+                <!-- Sample customer entries -->
+                <div class="customer-item">
+                    <div class="item-data">Michael Green</div>
+                    <div class="item-data">Ford Mustang</div>
+                    <div class="item-data">2024-02-10</div>
+                    <div class="item-data"><span class="status-active">Active</span></div>
+                    <div class="item-actions">
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Edit Customer\edit_customer.html"><i class="fas fa-edit"></i></a>
+                        </button>
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Message\message_customer.html"><i class="fas fa-envelope"></i></a></button>
+                        <button class="action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                </div>
+
+                <!-- Sample customer entries -->
+                <div class="customer-item">
+                    <div class="item-data">Emily Roberts</div>
+                    <div class="item-data">BMW X5</div>
+                    <div class="item-data">2024-03-05</div>
+                    <div class="item-data"><span class="status-active">Active</span></div>
+                    <div class="item-actions">
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Edit Customer\edit_customer.html"><i class="fas fa-edit"></i></a>
+                        </button>
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Message\message_customer.html"><i class="fas fa-envelope"></i></a></button>
+                        <button class="action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                </div>
+                <!-- Sample customer entries -->
+                <div class="customer-item">
+                    <div class="item-data">David Johnson</div>
+                    <div class="item-data">Toyota Camry</div>
+                    <div class="item-data">2024-04-20</div>
+                    <div class="item-data"><span class="status-active">Active</span></div>
+                    <div class="item-actions">
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Edit Customer\edit_customer.html"><i class="fas fa-edit"></i></a>
+                        </button>
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Message\message_customer.html"><i class="fas fa-envelope"></i></a></button>
+                        <button class="action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                </div>
+
+                <!-- Sample customer entries -->
+                <div class="customer-item">
+                    <div class="item-data">Sophia Carter</div>
+                    <div class="item-data">Audi A4</div>
+                    <div class="item-data">2024-12-07</div>
+                    <div class="item-data"><span class="status-active">Active</span></div>
+                    <div class="item-actions">
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Edit Customer\edit_customer.html"><i class="fas fa-edit"></i></a>
+                        </button>
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Message\message_customer.html"><i class="fas fa-envelope"></i></a></button>
+                        <button class="action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                </div>
+
+                <!-- Sample customer entries -->
+                <div class="customer-item">
+                    <div class="item-data">John Doe</div>
+                    <div class="item-data">Chevrolet Silverado</div>
+                    <div class="item-data">2024-09-13</div>
+                    <div class="item-data"><span class="status-active">Active</span></div>
+                    <div class="item-actions">
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Edit Customer\edit_customer.html"><i class="fas fa-edit"></i></a>
+                        </button>
+                        <button class="action-btn"><a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\Message\message_customer.html"><i class="fas fa-envelope"></i></a></button>
+                        <button class="action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                </div>
+                <!-- Add more customer items as needed -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section links">
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms of Service</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+            </div>
+            
+            <div class="footer-section copyright">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

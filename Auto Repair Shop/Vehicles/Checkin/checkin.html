@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Vehicle Check-in</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="checkin.css">
+</head>
+<body>
+    <!-- Left Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-container">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png" alt="CarPal Logo" class="logo">
+        </div>
+        
+        <ul class="nav-links">
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Dashboard\dashboard.html">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\vehicles.html">
+                    <i class="fas fa-car"></i>
+                    <span>Vehicles</span>
+                </a>
+            </li>
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Service Hub\service_hub.html">
+                    <i class="fas fa-wrench"></i>
+                    <span>Service Hub</span>
+                </a>
+            </li>
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\invoices.html">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Invoices</span>
+                </a>
+            </li>
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\customers.html">
+                    <i class="fas fa-users"></i>
+                    <span>Customers</span>
+                </a>
+            </li>
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\settings.html">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Top Header -->
+        <header class="header">
+            <div class="search-container">
+                <input type="search" placeholder="Search vehicles..." class="search-bar">
+            </div>
+            
+            <div class="header-actions">
+                <button class="btn btn-primary">Check-In Vehicle</button>
+                <button class="btn btn-outline">Create Invoice</button>
+                <button class="btn btn-primary">Check-Out Vehicle</button>
+                
+                <!-- Notifications Icon -->
+                <div class="notifications-container">
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Notification\notification.html" class="notifications-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </a>
+                </div>
+                
+                <!-- User Profile -->
+                <div class="profile-section">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png" alt="Profile" class="profile-img">
+                    <div class="profile-dropdown">
+                        <div class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            Profile
+                        </div>
+                        <div class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            Settings
+                        </div>
+                        <div class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content (Previous content remains the same) -->
+        <main>
+            <section class="vehicles-overview">
+                <h2>Vehicles Overview</h2>
+                <div class="stats-grid">
+                    <!-- Vehicle statistics cards will be dynamically populated -->
+                    <div class="check-in-container">
+                        <div class="step-indicator">
+                            <div class="step active">1</div>
+                            <div class="step">2</div>
+                            <div class="step">3</div>
+                            <div class="step">4</div>
+                            <div class="step">5</div>
+                        </div>
+            
+                        <!-- Vehicle Type Selection -->
+                        <div class="form-section active" id="vehicle-type">
+                            <h2>Vehicle Check-In</h2>
+                            <div class="form-group">
+                                <label>Select Vehicle Type</label>
+                                <select id="vehicleTypeSelect">
+                                    <option value="">Choose an option</option>
+                                    <option value="new">New Vehicle</option>
+                                    <option value="existing">Existing Vehicle</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <!-- New Vehicle Form -->
+                        <div class="form-section" id="new-vehicle">
+                            <h2>New Vehicle Information</h2>
+                            <div class="form-group">
+                                <label>Vehicle Make</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Vehicle Model</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Year of Manufacture</label>
+                                <input type="number" required>
+                            </div>
+                            <div class="form-group">
+                                <label>License Plate</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+            
+                        <!-- Existing Vehicle Selection -->
+                        <div class="form-section" id="existing-vehicle">
+                            <h2>Select Existing Vehicle</h2>
+                            <div class="form-group">
+                                <label>Search Vehicle</label>
+                                <input type="search" placeholder="Enter license plate or owner name">
+                            </div>
+                            <div class="component-grid" id="vehicleResults">
+                                <!-- Vehicle results will be populated here -->
+                            </div>
+                        </div>
+            
+                        <!-- Component Assessment -->
+                        <div class="form-section" id="component-assessment">
+                            <h2>Component Assessment</h2>
+                            <div class="component-grid">
+                                <!-- Audio Components -->
+                                <div class="component-card">
+                                    <h3>Audio Components</h3>
+                                    <div class="form-group">
+                                        <label>Radio</label>
+                                        <select>
+                                            <option value="working">Working</option>
+                                            <option value="faulty">Faulty</option>
+                                            <option value="missing">Missing</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Speakers</label>
+                                        <select>
+                                            <option value="working">Working</option>
+                                            <option value="faulty">Faulty</option>
+                                            <option value="missing">Missing</option>
+                                        </select>
+                                    </div>
+                                </div>
+            
+                                <!-- Interior Components -->
+                                <div class="component-card">
+                                    <h3>Interior Components</h3>
+                                    <div class="form-group">
+                                        <label>Keys</label>
+                                        <select>
+                                            <option value="present">Present</option>
+                                            <option value="missing">Missing</option>
+                                        </select>
+                                    </div>
+                                    <!-- Add more interior components -->
+                                </div>
+            
+                                <!-- Add more component sections -->
+                            </div>
+                        </div>
+            
+                        <!-- Attachments Upload -->
+                        <div class="form-section" id="attachments">
+                            <h2>Upload Attachments</h2>
+                            <div class="file-upload">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag and drop files here or click to browse</p>
+                                <input type="file" multiple hidden>
+                            </div>
+                            <div class="attachments-preview">
+                                <!-- Preview items will be added here -->
+                            </div>
+                        </div>
+            
+                        <!-- Navigation Buttons -->
+                        <div class="navigation-buttons">
+                            <button class="btn btn-outline" id="prevButton">Previous</button>
+                            <button class="btn btn-primary" id="nextButton">Next</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-section" id="component-assessment">
+                    <h2>Component Assessment</h2>
+                    
+                    <!-- Audio Section -->
+                    <div class="component-section">
+                        <h3>Audio Components</h3>
+                        <div class="component-grid">
+                            <div class="component-card">
+                                <h4>Radio/Head Unit</h4>
+                                <div class="form-group">
+                                    <label>Condition</label>
+                                    <select name="radio_condition">
+                                        <option value="working">Working</option>
+                                        <option value="faulty">Faulty</option>
+                                        <option value="missing">Missing</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Notes</label>
+                                    <textarea name="radio_notes"></textarea>
+                                </div>
+                            </div>
+                            <div class="component-card">
+                                <h4>Speaker System</h4>
+                                <div class="form-group">
+                                    <label>Condition</label>
+                                    <select name="speaker_condition">
+                                        <option value="working">Working</option>
+                                        <option value="faulty">Faulty</option>
+                                        <option value="missing">Missing</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Interior Section -->
+                    <div class="component-section">
+                        <h3>Interior Components</h3>
+                        <div class="component-grid">
+                            <div class="component-card">
+                                <h4>Keys</h4>
+                                <div class="form-group">
+                                    <label>Main Key</label>
+                                    <select name="main_key">
+                                        <option value="present">Present</option>
+                                        <option value="missing">Missing</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Spare Key</label>
+                                    <select name="spare_key">
+                                        <option value="present">Present</option>
+                                        <option value="missing">Missing</option>
+                                        <option value="na">Not Applicable</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="component-card">
+                                <h4>Interior Features</h4>
+                                <div class="form-group">
+                                    <label>Air Conditioning</label>
+                                    <select name="ac_condition">
+                                        <option value="working">Working</option>
+                                        <option value="faulty">Faulty</option>
+                                        <option value="missing">Missing</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Power Windows</label>
+                                    <select name="power_windows">
+                                        <option value="working">Working</option>
+                                        <option value="faulty">Faulty</option>
+                                        <option value="missing">Missing</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Engine Section -->
+                    <div class="component-section">
+                        <h3>Engine Components</h3>
+                        <div class="component-grid">
+                            <div class="component-card">
+                                <h4>Engine Operation</h4>
+                                <div class="form-group">
+                                    <label>Engine Start</label>
+                                    <select name="engine_start">
+                                        <option value="normal">Normal</option>
+                                        <option value="difficult">Difficult</option>
+                                        <option value="no_start">Won't Start</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Engine Noise</label>
+                                    <select name="engine_noise">
+                                        <option value="normal">Normal</option>
+                                        <option value="slight">Slight Noise</option>
+                                        <option value="significant">Significant Noise</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="component-card">
+                                <h4>Fluids</h4>
+                                <div class="form-group">
+                                    <label>Oil Level</label>
+                                    <select name="oil_level">
+                                        <option value="full">Full</option>
+                                        <option value="low">Low</option>
+                                        <option value="empty">Empty</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Coolant Level</label>
+                                    <select name="coolant_level">
+                                        <option value="full">Full</option>
+                                        <option value="low">Low</option>
+                                        <option value="empty">Empty</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Payee Information -->
+                <div class="form-section" id="payee-information">
+                    <h2>Payee Information</h2>
+                    <div class="form-group">
+                        <label>Payee Type</label>
+                        <select id="payeeType">
+                            <option value="">Select Type</option>
+                            <option value="individual">Individual</option>
+                            <option value="business">Business</option>
+                            <option value="insurance">Insurance</option>
+                        </select>
+                    </div>
+            
+                    <!-- Individual Payee Form -->
+                    <div class="payee-form" id="individual-form" style="display: none;">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="individual_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>ID Number</label>
+                            <input type="text" name="individual_id" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" name="individual_phone" required>
+                        </div>
+                    </div>
+            
+                    <!-- Business Payee Form -->
+                    <div class="payee-form" id="business-form" style="display: none;">
+                        <div class="form-group">
+                            <label>Business Name</label>
+                            <input type="text" name="business_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Registration Number</label>
+                            <input type="text" name="business_reg" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Person</label>
+                            <input type="text" name="business_contact" required>
+                        </div>
+                    </div>
+            
+                    <!-- Insurance Payee Form -->
+                    <div class="payee-form" id="insurance-form" style="display: none;">
+                        <div class="form-group">
+                            <label>Insurance Company</label>
+                            <input type="text" name="insurance_company" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Policy Number</label>
+                            <input type="text" name="policy_number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Claim Number</label>
+                            <input type="text" name="claim_number" required>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Final Review -->
+                <div class="form-section" id="final-review">
+                    <h2>Review and Submit</h2>
+                    
+                    <div class="review-section">
+                        <h3>Vehicle Information</h3>
+                        <div class="review-grid" id="vehicle-review">
+                            <!-- Will be populated dynamically -->
+                        </div>
+                    </div>
+            
+                    <div class="review-section">
+                        <h3>Component Assessment Summary</h3>
+                        <table class="summary-table" id="component-summary">
+                            <!-- Will be populated dynamically -->
+                        </table>
+                    </div>
+            
+                    <div class="review-section">
+                        <h3>Payee Information</h3>
+                        <div class="review-grid" id="payee-review">
+                            <!-- Will be populated dynamically -->
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label>Check-in Date and Time</label>
+                        <input type="datetime-local" name="checkin_datetime" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label>Special Instructions</label>
+                        <textarea name="special_instructions"></textarea>
+                    </div>
+            
+                    <div class="terms-container">
+                        <h4>Terms and Conditions</h4>
+                        <p>By proceeding with this vehicle check-in, you agree to our terms of service...</p>
+                        <!-- Terms content -->
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="terms_accepted" required>
+                                I accept the terms and conditions
+                            </label>
+                        </div>
+                    </div>
+            
+                    <div class="otp-section">
+                        <h4>Verification</h4>
+                        <p>Enter the OTP sent to your registered mobile number</p>
+                        <div class="otp-inputs">
+                            <input type="text" class="otp-input" maxlength="1" required>
+                            <input type="text" class="otp-input" maxlength="1" required>
+                            <input type="text" class="otp-input" maxlength="1" required>
+                            <input type="text" class="otp-input" maxlength="1" required>
+                        </div>
+                        <button class="btn btn-outline">Resend OTP</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <!-- Dark Mode Toggle -->
+                    <div class="dark-mode-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    
+                    <!-- Social Media Icons -->
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Legal Links -->
+                <div class="legal-links">
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms of Service</a>
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy Policy</a>
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data Policy</a>
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                    <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer">Corporate Website</a>
+                </div>
+
+                <div class="copyright">
+                    © 2025 Citrus Labs. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Previous JavaScript code remains the same
+        
+        // Add dark mode toggle functionality
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            // Store preference in localStorage
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+        });
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Profile dropdown functionality
+        const profileImg = document.querySelector('.profile-img');
+        const profileDropdown = document.querySelector('.profile-dropdown');
+        
+        profileImg.addEventListener('click', () => {
+            profileDropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!profileImg.contains(e.target) && !profileDropdown.contains(e.target)) {
+                profileDropdown.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Send Reminder</title>
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="send_reminders - 1.css">
+</head>
+
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png"
+            alt="CarPal Logo" class="logo">
+        <div class="user-profile">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                alt="Profile" class="profile-icon">
+            <span class="username">John's Auto Shop</span>
+            <!-- User Menu Popup -->
+            <div class="user-menu">
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html">Log
+                        Out</a>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Reminder Form Popup -->
+    <div class="reminder-popup">
+        <div class="popup-header">
+            <h2>Send Reminder</h2>
+            <button class="close-btn">&times;</button>
+        </div>
+
+        <form class="reminder-form">
+            <div class="form-group">
+                <label for="recipient">Recipient</label>
+                <select id="recipient" required>
+                    <option value="">Select recipient...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Delivery Method</label>
+                <div class="delivery-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="delivery" value="sms"> SMS
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="delivery" value="email"> Email
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="send-btn">Send Reminder</button>
+                <button type="button" class="cancel-btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <button class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                of Service</a>
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                Policy</a>
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                Policy</a>
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+            <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

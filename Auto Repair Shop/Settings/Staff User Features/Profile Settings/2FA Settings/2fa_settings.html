@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | 2FA Settings</title>
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="2fa_settings.css">
+</head>
+
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="nav-left">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png"
+                alt="CarPal Logo" class="logo">
+        </div>
+        <div class="nav-right">
+            <div class="notification-icon">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Notification\notification.html">
+                    <i class="fas fa-bell"></i>
+                </a>
+            </div>
+            <div class="user-profile">
+                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                    alt="User Profile" class="profile-img">
+                <div class="user-dropdown">
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+                        class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Log Out
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2FA Settings Popup -->
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2>Two-Factor Authentication Settings</h2>
+            <div class="toggle-section">
+                <label class="switch">
+                    <input type="checkbox" id="2fa-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span>Enable 2FA</span>
+            </div>
+
+            <div class="auth-options">
+                <h3>Choose Authentication Method</h3>
+                <div class="option">
+                    <input type="radio" id="sms-auth" name="auth-method">
+                    <label for="sms-auth">SMS Authentication</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="email-auth" name="auth-method">
+                    <label for="email-auth">Email Authentication</label>
+                </div>
+            </div>
+
+            <div class="verification-section">
+                <input type="text" placeholder="Enter phone number or email" class="verify-input">
+                <button class="verify-btn">Send Verification Code</button>
+                <div class="otp-input">
+                    <input type="text" maxlength="6" placeholder="Enter OTP">
+                    <button class="verify-otp-btn">Verify</button>
+                </div>
+            </div>
+
+            <div class="backup-codes">
+                <h3>Backup Codes</h3>
+                <div class="codes-container">
+                    <p>Generate 8 one-time use backup codes for account recovery</p>
+                    <button class="generate-btn">Generate Codes</button>
+                </div>
+            </div>
+
+            <button class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <button class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+
+                <div class="legal-links">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                        of Service</a>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                        Policy</a>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                        Policy</a>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                    <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

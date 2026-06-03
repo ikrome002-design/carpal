@@ -1,0 +1,13 @@
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+}
+
+body.dark-mode .top-nav,
+body.dark-mode .dashboard-card {
+    background-color: #000000;
+}
+

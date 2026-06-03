@@ -1,0 +1,238 @@
+/* Global Styles and Variables */
+:root {
+    --primary-yellow: #FFD700;
+    --primary-black: #000000;
+    --charcoal-gray: #2D2D2D;
+    --white: #FFFFFF;
+    --popup-width: 480px;
+    --popup-max-height: 80vh;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--charcoal-gray);
+}
+
+/* Overlay Background */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+}
+
+/* Notifications Popup Container */
+.notifications-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--popup-width);
+    max-height: var(--popup-max-height);
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.notifications-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-black);
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--charcoal-gray);
+    transition: color var(--transition-speed);
+}
+
+.close-button:hover {
+    color: var(--primary-black);
+}
+
+/* Navigation Styles */
+.notifications-nav {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.nav-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--charcoal-gray);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    white-space: nowrap;
+}
+
+.nav-button.active {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+/* Notifications List Styles */
+.notifications-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.notification-group {
+    margin-bottom: 2rem;
+}
+
+.notification-group h2 {
+    font-size: 1rem;
+    color: var(--charcoal-gray);
+    margin-bottom: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.notification-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background-color: rgba(45, 45, 45, 0.05);
+    margin-bottom: 0.5rem;
+    transition: background-color var(--transition-speed);
+}
+
+.notification-item:hover {
+    background-color: rgba(45, 45, 45, 0.1);
+}
+
+.notification-item.new {
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.notification-item.urgent {
+    border-left: 4px solid var(--primary-yellow);
+}
+
+/* Notification Content Styles */
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-yellow);
+    flex-shrink: 0;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-content h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.notification-content p {
+    font-size: 0.85rem;
+    color: var(--charcoal-gray);
+    margin-bottom: 0.5rem;
+}
+
+.notification-content time {
+    font-size: 0.75rem;
+    color: rgba(45, 45, 45, 0.6);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Footer Styles */
+.notifications-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.notifications-footer button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.mark-all-read {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+}
+
+.clear-all {
+    background-color: var(--charcoal-gray);
+    color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 520px) {
+    .notifications-popup {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .notifications-nav {
+        padding: 0.75rem;
+    }
+
+    .notification-item {
+        padding: 0.75rem;
+    }
+}
+
+/* Scrollbar Styles */
+.notifications-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notifications-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.notifications-list::-webkit-scrollbar-thumb {
+    background-color: var(--charcoal-gray);
+    border-radius: 3px;
+}

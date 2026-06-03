@@ -1,0 +1,54 @@
+/* styles.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f8f9fa; /* Light gray background for navigation */
+    text-align: center; /* Center the navigation links */
+}
+
+nav li {
+    display: inline-block; /* Display list items horizontally */
+    margin: 0 10px; /* Add some spacing between links */
+}
+
+nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #007bff;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+#service-charge-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#service-charge-table th, #service-charge-table td {
+    border: 1px solid #dee2e6; /* Light gray border */
+    padding: 8px;
+    text-align: left;
+}
+
+

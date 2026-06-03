@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Details | CarPal</title>
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="view_receipts.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="top-header">
+            <div class="search-bar">
+                <input type="search" placeholder="Search...">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <div class="user-area">
+                <div class="notifications">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Notification\notification.html">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </a>
+                </div>
+
+                <div class="user-profile">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                        alt="Profile Picture" class="profile-pic">
+                    <span class="username">John's Auto Shop</span>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="profile-dropdown">
+                        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+                            class="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Navigation -->
+        <nav class="sidebar">
+            <div class="logo-container">
+                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png"
+                    alt="CarPal Logo" class="logo">
+            </div>
+
+            <ul class="nav-links">
+                <li><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Dashboard\dashboard.html"><i
+                            class="fas fa-home"></i> Dashboard</a></li>
+                <li><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\vehicles.html"><i
+                            class="fas fa-car"></i> Vehicles</a></li>
+                <li class="active"><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\invoices.html"><i
+                            class="fas fa-file-invoice"></i> Invoices</a></li>
+                <li><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\customers.html"><i
+                            class="fas fa-users"></i> Customers</a></li>
+                <li><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\Staff User Features\staff_user_settings.html"><i
+                            class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                Create Invoice
+            </button>
+            <button class="btn btn-outline">
+                <i class="fas fa-filter"></i>
+                Filter
+            </button>
+        </div>
+
+        <section class="carpal-billings">
+            <h2>CarPal Billings</h2>
+
+            <!-- Payment Summary Card -->
+            <div class="payment-summary">
+                <div class="summary-card">
+                    <h3>Total Amount Due</h3>
+                    <p class="amount">KES 435,500</p>
+                    <p class="due-date">Next payment due: Jan 30, 2024</p>
+                    <div class="payment-actions">
+                        <button class="btn btn-primary" id="pay-now-btn">Pay Now</button>
+                    </div>
+                </div>
+
+                <!-- Payment Modal -->
+                <div class="modal" id="payment-modal">
+                    <div class="modal-content">
+                        <h3>Make Payment</h3>
+                        <div class="payment-options">
+                            <div class="payment-type">
+                                <label>
+                                    <input type="radio" name="payment-type" value="full" checked>
+                                    Full Payment (KES 43,500)
+                                </label>
+                                <label>
+                                    <input type="radio" name="payment-type" value="partial">
+                                    Partial Payment
+                                </label>
+                            </div>
+                            <div class="partial-amount-input" style="display: none;">
+                                <label>Enter Amount:</label>
+                                <input type="number" min="1" max="43500" placeholder="Enter amount">
+                            </div>
+                            <div class="payment-methods">
+                                <button class="btn btn-primary" data-method="mpesa">M-Pesa</button>
+                                <button class="btn btn-outline" data-method="bank">Bank Transfer</button>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn btn-outline" id="cancel-payment">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="carpal-invoices-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice Number</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Due Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-2024-001</td>
+                            <td>Jan 15, 2024</td>
+                            <td>KES 25,000</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>Jan 30, 2024</td>
+                            <td>
+                                <button class="btn btn-outline">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>INV-2024-002</td>
+                            <td>Jan 20, 2024</td>
+                            <td>KES 18,500</td>
+                            <td><span class="status-badge status-paid">Paid</span></td>
+                            <td>Feb 05, 2024</td>
+                            <td>
+                                <button class="btn btn-outline">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="customer-billings">
+            <h2>Customer Billings</h2>
+
+            <!-- Customer Payment Summary Cards -->
+            <div class="payment-summary">
+                <div class="summary-card">
+                    <h3>Insurance Payments Due</h3>
+                    <p class="amount">KES 45,000</p>
+                    <p class="due-date">3 pending invoices</p>
+                    <div class="payment-actions">
+                        <button class="btn btn-primary send-reminder" data-type="insurance">
+                            <i class="fas fa-bell"></i> Send Reminder
+                        </button>
+                    </div>
+
+                    <!-- Reminder Modal -->
+                    <div class="modal" id="reminder-modal">
+                        <div class="modal-content">
+                            <h3>Send Payment Reminder</h3>
+                            <div class="reminder-options">
+                                <label>
+                                    <input type="checkbox" checked> Send Email
+                                </label>
+                                <label>
+                                    <input type="checkbox" checked> Send SMS
+                                </label>
+                            </div>
+                            <div class="modal-actions">
+                                <button class="btn btn-primary">Send Reminder</button>
+                                <button class="btn btn-outline">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Customer Direct Payments Due</h3>
+                    <p class="amount">KES 32,000</p>
+                    <p class="due-date">2 pending invoices</p>
+                    <div class="payment-actions">
+                        <button class="btn btn-primary send-reminder" data-type="customer">
+                            <i class="fas fa-bell"></i> Send Reminder
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="customer-invoices-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice Number</th>
+                            <th>Vehicle</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Due Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CUST-2024-001</td>
+                            <td>KCV 511X</td>
+                            <td>Jan 22, 2024</td>
+                            <td>KES 45,000</td>
+                            <td><span class="status-badge status-overdue">Overdue</span></td>
+                            <td>Feb 06, 2024</td>
+                            <td>
+                                <button class="btn btn-outline">Send Reminder</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CUST-2024-002</td>
+                            <td>KBZ 991Q</td>
+                            <td>Jan 25, 2024</td>
+                            <td>KES 32,000</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>Feb 10, 2024</td>
+                            <td>
+                                <button class="btn btn-outline">Send Reminder</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <!-- Footer content remains the same -->
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                                of Service</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                                Policy</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                                Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="https://citruslabs.co.ke/">Corporate Website</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/@citruske"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/LabsCitrus"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063778943426"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@citrus-labs"><i class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com/company/citrus-labs"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Theme</h3>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-moon"></i>
+                        Dark Mode
+                    </button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+</body>
+
+</html>

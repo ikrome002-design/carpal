@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Send Progress Update</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="apple-touch-icon" href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="progress_update.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png" alt="CarPal Logo">
+        </div>
+        <div class="user-profile">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png" alt="User Profile">
+            <div class="popup" id="userPopup">
+                <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Dashboard\dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\vehicles.html"><i class="fas fa-car"></i> Vehicles</a>
+        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Service Hub\service_hub.html"><i class="fas fa-wrench"></i> Service Hub</a>
+        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Invoices\invoices.html"><i class="fas fa-file-invoice"></i> Invoices</a>
+        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Customers\customers.html"><i class="fas fa-users"></i> Customers</a>
+        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Settings\settings.html"><i class="fas fa-cog"></i> Settings</a>
+    </nav>
+
+    <main>
+        <div class="progress-update-form">
+            <h1>Send Progress Update</h1>
+            <form id="updateForm">
+                <div class="form-group">
+                    <label for="licensePlate">License Plate</label>
+                    <input type="text" id="licensePlate" required placeholder="Enter license plate number">
+                </div>
+
+                <div class="form-group">
+                    <label for="updateType">Update Type</label>
+                    <select id="updateType" required>
+                        <option value="">Select update type</option>
+                        <option value="template">Pre-defined Template</option>
+                        <option value="custom">Custom Message</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="templateSection" style="display: none;">
+                    <label for="template">Select Template</label>
+                    <select id="template">
+                        <option value="service-started">Service Started</option>
+                        <option value="diagnostic">Diagnostic Update</option>
+                        <option value="parts-arrival">Parts Arrival</option>
+                        <option value="completion">Service Completion</option>
+                        <option value="final-inspection">Final Inspection</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="customSection" style="display: none;">
+                    <label for="customMessage">Custom Message</label>
+                    <textarea id="customMessage" rows="4" placeholder="Enter your custom message"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="communicationType">Communication Method</label>
+                    <select id="communicationType" required>
+                        <option value="sms">SMS</option>
+                        <option value="email">Email</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+
+                <div class="template-preview">
+                    <h3>Preview</h3>
+                    <p id="messagePreview">Message preview will appear here...</p>
+                </div>
+
+                <button type="submit" class="send-button">Send Update</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms of Service</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+            </div>
+            <div class="corporate">
+                <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+                <p>© 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // User Profile Popup
+        document.querySelector('.user-profile').addEventListener('click', function() {
+            document.getElementById('userPopup').classList.toggle('active');
+        });
+
+        // Update Type Toggle
+        document.getElementById('updateType').addEventListener('change', function() {
+            const templateSection = document.getElementById('templateSection');
+            const customSection = document.getElementById('customSection');
+            
+            if (this.value === 'template') {
+                templateSection.style.display = 'block';
+                customSection.style.display = 'none';
+            } else if (this.value === 'custom') {
+                templateSection.style.display = 'none';
+                customSection.style.display = 'block';
+            }
+        });
+
+        // Template Preview
+        function updatePreview() {
+            const licensePlate = document.getElementById('licensePlate').value;
+            const updateType = document.getElementById('updateType').value;
+            const template = document.getElementById('template');
+            const customMessage = document.getElementById('customMessage');
+            let previewText = '';
+
+            if (updateType === 'template' && template.value) {
+                switch(template.value) {
+                    case 'service-started':
+                        previewText = `Service for ${licensePlate} started. Estimated completion: ${new Date().toLocaleDateString()}`;
+                        break;
+                    case 'diagnostic':
+                        previewText = `Diagnostic phase for ${licensePlate}. Updates for additional repairs.`;
+                        break;
+                    case 'parts-arrival':
+                        previewText = `Parts for ${licensePlate} arrived. Service resuming shortly.`;
+                        break;
+                    case 'completion':
+                        previewText = `Repair complete for ${licensePlate}. Ready for collection.`;
+                        break;
+                    case 'final-inspection':
+                        previewText = `Final inspection for ${licensePlate}. Ready for pickup soon.`;
+                        break;
+                }
+            } else if (updateType === 'custom') {
+                previewText = customMessage.value;
+            }
+
+            document.getElementById('messagePreview').textContent = previewText;
+        }
+
+        // Add event listeners for preview updates
+        ['licensePlate', 'updateType', 'template', 'customMessage'].forEach(id => {
+            document.getElementById(id).addEventListener('input', updatePreview);
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            this.querySelector('i').classList.toggle('fa-sun');
+            this.querySelector('i').classList.toggle('fa-moon');
+        });
+
+        // Form Submission
+        document.getElementById('updateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Progress update sent successfully!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+/* Global Styles */
+:root {
+    --primary-yellow: #FFD700;
+    --primary-black: #000000;
+    --charcoal-gray: #2D2D2D;
+    --white: #FFFFFF;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--charcoal-gray);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+/* Navigation Styles */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-black);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.logo-container img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+}
+
+/* User Section Styles */
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.notifications i {
+    color: var(--white);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--primary-black);
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    display: none;
+}
+
+.user-profile:hover .user-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Popup Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: var(--charcoal-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Form Styles */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border: 1px solid var(--primary-yellow);
+    border-radius: 4px;
+    background-color: var(--primary-black);
+    color: var(--white);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Customer Type Selection */
+.customer-type {
+    margin: 2rem 0;
+}
+
+.type-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.type-btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--primary-yellow);
+    background: none;
+    color: var(--white);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.type-btn.active,
+.type-btn:hover {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+}
+
+/* Section Styles */
+section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid var(--primary-yellow);
+    border-radius: 8px;
+}
+
+h2, h3 {
+    color: var(--primary-yellow);
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn-save,
+.btn-cancel,
+.btn-archive {
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.btn-save {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    border: none;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+.btn-archive {
+    background-color: transparent;
+    border: 1px solid #ff4444;
+    color: #ff4444;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary-black);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Footer Styles (continued) */
+.social-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--primary-yellow);
+}
+
+.legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.legal-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.legal-links a:hover {
+    color: var(--primary-yellow);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* Vehicle History Styles */
+.vehicle-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.vehicle-card {
+    background-color: var(--primary-black);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.vehicle-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.1);
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    --charcoal-gray: #1a1a1a;
+    --primary-black: #000000;
+    --white: #e0e0e0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .popup-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .legal-links {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .type-options {
+        flex-direction: column;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popup-content {
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .legal-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.popup-content {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Accessibility Styles */
+:focus {
+    outline: 2px solid var(--primary-yellow);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Vehicle Check-In</title>
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\Checkin\checkin.css">
+</head>
+
+<body>
+    <div class="popup-overlay">
+        <div class="popup-container">
+            <!-- Header -->
+            <header class="popup-header">
+                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Brand Identity\CarPal-Logo-PNG.png"
+                    alt="CarPal Logo" class="logo">
+                <div class="header-controls">
+                    <div class="notifications">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Notification\notification.html">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </a>
+                    </div>
+                    <div class="user-profile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="Profile" class="profile-pic">
+                        <span class="username">John's Auto Shop</span>
+                        <div class="profile-dropdown">
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+                                class="logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Log Out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="check-in-content">
+                <h1>Vehicle Check-In & Assessment</h1>
+
+                <!-- Progress Indicator -->
+                <div class="progress-bar">
+                    <div class="progress-step" data-step="1"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\Checkin\checkin.html"></i>Basic
+                            Info</a></div>
+                    <div class="progress-step" data-step="2"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\Checkin\Checkin Owner Info\checkin_owner_info.html"></i>Owner
+                            Info</a></div>
+                    <div class="progress-step" data-step="3"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\Checkin\Checkin Service Details\checkin_service_details.html"></i>Service
+                            Details</a></div>
+                    <div class="progress-step" data-step="4"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\Checkin\Checkin Documents\checkin_documents.html"></i>Documents</a>
+                    </div>
+                    <div class="progress-step" data-step="5"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\Checkin\Checkin Assessment\checkin_assessment.html"></i>Assessment</a>
+                    </div>
+                    <div class="progress-step active" data-step="6"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Vehicles\Checkin\Checkin Payment\checkin_payment.html"></i>Payment</a>
+                    </div>
+                </div>
+
+                <!-- Form Sections -->
+                <form id="checkInForm">
+                    <!-- Step 1: Basic Vehicle Info -->
+                    <section class="form-section active" id="basicInfo">
+                        <h2>Basic Vehicle Information</h2>
+                        <div class="form-group">
+                            <label for="make">Make</label>
+                            <input type="text" id="make" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Model</label>
+                            <input type="text" id="model" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <input type="number" id="year" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vin">VIN</label>
+                            <input type="text" id="vin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="licensePlate">License Plate</label>
+                            <input type="text" id="licensePlate" required>
+                        </div>
+                    </section>
+
+                    <!-- Navigation Buttons -->
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn">Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                        <button type="submit" class="btn btn-submit" id="submitBtn">Submit</button>
+                    </div>
+                </form>
+            </main>
+
+            <!-- Footer -->
+            <footer class="popup-footer">
+                <div class="footer-top">
+                    <div class="dark-mode-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/@citruske" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="legal-links">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                            of Service</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                            Policy</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                            Policy</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                        <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+                    </div>
+                    <div class="copyright">
+                        © 2025 Citrus Labs. All Rights Reserved.
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

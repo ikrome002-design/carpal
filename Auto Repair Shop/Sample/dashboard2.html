@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal - Auto Repair Shop Dashboard</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f6fa;
+            color: #2d3436;
+        }
+
+        /* Layout containers */
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            background-color: #2d3436;
+            color: white;
+            padding: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            padding: 0.75rem 0;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav-item:hover {
+            color: #74b9ff;
+        }
+
+        /* Main content area */
+        .main-content {
+            padding: 2rem;
+        }
+
+        /* Header section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .notification-bell {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .notification-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .action-button {
+            padding: 1rem;
+            background-color: #74b9ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: #0984e3;
+        }
+
+        /* Overview panels */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .panel {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Metrics section */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .metric-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d3436;
+            margin: 0.5rem 0;
+        }
+
+        .metric-label {
+            color: #636e72;
+            font-size: 0.875rem;
+        }
+
+        /* Lists */
+        .list-item {
+            padding: 1rem;
+            border-bottom: 1px solid #dfe6e9;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main dashboard container -->
+    <div class="dashboard-container">
+        <!-- Sidebar navigation -->
+        <aside class="sidebar">
+            <div class="logo">CarPal</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">Dashboard</li>
+                    <li class="nav-item">Vehicles</li>
+                    <li class="nav-item">Customers</li>
+                    <li class="nav-item">Invoices</li>
+                    <li class="nav-item">Reports</li>
+                    <li class="nav-item">Settings</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main content area -->
+        <main class="main-content">
+            <!-- Header with notifications -->
+            <header class="header">
+                <h1>Dashboard</h1>
+                <div class="notification-bell">
+                    �bell
+                    <span class="notification-count">3</span>
+                </div>
+            </header>
+
+            <!-- Quick action buttons -->
+            <section class="quick-actions">
+                <button class="action-button">Check-In Vehicle</button>
+                <button class="action-button">Create Invoice</button>
+                <button class="action-button">Schedule Service</button>
+            </section>
+
+            <!-- Overview panels -->
+            <section class="overview-grid">
+                <!-- Recent Check-ins panel -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Recent Check-ins</h2>
+                        <span>View All</span>
+                    </div>
+                    <div class="list-item">Toyota Camry - John Doe</div>
+                    <div class="list-item">Honda Civic - Jane Smith</div>
+                    <div class="list-item">Ford F-150 - Mike Johnson</div>
+                </div>
+
+                <!-- Pending Invoices panel -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Pending Invoices</h2>
+                        <span>View All</span>
+                    </div>
+                    <div class="list-item">INV-001 - $245.00</div>
+                    <div class="list-item">INV-002 - $567.50</div>
+                    <div class="list-item">INV-003 - $890.00</div>
+                </div>
+
+                <!-- Recent Check-outs panel -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Recent Check-outs</h2>
+                        <span>View All</span>
+                    </div>
+                    <div class="list-item">BMW X5 - Sarah Wilson</div>
+                    <div class="list-item">Audi A4 - Tom Brown</div>
+                    <div class="list-item">Tesla Model 3 - Lisa Chen</div>
+                </div>
+            </section>
+
+            <!-- Service Metrics -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">24</div>
+                    <div class="metric-label">Total Check-ins</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">18</div>
+                    <div class="metric-label">Completed Services</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">6</div>
+                    <div class="metric-label">Pending Assessments</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">2.5h</div>
+                    <div class="metric-label">Average Service Time</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$12.4k</div>
+                    <div class="metric-label">Revenue from Services</div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

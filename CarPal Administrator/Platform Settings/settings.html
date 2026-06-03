@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Settings | CarPal Administrator</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\common_css.css">
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <nav class="top-nav">
+        <div>
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Administrator Dashboard\dashboard.html"
+                class="logo">
+                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                    alt="CarPal Logo">
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Administrator Dashboard\dashboard.html"
+                    class="nav-link"><i class="fas fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\User Management\users.html"
+                    class="nav-link"><i class="fas fa-users"></i> Users</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Business Management\businesses.html"
+                    class="nav-link"><i class="fas fa-building"></i> Businesses</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Financial Oversight\finance.html"
+                    class="nav-link"><i class="fas fa-money-bill"></i> Finance</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Reports & Analytics\reports.html"
+                    class="nav-link"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Platform Settings\settings.html"
+                    class="nav-link active"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Security Tools\security.html"
+                    class="nav-link"><i class="fas fa-shield"></i> Security</a></li>
+            <li><a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Customer Support Tools\support.html"
+                    class="nav-link"><i class="fas fa-headset"></i> Support</a></li>
+        </ul>
+
+        <div class="notifications">
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Notifications Management\notifications.html"
+                class="nav-link" id="notificationsToggle">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </a>
+        </div>
+
+        <div class="user-profile">
+            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                alt="Profile Picture">
+            <div class="logout-popup">
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Landing Page\landing_page.html"
+                    class="nav-link">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Platform Settings</h1>
+
+        <div class="settings-grid">
+            <!-- System Configurations -->
+            <div class="settings-card">
+                <h3><i class="fas fa-wrench"></i> System Configurations</h3>
+                <ul class="settings-list">
+                    <li><a href="/admin/settings/system#currency"><i class="fas fa-dollar-sign"></i> Currency
+                            Settings</a></li>
+                    <li><a href="/admin/settings/system#timezone"><i class="fas fa-clock"></i> Time Zone Config</a></li>
+                    <li><a href="/admin/settings/system#notifications"><i class="fas fa-bell"></i> Notification
+                            Rules</a></li>
+                    <li><a href="/admin/settings/system#updates"><i class="fas fa-sync"></i> System Updates</a></li>
+                </ul>
+            </div>
+
+            <!-- Policy Management -->
+            <div class="settings-card">
+                <h3><i class="fas fa-file-contract"></i> Policy Management</h3>
+                <ul class="settings-list">
+                    <li><a href="/admin/settings/policies#tos"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+                    <li><a href="/admin/settings/policies#privacy"><i class="fas fa-user-shield"></i> Privacy Policy</a>
+                    </li>
+                    <li><a href="/admin/settings/policies#version"><i class="fas fa-code-branch"></i> Version
+                            Control</a></li>
+                    <li><a href="/admin/settings/policies#archives"><i class="fas fa-archive"></i> Policy Archives</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Feature Toggles -->
+            <div class="settings-card">
+                <h3><i class="fas fa-toggle-on"></i> Feature Toggles</h3>
+                <ul class="settings-list">
+                    <li><a href="/admin/settings/features#management"><i class="fas fa-tasks"></i> Feature
+                            Management</a></li>
+                    <li><a href="/admin/settings/features#beta"><i class="fas fa-flask"></i> Beta Features</a></li>
+                    <li><a href="/admin/settings/features#rollouts"><i class="fas fa-rocket"></i> Feature Rollouts</a>
+                    </li>
+                    <li><a href="/admin/settings/features#analytics"><i class="fas fa-chart-line"></i> Feature
+                            Analytics</a></li>
+                </ul>
+            </div>
+
+            <!-- Branding Settings -->
+            <div class="settings-card">
+                <h3><i class="fas fa-palette"></i> Branding Settings</h3>
+                <ul class="settings-list">
+                    <li><a href="/admin/settings/branding#logo"><i class="fas fa-image"></i> Logo Management</a></li>
+                    <li><a href="/admin/settings/branding#colors"><i class="fas fa-paint-brush"></i> Color Schemes</a>
+                    </li>
+                    <li><a href="/admin/settings/branding#fonts"><i class="fas fa-font"></i> Font Settings</a></li>
+                    <li><a href="/admin/settings/branding#theme"><i class="fas fa-brush"></i> Theme Controls</a></li>
+                </ul>
+            </div>
+
+            <!-- System Preferences -->
+            <div class="settings-card">
+                <h3><i class="fas fa-sliders-h"></i> System Preferences</h3>
+                <ul class="settings-list">
+                    <li><a href="/admin/settings/preferences#default"><i class="fas fa-cog"></i> Default Settings</a>
+                    </li>
+                    <li><a href="/admin/settings/preferences#regional"><i class="fas fa-globe"></i> Regional
+                            Settings</a></li>
+                    <li><a href="/admin/settings/preferences#interface"><i class="fas fa-desktop"></i> Interface
+                            Options</a></li>
+                    <li><a href="/admin/settings/preferences#user"><i class="fas fa-user-cog"></i> User Preferences</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="corporate-info">
+            <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+            <p>© 2025 Citrus Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle logout popup
+        document.querySelector('.user-profile').addEventListener('click', function () {
+            document.querySelector('.logout-popup').classList.toggle('active');
+        });
+
+        // Close logout popup when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.user-profile')) {
+                document.querySelector('.logout-popup').classList.remove('active');
+            }
+        });
+
+        // Dark mode toggle functionality
+        document.querySelector('.dark-mode-toggle').addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+
+</html>

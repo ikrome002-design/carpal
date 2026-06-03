@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CarPal Administrator</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\common_css.css">
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <nav class="top-nav">
+        <div> <a href="#" class="logo">
+                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                    alt="CarPal Logo">
+            </a></div>
+
+        <ul class="nav-menu">
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Administrator/Administrator Dashboard/dashboard.html"
+                    class="nav-link active"><i class="fas fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Administrator/User Management/users.html"
+                    class="nav-link"><i class="fas fa-users"></i> Users</a></li>
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Administrator/Business Management/businesses.html"
+                    class="nav-link"><i class="fas fa-building"></i> Businesses</a></li>
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Administrator/Financial Oversight/finance.html"
+                    class="nav-link"><i class="fas fa-money-bill"></i> Finance</a></li>
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Administrator/Reports & Analytics/reports.html"
+                    class="nav-link"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Administrator/Platform Settings/settings.html"
+                    class="nav-link"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Administrator/Security Tools/security.html"
+                    class="nav-link"><i class="fas fa-shield-alt"></i> Security</a></li>
+            <li><a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Administrator/Customer Support Tools/support.html"
+                    class="nav-link"><i class="fas fa-headset"></i> Support</a></li>
+
+            <li class="notifications">
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Administrator\Notifications Management\notifications.html"
+                    class="nav-link" id="notificationsToggle">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </a>
+            </li>
+
+            <li class="user-profile" id="userProfileToggle">
+                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                    alt="Profile Picture">
+                <div class="logout-popup popup">
+                    <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Administrator/Landing Page/landing_page.html"
+                        class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i> Log Out
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Overview Metrics -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">15,234</div>
+                <div class="metric-label">Total Users</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">1,856</div>
+                <div class="metric-label">Active Businesses</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">KES. 12.5M</div>
+                <div class="metric-label">Monthly Revenue</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">92%</div>
+                <div class="metric-label">Service Usage</div>
+            </div>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Analytics Panel -->
+            <div id="analyticsChart">
+
+                <div class="dashboard-card">
+                    <h2>Analytics</h2>
+                    <!-- Overview Widgets -->
+                    <div class="analytics-overview">
+                        <div class="widget">
+                            <h3>New Users</h3>
+                            <p>+1,230</p>
+                        </div>
+                        <div class="widget">
+                            <h3>Revenue Growth</h3>
+                            <p>+15%</p>
+                        </div>
+                        <div class="widget">
+                            <h3>Monthly Transactions</h3>
+                            <p>45,789</p>
+                        </div>
+                        <div class="widget">
+                            <h3>Service Uptime</h3>
+                            <p>99.8%</p>
+                        </div>
+                    </div>
+
+                    <!-- Charts and Graphs -->
+                    <div class="charts-container">
+                        <div class="chart">
+                            <h3>Revenue Trends</h3>
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                        <div class="chart">
+                            <h3>User Growth</h3>
+                            <canvas id="userGrowthChart"></canvas>
+                        </div>
+                        <div class="chart">
+                            <h3>Service Distribution</h3>
+                            <canvas id="servicePieChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Comparative Analysis -->
+                    <div class="comparative-analysis">
+                        <h3>Comparative Analysis</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Last Month</th>
+                                    <th>This Month</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Revenue</td>
+                                    <td>KES. 10M</td>
+                                    <td>KES. 12.5M</td>
+                                    <td>+25%</td>
+                                </tr>
+                                <tr>
+                                    <td>Active Users</td>
+                                    <td>14,000</td>
+                                    <td>15,234</td>
+                                    <td>+9%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Real-time Updates -->
+            <div class="dashboard-card">
+                <h2>Real-time Updates</h2>
+                <ul class="updates-list">
+                    <li class="update-item">
+                        <span class="update-time">Just now</span>
+                        <p>New business registration: AutoFix Pro</p>
+                    </li>
+                    <li class="update-item">
+                        <span class="update-time">5 min ago</span>
+                        <p>System alert: Daily backup completed</p>
+                    </li>
+                    <li class="update-item">
+                        <span class="update-time">15 min ago</span>
+                        <p>User activity: 25 new service bookings</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Analytics Display -->
+            <div class="dashboard-card">
+                <h2>Recent Activity</h2>
+                <div id="analyticsChart"></div>
+
+                <!-- Recent Activity -->
+                <div class="recent-activity">
+
+                    <ul>
+                        <li><span>14 Jan:</span> New service "Car Wash" added by AutoFix Pro.</li>
+                        <li><span>13 Jan:</span> Peak service usage at 2:00 PM with 1,200 transactions.</li>
+                        <li><span>12 Jan:</span> Customer satisfaction score reached 92%.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <div class="corporate-info">
+            <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+            <p>© 2025 Citrus Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle popups
+        document.getElementById('userProfileToggle').addEventListener('click', function () {
+            this.querySelector('.logout-popup').classList.toggle('active');
+        });
+
+        document.getElementById('notificationsToggle').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Administrator/Notifications Management/notifications.html';
+        });
+
+        // Dark mode toggle
+        document.querySelector('.dark-mode-toggle').addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+
+</html>

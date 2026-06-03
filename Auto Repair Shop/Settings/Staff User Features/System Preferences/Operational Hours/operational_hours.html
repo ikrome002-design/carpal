@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operational Hours - CarPal</title>
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="operational_hours.css">
+</head>
+
+<body>
+    <!-- Modal Container -->
+    <div class="modal">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h2 class="modal-title">Operational Hours</h2>
+            <button class="close-btn">&times;</button>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="modal-content">
+            <!-- Weekday Hours Section -->
+            <div class="hours-section">
+                <h3 class="section-title">Weekday Hours (Monday-Friday)</h3>
+                <div class="time-input-group">
+                    <div class="time-input">
+                        <label for="weekday-open">Opening Time</label>
+                        <input type="time" id="weekday-open" value="08:00">
+                    </div>
+                    <div class="time-input">
+                        <label for="weekday-close">Closing Time</label>
+                        <input type="time" id="weekday-close" value="17:00">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekend Hours Section -->
+            <div class="hours-section">
+                <h3 class="section-title">Weekend Hours (Saturday-Sunday)</h3>
+                <div class="time-input-group">
+                    <div class="time-input">
+                        <label for="weekend-open">Opening Time</label>
+                        <input type="time" id="weekend-open" value="09:00">
+                    </div>
+                    <div class="time-input">
+                        <label for="weekend-close">Closing Time</label>
+                        <input type="time" id="weekend-close" value="15:00">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Holiday Schedule Section -->
+            <div class="hours-section">
+                <h3 class="section-title">Holiday Schedule</h3>
+                <ul class="holiday-list">
+                    <li class="holiday-item">
+                        <span>New Year's Day - January 1, 2025</span>
+                        <button class="close-btn">&times;</button>
+                    </li>
+                    <li class="holiday-item">
+                        <span>Labor Day - May 1, 2025</span>
+                        <button class="close-btn">&times;</button>
+                    </li>
+                </ul>
+                <button class="add-holiday-btn">Add Holiday</button>
+            </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/@citruske" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" class="social-icon" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" class="social-icon" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" class="social-icon" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\terms_of_service.html">Terms
+                    of Service</a>
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\privacy_policy.html">Privacy
+                    Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\data_policy.html">Data
+                    Policy</a>
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Auto Repair Shop\Footer\faq.html">FAQ</a>
+                <a href="https://citruslabs.co.ke/" class="footer-link" target="_blank">Corporate Website</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+
+    <!-- User Profile Popup -->
+    <div class="user-profile">
+        <img src="Technical Writings/Images/Icons/icons8-profile-picture-48.png" alt="User Profile"
+            class="profile-image">
+        <div class="profile-popup">
+            <button class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Toggle profile popup
+        document.querySelector('.profile-image').addEventListener('click', function () {
+            document.querySelector('.profile-popup').classList.toggle('active');
+        });
+
+        // Close modal
+        document.querySelector('.modal .close-btn').addEventListener('click', function () {
+            // Add your close modal logic here
+        });
+
+        // Remove holiday
+        document.querySelectorAll('.holiday-item .close-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                this.closest('.holiday-item').remove();
+            });
+        });
+
+        // Add holiday (modal implementation would be needed)
+        document.querySelector('.add-holiday-btn').addEventListener('click', function () {
+            // Add your add holiday logic here
+        });
+    </script>
+</body>
+
+</html>

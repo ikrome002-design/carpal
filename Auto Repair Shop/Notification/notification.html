@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | CarPal</title>
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="notification.css">
+</head>
+
+<body>
+    <!-- Overlay for the popup background -->
+    <div class="overlay"></div>
+
+    <!-- Main notifications popup container -->
+    <div class="notifications-popup">
+        <!-- Header section with title and close button -->
+        <header class="notifications-header">
+            <h1>Notifications</h1>
+            <button class="close-button" aria-label="Close notifications">&times;</button>
+        </header>
+
+        <!-- Main content area with notification categories -->
+        <main class="notifications-content">
+            <!-- Notification categories navigation -->
+            <nav class="notifications-nav">
+                <button class="nav-button active" data-category="all">All</button>
+                <button class="nav-button" data-category="invoice">Invoice</button>
+                <button class="nav-button" data-category="service">Service Status</button>
+                <button class="nav-button" data-category="payment">Payment</button>
+                <button class="nav-button" data-category="vehicle">Vehicle Status</button>
+            </nav>
+
+            <!-- Notifications list container -->
+            <div class="notifications-list">
+                <!-- Invoice Notifications Section -->
+                <section class="notification-group" data-category="invoice">
+                    <h2>Invoice Notifications</h2>
+                    <div class="notification-item new">
+                        <div class="notification-icon invoice-icon"></div>
+                        <div class="notification-content">
+                            <h3>Weekly Service Charge Invoice Generated</h3>
+                            <p>Your weekly service charge invoice for the period ending Sept 23 is ready.</p>
+                            <time>Monday, 00:00</time>
+                        </div>
+                    </div>
+                    <!-- More invoice notifications... -->
+                </section>
+
+                <!-- Service Status Notifications Section -->
+                <section class="notification-group" data-category="service">
+                    <h2>Service Status Notifications</h2>
+                    <div class="notification-item">
+                        <div class="notification-icon service-icon"></div>
+                        <div class="notification-content">
+                            <h3>Service Completion - Toyota Camry</h3>
+                            <p>Vehicle maintenance completed. Final inspection pending.</p>
+                            <time>2 hours ago</time>
+                        </div>
+                    </div>
+                    <!-- More service notifications... -->
+                </section>
+
+                <!-- Payment Notifications Section -->
+                <section class="notification-group" data-category="payment">
+                    <h2>Payment Notifications</h2>
+                    <div class="notification-item urgent">
+                        <div class="notification-icon payment-icon"></div>
+                        <div class="notification-content">
+                            <h3>Payment Received - Invoice #1234</h3>
+                            <p>Payment of $450.00 has been received for Invoice #1234.</p>
+                            <time>1 day ago</time>
+                        </div>
+                    </div>
+                    <!-- More payment notifications... -->
+                </section>
+
+                <!-- Vehicle Status Notifications Section -->
+                <section class="notification-group" data-category="vehicle">
+                    <h2>Vehicle Status Notifications</h2>
+                    <div class="notification-item">
+                        <div class="notification-icon vehicle-icon"></div>
+                        <div class="notification-content">
+                            <h3>Vehicle Ready for Pickup - Honda Civic</h3>
+                            <p>Vehicle servicing complete. Ready for customer pickup.</p>
+                            <time>3 days ago</time>
+                        </div>
+                    </div>
+                    <!-- More vehicle notifications... -->
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer with action buttons -->
+        <footer class="notifications-footer">
+            <button class="mark-all-read">Mark All as Read</button>
+            <button class="clear-all">Clear All</button>
+        </footer>
+    </div>
+</body>
+
+</html>
