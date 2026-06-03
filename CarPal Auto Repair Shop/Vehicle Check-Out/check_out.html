@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Check-Out | CarPal Auto Repair Shop</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+    <link rel="stylesheet" href="check_out.css">
+</head>
+
+<body>
+    <!-- Left Navigation Sidebar -->
+    <nav class="nav-sidebar">
+        <div class="logo-container">
+            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                alt="CarPal Logo">
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Dashboard/dashboard.html">
+                    <i class="fas fa-home"></i>Dashboard
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Service Hub/service_hub.html">
+                    <i class="fas fa-tools"></i>Service Hub
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-In/check_in.html">
+                    <i class="fas fa-car"></i>Vehicle Check-In
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Billings & Payments/billings.html">
+                    <i class="fas fa-file-invoice-dollar"></i>Billings & Payments
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle History/history.html">
+                    <i class="fas fa-history"></i>Vehicle History
+                </a>
+            </li>
+            <li>
+                <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Technicians/technicians.html">
+                    <i class="fas fa-users-cog"></i>Technicians
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-Out/check_out.html" class="active">
+                    <i class="fas fa-sign-out-alt"></i>Vehicle Check-Out
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Settings/settings.html">
+                    <i class="fas fa-cog"></i>Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <h1>Vehicle Check-Out</h1>
+            <div class="header-actions">
+                <button class="action-button"
+                    onclick="window.open('C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Notifications/notifications.html', 'Notifications', 'width=400,height=600')">
+                    <i class="fas fa-bell"></i> Notifications
+                </button>
+                <div class="user-profile" id="userProfile">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                        alt="User Profile">
+                    <span>John Doe</span>
+                    <div class="popup-menu" id="userMenu">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html">
+                            <i class="fas fa-sign-out-alt"></i> Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <input type="text" class="search-input" placeholder="Enter License Plate Number...">
+            
+            <!-- Recent Check-Ins Carousel -->
+            <div class="recent-checkins">
+                <!-- Sample Check-In Cards -->
+                <div class="checkin-card">
+                    <h4>KBZ 991Q</h4>
+                    <p>Mercedes Benz E-Class</p>
+                    <p>Checked In: 2025-02-06</p>
+                </div>
+                <div class="checkin-card">
+                    <h4>KCY 456B</h4>
+                    <p>Honda Civic</p>
+                    <p>Checked In: 2025-02-06</p>
+                </div>
+                <!-- Add more cards as needed -->
+                <div class="checkin-card">
+                    <h4>KCV 511X</h4>
+                    <p>Toyota Mark X</p>
+                    <p>Checked In: 2025-02-06</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Check-Out Form -->
+        <form class="checkout-form">
+            <!-- Service Details Section -->
+            <div class="form-section">
+                <h3>Service Details</h3>
+                <div class="completed-services">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h4>Oil Change</h4>
+                            <span class="status completed">Completed</span>
+                        </div>
+                        <div class="service-info">
+                            <p><i class="fas fa-user"></i> Technician: John Smith</p>
+                            <p><i class="fas fa-calendar"></i> Date: 2025-02-07</p>
+                            <p><i class="fas fa-tools"></i> Parts: Synthetic Oil 5W-30, Oil Filter</p>
+                            <p class="service-notes">Notes: Regular maintenance completed as scheduled. Next service due in 5,000 km.</p>
+                        </div>
+                    </div>
+        
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h4>Brake Inspection</h4>
+                            <span class="status completed">Completed</span>
+                        </div>
+                        <div class="service-info">
+                            <p><i class="fas fa-user"></i> Technician: Sarah Johnson</p>
+                            <p><i class="fas fa-calendar"></i> Date: 2025-02-07</p>
+                            <p><i class="fas fa-tools"></i> Parts: Front Brake Pads</p>
+                            <p class="service-notes">Notes: Front brake pads replaced and rotors resurfaced. Rear brakes at 60% life remaining.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="additional-services">
+                    <h4>Additional Services</h4>
+                    <div class="service-input-group">
+                        <input type="text" class="service-name" placeholder="Service Name">
+                        <select class="technician-select">
+                            <option value="">Select Technician</option>
+                            <option value="john">John Smith</option>
+                            <option value="sarah">Sarah Johnson</option>
+                            <option value="mike">Mike Wilson</option>
+                        </select>
+                        <textarea class="service-notes-input" placeholder="Service Notes"></textarea>
+                        <button type="button" class="add-service-btn">
+                            <i class="fas fa-plus"></i> Add Service
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Photo Documentation Section -->
+            <div class="form-section">
+                <h3>Photo Documentation</h3>
+                <div class="photo-upload">
+                    <div class="upload-area">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <p>Drag & drop photos here or click to upload</p>
+                        <span class="file-info">Maximum 10 photos, 5MB each</span>
+                        <input type="file" multiple accept="image/*" class="file-input">
+                    </div>
+                    <div class="uploaded-photos">
+                        <div class="photo-preview">
+                            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Website Images\11.png" alt="Vehicle Front">
+                            <span class="photo-label">Front View</span>
+                            <button class="remove-photo"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="photo-preview">
+                            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Website Images\12.png" alt="Vehicle Rear">
+                            <span class="photo-label">Rear View</span>
+                            <button class="remove-photo"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Post-Repair Assessment Section -->
+            <div class="form-section">
+                <h3>Post-Repair Assessment</h3>
+                <div class="assessment-fields">
+                    <div class="field-group">
+                        <label for="immediate-repairs">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Immediate Repairs Needed
+                        </label>
+                        <textarea id="immediate-repairs" rows="3" 
+                            placeholder="List any repairs that require immediate attention"></textarea>
+                    </div>
+        
+                    <div class="field-group">
+                        <label for="next-service">
+                            <i class="fas fa-clock"></i>
+                            Next Service Recommendations
+                        </label>
+                        <textarea id="next-service" rows="3"
+                            placeholder="Recommend upcoming maintenance services"></textarea>
+                    </div>
+        
+                    <div class="field-group">
+                        <label for="future-maintenance">
+                            <i class="fas fa-road"></i>
+                            Future Maintenance (Before 100,000 KM)
+                        </label>
+                        <textarea id="future-maintenance" rows="3"
+                            placeholder="List long-term maintenance recommendations"></textarea>
+                    </div>
+        
+                    <div class="field-group">
+                        <label for="test-drive">
+                            <i class="fas fa-car"></i>
+                            Test Drive Results
+                        </label>
+                        <textarea id="test-drive" rows="3"
+                            placeholder="Document test drive observations and findings"></textarea>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="form-actions">
+                <button type="button" class="secondary-btn">Save Draft</button>
+                <button type="submit" class="primary-btn">Complete Check-Out</button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <i class="fas fa-moon dark-mode-toggle"></i>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-right">
+            <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+            <span>© 2025 Citrus Labs. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        // User Profile Popup Toggle
+        const userProfile = document.querySelector('.user-profile');
+        const userPopup = document.getElementById('userPopup');
+
+        userProfile.addEventListener('click', () => {
+            userPopup.classList.toggle('active');
+        });
+
+        // Close popup when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!userProfile.contains(e.target)) {
+                userPopup.classList.remove('active');
+            }
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+        });
+
+        // License Plate Search Autocomplete
+        const searchInput = document.querySelector('.search-input');
+        searchInput.addEventListener('input', (e) => {
+            // Implement autocomplete logic here
+        });
+
+        // Photo Upload Handler
+        const photoUpload = document.querySelector('.photo-upload');
+        const fileInput = photoUpload.querySelector('input[type="file"]');
+
+        photoUpload.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            handleFiles(e.target.files);
+        });
+
+        // Drag and drop handlers
+        photoUpload.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            photoUpload.classList.add('drag-over');
+        });
+
+        photoUpload.addEventListener('dragleave', () => {
+            photoUpload.classList.remove('drag-over');
+        });
+
+        photoUpload.addEventListener('drop', (e) => {
+            e.preventDefault();
+            photoUpload.classList.remove('drag-over');
+            handleFiles(e.dataTransfer.files);
+        });
+
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.className = 'uploaded-image';
+                        document.querySelector('.photo-upload').appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // Service Details Population
+        function populateCompletedServices() {
+            const completedServicesContainer = document.querySelector('.completed-services');
+            // Sample data - replace with actual API call
+            const services = [
+                { name: 'Oil Change', status: 'completed', date: '2025-02-07' },
+                { name: 'Brake Inspection', status: 'completed', date: '2025-02-07' },
+                { name: 'Tire Rotation', status: 'completed', date: '2025-02-07' }
+            ];
+
+            services.forEach(service => {
+                const serviceElement = document.createElement('div');
+                serviceElement.className = 'service-item';
+                serviceElement.innerHTML = `
+                    <h4>${service.name}</h4>
+                    <p>Status: ${service.status}</p>
+                    <p>Completed: ${service.date}</p>
+                `;
+                completedServicesContainer.appendChild(serviceElement);
+            });
+        }
+
+        // Post-Repair Assessment Form Population
+        function populateAssessmentForm() {
+            const assessmentContainer = document.querySelector('.form-section:last-child');
+            const formHTML = `
+                <div class="assessment-fields">
+                    <div class="field-group">
+                        <label for="immediateRepair">Immediate Repair Needed:</label>
+                        <textarea id="immediateRepair" rows="3"></textarea>
+                    </div>
+                    <div class="field-group">
+                        <label for="nextService">Next Service Recommendations:</label>
+                        <textarea id="nextService" rows="3"></textarea>
+                    </div>
+                    <div class="field-group">
+                        <label for="future100k">Before 100,000 KM:</label>
+                        <textarea id="future100k" rows="3"></textarea>
+                    </div>
+                    <div class="field-group">
+                        <label for="testDrive">Test Drive Results:</label>
+                        <textarea id="testDrive" rows="3"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Complete Check-Out</button>
+            `;
+            assessmentContainer.innerHTML += formHTML;
+        }
+
+        // Initialize components
+        document.addEventListener('DOMContentLoaded', () => {
+            populateCompletedServices();
+            populateAssessmentForm();
+        });
+
+        // Form submission handler
+        document.querySelector('.checkout-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Implement form submission logic here
+            console.log('Form submitted');
+            // Show confirmation dialog
+            if (confirm('Are you sure you want to complete the vehicle check-out?')) {
+                // Process check-out
+                alert('Vehicle check-out completed successfully!');
+            }
+        });
+    </script>
+</body>
+</html>

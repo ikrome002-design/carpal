@@ -1,0 +1,83 @@
+flowchart TD
+    DataPolicy[Data Policy Home Page] --> Introduction[Introduction]
+    DataPolicy --> DataCollection[Data Collection]
+    DataPolicy --> DataUse[Data Use]
+    DataPolicy --> DataSecurity[Data Security]
+    DataPolicy --> UserRights[User Rights]
+    DataPolicy --> Compliance[Compliance]
+    DataPolicy --> Contact[Contact Information]
+    
+    Introduction --> AboutCarPal[About CarPal Platform]
+    Introduction --> PolicyScope[Scope of Policy]
+    Introduction --> Definitions[Key Definitions]
+    
+    DataCollection --> VehicleData[Vehicle Data]
+    DataCollection --> CustomerData[Customer Data]
+    DataCollection --> PaymentData[Payment Data]
+    DataCollection --> BusinessData[Business Account Data]
+    
+    VehicleData --> BasicInfo[Basic Vehicle Information]
+    VehicleData --> AssessmentInfo[Assessment Information]
+    VehicleData --> ServiceHistory[Service History]
+    VehicleData --> Photos[Vehicle Photos]
+    
+    CustomerData --> PersonalInfo[Personal Information]
+    CustomerData --> ContactInfo[Contact Information]
+    CustomerData --> Notifications[Notification Preferences]
+    
+    PaymentData --> MPesaData[M-Pesa Integration]
+    PaymentData --> InvoiceData[Invoice Information]
+    PaymentData --> TransactionHistory[Transaction History]
+    
+    BusinessData --> AccountInfo[Account Information]
+    BusinessData --> StaffAccess[Staff Access Records]
+    BusinessData --> AuditLogs[Audit Logs]
+    
+    DataUse --> ServiceProvision[Service Provision]
+    DataUse --> Personalization[Personalization]
+    DataUse --> Analytics[Analytics & Reporting]
+    DataUse --> Communications[Automated Communications]
+    
+    ServiceProvision --> VehicleCheck[Vehicle Check-in/out]
+    ServiceProvision --> InvoiceGeneration[Invoice Generation]
+    ServiceProvision --> RepairDoc[Repair Documentation]
+    
+    Communications --> EmailPurpose[Email Communications]
+    Communications --> SMSPurpose[SMS Communications]
+    Communications --> DataSharing[Third-Party Sharing]
+    
+    DataSharing --> Insurance[Insurance Companies]
+    DataSharing --> ServiceProviders[Service Providers]
+    DataSharing --> LegalRequests[Legal Authorities]
+    
+    DataSecurity --> StorageMethods[Storage Methods]
+    DataSecurity --> AccessControls[Access Controls]
+    DataSecurity --> Encryption[Data Encryption]
+    DataSecurity --> RetentionPolicy[Retention Policy]
+    DataSecurity --> BreachProtocol[Breach Protocol]
+    
+    AccessControls --> RoleBased[Role-Based Access]
+    AccessControls --> Authentication[Authentication Methods]
+    AccessControls --> ActivityMonitoring[Activity Monitoring]
+    
+    RetentionPolicy --> ActiveData[Active Account Data]
+    RetentionPolicy --> InactiveData[Inactive Account Data]
+    RetentionPolicy --> DataDeletion[Data Deletion Process]
+    
+    UserRights --> AccessRights[Right to Access]
+    UserRights --> RectificationRights[Right to Rectification]
+    UserRights --> DeletionRights[Right to Deletion]
+    UserRights --> RestrictProcessing[Right to Restrict Processing]
+    UserRights --> DataPortability[Right to Data Portability]
+    
+    AccessRights --> RequestProcess[Request Process]
+    AccessRights --> TimeFrame[Response Time Frame]
+    
+    Compliance --> LocalLaws[Local Data Laws]
+    Compliance --> International[International Standards]
+    Compliance --> Certifications[Security Certifications]
+    Compliance --> Audits[Regular Audits]
+    
+    Contact --> ContactMethods[Contact Methods]
+    Contact --> DPO[Data Protection Officer]
+    Contact --> ComplaintProcess[Complaint Process]

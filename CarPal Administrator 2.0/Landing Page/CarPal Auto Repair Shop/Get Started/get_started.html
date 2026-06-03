@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - CarPal by Citrus Auto Repair Shop</title>
+
+    <!-- Favicon links -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+
+    <!-- Google Fonts for Poppins and Open Sans -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="get_started.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo-container">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\landing_page.html">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                        alt="CarPal Logo" class="logo">
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content Section -->
+        <main>
+            <div class="content-wrapper">
+                <!-- Sales Copy Section -->
+                <section class="sales-copy">
+                    <h1>Accelerate Your Auto Repair Shop</h1>
+                    <p>Simplify scheduling, inventory, and customer management with CarPal—the smart web app that keeps
+                        your shop on the fast track to success.</p>
+                </section>
+
+                <!-- Authentication Options -->
+                <section class="auth-options">
+                    <div class="tabs">
+                        <button class="tab-button active" data-target="create-account">Create Account</button>
+                        <button class="tab-button" data-target="login">Log In</button>
+                    </div>
+
+                    <!-- Create Account Form -->
+                    <div class="tab-content active" id="create-account">
+                        <form id="create-account-form">
+                            <div class="form-step" id="step-email">
+                                <h3>Step 1: Enter Your Email</h3>
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                                    <div class="error-message" id="email-error"></div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary next-step"
+                                        data-next="step-phone">Continue</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" id="step-phone">
+                                <h3>Step 2: Enter Your Phone Number</h3>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000" required>
+                                    <div class="error-message" id="phone-error"></div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary prev-step"
+                                        data-prev="step-email">Back</button>
+                                    <button type="button" class="btn btn-primary next-step"
+                                        data-next="step-password">Continue</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" id="step-password">
+                                <h3>Step 3: Create Password</h3>
+                                <div class="form-group">
+                                    <label for="password">Password <span class="required">*</span></label>
+                                    <input type="password" id="password" name="password"
+                                        placeholder="Enter your password" required>
+                                    <div class="password-requirements">
+                                        <p>Password must contain:</p>
+                                        <ul>
+                                            <li id="req-length">Minimum 8 characters</li>
+                                            <li id="req-uppercase">At least 1 uppercase letter</li>
+                                            <li id="req-number">At least 1 number</li>
+                                            <li id="req-special">At least 1 special character</li>
+                                        </ul>
+                                    </div>
+                                    <div class="error-message" id="password-error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm Password <span
+                                            class="required">*</span></label>
+                                    <input type="password" id="confirm-password" name="confirm-password"
+                                        placeholder="Confirm your password" required>
+                                    <div class="error-message" id="confirm-password-error"></div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary prev-step"
+                                        data-prev="step-phone">Back</button>
+                                    <button type="button" class="btn btn-primary" id="send-verification">Create Account
+                                        & Verify Email</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" id="step-verify-email">
+                                <h3>Step 4: Verify Your Email</h3>
+                                <div class="verification-message">
+                                    <p>We've sent a verification link to your email. Please check your inbox and click
+                                        the link to verify your account.</p>
+                                    <div class="email-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <p class="email-sent">Email sent to: <span id="display-email"></span></p>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary" id="resend-verification">Resend
+                                        Email</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" id="step-sales-confirmation">
+                                <h3>Step 5: Sales Personnel Confirmation</h3>
+                                <div class="form-group">
+                                    <label for="sales-code">Sales Code <span class="required">*</span></label>
+                                    <input type="text" id="sales-code" name="sales-code"
+                                        placeholder="Enter sales personnel code" required>
+                                    <div class="error-message" id="sales-code-error"></div>
+                                </div>
+                                <div id="valid-code-section" class="hidden">
+                                    <div class="sales-info">
+                                        <h4>Sales Personnel Information</h4>
+                                        <p><strong>Name:</strong> <span id="sales-name"></span></p>
+                                        <p><strong>ID:</strong> <span id="sales-id"></span></p>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary" id="request-code">Request New
+                                        Code</button>
+                                    <button type="button" class="btn btn-primary" id="confirm-sales-code">Confirm and
+                                        Proceed</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" id="step-policy-agreement">
+                                <h3>Step 6: Policy Agreement</h3>
+                                <div class="policy-links">
+                                    <a href="#" class="policy-link" id="data-policy-link">Data Policy</a>
+                                    <a href="#" class="policy-link" id="privacy-policy-link">Privacy Policy</a>
+                                    <a href="#" class="policy-link" id="terms-conditions-link">Terms & Conditions</a>
+                                </div>
+
+                                <div class="policy-content" id="policy-content">
+                                    <!-- Policy content will be loaded here -->
+                                    <p class="policy-instructions">Click on any policy above to view its contents.</p>
+                                </div>
+
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="agree-all" name="agree-all">
+                                    <label for="agree-all">I Agree to All Policies</label>
+                                    <div class="error-message" id="policy-error"></div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary" id="decline-all">Decline
+                                        All</button>
+                                    <button type="button" class="btn btn-primary" id="complete-signup">Complete Sign
+                                        Up</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" id="step-account-created">
+                                <div class="success-message">
+                                    <div class="success-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <h3>Account Created Successfully!</h3>
+                                    <p>You will be redirected to the Dashboard in a moment...</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div class="tab-content" id="login">
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label for="login-email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="login-email" name="login-email" placeholder="your@email.com"
+                                    required>
+                                <div class="error-message" id="login-email-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password <span class="required">*</span></label>
+                                <input type="password" id="login-password" name="login-password"
+                                    placeholder="Enter your password" required>
+                                <div class="error-message" id="login-password-error"></div>
+                            </div>
+                            <div class="forgot-password">
+                                <a href="#" id="forgot-password-link">Forgot Password?</a>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Log In</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Forgot Password Form -->
+                    <div class="tab-content" id="forgot-password">
+                        <div class="form-step" id="step-reset-email">
+                            <h3>Reset Your Password</h3>
+                            <p>Enter your email address and we'll send you a link to reset your password.</p>
+                            <div class="form-group">
+                                <label for="reset-email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="reset-email" name="reset-email" placeholder="your@email.com"
+                                    required>
+                                <div class="error-message" id="reset-email-error"></div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" id="back-to-login">Back to
+                                    Login</button>
+                                <button type="button" class="btn btn-primary" id="send-reset-link">Send Reset
+                                    Link</button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step-reset-link-sent">
+                            <div class="verification-message">
+                                <h3>Reset Link Sent</h3>
+                                <p>We've sent a password reset link to your email. Please check your inbox and click the
+                                    link to reset your password.</p>
+                                <div class="email-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <p class="email-sent">Email sent to: <span id="display-reset-email"></span></p>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" id="back-to-login-2">Back to
+                                    Login</button>
+                                <button type="button" class="btn btn-primary" id="resend-reset-link">Resend
+                                    Link</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Modal Templates -->
+        <div class="modal" id="policy-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <h2 id="modal-title">Policy Title</h2>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- Policy content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <!-- JavaScript link -->
+    <script src="get_started.js"></script>
+</body>
+
+</html>

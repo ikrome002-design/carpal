@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CarPal by Citrus</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                        alt="CarPal by Citrus Logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li class="active"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">Dashboard</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\User Management\users.html">Users</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Business Management\businesses.html">Businesses</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Financial Oversight\finance.html">Finance</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Security Tools\security.html">Security</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Customer Support Tools\support.html">Support</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="user-controls">
+                <!-- Notifications -->
+                <div class="notifications">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Notifications\notifications.html">
+                        <i class="fa-solid fa-bell notification-icon"></i>
+                        <span class="notification-count">5</span>
+                    </a>
+                </div>
+
+                <!-- User Profile Dropdown -->
+                <div class="user-profile-dropdown">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                        alt="User Profile" class="profile-icon">
+                    <div class="dropdown-content">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\My Profile\my_profile.html">My
+                            Profile</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Activity History\activity_history.html">Activity
+                            History</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">Log
+                            Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Platform Administrator Dashboard</h1>
+
+        <!-- KPI Panel Section -->
+        <section class="support-dashboard">
+            <div class="dashboard-grid">
+                <!-- Total Registered Users -->
+                <div class="dashboard-card">
+                    <h2>Total Registered Users</h2>
+                    <div class="ticket-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">15,783</span>
+                            <span class="stat-label">User Count</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">+5.2%</span>
+                            <span class="stat-label">Since Last Month</span>
+                        </div>
+                    </div>
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\User Management\users.html"
+                        class="view-metrics-btn">View All Users</a>
+                </div>
+
+                <!-- Active Businesses -->
+                <div class="dashboard-card">
+                    <h2>Active Businesses</h2>
+                    <div class="ticket-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">1,254</span>
+                            <span class="stat-label">Business Count</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">+3.7%</span>
+                            <span class="stat-label">Monthly Growth</span>
+                        </div>
+                    </div>
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Business Management\businesses.html"
+                        class="view-metrics-btn">View All Businesses</a>
+                </div>
+
+                <!-- Monthly Revenue -->
+                <div class="dashboard-card">
+                    <h2>Monthly Revenue</h2>
+                    <div class="ticket-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">KES. 2,345,678</span>
+                            <span class="stat-label">Current Month</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">+12.4%</span>
+                            <span class="stat-label">vs Last Month</span>
+                        </div>
+                    </div>
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Financial Oversight\finance.html"
+                        class="view-metrics-btn">Financial Details</a>
+                </div>
+
+                <!-- Service Usage -->
+                <div class="dashboard-card">
+                    <h2>Service Usage</h2>
+                    <div class="ticket-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">87,932</span>
+                            <span class="stat-label">Total Auto Repair Shops Managed</span>
+                        </div>
+
+                        <div class="stat-item">
+                            <span class="stat-value">+8.9%</span>
+                            <span class="stat-label">Usage Growth</span>
+                        </div>
+                    </div>
+                    <a href="#" class="view-metrics-btn">Usage Details</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions Panel -->
+        <section>
+            <div class="dashboard-card">
+                <h2>Quick Actions</h2>
+                <div class="action-buttons">
+                    <button class="create-ticket-btn" id="addUserBtn">Add New User</button>
+                    <button class="view-tickets-btn" id="addBusinessBtn">Add New Business</button>
+                    <button class="knowledge-base-btn" id="viewNotificationsBtn">View Notifications</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Panel -->
+        <section class="filter-panel">
+            <div class="dashboard-card">
+                <h2>Filter Dashboard</h2>
+                <div class="ticket-filters">
+                    <div class="filter-group">
+                        <label for="dateRange">Date Range</label>
+                        <select id="dateRange">
+                            <option value="today">Today</option>
+                            <option value="yesterday">Yesterday</option>
+                            <option value="last7days" selected>Last 7 Days</option>
+                            <option value="last30days">Last 30 Days</option>
+                            <option value="thisMonth">This Month</option>
+                            <option value="lastMonth">Last Month</option>
+                            <option value="custom">Custom Range</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="userType">User Type</label>
+                        <select id="userType">
+                            <option value="all" selected>All Users</option>
+                            <option value="shopOwners">Auto Repair Shop Owners</option>
+                            <option value="shopManagers">Shop Managers</option>
+                            <option value="technicians">Technicians</option>
+                            <option value="customers">Customers</option>
+                            <option value="platformAdmins">Platform Administrators</option>
+                        </select>
+
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="serviceType">Service Type</label>
+                        <select id="serviceType">
+                            <option value="all" selected>All Services</option>
+                            <option value="engineRepair">Engine Repair</option>
+                            <option value="oilChange">Oil Change</option>
+                            <option value="tireReplacement">Tire Replacement</option>
+                            <option value="diagnostics">Diagnostics</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-buttons" style="margin-top: 20px;">
+                        <button id="applyFilters" class="view-metrics-btn">Apply Filters</button>
+                        <button id="resetFilters" class="knowledge-base-btn">Reset Filters</button>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Real-Time Updates Panel -->
+        <section class="real-time-updates">
+            <h2>Real-Time Updates</h2>
+            <div class="dashboard-grid">
+                <!-- System Alerts -->
+                <div class="dashboard-card">
+                    <h2>System Alerts <span class="notification-count">3</span></h2>
+                    <div class="alerts-list">
+                        <div class="update-item">
+                            <div class="update-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div class="update-content">
+                                <div class="update-description">Payment Gateway Service Degradation</div>
+                                <div class="update-time">10 minutes ago</div>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-icon"><i class="fa-solid fa-bug"></i></div>
+                            <div class="update-content">
+                                <div class="update-description">Auto repair Shop App Login Issues Detected</div>
+                                <div class="update-time">2 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-icon"><i class="fa-solid fa-bell"></i></div>
+                            <div class="update-content">
+                                <div class="update-description">System Maintenance Scheduled</div>
+                                <div class="update-time">5 hours ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="view-metrics-btn">View All Alerts</a>
+                </div>
+
+                <!-- User Activities -->
+                <div class="dashboard-card">
+                    <h2>User Activities</h2>
+                    <div class="updates-list">
+                        <div class="update-item">
+                            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                alt="Admin Avatar" class="activity-avatar">
+                            <div class="update-content">
+                                <div class="update-description">John Doe added a new auto repair shop account</div>
+                                <div class="update-time">15 minutes ago</div>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                alt="Admin Avatar" class="activity-avatar">
+                            <div class="update-content">
+                                <div class="update-description">Jane Smith updated shop details for "Precision Auto
+                                    Care"</div>
+                                <div class="update-time">42 minutes ago</div>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                alt="Admin Avatar" class="activity-avatar">
+                            <div class="update-content">
+                                <div class="update-description">Michael Johnson deactivated an account for "City Motors"
+                                </div>
+                                <div class="update-time">1 hour ago</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Activity History\activity_history.html"
+                        class="view-metrics-btn">View All Activity</a>
+                </div>
+
+                <!-- Business Updates -->
+                <div class="dashboard-card">
+                    <h2>Business Updates</h2>
+                    <div class="updates-list">
+                        <div class="update-item">
+                            <div class="update-icon"><i class="fa-solid fa-building"></i></div>
+                            <div class="update-content">
+                                <div class="update-description">Acme Auto Repair registered as a new partner</div>
+                                <div class="update-time">1 hour ago</div>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                            <div class="update-content">
+                                <div class="update-description">XYZ Garage updated its service offerings</div>
+                                <div class="update-time">3 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-icon"><i class="fa-solid fa-wrench"></i></div>
+                            <div class="update-content">
+                                <div class="update-description">FastFix Auto added 5 certified technicians</div>
+                                <div class="update-time">Yesterday</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="view-metrics-btn">View All Updates</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Analytics Display Panel -->
+        <section class="analytics-panel">
+            <h2>Platform Analytics</h2>
+            <div class="dashboard-grid">
+                <!-- Registration Trends Chart -->
+                <div class="dashboard-card">
+                    <h2>Registration Trends</h2>
+                    <div class="chart-placeholder">
+                        <i class="fa-solid fa-chart-line"></i> Registration Trends Line Chart
+                    </div>
+                    <div class="chart-controls" style="margin-top: 15px;">
+                        <div class="filter-group">
+                            <label for="regChartDateRange">Date Range:</label>
+                            <select id="regChartDateRange">
+                                <option value="7days">Last 7 Days</option>
+                                <option value="30days" selected>Last 30 Days</option>
+                                <option value="90days">Last 90 Days</option>
+                                <option value="1year">Last Year</option>
+                            </select>
+                        </div>
+                        <button class="view-metrics-btn">Export Chart</button>
+                    </div>
+                </div>
+
+                <!-- Revenue Growth Chart -->
+                <div class="dashboard-card">
+                    <h2>Revenue Growth</h2>
+                    <div class="chart-placeholder">
+                        <i class="fa-solid fa-chart-column"></i> Revenue Growth Bar Chart
+                    </div>
+                    <div class="navigation-tabs" style="margin-top: 15px;">
+                        <button class="tab-btn active">Monthly</button>
+                        <button class="tab-btn">Quarterly</button>
+                        <button class="tab-btn">Yearly</button>
+                    </div>
+                    <button class="view-metrics-btn" style="margin-top: 15px;">Export Chart</button>
+                </div>
+
+                <!-- Business Engagement Chart -->
+                <div class="dashboard-card">
+                    <h2>Business Engagement</h2>
+                    <div class="chart-placeholder">
+                        <i class="fa-solid fa-chart-pie"></i> Business Engagement Heat Map
+                    </div>
+                    <div class="chart-controls" style="margin-top: 15px;">
+                        <div class="filter-group">
+                            <label for="engChartBusinessType">Business Type:</label>
+                            <select id="adminManagedAccountType">
+                                <option value="all" selected>All Auto Repair Shops</option>
+                                <option value="independent">Independent Shops</option>
+                                <option value="franchise">Franchise Shops</option>
+                                <option value="specialty">Specialty Repair Shops</option>
+                                <option value="multi-service">Multi-Service Centers</option>
+                            </select>
+
+                        </div>
+                        <button class="view-metrics-btn">Export Chart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Settings -->
+        <section class="dashboard-settings">
+            <div class="dashboard-card">
+                <h2>Dashboard Settings</h2>
+                <div class="settings-container">
+                    <div class="setting-item">
+                        <span class="setting-label">Show KPI Panel</span>
+                        <input type="checkbox" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Show Quick Actions</span>
+                        <input type="checkbox" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Show Real-Time Updates</span>
+                        <input type="checkbox" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Show Analytics</span>
+                        <input type="checkbox" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Data Refresh Rate</span>
+                        <select class="setting-control">
+                            <option value="30">Every 30 seconds</option>
+                            <option value="60" selected>Every minute</option>
+                            <option value="300">Every 5 minutes</option>
+                            <option value="600">Every 10 minutes</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Default Date Range</span>
+                        <select class="setting-control">
+                            <option value="today">Today</option>
+                            <option value="yesterday">Yesterday</option>
+                            <option value="last7days" selected>Last 7 Days</option>
+                            <option value="last30days">Last 30 Days</option>
+                            <option value="thisMonth">This Month</option>
+                        </select>
+                    </div>
+                    <button class="view-metrics-btn" style="margin-top: 15px;">Save Preferences</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="theme-toggle">
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" target="_blank" class="social-icon"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/LabsCitrus" target="_blank" class="social-icon"><i
+                        class="fa-brands fa-x"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank" class="social-icon"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank" class="social-icon"><i
+                        class="fa-brands fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank" class="social-icon"><i
+                        class="fa-brands fa-linkedin"></i></a>
+            </div>
+
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/" target="_blank">Visit our corporate website</a>
+            </div>
+
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

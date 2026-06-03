@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Login</title>
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+
+
+    <!-- Google Fonts: Poppins and Open Sans -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="log_in.css">
+</head>
+
+<body>
+    <main class="container">
+        <div class="login-card">
+            <!-- Logo -->
+            <div> <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+                    class="logo">
+                    <!-- Brand Logo -->
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                        alt="CarPal Logo" class="logo">
+                </a></div>
+
+            <h1>Welcome Back</h1>
+
+            <!-- Login Form -->
+            <form id="loginForm" action="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop\Dashboard\dashboard.html" method="POST">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                    <div class="error-message" id="emailError">
+                        Please enter a valid email address
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                    <div class="error-message" id="passwordError">
+                        Please enter your password
+                    </div>
+                </div>
+
+                <button type="submit" class="button">Log In </button>
+
+                <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\Forgot Password\forgot_password.html"
+                    class="forgot-password">
+                    Forgot your password?
+                </a>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Form validation
+        const loginForm = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+
+        loginForm.addEventListener('submit', function (e) {
+            let isValid = true;
+
+            // Reset error messages
+            emailError.style.display = 'none';
+            passwordError.style.display = 'none';
+
+            // Email validation
+            if (!emailInput.value || !emailInput.value.includes('@')) {
+                emailError.style.display = 'block';
+                isValid = false;
+            }
+
+            // Password validation
+            if (!passwordInput.value) {
+                passwordError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (!isValid) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>

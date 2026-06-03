@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - CarPal by Citrus Auto Repair Shop</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="faq.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\landing_page.html"
+                class="logo">
+                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                    alt="CarPal Logo">
+            </a>
+            <div class="nav-links">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\landing_page.html#about">About</a>
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\landing_page.html#features">Features</a>
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\landing_page.html#how-it-works">How
+                    It Works</a>
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\landing_page.html#testimonials">Testimonials</a>
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\landing_page.html#pricing">Pricing</a>
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\landing_page.html#partners">Partners</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Your One-Stop Resource for Auto Repair Excellence</p>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="faq-search" placeholder="Search for answers...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro">
+        <div class="container">
+            <div class="intro-text">
+                <p>Welcome to CarPal's FAQ—designed exclusively for auto repair professionals looking to optimize every
+                    step of their service process. This FAQ page is your comprehensive guide, addressing every
+                    operational detail with clear, direct answers.</p>
+                <div class="quick-nav">
+                    <h3>Quick Navigation for Immediate Answers</h3>
+                    <ul>
+                        <li><i class="fas fa-search"></i> <strong>Search Bar:</strong> Instantly locate specific topics.
+                        </li>
+                        <li><i class="fas fa-folder"></i> <strong>Main Categories:</strong> Browse topics grouped for
+                            ease and efficiency.</li>
+                        <li><i class="fas fa-headset"></i> <strong>Support Resources:</strong> Direct links to expert
+                            help, video tutorials, and system updates.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main FAQ Content -->
+    <section class="faq-content">
+        <div class="container">
+            <div class="category-list">
+                <h2>Main Categories</h2>
+                <ul>
+                    <li><a href="#general" class="category-link active">General Platform Info</a></li>
+                    <li><a href="#account" class="category-link">Account Management</a></li>
+                    <li><a href="#vehicle-in" class="category-link">Vehicle Check-In</a></li>
+                    <li><a href="#invoice" class="category-link">Invoicing & Payments</a></li>
+                    <li><a href="#vehicle-out" class="category-link">Vehicle Check-Out</a></li>
+                    <li><a href="#history" class="category-link">Service History</a></li>
+                    <li><a href="#service-hub" class="category-link">Service Hub</a></li>
+                    <li><a href="#billing" class="category-link">Billing & Service Charges</a></li>
+                </ul>
+
+                <div class="support-box">
+                    <h3>Support Resources</h3>
+                    <ul>
+                        <li><a href="#contact-support"><i class="fas fa-headset"></i> Contact Support</a></li>
+                        <li><a href="#video-tutorials"><i class="fas fa-video"></i> Video Tutorials</a></li>
+                        <li><a href="#system-updates"><i class="fas fa-sync-alt"></i> System Updates</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-sections">
+                <!-- General Platform Info -->
+                <div id="general" class="faq-category active">
+                    <h2>General Platform Info</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is CarPal?</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>CarPal is an innovative auto repair management system designed to streamline your
+                                operations. It offers a comprehensive suite of tools that help auto repair shops manage
+                                customer interactions, process transactions, track vehicle services, and improve overall
+                                workflow efficiency.</p>
+                            <p>With CarPal, you can digitize your entire repair process from check-in to check-out,
+                                providing a seamless experience for both your staff and customers.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>System Requirements</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To ensure optimal performance, CarPal requires:</p>
+                            <ul>
+                                <li><strong>Web Browser:</strong> Latest version of Chrome, Firefox, Safari, or Edge
+                                </li>
+                                <li><strong>Internet Connection:</strong> Stable broadband connection (minimum 5 Mbps)
+                                </li>
+                                <li><strong>Mobile Device (Optional):</strong> iOS 12+ or Android 9+</li>
+                                <li><strong>Screen Resolution:</strong> Minimum 1366x768</li>
+                                <li><strong>PDF Viewer:</strong> For invoice and report viewing</li>
+                            </ul>
+                            <p>CarPal is cloud-based, so there are no specific hardware requirements beyond a modern
+                                computer or mobile device capable of running the latest browsers.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Getting Started Guide</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Follow these steps to quickly master CarPal:</p>
+                            <ol>
+                                <li><strong>Sign Up:</strong> Create your account with valid business details</li>
+                                <li><strong>Complete Profile:</strong> Add your shop information, operating hours, and
+                                    services</li>
+                                <li><strong>Add Staff Members:</strong> Invite your team and assign appropriate roles
+                                </li>
+                                <li><strong>Customize Settings:</strong> Set up your invoice template and notification
+                                    preferences</li>
+                                <li><strong>Explore Dashboard:</strong> Familiarize yourself with the main features and
+                                    navigation</li>
+                                <li><strong>Create Test Check-In:</strong> Practice creating a vehicle check-in to learn
+                                    the workflow</li>
+                                <li><strong>Watch Tutorials:</strong> Access our video library for detailed feature
+                                    guides</li>
+                            </ol>
+                            <p>Our onboarding specialist will contact you within 24 hours of signup to schedule a
+                                personalized training session for your team.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Management -->
+                <div id="account" class="faq-category">
+                    <h2>Account Management</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>User Roles & Permissions</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>CarPal offers the following user roles with specific permissions:</p>
+                            <ul>
+                                <li><strong>Administrator:</strong> Full access to all features, settings, and financial
+                                    data</li>
+                                <li><strong>Manager:</strong> Access to operational features and staff management,
+                                    limited financial visibility</li>
+                                <li><strong>Service Advisor:</strong> Can create check-ins, manage repairs, and
+                                    communicate with customers</li>
+                                <li><strong>Technician:</strong> Access to repair details and ability to update job
+                                    status</li>
+                                <li><strong>Front Desk:</strong> Handle check-ins, check-outs, and basic customer
+                                    inquiries</li>
+                                <li><strong>Accounting:</strong> Access to invoices, payments, and financial reports
+                                </li>
+                            </ul>
+                            <p>Roles can be customized further by enabling or disabling specific permissions for
+                                individual users.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Profile Settings</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To update your profile settings:</p>
+                            <ol>
+                                <li>Click on your user icon in the top-right corner</li>
+                                <li>Select "Profile Settings" from the dropdown menu</li>
+                                <li>Update your personal information, contact details, and preferences</li>
+                                <li>Change your password or enable two-factor authentication</li>
+                                <li>Configure notification preferences</li>
+                                <li>Click "Save Changes" to apply updates</li>
+                            </ol>
+                            <p>You can also customize your dashboard layout and default views in the "Display
+                                Preferences" tab.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Staff Management</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Manage your team effectively with these tools:</p>
+                            <ul>
+                                <li><strong>Add New Staff:</strong> Invite team members via email with pre-assigned
+                                    roles</li>
+                                <li><strong>Edit Permissions:</strong> Customize access levels for each staff member
+                                </li>
+                                <li><strong>Activity Logs:</strong> Monitor staff actions within the system</li>
+                                <li><strong>Performance Metrics:</strong> Track job completion rates and customer
+                                    satisfaction</li>
+                                <li><strong>Schedule Management:</strong> Assign shifts and manage staff availability
+                                </li>
+                                <li><strong>Account Deactivation:</strong> Temporarily suspend or permanently remove
+                                    staff access</li>
+                            </ul>
+                            <p>Administrators can bulk import staff from a CSV file or integrate with popular HR
+                                management systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Insurance Company Integration</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>CarPal allows seamless integration with insurance companies through these features:</p>
+                            <ul>
+                                <li><strong>Partner Network:</strong> Connect with our pre-integrated insurance partners
+                                </li>
+                                <li><strong>Digital Claims:</strong> Submit and track insurance claims electronically
+                                </li>
+                                <li><strong>Documentation:</strong> Upload and share vehicle damage photos directly with
+                                    insurers</li>
+                                <li><strong>Approval Tracking:</strong> Monitor the status of insurance approvals in
+                                    real-time</li>
+                                <li><strong>Automated Invoicing:</strong> Generate insurance-compliant invoices
+                                    automatically</li>
+                                <li><strong>Custom Integrations:</strong> Request API access for direct integration with
+                                    specific insurers</li>
+                            </ul>
+                            <p>To set up insurance integration, go to Settings > External Partners > Insurance Companies
+                                and follow the guided setup process.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Check-In -->
+                <div id="vehicle-in" class="faq-category">
+                    <h2>Vehicle Check-In</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Creating a Check-In</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To create a new vehicle check-in:</p>
+                            <ol>
+                                <li>Click the "+ New Check-In" button on your dashboard</li>
+                                <li>Enter customer details (or select existing customer)</li>
+                                <li>Input vehicle information (license plate, make, model, year)</li>
+                                <li>Document the reason for visit and customer concerns</li>
+                                <li>Complete the vehicle assessment (interior, exterior, mechanical)</li>
+                                <li>Take and upload vehicle photos</li>
+                                <li>Generate a preliminary estimate if applicable</li>
+                                <li>Obtain customer signature and approval</li>
+                                <li>Assign to a technician or service bay</li>
+                                <li>Click "Complete Check-In" to finalize the process</li>
+                            </ol>
+                            <p>The system will automatically notify the assigned staff and send a confirmation to the
+                                customer.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Assessment Form Help</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The vehicle assessment form is organized into four main components:</p>
+                            <ul>
+                                <li><strong>Audio Components:</strong> Radio, speakers, Bluetooth connectivity, etc.
+                                </li>
+                                <li><strong>Interior Components:</strong> Seats, dashboard, controls, A/C, etc.</li>
+                                <li><strong>Exterior Components:</strong> Body condition, lights, tires, paint, etc.
+                                </li>
+                                <li><strong>Engine Components:</strong> Fluids, belts, battery, engine performance, etc.
+                                </li>
+                            </ul>
+                            <p>For each component, you can mark its condition as "Good," "Fair," "Poor," or "N/A." Add
+                                specific notes and photos for any items marked "Fair" or "Poor" to document pre-existing
+                                conditions.</p>
+                            <p>Use the "Quick Assessment" button for routine services or the "Detailed Assessment" for
+                                comprehensive evaluations.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Photo Documentation Tips</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Follow these tips for effective vehicle photo documentation:</p>
+                            <ul>
+                                <li><strong>Lighting:</strong> Ensure good lighting to capture accurate details</li>
+                                <li><strong>Standard Angles:</strong> Take photos of all four sides, plus front and rear
+                                    45° angles</li>
+                                <li><strong>Interior Views:</strong> Dashboard, driver's seat, rear seats, and trunk
+                                </li>
+                                <li><strong>Damage Close-ups:</strong> Capture clear images of any pre-existing damage
+                                </li>
+                                <li><strong>Odometer:</strong> Always document the current mileage</li>
+                                <li><strong>VIN Number:</strong> Include a clear photo of the VIN plate</li>
+                                <li><strong>Personal Items:</strong> Document any valuable personal items left in the
+                                    vehicle</li>
+                            </ul>
+                            <p>Use the CarPal mobile app for direct uploads, which automatically organizes photos by
+                                category and timestamps them for accurate record-keeping.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Customer Approval Process</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Secure customer approval efficiently with these steps:</p>
+                            <ol>
+                                <li>Complete the vehicle assessment and generate a detailed estimate</li>
+                                <li>Review the estimate and required services with the customer</li>
+                                <li>Use the customer-facing display to explain costs and services</li>
+                                <li>Send digital estimates via email or SMS for remote approval</li>
+                                <li>Collect customer signature on the digital approval form</li>
+                                <li>Set approval thresholds for additional work that may be required</li>
+                                <li>Enable "Auto-Approval" settings for routine services under a specified amount</li>
+                            </ol>
+                            <p>All approvals are timestamped and stored in the system for future reference. Customers
+                                can also approve estimates remotely through the customer portal or via secure approval
+                                links sent by email or SMS.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Invoicing & Payments -->
+                <div id="invoice" class="faq-category">
+                    <h2>Invoicing & Payments</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Creating Invoices</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Generate professional invoices in just a few clicks:</p>
+                            <ol>
+                                <li>Navigate to the relevant repair job or select "New Invoice" from the billing menu
+                                </li>
+                                <li>Verify customer and vehicle information is correct</li>
+                                <li>Add service line items, parts, and labor charges</li>
+                                <li>Apply any discounts or promotional offers</li>
+                                <li>Include taxes as applicable</li>
+                                <li>Preview the invoice for accuracy</li>
+                                <li>Select "Generate Invoice" to create the final document</li>
+                                <li>Choose to print, email, or share the invoice with the customer</li>
+                            </ol>
+                            <p>The system automatically calculates the CarPal service charge based on the total invoice
+                                amount. You can also save invoice templates for frequently used service packages.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Service Charge Calculation</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>CarPal applies service charges according to the following tiered system:</p>
+                            <ul class="service-tiers">
+                                <li><strong>KES 10-24,999:</strong> 10% fee</li>
+                                <li><strong>KES 25,000-49,999:</strong> KES 2,500 flat fee</li>
+                                <li><strong>KES 50,000-99,999:</strong> KES 5,000 flat fee</li>
+                                <li><strong>KES 100,000+:</strong> KES 15,000 flat fee</li>
+                            </ul>
+                            <p>The service charge is automatically calculated based on the total invoice amount before
+                                taxes. The system displays the applicable tier and fee during invoice generation.</p>
+                            <p>Service charges are billed weekly and can be viewed in your "Account Summary" section.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Sending Invoices</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Send invoices to customers through multiple channels:</p>
+                            <ul>
+                                <li><strong>Email:</strong> Send PDF invoices directly to customer email</li>
+                                <li><strong>SMS:</strong> Text a secure payment link to the customer's mobile phone</li>
+                                <li><strong>Customer Portal:</strong> Upload to the customer's online account</li>
+                                <li><strong>Print:</strong> Generate physical copies for in-person delivery</li>
+                                <li><strong>Bulk Sending:</strong> Send multiple invoices simultaneously</li>
+                            </ul>
+                            <p>You can customize invoice delivery with your shop branding, personalized messages, and
+                                payment instructions. The system tracks when invoices are viewed and sends automatic
+                                reminders for unpaid invoices.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Payment Tracking</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Stay on top of your billing with integrated payment tracking:</p>
+                            <ul>
+                                <li><strong>Payment Status Dashboard:</strong> View all invoice statuses at a glance
+                                </li>
+                                <li><strong>Real-Time Updates:</strong> Receive notifications when customers make
+                                    payments</li>
+                                <li><strong>Payment History:</strong> Access detailed transaction records for each
+                                    customer</li>
+                                <li><strong>Aging Reports:</strong> Identify overdue invoices with aging categories</li>
+                                <li><strong>Payment Analytics:</strong> Track payment trends and average collection time
+                                </li>
+                                <li><strong>Automatic Reconciliation:</strong> Match incoming payments with open
+                                    invoices</li>
+                            </ul>
+                            <p>The system generates automated payment reminders based on your configured schedule. You
+                                can customize reminder frequency and messaging for different stages of payment
+                                follow-up.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Check-Out -->
+                <div id="vehicle-out" class="faq-category">
+                    <h2>Vehicle Check-Out</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Completing Checkout Form</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Finalize repairs with a streamlined checkout process:</p>
+                            <ol>
+                                <li>Navigate to the active job and select "Initiate Check-Out"</li>
+                                <li>Verify all scheduled services have been completed</li>
+                                <li>Document final vehicle condition with post-repair photos</li>
+                                <li>Update odometer reading</li>
+                                <li>Conduct a post-repair vehicle inspection</li>
+                                <li>Record any follow-up recommendations</li>
+                                <li>Confirm payment status (paid, pending, or invoiced)</li>
+                                <li>Have the customer sign the checkout form</li>
+                                <li>Print or email service completion documents</li>
+                                <li>Schedule follow-up service if needed</li>
+                            </ol>
+                            <p>The system compares check-in and check-out documentation to provide a comprehensive
+                                record of the service provided.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Post-Repair Assessment</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ensure quality and customer satisfaction with our follow-up checks:</p>
+                            <ul>
+                                <li><strong>Quality Checklist:</strong> Verify all repairs meet quality standards</li>
+                                <li><strong>Test Drive:</strong> Document results of post-repair test drive</li>
+                                <li><strong>Comparison Photos:</strong> Take "after" photos at the same angles as
+                                    "before" photos</li>
+                                <li><strong>Future Recommendations:</strong> Note any upcoming maintenance needs</li>
+                                <li><strong>Warranty Information:</strong> Document any warranty details for parts or
+                                    services</li>
+                            </ul>
+                            <p>The post-repair assessment is visible to customers in their service record, building
+                                trust in your thorough process and quality standards.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Customer Notifications</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Keep clients informed with timely updates:</p>
+                            <ul>
+                                <li><strong>Completion Alert:</strong> Automatic notification when repairs are finished
+                                </li>
+                                <li><strong>Pickup Scheduling:</strong> Allow customers to schedule convenient pickup
+                                    times</li>
+                                <li><strong>Service Summary:</strong> Detailed overview of completed work</li>
+                                <li><strong>Follow-Up Care:</strong> Instructions for post-repair vehicle care</li>
+                                <li><strong>Feedback Request:</strong> Automated request for service rating and review
+                                </li>
+                            </ul>
+                            <p>Customize notification content, timing, and delivery methods (email, SMS, push
+                                notification) in your communication settings. You can also create notification templates
+                                for consistent messaging.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service History -->
+                <div id="history" class="faq-category">
+                    <h2>Service History</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Accessing Vehicle History</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Retrieve detailed service records in seconds:</p>
+                            <ol>
+                                <li>Search for a vehicle by license plate, VIN, or customer name</li>
+                                <li>Select the vehicle from the search results</li>
+                                <li>Click the "Service History" tab to view all past services</li>
+                                <li>Use filters to sort by date, service type, or technician</li>
+                                <li>Click on individual service entries to view detailed information</li>
+                                <li>Access attached photos, notes, and invoice details</li>
+                            </ol>
+                            <p>The comprehensive history view provides a timeline of all services performed, making it
+                                easy to reference past work and track the vehicle's maintenance over time.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Service Records Management</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Organize and update records effortlessly:</p>
+                            <ul>
+                                <li><strong>Editing Records:</strong> Update information with proper change tracking
+                                </li>
+                                <li><strong>Categorization:</strong> Tag services by type for easy filtering</li>
+                                <li><strong>Document Attachment:</strong> Add warranty documents, parts information,
+                                    etc.</li>
+                                <li><strong>Maintenance Scheduling:</strong> Set up future service reminders based on
+                                    history</li>
+                                <li><strong>Customer Access:</strong> Control what history information customers can
+                                    view</li>
+                                <li><strong>Export Options:</strong> Generate PDF or CSV exports of service history</li>
+                            </ul>
+                            <p>All changes to service records are logged with user information and timestamps to
+                                maintain an accurate audit trail.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Report Generation</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Generate comprehensive reports for performance analysis:</p>
+                            <ul>
+                                <li><strong>Service History Reports:</strong> Detailed logs of all services for specific
+                                    vehicles</li>
+                                <li><strong>Customer Reports:</strong> Aggregate service history by customer</li>
+                                <li><strong>Maintenance Due Reports:</strong> Identify vehicles due for scheduled
+                                    service</li>
+                                <li><strong>Technician Performance:</strong> Analyze repair efficiency and quality by
+                                    technician</li>
+                                <li><strong>Common Repairs:</strong> Identify trends in repair types and frequencies
+                                </li>
+                                <li><strong>Parts Usage:</strong> Track parts consumption and replacement patterns</li>
+                            </ul>
+                            <p>Reports can be scheduled for automatic generation and distribution to designated staff
+                                members. Custom report templates can be created and saved for future use.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Hub -->
+                <div id="service-hub" class="faq-category">
+                    <h2>Service Hub</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Job Scheduling & Tracking</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Manage and monitor repair jobs with real-time updates:</p>
+                            <ul>
+                                <li><strong>Visual Calendar:</strong> Drag-and-drop scheduling interface</li>
+                                <li><strong>Technician Assignments:</strong> Match jobs to available technicians</li>
+                                <li><strong>Bay Allocation:</strong> Manage workspace utilization</li>
+                                <li><strong>Status Updates:</strong> Track jobs through each repair phase</li>
+                                <li><strong>Time Tracking:</strong> Monitor actual vs. estimated completion times</li>
+                                <li><strong>Delay Alerts:</strong> Receive notifications for jobs falling behind
+                                    schedule</li>
+                                <li><strong>Priority Management:</strong> Flag urgent repairs for expedited handling
+                                </li>
+                            </ul>
+                            <p>The job board provides a real-time overview of all active repairs, with color-coding for
+                                status and priority level. You can filter the view by technician, repair type, or
+                                status.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Communication Tools</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Connect with your team using integrated messaging systems:</p>
+                            <ul>
+                                <li><strong>Internal Chat:</strong> Instant messaging between staff members</li>
+                                <li><strong>Job Comments:</strong> Add notes visible to all staff assigned to a repair
+                                </li>
+                                <li><strong>Customer Messaging:</strong> Send updates directly to customers</li>
+                                <li><strong>Photo Sharing:</strong> Share repair photos internally or with customers
+                                </li>
+                                <li><strong>Task Assignments:</strong> Delegate specific tasks with notifications</li>
+                                <li><strong>Broadcast Announcements:</strong> Send shop-wide notifications</li>
+                            </ul>
+                            <p>All communications are logged in the system and attached to the relevant job for complete
+                                transparency and accountability. Staff can set availability status to manage
+                                communication expectations.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Message Templates</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Use pre-designed templates to speed up customer communications:</p>
+                            <ul>
+                                <li><strong>Service Confirmation:</strong> Verify scheduled appointments</li>
+                                <li><strong>Repair Updates:</strong> Notify customers of progress milestones</li>
+                                <li><strong>Estimate Approval:</strong> Request approval for additional work</li>
+                                <li><strong>Completion Notification:</strong> Inform customers when repairs are finished
+                                </li>
+                                <li><strong>Follow-Up:</strong> Check satisfaction after service completion</li>
+                                <li><strong>Maintenance Reminders:</strong> Alert customers to upcoming service needs
+                                </li>
+                            </ul>
+                            <p>Templates contain dynamic fields that automatically populate with customer, vehicle, and
+                                repair information. You can create custom templates or modify existing ones to match
+                                your communication style.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Billing & Service Charges -->
+                <div id="billing" class="faq-category">
+                    <h2>Billing & Service Charges</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>CarPal Revenue Model</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Understand our competitive fee structure:</p>
+                            <p>CarPal operates on a transaction-based model rather than a fixed subscription fee. This
+                                ensures that you only pay for what you use, with costs scaling proportionally to your
+                                business volume.</p>
+                            <p>The service charge is calculated based on the total invoice amount for each repair job,
+                                following our tiered structure. This model allows small shops to access enterprise-level
+                                software at affordable rates while providing predictable costs for larger operations.
+                            </p>
+                            <p>All features are included with no restrictions regardless of transaction volume, ensuring
+                                that even small repair shops have access to the full suite of tools needed to operate
+                                efficiently.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Paying Service Charges</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Enjoy flexible payment options for CarPal service charges:</p>
+                            <h4>M-Pesa Payment Process</h4>
+                            <ol>
+                                <li>Receive the weekly invoice via email every Sunday</li>
+                                <li>Review the detailed breakdown of charges by transaction</li>
+                                <li>Open the M-Pesa payment link included in the invoice</li>
+                                <li>Enter your M-Pesa PIN to authorize payment</li>
+                                <li>Receive confirmation of payment in the system</li>
+                            </ol>
+                            <h4>Weekly Invoice Generation</h4>
+                            <p>Service charges are accumulated throughout the week and compiled into a single invoice
+                                each Sunday. This simplifies accounting and reduces the frequency of payments needed.
+                            </p>
+                            <p>All invoices include itemized details of each transaction, the applicable service charge
+                                tier, and the calculated fee. Payment is due within 7 days of invoice generation.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Late Payment Consequences</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Stay informed about our policies to avoid additional fees:</p>
+                            <ul>
+                                <li><strong>Grace Period:</strong> 7 days from invoice issuance</li>
+                                <li><strong>First Reminder:</strong> Sent on day 8 (no penalty)</li>
+                                <li><strong>Second Reminder:</strong> Sent on day 14 with 5% late fee</li>
+                                <li><strong>Limited Functionality:</strong> After 21 days, certain features become
+                                    restricted</li>
+                                <li><strong>Account Suspension:</strong> After 30 days, account access is temporarily
+                                    suspended</li>
+                                <li><strong>Reactivation Fee:</strong> KES 1,000 to restore suspended accounts</li>
+                            </ul>
+                            <p>You can set up automatic payments through M-Pesa to avoid late payments. Contact our
+                                billing department to arrange payment plans if you anticipate difficulty meeting payment
+                                deadlines.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Billing Support</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Access dedicated help for any billing-related queries:</p>
+                            <ul>
+                                <li><strong>Billing Support Hours:</strong> Monday-Friday, 8 AM - 5 PM EAT</li>
+                                <li><strong>Email:</strong> billing@citruslabs.co.ke</li>
+                                <li><strong>Phone:</strong> +254 112 400 001</li>
+                                <li><strong>In-App Support:</strong> Access billing help through the support widget</li>
+                                <li><strong>Invoice Disputes:</strong> Submit concerns within 5 days of invoice receipt
+                                </li>
+                                <li><strong>Payment Verification:</strong> Request confirmation of received payments
+                                </li>
+                            </ul>
+                            <p>The billing department can provide detailed transaction reports, payment histories, and
+                                service usage analytics upon request. They can also assist with tax documentation and
+                                financial reporting needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Resources -->
+                <div id="support-resources" class="faq-category">
+                    <h2>Support Resources</h2>
+
+                    <div id="contact-support" class="faq-item">
+                        <div class="faq-question">
+                            <h3>Contact Support</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our dedicated support team is available through multiple channels:</p>
+                            <ul>
+                                <li><strong>Live Chat:</strong> Available within the platform 24/7</li>
+                                <li><strong>Phone Support:</strong> +254 112 400 000 (8 AM - 8 PM EAT, Monday-Saturday)
+                                </li>
+                                <li><strong>Email:</strong> support@citruslabs.co.ke</li>
+                                <li><strong>Support Ticket:</strong> Submit detailed issues through the help portal</li>
+                                <li><strong>Screen Sharing:</strong> Available for complex troubleshooting sessions</li>
+                                <li><strong>On-Site Support:</strong> Available in Nairobi and surrounding areas
+                                    (additional fees may apply)</li>
+                            </ul>
+                            <p>Premium support plans with dedicated account managers and priority response times are
+                                available for high-volume repair shops.</p>
+                        </div>
+                    </div>
+
+                    <div id="video-tutorials" class="faq-item">
+                        <div class="faq-question">
+                            <h3>Video Tutorials</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Access our comprehensive library of video tutorials:</p>
+                            <ul>
+                                <li><strong>Getting Started Series:</strong> Basic orientation and setup guides</li>
+                                <li><strong>Feature Deep Dives:</strong> Detailed exploration of specific functions</li>
+                                <li><strong>Workflow Tutorials:</strong> End-to-end process demonstrations</li>
+                                <li><strong>Advanced Tips & Tricks:</strong> Efficiency shortcuts and power features
+                                </li>
+                                <li><strong>Update Walkthroughs:</strong> Guides to new features and changes</li>
+                            </ul>
+                            <p>Videos are available through the Help Center and our YouTube channel. You can also access
+                                contextual video tutorials directly within the platform by clicking the "Help" icon in
+                                any section.</p>
+                        </div>
+                    </div>
+
+                    <div id="system-updates" class="faq-item">
+                        <div class="faq-question">
+                            <h3>System Updates</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Stay informed about platform improvements and changes:</p>
+                            <ul>
+                                <li><strong>Update Schedule:</strong> Regular updates released monthly</li>
+                                <li><strong>Release Notes:</strong> Detailed documentation of changes and new features
+                                </li>
+                                <li><strong>Beta Program:</strong> Early access to upcoming features for feedback</li>
+                                <li><strong>Feature Requests:</strong> Submit and vote on new feature ideas</li>
+                                <li><strong>Maintenance Windows:</strong> Updates typically occur on Sundays, 2-4 AM EAT
+                                </li>
+                            </ul>
+                            <p>Major updates are announced at least 14 days in advance through in-app notifications,
+                                email, and the CarPal community forum. You can also subscribe to our update calendar to
+                                integrate maintenance schedules with your own calendar system.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Experience the CarPal Advantage</h2>
+            <p>Every section of our FAQ is crafted to empower your auto repair shop with precision, clarity, and
+                efficiency. No more guesswork—just direct, actionable answers to keep your business running smoothly.
+            </p>
+            <p>Choose CarPal for an auto repair management solution that's as professional and reliable as you are.</p>
+            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\Get Started\get_started.html"
+                class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>CarPal</h3>
+                <p>© 2025 Citrus Labs. All Rights Reserved.</p>
+                <button class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div>
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\Footer\FAQ\faq.html">FAQ</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\Footer\Data Policy\data_policy.html">Data
+                            Policy</a></li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\Footer\Privacy Policy\privacy_policy.html">Privacy
+                            Policy</a></li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\Landing Page\CarPal Auto Repair Shop\Footer\Terms of Service\terms_of_service.html">Terms
+                            of Service</a></li>
+                    <li><a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- External JavaScript -->
+    <script src="faq.js"></script>
+</body>
+
+</html>

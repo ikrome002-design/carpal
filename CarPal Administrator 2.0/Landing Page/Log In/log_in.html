@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | CarPal</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="log_in.css">
+
+    <!-- Google Fonts for Poppins and Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                            alt="CarPal Logo">
+                    </a>
+                </div>
+                <nav class="navigation">
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">Home</a>
+                        </li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Create Account\create_account.html">Create
+                                Account</a></li>
+                    </ul>
+                    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="login-container">
+                <h1>Log In to CarPal</h1>
+                <p class="intro-text">Access your CarPal Administrator account securely.</p>
+
+                <!-- Login Form -->
+                <div class="login-form-wrapper">
+                    <!-- Email Input Section -->
+                    <div class="email-section" id="email-section">
+                        <form id="email-form" class="login-form">
+                            <div class="form-group">
+                                <label for="workEmail">Work Email Address</label>
+                                <input type="email" id="workEmail" name="workEmail" required>
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary btn-send-link">Send Validation Link</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Email Sent Section (initially hidden) -->
+                    <div class="email-sent-section" id="email-sent-section">
+                        <div class="success-message">
+                            <i class="fas fa-envelope-circle-check"></i>
+                            <h2>Validation Link Sent</h2>
+                            <p>A validation link has been sent to your email address. Please check your inbox (and spam
+                                folder) to proceed.</p>
+                        </div>
+
+                        <div class="resend-option">
+                            <p>Didn't receive the email? <a href="#" id="resend-link">Resend Validation Link</a></p>
+                        </div>
+
+                        <!-- Manual Code Entry Option -->
+                        <div class="manual-code-section">
+                            <h3>Or Enter Validation Code</h3>
+                            <form id="code-form" class="validation-code-form">
+                                <div class="form-group">
+                                    <label for="validationCode">Validation Code</label>
+                                    <input type="text" id="validationCode" name="validationCode"
+                                        placeholder="Enter the code from your email">
+                                    <div class="error-message" id="code-error"></div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-primary btn-validate-code">Validate Code</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Traditional Login (Email/Password) Section -->
+                    <div class="traditional-login-section" id="traditional-login-section">
+                        <form id="password-form" class="login-form">
+                            <div class="form-group">
+                                <label for="loginEmail">Work Email Address</label>
+                                <input type="email" id="loginEmail" name="loginEmail" required>
+                                <div class="error-message" id="loginEmail-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="password-input-container">
+                                    <input type="password" id="password" name="password" required>
+                                    <button type="button" class="toggle-password"
+                                        aria-label="Toggle password visibility">
+                                        <i class="fas fa-eye" id="password-toggle-icon"></i>
+                                    </button>
+                                </div>
+                                <div class="error-message" id="password-error"></div>
+                            </div>
+
+                            <div class="form-options">
+                                <div class="remember-me">
+                                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                                    <label for="rememberMe">Remember me</label>
+                                </div>
+                                <a href="#" class="forgot-password-link">Forgot Password?</a>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary btn-login">Log In</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- MFA Verification Section (initially hidden) -->
+                    <div class="mfa-section" id="mfa-section">
+                        <h2>Two-Factor Authentication</h2>
+                        <p>For added security, please verify your identity using one of the following methods:</p>
+
+                        <div class="mfa-options">
+                            <div class="mfa-option" id="mfa-email">
+                                <input type="radio" id="mfaEmail" name="mfaOption" value="email" checked>
+                                <label for="mfaEmail">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email Code</span>
+                                </label>
+                            </div>
+
+                            <div class="mfa-option" id="mfa-sms">
+                                <input type="radio" id="mfaSMS" name="mfaOption" value="sms">
+                                <label for="mfaSMS">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>SMS Code</span>
+                                </label>
+                            </div>
+
+                            <div class="mfa-option" id="mfa-app">
+                                <input type="radio" id="mfaApp" name="mfaOption" value="app">
+                                <label for="mfaApp">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Authenticator App</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <form id="mfa-form" class="mfa-form">
+                            <div class="form-group">
+                                <label for="mfaCode">Enter Verification Code</label>
+                                <input type="text" id="mfaCode" name="mfaCode" placeholder="Enter the code" required>
+                                <div class="error-message" id="mfa-error"></div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary btn-verify-mfa">Verify</button>
+                                <button type="button" class="btn-secondary btn-cancel-mfa">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Security Information Section -->
+                <div class="security-info">
+                    <div class="secure-connection">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Connection</span>
+                    </div>
+                    <div class="session-info">
+                        <p>Your session will be active for 30 minutes. For your security, you'll be automatically logged
+                            out after this period of inactivity.</p>
+                    </div>
+                </div>
+
+                <!-- New User Section -->
+                <div class="new-user-section">
+                    <p>New to CarPal? <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Create Account\create_account.html">Create
+                            an Account</a></p>
+                </div>
+
+                <!-- Help Section -->
+                <div class="help-section">
+                    <h3>Need Help?</h3>
+                    <div class="help-options">
+                        <a href="#" id="support-contact" class="help-option">
+                            <i class="fas fa-headset"></i>
+                            <span>Contact Support</span>
+                        </a>
+                        <a href="#" id="troubleshoot-tips" class="help-option">
+                            <i class="fas fa-tools"></i>
+                            <span>Troubleshooting Tips</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Support Options Modal -->
+    <div id="supportOptionsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Support Options</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="support-options">
+                    <a href="mailto:support@citruslabs.co.ke" class="support-option">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Support</span>
+                    </a>
+                    <a href="#" id="liveChatOption" class="support-option">
+                        <i class="fas fa-comments"></i>
+                        <span>Live Chat</span>
+                    </a>
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Footer\FAQ\faq.html"
+                        class="support-option">
+                        <i class="fas fa-question-circle"></i>
+                        <span>FAQ</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Troubleshooting Tips Modal -->
+    <div id="troubleshootTipsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Troubleshooting Tips</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="tips-list">
+                    <div class="tip">
+                        <h3><i class="fas fa-envelope"></i> Not receiving the validation email?</h3>
+                        <ul>
+                            <li>Check your spam/junk folder</li>
+                            <li>Ensure you're using your registered work email address</li>
+                            <li>Add <strong>noreply@citruslabs.co.ke</strong> to your safe senders list</li>
+                            <li>Try requesting a new validation link</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip">
+                        <h3><i class="fas fa-lock"></i> Forgotten your password?</h3>
+                        <ul>
+                            <li>Click the "Forgot Password" link to reset it</li>
+                            <li>Check your email for password reset instructions</li>
+                            <li>Contact your system administrator if you continue to have issues</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip">
+                        <h3><i class="fas fa-shield-alt"></i> Issues with two-factor authentication?</h3>
+                        <ul>
+                            <li>Ensure your authenticator app is synchronized with the correct time</li>
+                            <li>Request a new code if your current one has expired</li>
+                            <li>Contact support if you've lost access to your authentication method</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Account locked?</h3>
+                        <ul>
+                            <li>Wait for the specified lockout period to end</li>
+                            <li>Ensure you're using the correct credentials</li>
+                            <li>Contact support if you believe your account was locked in error</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reset Password</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="forgot-password-form">
+                    <div class="form-group">
+                        <label for="resetEmail">Work Email Address</label>
+                        <input type="email" id="resetEmail" name="resetEmail" required>
+                        <div class="error-message" id="resetEmail-error"></div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary btn-send-reset">Send Reset Link</button>
+                    </div>
+                </form>
+                <div id="reset-success" class="reset-success-message" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Password reset link has been sent to your email address. Please check your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-indicator">
+        <div class="spinner"></div>
+        <p>Processing your request...</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="dark-mode-toggle">
+                        <button id="darkModeToggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="footer-section social-media">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/@citruske" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section legal-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Footer\Terms and Conditions\terms_of_service.html">Terms
+                                of Service</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Footer\Privacy Policy\privacy_policy.html">Privacy
+                                Policy</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Footer\Data Policy\data_policy.html">Data
+                                Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Footer\FAQ\faq.html">FAQ</a>
+                        </li>
+                        <li><a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="log_in.js"></script>
+</body>
+
+</html>

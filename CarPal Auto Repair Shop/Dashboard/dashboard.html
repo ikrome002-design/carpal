@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CarPal Auto Repair Shop</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <!-- Left Navigation Sidebar -->
+    <nav class="nav-sidebar">
+        <div class="logo-container">
+            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                alt="CarPal Logo">
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Dashboard/dashboard.html" class="active">
+                    <i class="fas fa-home"></i>Dashboard
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Service Hub/service_hub.html">
+                    <i class="fas fa-tools"></i>Service Hub
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-In/check_in.html">
+                    <i class="fas fa-car"></i>Vehicle Check-In
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Billings & Payments/billings.html">
+                    <i class="fas fa-file-invoice-dollar"></i>Billings & Payments
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle History/history.html">
+                    <i class="fas fa-history"></i>Vehicle History
+                </a>
+            </li>
+            <li>
+                <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Technicians/technicians.html"
+                    class="active">
+                    <i class="fas fa-users-cog"></i>Technicians
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-Out/check_out.html">
+                    <i class="fas fa-sign-out-alt"></i>Vehicle Check-Out
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Settings/settings.html">
+                    <i class="fas fa-cog"></i>Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <h1>Dashboard</h1>
+            <div class="header-actions">
+                <button class="action-button"
+                    onclick="window.open('C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Notifications/notifications.html', 'Notifications', 'width=400,height=600')">
+                    <i class="fas fa-bell"></i> Notifications
+                </button>
+                <div class="user-profile" id="userProfile">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                        alt="User Profile">
+                    <span>John Doe</span>
+                    <div class="popup-menu" id="userMenu">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html">
+                            <i class="fas fa-sign-out-alt"></i> Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- KPI Cards -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <h3>Ongoing Jobs</h3>
+                <div class="kpi-value">15</div>
+                <div class="kpi-trend trend-up">
+                    <i class="fas fa-arrow-up"></i> +25% vs last week
+                </div>
+            </div>
+            <div class="kpi-card">
+                <h3>Today's Revenue</h3>
+                <div class="kpi-value">KES. 85,000</div>
+                <div class="kpi-trend trend-up">
+                    <i class="fas fa-arrow-up"></i> +15% vs yesterday
+                </div>
+            </div>
+            <div class="kpi-card">
+                <h3>Customer Satisfaction</h3>
+                <div class="kpi-value">4.8/5.0</div>
+                <div class="kpi-trend trend-up">
+                    <i class="fas fa-arrow-up"></i> +0.2 vs last month
+                </div>
+            </div>
+            <div class="kpi-card">
+                <h3>Pending Check-ins</h3>
+                <div class="kpi-value">8</div>
+                <div class="kpi-trend trend-down">
+                    <i class="fas fa-arrow-down"></i> -2 vs yesterday
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h3>Revenue Trends</h3>
+                <div class="chart-wrapper">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-container">
+                <h3>Service Distribution</h3>
+                <div class="chart-wrapper">
+                    <canvas id="serviceChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Jobs Section -->
+        <section class="active-jobs">
+            <h2>Active Jobs</h2>
+            <table class="job-table">
+                <thead>
+                    <tr>
+                        <th>Vehicle</th>
+                        <th>Service Type</th>
+                        <th>Technician</th>
+                        <th>Progress</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Toyota Camry (KDD 123A)</td>
+                        <td>Oil Change</td>
+                        <td>John Smith</td>
+                        <td>75%</td>
+                        <td><span class="status-label status-in-progress">In Progress</span></td>
+                        <td><button class="action-button">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>Honda Civic (KBB 456B)</td>
+                        <td>Brake Inspection</td>
+                        <td>Sarah Wilson</td>
+                        <td>25%</td>
+                        <td><span class="status-label status-pending">Pending</span></td>
+                        <td><button class="action-button">View Details</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Quick Appointment Form -->
+        <section class="quick-appointment">
+            <h2>Quick Appointment</h2>
+            <form class="form-grid">
+                <div class="form-group">
+                    <label>Customer Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Vehicle Details</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Service Type</label>
+                    <select required>
+                        <option value="">Select Service</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="repair">Repair</option>
+                        <option value="inspection">Inspection</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Date</label>
+                    <input type="date" required>
+                </div>
+                <button type="submit" class="action-button">Schedule Appointment</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div>
+                    <a href="https://citruslabs.co.ke/" target="_blank"
+                        style="color: #FFFFFF; text-decoration: none;">Corporate Website</a>
+                </div>
+                <div>
+                    © 2025 Citrus Labs. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // User Profile Popup
+        document.getElementById('userProfile').addEventListener('click', function () {
+            document.getElementById('userMenu').classList.toggle('active');
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Revenue Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Monthly Revenue',
+                    data: [650000, 590000, 800000, 810000, 560000, 550000],
+                    borderColor: '#FFD700',
+                    backgroundColor: 'rgba(255, 215, 0, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            label: function (context) {
+                                return 'Revenue: KES ' + context.parsed.y.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function (value) {
+                                return 'KES ' + value.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index'
+                }
+            }
+        });
+
+        // Service Distribution Chart
+        const serviceCtx = document.getElementById('serviceChart').getContext('2d');
+        new Chart(serviceCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Maintenance', 'Repairs', 'Inspections'],
+                datasets: [{
+                    data: [45, 30, 25],
+                    backgroundColor: [
+                        '#FFD700',
+                        '#2D2D2D',
+                        '#4CAF50'
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return context.label + ': ' + context.parsed + '%';
+                            }
+                        }
+                    }
+                },
+                cutout: '60%',
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+
+        // Quick Appointment Form
+        document.querySelector('.quick-appointment form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Appointment scheduled successfully!');
+        });
+
+        // Active Jobs Actions
+        document.querySelectorAll('.job-table .action-button').forEach(button => {
+            button.addEventListener('click', function () {
+                alert('Opening job details...');
+            });
+        });
+    </script>
+</body>
+
+</html>

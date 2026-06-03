@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | CarPal Auto Repair Shop</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="notifications.css">
+</head>
+
+<body>
+
+    <div class="notifications-container">
+        <!-- Header -->
+        <div class="notifications-header">
+            <h1><i class="fas fa-bell"></i> Notifications</h1>
+            <button class="close-button" id="closeNotifications">&times;</button>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="notifications-filter">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="unread">Unread</button>
+            <button class="filter-button" data-filter="urgent">Urgent</button>
+        </div>
+
+        <!-- Notifications List -->
+        <div class="notifications-list">
+            <!-- Urgent Notification Example -->
+            <div class="notification-item" data-type="urgent">
+                <div class="notification-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="notification-content">
+                    <div class="notification-title">
+                        Vehicle Service Due
+                        <span class="notification-status status-urgent">Urgent</span>
+                    </div>
+                    <div class="notification-message">
+                        Toyota Camry (KDD 123A) requires immediate brake inspection.
+                    </div>
+                    <div class="notification-time">5 minutes ago</div>
+                </div>
+                <div class="notification-actions">
+                    <button class="actions-toggle">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="actions-menu">
+                        <button>Mark as Read</button>
+                        <button>Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Notification Example -->
+            <div class="notification-item" data-type="unread">
+                <div class="notification-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="notification-content">
+                    <div class="notification-title">
+                        New Vehicle Check-In
+                        <span class="notification-status status-new">New</span>
+                    </div>
+                    <div class="notification-message">
+                        Honda Civic (KBB 456B) has been checked in for regular maintenance.
+                    </div>
+                    <div class="notification-time">30 minutes ago</div>
+                </div>
+                <div class="notification-actions">
+                    <button class="actions-toggle">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="actions-menu">
+                        <button>Mark as Read</button>
+                        <button>Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Read Notification Example -->
+            <div class="notification-item" data-type="read">
+                <div class="notification-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="notification-content">
+                    <div class="notification-title">
+                        Service Completed
+                        <span class="notification-status status-read">Read</span>
+                    </div>
+                    <div class="notification-message">
+                        Service completed for Nissan Altima (KAA 789C).
+                    </div>
+                    <div class="notification-time">2 hours ago</div>
+                </div>
+                <div class="notification-actions">
+                    <button class="actions-toggle">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="actions-menu">
+                        <button>Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty State (hidden by default) -->
+        <div class="empty-state" style="display: none;">
+            <i class="fas fa-bell-slash"></i>
+            <h3>No Notifications</h3>
+            <p>You're all caught up!</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="notifications-footer">
+            <span>3 unread notifications</span>
+            <button class="clear-all-button">Clear All</button>
+        </div>
+    </div>
+
+    <script>
+        // Close Button
+        document.getElementById('closeNotifications').addEventListener('click', function () {
+            window.close();
+        });
+
+        // Filter Buttons
+        const filterButtons = document.querySelectorAll('.filter-button');
+        const notificationItems = document.querySelectorAll('.notification-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterType = button.getAttribute('data-filter');
+
+                // Show/hide notifications based on filter
+                notificationItems.forEach(item => {
+                    if (filterType === 'all' || item.getAttribute('data-type') === filterType) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // Show empty state if no notifications match filter
+                const visibleNotifications = document.querySelectorAll('.notification-item[style="display: flex"]');
+                document.querySelector('.empty-state').style.display =
+                    visibleNotifications.length === 0 ? 'block' : 'none';
+            });
+        });
+
+        // Actions Toggle
+        const actionToggles = document.querySelectorAll('.actions-toggle');
+        actionToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const menu = toggle.nextElementSibling;
+
+                // Close all other menus
+                document.querySelectorAll('.actions-menu').forEach(m => {
+                    if (m !== menu) m.classList.remove('active');
+                });
+
+                menu.classList.toggle('active');
+            });
+        });
+
+        // Close action menus when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.notification-actions')) {
+                document.querySelectorAll('.actions-menu').forEach(menu => {
+                    menu.classList.remove('active');
+                });
+            }
+        });
+
+        // Clear All Button
+        document.querySelector('.clear-all-button').addEventListener('click', function () {
+            if (confirm('Are you sure you want to clear all notifications?')) {
+                document.querySelector('.notifications-list').innerHTML = '';
+                document.querySelector('.empty-state').style.display = 'block';
+                document.querySelector('.notifications-footer span').textContent = '0 unread notifications';
+            }
+        });
+    </script>
+</body>
+
+</html>

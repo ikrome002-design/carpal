@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Management - CarPal by Citrus</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="businesses.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                        alt="CarPal by Citrus Logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">Dashboard</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\User Management\users.html">Users</a>
+                    </li>
+                    <li class="active"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Business Management\businesses.html">Businesses</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Financial Oversight\finance.html">Finance</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Security Tools\security.html">Security</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Customer Support Tools\support.html">Support</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Profile & Notifications -->
+            <div class="user-controls">
+                <!-- Notifications -->
+                <div class="notifications">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Notifications\notifications.html">
+                        <i class="fa-solid fa-bell notification-icon"></i>
+                        <span class="notification-count">5</span>
+                    </a>
+                </div>
+
+                <!-- User Profile -->
+                <div class="user-profile-dropdown">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                        alt="User Profile" class="profile-icon" id="profile-icon">
+                    <div class="dropdown-content" id="profile-dropdown">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\My Profile\my_profile.html">My
+                            Profile</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Activity History\activity_history.html">Activity
+                            History</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">Log
+                            Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Business Management Header -->
+        <div class="page-header">
+            <h1>Business Management</h1>
+            <div class="action-buttons">
+                <button class="primary-btn" id="addBusinessBtn">Add Business</button>
+                <button class="secondary-btn" id="exportDataBtn">Export Data</button>
+            </div>
+        </div>
+
+        <!-- Analytics Dashboard Section -->
+        <section class="analytics-dashboard">
+            <h2>Analytics Dashboard</h2>
+            <div class="analytics-grid">
+                <!-- Total Business Count -->
+                <div class="analytics-card">
+                    <h3>Total Business Count</h3>
+                    <div class="chart-container">
+                        <!-- Chart would be rendered via JavaScript -->
+                        <div class="placeholder-chart">Business Count Overview Chart</div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Total Businesses:</span>
+                        <span class="metric-value">15,432</span>
+                    </div>
+                    <button class="view-report-btn">View Detailed Report</button>
+                </div>
+
+                <!-- Growth Metrics -->
+                <div class="analytics-card">
+                    <h3>Growth Metrics</h3>
+                    <div class="chart-container">
+                        <!-- Chart would be rendered via JavaScript -->
+                        <div class="placeholder-chart">New Business Trend Chart</div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Registration Completion Rate:</span>
+                        <span class="metric-value">87%</span>
+                    </div>
+                    <button class="view-report-btn">View Full Report</button>
+                </div>
+
+                <!-- Activity Trends -->
+                <div class="analytics-card">
+                    <h3>Activity Trends</h3>
+                    <div class="chart-container">
+                        <!-- Chart would be rendered via JavaScript -->
+                        <div class="placeholder-chart">Active vs Inactive Chart</div>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <span class="metric-label">Login Frequency:</span>
+                            <span class="metric-value">5.3 per week</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Transaction Volume:</span>
+                            <span class="metric-value">KES. 12.5M</span>
+                        </div>
+                    </div>
+                    <button class="view-report-btn">View Activity Report</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Status Management Section -->
+        <section class="business-status-management">
+
+            <h2>Business Status Management</h2>
+
+            <!-- Status Updates Panel -->
+            <div class="status-updates-panel">
+                <h3>Recent Status Updates</h3>
+                <div class="status-updates-list">
+                    <div class="status-update-item">
+                        <span class="update-time">Today, 9:15 AM</span>
+                        <span class="update-details">AutoFix Kenya status changed from <strong>Inactive</strong> to
+                            <strong>Active</strong></span>
+                        <span class="update-user">by Admin User</span>
+                    </div>
+                    <div class="status-update-item">
+                        <span class="update-time">Yesterday, 2:30 PM</span>
+                        <span class="update-details">Kisumu Auto Parts status changed from <strong>Active</strong> to
+                            <strong>Suspended</strong></span>
+                        <span class="update-user">by Admin User</span>
+                    </div>
+                    <div class="status-update-item">
+                        <span class="update-time">23 Mar 2025, 10:45 AM</span>
+                        <span class="update-details">Nakuru Car Wash status changed from <strong>Active</strong> to
+                            <strong>Inactive</strong></span>
+                        <span class="update-user">by System (30 days inactivity)</span>
+                    </div>
+                </div>
+                <div class="status-update-controls">
+                    <button class="bulk-update-btn">Bulk Status Update</button>
+                    <div class="notification-toggle">
+                        <label for="notify-status-changes">Notify users on status change</label>
+                        <input type="checkbox" id="notify-status-changes" checked>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tabs-container">
+                <h3>CarPal Businesses</h3>
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="active-businesses">Active Businesses</button>
+                    <button class="tab-btn" data-tab="inactive-businesses">Inactive Businesses</button>
+                    <button class="tab-btn" data-tab="suspended-accounts">Suspended Accounts</button>
+                </div>
+
+                <!-- Active Businesses Tab -->
+                <div class="tab-content active" id="active-businesses">
+                    <div class="data-table-container">
+                        <div class="table-filters">
+                            <input type="text" placeholder="Search businesses..." class="search-input">
+                            <select class="filter-dropdown">
+                                <option value="">All Industries</option>
+                                <option value="auto-repair">Auto Repair</option>
+                                <option value="car-wash">Car Wash</option>
+                                <option value="parts-supplier">Parts Supplier</option>
+                            </select>
+                            <button class="filter-btn">Filter</button>
+                        </div>
+
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>ID</th>
+                                    <th>Industry</th>
+                                    <th>Status</th>
+                                    <th>Last Activity</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AutoFix Kenya</td>
+                                    <td>BUS-10025</td>
+                                    <td>Auto Repair</td>
+                                    <td><span class="status-indicator active">Active</span></td>
+                                    <td>Today, 10:25 AM</td>
+                                    <td class="action-buttons">
+                                        <button class="action-btn view">View</button>
+                                        <button class="action-btn edit">Edit</button>
+                                        <button class="action-btn suspend">Suspend</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Nairobi Car Parts</td>
+                                    <td>BUS-10026</td>
+                                    <td>Parts Supplier</td>
+                                    <td><span class="status-indicator active">Active</span></td>
+                                    <td>Yesterday, 3:15 PM</td>
+                                    <td class="action-buttons">
+                                        <button class="action-btn view">View</button>
+                                        <button class="action-btn edit">Edit</button>
+                                        <button class="action-btn suspend">Suspend</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mombasa Auto Service</td>
+                                    <td>BUS-10027</td>
+                                    <td>Auto Repair</td>
+                                    <td><span class="status-indicator active">Active</span></td>
+                                    <td>23 Mar 2025, 11:05 AM</td>
+                                    <td class="action-buttons">
+                                        <button class="action-btn view">View</button>
+                                        <button class="action-btn edit">Edit</button>
+                                        <button class="action-btn suspend">Suspend</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="pagination">
+                            <button class="pagination-btn prev">Previous</button>
+                            <span class="page-indicator">Page 1 of 10</span>
+                            <button class="pagination-btn next">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inactive Businesses Tab -->
+                <div class="tab-content" id="inactive-businesses">
+                    <div class="data-table-container">
+                        <div class="table-filters">
+                            <input type="text" placeholder="Search inactive businesses..." class="search-input">
+                            <select class="filter-dropdown">
+                                <option value="">All Industries</option>
+                                <option value="auto-repair">Auto Repair</option>
+                                <option value="car-wash">Car Wash</option>
+                                <option value="parts-supplier">Parts Supplier</option>
+                            </select>
+                            <button class="filter-btn">Filter</button>
+                        </div>
+
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>ID</th>
+                                    <th>Industry</th>
+                                    <th>Status</th>
+                                    <th>Last Activity</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Eldoret Wheel Services</td>
+                                    <td>BUS-10015</td>
+                                    <td>Auto Repair</td>
+                                    <td><span class="status-indicator inactive">Inactive</span></td>
+                                    <td>15 Feb 2025 (42 days ago)</td>
+                                    <td class="action-buttons">
+                                        <button class="action-btn view">View</button>
+                                        <button class="action-btn reactivate">Reactivate</button>
+                                        <button class="action-btn contact">Contact</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Nakuru Car Wash</td>
+                                    <td>BUS-10018</td>
+                                    <td>Car Wash</td>
+                                    <td><span class="status-indicator inactive">Inactive</span></td>
+                                    <td>20 Feb 2025 (37 days ago)</td>
+                                    <td class="action-buttons">
+                                        <button class="action-btn view">View</button>
+                                        <button class="action-btn reactivate">Reactivate</button>
+                                        <button class="action-btn contact">Contact</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="pagination">
+                            <button class="pagination-btn prev">Previous</button>
+                            <span class="page-indicator">Page 1 of 3</span>
+                            <button class="pagination-btn next">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suspended Accounts Tab -->
+                <div class="tab-content" id="suspended-accounts">
+                    <div class="data-table-container">
+                        <div class="table-filters">
+                            <input type="text" placeholder="Search suspended accounts..." class="search-input">
+                            <select class="filter-dropdown">
+                                <option value="">All Suspension Reasons</option>
+                                <option value="payment">Payment Issues</option>
+                                <option value="violation">Terms Violation</option>
+                                <option value="request">User Request</option>
+                            </select>
+                            <button class="filter-btn">Filter</button>
+                        </div>
+
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>ID</th>
+                                    <th>Industry</th>
+                                    <th>Suspension Reason</th>
+                                    <th>Duration</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Kisumu Auto Parts</td>
+                                    <td>BUS-10022</td>
+                                    <td>Parts Supplier</td>
+                                    <td>Payment Issue</td>
+                                    <td>Temporary (Until 15 Apr 2025)</td>
+                                    <td class="action-buttons">
+                                        <button class="action-btn view">View</button>
+                                        <button class="action-btn reinstate">Reinstate</button>
+                                        <button class="action-btn extend">Extend</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ultra Shine Car Wash</td>
+                                    <td>BUS-10020</td>
+                                    <td>Car Wash</td>
+                                    <td>Terms Violation</td>
+                                    <td>Permanent</td>
+                                    <td class="action-buttons">
+                                        <button class="action-btn view">View</button>
+                                        <button class="action-btn reinstate">Reinstate</button>
+                                        <button class="action-btn contact">Contact</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="pagination">
+                            <button class="pagination-btn prev">Previous</button>
+                            <span class="page-indicator">Page 1 of 2</span>
+                            <button class="pagination-btn next">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- Account Operations Section -->
+        <section class="account-operations">
+            <h2>Account Operations</h2>
+            <div class="operation-panels">
+                <!-- Account Details Panel -->
+                <div class="operation-panel" id="account-details-panel">
+                    <h3>Account Details</h3>
+                    <div class="empty-state">
+                        <p>Select a business from the list to view details</p>
+                    </div>
+                    <!-- This will be populated with business details when a business is selected -->
+                </div>
+
+                <!-- Permissions Management Panel -->
+                <div class="operation-panel" id="permissions-panel">
+                    <h3>Permissions Management</h3>
+                    <div class="permissions-grid">
+                        <div class="permission-category">
+                            <h4>Feature Access</h4>
+                            <div class="permission-options">
+                                <div class="permission-item">
+                                    <label for="feature-analytics">Analytics Dashboard</label>
+                                    <select id="feature-analytics">
+                                        <option value="full">Full Access</option>
+                                        <option value="view">View Only</option>
+                                        <option value="none">No Access</option>
+                                    </select>
+                                </div>
+                                <div class="permission-item">
+                                    <label for="feature-users">User Management</label>
+                                    <select id="feature-users">
+                                        <option value="full">Full Access</option>
+                                        <option value="view">View Only</option>
+                                        <option value="none">No Access</option>
+                                    </select>
+                                </div>
+                                <div class="permission-item">
+                                    <label for="feature-transactions">Transactions</label>
+                                    <select id="feature-transactions">
+                                        <option value="full">Full Access</option>
+                                        <option value="view">View Only</option>
+                                        <option value="none">No Access</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="permission-category">
+                            <h4>User Roles</h4>
+                            <div class="permission-options">
+                                <div class="permission-item">
+                                    <label for="role-admin">Administrator Role Permissions</label>
+                                    <button id="role-admin" class="edit-role-btn">Edit Role</button>
+                                </div>
+                                <div class="permission-item">
+                                    <label for="role-manager">Manager Role Permissions</label>
+                                    <button id="role-manager" class="edit-role-btn">Edit Role</button>
+                                </div>
+                                <div class="permission-item">
+                                    <label for="role-user">User Role Permissions</label>
+                                    <button id="role-user" class="edit-role-btn">Edit Role</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="permission-category">
+                            <h4>Custom Permissions</h4>
+                            <div class="custom-permission-builder">
+                                <button class="add-custom-permission-btn">Add Custom Permission Set</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Settings Panel -->
+                <div class="operation-panel" id="settings-panel">
+                    <h3>Business Settings</h3>
+                    <div class="settings-grid">
+                        <div class="settings-category">
+                            <h4>Notification Preferences</h4>
+                            <div class="settings-options">
+                                <div class="settings-item">
+                                    <label for="notify-login">Login Notifications</label>
+                                    <input type="checkbox" id="notify-login" checked>
+                                </div>
+                                <div class="settings-item">
+                                    <label for="notify-transaction">Transaction Notifications</label>
+                                    <input type="checkbox" id="notify-transaction" checked>
+                                </div>
+                                <div class="settings-item">
+                                    <label for="notify-user-changes">User Changes Notifications</label>
+                                    <input type="checkbox" id="notify-user-changes" checked>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-category">
+                            <h4>Integration Settings</h4>
+                            <div class="settings-options">
+                                <div class="settings-item">
+                                    <label for="integration-api">API Access</label>
+                                    <input type="checkbox" id="integration-api">
+                                </div>
+                                <div class="settings-item">
+                                    <label for="integration-webhooks">Webhooks</label>
+                                    <input type="checkbox" id="integration-webhooks">
+                                </div>
+                                <div class="settings-item">
+                                    <label for="integration-third-party">Third-Party Integrations</label>
+                                    <input type="checkbox" id="integration-third-party">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-category">
+                            <h4>Billing Configuration</h4>
+                            <div class="settings-options">
+                                <div class="settings-item">
+                                    <label for="billing-cycle">Billing Cycle</label>
+                                    <select id="billing-cycle">
+                                        <option value="weekly">Weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="quarterly">Quarterly</option>
+                                        <option value="annually">Annually</option>
+                                    </select>
+                                </div>
+                                <div class="settings-item">
+                                    <label for="payment-method">Payment Method</label>
+                                    <select id="payment-method">
+                                        <option value="card">Credit/Debit Card</option>
+                                        <option value="mpesa">M-Pesa</option>
+                                        <option value="bank">Bank Transfer</option>
+                                    </select>
+                                </div>
+                                <div class="settings-item">
+                                    <label for="auto-renew">Auto-Renew Subscription</label>
+                                    <input type="checkbox" id="auto-renew" checked>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settings-actions">
+                        <button class="save-settings-btn">Save Settings</button>
+                        <button class="reset-settings-btn">Reset to Defaults</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Module Section -->
+        <section class="search-module">
+            <h2>Advanced Search</h2>
+            <div class="search-tabs">
+                <button class="search-tab-btn active" data-tab="business-search">Business Search</button>
+                <button class="search-tab-btn" data-tab="user-search">User Search</button>
+            </div>
+
+            <!-- Business Search Tab -->
+            <div class="search-tab-content active" id="business-search">
+                <div class="search-form">
+                    <div class="search-row">
+                        <div class="search-field">
+                            <label for="search-business-name">Business Name</label>
+                            <input type="text" id="search-business-name" placeholder="Enter business name">
+                        </div>
+                        <div class="search-field">
+                            <label for="search-account-id">Account ID</label>
+                            <input type="text" id="search-account-id" placeholder="Enter account ID">
+                        </div>
+                    </div>
+
+                    <div class="search-row">
+                        <div class="search-field">
+                            <label for="search-industry">Industry</label>
+                            <select id="search-industry">
+                                <option value="">All Industries</option>
+                                <option value="auto-repair">Auto Repair</option>
+                                <option value="car-wash">Car Wash</option>
+                                <option value="parts-supplier">Parts Supplier</option>
+                            </select>
+                        </div>
+                        <div class="search-field">
+                            <label for="search-status">Status</label>
+                            <select id="search-status">
+                                <option value="">All Statuses</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="suspended">Suspended</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search-row">
+                        <div class="search-field">
+                            <label for="search-date-from">Registration Date (From)</label>
+                            <input type="date" id="search-date-from">
+                        </div>
+                        <div class="search-field">
+                            <label for="search-date-to">Registration Date (To)</label>
+                            <input type="date" id="search-date-to">
+                        </div>
+                    </div>
+
+                    <div class="search-actions">
+                        <button class="search-btn">Search</button>
+                        <button class="reset-search-btn">Reset</button>
+                        <button class="save-search-btn">Save Search</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Search Tab -->
+            <div class="search-tab-content" id="user-search">
+                <div class="search-form">
+                    <div class="search-row">
+                        <div class="search-field">
+                            <label for="search-user-name">User Name</label>
+                            <input type="text" id="search-user-name" placeholder="Enter user name">
+                        </div>
+                        <div class="search-field">
+                            <label for="search-user-email">Email</label>
+                            <input type="email" id="search-user-email" placeholder="Enter email">
+                        </div>
+                    </div>
+
+                    <div class="search-row">
+                        <div class="search-field">
+                            <label for="search-user-phone">Phone</label>
+                            <input type="tel" id="search-user-phone" placeholder="Enter phone number">
+                        </div>
+                        <div class="search-field">
+                            <label for="search-user-role">Role</label>
+                            <select id="search-user-role">
+                                <option value="">All Roles</option>
+                                <option value="admin">Admin</option>
+                                <option value="manager">Manager</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search-row">
+                        <div class="search-field">
+                            <label for="search-user-business">Business</label>
+                            <input type="text" id="search-user-business" placeholder="Enter business name">
+                        </div>
+                        <div class="search-field">
+                            <label for="search-user-status">Status</label>
+                            <select id="search-user-status">
+                                <option value="">All Statuses</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="suspended">Suspended</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search-actions">
+                        <button class="search-btn">Search</button>
+                        <button class="reset-search-btn">Reset</button>
+                        <button class="save-search-btn">Save Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Management Section -->
+        <section class="user-management">
+            <h2>Administrator User Management</h2>
+            <div class="user-management-tabs">
+                <button class="user-tab-btn active" data-tab="add-user">Add New Administrator User</button>
+                <button class="user-tab-btn" data-tab="edit-user">Edit Administrator User</button>
+                <button class="user-tab-btn" data-tab="user-roles">Administrator User Roles</button>
+            </div>
+
+            <!-- Add New User Tab -->
+            <div class="user-tab-content active" id="add-user">
+                <div class="user-form">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="add-user-first-name">First Name</label>
+                            <input type="text" id="add-user-first-name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="add-user-last-name">Last Name</label>
+                            <input type="text" id="add-user-last-name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="add-user-email">Email</label>
+                            <input type="email" id="add-user-email" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="add-user-phone">Phone</label>
+                            <input type="tel" id="add-user-phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="add-platform-admin">Platform Administrator</label>
+                            <select id="add-platform-admin" required>
+                                <option value="">Select Platform Administrator</option>
+                                <option value="admin-10025">John Doe</option>
+                                <option value="admin-10026">Jane Smith</option>
+                                <option value="admin-10027">Michael Johnson</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="add-user-role">Role</label>
+                            <select id="add-user-role" required>
+                                <option value="">Select Role</option>
+                                <option value="superAdmin">Super Administrator</option>
+                                <option value="regionalAdmin">Regional Administrator</option>
+                                <option value="supportAdmin">Support Administrator</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="permissions-section">
+                        <h4>Permissions</h4>
+                        <div class="permission-checkboxes">
+                            <div class="permission-checkbox">
+                                <input type="checkbox" id="perm-view-dashboard">
+                                <label for="perm-view-dashboard">View Dashboard</label>
+                            </div>
+                            <div class="permission-checkbox">
+                                <input type="checkbox" id="perm-manage-accounts">
+                                <label for="perm-manage-accounts">Manage Auto Repair Shop Accounts</label>
+                            </div>
+                            <div class="permission-checkbox">
+                                <input type="checkbox" id="perm-view-reports">
+                                <label for="perm-view-reports">View Platform Reports</label>
+                            </div>
+                            <div class="permission-checkbox">
+                                <input type="checkbox" id="perm-edit-platform-settings">
+                                <label for="perm-edit-platform-settings">Edit Platform Settings</label>
+                            </div>
+                            <div class="permission-checkbox">
+                                <input type="checkbox" id="perm-manage-permissions">
+                                <label for="perm-manage-permissions">Manage User Permissions</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-actions">
+                        <button class="submit-btn">Add User</button>
+                        <button class="cancel-btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit User Tab -->
+            <div class="user-tab-content" id="edit-user">
+                <div class="user-selection">
+                    <label for="edit-user-select">Select User to Edit</label>
+                    <select id="edit-user-select">
+                        <option value="">Select User</option>
+                        <option value="user-1001">John Doe (AutoFix Kenya)</option>
+                        <option value="user-1002">Jane Smith (Nairobi Car Parts)</option>
+                        <option value="user-1003">Michael Johnson (Mombasa Auto Service)</option>
+                    </select>
+                </div>
+
+                <div class="user-form" id="edit-user-form">
+                    <!-- This will be populated when a user is selected -->
+                    <div class="empty-state">
+                        <p>Select a user from the dropdown to edit details</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Roles Tab -->
+            <div class="user-tab-content" id="user-roles">
+                <div class="roles-management">
+                    <div class="roles-definition">
+                        <h3>Role Definitions</h3>
+                        <div class="role-item">
+                            <h4>Administrator</h4>
+                            <p>Full access to all features and settings</p>
+                            <button class="edit-role-definition-btn">Edit Definition</button>
+                        </div>
+                        <div class="role-item">
+                            <h4>Manager</h4>
+                            <p>Access to manage users and view reports, limited settings access</p>
+                            <button class="edit-role-definition-btn">Edit Definition</button>
+                        </div>
+                        <div class="role-item">
+                            <h4>User</h4>
+                            <p>Basic access to use the platform features, no management capabilities</p>
+                            <button class="edit-role-definition-btn">Edit Definition</button>
+                        </div>
+                        <button class="add-role-btn">Add New Role</button>
+                    </div>
+
+                    <div class="permission-matrix">
+                        <h3>Permission Matrix</h3>
+                        <table class="matrix-table">
+                            <thead>
+                                <tr>
+                                    <th>Permission</th>
+                                    <th>Administrator</th>
+                                    <th>Manager</th>
+                                    <th>User</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>View Dashboard</td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox" checked></td>
+                                </tr>
+                                <tr>
+                                    <td>Manage Users</td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>View Transactions</td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox" checked></td>
+                                </tr>
+                                <tr>
+                                    <td>Edit Settings</td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>Generate Reports</td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>Manage Billing</td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="matrix-actions">
+                            <button class="save-matrix-btn">Save Permissions</button>
+                            <button class="reset-matrix-btn">Reset to Defaults</button>
+                        </div>
+                    </div>
+
+                    <div class="role-assignment">
+                        <h3>Role Assignment</h3>
+                        <table class="assignment-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Business</th>
+                                    <th>Current Role</th>
+                                    <th>New Role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>AutoFix Kenya</td>
+                                    <td>Admin</td>
+                                    <td>
+                                        <select class="role-select">
+                                            <option value="admin" selected>Administrator</option>
+                                            <option value="manager">Manager</option>
+                                            <option value="user">User</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jane Smith</td>
+                                    <td>Nairobi Car Parts</td>
+                                    <td>Manager</td>
+                                    <td>
+                                        <select class="role-select">
+                                            <option value="admin">Administrator</option>
+                                            <option value="manager" selected>Manager</option>
+                                            <option value="user">User</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Michael Johnson</td>
+                                    <td>Mombasa Auto Service</td>
+                                    <td>User</td>
+                                    <td>
+                                        <select class="role-select">
+                                            <option value="admin">Administrator</option>
+                                            <option value="manager">Manager</option>
+                                            <option value="user" selected>User</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="apply-roles-btn">Apply Changes</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bulk Data Operations Section -->
+        <section class="bulk-data-operations">
+            <h2>Bulk Data Operations</h2>
+            <div class="bulk-operations-tabs">
+                <button class="bulk-tab-btn active" data-tab="export-operations">Export Operations</button>
+            </div>
+
+
+
+            <!-- Export Operations Tab -->
+            <div class="bulk-tab-content active" id="export-operations">
+                <div class="export-panel">
+                    <h3>Export Business Data</h3>
+                    <div class="export-options">
+                        <div class="export-option">
+                            <h4>Excel Export</h4>
+                            <p>Export data to Excel file (.xlsx)</p>
+                            <button class="export-excel-btn">Export as Excel</button>
+                        </div>
+                        <div class="export-option">
+                            <h4>CSV Export</h4>
+                            <p>Export data to CSV file (.csv)</p>
+                            <button class="export-csv-btn">Export as CSV</button>
+                        </div>
+                    </div>
+                    <div class="data-selection">
+                        <h4>Select Data to Export</h4>
+                        <div class="data-selection-options">
+                            <div class="data-checkbox">
+                                <input type="checkbox" id="export-basic-info" checked>
+                                <label for="export-basic-info">Basic Information</label>
+                            </div>
+                            <div class="data-checkbox">
+                                <input type="checkbox" id="export-contact-info" checked>
+                                <label for="export-contact-info">Contact Information</label>
+                            </div>
+                            <div class="data-checkbox">
+                                <input type="checkbox" id="export-subscription">
+                                <label for="export-subscription">Subscription Details</label>
+                            </div>
+                            <div class="data-checkbox">
+                                <input type="checkbox" id="export-users">
+                                <label for="export-users">Business Users</label>
+                            </div>
+                            <div class="data-checkbox">
+                                <input type="checkbox" id="export-transactions">
+                                <label for="export-transactions">Transaction History</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="generate-export-btn">Generate Export</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- Add New Business Modal -->
+    <div class="modal" id="add-business-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Business</h2>
+                <button class="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="business-type-selection">
+                    <h3>Business Type</h3>
+                    <div class="business-types">
+                        <div class="business-type">
+                            <input type="radio" id="type-auto-repair" name="business-type" checked>
+                            <label for="type-auto-repair">Auto Repair Shop</label>
+                        </div>
+                        <div class="business-type">
+                            <input type="radio" id="type-related-services" name="business-type">
+                            <label for="type-related-services">Related Services</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="registration-form">
+                    <h3>Registration Information</h3>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="business-name">Business Name</label>
+                            <input type="text" id="business-name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="registration-number">Registration Number</label>
+                            <input type="text" id="registration-number" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="tax-id">Tax ID</label>
+                            <input type="text" id="tax-id" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="establishment-date">Establishment Date</label>
+                            <input type="date" id="establishment-date" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-details">
+                    <h3>Business Details</h3>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="industry">Industry</label>
+                            <select id="industry" required>
+                                <option value="">Select Industry</option>
+                                <option value="auto-repair">Auto Repair</option>
+                                <option value="car-wash">Car Wash</option>
+                                <option value="parts-supplier">Parts Supplier</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="business-size">Business Size</label>
+                            <select id="business-size" required>
+                                <option value="">Select Size</option>
+                                <option value="small">Small (1-10 employees)</option>
+                                <option value="medium">Medium (11-50 employees)</option>
+                                <option value="large">Large (50+ employees)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field full-width">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" placeholder="Physical Address" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="operating-hours-start">Operating Hours (Start)</label>
+                            <input type="time" id="operating-hours-start" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="operating-hours-end">Operating Hours (End)</label>
+                            <input type="time" id="operating-hours-end" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="primary-contact">
+                    <h3>Primary Contact Information</h3>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="contact-role">Role</label>
+                            <input type="text" id="contact-role" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="contact-phone">Phone</label>
+                            <input type="tel" id="contact-phone" required>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="document-upload">
+                    <h3>Document Upload</h3>
+                    <div class="upload-item">
+                        <label for="business-license">Business License</label>
+                        <input type="file" id="business-license" accept=".pdf,.jpg,.png">
+                        <p class="upload-note">Required - Maximum file size: 5MB</p>
+                    </div>
+                    <div class="upload-item">
+                        <label for="proof-identity">Proof of Identity</label>
+                        <input type="file" id="proof-identity" accept=".pdf,.jpg,.png">
+                        <p class="upload-note">Required - Maximum file size: 5MB</p>
+                    </div>
+                    <div class="upload-item">
+                        <label for="additional-docs">Additional Documentation</label>
+                        <input type="file" id="additional-docs" accept=".pdf,.jpg,.png" multiple>
+                        <p class="upload-note">Optional - Maximum file size: 10MB</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="create-business-btn">Create Business</button>
+                <button class="save-draft-btn">Save as Draft</button>
+                <button class="cancel-modal-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Suspend Business Modal -->
+    <div class="modal" id="suspend-business-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Suspend Business</h2>
+                <button class="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="business-to-suspend">
+                    <h3>Selected Business</h3>
+                    <p class="selected-business-name">AutoFix Kenya (BUS-10025)</p>
+                </div>
+
+                <div class="suspension-reason">
+                    <h3>Suspension Reason</h3>
+                    <select id="suspension-reason" required>
+                        <option value="">Select Reason</option>
+                        <option value="payment">Payment Issue</option>
+                        <option value="violation">Terms of Service Violation</option>
+                        <option value="request">Business Request</option>
+                        <option value="security">Security Concern</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea id="additional-comments" placeholder="Additional comments" rows="3"></textarea>
+                </div>
+
+                <div class="suspension-duration">
+                    <h3>Suspension Duration</h3>
+                    <div class="duration-options">
+                        <div class="duration-option">
+                            <input type="radio" id="duration-temporary" name="duration" checked>
+                            <label for="duration-temporary">Temporary</label>
+                        </div>
+                        <div class="duration-option">
+                            <input type="radio" id="duration-permanent" name="duration">
+                            <label for="duration-permanent">Permanent</label>
+                        </div>
+                    </div>
+                    <div class="date-range" id="temporary-duration-fields">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="suspension-start">Start Date</label>
+                                <input type="date" id="suspension-start" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="suspension-end">End Date</label>
+                                <input type="date" id="suspension-end" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-notification">
+                    <h3>User Notification</h3>
+                    <div class="notification-template">
+                        <h4>Notification Template</h4>
+                        <select id="notification-template">
+                            <option value="payment-issue">Payment Issue Template</option>
+                            <option value="violation-notice">Terms Violation Template</option>
+                            <option value="general-suspension">General Suspension Template</option>
+                            <option value="custom">Custom Message</option>
+                        </select>
+                    </div>
+                    <div class="custom-message">
+                        <textarea id="custom-notification" placeholder="Enter custom notification message"
+                            rows="4"></textarea>
+                    </div>
+                    <div class="notification-control">
+                        <input type="checkbox" id="send-notification" checked>
+                        <label for="send-notification">Send notification to business users</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="confirm-suspension-btn">Confirm Suspension</button>
+                <button class="cancel-modal-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- OTP Verification Modal -->
+    <div class="modal" id="otp-verification-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>OTP Verification</h2>
+                <button class="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="otp-instruction">A 6-digit verification code has been sent to your email and phone. Please
+                    enter the code below to confirm this action.</p>
+                <div class="otp-input-container">
+                    <input type="text" class="otp-digit" maxlength="1" autofocus>
+                    <input type="text" class="otp-digit" maxlength="1">
+                    <input type="text" class="otp-digit" maxlength="1">
+                    <input type="text" class="otp-digit" maxlength="1">
+                    <input type="text" class="otp-digit" maxlength="1">
+                    <input type="text" class="otp-digit" maxlength="1">
+                </div>
+                <div class="resend-otp">
+                    <button class="resend-otp-btn">Resend OTP</button>
+                    <span class="timer-display">2:59</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="verify-btn">Verify</button>
+                <button class="cancel-modal-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Dark Mode Toggle -->
+            <div class="theme-toggle">
+                <button class="dark-mode-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" class="social-icon">
+                    <i class="fa-brands fa-x"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-icon">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Site Link -->
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/">Visit Corporate Website</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Link -->
+    <script src="businesses.js"></script>
+
+    <!-- Bulk Status Update Modal -->
+    <div class="modal" id="bulk-status-update-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Bulk Status Update</h2>
+                <button class="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Recipient Selection Section -->
+                <div class="bulk-update-section">
+                    <h3>Recipient Selection</h3>
+                    <div class="recipient-options">
+                        <div class="recipient-type">
+                            <h4>Select User Type</h4>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="select-shop-owners" checked>
+                                    <label for="select-shop-owners">Shop Owners</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="select-technicians">
+                                    <label for="select-technicians">Technicians</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="select-customers">
+                                    <label for="select-customers">Customers</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="select-all-users">
+                                    <label for="select-all-users">All Users</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="recipient-filters">
+                            <h4>Additional Filters</h4>
+                            <div class="filter-row">
+                                <div class="filter-field">
+                                    <label for="filter-location">Location</label>
+                                    <select id="filter-location">
+                                        <option value="">All Locations</option>
+                                        <option value="nairobi">Nairobi</option>
+                                        <option value="mombasa">Mombasa</option>
+                                        <option value="kisumu">Kisumu</option>
+                                        <option value="eldoret">Eldoret</option>
+                                        <option value="nakuru">Nakuru</option>
+                                    </select>
+                                </div>
+                                <div class="filter-field">
+                                    <label for="filter-industry">Industry</label>
+                                    <select id="filter-industry">
+                                        <option value="">All Industries</option>
+                                        <option value="auto-repair">Auto Repair</option>
+                                        <option value="car-wash">Car Wash</option>
+                                        <option value="parts-supplier">Parts Supplier</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="filter-row">
+                                <div class="filter-field">
+                                    <label for="filter-status">Current Status</label>
+                                    <select id="filter-status">
+                                        <option value="">All Statuses</option>
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
+                                        <option value="suspended">Suspended</option>
+                                    </select>
+                                </div>
+                                <div class="filter-field">
+                                    <label for="filter-role">User Role</label>
+                                    <select id="filter-role">
+                                        <option value="">All Roles</option>
+                                        <option value="owner">Owner</option>
+                                        <option value="manager">Manager</option>
+                                        <option value="staff">Staff</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="save-filter-group">
+                                <input type="text" id="filter-group-name" placeholder="Filter group name">
+                                <button class="save-filter-btn">Save Filter Group</button>
+                            </div>
+                            <div class="saved-filter-groups">
+                                <label for="load-filter-group">Saved Filter Groups</label>
+                                <select id="load-filter-group">
+                                    <option value="">Select a saved group</option>
+                                    <option value="group-1">Regional Managers</option>
+                                    <option value="group-2">Nairobi Businesses</option>
+                                    <option value="group-3">Premium Accounts</option>
+                                </select>
+                                <button class="load-filter-btn">Load</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipient-preview">
+                        <h4>Selected Recipients Preview</h4>
+                        <div class="recipient-count">
+                            <span class="count-label">Total Recipients:</span>
+                            <span class="count-value">254</span>
+                        </div>
+                        <button class="view-recipients-btn">View Full List</button>
+                    </div>
+                </div>
+
+                <!-- Message Composition Section -->
+                <div class="bulk-update-section">
+                    <h3>Message Composition</h3>
+                    <div class="template-selection">
+                        <label for="message-template">Message Template</label>
+                        <select id="message-template">
+                            <option value="">Select a template</option>
+                            <option value="maintenance">Scheduled Maintenance</option>
+                            <option value="outage">Service Outage</option>
+                            <option value="update">Platform Update</option>
+                            <option value="promotion">Promotion Announcement</option>
+                            <option value="custom">Custom Message</option>
+                        </select>
+                    </div>
+
+                    <div class="message-editor">
+                        <label for="message-subject">Subject</label>
+                        <input type="text" id="message-subject" value="Important Update: Scheduled Maintenance">
+
+                        <label for="message-body">Message</label>
+                        <textarea id="message-body" rows="6">Dear {user_name},
+
+We are writing to inform you that CarPal will be undergoing scheduled maintenance on {maintenance_date} from {start_time} to {end_time} EAT. During this period, the platform may experience brief interruptions or limited functionality.
+
+We apologize for any inconvenience this may cause to your business operations. Should you have any questions or concerns, please don't hesitate to reach out to our support team.
+
+Thank you for your understanding and continued partnership.
+
+Best regards,
+The CarPal Team</textarea>
+
+                        <div class="dynamic-fields">
+                            <h4>Dynamic Fields</h4>
+                            <div class="dynamic-field-options">
+                                <button class="dynamic-field-btn" data-field="{user_name}">User Name</button>
+                                <button class="dynamic-field-btn" data-field="{business_name}">Business Name</button>
+                                <button class="dynamic-field-btn" data-field="{maintenance_date}">Date</button>
+                                <button class="dynamic-field-btn" data-field="{start_time}">Start Time</button>
+                                <button class="dynamic-field-btn" data-field="{end_time}">End Time</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification Scheduling Section -->
+                <div class="bulk-update-section">
+                    <h3>Notification Scheduling</h3>
+                    <div class="schedule-options">
+                        <div class="schedule-option">
+                            <input type="radio" id="send-immediately" name="send-timing" checked>
+                            <label for="send-immediately">Send Immediately</label>
+                        </div>
+                        <div class="schedule-option">
+                            <input type="radio" id="schedule-later" name="send-timing">
+                            <label for="schedule-later">Schedule for Later</label>
+                        </div>
+                    </div>
+
+                    <div class="schedule-details" id="schedule-details-panel">
+                        <div class="schedule-row">
+                            <div class="schedule-field">
+                                <label for="schedule-date">Date</label>
+                                <input type="date" id="schedule-date">
+                            </div>
+                            <div class="schedule-field">
+                                <label for="schedule-time">Time</label>
+                                <input type="time" id="schedule-time">
+                            </div>
+                        </div>
+                        <div class="timezone-note">All times are in East Africa Time (EAT)</div>
+                    </div>
+
+                    <div class="scheduled-notifications">
+                        <h4>Scheduled Notifications</h4>
+                        <table class="scheduled-table">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Recipients</th>
+                                    <th>Scheduled For</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Platform Update v2.5</td>
+                                    <td>All Users (1,243)</td>
+                                    <td>1 Apr 2025, 08:00 AM</td>
+                                    <td>
+                                        <button class="action-btn edit">Edit</button>
+                                        <button class="action-btn cancel">Cancel</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Payment System Maintenance</td>
+                                    <td>Shop Owners (842)</td>
+                                    <td>5 Apr 2025, 10:00 PM</td>
+                                    <td>
+                                        <button class="action-btn edit">Edit</button>
+                                        <button class="action-btn cancel">Cancel</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Preview & History Section -->
+                <div class="bulk-update-section">
+                    <div class="preview-panel">
+                        <h3>Message Preview</h3>
+                        <div class="preview-container">
+                            <div class="preview-header">
+                                <div class="preview-subject">Important Update: Scheduled Maintenance</div>
+                                <div class="preview-from">From: CarPal Administrator</div>
+                                <div class="preview-to">To: John Doe (AutoFix Kenya)</div>
+                            </div>
+                            <div class="preview-body">
+                                Dear John Doe,<br><br>
+
+                                We are writing to inform you that CarPal will be undergoing scheduled maintenance on
+                                April 2, 2025 from 2:00 AM to 5:00 AM EAT. During this period, the platform may
+                                experience brief interruptions or limited functionality.<br><br>
+
+                                We apologize for any inconvenience this may cause to your business operations. Should
+                                you have any questions or concerns, please don't hesitate to reach out to our support
+                                team.<br><br>
+
+                                Thank you for your understanding and continued partnership.<br><br>
+
+                                Best regards,<br>
+                                The CarPal Team
+                            </div>
+                        </div>
+                        <button class="refresh-preview-btn">Refresh Preview</button>
+                    </div>
+
+                    <div class="history-panel">
+                        <h3>Notification History</h3>
+                        <div class="history-filters">
+                            <input type="text" placeholder="Search notifications..." class="history-search">
+                            <select class="history-filter">
+                                <option value="">All Types</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="outage">Service Outage</option>
+                                <option value="update">Platform Update</option>
+                                <option value="promotion">Promotion</option>
+                            </select>
+                        </div>
+                        <div class="history-list">
+                            <div class="history-item">
+                                <div class="history-header">
+                                    <span class="history-subject">Platform Update v2.4 Features</span>
+                                    <span class="history-date">22 Mar 2025</span>
+                                </div>
+                                <div class="history-details">
+                                    <span class="history-recipients">All Users (1,237)</span>
+                                    <span class="history-sent-by">Sent by: Admin User</span>
+                                </div>
+                                <button class="view-notification-btn">View Details</button>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-header">
+                                    <span class="history-subject">New Payment Options Available</span>
+                                    <span class="history-date">15 Mar 2025</span>
+                                </div>
+                                <div class="history-details">
+                                    <span class="history-recipients">Shop Owners (835)</span>
+                                    <span class="history-sent-by">Sent by: Admin User</span>
+                                </div>
+                                <button class="view-notification-btn">View Details</button>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-header">
+                                    <span class="history-subject">Emergency Maintenance Notice</span>
+                                    <span class="history-date">10 Mar 2025</span>
+                                </div>
+                                <div class="history-details">
+                                    <span class="history-recipients">All Users (1,212)</span>
+                                    <span class="history-sent-by">Sent by: System</span>
+                                </div>
+                                <button class="view-notification-btn">View Details</button>
+                            </div>
+                        </div>
+                        <button class="view-all-history-btn">View Full History</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="notification-metrics">
+                    <div class="metric-item">
+                        <span class="metric-label">Recipients:</span>
+                        <span class="metric-value">254</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Estimated Delivery:</span>
+                        <span class="metric-value">
+                            < 1 minute</span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="send-notification-btn">Send Notification</button>
+                    <button class="save-draft-btn">Save Draft</button>
+                    <button class="cancel-modal-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

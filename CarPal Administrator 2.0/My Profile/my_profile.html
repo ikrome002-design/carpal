@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal by Citrus - My Profile</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="my_profile.css">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                        alt="CarPal by Citrus Logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">Dashboard</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\User Management\users.html">Users</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Business Management\businesses.html">Businesses</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Financial Oversight\finance.html">Finance</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Security Tools\security.html">Security</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Customer Support Tools\support.html">Support</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Controls -->
+            <div class="user-controls">
+                <!-- Notifications -->
+                <div class="notifications">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Notifications\notifications.html">
+                        <i class="fa-solid fa-bell notification-icon"></i>
+                        <span class="notification-count">5</span>
+                    </a>
+                </div>
+
+                <!-- User Profile Dropdown -->
+                <div class="user-profile-dropdown">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                        alt="User Profile" class="profile-icon">
+                    <div class="dropdown-content">
+                        <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\My Profile\my_profile.html"
+                            class="active">My
+                            Profile</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Activity History\activity_history.html">Activity
+                            History</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">Log
+                            Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="profile-page-container">
+            <h1>My Profile</h1>
+
+            <div class="profile-grid">
+                <!-- Left Column - Profile Picture -->
+                <div class="profile-left-column">
+                    <!-- Profile Picture Section -->
+                    <section class="profile-picture-section">
+                        <h2>Profile Picture</h2>
+                        <div class="profile-image-container">
+                            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                alt="Profile Picture" class="profile-image">
+                        </div>
+                        <div class="profile-picture-actions">
+                            <button class="btn change-photo-btn" id="changePhotoBtn">Change Photo</button>
+                            <button class="btn remove-photo-btn" id="removePhotoBtn">Remove Photo</button>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column - Profile Details -->
+                <div class="profile-right-column">
+                    <!-- Basic Information Section -->
+                    <section class="basic-info-section">
+                        <div class="section-header">
+                            <h2>Basic Information</h2>
+                            <button class="btn edit-btn" id="editBasicInfoBtn">Edit</button>
+                        </div>
+                        <div class="section-content">
+                            <div class="info-row">
+                                <div class="info-label">Full Name:</div>
+                                <div class="info-value">John Mwangi</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Email Address:</div>
+                                <div class="info-value">john.mwangi@citruslabs.co.ke</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Phone Number:</div>
+                                <div class="info-value">+254 712 345 678</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Administrator Role:</div>
+                                <div class="info-value">Platform Administrator</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contact Preferences Section -->
+                    <section class="contact-preferences-section">
+                        <div class="section-header">
+                            <h2>Contact Preferences</h2>
+                            <button class="btn edit-btn" id="editContactPreferencesBtn">Edit</button>
+                        </div>
+                        <div class="section-content">
+                            <div class="info-row">
+                                <div class="info-label">Preferred Contact Method:</div>
+                                <div class="info-value">Email</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Email Notifications:</div>
+                                <div class="info-value">Enabled</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">SMS Notifications:</div>
+                                <div class="info-value">Disabled</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">In-App Notifications:</div>
+                                <div class="info-value">Enabled</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Account Security Section -->
+                    <section class="account-security-section">
+                        <div class="section-header">
+                            <h2>Account Security</h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="info-row">
+                                <div class="info-label">Last Password Change:</div>
+                                <div class="info-value">February 15, 2025</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Two-Factor Authentication:</div>
+                                <div class="info-value"><span class="status-badge enabled">Enabled</span></div>
+                            </div>
+                            <div class="security-actions">
+                                <button class="btn security-btn" id="changePasswordBtn">Change Password</button>
+                                <button class="btn security-btn" id="manage2FABtn">Manage 2FA</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Activity Summary Section -->
+                    <section class="activity-summary-section">
+                        <div class="section-header">
+                            <h2>Recent Activity</h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="info-row">
+                                <div class="info-label">Last Login:</div>
+                                <div class="info-value">March 28, 2025, 10:23 AM</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Login Location/Device:</div>
+                                <div class="info-value">Nairobi, Kenya / Chrome on Windows</div>
+                            </div>
+                            <div class="activity-list">
+                                <h3>Last Actions Performed</h3>
+                                <ul>
+                                    <li>
+                                        <span class="activity-time">March 28, 2025, 10:35 AM</span>
+                                        <span class="activity-description">Updated business profile for "SafeRide Taxi
+                                            Co."</span>
+                                    </li>
+                                    <li>
+                                        <span class="activity-time">March 28, 2025, 10:30 AM</span>
+                                        <span class="activity-description">Approved new business registration</span>
+                                    </li>
+                                    <li>
+                                        <span class="activity-time">March 27, 2025, 4:45 PM</span>
+                                        <span class="activity-description">Generated monthly revenue report</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="activity-actions">
+                                <button class="btn view-log-btn" id="viewActivityLogBtn">View Activity Log</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Dialogs -->
+    <!-- Edit Basic Information Modal -->
+    <div class="modal" id="editBasicInfoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Basic Information</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="basicInfoForm">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" value="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" value="Mwangi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" value="john.mwangi@citruslabs.co.ke" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" value="+254 712 345 678" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Administrator Role</label>
+                        <input type="text" id="role" name="role" value="Platform Administrator" readonly>
+                        <small class="form-text">Administrator role cannot be changed.</small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel-btn" id="cancelBasicInfoBtn">Cancel</button>
+                <button class="btn save-btn" id="saveBasicInfoBtn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Profile Picture Modal -->
+    <div class="modal" id="profilePictureModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Change Profile Picture</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="upload-options">
+                    <button class="btn upload-option-btn" id="uploadFromComputerBtn">Upload from Computer</button>
+                    <button class="btn upload-option-btn" id="takeWebcamPhotoBtn">Take Webcam Photo</button>
+                    <button class="btn upload-option-btn" id="removeCurrentPhotoBtn">Remove Current Photo</button>
+                </div>
+
+                <div class="image-editor">
+                    <div class="image-preview">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                            alt="Profile Picture Preview" id="imagePreview">
+                    </div>
+                    <div class="image-controls">
+                        <div class="control-group">
+                            <label for="cropControl">Crop</label>
+                            <input type="range" id="cropControl" min="0" max="100" value="0">
+                        </div>
+                        <div class="control-group">
+                            <label for="zoomControl">Zoom</label>
+                            <input type="range" id="zoomControl" min="0" max="100" value="0">
+                        </div>
+                        <div class="control-group">
+                            <label for="rotateControl">Rotate</label>
+                            <input type="range" id="rotateControl" min="0" max="360" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <input type="file" id="profileImageUpload" accept="image/*" style="display: none;">
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel-btn" id="cancelProfilePictureBtn">Cancel</button>
+                <button class="btn save-btn" id="applyProfilePictureBtn">Apply Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Contact Preferences Modal -->
+    <div class="modal" id="contactPreferencesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Contact Preferences</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="contactPreferencesForm">
+                    <div class="form-section">
+                        <h3>Contact Methods</h3>
+                        <div class="form-group">
+                            <label for="primaryContactMethod">Primary Contact Method</label>
+                            <select id="primaryContactMethod" name="primaryContactMethod">
+                                <option value="email" selected>Email</option>
+                                <option value="sms">SMS</option>
+                                <option value="inapp">In-App</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="emailToggle" name="emailToggle" checked>
+                                <span class="toggle-switch"></span>
+                                Enable Email Notifications
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="smsToggle" name="smsToggle">
+                                <span class="toggle-switch"></span>
+                                Enable SMS Notifications
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="inAppToggle" name="inAppToggle" checked>
+                                <span class="toggle-switch"></span>
+                                Enable In-App Notifications
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Notification Settings</h3>
+                        <div class="form-group">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="systemUpdatesToggle" name="systemUpdatesToggle" checked>
+                                <span class="toggle-switch"></span>
+                                System Updates
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="securityAlertsToggle" name="securityAlertsToggle" checked>
+                                <span class="toggle-switch"></span>
+                                Security Alerts
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="userRegistrationsToggle" name="userRegistrationsToggle"
+                                    checked>
+                                <span class="toggle-switch"></span>
+                                New User Registrations
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="paymentNotificationsToggle" name="paymentNotificationsToggle"
+                                    checked>
+                                <span class="toggle-switch"></span>
+                                Payment Notifications
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="businessUpdatesToggle" name="businessUpdatesToggle" checked>
+                                <span class="toggle-switch"></span>
+                                Business Updates
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Alert Frequency</h3>
+                        <div class="form-group radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="alertFrequency" value="realtime" checked>
+                                <span class="radio-custom"></span>
+                                Real-time
+                            </label>
+
+                            <label class="radio-label">
+                                <input type="radio" name="alertFrequency" value="daily">
+                                <span class="radio-custom"></span>
+                                Daily Digest
+                            </label>
+
+                            <label class="radio-label">
+                                <input type="radio" name="alertFrequency" value="weekly">
+                                <span class="radio-custom"></span>
+                                Weekly Summary
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn reset-btn" id="resetPreferencesBtn">Reset to Default</button>
+                <button class="btn cancel-btn" id="cancelPreferencesBtn">Cancel</button>
+                <button class="btn save-btn" id="savePreferencesBtn">Save Preferences</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal" id="changePasswordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Change Password</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="changePasswordForm">
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password</label>
+                        <input type="password" id="currentPassword" name="currentPassword" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" name="newPassword" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+
+                    <div class="password-strength">
+                        <h3>Password Strength</h3>
+                        <div class="strength-meter">
+                            <div class="strength-indicator" id="strengthIndicator"></div>
+                        </div>
+                        <div class="requirement-checklist">
+                            <div class="requirement" id="lengthRequirement">
+                                <i class="fa-solid fa-circle"></i> At least 8 characters
+                            </div>
+                            <div class="requirement" id="uppercaseRequirement">
+                                <i class="fa-solid fa-circle"></i> At least one uppercase letter
+                            </div>
+                            <div class="requirement" id="lowercaseRequirement">
+                                <i class="fa-solid fa-circle"></i> At least one lowercase letter
+                            </div>
+                            <div class="requirement" id="numberRequirement">
+                                <i class="fa-solid fa-circle"></i> At least one number
+                            </div>
+                            <div class="requirement" id="specialRequirement">
+                                <i class="fa-solid fa-circle"></i> At least one special character
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel-btn" id="cancelPasswordBtn">Cancel</button>
+                <button class="btn save-btn" id="updatePasswordBtn">Update Password</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage 2FA Modal -->
+    <div class="modal" id="manage2FAModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Manage Two-Factor Authentication</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="two-factor-status">
+                    <h3>Current Status</h3>
+                    <div class="status-indicator">
+                        <span class="status-badge enabled">Enabled</span>
+                        <label class="toggle-label large-toggle">
+                            <input type="checkbox" id="twoFactorToggle" checked>
+                            <span class="toggle-switch"></span>
+                            Enable/Disable 2FA
+                        </label>
+                    </div>
+                </div>
+
+                <div class="two-factor-methods">
+                    <h3>Authentication Methods</h3>
+                    <div class="methods-selection">
+                        <label class="radio-label">
+                            <input type="radio" name="twoFactorMethod" value="sms">
+                            <span class="radio-custom"></span>
+                            SMS Authentication
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="twoFactorMethod" value="app" checked>
+                            <span class="radio-custom"></span>
+                            Authenticator App
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="twoFactorMethod" value="email">
+                            <span class="radio-custom"></span>
+                            Email Authentication
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setup-steps">
+                    <h3>Setup Steps</h3>
+                    <div class="qr-code-container">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAYAAAAZtYVBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQkSURBVHhe7dTRzYJgAATRVegmCRu2YhFuxBZsxSL8YAMJ39/z5NzAzCb3HOn+OHZkfKrNHT9rcTYz0YWNQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAoYEDAkYEjAkYEjAkIAhAUMChgQMCRgSMCRgSMCQgCEBQwKGBAwJGBIwJGBIwJCAIQFDAn9Dztfqcnb20vl1+gCbm2DdAtXdWQAAAABJRU5ErkJggg=="
+                            alt="QR Code" class="qr-code">
+                        <p class="qr-instructions">Scan this QR code with your authenticator app or enter the code
+                            manually.</p>
+                    </div>
+
+                    <div class="verification-code">
+                        <label for="verificationCode">Enter Verification Code</label>
+                        <input type="text" id="verificationCode" name="verificationCode"
+                            placeholder="Enter 6-digit code">
+                    </div>
+
+                    <div class="recovery-codes">
+                        <h4>Recovery Codes</h4>
+                        <p class="recovery-instruction">Save these recovery codes in a safe place. You can use them to
+                            sign in if you lose access to your authentication device.</p>
+                        <div class="codes-container">
+                            <code>7A9B-2C3D-4E5F-6G7H</code>
+                            <code>8J9K-1L2M-3N4P-5Q6R</code>
+                            <code>7S8T-9U1V-2W3X-4Y5Z</code>
+                            <code>6A7B-8C9D-1E2F-3G4H</code>
+                            <code>5J6K-7L8M-9N1P-2Q3R</code>
+                        </div>
+                        <button class="btn download-codes-btn">Download Codes</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel-btn" id="cancel2FABtn">Cancel</button>
+                <button class="btn save-btn" id="complete2FABtn">Complete Setup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Log Modal -->
+    <div class="modal large-modal" id="activityLogModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Activity Log</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="filter-options">
+                    <div class="date-range-filter">
+                        <label for="startDate">From:</label>
+                        <input type="date" id="startDate" name="startDate">
+                        <label for="endDate">To:</label>
+                        <input type="date" id="endDate" name="endDate">
+                    </div>
+
+                    <div class="activity-type-filter">
+                        <label for="activityType">Activity Type:</label>
+                        <select id="activityType" name="activityType">
+                            <option value="all">All Activities</option>
+                            <option value="login">Login History</option>
+                            <option value="profile">Profile Changes</option>
+                            <option value="security">Security Updates</option>
+                            <option value="business">Business Management</option>
+                            <option value="financial">Financial Activities</option>
+                        </select>
+                    </div>
+
+                    <div class="device-filter">
+                        <label for="deviceFilter">Device:</label>
+                        <select id="deviceFilter" name="deviceFilter">
+                            <option value="all">All Devices</option>
+                            <option value="desktop">Desktop</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="tablet">Tablet</option>
+                        </select>
+                    </div>
+
+                    <button class="btn apply-filter-btn">Apply Filters</button>
+                </div>
+
+                <div class="activity-log-entries">
+                    <table class="activity-table">
+                        <thead>
+                            <tr>
+                                <th>Date & Time</th>
+                                <th>Activity</th>
+                                <th>IP Address</th>
+                                <th>Device</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>March 28, 2025, 10:35 AM</td>
+                                <td>Updated business profile for "SafeRide Taxi Co."</td>
+                                <td>196.201.xxx.xxx</td>
+                                <td>Chrome on Windows</td>
+                                <td>Nairobi, Kenya</td>
+                            </tr>
+                            <tr>
+                                <td>March 28, 2025, 10:30 AM</td>
+                                <td>Approved new business registration</td>
+                                <td>196.201.xxx.xxx</td>
+                                <td>Chrome on Windows</td>
+                                <td>Nairobi, Kenya</td>
+                            </tr>
+                            <tr>
+                                <td>March 28, 2025, 10:23 AM</td>
+                                <td>Logged in successfully</td>
+                                <td>196.201.xxx.xxx</td>
+                                <td>Chrome on Windows</td>
+                                <td>Nairobi, Kenya</td>
+                            </tr>
+                            <tr>
+                                <td>March 27, 2025, 4:45 PM</td>
+                                <td>Generated monthly revenue report</td>
+                                <td>196.201.xxx.xxx</td>
+                                <td>Chrome on Windows</td>
+                                <td>Nairobi, Kenya</td>
+                            </tr>
+                            <tr>
+                                <td>March 27, 2025, 2:15 PM</td>
+                                <td>Updated contact preferences</td>
+                                <td>196.201.xxx.xxx</td>
+                                <td>Chrome on Windows</td>
+                                <td>Nairobi, Kenya</td>
+                            </tr>
+                            <tr>
+                                <td>March 27, 2025, 11:30 AM</td>
+                                <td>Approved payment of KES 58,750 for "Metro Cabs Ltd"</td>
+                                <td>196.201.xxx.xxx</td>
+                                <td>Chrome on Windows</td>
+                                <td>Nairobi, Kenya</td>
+                            </tr>
+                            <tr>
+                                <td>March 27, 2025, 9:15 AM</td>
+                                <td>Logged in successfully</td>
+                                <td>196.201.xxx.xxx</td>
+                                <td>Chrome on Windows</td>
+                                <td>Nairobi, Kenya</td>
+                            </tr>
+                            <tr>
+                                <td>March 26, 2025, 5:10 PM</td>
+                                <td>Logged out</td>
+                                <td>196.201.xxx.xxx</td>
+                                <td>Chrome on Windows</td>
+                                <td>Nairobi, Kenya</td>
+                            </tr>
+                            <tr>
+                                <td>March 26, 2025, 3:45 PM</td>
+                                <td>Resolved user support ticket #1247</td>
+                                <td>196.201.xxx.xxx</td>
+                                <td>Chrome on Windows</td>
+                                <td>Nairobi, Kenya</td>
+                            </tr>
+                            <tr>
+                                <td>March 26, 2025, 9:30 AM</td>
+                                <td>Logged in successfully</td>
+                                <td>196.201.xxx.xxx</td>
+                                <td>Chrome on Windows</td>
+                                <td>Nairobi, Kenya</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="log-actions">
+                    <button class="btn export-log-btn">Export Log</button>
+                    <button class="btn clear-history-btn">Clear History</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn back-btn" id="backToProfileBtn">Back to Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Dialog -->
+    <div class="modal confirmation-modal" id="confirmationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirm Action</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="confirm-message">
+                    <p id="confirmMessage">Are you sure you want to perform this action?</p>
+                    <p id="confirmWarning" class="warning-text"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel-btn" id="cancelConfirmBtn">Cancel</button>
+                <button class="btn confirm-btn" id="confirmActionBtn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div class="notification success-notification" id="successNotification">
+        <div class="notification-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="notification-content">
+            <h3>Success!</h3>
+            <p id="successMessage">Your changes have been saved successfully.</p>
+            <p id="nextSteps"></p>
+        </div>
+        <button class="notification-close" id="dismissSuccessBtn">&times;</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Dark Mode Toggle -->
+            <div class="theme-toggle">
+                <button class="dark-mode-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" class="social-icon">
+                    <i class="fa-brands fa-x"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-icon">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Site Link -->
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/">Visit Corporate Website</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Link -->
+    <script src="my_profile.js"></script>
+</body>
+
+</html>

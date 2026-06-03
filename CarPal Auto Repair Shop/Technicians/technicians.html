@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technicians | CarPal Auto Repair Shop</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+    <link rel="stylesheet" href="technicians.css">
+</head>
+
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="nav-sidebar">
+        <div class="logo-container">
+            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                alt="CarPal Logo">
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Dashboard/dashboard.html">
+                    <i class="fas fa-home"></i>Dashboard
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Service Hub/service_hub.html">
+                    <i class="fas fa-tools"></i>Service Hub
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-In/check_in.html">
+                    <i class="fas fa-car"></i>Vehicle Check-In
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Billings & Payments/billings.html">
+                    <i class="fas fa-file-invoice-dollar"></i>Billings & Payments
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle History/history.html">
+                    <i class="fas fa-history"></i>Vehicle History
+                </a>
+            </li>
+            <li>
+                <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Technicians/technicians.html"
+                    class="active">
+                    <i class="fas fa-users-cog"></i>Technicians
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-Out/check_out.html">
+                    <i class="fas fa-sign-out-alt"></i>Vehicle Check-Out
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Settings/settings.html">
+                    <i class="fas fa-cog"></i>Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+
+            <h1>Technicians</h1>
+            <div class="header-actions">
+                <button class="action-button"
+                    onclick="window.open('C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Notifications/notifications.html', 'Notifications', 'width=400,height=600')">
+                    <i class="fas fa-bell"></i> Notifications
+                </button>
+                <div class="user-profile" id="userProfile">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                        alt="User Profile">
+                    <span>John Doe</span>
+                    <div class="popup-menu" id="userMenu">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html">
+                            <i class="fas fa-sign-out-alt"></i> Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="technicians-summary">
+            <div class="summary-card">
+                <div class="summary-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">15</span>
+                        <span class="stat-label">Total Technicians</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">8</span>
+                        <span class="stat-label">Available Now</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">4</span>
+                        <span class="stat-label">Busy</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">On Leave</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">4.8</span>
+                        <span class="stat-label">Avg. Rating</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">120</span>
+                        <span class="stat-label">Completed Services</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Pending Requests</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">45 min</span>
+                        <span class="stat-label">Avg. Service Time</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">5 yrs</span>
+                        <span class="stat-label">Avg. Experience</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+
+        
+
+        <!-- Control Panel -->
+        <section class="control-panel">
+            <div class="search-filters">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search technicians by name, specialty...">
+                </div>
+
+                <div class="filters">
+                    <select class="filter-select" id="specialtyFilter">
+                        <option value="">All Specialties</option>
+                        <option value="engine">Engine Specialist</option>
+                        <option value="electrical">Electrical Systems</option>
+                        <option value="transmission">Transmission</option>
+                        <option value="brakes">Brake Systems</option>
+                    </select>
+
+                    <select class="filter-select" id="experienceFilter">
+                        <option value="">Experience Level</option>
+                        <option value="junior">Junior (0-2 years)</option>
+                        <option value="mid">Mid-Level (3-5 years)</option>
+                        <option value="senior">Senior (5+ years)</option>
+                    </select>
+
+                    <select class="filter-select" id="availabilityFilter">
+                        <option value="">Availability</option>
+                        <option value="available">Available Now</option>
+                        <option value="busy">Currently Busy</option>
+                        <option value="leave">On Leave</option>
+                    </select>
+                </div>
+
+                <div class="sort-options">
+                    <select class="sort-select" id="sortBy">
+                        <option value="rating">Highest Rated</option>
+                        <option value="experience">Most Experienced</option>
+                        <option value="recent">Recently Active</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="add-tech-btn">
+                <i class="fas fa-plus"></i>
+                Add New Technician
+            </button>
+        </section>
+
+        <!-- Technicians Grid -->
+        <section class="technicians-grid">
+            <!-- Sample Technician Card -->
+            <div class="technician-card">
+                <div class="card-header">
+                    <span class="status-badge available">Available</span>
+                    <div class="admin-actions">
+                        <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                        <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Website Images\technician.jpg"
+                        alt="John Smith" class="profile-img">
+                    <h3>John Smith</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.5 (128 reviews)</span>
+                    </div>
+                </div>
+
+                <div class="expertise-section">
+                    <h4>Specializations</h4>
+                    <div class="tags">
+                        <span class="tag">Engine Repair</span>
+                        <span class="tag">Diagnostics</span>
+                        <span class="tag">Transmission</span>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stat">
+                        <span class="stat-value">8+ years</span>
+                        <span class="stat-label">Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">642</span>
+                        <span class="stat-label">Services</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">98%</span>
+                        <span class="stat-label">Satisfaction</span>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <button class="view-profile-btn">View Profile</button>
+                    <button class="book-btn">Book Appointment</button>
+                </div>
+            </div>
+
+            <!-- More technician cards would be dynamically added here -->
+        </section>
+
+        <!-- Availability Calendar Section -->
+        <!-- Availability Calendar Section -->
+        <section class="availability-section">
+            <div class="calendar-header">
+                <h2>Availability Schedule</h2>
+                <div class="calendar-controls">
+                    <button class="calendar-nav-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span class="current-month">February 2025</span>
+                    <button class="calendar-nav-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="week">Week</button>
+                    <button class="view-btn" data-view="month">Month</button>
+                </div>
+            </div>
+
+            <div class="calendar-grid">
+                <!-- Calendar Header -->
+                <div class="calendar-grid-header">
+                    <div class="time-column">Time</div>
+                    <div class="day-column">Mon<span class="date">5</span></div>
+                    <div class="day-column">Tue<span class="date">6</span></div>
+                    <div class="day-column">Wed<span class="date">7</span></div>
+                    <div class="day-column current">Thu<span class="date">8</span></div>
+                    <div class="day-column">Fri<span class="date">9</span></div>
+                    <div class="day-column">Sat<span class="date">10</span></div>
+                    <div class="day-column">Sun<span class="date">11</span></div>
+                </div>
+
+                <!-- Calendar Body -->
+                <div class="calendar-grid-body">
+                    <!-- Time slots -->
+                    <div class="time-slots">
+                        <div class="time-slot">8:00 AM</div>
+                        <div class="time-slot">9:00 AM</div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot">11:00 AM</div>
+                        <div class="time-slot">12:00 PM</div>
+                        <div class="time-slot">1:00 PM</div>
+                        <div class="time-slot">2:00 PM</div>
+                        <div class="time-slot">3:00 PM</div>
+                        <div class="time-slot">4:00 PM</div>
+                        <div class="time-slot">5:00 PM</div>
+                    </div>
+
+                    <!-- Schedule Grid -->
+                    <div class="schedule-grid">
+                        <!-- Sample Appointments -->
+                        <div class="appointment" style="grid-row: 2 / 4; grid-column: 2">
+                            <div class="appointment-content">
+                                <span class="appointment-time">9:00 AM - 11:00 AM</span>
+                                <span class="appointment-title">Engine Repair</span>
+                                <span class="appointment-client">Toyota Camry - John D.</span>
+                            </div>
+                        </div>
+
+                        <div class="appointment urgent" style="grid-row: 4 / 6; grid-column: 4">
+                            <div class="appointment-content">
+                                <span class="appointment-time">11:00 AM - 1:00 PM</span>
+                                <span class="appointment-title">Emergency Brake Service</span>
+                                <span class="appointment-client">Honda Civic - Sarah M.</span>
+                            </div>
+                        </div>
+
+                        <div class="appointment completed" style="grid-row: 7 / 9; grid-column: 3">
+                            <div class="appointment-content">
+                                <span class="appointment-time">2:00 PM - 4:00 PM</span>
+                                <span class="appointment-title">Oil Change & Inspection</span>
+                                <span class="appointment-client">Ford F-150 - Mike R.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="calendar-legend">
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #FFD700"></span>
+                    <span class="legend-label">Scheduled</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #ff6b6b"></span>
+                    <span class="legend-label">Urgent</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #51cf66"></span>
+                    <span class="legend-label">Completed</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #e9ecef"></span>
+                    <span class="legend-label">Available</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Analytics -->
+        <!-- Performance Analytics -->
+        <section class="analytics-section">
+            <div class="analytics-header">
+                <h2>Performance Overview</h2>
+                <div class="time-filter">
+                    <select id="timeRange" class="time-select">
+                        <option value="week">Last Week</option>
+                        <option value="month" selected>Last Month</option>
+                        <option value="quarter">Last Quarter</option>
+                        <option value="year">Last Year</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <!-- Service Completion Rates Card -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Service Completion Rates</h3>
+                        <div class="chart-stats">
+                            <div class="stat-badge positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>8.2%</span>
+                            </div>
+                            <span class="stat-period">vs last month</span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="completionRateChart"></canvas>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background-color: #FFD700"></span>
+                            <span>Completed</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background-color: #2D2D2D"></span>
+                            <span>Target</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Satisfaction Trends Card -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Customer Satisfaction Trends</h3>
+                        <div class="chart-stats">
+                            <div class="stat-badge positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>4.5%</span>
+                            </div>
+                            <span class="stat-period">vs last month</span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="satisfactionChart"></canvas>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background-color: #FFD700"></span>
+                            <span>Satisfaction Score</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background-color: #2D2D2D"></span>
+                            <span>Industry Average</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analytics-summary">
+                <div class="summary-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="summary-content">
+                        <h4>Total Services Completed</h4>
+                        <span class="summary-value">248</span>
+                        <span class="summary-change positive">+12.5% vs last month</span>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="summary-content">
+                        <h4>Average Completion Time</h4>
+                        <span class="summary-value">2.4 hours</span>
+                        <span class="summary-change negative">+0.3 hrs vs last month</span>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <i class="fas fa-star"></i>
+                    <div class="summary-content">
+                        <h4>Average Rating</h4>
+                        <span class="summary-value">4.8/5.0</span>
+                        <span class="summary-change positive">+0.2 vs last month</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div>
+                    <a href="https://citruslabs.co.ke/" target="_blank" class="corporate-link">Corporate Website</a>
+                </div>
+                <div class="copyright">
+                    © 2025 Citrus Labs. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Add New Technician Modal -->
+    <div class="modal" id="addTechnicianModal">
+        <!-- Modal content would go here -->
+    </div>
+
+    <!-- View Profile Modal -->
+    <div class="modal" id="viewProfileModal">
+        <!-- Modal content would go here -->
+    </div>
+
+    <script src="technicians.js"></script>
+</body>
+
+</html>

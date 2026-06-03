@@ -1,0 +1,372 @@
+stateDiagram-v2
+    [*] --> SecurityPage
+    
+    state SecurityPage {
+        [*] --> SecurityDashboard
+        
+        state SecurityDashboard {
+            SecurityOverview: Security Overview
+            SecurityOverview: - Security Status Summary
+            SecurityOverview: - Recent Security Events
+            SecurityOverview: - Threat Level Indicators
+            
+            QuickStats: Quick Statistics
+            QuickStats: - Login Attempts
+            QuickStats: - Failed Logins
+            QuickStats: - Locked Accounts
+            QuickStats: - Backup Status
+            
+            SecurityAlerts: Security Alerts
+            SecurityAlerts: - Critical Alerts
+            SecurityAlerts: - Warning Alerts
+            SecurityAlerts: - Notification Badges
+            
+            QuickActions: Quick Actions
+            QuickActions: - Manual Backup Button
+            QuickActions: - Security Scan Button
+            QuickActions: - View All Logs Button
+        }
+        
+        state NavigationTabs {
+            AuditLogsTab: Audit Logs Tab
+            AccessMonitoringTab: Access Monitoring Tab
+            DataBackupTab: Data Backup Tab
+            SecurityPermissionsTab: Security Permissions Tab
+        }
+    }
+    
+    state "Audit Logs" as AuditLogs {
+        ViewLogEntries: View Log Entries
+        ViewLogEntries: - Log Entry Table
+        ViewLogEntries: - Timestamp Column
+        ViewLogEntries: - User Column
+        ViewLogEntries: - Action Column
+        ViewLogEntries: - Module Column
+        ViewLogEntries: - Details Column
+        
+        FilterAndSearch: Filter & Search Options
+        FilterAndSearch: - Date Range Picker
+        FilterAndSearch: - User Filter Dropdown
+        FilterAndSearch: - Action Type Filter
+        FilterAndSearch: - Module Filter
+        FilterAndSearch: - Search Bar
+        
+        ExportLogs: Export Logs
+        ExportLogs: - Format Selection
+        ExportLogs: - Date Range Selection
+        ExportLogs: - Export Button
+        ExportLogs: - Schedule Export Option
+    }
+    
+    state "Log Entry Details" as LogEntryDetails {
+        EntryInfo: Entry Information
+        EntryInfo: - Log ID
+        EntryInfo: - Timestamp
+        EntryInfo: - User
+        EntryInfo: - IP Address
+        
+        ActionDetails: Action Details
+        ActionDetails: - Action Type
+        ActionDetails: - Module
+        ActionDetails: - Description
+        ActionDetails: - Before/After Values
+        
+        RelatedEntries: Related Entries
+        RelatedEntries: - Previous Actions by User
+        RelatedEntries: - Related Module Actions
+        
+        EntryActions: Entry Actions
+        EntryActions: - Flag for Review
+        EntryActions: - Add Note
+        EntryActions: - Create Security Alert
+    }
+    
+    state "Access Monitoring" as AccessMonitoring {
+        LoginActivityReview: Login Activity Review
+        LoginActivityReview: - Login Activity Table
+        LoginActivityReview: - User ID Column
+        LoginActivityReview: - Login Time Column
+        LoginActivityReview: - IP Address Column
+        LoginActivityReview: - Device Type Column
+        LoginActivityReview: - Status Column
+        
+        SuspiciousActivityFlags: Suspicious Activity Flags
+        SuspiciousActivityFlags: - Unusual Location Alerts
+        SuspiciousActivityFlags: - Multiple Failed Attempts
+        SuspiciousActivityFlags: - Off-hours Access
+        SuspiciousActivityFlags: - Unusual Device Alerts
+        
+        CorrectiveActions: Corrective Actions
+        CorrectiveActions: - Lock Account Button
+        CorrectiveActions: - Send Notification Button
+        CorrectiveActions: - Reset Password Button
+        CorrectiveActions: - Add to Watchlist Button
+    }
+    
+    state "Login Session Details" as LoginSessionDetails {
+        SessionInfo: Session Information
+        SessionInfo: - Session ID
+        SessionInfo: - User Details
+        SessionInfo: - Login Timestamp
+        SessionInfo: - Status (Active/Ended)
+        
+        LocationInfo: Location Information
+        LocationInfo: - IP Address
+        LocationInfo: - Geolocation
+        LocationInfo: - ISP Information
+        LocationInfo: - Map View
+        
+        DeviceInfo: Device Information
+        DeviceInfo: - Device Type
+        DeviceInfo: - Browser
+        DeviceInfo: - Operating System
+        DeviceInfo: - Screen Resolution
+        
+        SessionActivity: Session Activity
+        SessionActivity: - Pages Accessed
+        SessionActivity: - Actions Performed
+        SessionActivity: - Session Duration
+        
+        SessionActions: Session Actions
+        SessionActions: - Force Logout Button
+        SessionActions: - Add to Blocklist Button
+        SessionActions: - Send Security Alert Button
+    }
+    
+    state "Data Backup" as DataBackup {
+        BackupConfiguration: Backup Configuration
+        BackupConfiguration: - Schedule Settings
+        BackupConfiguration: - Storage Options
+        BackupConfiguration: - Retention Policy
+        BackupConfiguration: - Save Configuration Button
+        
+        ManualBackupControls: Manual Backup Controls
+        ManualBackupControls: - Backup Now Button
+        ManualBackupControls: - Select Data Scope
+        ManualBackupControls: - Backup Progress Indicator
+        
+        BackupHistoryLogs: Backup History Logs
+        BackupHistoryLogs: - Backup History Table
+        BackupHistoryLogs: - Date/Time Column
+        BackupHistoryLogs: - Size Column
+        BackupHistoryLogs: - Type Column
+        BackupHistoryLogs: - Status Column
+        BackupHistoryLogs: - Actions Column
+    }
+    
+    state "Backup Details" as BackupDetails {
+        BackupInfo: Backup Information
+        BackupInfo: - Backup ID
+        BackupInfo: - Timestamp
+        BackupInfo: - Type (Full/Incremental)
+        BackupInfo: - Size
+        
+        ContentDetails: Content Details
+        ContentDetails: - Modules Included
+        ContentDetails: - Record Counts
+        ContentDetails: - Database Tables
+        
+        StorageInfo: Storage Information
+        StorageInfo: - Location
+        StorageInfo: - Retention Period
+        StorageInfo: - Encryption Status
+        
+        BackupActions: Backup Actions
+        BackupActions: - Restore Button
+        BackupActions: - Download Button
+        BackupActions: - Delete Button
+        BackupActions: - Verify Integrity Button
+    }
+    
+    state "Security Permissions" as SecurityPermissions {
+        RoleManagement: Role Management
+        RoleManagement: - Roles Table
+        RoleManagement: - Role Name Column
+        RoleManagement: - Description Column
+        RoleManagement: - User Count Column
+        RoleManagement: - Actions Column
+        RoleManagement: - Create Role Button
+        
+        AccessLevelControl: Access Level Control
+        AccessLevelControl: - Module Permissions Matrix
+        AccessLevelControl: - Read/Write/Execute Toggles
+        AccessLevelControl: - Role Dropdown Filter
+        AccessLevelControl: - Apply Changes Button
+        
+        PermissionUpdates: Permission Updates
+        PermissionUpdates: - Bulk Update Options
+        PermissionUpdates: - Permission Templates
+        PermissionUpdates: - Audit Changes Toggle
+        PermissionUpdates: - Save Changes Button
+    }
+    
+    state "Role Details" as RoleDetails {
+        RoleInfo: Role Information
+        RoleInfo: - Role Name
+        RoleInfo: - Description
+        RoleInfo: - Created Date
+        RoleInfo: - Last Modified Date
+        
+        AssignedUsers: Assigned Users
+        AssignedUsers: - Users Table
+        AssignedUsers: - Add User Button
+        AssignedUsers: - Remove User Button
+        
+        PermissionMatrix: Permission Matrix
+        PermissionMatrix: - Module Checkboxes
+        PermissionMatrix: - Granular Permission Toggles
+        PermissionMatrix: - Inherit From Dropdown
+        
+        RoleActions: Role Actions
+        RoleActions: - Save Changes Button
+        RoleActions: - Clone Role Button
+        RoleActions: - Delete Role Button
+    }
+    
+    state "Export Logs" as ExportLogsDialog {
+        ExportOptions: Export Options
+        ExportOptions: - PDF Format Option
+        ExportOptions: - CSV Format Option
+        ExportOptions: - Excel Format Option
+        
+        DataOptions: Data Options
+        DataOptions: - Date Range Picker
+        DataOptions: - Include Fields Checkboxes
+        DataOptions: - Filter Criteria
+        
+        DeliveryOptions: Delivery Options
+        DeliveryOptions: - Download Now Option
+        DeliveryOptions: - Email Report Option
+        DeliveryOptions: - Schedule Recurring Option
+        
+        ExportActions: Export Actions
+        ExportActions: - Generate Export Button
+        ExportActions: - Cancel Button
+    }
+    
+    state "Manual Backup" as ManualBackupDialog {
+        BackupTypeSelection: Backup Type Selection
+        BackupTypeSelection: - Full Backup Option
+        BackupTypeSelection: - Incremental Backup Option
+        BackupTypeSelection: - Specific Modules Option
+        
+        BackupDestination: Backup Destination
+        BackupDestination: - Cloud Storage Option
+        BackupDestination: - Local Server Option
+        BackupDestination: - Custom Location Option
+        
+        AdvancedOptions: Advanced Options
+        AdvancedOptions: - Encryption Toggle
+        AdvancedOptions: - Compression Level
+        AdvancedOptions: - Verification Option
+        
+        BackupConfirmation: Backup Confirmation
+        BackupConfirmation: - Start Backup Button
+        BackupConfirmation: - Cancel Button
+    }
+    
+    state "Lock Account" as LockAccountDialog {
+        AccountInfo: Account Information
+        AccountInfo: - Username
+        AccountInfo: - Email
+        AccountInfo: - Role
+        AccountInfo: - Last Login
+        
+        LockReason: Lock Reason
+        LockReason: - Reason Dropdown
+        LockReason: - Custom Reason Field
+        LockReason: - Internal Notes
+        
+        LockDuration: Lock Duration
+        LockDuration: - Temporary Lock Option
+        LockDuration: - Permanent Lock Option
+        LockDuration: - Duration Selector
+        
+        NotificationOptions: Notification Options
+        NotificationOptions: - Notify User Checkbox
+        NotificationOptions: - Notification Template
+        NotificationOptions: - Custom Message
+        
+        LockActions: Lock Actions
+        LockActions: - Confirm Lock Button
+        LockActions: - Cancel Button
+    }
+    
+    state "Create Role" as CreateRoleDialog {
+        NewRoleInfo: New Role Information
+        NewRoleInfo: - Role Name Field
+        NewRoleInfo: - Description Field
+        NewRoleInfo: - Base on Existing Role Dropdown
+        
+        PermissionSetup: Permission Setup
+        PermissionSetup: - Module Access Checkboxes
+        PermissionSetup: - Operation Permissions
+        PermissionSetup: - Data Access Levels
+        
+        UserAssignment: User Assignment
+        UserAssignment: - Available Users List
+        UserAssignment: - Selected Users List
+        UserAssignment: - Search Users Field
+        
+        CreateRoleActions: Create Role Actions
+        CreateRoleActions: - Create Role Button
+        CreateRoleActions: - Cancel Button
+    }
+    
+    SecurityPage --> AuditLogs: Click Audit Logs Tab
+    SecurityPage --> AccessMonitoring: Click Access Monitoring Tab
+    SecurityPage --> DataBackup: Click Data Backup Tab
+    SecurityPage --> SecurityPermissions: Click Security Permissions Tab
+    
+    AuditLogs --> LogEntryDetails: Click on Log Entry
+    AuditLogs --> ExportLogsDialog: Click Export Logs
+    
+    AccessMonitoring --> LoginSessionDetails: Click on Login Session
+    AccessMonitoring --> LockAccountDialog: Click Lock Account
+    
+    DataBackup --> BackupDetails: Click on Backup Entry
+    DataBackup --> ManualBackupDialog: Click Manual Backup
+    
+    SecurityPermissions --> RoleDetails: Click on Role
+    SecurityPermissions --> CreateRoleDialog: Click Create Role
+    
+    LogEntryDetails --> AuditLogs: Click Back
+    LoginSessionDetails --> AccessMonitoring: Click Back
+    BackupDetails --> DataBackup: Click Back
+    RoleDetails --> SecurityPermissions: Click Back
+    
+    ExportLogsDialog --> AuditLogs: After Export/Cancel
+    ManualBackupDialog --> DataBackup: After Start/Cancel
+    LockAccountDialog --> AccessMonitoring: After Confirm/Cancel
+    CreateRoleDialog --> SecurityPermissions: After Create/Cancel
+    
+    note right of AuditLogs
+        Audit Logs provide a detailed record
+        of all administrative actions for
+        accountability and monitoring purposes.
+        Logs can be filtered by date, user,
+        action type, or module.
+    end note
+    
+    note right of AccessMonitoring
+        Access Monitoring tracks all login
+        activity and identifies suspicious
+        patterns such as unusual locations,
+        multiple failed attempts, or off-hours
+        access, enabling quick corrective action.
+    end note
+    
+    note left of DataBackup
+        Data Backup enables scheduled or
+        manual backups of all platform data,
+        with options for storage location,
+        retention policy, and encryption to
+        ensure data integrity and recovery.
+    end note
+    
+    note left of SecurityPermissions
+        Security Permissions manages role-based
+        access control across the platform,
+        allowing granular permission settings
+        for different user roles and modules.
+    end note

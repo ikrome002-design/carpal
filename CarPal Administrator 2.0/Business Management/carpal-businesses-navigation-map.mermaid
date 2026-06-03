@@ -1,0 +1,410 @@
+stateDiagram-v2
+    [*] --> BusinessesPage
+    
+    state BusinessesPage {
+        [*] --> AnalyticsDashboard
+        
+        state AnalyticsDashboard {
+            TotalBusinessCount: Total Business Count
+            TotalBusinessCount: - Current Count Display
+            TotalBusinessCount: - Month-over-Month Change
+            TotalBusinessCount: - View Details Button
+            
+            GrowthMetrics: Growth Metrics
+            GrowthMetrics: - New Business Trend Chart
+            GrowthMetrics: - Registration Completion Rate
+            GrowthMetrics: - View Full Report Button
+            
+            ActivityTrends: Activity Trends
+            ActivityTrends: - Active vs Inactive Chart
+            ActivityTrends: - Login Frequency Metrics
+            ActivityTrends: - Transaction Volume Insights
+            ActivityTrends: - View Activity Report Button
+        }
+        
+        state BusinessStatusManagement {
+            ActiveBusinesses: Active Businesses Tab
+            ActiveBusinesses: - Data Table with Filters
+            ActiveBusinesses: - Status Indicators
+            ActiveBusinesses: - Action Buttons
+            
+            InactiveBusinesses: Inactive Businesses Tab
+            InactiveBusinesses: - Data Table with Filters
+            InactiveBusinesses: - Last Activity Date
+            InactiveBusinesses: - Reactivation Controls
+            
+            SuspendedAccounts: Suspended Accounts Tab
+            SuspendedAccounts: - Data Table with Filters
+            SuspendedAccounts: - Suspension Reason
+            SuspendedAccounts: - Duration Information
+            SuspendedAccounts: - Reinstate Controls
+            
+            StatusUpdates: Status Updates Panel
+            StatusUpdates: - Recent Status Changes
+            StatusUpdates: - Bulk Status Update Button
+            StatusUpdates: - Notification Controls
+        }
+        
+        state AccountOperations {
+            ViewBusinessList: Business List View
+            ViewBusinessList: - Sortable Columns
+            ViewBusinessList: - Status Indicators
+            ViewBusinessList: - Action Menu
+            
+            AccountDetails: Account Details Panel
+            AccountDetails: - Business Information
+            AccountDetails: - Contact Information
+            AccountDetails: - Payment Information
+            AccountDetails: - Service Subscription Data
+            
+            ManagePermissions: Permissions Management
+            ManagePermissions: - Feature Access Controls
+            ManagePermissions: - User Role Settings
+            ManagePermissions: - Custom Permission Sets
+            
+            BusinessSettings: Business Settings
+            BusinessSettings: - Notification Preferences
+            BusinessSettings: - Integration Settings
+            BusinessSettings: - Billing Configuration
+        }
+        
+        state SearchModule {
+            BusinessSearch: Business Search
+            BusinessSearch: - Search by Business Name
+            BusinessSearch: - Search by Account ID
+            BusinessSearch: - Advanced Filter Options
+            
+            UserSearch: User Search within Business
+            UserSearch: - Search by User Name
+            UserSearch: - Search by Email
+            UserSearch: - Search by Phone
+            UserSearch: - Role-based Filtering
+        }
+        
+        state UserManagement {
+            AddNewUsers: Add New User Form
+            AddNewUsers: - Personal Information Fields
+            AddNewUsers: - Role Assignment Dropdown
+            AddNewUsers: - Permission Checkboxes
+            AddNewUsers: - Submit Button
+            
+            EditUserDetails: Edit User Details Form
+            EditUserDetails: - Information Update Fields
+            EditUserDetails: - Role Modification Controls
+            EditUserDetails: - Status Management Options
+            EditUserDetails: - Save Changes Button
+            
+            UserRoles: User Roles Management
+            UserRoles: - Role Definition Panel
+            UserRoles: - Permission Matrix
+            UserRoles: - Role Assignment Table
+            UserRoles: - Apply Changes Button
+        }
+        
+        state BulkDataOperations {
+            ImportOperations: Import Operations Panel
+            ImportOperations: - Excel Import Option
+            ImportOperations: - CSV Import Option
+            ImportOperations: - Template Download Link
+            ImportOperations: - Upload Controls
+            
+            ExportOperations: Export Operations Panel
+            ExportOperations: - Excel Export Option
+            ExportOperations: - CSV Export Option
+            ExportOperations: - Data Selection Controls
+            ExportOperations: - Generate Export Button
+        }
+    }
+    
+    state "Business Profile View" as BusinessProfileView {
+        ProfileOverview: Business Profile Overview
+        ProfileOverview: - Logo and Basic Information
+        ProfileOverview: - Status Indicator
+        ProfileOverview: - Quick Action Buttons
+        
+        ContactDetails: Contact Information
+        ContactDetails: - Primary Contact Person
+        ContactDetails: - Email and Phone
+        ContactDetails: - Physical Address
+        ContactDetails: - Edit Contact Button
+        
+        SubscriptionDetails: Subscription Details
+        SubscriptionDetails: - Current Plan
+        SubscriptionDetails: - Billing Cycle
+        SubscriptionDetails: - Payment Status
+        SubscriptionDetails: - Plan Management Button
+        
+        ServiceUtilization: Service Utilization
+        ServiceUtilization: - Feature Usage Statistics
+        ServiceUtilization: - Usage Trend Graph
+        ServiceUtilization: - Detailed Usage Report Link
+        
+        BusinessUsers: Business Users
+        BusinessUsers: - User List with Roles
+        BusinessUsers: - User Add/Edit/Remove Controls
+        BusinessUsers: - User Activity Summary
+        
+        TransactionHistory: Transaction History
+        TransactionHistory: - Recent Transactions Table
+        TransactionHistory: - Payment Status Indicators
+        TransactionHistory: - Detailed Invoice Links
+        
+        ActivityLogSection: Activity Log
+        ActivityLogSection: - Recent Actions Timeline
+        ActivityLogSection: - User Attribution
+        ActivityLogSection: - Full Activity Log Link
+    }
+    
+    state "Edit Business" as EditBusiness {
+        BasicInfoEdit: Basic Information Form
+        BasicInfoEdit: - Business Name Field
+        BasicInfoEdit: - Industry Dropdown
+        BasicInfoEdit: - Description Textarea
+        BasicInfoEdit: - Logo Upload Control
+        
+        ContactInfoEdit: Contact Information Form
+        ContactInfoEdit: - Primary Contact Fields
+        ContactInfoEdit: - Secondary Contact Fields
+        ContactInfoEdit: - Address Information
+        
+        SubscriptionEdit: Subscription Settings
+        SubscriptionEdit: - Plan Selection Dropdown
+        SubscriptionEdit: - Billing Cycle Options
+        SubscriptionEdit: - Payment Method Selection
+        
+        StatusUpdate: Status Controls
+        StatusUpdate: - Active/Inactive Toggle
+        StatusUpdate: - Suspension Controls
+        StatusUpdate: - Status Change Reason Field
+        
+        PermissionsEdit: Permissions Configuration
+        PermissionsEdit: - Feature Access Toggles
+        PermissionsEdit: - User Limit Controls
+        PermissionsEdit: - Advanced Settings Section
+        
+        SaveActions: Form Actions
+        SaveActions: - Save Changes Button
+        SaveActions: - Cancel Button
+        SaveActions: - Delete Business Button
+    }
+    
+    state "Add New Business" as AddNewBusiness {
+        BusinessTypeSelect: Business Type Selection
+        BusinessTypeSelect: - Auto Repair Shop Option
+        BusinessTypeSelect: - Related Services Option
+        
+        RegistrationForm: Registration Information
+        RegistrationForm: - Business Name
+        RegistrationForm: - Registration Number
+        RegistrationForm: - Tax ID
+        RegistrationForm: - Establishment Date
+        
+        BusinessDetails: Business Details
+        BusinessDetails: - Industry
+        BusinessDetails: - Size
+        BusinessDetails: - Location
+        BusinessDetails: - Operating Hours
+        
+        PrimaryContact: Primary Contact Information
+        PrimaryContact: - Name
+        PrimaryContact: - Role
+        PrimaryContact: - Email
+        PrimaryContact: - Phone
+        
+        PlanSelection: Subscription Plan Selection
+        PlanSelection: - Available Plans
+        PlanSelection: - Price Information
+        PlanSelection: - Feature Comparison
+        
+        DocumentUpload: Document Upload
+        DocumentUpload: - Business License
+        DocumentUpload: - Proof of Identity
+        DocumentUpload: - Additional Documentation
+        
+        SubmitActions: Submit Actions
+        SubmitActions: - Create Business Button
+        SubmitActions: - Save as Draft Button
+        SubmitActions: - Cancel Button
+    }
+    
+    state "Suspend Business" as SuspendBusiness {
+        SuspensionReason: Suspension Reason
+        SuspensionReason: - Reason Dropdown
+        SuspensionReason: - Additional Comments
+        
+        SuspensionDuration: Suspension Duration
+        SuspensionDuration: - Temporary Option
+        SuspensionDuration: - Permanent Option
+        SuspensionDuration: - Date Range Selector
+        
+        UserNotification: User Notification
+        UserNotification: - Notification Template
+        UserNotification: - Custom Message Field
+        UserNotification: - Send Notification Checkbox
+        
+        ConfirmSuspension: Confirmation
+        ConfirmSuspension: - Confirm Suspension Button
+        ConfirmSuspension: - Cancel Button
+    }
+    
+    state "Business Users" as BusinessUsersManagement {
+        UsersList: Users List View
+        UsersList: - User Table with Roles
+        UsersList: - Status Indicators
+        UsersList: - Action Buttons
+        
+        AddBusinessUser: Add User Form
+        AddBusinessUser: - Personal Information Fields
+        AddBusinessUser: - Role Assignment Dropdown
+        AddBusinessUser: - Custom Permissions Options
+        
+        EditBusinessUser: Edit User Form
+        EditBusinessUser: - Information Update Fields
+        EditBusinessUser: - Role Modification Dropdown
+        EditBusinessUser: - Status Control (Active/Inactive)
+        
+        UserPermissions: Permission Management
+        UserPermissions: - Feature Access Matrix
+        UserPermissions: - Role-based Permissions
+        UserPermissions: - Custom Permission Sets
+    }
+    
+    state "Import Data" as ImportData {
+        TemplateDownload: Template Download
+        TemplateDownload: - Excel Template
+        TemplateDownload: - CSV Template
+        TemplateDownload: - Instructions Document
+        
+        FileUpload: File Upload
+        FileUpload: - File Selection Control
+        FileUpload: - Drag & Drop Zone
+        FileUpload: - Upload Progress Indicator
+        
+        DataValidation: Data Validation
+        DataValidation: - Validation Results
+        DataValidation: - Error Highlights
+        DataValidation: - Correction Suggestions
+        
+        DataMapping: Field Mapping
+        DataMapping: - Source to Destination Mapping
+        DataMapping: - Required Fields Indicator
+        DataMapping: - Custom Field Options
+        
+        ImportConfirmation: Import Confirmation
+        ImportConfirmation: - Data Summary
+        ImportConfirmation: - Confirm Import Button
+        ImportConfirmation: - Cancel Button
+    }
+    
+    state "Export Data" as ExportData {
+        DataSelection: Data Selection
+        DataSelection: - Business Data Checkboxes
+        DataSelection: - User Data Checkboxes
+        DataSelection: - Transaction Data Checkboxes
+        
+        FilterOptions: Filter Options
+        FilterOptions: - Date Range Selector
+        FilterOptions: - Status Filters
+        FilterOptions: - Advanced Criteria Builder
+        
+        FormatSelection: Format Selection
+        FormatSelection: - Excel Option
+        FormatSelection: - CSV Option
+        FormatSelection: - PDF Option (for reports)
+        
+        ExportConfirmation: Export Confirmation
+        ExportConfirmation: - Data Preview
+        ExportConfirmation: - Estimated File Size
+        ExportConfirmation: - Generate Export Button
+    }
+    
+    state "Bulk Status Update" as BulkStatusUpdate {
+        BusinessSelection: Business Selection
+        BusinessSelection: - Selection Criteria Builder
+        BusinessSelection: - Selected Businesses List
+        BusinessSelection: - Select All / Clear Selection
+        
+        StatusAction: Status Action
+        StatusAction: - Action Type Dropdown
+        StatusAction: - Reason Field
+        StatusAction: - Notification Options
+        
+        UpdateConfirmation: Update Confirmation
+        UpdateConfirmation: - Summary of Changes
+        UpdateConfirmation: - Affected Businesses Count
+        UpdateConfirmation: - Confirm Updates Button
+        UpdateConfirmation: - Cancel Button
+    }
+    
+    state "OTP Verification" as OTPVerification {
+        OTPInput: OTP Input Field
+        OTPInput: - 6-Digit Code Entry
+        OTPInput: - Resend OTP Button
+        OTPInput: - Timer Display
+        
+        VerifyActions: Verification Actions
+        VerifyActions: - Verify Button
+        VerifyActions: - Cancel Button
+    }
+    
+    BusinessesPage --> BusinessProfileView: Click on business name
+    BusinessesPage --> EditBusiness: Click Edit Business
+    BusinessesPage --> AddNewBusiness: Click Add Business
+    BusinessesPage --> SuspendBusiness: Click Suspend Business
+    BusinessesPage --> BusinessUsersManagement: Click Manage Users
+    BusinessesPage --> ImportData: Click Import Data
+    BusinessesPage --> ExportData: Click Export Data
+    BusinessesPage --> BulkStatusUpdate: Click Bulk Status Update
+    
+    EditBusiness --> OTPVerification: Submit changes to critical info
+    SuspendBusiness --> OTPVerification: Confirm suspension
+    AddNewBusiness --> OTPVerification: Submit new business
+    BulkStatusUpdate --> OTPVerification: Confirm bulk update
+    
+    BusinessProfileView --> EditBusiness: Click Edit Profile
+    BusinessProfileView --> SuspendBusiness: Click Suspend
+    BusinessProfileView --> BusinessUsersManagement: Click Users Tab
+    
+    BusinessUsersManagement --> BusinessProfileView: Back to Profile
+    
+    OTPVerification --> BusinessesPage: Verification successful
+    
+    EditBusiness --> BusinessProfileView: After Save
+    EditBusiness --> BusinessesPage: After Cancel
+    
+    AddNewBusiness --> BusinessesPage: After Submit/Cancel
+    SuspendBusiness --> BusinessesPage: After Confirm/Cancel
+    ImportData --> BusinessesPage: After Import/Cancel
+    ExportData --> BusinessesPage: After Export/Cancel
+    BulkStatusUpdate --> BusinessesPage: After Update/Cancel
+    BusinessUsersManagement --> BusinessesPage: Back to Business List
+    BusinessProfileView --> BusinessesPage: Back to Business List
+    
+    note right of OTPVerification
+        OTP Verification is required for:
+        - Adding new businesses
+        - Updating critical business information
+        - Suspending business accounts
+        - Performing bulk status updates
+        - Changing subscription plans
+    end note
+    
+    note right of BusinessStatusManagement
+        Businesses have four possible statuses:
+        - Active: Fully operational
+        - Inactive: No recent activity
+        - Suspended: Temporarily disabled
+        - Terminated: Permanently disabled
+        Each status has distinct visual indicators
+        and allows different management actions.
+    end note
+    
+    note left of ImportData
+        The import process includes:
+        1. Template download with format instructions
+        2. File upload (Excel or CSV)
+        3. Validation with error highlighting
+        4. Field mapping confirmation
+        5. Final review before import
+        6. OTP verification for security
+    end note

@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | CarPal by Citrus</title>
+
+    <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="notifications.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="header-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                            alt="CarPal by Citrus Logo">
+                    </a>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="main-nav">
+                    <ul>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\User Management\users.html">Users</a>
+                        </li>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Business Management\businesses.html">Businesses</a>
+                        </li>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Financial Oversight\finance.html">Finance</a>
+                        </li>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Security Tools\security.html">Security</a>
+                        </li>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Customer Support Tools\support.html">Support</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- User Controls -->
+                <div class="user-controls">
+                    <!-- Notifications -->
+                    <div class="notifications">
+                        <a class="active"
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Notifications\notifications.html">
+                            <i class="fa-solid fa-bell notification-icon"></i>
+                            <span class="notification-count">3</span>
+                        </a>
+                    </div>
+
+                    <!-- User Profile Dropdown -->
+                    <div class="user-profile-dropdown">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-icon">
+                        <div class="dropdown-content">
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\My Profile\my_profile.html">My
+                                Profile</a>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Activity History\activity_history.html">Activity
+                                History</a>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">Log
+                                Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Users Page Title -->
+            <div class="page-title">
+                <h1>Notifications</h1>
+                <p>View updates or alerts</p>
+            </div>
+
+
+
+            <!-- Notifications Dashboard -->
+            <section class="notifications-dashboard">
+                <!-- Dashboard Controls -->
+                <div class="dashboard-controls">
+                    <div class="notification-counter">
+                        <span class="counter-badge">12</span>
+                        <span class="counter-text">Unread Notifications</span>
+                    </div>
+
+                    <div class="control-actions">
+                        <!-- Filter Dropdown -->
+                        <div class="filter-dropdown">
+                            <button class="dropdown-btn">
+                                <i class="fas fa-filter"></i>
+                                <span>Filter</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <label class="filter-option">
+                                    <input type="checkbox" checked>
+                                    <span>All Notifications</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" checked>
+                                    <span>System Alerts</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" checked>
+                                    <span>User Activities</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" checked>
+                                    <span>Business Updates</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" checked>
+                                    <span>Payment Alerts</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Sort Dropdown -->
+                        <div class="sort-dropdown">
+                            <button class="dropdown-btn">
+                                <i class="fas fa-sort"></i>
+                                <span>Sort</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <label class="sort-option">
+                                    <input type="radio" name="sort" checked>
+                                    <span>Newest First</span>
+                                </label>
+                                <label class="sort-option">
+                                    <input type="radio" name="sort">
+                                    <span>Oldest First</span>
+                                </label>
+                                <label class="sort-option">
+                                    <input type="radio" name="sort">
+                                    <span>Priority Level</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Bulk Actions -->
+                        <div class="bulk-actions">
+                            <button class="action-btn mark-read-btn">
+                                <i class="fas fa-check-double"></i>
+                                <span>Mark All as Read</span>
+                            </button>
+                            <button class="action-btn archive-btn">
+                                <i class="fas fa-archive"></i>
+                                <span>Archive Selected</span>
+                            </button>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                                <span>Delete Selected</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Tabs -->
+                <div class="navigation-tabs">
+                    <ul class="tabs">
+                        <li class="tab-item active" data-tab="all">
+                            <i class="fas fa-bell"></i>
+                            <span>All</span>
+                        </li>
+                        <li class="tab-item" data-tab="unread">
+                            <i class="fas fa-envelope"></i>
+                            <span>Unread</span>
+                            <span class="tab-badge">12</span>
+                        </li>
+                        <li class="tab-item" data-tab="archived">
+                            <i class="fas fa-archive"></i>
+                            <span>Archived</span>
+                        </li>
+                        <li class="tab-item" data-tab="preferences">
+                            <i class="fas fa-cog"></i>
+                            <span>Notification Preferences</span>
+                        </li>
+                        <li class="tab-item" data-tab="history">
+                            <i class="fas fa-history"></i>
+                            <span>Historical Log</span>
+                        </li>
+                    </ul>
+
+                    <button class="create-notification-btn">
+                        <i class="fas fa-plus"></i>
+                        <span>Create Notification</span>
+                    </button>
+                </div>
+
+                <!-- Notification List -->
+                <div class="notifications-list">
+                    <!-- Notification Entry -->
+                    <div class="notification-entry unread">
+                        <div class="entry-checkbox">
+                            <input type="checkbox" id="notification1">
+                            <label for="notification1"></label>
+                        </div>
+
+                        <div class="entry-content">
+                            <div class="entry-icon system-alert">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="entry-header">
+                                    <h3 class="entry-title">System Maintenance Scheduled</h3>
+                                    <span class="entry-timestamp">Today, 10:45 AM</span>
+                                </div>
+
+                                <p class="entry-preview">System maintenance is scheduled for March 30, 2025, from 2:00
+                                    AM to 4:00 AM UTC. The platform may experience brief downtime during this period.
+                                </p>
+
+                                <div class="entry-meta">
+                                    <span class="priority-indicator high">High Priority</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="action-menu-btn">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <div class="action-menu">
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-envelope-open"></i> Mark as Read</a></li>
+                                        <li><a href="#"><i class="fas fa-archive"></i> Archive</a></li>
+                                        <li><a href="#"><i class="fas fa-trash"></i> Delete</a></li>
+                                        <li><a href="#"><i class="fas fa-eye"></i> View Details</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notification Entry -->
+                    <div class="notification-entry unread">
+                        <div class="entry-checkbox">
+                            <input type="checkbox" id="notification2">
+                            <label for="notification2"></label>
+                        </div>
+
+                        <div class="entry-content">
+                            <div class="entry-icon user-activity">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="entry-header">
+                                    <h3 class="entry-title">New User Registration</h3>
+                                    <span class="entry-timestamp">Today, 09:22 AM</span>
+                                </div>
+
+                                <p class="entry-preview">Jane Smith has registered as a new user. Verification pending
+                                    for account ID: USR20250328-0042.</p>
+
+                                <div class="entry-meta">
+                                    <span class="priority-indicator medium">Medium Priority</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="action-menu-btn">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <div class="action-menu">
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-envelope-open"></i> Mark as Read</a></li>
+                                        <li><a href="#"><i class="fas fa-archive"></i> Archive</a></li>
+                                        <li><a href="#"><i class="fas fa-trash"></i> Delete</a></li>
+                                        <li><a href="#"><i class="fas fa-eye"></i> View Details</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notification Entry -->
+                    <div class="notification-entry unread">
+                        <div class="entry-checkbox">
+                            <input type="checkbox" id="notification3">
+                            <label for="notification3"></label>
+                        </div>
+
+                        <div class="entry-content">
+                            <div class="entry-icon business-update">
+                                <i class="fas fa-building"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="entry-header">
+                                    <h3 class="entry-title">Business Verification Complete</h3>
+                                    <span class="entry-timestamp">Today, 08:15 AM</span>
+                                </div>
+
+                                <p class="entry-preview">Acme Transports Ltd (BIZ20250320-0018) has completed the
+                                    verification process and is now active on the platform.</p>
+
+                                <div class="entry-meta">
+                                    <span class="priority-indicator medium">Medium Priority</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="action-menu-btn">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <div class="action-menu">
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-envelope-open"></i> Mark as Read</a></li>
+                                        <li><a href="#"><i class="fas fa-archive"></i> Archive</a></li>
+                                        <li><a href="#"><i class="fas fa-trash"></i> Delete</a></li>
+                                        <li><a href="#"><i class="fas fa-eye"></i> View Details</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notification Entry -->
+                    <div class="notification-entry read">
+                        <div class="entry-checkbox">
+                            <input type="checkbox" id="notification4">
+                            <label for="notification4"></label>
+                        </div>
+
+                        <div class="entry-content">
+                            <div class="entry-icon payment-alert">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="entry-header">
+                                    <h3 class="entry-title">Payment Processing Error</h3>
+                                    <span class="entry-timestamp">Yesterday, 15:30 PM</span>
+                                </div>
+
+                                <p class="entry-preview">Transaction #TRX20250327-9842 failed due to insufficient funds.
+                                    The user has been notified to update their payment method.</p>
+
+                                <div class="entry-meta">
+                                    <span class="priority-indicator high">High Priority</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="action-menu-btn">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <div class="action-menu">
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-envelope"></i> Mark as Unread</a></li>
+                                        <li><a href="#"><i class="fas fa-archive"></i> Archive</a></li>
+                                        <li><a href="#"><i class="fas fa-trash"></i> Delete</a></li>
+                                        <li><a href="#"><i class="fas fa-eye"></i> View Details</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notification Entry -->
+                    <div class="notification-entry read">
+                        <div class="entry-checkbox">
+                            <input type="checkbox" id="notification5">
+                            <label for="notification5"></label>
+                        </div>
+
+                        <div class="entry-content">
+                            <div class="entry-icon system-alert">
+                                <i class="fas fa-server"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="entry-header">
+                                    <h3 class="entry-title">System Update Completed</h3>
+                                    <span class="entry-timestamp">Yesterday, 12:00 PM</span>
+                                </div>
+
+                                <p class="entry-preview">CarPal v2.4.2 has been successfully deployed. New features
+                                    include improved payment processing and enhanced search functionality.</p>
+
+                                <div class="entry-meta">
+                                    <span class="priority-indicator low">Low Priority</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="action-menu-btn">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <div class="action-menu">
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-envelope"></i> Mark as Unread</a></li>
+                                        <li><a href="#"><i class="fas fa-archive"></i> Archive</a></li>
+                                        <li><a href="#"><i class="fas fa-trash"></i> Delete</a></li>
+                                        <li><a href="#"><i class="fas fa-eye"></i> View Details</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more notification entries as needed -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn prev-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <ul class="page-numbers">
+                        <li class="page-number active">1</li>
+                        <li class="page-number">2</li>
+                        <li class="page-number">3</li>
+                        <li class="page-number">4</li>
+                        <li class="page-number">5</li>
+                    </ul>
+
+                    <button class="pagination-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Tab Content Sections (Hidden by default) -->
+            <!-- Notification Preferences Tab Content -->
+            <section class="tab-content preferences-content" style="display: none;">
+                <div class="preferences-container">
+                    <h2>Notification Preferences</h2>
+
+                    <div class="preferences-section">
+                        <h3>Category Settings</h3>
+                        <div class="preference-items">
+                            <div class="preference-item">
+                                <div class="preference-info">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <div class="preference-text">
+                                        <h4>System Alerts</h4>
+                                        <p>Updates about maintenance, outages, and system changes</p>
+                                    </div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="preference-item">
+                                <div class="preference-info">
+                                    <i class="fas fa-user"></i>
+                                    <div class="preference-text">
+                                        <h4>User Activities</h4>
+                                        <p>Notifications about user registrations, verifications, and status changes</p>
+                                    </div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="preference-item">
+                                <div class="preference-info">
+                                    <i class="fas fa-building"></i>
+                                    <div class="preference-text">
+                                        <h4>Business Updates</h4>
+                                        <p>Information about business registrations and profile changes</p>
+                                    </div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="preference-item">
+                                <div class="preference-info">
+                                    <i class="fas fa-credit-card"></i>
+                                    <div class="preference-text">
+                                        <h4>Payment Alerts</h4>
+                                        <p>Alerts about transactions, failures, and payment processing</p>
+                                    </div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preferences-section">
+                        <h3>Delivery Preferences</h3>
+                        <div class="preference-items">
+                            <div class="preference-item">
+                                <div class="preference-info">
+                                    <i class="fas fa-bell"></i>
+                                    <div class="preference-text">
+                                        <h4>In-App Notifications</h4>
+                                        <p>Receive notifications within the CarPal platform</p>
+                                    </div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="preference-item">
+                                <div class="preference-info">
+                                    <i class="fas fa-envelope"></i>
+                                    <div class="preference-text">
+                                        <h4>Email Notifications</h4>
+                                        <p>Receive notifications via email</p>
+                                    </div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="preference-item">
+                                <div class="preference-info">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <div class="preference-text">
+                                        <h4>High Priority Override</h4>
+                                        <p>Always notify me of high priority alerts regardless of other settings</p>
+                                    </div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preferences-section">
+                        <h3>Frequency Settings</h3>
+                        <div class="preference-items">
+                            <div class="frequency-options">
+                                <label class="radio-option">
+                                    <input type="radio" name="frequency" checked>
+                                    <span class="radio-text">
+                                        <h4>Real-time</h4>
+                                        <p>Receive notifications as they occur</p>
+                                    </span>
+                                </label>
+
+                                <label class="radio-option">
+                                    <input type="radio" name="frequency">
+                                    <span class="radio-text">
+                                        <h4>Daily Digest</h4>
+                                        <p>Receive a daily summary of all notifications</p>
+                                    </span>
+                                </label>
+
+                                <label class="radio-option">
+                                    <input type="radio" name="frequency">
+                                    <span class="radio-text">
+                                        <h4>Custom Schedule</h4>
+                                        <p>Set your own notification schedule</p>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preferences-actions">
+                        <button class="save-btn">
+                            <i class="fas fa-save"></i>
+                            <span>Save Changes</span>
+                        </button>
+                        <button class="reset-btn">
+                            <i class="fas fa-undo"></i>
+                            <span>Reset to Default</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Historical Log Tab Content -->
+            <section class="tab-content history-content" style="display: none;">
+                <div class="history-container">
+                    <h2>Historical Log</h2>
+
+                    <div class="history-filter-bar">
+                        <div class="date-filter">
+                            <span class="filter-label">Timeframe:</span>
+                            <div class="date-range-picker">
+                                <input type="date" class="date-input start-date" value="2025-03-01">
+                                <span class="date-separator">to</span>
+                                <input type="date" class="date-input end-date" value="2025-03-28">
+                            </div>
+
+                            <div class="preset-periods">
+                                <button class="preset-btn active">Today</button>
+                                <button class="preset-btn">Week</button>
+                                <button class="preset-btn">Month</button>
+                                <button class="preset-btn">Year</button>
+                            </div>
+                        </div>
+
+                        <div class="category-filter">
+                            <span class="filter-label">Categories:</span>
+                            <div class="category-checkboxes">
+                                <label class="category-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>System Alerts</span>
+                                </label>
+                                <label class="category-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>User Activities</span>
+                                </label>
+                                <label class="category-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>Business Updates</span>
+                                </label>
+                                <label class="category-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>Payment Alerts</span>
+                                </label>
+                            </div>
+
+                            <div class="keyword-search">
+                                <input type="text" placeholder="Search by keyword...">
+                                <button class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="history-actions">
+                        <div class="history-sort">
+                            <span class="sort-label">Sort by:</span>
+                            <select class="sort-select">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="priority">Priority Level</option>
+                                <option value="category">Category</option>
+                            </select>
+                        </div>
+
+                        <div class="history-buttons">
+                            <button class="view-details-btn">
+                                <i class="fas fa-eye"></i>
+                                <span>View Details</span>
+                            </button>
+                            <button class="bulk-delete-btn">
+                                <i class="fas fa-trash"></i>
+                                <span>Bulk Delete</span>
+                            </button>
+                            <button class="export-report-btn">
+                                <i class="fas fa-file-export"></i>
+                                <span>Export Report</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="history-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="checkbox-col">
+                                        <input type="checkbox" id="selectAllHistory">
+                                        <label for="selectAllHistory"></label>
+                                    </th>
+                                    <th>Date & Time</th>
+                                    <th>Category</th>
+                                    <th>Title</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="history1">
+                                        <label for="history1"></label>
+                                    </td>
+                                    <td>Mar 28, 2025 10:45 AM</td>
+                                    <td><span class="category-badge system">System Alert</span></td>
+                                    <td>System Maintenance Scheduled</td>
+                                    <td><span class="priority-badge high">High</span></td>
+                                    <td><span class="status-badge unread">Unread</span></td>
+                                    <td>
+                                        <div class="row-actions">
+                                            <button class="action-btn view-btn" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="history2">
+                                        <label for="history2"></label>
+                                    </td>
+                                    <td>Mar 27, 2025 15:30 PM</td>
+                                    <td><span class="category-badge payment">Payment Alert</span></td>
+                                    <td>Payment Processing Error</td>
+                                    <td><span class="priority-badge high">High</span></td>
+                                    <td><span class="status-badge read">Read</span></td>
+                                    <td>
+                                        <div class="row-actions">
+                                            <button class="action-btn view-btn" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="history3">
+                                        <label for="history3"></label>
+                                    </td>
+                                    <td>Mar 27, 2025 12:00 PM</td>
+                                    <td><span class="category-badge system">System Alert</span></td>
+                                    <td>System Update Completed</td>
+                                    <td><span class="priority-badge low">Low</span></td>
+                                    <td><span class="status-badge read">Read</span></td>
+                                    <td>
+                                        <div class="row-actions">
+                                            <button class="action-btn view-btn" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="history4">
+                                        <label for="history4"></label>
+                                    </td>
+                                    <td>Mar 26, 2025 14:22 PM</td>
+                                    <td><span class="category-badge business">Business Update</span></td>
+                                    <td>New Business Registered</td>
+                                    <td><span class="priority-badge medium">Medium</span></td>
+                                    <td><span class="status-badge archived">Archived</span></td>
+                                    <td>
+                                        <div class="row-actions">
+                                            <button class="action-btn view-btn" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="history5">
+                                        <label for="history5"></label>
+                                    </td>
+                                    <td>Mar 25, 2025 09:15 AM</td>
+                                    <td><span class="category-badge user">User Activity</span></td>
+                                    <td>Account Suspension Alert</td>
+                                    <td><span class="priority-badge high">High</span></td>
+                                    <td><span class="status-badge read">Read</span></td>
+                                    <td>
+                                        <div class="row-actions">
+                                            <button class="action-btn view-btn" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="pagination-btn prev-btn" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <ul class="page-numbers">
+                            <li class="page-number active">1</li>
+                            <li class="page-number">2</li>
+                            <li class="page-number">3</li>
+                            <li class="page-number">4</li>
+                            <li class="page-number">5</li>
+                        </ul>
+
+                        <button class="pagination-btn next-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Create Notification Tab Content -->
+            <section class="notification-details" id="notificationDetails" style="display: none;">
+                <div class="details-container">
+                    <div class="details-header">
+                        <button class="back-btn">
+                            <i class="fas fa-arrow-left"></i>
+                            <span>Back to Notifications</span>
+                        </button>
+
+                        <div class="header-info">
+                            <div class="header-icon system-alert">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+
+                            <div class="header-text">
+                                <h2>System Maintenance Scheduled</h2>
+                                <div class="header-meta">
+                                    <span class="meta-timestamp">
+                                        <i class="fas fa-clock"></i>
+                                        Today, 10:45 AM
+                                    </span>
+                                    <span class="meta-priority high">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        High Priority
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="details-content">
+                        <div class="content-section">
+                            <h3>Notification Content</h3>
+                            <div class="notification-text">
+                                <p>Dear Platform Administrator,</p>
+                                <p>This is to inform you that system maintenance is scheduled for March 30, 2025, from
+                                    2:00 AM to 4:00 AM UTC. The platform may experience brief downtime during this
+                                    period.</p>
+                                <p>During the maintenance window, the following services will be affected:</p>
+                                <ul>
+                                    <li>User registration and authentication</li>
+                                    <li>Payment processing</li>
+                                    <li>Real-time tracking</li>
+                                </ul>
+                                <p>The maintenance is necessary to implement critical security patches and performance
+                                    improvements. We recommend informing business users about this planned downtime.</p>
+                                <p>If you have any questions or concerns, please contact the technical support team.</p>
+                            </div>
+
+                            <div class="associated-links">
+                                <h4>Associated Links</h4>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-link"></i>
+                                            <span>Maintenance Schedule Details</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-link"></i>
+                                            <span>System Status Page</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="attached-files">
+                                <h4>Attached Files</h4>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span>Maintenance_Schedule_March_2025.pdf</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-file-alt"></i>
+                                            <span>System_Upgrade_Notes.txt</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="related-info">
+                            <h3>Related Information</h3>
+                            <div class="related-items">
+                                <div class="related-item">
+                                    <span class="item-label">Reference Number:</span>
+                                    <span class="item-value">MAINT-20250330-001</span>
+                                </div>
+                                <div class="related-item">
+                                    <span class="item-label">Created By:</span>
+                                    <span class="item-value">System Administrator</span>
+                                </div>
+                                <div class="related-item">
+                                    <span class="item-label">Department:</span>
+                                    <span class="item-value">IT Operations</span>
+                                </div>
+                                <div class="related-item">
+                                    <span class="item-label">Context:</span>
+                                    <span class="item-value">Scheduled Maintenance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="details-actions">
+                        <button class="action-btn mark-read-btn">
+                            <i class="fas fa-envelope-open"></i>
+                            <span>Mark as Read</span>
+                        </button>
+                        <button class="action-btn archive-btn">
+                            <i class="fas fa-archive"></i>
+                            <span>Archive</span>
+                        </button>
+                        <button class="action-btn delete-btn">
+                            <i class="fas fa-trash"></i>
+                            <span>Delete</span>
+                        </button>
+                        <button class="action-btn related-page-btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Go to System Status</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Create Notification Modal (Hidden by default) -->
+            <div class="create-notification-modal" id="createNotificationModal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Create Notification</h2>
+                        <button class="close-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form class="create-notification-form">
+                            <div class="form-section">
+                                <h3>Recipient Selection</h3>
+                                <div class="recipient-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="recipientType" value="all">
+                                        <span>All Users</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="recipientType" value="category" checked>
+                                        <span>User Categories</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="recipientType" value="specific">
+                                        <span>Specific Users/Businesses</span>
+                                    </label>
+                                </div>
+
+                                <div class="recipient-category-dropdown">
+                                    <select multiple>
+                                        <option value="admin">Administrators</option>
+                                        <option value="business">Business Owners</option>
+                                        <option value="driver">Drivers</option>
+                                        <option value="customer">Customers</option>
+                                    </select>
+                                </div>
+
+                                <div class="recipient-search" style="display: none;">
+                                    <input type="text" placeholder="Search for users or businesses...">
+                                    <button type="button" class="search-btn">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+
+                                <div class="selected-recipients">
+                                    <h4>Selected Recipients</h4>
+                                    <ul class="recipient-list">
+                                        <li class="recipient-item">
+                                            <span>Business Owners</span>
+                                            <button type="button" class="remove-btn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </li>
+                                        <li class="recipient-item">
+                                            <span>Drivers</span>
+                                            <button type="button" class="remove-btn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Notification Content</h3>
+                                <div class="form-group">
+                                    <label for="notificationTitle">Title</label>
+                                    <input type="text" id="notificationTitle" placeholder="Enter notification title"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="notificationBody">Message Body</label>
+                                    <textarea id="notificationBody" rows="5" placeholder="Enter notification content"
+                                        required></textarea>
+                                </div>
+
+                                <div class="content-actions">
+                                    <button type="button" class="add-link-btn">
+                                        <i class="fas fa-link"></i>
+                                        <span>Add Link</span>
+                                    </button>
+                                    <button type="button" class="attach-file-btn">
+                                        <i class="fas fa-paperclip"></i>
+                                        <span>Attach File</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Notification Settings</h3>
+                                <div class="form-group">
+                                    <label>Priority Level</label>
+                                    <div class="priority-options">
+                                        <label class="radio-option">
+                                            <input type="radio" name="priority" value="low">
+                                            <span>Low</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="priority" value="medium" checked>
+                                            <span>Medium</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="priority" value="high">
+                                            <span>High</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Delivery Channels</label>
+                                    <div class="channel-options">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="channel" value="app" checked>
+                                            <span>In-App Notification</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="channel" value="email" checked>
+                                            <span>Email Notification</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="scheduleDelivery">Schedule Delivery</label>
+                                    <div class="schedule-options">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" id="scheduleDelivery">
+                                            <span>Schedule for later</span>
+                                        </label>
+                                        <div class="schedule-datetime" style="display: none;">
+                                            <input type="date" id="scheduleDate">
+                                            <input type="time" id="scheduleTime">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn">
+                                <i class="fas fa-times"></i>
+                                <span>Cancel</span>
+                            </button>
+                            <button type="button" class="save-draft-btn">
+                                <i class="fas fa-save"></i>
+                                <span>Save as Draft</span>
+                            </button>
+                            <button type="button" class="schedule-btn" style="display: none;">
+                                <i class="fas fa-clock"></i>
+                                <span>Schedule</span>
+                            </button>
+                            <button type="button" class="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Send Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export Notifications Modal (Hidden by default) -->
+            <div class="export-modal" id="exportModal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Export Notifications</h2>
+                        <button class="close-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form class="export-form">
+                            <div class="form-section">
+                                <h3>Export Format</h3>
+                                <div class="format-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="exportFormat" value="pdf" checked>
+                                        <span>PDF Document</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="exportFormat" value="csv">
+                                        <span>CSV File</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="exportFormat" value="excel">
+                                        <span>Excel Spreadsheet</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Data Selection</h3>
+                                <div class="form-group">
+                                    <label>Timeframe</label>
+                                    <div class="date-range-picker">
+                                        <input type="date" class="date-input start-date" value="2025-03-01">
+                                        <span class="date-separator">to</span>
+                                        <input type="date" class="date-input end-date" value="2025-03-28">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Categories</label>
+                                    <div class="category-checkboxes">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>System Alerts</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>User Activities</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Business Updates</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Payment Alerts</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fields to Include</label>
+                                    <div class="field-checkboxes">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Date & Time</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Category</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Title</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Content</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Priority</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Status</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn">
+                                <i class="fas fa-times"></i>
+                                <span>Cancel</span>
+                            </button>
+                            <button type="button" class="generate-btn">
+                                <i class="fas fa-file-export"></i>
+                                <span>Generate Report</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="theme-toggle">
+                    <button id="darkModeToggle" class="dark-mode-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" class="social-link">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <div class="corporate-link">
+                    <a href="https://citruslabs.co.ke/" target="_blank">citruslabs.co.ke</a>
+                </div>
+
+                <div class="copyright">
+                    &copy; 2025 Citrus Labs. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Notification Action Menu Template (for JavaScript use) -->
+    <div class="action-menu-template" style="display: none;">
+        <ul>
+            <li><a href="#" class="read-action"><i class="fas fa-envelope-open"></i> Mark as Read</a></li>
+            <li><a href="#" class="archive-action"><i class="fas fa-archive"></i> Archive</a></li>
+            <li><a href="#" class="delete-action"><i class="fas fa-trash"></i> Delete</a></li>
+            <li><a href="#" class="details-action"><i class="fas fa-eye"></i> View Details</a></li>
+        </ul>
+    </div>
+
+    <!-- External JavaScript file -->
+    <script src="notifications.js"></script>
+</body>
+
+</html>

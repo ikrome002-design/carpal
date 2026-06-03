@@ -1,0 +1,209 @@
+stateDiagram-v2
+    [*] --> NotificationsPage
+    
+    state NotificationsPage {
+        [*] --> NotificationsDashboard
+        
+        state NotificationsDashboard {
+            UnreadCounter: Unread Notifications Counter
+            UnreadCounter: - Visual Badge Indicator
+            UnreadCounter: - Count Display
+            
+            NotificationFilters: Notification Filters
+            NotificationFilters: - All Notifications
+            NotificationFilters: - System Alerts
+            NotificationFilters: - User Activities
+            NotificationFilters: - Business Updates
+            NotificationFilters: - Payment Alerts
+            
+            SortOptions: Sort Options
+            SortOptions: - Newest First
+            SortOptions: - Oldest First
+            SortOptions: - Priority Level
+            
+            BulkActions: Bulk Actions
+            BulkActions: - Mark All as Read Button
+            BulkActions: - Archive Selected Button
+            BulkActions: - Delete Selected Button
+        }
+        
+        state NotificationsList {
+            NotificationEntry: Notification Entry
+            NotificationEntry: - Icon by Category
+            NotificationEntry: - Read/Unread Indicator
+            NotificationEntry: - Notification Title
+            NotificationEntry: - Preview Text
+            NotificationEntry: - Timestamp
+            NotificationEntry: - Priority Indicator
+            NotificationEntry: - Selection Checkbox
+            NotificationEntry: - Action Menu
+        }
+        
+        state NavigationTabs {
+            AllTab: All Notifications Tab
+            UnreadTab: Unread Tab
+            ArchivedTab: Archived Tab
+            PreferencesTab: Notification Preferences Tab
+            HistoryTab: Historical Log Tab
+        }
+    }
+    
+    state "Notification Details" as NotificationDetails {
+        HeaderInfo: Notification Header
+        HeaderInfo: - Category Icon
+        HeaderInfo: - Notification Title
+        HeaderInfo: - Timestamp
+        HeaderInfo: - Priority Level
+        
+        ContentSection: Content Section
+        ContentSection: - Full Notification Text
+        ContentSection: - Associated Links
+        ContentSection: - Attached Files
+        
+        RelatedInfo: Related Information
+        RelatedInfo: - Related User/Business
+        RelatedInfo: - Context Link
+        RelatedInfo: - Reference Number
+        
+        ActionButtons: Action Buttons
+        ActionButtons: - Mark as Read/Unread
+        ActionButtons: - Archive Button
+        ActionButtons: - Delete Button
+        ActionButtons: - Go to Related Page Button
+    }
+    
+    state "Create Notification" as CreateNotification {
+        RecipientSelection: Recipient Selection
+        RecipientSelection: - All Users Option
+        RecipientSelection: - User Categories Dropdown
+        RecipientSelection: - Specific User/Business Search
+        RecipientSelection: - Selected Recipients List
+        
+        NotificationContent: Notification Content
+        NotificationContent: - Title Field
+        NotificationContent: - Message Body Editor
+        NotificationContent: - Add Link Option
+        NotificationContent: - Attach File Option
+        
+        NotificationSettings: Notification Settings
+        NotificationSettings: - Priority Selection
+        NotificationSettings: - Delivery Channels (App/Email)
+        NotificationSettings: - Schedule Delivery Option
+        
+        SendOptions: Send Options
+        SendOptions: - Send Now Button
+        SendOptions: - Schedule Button
+        SendOptions: - Save as Draft Button
+        SendOptions: - Cancel Button
+    }
+    
+    state "Notification Preferences" as NotificationPreferences {
+        CategorySettings: Category Settings
+        CategorySettings: - System Alerts Toggle
+        CategorySettings: - User Activities Toggle
+        CategorySettings: - Business Updates Toggle
+        CategorySettings: - Payment Alerts Toggle
+        
+        DeliveryPreferences: Delivery Preferences
+        DeliveryPreferences: - In-App Notifications Toggle
+        DeliveryPreferences: - Email Notifications Toggle
+        DeliveryPreferences: - High Priority Override Toggle
+        
+        FrequencySettings: Frequency Settings
+        FrequencySettings: - Real-time Option
+        FrequencySettings: - Daily Digest Option
+        FrequencySettings: - Custom Schedule Option
+        
+        SaveSettings: Save Settings
+        SaveSettings: - Save Changes Button
+        SaveSettings: - Reset to Default Button
+    }
+    
+    state "Historical Log" as HistoricalLog {
+        TimeframeFilter: Timeframe Filter
+        TimeframeFilter: - Date Range Picker
+        TimeframeFilter: - Preset Periods (Today, Week, Month, Year)
+        
+        CategoryFilter: Category Filter
+        CategoryFilter: - Category Checkboxes
+        CategoryFilter: - Search by Keyword
+        
+        NotificationHistory: Notification History
+        NotificationHistory: - Paginated List View
+        NotificationHistory: - Sort Options
+        NotificationHistory: - Export Data Button
+        
+        HistoryActions: History Actions
+        HistoryActions: - View Details Button
+        HistoryActions: - Bulk Delete Button
+        HistoryActions: - Export Report Button
+    }
+    
+    state "Export Notifications" as ExportNotifications {
+        ExportFormat: Export Format
+        ExportFormat: - PDF Option
+        ExportFormat: - CSV Option
+        ExportFormat: - Excel Option
+        
+        DataSelection: Data Selection
+        DataSelection: - Timeframe Selection
+        DataSelection: - Category Selection
+        DataSelection: - Field Selection
+        
+        ExportActions: Export Actions
+        ExportActions: - Generate Report Button
+        ExportActions: - Cancel Button
+    }
+    
+    state "Notification Action Menu" as NotificationActionMenu {
+        MarkAction: Mark as Read/Unread
+        ArchiveAction: Archive Notification
+        DeleteAction: Delete Notification
+        DetailsAction: View Details
+    }
+    
+    NotificationsPage --> NotificationDetails: Click on Notification
+    NotificationsPage --> CreateNotification: Click Create Notification
+    NotificationsPage --> NotificationPreferences: Click Preferences Tab
+    NotificationsPage --> HistoricalLog: Click History Tab
+    NotificationsPage --> NotificationActionMenu: Click Action Menu
+    
+    NotificationActionMenu --> NotificationDetails: Select View Details
+    NotificationActionMenu --> NotificationsPage: After Action Complete
+    
+    NotificationDetails --> NotificationsPage: Back Button
+    
+    HistoricalLog --> ExportNotifications: Click Export Report
+    HistoricalLog --> NotificationDetails: Click View Details
+    
+    CreateNotification --> NotificationsPage: After Send/Cancel
+    NotificationPreferences --> NotificationsPage: After Save/Cancel
+    ExportNotifications --> HistoricalLog: After Generate/Cancel
+    
+    note right of NotificationsDashboard
+        The Notifications Dashboard provides real-time 
+        updates of all system alerts and important updates.
+        It includes filtering options, sorting capabilities, 
+        and bulk actions for efficient notification management.
+    end note
+    
+    note right of NotificationPreferences
+        Notification Preferences allows administrators to
+        customize which notifications they receive, through
+        which channels (in-app, email), and how frequently.
+        Settings can be saved per user account.
+    end note
+    
+    note left of HistoricalLog
+        The Historical Log maintains a comprehensive 
+        archive of all past notifications, searchable
+        by date range and category. This serves as an 
+        audit trail for important system events.
+    end note
+    
+    note left of CreateNotification
+        The Create Notification feature enables administrators
+        to send custom notifications to users or businesses.
+        Notifications can be scheduled, prioritized, and
+        delivered through multiple channels.
+    end note

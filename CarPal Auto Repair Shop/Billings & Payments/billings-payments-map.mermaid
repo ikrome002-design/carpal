@@ -1,0 +1,138 @@
+graph TD
+    %% Main Layout Structure
+    Dashboard["Dashboard"] --> MainNav{Main Navigation}
+    MainNav --> BillingsPayments["Billings & Payments"]
+    
+    %% Header Actions
+    BillingsPayments --> HeaderActions{"Header Actions"}
+    HeaderActions --> Notifications["Notifications"]
+    Notifications --> |"Click"| NotificationsPopup["Notifications Window"]
+    HeaderActions --> UserProfile["User Profile"]
+    UserProfile --> |"Click"| UserMenu["User Menu Popup"]
+    UserMenu --> LogOut["Log Out"]
+    
+    %% Main Navigation Tabs
+    BillingsPayments --> MainTabs{"Main Tabs"}
+    MainTabs --> CustomerBillings["Customer Billings"]
+    MainTabs --> CarPalBillings["CarPal Billings"]
+    MainTabs --> Refunds["Refunds"]
+    
+    %% Customer Billings Section
+    CustomerBillings --> CustomerSummary["Summary Cards"]
+    CustomerSummary --> TotalInvoices["Total Invoices"]
+    CustomerSummary --> TotalAmountBilled["Total Amount Billed"]
+    CustomerSummary --> TotalPaymentsReceived["Total Payments Received"]
+    CustomerSummary --> OutstandingAmount["Outstanding Amount"]
+    
+    CustomerBillings --> InvoiceOverview["Recent Invoices Table"]
+    InvoiceOverview --> InvoiceDetails{"Invoice Details"}
+    InvoiceDetails --> InvoiceNumber["Invoice #"]
+    InvoiceDetails --> CustomerName["Customer"]
+    InvoiceDetails --> ServiceDate["Service Date"]
+    InvoiceDetails --> DueDate["Due Date"]
+    InvoiceDetails --> Amount["Amount"]
+    InvoiceDetails --> Status["Status"]
+    InvoiceDetails --> InvoiceActions["Actions"]
+    InvoiceActions --> ViewInvoice["View Button"]
+    ViewInvoice --> |"Click"| InvoiceViewPage["Invoice Detail View"]
+    
+    CustomerBillings --> CreateInvoice["Create New Invoice Form"]
+    CreateInvoice --> CustomerInfo["Customer Information"]
+    CustomerInfo --> CustName["Customer Name Input"]
+    CustomerInfo --> PhoneNumber["Phone Number Input"]
+    CustomerInfo --> EmailAddress["Email Address Input"]
+    CustomerInfo --> VehicleDetails["Vehicle Details Input"]
+    
+    CreateInvoice --> ServiceDetails["Service Details"]
+    ServiceDetails --> ServiceItems["Service Items"]
+    ServiceItems --> ServiceDescription["Description Input"]
+    ServiceItems --> Quantity["Quantity Input"]
+    ServiceItems --> UnitPrice["Unit Price Input"]
+    
+    ServiceDetails --> AddServiceButton["Add Service Item Button"]
+    AddServiceButton --> |"Click"| AddNewServiceRow["Add New Service Row"]
+    
+    CreateInvoice --> PaymentDetails["Payment Details"]
+    PaymentDetails --> PaymentMethod["Payment Method Select"]
+    PaymentMethod --> MPesa["M-Pesa Option"]
+    PaymentMethod --> Cash["Cash Option"]
+    PaymentMethod --> BankTransfer["Bank Transfer Option"]
+    PaymentDetails --> PaymentDueDate["Due Date Input"]
+    
+    CreateInvoice --> GenerateInvoiceButton["Generate Invoice Button"]
+    GenerateInvoiceButton --> |"Click"| InvoiceSuccess["Success Alert"]
+    
+    %% CarPal Billings Section
+    CarPalBillings --> CarPalSummary["Summary Cards"]
+    CarPalSummary --> TotalInvoicesIssued["Total Invoices Issued"]
+    CarPalSummary --> TotalReceiptsRecorded["Total Receipts Recorded"]
+    CarPalSummary --> CarPalTotalBilled["Total Amount Billed"]
+    CarPalSummary --> CarPalOutstanding["Outstanding Amount"]
+    
+    CarPalBillings --> PlatformInvoices["CarPal Platform Invoices Table"]
+    PlatformInvoices --> PlatformInvoiceDetails{"Platform Invoice Details"}
+    PlatformInvoiceDetails --> PlatformInvoiceNumber["Invoice #"]
+    PlatformInvoiceDetails --> BillingPeriod["Billing Period"]
+    PlatformInvoiceDetails --> IssueDate["Issue Date"]
+    PlatformInvoiceDetails --> PlatformDueDate["Due Date"]
+    PlatformInvoiceDetails --> ServiceFee["Service Fee"]
+    PlatformInvoiceDetails --> PlatformStatus["Status"]
+    PlatformInvoiceDetails --> PlatformActions["Actions"]
+    PlatformActions --> PayNow["Pay Now Button"]
+    PayNow --> |"Click"| PaymentProcess["Payment Process Flow"]
+    
+    %% Refunds Section
+    Refunds --> RefundSummary["Summary Cards"]
+    RefundSummary --> TotalRefundsIssued["Total Refunds Issued"]
+    RefundSummary --> TotalRefundAmount["Total Refund Amount"]
+    RefundSummary --> AverageRefundAmount["Average Refund Amount"]
+    RefundSummary --> RefundPercentage["Refund Percentage"]
+    
+    Refunds --> RefundRequestForm["New Refund Request Form"]
+    RefundRequestForm --> RefundCustomerInfo["Customer Information"]
+    RefundCustomerInfo --> RefundCustomerName["Customer Name Input"]
+    RefundCustomerInfo --> InvoiceReference["Invoice Reference Input"]
+    RefundCustomerInfo --> RefundAmount["Refund Amount Input"]
+    RefundCustomerInfo --> RefundReason["Reason for Refund Select"]
+    RefundReason --> ServiceUnsatisfactory["Service Unsatisfactory Option"]
+    RefundReason --> Overcharge["Overcharge Option"]
+    RefundReason --> ServiceNotCompleted["Service Not Completed Option"]
+    RefundReason --> OtherReason["Other Option"]
+    
+    RefundRequestForm --> AdditionalComments["Additional Comments Textarea"]
+    RefundRequestForm --> SubmitRefundButton["Submit Refund Request Button"]
+    SubmitRefundButton --> |"Click"| RefundSuccess["Success Alert"]
+    
+    %% Footer Section
+    BillingsPayments --> Footer["Footer"]
+    Footer --> SocialIcons["Social Media Icons"]
+    Footer --> DarkModeToggle["Dark Mode Toggle"]
+    DarkModeToggle --> |"Click"| ToggleDarkMode["Toggle Dark Mode"]
+    Footer --> CorporateWebsite["Corporate Website Link"]
+    Footer --> Copyright["Copyright Information"]
+    
+    %% Left Navigation Sidebar
+    BillingsPayments --> Sidebar["Left Navigation Sidebar"]
+    Sidebar --> SidebarDashboard["Dashboard Link"]
+    Sidebar --> ServiceHub["Service Hub Link"]
+    Sidebar --> VehicleCheckIn["Vehicle Check-In Link"]
+    Sidebar --> BillingsPaymentsLink["Billings & Payments Link (Active)"]
+    Sidebar --> VehicleHistory["Vehicle History Link"]
+    Sidebar --> Technicians["Technicians Link"]
+    Sidebar --> VehicleCheckOut["Vehicle Check-Out Link"]
+    Sidebar --> Settings["Settings Link"]
+    
+    %% Style Definitions
+    classDef primary fill:#2563eb,stroke:#1e40af,color:white
+    classDef secondary fill:#3b82f6,stroke:#2563eb,color:white
+    classDef decision fill:#dbeafe,stroke:#3b82f6,color:black
+    classDef action fill:#10b981,stroke:#047857,color:white
+    classDef popup fill:#34d399,stroke:#10b981,color:black
+    
+    %% Apply Styles
+    class Dashboard,BillingsPayments primary
+    class MainNav,MainTabs,InvoiceDetails,PlatformInvoiceDetails decision
+    class HeaderActions decision
+    class CustomerBillings,CarPalBillings,Refunds secondary
+    class ViewInvoice,PayNow,GenerateInvoiceButton,SubmitRefundButton,AddServiceButton action
+    class NotificationsPopup,UserMenu,InvoiceViewPage,InvoiceSuccess,RefundSuccess,PaymentProcess,AddNewServiceRow popup

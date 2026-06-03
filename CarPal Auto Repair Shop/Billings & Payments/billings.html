@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billings & Payments | CarPal Auto Repair Shop</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+    <link rel="stylesheet" href="billings.css">
+</head>
+
+<body>
+    <!-- Left Navigation Sidebar -->
+    <nav class="nav-sidebar">
+        <div class="logo-container">
+            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                alt="CarPal Logo">
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Dashboard/dashboard.html">
+                    <i class="fas fa-home"></i>Dashboard
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Service Hub/service_hub.html">
+                    <i class="fas fa-tools"></i>Service Hub
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-In/check_in.html">
+                    <i class="fas fa-car"></i>Vehicle Check-In
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Billings & Payments/billings.html">
+                    <i class="fas fa-file-invoice-dollar"></i>Billings & Payments
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle History/history.html">
+                    <i class="fas fa-history"></i>Vehicle History
+                </a>
+            </li>
+            <li>
+                <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Technicians/technicians.html"
+                    class="active">
+                    <i class="fas fa-users-cog"></i>Technicians
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-Out/check_out.html">
+                    <i class="fas fa-sign-out-alt"></i>Vehicle Check-Out
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Settings/settings.html">
+                    <i class="fas fa-cog"></i>Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <h1>Billings & Payments</h1>
+            <div class="header-actions">
+                <button class="action-button"
+                    onclick="window.open('C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Notifications/notifications.html', 'Notifications', 'width=400,height=600')">
+                    <i class="fas fa-bell"></i> Notifications
+                </button>
+                <div class="user-profile" id="userProfile">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                        alt="User Profile">
+                    <span>John Doe</span>
+                    <div class="popup-menu" id="userMenu">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html">
+                            <i class="fas fa-sign-out-alt"></i> Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Navigation Tabs -->
+        <div class="main-tabs">
+            <button class="main-tab-btn active" data-tab="customer-billings">Customer Billings</button>
+            <button class="main-tab-btn" data-tab="carpal-billings">CarPal Billings</button>
+            <button class="main-tab-btn" data-tab="refunds">Refunds</button>
+        </div>
+
+        <!-- Customer Billings Section -->
+        <section id="customer-billings" class="tab-content active">
+            <!-- Total Summary Cards -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <h3>Total Invoices</h3>
+                    <div class="value">150</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Total Amount Billed</h3>
+                    <div class="value">KES. 750,000</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Total Payments Received</h3>
+                    <div class="value">KES. 600,000</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Outstanding Amount</h3>
+                    <div class="value">KES. 150,000</div>
+                </div>
+            </div>
+
+            <!-- Invoice Overview -->
+            <div class="invoice-overview">
+                <h2>Recent Invoices</h2>
+                <table class="invoice-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice #</th>
+                            <th>Customer</th>
+                            <th>Service Date</th>
+                            <th>Due Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-001</td>
+                            <td>John Smith</td>
+                            <td>2025-01-25</td>
+                            <td>2025-02-25</td>
+                            <td>KES. 25,000</td>
+                            <td><span class="status-label status-paid">Paid</span></td>
+                            <td>
+                                <button class="action-button">View</button>
+                            </td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Invoice Creation Form -->
+            <div class="form-section">
+                <h2>Create New Invoice</h2>
+                <form class="invoice-form">
+                    <div class="form-grid">
+                        <!-- Customer Information -->
+                        <div class="form-group">
+                            <label>Customer Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Vehicle Details</label>
+                            <input type="text" placeholder="Make, Model, License Plate" required>
+                        </div>
+                    </div>
+
+                    <!-- Service Details -->
+                    <h3>Service Details</h3>
+                    <div id="serviceItems">
+                        <div class="service-item">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Quantity</label>
+                                    <input type="number" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Unit Price</label>
+                                    <input type="number" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="action-button" onclick="addServiceItem()">Add Service Item</button>
+
+                    <!-- Payment Details -->
+                    <h3>Payment Details</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Payment Method</label>
+                            <select required>
+                                <option value="mpesa">M-Pesa</option>
+                                <option value="cash">Cash</option>
+                                <option value="bank">Bank Transfer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Due Date</label>
+                            <input type="date" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="action-button">Generate Invoice</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- CarPal Billings Section -->
+        <section id="carpal-billings" class="tab-content">
+            <!-- Dashboard Overview -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <h3>Total Invoices Issued</h3>
+                    <div class="value">45</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Total Receipts Recorded</h3>
+                    <div class="value">38</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Total Amount Billed</h3>
+                    <div class="value">KES. 75,000</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Outstanding Amount</h3>
+                    <div class="value">KES. 12,000</div>
+                </div>
+            </div>
+
+            <!-- Billing Invoice Management -->
+            <div class="invoice-overview">
+                <h2>CarPal Platform Invoices</h2>
+                <table class="invoice-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice #</th>
+                            <th>Billing Period</th>
+                            <th>Issue Date</th>
+                            <th>Due Date</th>
+                            <th>Service Fee</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CP-001</td>
+                            <td>Jan 2025</td>
+                            <td>2025-01-30</td>
+                            <td>2025-02-15</td>
+                            <td>KES. 7,500</td>
+                            <td><span class="status-label status-pending">Pending</span></td>
+                            <td>
+                                <button class="action-button">Pay Now</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Refunds Section -->
+        <section id="refunds" class="tab-content">
+            <!-- Refund Dashboard Overview -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <h3>Total Refunds Issued</h3>
+                    <div class="value">12</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Total Refund Amount</h3>
+                    <div class="value">KES. 45,000</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Average Refund Amount</h3>
+                    <div class="value">KES. 3,750</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Refund Percentage</h3>
+                    <div class="value">8%</div>
+                </div>
+            </div>
+
+            <!-- Refund Request Form -->
+            <div class="form-section">
+                <h2>New Refund Request</h2>
+                <form class="refund-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Customer Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Invoice Reference</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Refund Amount</label>
+                            <input type="number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Reason for Refund</label>
+                            <select required>
+                                <option value="">Select Reason</option>
+                                <option value="service-unsatisfactory">Service Unsatisfactory</option>
+                                <option value="overcharge">Overcharge</option>
+                                <option value="service-not-completed">Service Not Completed</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Comments</label>
+                        <textarea rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="action-button">Submit Refund Request</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div>
+                    <a href="https://citruslabs.co.ke/" target="_blank"
+                        style="color: #FFFFFF; text-decoration: none;">Corporate Website</a>
+                </div>
+                <div>
+                    © 2025 Citrus Labs. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Tab Switching
+        const mainTabs = document.querySelectorAll('.main-tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        mainTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                mainTabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                const targetContent = document.getElementById(tab.dataset.tab);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+
+        // User Profile Popup
+        document.getElementById('userProfile').addEventListener('click', function () {
+            document.getElementById('userMenu').classList.toggle('active');
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Add Service Item
+        function addServiceItem() {
+            const serviceItems = document.getElementById('serviceItems');
+            const newItem = serviceItems.children[0].cloneNode(true);
+            const inputs = newItem.getElementsByTagName('input');
+            for (let input of inputs) {
+                input.value = '';
+            }
+            serviceItems.appendChild(newItem);
+        }
+
+        // Form Submissions
+        document.querySelector('.invoice-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Invoice generated successfully!');
+        });
+
+        document.querySelector('.refund-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Refund request submitted successfully!');
+        });
+    </script>
+</body>
+
+</html>

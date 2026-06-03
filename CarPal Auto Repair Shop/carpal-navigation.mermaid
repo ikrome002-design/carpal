@@ -1,0 +1,73 @@
+graph TD
+    %% Main Sections
+    Login[Login] --> Dashboard
+    Dashboard --> |"Main Navigation"| MainNav{Main Navigation}
+    
+    %% Main Navigation Branches
+    MainNav --> ServiceHub["Service Hub"]
+    MainNav --> VehicleCheckin["Vehicle Check-In"]
+    MainNav --> BillingPayments["Billing & Payments"]
+    MainNav --> VehicleHistory["Vehicle History"]
+    MainNav --> Settings["Settings"]
+    MainNav --> VehicleCheckout["Vehicle Check-Out"]
+
+    %% Service Hub Section
+    ServiceHub --> JobScheduling["Job Scheduling & Tracking"]
+    ServiceHub --> ServiceRecords["Service History Records"]
+    ServiceHub --> CustomerComm["Customer Communication Tools"]
+    
+    JobScheduling --> |"Features"| JobFeatures{"Job Features"}
+    JobFeatures --> NewAppt["New Appointment"]
+    JobFeatures --> TrackJobs["Track Jobs"]
+    JobFeatures --> UpdateProgress["Update Progress"]
+
+    %% Vehicle Check-In Section
+    VehicleCheckin --> CheckInOptions{"Vehicle Type"}
+    CheckInOptions --> NewVehicle["New Vehicle"]
+    CheckInOptions --> ExistingVehicle["Existing Vehicle"]
+    
+    NewVehicle & ExistingVehicle --> AssessmentForm["Assessment Form"]
+    AssessmentForm --> Components{"Components Check"}
+    Components --> AudioComp["Audio Components"]
+    Components --> InteriorComp["Interior Components"]
+    Components --> ExteriorComp["Exterior Components"]
+    Components --> EngineComp["Engine Components"]
+
+    %% Billing & Payments Section
+    BillingPayments --> InvoiceGen["Invoice Generation"]
+    BillingPayments --> PaymentMgmt["Payment Management"]
+    BillingPayments --> Reports["Financial Reports"]
+    
+    InvoiceGen --> ServiceCharge["Service Charge Calculation"]
+    PaymentMgmt --> MPesa["M-Pesa Integration"]
+    
+    %% Settings Section
+    Settings --> UserType{"User Type"}
+    UserType --> AdminSettings["Administrator Settings"]
+    UserType --> StaffSettings["Staff Settings"]
+    
+    AdminSettings --> AdminFeatures{"Admin Features"}
+    AdminFeatures --> StaffMgmt["Staff Management"]
+    AdminFeatures --> PaymentInteg["Payment Integration"]
+    AdminFeatures --> InsuranceContacts["Insurance Company Contacts"]
+    AdminFeatures --> ServiceChargeConfig["Service Charge Configuration"]
+    
+    StaffSettings --> StaffFeatures{"Staff Features"}
+    StaffFeatures --> ProfileSettings["Profile Settings"]
+    StaffFeatures --> SupportHelp["Support & Help"]
+    StaffFeatures --> SystemPrefs["System Preferences"]
+
+    %% Vehicle Check-Out Section
+    VehicleCheckout --> CheckOutForm["Check-Out Form"]
+    CheckOutForm --> PostRepair["Post-Repair Assessment"]
+    PostRepair --> Notifications["Customer Notifications"]
+    
+    %% Style Definitions
+    classDef primary fill:#2563eb,stroke:#1e40af,color:white
+    classDef secondary fill:#3b82f6,stroke:#2563eb,color:white
+    classDef decision fill:#dbeafe,stroke:#3b82f6,color:black
+    
+    %% Apply Styles
+    class Login,Dashboard primary
+    class ServiceHub,VehicleCheckin,BillingPayments,VehicleHistory,Settings,VehicleCheckout secondary
+    class UserType,Components,CheckInOptions,JobFeatures,AdminFeatures,StaffFeatures decision

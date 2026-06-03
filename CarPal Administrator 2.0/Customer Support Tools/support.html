@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Tools - CarPal by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="support.css">
+</head>
+
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                        alt="CarPal by Citrus Logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">Dashboard</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\User Management\users.html">Users</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Business Management\businesses.html">Businesses</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Financial Oversight\finance.html">Finance</a>
+                    </li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Security Tools\security.html">Security</a>
+                    </li>
+                    <li class="active"><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Customer Support Tools\support.html">Support</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Profile & Notifications -->
+            <div class="user-controls">
+                <!-- Notifications -->
+                <div class="notifications">
+                    <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Notifications\notifications.html"
+                        title="View updates or alerts">
+                        <span class="notification-icon">🔔</span>
+                        <span class="notification-count">8</span>
+                    </a>
+                </div>
+
+                <!-- User Profile -->
+                <div class="user-profile-dropdown">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                        alt="User Profile" class="profile-icon" id="profile-icon">
+                    <div class="dropdown-content" id="profile-dropdown">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\My Profile\my_profile.html">My
+                            Profile</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Activity History\activity_history.html">Activity
+                            History</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">Log
+                            Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Support Dashboard -->
+        <section class="support-dashboard">
+            <h1>Support Dashboard</h1>
+
+            <div class="dashboard-grid">
+                <!-- Ticket Summary -->
+                <div class="dashboard-card ticket-summary">
+                    <h2>Ticket Summary</h2>
+                    <div class="ticket-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">New Tickets</span>
+                            <span class="stat-value">23</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Open Tickets</span>
+                            <span class="stat-value">45</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Resolved Tickets</span>
+                            <span class="stat-value">187</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Priority Metrics -->
+                <div class="dashboard-card priority-metrics">
+                    <h2>Priority Metrics</h2>
+                    <div class="priority-stats">
+                        <div class="stat-item high-priority">
+                            <span class="stat-label">High Priority</span>
+                            <span class="stat-value">12</span>
+                        </div>
+                        <div class="stat-item medium-priority">
+                            <span class="stat-label">Medium Priority</span>
+                            <span class="stat-value">35</span>
+                        </div>
+                        <div class="stat-item low-priority">
+                            <span class="stat-label">Low Priority</span>
+                            <span class="stat-value">21</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Response Metrics -->
+                <div class="dashboard-card response-metrics">
+                    <h2>Response Metrics</h2>
+                    <div class="response-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Average Response Time</span>
+                            <span class="stat-value">2h 15m</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">SLA Compliance Rate</span>
+                            <span class="stat-value">94.5%</span>
+                        </div>
+                    </div>
+                    <button class="view-metrics-btn">View Detailed Metrics</button>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-card quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="action-buttons">
+                        <button class="create-ticket-btn" id="createTicketBtn">Create New Ticket</button>
+                        <button class="view-tickets-btn" id="viewTicketsBtn">View All Tickets</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <div class="navigation-tabs">
+            <button class="tab-btn active" data-tab="tickets">Support Tickets</button>
+            <button class="tab-btn" data-tab="reports">Support Reports</button>
+            <button class="tab-btn" data-tab="settings">Support Settings</button>
+        </div>
+
+        <!-- Tab Content Sections -->
+
+        <!-- Support Tickets Tab -->
+        <section class="tab-content active" id="tickets">
+            <div class="tickets-container">
+                <h2>Support Tickets</h2>
+
+                <!-- Ticket Tabs -->
+                <div class="tickets-tabs">
+                    <button class="ticket-tab-btn active" data-ticket-tab="active-tickets">Active Tickets</button>
+                    <button class="ticket-tab-btn" data-ticket-tab="resolved-tickets">Resolved Tickets</button>
+                </div>
+
+                <!-- Active Tickets Tab Content -->
+                <div class="ticket-tab-content active" id="active-tickets">
+                    <div class="ticket-filters">
+                        <div class="filter-group">
+                            <label for="priority-filter">Priority:</label>
+                            <select id="priority-filter">
+                                <option value="">All Priorities</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="status-filter">Status:</label>
+                            <select id="status-filter">
+                                <option value="">All Statuses</option>
+                                <option value="new">New</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="pending">Pending</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <input type="text" placeholder="Search tickets..." class="search-bar">
+                        </div>
+                    </div>
+
+                    <div class="tickets-table-container">
+                        <table class="tickets-table">
+                            <thead>
+                                <tr>
+                                    <th>Ticket ID</th>
+                                    <th>Subject</th>
+                                    <th>Customer</th>
+                                    <th>Business</th>
+                                    <th>Status</th>
+                                    <th>Priority</th>
+                                    <th>Assigned To</th>
+                                    <th>Created</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#T10045</td>
+                                    <td>Payment integration error</td>
+                                    <td>John Smith</td>
+                                    <td>AutoFix Kenya</td>
+                                    <td><span class="status-badge new">New</span></td>
+                                    <td><span class="priority-badge high">High</span></td>
+                                    <td>Unassigned</td>
+                                    <td>Today, 09:45 AM</td>
+                                    <td>
+                                        <button class="view-ticket-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#T10044</td>
+                                    <td>Cannot access dashboard</td>
+                                    <td>Sarah Johnson</td>
+                                    <td>Nairobi Car Parts</td>
+                                    <td><span class="status-badge in-progress">In Progress</span></td>
+                                    <td><span class="priority-badge medium">Medium</span></td>
+                                    <td>James Muthui</td>
+                                    <td>Today, 08:22 AM</td>
+                                    <td>
+                                        <button class="view-ticket-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#T10043</td>
+                                    <td>Invoice formatting issue</td>
+                                    <td>Michael Odera</td>
+                                    <td>Mombasa Auto Service</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td><span class="priority-badge low">Low</span></td>
+                                    <td>Lucy Wanja</td>
+                                    <td>Yesterday, 15:30 PM</td>
+                                    <td>
+                                        <button class="view-ticket-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#T10042</td>
+                                    <td>System slowness issue</td>
+                                    <td>Daniel Kipkoech</td>
+                                    <td>Eldoret Wheel Services</td>
+                                    <td><span class="status-badge in-progress">In Progress</span></td>
+                                    <td><span class="priority-badge high">High</span></td>
+                                    <td>James Muthui</td>
+                                    <td>Yesterday, 14:15 PM</td>
+                                    <td>
+                                        <button class="view-ticket-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#T10041</td>
+                                    <td>Feature request: Export to PDF</td>
+                                    <td>Grace Mwangi</td>
+                                    <td>Nakuru Car Wash</td>
+                                    <td><span class="status-badge new">New</span></td>
+                                    <td><span class="priority-badge low">Low</span></td>
+                                    <td>Unassigned</td>
+                                    <td>Yesterday, 11:05 AM</td>
+                                    <td>
+                                        <button class="view-ticket-btn">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="ticket-pagination">
+                        <button class="pagination-btn prev">&lt; Previous</button>
+                        <span class="page-indicator">Page 1 of 3</span>
+                        <button class="pagination-btn next">Next &gt;</button>
+                    </div>
+                </div>
+
+                <!-- Resolved Tickets Tab Content -->
+                <div class="ticket-tab-content" id="resolved-tickets">
+                    <div class="ticket-filters">
+                        <div class="filter-group">
+                            <label for="date-range-filter">Date Range:</label>
+                            <select id="date-range-filter">
+                                <option value="today">Today</option>
+                                <option value="yesterday">Yesterday</option>
+                                <option value="this-week">This Week</option>
+                                <option value="last-week">Last Week</option>
+                                <option value="this-month" selected>This Month</option>
+                                <option value="custom">Custom Range</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="resolution-type-filter">Resolution Type:</label>
+                            <select id="resolution-type-filter">
+                                <option value="">All Types</option>
+                                <option value="solved">Solved</option>
+                                <option value="workaround">Workaround Provided</option>
+                                <option value="not-reproducible">Not Reproducible</option>
+                                <option value="not-supported">Not Supported</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <input type="text" placeholder="Search resolved tickets..." class="search-bar">
+                        </div>
+                    </div>
+
+                    <div class="tickets-table-container">
+                        <table class="tickets-table">
+                            <thead>
+                                <tr>
+                                    <th>Ticket ID</th>
+                                    <th>Subject</th>
+                                    <th>Customer</th>
+                                    <th>Business</th>
+                                    <th>Resolution Type</th>
+                                    <th>Resolved By</th>
+                                    <th>Resolution Time</th>
+                                    <th>Resolved Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#T10040</td>
+                                    <td>Login issue after password reset</td>
+                                    <td>Peter Njoroge</td>
+                                    <td>Kisumu Auto Parts</td>
+                                    <td>Solved</td>
+                                    <td>Lucy Wanja</td>
+                                    <td>2h 15m</td>
+                                    <td>Today, 10:30 AM</td>
+                                    <td>
+                                        <button class="view-ticket-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#T10039</td>
+                                    <td>Mobile app crashing on startup</td>
+                                    <td>Joyce Akinyi</td>
+                                    <td>Ultra Shine Car Wash</td>
+                                    <td>Solved</td>
+                                    <td>James Muthui</td>
+                                    <td>4h 45m</td>
+                                    <td>Yesterday, 16:20 PM</td>
+                                    <td>
+                                        <button class="view-ticket-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#T10038</td>
+                                    <td>Issue with report generation</td>
+                                    <td>Samuel Kamau</td>
+                                    <td>AutoFix Kenya</td>
+                                    <td>Workaround Provided</td>
+                                    <td>Lucy Wanja</td>
+                                    <td>1d 2h 30m</td>
+                                    <td>25 Mar 2025, 11:15 AM</td>
+                                    <td>
+                                        <button class="view-ticket-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#T10037</td>
+                                    <td>Error accessing customer records</td>
+                                    <td>Jane Mueni</td>
+                                    <td>Nairobi Car Parts</td>
+                                    <td>Solved</td>
+                                    <td>James Muthui</td>
+                                    <td>5h 10m</td>
+                                    <td>24 Mar 2025, 14:45 PM</td>
+                                    <td>
+                                        <button class="view-ticket-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#T10036</td>
+                                    <td>Billing discrepancy in monthly invoice</td>
+                                    <td>Victor Omondi</td>
+                                    <td>Mombasa Auto Service</td>
+                                    <td>Solved</td>
+                                    <td>Lucy Wanja</td>
+                                    <td>8h 25m</td>
+                                    <td>23 Mar 2025, 09:30 AM</td>
+                                    <td>
+                                        <button class="view-ticket-btn">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="ticket-pagination">
+                        <button class="pagination-btn prev">&lt; Previous</button>
+                        <span class="page-indicator">Page 1 of 5</span>
+                        <button class="pagination-btn next">Next &gt;</button>
+                    </div>
+                </div>
+
+                <!-- Ticket Assignment Section -->
+                <div class="ticket-assignment-section">
+                    <h3>Ticket Assignment</h3>
+                    <div class="assignment-container">
+                        <div class="unassigned-tickets">
+                            <h4>Unassigned Tickets (2)</h4>
+                            <ul class="unassigned-list">
+                                <li>
+                                    <span class="ticket-id">#T10045</span>
+                                    <span class="ticket-subject">Payment integration error</span>
+                                    <select class="agent-assign-dropdown">
+                                        <option value="">Assign to agent...</option>
+                                        <option value="james">James Muthui</option>
+                                        <option value="lucy">Lucy Wanja</option>
+                                        <option value="john">John Kimani</option>
+                                        <option value="faith">Faith Mutua</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <span class="ticket-id">#T10041</span>
+                                    <span class="ticket-subject">Feature request: Export to PDF</span>
+                                    <select class="agent-assign-dropdown">
+                                        <option value="">Assign to agent...</option>
+                                        <option value="james">James Muthui</option>
+                                        <option value="lucy">Lucy Wanja</option>
+                                        <option value="john">John Kimani</option>
+                                        <option value="faith">Faith Mutua</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <button class="bulk-assign-btn">Bulk Assignment</button>
+                        </div>
+                        <div class="assignment-settings">
+                            <h4>Auto-Assignment Settings</h4>
+                            <div class="setting-item">
+                                <label for="auto-assign-toggle">Auto-Assign New Tickets:</label>
+                                <input type="checkbox" id="auto-assign-toggle" checked>
+                            </div>
+                            <div class="setting-item">
+                                <label for="assignment-method">Assignment Method:</label>
+                                <select id="assignment-method">
+                                    <option value="round-robin">Round Robin</option>
+                                    <option value="load-balanced" selected>Load Balanced</option>
+                                    <option value="skill-based">Skill Based</option>
+                                </select>
+                            </div>
+                            <button class="configure-rules-btn">Configure Rules</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Priority Management Section -->
+                <div class="priority-management-section">
+                    <h3>Priority Management</h3>
+                    <div class="priority-container">
+                        <div class="priority-filters">
+                            <div class="priority-filter">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span class="priority-badge high">High</span>
+                                    <span class="count">(12)</span>
+                                </label>
+                            </div>
+                            <div class="priority-filter">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span class="priority-badge medium">Medium</span>
+                                    <span class="count">(35)</span>
+                                </label>
+                            </div>
+                            <div class="priority-filter">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span class="priority-badge low">Low</span>
+                                    <span class="count">(21)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="priority-actions">
+                            <button class="update-priority-btn">Update Priority</button>
+                            <button class="bulk-priority-btn">Bulk Priority Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Support Reports Tab -->
+        <section class="tab-content" id="reports">
+            <div class="reports-container">
+                <h2>Support Reports</h2>
+
+                <div class="reports-grid">
+                    <!-- Ticket Volume Report -->
+                    <div class="report-card">
+                        <h3>Ticket Volume Report</h3>
+                        <div class="report-filters">
+                            <div class="report-toggle">
+                                <button class="toggle-btn active" data-period="daily">Daily</button>
+                                <button class="toggle-btn" data-period="weekly">Weekly</button>
+                                <button class="toggle-btn" data-period="monthly">Monthly</button>
+                            </div>
+                        </div>
+                        <div class="report-chart">
+                            <!-- Placeholder for ticket volume chart -->
+                            <div class="chart-placeholder">Ticket Volume Chart</div>
+                        </div>
+                        <div class="report-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">Total Tickets:</span>
+                                <span class="metric-value">275</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Top Category:</span>
+                                <span class="metric-value">Technical Issues (45%)</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Top Business:</span>
+                                <span class="metric-value">AutoFix Kenya (22%)</span>
+                            </div>
+                        </div>
+                        <button class="export-report-btn">Export Report</button>
+                    </div>
+
+                    <!-- Resolution Report -->
+                    <div class="report-card">
+                        <h3>Resolution Report</h3>
+                        <div class="report-chart">
+                            <!-- Placeholder for resolution report chart -->
+                            <div class="chart-placeholder">Resolution Time Chart</div>
+                        </div>
+                        <div class="report-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">Average Resolution Time:</span>
+                                <span class="metric-value">8h 45m</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Resolution Type Breakdown:</span>
+                                <span class="metric-value">Solved (75%), Workaround (15%), Other (10%)</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">First Contact Resolution Rate:</span>
+                                <span class="metric-value">42%</span>
+                            </div>
+                        </div>
+                        <button class="export-report-btn">Export Report</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Settings Tab -->
+        <section class="tab-content" id="settings">
+            <div class="settings-container">
+                <h2>Support Settings</h2>
+
+                <div class="settings-grid">
+                    <!-- Ticket Workflow Settings -->
+                    <div class="settings-card">
+                        <h3>Ticket Workflow Settings</h3>
+                        <div class="settings-content">
+                            <div class="settings-section">
+                                <h4>Status Configuration</h4>
+                                <table class="settings-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Status</th>
+                                            <th>Active</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>New</td>
+                                            <td><input type="checkbox" checked disabled></td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>In Progress</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><button class="edit-status-btn">Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pending Customer</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><button class="edit-status-btn">Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pending Review</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><button class="edit-status-btn">Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Resolved</td>
+                                            <td><input type="checkbox" checked disabled></td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Closed</td>
+                                            <td><input type="checkbox" checked disabled></td>
+                                            <td>-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="add-status-btn">Add Custom Status</button>
+                            </div>
+                            <div class="settings-section">
+                                <h4>Automated Status Updates</h4>
+                                <div class="setting-item">
+                                    <label class="setting-label">Auto-close resolved tickets after:</label>
+                                    <select class="setting-control">
+                                        <option value="3">3 days</option>
+                                        <option value="5" selected>5 days</option>
+                                        <option value="7">7 days</option>
+                                        <option value="14">14 days</option>
+                                        <option value="never">Never</option>
+                                    </select>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="setting-label">Auto-update to "Pending Customer" when:</label>
+                                    <select class="setting-control">
+                                        <option value="replied">Agent replies with a question</option>
+                                        <option value="tagged" selected>Ticket tagged with "awaiting-response"</option>
+                                        <option value="both">Either of the above</option>
+                                        <option value="never">Never</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <!-- Automation Rules -->
+                    <div class="settings-card">
+                        <h3>Automation Rules</h3>
+                        <div class="settings-content">
+                            <div class="settings-section">
+                                <h4>Auto-Assignment Rules</h4>
+                                <table class="settings-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rule Name</th>
+                                            <th>Conditions</th>
+                                            <th>Action</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Technical Issues</td>
+                                            <td>Category: "Technical Support"</td>
+                                            <td>Assign to: Technical Team</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="edit-rule-btn">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Billing Questions</td>
+                                            <td>Category: "Billing"</td>
+                                            <td>Assign to: Finance Team</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="edit-rule-btn">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>VIP Customers</td>
+                                            <td>Customer Type: "VIP"</td>
+                                            <td>Assign to: Senior Support</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="edit-rule-btn">Edit</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="add-rule-btn">Add New Rule</button>
+                            </div>
+                            <div class="settings-section">
+                                <h4>Auto-Response Templates</h4>
+                                <table class="settings-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Template Name</th>
+                                            <th>Trigger</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>New Ticket Acknowledgement</td>
+                                            <td>Ticket Created</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="edit-template-btn">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Resolution Confirmation</td>
+                                            <td>Ticket Resolved</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="edit-template-btn">Edit</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Feedback Request</td>
+                                            <td>Ticket Closed</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="edit-template-btn">Edit</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="add-template-btn">Add New Template</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Integration Settings -->
+                    <div class="settings-card">
+                        <h3>Integration Settings</h3>
+                        <div class="settings-content">
+                            <div class="settings-section">
+                                <h4>Email Integration</h4>
+                                <div class="setting-item">
+                                    <label class="setting-label">Convert emails to tickets:</label>
+                                    <input type="checkbox" checked>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="setting-label">Support email address:</label>
+                                    <input type="email" value="support@citruslabs.co.ke">
+                                </div>
+                                <div class="setting-item">
+                                    <label class="setting-label">Email check frequency:</label>
+                                    <select class="setting-control">
+                                        <option value="1">Every minute</option>
+                                        <option value="5" selected>Every 5 minutes</option>
+                                        <option value="10">Every 10 minutes</option>
+                                        <option value="15">Every 15 minutes</option>
+                                        <option value="30">Every 30 minutes</option>
+                                    </select>
+                                </div>
+                                <button class="test-email-btn">Test Email Configuration</button>
+                            </div>
+                            <div class="settings-section">
+                                <h4>SMS Notifications</h4>
+                                <div class="setting-item">
+                                    <label class="setting-label">Enable SMS notifications:</label>
+                                    <input type="checkbox" checked>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="setting-label">SMS provider:</label>
+                                    <select class="setting-control">
+                                        <option value="africastalking" selected>Africa's Talking</option>
+                                        <option value="twilio">Twilio</option>
+                                        <option value="nexmo">Nexmo</option>
+                                    </select>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="setting-label">API credentials:</label>
+                                    <button class="config-api-btn">Configure API Credentials</button>
+                                </div>
+                                <button class="test-sms-btn">Test SMS Configuration</button>
+                            </div>
+                            <div class="settings-section">
+                                <h4>Third-Party Integrations</h4>
+                                <table class="settings-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Integration</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Slack</td>
+                                            <td><span class="status-badge active">Connected</span></td>
+                                            <td><button class="config-integration-btn">Configure</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>WhatsApp Business</td>
+                                            <td><span class="status-badge inactive">Disconnected</span></td>
+                                            <td><button class="config-integration-btn">Connect</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Google Calendar</td>
+                                            <td><span class="status-badge active">Connected</span></td>
+                                            <td><button class="config-integration-btn">Configure</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="add-integration-btn">Add New Integration</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- Create Ticket Modal -->
+    <div class="modal" id="create-ticket-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Ticket</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Customer Selection -->
+                <div class="form-section">
+                    <h3>Customer Selection</h3>
+                    <div class="form-group">
+                        <label for="customer-search">Search Customer:</label>
+                        <input type="text" id="customer-search" placeholder="Search by name, email, or phone">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customer-type">Customer Type:</label>
+                            <select id="customer-type">
+                                <option value="business">Business</option>
+                                <option value="individual">Individual</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="business-association">Business Association:</label>
+                            <select id="business-association">
+                                <option value="">Select Business</option>
+                                <option value="autofix">AutoFix Kenya</option>
+                                <option value="nairobi">Nairobi Car Parts</option>
+                                <option value="mombasa">Mombasa Auto Service</option>
+                                <option value="eldoret">Eldoret Wheel Services</option>
+                                <option value="nakuru">Nakuru Car Wash</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="create-new-option">
+                        <button class="create-new-customer-btn">Create New Customer</button>
+                    </div>
+                </div>
+
+                <!-- Ticket Type -->
+                <div class="form-section">
+                    <h3>Ticket Type</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="issue-type">Issue Type:</label>
+                            <select id="issue-type">
+                                <option value="">Select Issue Type</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="billing">Billing & Payments</option>
+                                <option value="account">Account Management</option>
+                                <option value="feature">Feature Request</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-service">Product/Service:</label>
+                            <select id="product-service">
+                                <option value="">Select Product/Service</option>
+                                <option value="web-app">Web Application</option>
+                                <option value="mobile-app">Mobile Application</option>
+                                <option value="api">API Integration</option>
+                                <option value="billing">Billing System</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Priority:</label>
+                        <select id="priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Ticket Details -->
+                <div class="form-section">
+                    <h3>Ticket Details</h3>
+                    <div class="form-group">
+                        <label for="ticket-subject">Subject:</label>
+                        <input type="text" id="ticket-subject" placeholder="Enter ticket subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="ticket-description">Description:</label>
+                        <textarea id="ticket-description" rows="5"
+                            placeholder="Enter detailed description of the issue"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ticket-file">Attachments:</label>
+                        <input type="file" id="ticket-file" multiple>
+                    </div>
+                    <div class="form-group">
+                        <label for="ticket-tags">Tags:</label>
+                        <input type="text" id="ticket-tags" placeholder="Enter tags separated by commas">
+                    </div>
+                </div>
+
+                <!-- Assignment Options -->
+                <div class="form-section">
+                    <h3>Assignment Options</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="agent-assignment">Assign To:</label>
+                            <select id="agent-assignment">
+                                <option value="">Auto-Assign</option>
+                                <option value="james">James Muthui</option>
+                                <option value="lucy">Lucy Wanja</option>
+                                <option value="john">John Kimani</option>
+                                <option value="faith">Faith Mutua</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sla-selection">SLA Policy:</label>
+                            <select id="sla-selection">
+                                <option value="standard" selected>Standard</option>
+                                <option value="premium">Premium</option>
+                                <option value="enterprise">Enterprise</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="create-ticket-btn">Create Ticket</button>
+                <button class="save-draft-btn">Save Draft</button>
+                <button class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ticket Details Modal -->
+    <div class="modal" id="ticket-details-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Ticket Details - #T10045</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="ticket-details-container">
+                    <!-- Ticket Information -->
+                    <div class="ticket-info-section">
+                        <div class="ticket-header">
+                            <div class="ticket-id-status">
+                                <span class="ticket-id">#T10045</span>
+                                <span class="status-badge new">New</span>
+                                <span class="priority-badge high">High Priority</span>
+                            </div>
+                            <div class="ticket-dates">
+                                <span class="create-date">Created: Today, 09:45 AM</span>
+                                <span class="update-date">Last Updated: Today, 09:45 AM</span>
+                            </div>
+                        </div>
+                        <div class="ticket-subject">
+                            <h3>Payment integration error</h3>
+                        </div>
+                    </div>
+
+                    <!-- Customer Information -->
+                    <div class="customer-info-section">
+                        <h3>Customer Information</h3>
+                        <div class="customer-details">
+                            <div class="customer-avatar">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                    alt="Customer Profile">
+                            </div>
+                            <div class="customer-info">
+                                <div class="customer-name-email">
+                                    <span class="customer-name">John Smith</span>
+                                    <span class="customer-email">john.smith@example.com</span>
+                                </div>
+                                <div class="customer-contact">
+                                    <span class="customer-phone">+254 712 345 678</span>
+                                </div>
+                                <div class="business-info">
+                                    <span class="business-name">AutoFix Kenya</span>
+                                    <a href="#" class="view-profile-link">View Customer Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Response History -->
+                    <div class="response-history-section">
+                        <div class="response-header">
+                            <h3>Response History</h3>
+                            <div class="response-controls">
+                                <label class="internal-notes-toggle">
+                                    <input type="checkbox" id="show-internal-notes">
+                                    Show Internal Notes
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="response-timeline">
+                            <!-- Original Ticket Message -->
+                            <div class="response-item customer">
+                                <div class="response-avatar">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Customer Avatar">
+                                </div>
+                                <div class="response-content">
+                                    <div class="response-header">
+                                        <span class="response-author">John Smith</span>
+                                        <span class="response-time">Today, 09:45 AM</span>
+                                    </div>
+                                    <div class="response-body">
+                                        <p>Hello,</p>
+                                        <p>We're experiencing an error with the payment integration on our dashboard.
+                                            Whenever we try to process a payment through M-Pesa, we get an error message
+                                            saying "Transaction Failed: Invalid Account Configuration".</p>
+                                        <p>This started happening this morning and is affecting all our payment
+                                            attempts. Can you please help us resolve this urgently as it's affecting our
+                                            business operations?</p>
+                                        <p>Thank you,<br>John</p>
+                                    </div>
+                                    <div class="response-attachments">
+                                        <span class="attachment-label">Attachments:</span>
+                                        <a href="#" class="attachment-link">error-screenshot.png</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Internal Note -->
+                            <div class="response-item internal-note">
+                                <div class="response-avatar">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Agent Avatar">
+                                </div>
+                                <div class="response-content">
+                                    <div class="response-header">
+                                        <span class="response-author">System</span>
+                                        <span class="response-time">Today, 09:46 AM</span>
+                                        <span class="note-badge">Internal Note</span>
+                                    </div>
+                                    <div class="response-body">
+                                        <p>Ticket created and assigned to technical support queue. Auto-assigned high
+                                            priority due to payment system issue.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status Updates -->
+                    <div class="status-updates-section">
+                        <h3>Status Updates</h3>
+                        <div class="current-status">
+                            <span class="status-label">Current Status:</span>
+                            <span class="status-badge new">New</span>
+                        </div>
+                        <div class="status-update-control">
+                            <label for="status-update-dropdown">Update Status:</label>
+                            <select id="status-update-dropdown">
+                                <option value="">Select New Status</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="pending">Pending Customer</option>
+                                <option value="resolved">Resolved</option>
+                            </select>
+                            <button class="update-status-btn">Update</button>
+                        </div>
+                        <div class="status-history">
+                            <h4>Status History</h4>
+                            <ul class="status-timeline">
+                                <li class="status-item">
+                                    <span class="status-badge new">New</span>
+                                    <span class="status-time">Today, 09:45 AM</span>
+                                    <span class="status-by">by System</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Ticket Actions -->
+                    <div class="ticket-actions-section">
+                        <div class="action-buttons">
+                            <button class="reply-btn">Reply</button>
+                            <button class="reassign-btn">Reassign</button>
+                            <button class="escalate-btn">Escalate</button>
+                            <button class="close-ticket-btn">Close Ticket</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reply to Ticket Modal -->
+    <div class="modal" id="reply-ticket-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reply to Ticket #T10045</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Reply Editor -->
+                <div class="reply-editor-section">
+                    <div class="reply-options">
+                        <div class="template-selection">
+                            <label for="reply-template">Template:</label>
+                            <select id="reply-template">
+                                <option value="">Select Template</option>
+                                <option value="greeting">Initial Greeting</option>
+                                <option value="troubleshooting">Troubleshooting Steps</option>
+                                <option value="escalation">Escalation Notice</option>
+                                <option value="resolution">Resolution Follow-up</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="rich-text-editor">
+                        <textarea id="reply-composer" rows="10" placeholder="Type your reply here..."></textarea>
+                    </div>
+                    <div class="reply-attachments">
+                        <label for="reply-file">Attach Files:</label>
+                        <input type="file" id="reply-file" multiple>
+                    </div>
+                </div>
+
+                <!-- Reply Options -->
+                <div class="reply-options-section">
+                    <div class="option-item">
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="internal-note-toggle">
+                            Internal Note (not visible to customer)
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label for="cc-recipients">CC Additional Recipients:</label>
+                        <input type="text" id="cc-recipients" placeholder="Enter email addresses separated by commas">
+                    </div>
+                    <div class="option-item">
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="status-update-checkbox" checked>
+                            Update status to "In Progress" after sending
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="send-reply-btn">Send Reply</button>
+                <button class="save-draft-reply-btn">Save Draft</button>
+                <button class="cancel-reply-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reassign Ticket Modal -->
+    <div class="modal" id="reassign-ticket-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reassign Ticket #T10045</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Agent Selection -->
+                <div class="agent-selection-section">
+                    <h3>Agent Selection</h3>
+                    <div class="form-group">
+                        <label for="reassign-agent">Select Agent:</label>
+                        <select id="reassign-agent">
+                            <option value="">Select Agent</option>
+                            <option value="james">James Muthui (3 active tickets)</option>
+                            <option value="lucy">Lucy Wanja (5 active tickets)</option>
+                            <option value="john">John Kimani (2 active tickets)</option>
+                            <option value="faith">Faith Mutua (4 active tickets)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="team-assignment">
+                            Assign to team instead of individual agent
+                        </label>
+                    </div>
+                    <div class="team-assignment-options" style="display: none;">
+                        <label for="reassign-team">Select Team:</label>
+                        <select id="reassign-team">
+                            <option value="">Select Team</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="billing">Billing Support</option>
+                            <option value="account">Account Management</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Reassignment Reason -->
+                <div class="reassignment-reason-section">
+                    <h3>Reassignment Reason</h3>
+                    <div class="form-group">
+                        <label for="reassignment-reason">Reason:</label>
+                        <select id="reassignment-reason">
+                            <option value="">Select Reason</option>
+                            <option value="workload">Agent Workload</option>
+                            <option value="expertise">Specific Expertise Required</option>
+                            <option value="request">Agent Request</option>
+                            <option value="availability">Agent Availability</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason-notes">Additional Notes:</label>
+                        <textarea id="reason-notes" rows="3"
+                            placeholder="Enter additional notes about the reassignment"></textarea>
+                    </div>
+                </div>
+
+                <!-- Notification Options -->
+                <div class="notification-options-section">
+                    <h3>Notification Options</h3>
+                    <div class="option-item">
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="notify-previous" checked>
+                            Notify previous agent about reassignment
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="notify-new" checked>
+                            Notify new agent about assignment
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="option-checkbox">
+                            <input type="checkbox" id="notify-customer">
+                            Notify customer about agent change
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="confirm-reassign-btn">Confirm Reassignment</button>
+                <button class="cancel-reassign-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Article Modal -->
+    <div class="modal" id="create-article-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Knowledge Base Article</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Article Basics -->
+                <div class="form-section">
+                    <h3>Article Basics</h3>
+                    <div class="form-group">
+                        <label for="article-title">Title:</label>
+                        <input type="text" id="article-title" placeholder="Enter article title">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="article-category">Category:</label>
+                            <select id="article-category">
+                                <option value="">Select Category</option>
+                                <option value="getting-started">Getting Started</option>
+                                <option value="billing">Billing and Payments</option>
+                                <option value="troubleshooting">Troubleshooting</option>
+                                <option value="advanced">Advanced Features</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="article-subcategory">Subcategory:</label>
+                            <select id="article-subcategory">
+                                <option value="">Select Subcategory</option>
+                                <!-- This will be dynamically populated based on category selection -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="article-tags">Tags:</label>
+                        <input type="text" id="article-tags" placeholder="Enter tags separated by commas">
+                    </div>
+                </div>
+
+                <!-- Article Content -->
+                <div class="form-section">
+                    <h3>Article Content</h3>
+                    <div class="rich-editor-toolbar">
+                        <button class="toolbar-btn" title="Bold"><strong>B</strong></button>
+                        <button class="toolbar-btn" title="Italic"><em>I</em></button>
+                        <button class="toolbar-btn" title="Underline"><u>U</u></button>
+                        <button class="toolbar-btn" title="Heading">H</button>
+                        <button class="toolbar-btn" title="Bullet List">•</button>
+                        <button class="toolbar-btn" title="Numbered List">1.</button>
+                        <button class="toolbar-btn" title="Insert Link">🔗</button>
+                        <button class="toolbar-btn" title="Insert Image">🖼️</button>
+                        <button class="toolbar-btn" title="Insert Code">{ }</button>
+                    </div>
+                    <div class="article-editor">
+                        <textarea id="article-content" rows="15"
+                            placeholder="Write your article content here..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="article-image-upload">Upload Images:</label>
+                        <input type="file" id="article-image-upload" accept="image/*" multiple>
+                    </div>
+                    <div class="form-group">
+                        <label for="article-video">Embed Video URL:</label>
+                        <input type="text" id="article-video" placeholder="Enter YouTube or Vimeo URL">
+                    </div>
+                </div>
+
+                <!-- Article Settings -->
+                <div class="form-section">
+                    <h3>Article Settings</h3>
+                    <div class="form-group">
+                        <label for="article-visibility">Visibility:</label>
+                        <select id="article-visibility">
+                            <option value="public">Public (All users)</option>
+                            <option value="private">Private (Staff only)</option>
+                            <option value="restricted">Restricted (Specific businesses)</option>
+                        </select>
+                    </div>
+                    <div class="form-group business-selection" style="display: none;">
+                        <label for="article-businesses">Select Businesses:</label>
+                        <select id="article-businesses" multiple>
+                            <option value="autofix">AutoFix Kenya</option>
+                            <option value="nairobi">Nairobi Car Parts</option>
+                            <option value="mombasa">Mombasa Auto Service</option>
+                            <option value="eldoret">Eldoret Wheel Services</option>
+                            <option value="nakuru">Nakuru Car Wash</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="related-articles">Related Articles:</label>
+                        <select id="related-articles" multiple>
+                            <option value="article1">Getting Started with CarPal</option>
+                            <option value="article2">Troubleshooting Login Issues</option>
+                            <option value="article3">Understanding Your Invoice</option>
+                            <option value="article4">How to Set Up Payment Methods</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="publish-article-btn">Publish Now</button>
+                <button class="schedule-article-btn">Schedule Publication</button>
+                <button class="save-draft-article-btn">Save as Draft</button>
+                <button class="preview-article-btn">Preview</button>
+                <button class="cancel-article-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Data Modal -->
+    <div class="modal" id="export-data-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Export Data</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Data Selection -->
+                <div class="form-section">
+                    <h3>Data Selection</h3>
+                    <div class="form-group">
+                        <label>Date Range:</label>
+                        <div class="date-range-picker">
+                            <div class="date-input">
+                                <label for="export-date-from">From:</label>
+                                <input type="date" id="export-date-from">
+                            </div>
+                            <div class="date-input">
+                                <label for="export-date-to">To:</label>
+                                <input type="date" id="export-date-to">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Ticket Status:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                New
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                In Progress
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Pending
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Resolved
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Closed
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Fields to Include:</label>
+                        <div class="checkbox-group columns">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Ticket ID
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Subject
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Status
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Priority
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Customer
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Business
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Created Date
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Resolved Date
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Response Time
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                Resolution Time
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                Full Conversation
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                Internal Notes
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Format Options -->
+                <div class="form-section">
+                    <h3>Format Options</h3>
+                    <div class="format-options">
+                        <label class="format-option">
+                            <input type="radio" name="export-format" value="csv" checked>
+                            <div class="option-content">
+                                <span class="option-icon">CSV</span>
+                                <span class="option-label">CSV Format</span>
+                                <span class="option-description">Standard comma-separated values format. Compatible with
+                                    Excel and other spreadsheet software.</span>
+                            </div>
+                        </label>
+                        <label class="format-option">
+                            <input type="radio" name="export-format" value="excel">
+                            <div class="option-content">
+                                <span class="option-icon">XLS</span>
+                                <span class="option-label">Excel Format</span>
+                                <span class="option-description">Native Microsoft Excel format with full formatting and
+                                    multiple sheets.</span>
+                            </div>
+                        </label>
+                        <label class="format-option">
+                            <input type="radio" name="export-format" value="pdf">
+                            <div class="option-content">
+                                <span class="option-icon">PDF</span>
+                                <span class="option-label">PDF Format</span>
+                                <span class="option-description">Portable Document Format. Best for printing and
+                                    sharing.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Delivery Options -->
+                <div class="form-section">
+                    <h3>Delivery Options</h3>
+                    <div class="delivery-options">
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery-method" value="download" checked>
+                            <div class="option-content">
+                                <span class="option-label">Download Now</span>
+                                <span class="option-description">Download the file directly to your computer.</span>
+                            </div>
+                        </label>
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery-method" value="email">
+                            <div class="option-content">
+                                <span class="option-label">Email Report</span>
+                                <span class="option-description">Send the export to specified email addresses.</span>
+                            </div>
+                        </label>
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery-method" value="schedule">
+                            <div class="option-content">
+                                <span class="option-label">Schedule Regular Export</span>
+                                <span class="option-description">Set up recurring exports on a schedule.</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="email-delivery-options" style="display: none;">
+                        <div class="form-group">
+                            <label for="email-recipients">Email Recipients:</label>
+                            <input type="text" id="email-recipients"
+                                placeholder="Enter email addresses separated by commas">
+                        </div>
+                        <div class="form-group">
+                            <label for="email-subject">Email Subject:</label>
+                            <input type="text" id="email-subject" value="CarPal Support Data Export">
+                        </div>
+                    </div>
+                    <div class="schedule-delivery-options" style="display: none;">
+                        <div class="form-group">
+                            <label for="schedule-frequency">Frequency:</label>
+                            <select id="schedule-frequency">
+                                <option value="daily">Daily</option>
+                                <option value="weekly" selected>Weekly</option>
+                                <option value="monthly">Monthly</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="schedule-day">Day:</label>
+                            <select id="schedule-day">
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday" selected>Friday</option>
+                                <option value="saturday">Saturday</option>
+                                <option value="sunday">Sunday</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="schedule-time">Time:</label>
+                            <input type="time" id="schedule-time" value="08:00">
+                        </div>
+                        <div class="form-group">
+                            <label for="schedule-recipients">Recipients:</label>
+                            <input type="text" id="schedule-recipients"
+                                placeholder="Enter email addresses separated by commas">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="generate-export-btn">Generate Export</button>
+                <button class="save-settings-btn">Save Settings</button>
+                <button class="cancel-export-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Dark Mode Toggle -->
+            <div class="theme-toggle">
+                <button class="dark-mode-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" class="social-icon">
+                    <i class="fa-brands fa-x"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-icon">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Site Link -->
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/">Visit Corporate Website</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Link -->
+    <script src="support.js"></script>
+</body>
+
+</html>

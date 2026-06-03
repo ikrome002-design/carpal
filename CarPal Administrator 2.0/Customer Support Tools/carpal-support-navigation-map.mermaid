@@ -1,0 +1,355 @@
+stateDiagram-v2
+    [*] --> SupportPage
+    
+    state SupportPage {
+        [*] --> SupportDashboard
+        
+        state SupportDashboard {
+            TicketSummary: Ticket Summary
+            TicketSummary: - New Tickets Count
+            TicketSummary: - Open Tickets Count
+            TicketSummary: - Resolved Tickets Count
+            
+            PriorityMetrics: Priority Metrics
+            PriorityMetrics: - High Priority Count
+            PriorityMetrics: - Medium Priority Count
+            PriorityMetrics: - Low Priority Count
+            
+            ResponseMetrics: Response Metrics
+            ResponseMetrics: - Average Response Time
+            ResponseMetrics: - SLA Compliance Rate
+            ResponseMetrics: - View Detailed Metrics Button
+            
+            QuickActions: Quick Actions
+            QuickActions: - Create New Ticket Button
+            QuickActions: - View All Tickets Button
+            QuickActions: - Knowledge Base Button
+        }
+        
+        state NavigationTabs {
+            HelpDeskTab: Help Desk Dashboard Tab
+            TicketsTab: Support Tickets Tab
+            KnowledgeBaseTab: Knowledge Base Tab
+            ReportsTab: Support Reports Tab
+            SettingsTab: Support Settings Tab
+        }
+    }
+    
+    state "Help Desk Dashboard" as HelpDeskDashboard {
+        TicketOverview: Ticket Overview
+        TicketOverview: - New Tickets
+        TicketOverview: - In Progress Tickets
+        TicketOverview: - Pending Review Tickets
+        TicketOverview: - Closed Tickets
+        
+        PerformanceMetrics: Performance Metrics
+        PerformanceMetrics: - Resolution Rate
+        PerformanceMetrics: - Average Resolution Time
+        PerformanceMetrics: - Customer Satisfaction Score
+        PerformanceMetrics: - View Details Button
+        
+        AgentActivity: Agent Activity
+        AgentActivity: - Active Agents
+        AgentActivity: - Ticket Distribution
+        AgentActivity: - Agent Performance
+        AgentActivity: - View All Agents Button
+        
+        ResponseTimes: Response Times
+        ResponseTimes: - First Response Time
+        ResponseTimes: - Average Response Time
+        ResponseTimes: - Response SLA Compliance
+        ResponseTimes: - View Detailed Report Button
+    }
+    
+    state "Support Tickets" as SupportTickets {
+        ActiveTickets: Active Tickets Tab
+        ActiveTickets: - Ticket List Table
+        ActiveTickets: - Priority Filters
+        ActiveTickets: - Status Filters
+        ActiveTickets: - Search Bar
+        
+        ResolvedTickets: Resolved Tickets Tab
+        ResolvedTickets: - Ticket List Table
+        ResolvedTickets: - Date Range Filter
+        ResolvedTickets: - Resolution Type Filter
+        ResolvedTickets: - Search Bar
+        
+        TicketAssignment: Ticket Assignment
+        TicketAssignment: - Unassigned Tickets
+        TicketAssignment: - Agent Assignment Dropdown
+        TicketAssignment: - Bulk Assignment Button
+        TicketAssignment: - Auto-Assignment Settings
+        
+        PriorityManagement: Priority Management
+        PriorityManagement: - Priority Level Filters
+        PriorityManagement: - Update Priority Button
+        PriorityManagement: - Bulk Priority Update
+        PriorityManagement: - SLA Configuration Link
+    }
+    
+    state "Ticket Details" as TicketDetails {
+        TicketInfo: Ticket Information
+        TicketInfo: - Ticket ID
+        TicketInfo: - Creation Date
+        TicketInfo: - Status Indicator
+        TicketInfo: - Priority Level
+        
+        CustomerInfo: Customer Information
+        CustomerInfo: - Customer Name
+        CustomerInfo: - Business Name
+        CustomerInfo: - Contact Details
+        CustomerInfo: - Customer Profile Link
+        
+        ResponseHistory: Response History
+        ResponseHistory: - Chronological Responses
+        ResponseHistory: - Internal Notes Toggle
+        ResponseHistory: - File Attachments
+        ResponseHistory: - Response Timeline
+        
+        StatusUpdates: Status Updates
+        StatusUpdates: - Current Status
+        StatusUpdates: - Status Update Dropdown
+        StatusUpdates: - Status History
+        StatusUpdates: - Status Change Timestamp
+        
+        TicketActions: Ticket Actions
+        TicketActions: - Reply Button
+        TicketActions: - Reassign Button
+        TicketActions: - Escalate Button
+        TicketActions: - Close Ticket Button
+    }
+    
+    state "Create Ticket" as CreateTicket {
+        CustomerSelect: Customer Selection
+        CustomerSelect: - Search Customer
+        CustomerSelect: - Customer Type Dropdown
+        CustomerSelect: - Business Association
+        CustomerSelect: - Create New Customer Option
+        
+        TicketType: Ticket Type
+        TicketType: - Issue Type Dropdown
+        TicketType: - Product/Service Selection
+        TicketType: - Priority Selection
+        
+        TicketDetails: Ticket Details
+        TicketDetails: - Subject Field
+        TicketDetails: - Description Area
+        TicketDetails: - File Upload Option
+        TicketDetails: - Tags Input
+        
+        Assignment: Assignment Options
+        Assignment: - Agent Assignment Dropdown
+        Assignment: - Auto-Assign Option
+        Assignment: - SLA Selection
+        
+        CreateActions: Create Actions
+        CreateActions: - Create Ticket Button
+        CreateActions: - Save Draft Button
+        CreateActions: - Cancel Button
+    }
+    
+    state "Knowledge Base" as KnowledgeBase {
+        ArticleCategories: Article Categories
+        ArticleCategories: - Category List
+        ArticleCategories: - Subcategory Tree
+        ArticleCategories: - Article Count
+        ArticleCategories: - Create Category Button
+        
+        ArticleManagement: Article Management
+        ArticleManagement: - Article List
+        ArticleManagement: - Status Filter
+        ArticleManagement: - Search Articles
+        ArticleManagement: - Create Article Button
+        
+        PopularArticles: Popular Articles
+        PopularArticles: - View Count Metrics
+        PopularArticles: - Helpfulness Rating
+        PopularArticles: - Usage Analytics
+        
+        FeedbackAnalysis: Feedback Analysis
+        FeedbackAnalysis: - Article Ratings
+        FeedbackAnalysis: - Improvement Suggestions
+        FeedbackAnalysis: - Article Effectiveness
+    }
+    
+    state "Create Article" as CreateArticle {
+        ArticleBasics: Article Basics
+        ArticleBasics: - Title Field
+        ArticleBasics: - Category Selection
+        ArticleBasics: - Tags Input
+        
+        ArticleContent: Article Content
+        ArticleContent: - Rich Text Editor
+        ArticleContent: - Image Upload
+        ArticleContent: - Video Embedding
+        ArticleContent: - Code Snippet Formatting
+        
+        ArticleSettings: Article Settings
+        ArticleSettings: - Visibility Options
+        ArticleSettings: - Related Articles
+        ArticleSettings: - Audience Selection
+        
+        PublishOptions: Publish Options
+        PublishOptions: - Publish Now Button
+        PublishOptions: - Schedule Publication
+        PublishOptions: - Save as Draft Button
+        PublishOptions: - Preview Button
+    }
+    
+    state "Support Reports" as SupportReports {
+        TicketVolumeReport: Ticket Volume Report
+        TicketVolumeReport: - Daily/Weekly/Monthly Toggle
+        TicketVolumeReport: - Category Distribution
+        TicketVolumeReport: - Business Distribution
+        TicketVolumeReport: - Export Report Button
+        
+        ResolutionReport: Resolution Report
+        ResolutionReport: - Resolution Time Metrics
+        ResolutionReport: - Resolution Type Breakdown
+        ResolutionReport: - First Contact Resolution Rate
+        ResolutionReport: - Export Report Button
+        
+        AgentPerformance: Agent Performance Report
+        AgentPerformance: - Ticket Volume per Agent
+        AgentPerformance: - Response Time Metrics
+        AgentPerformance: - Customer Satisfaction Ratings
+        AgentPerformance: - Export Report Button
+        
+        SLACompliance: SLA Compliance Report
+        SLACompliance: - SLA Met vs. Missed
+        SLACompliance: - Response Time Compliance
+        SLACompliance: - Resolution Time Compliance
+        SLACompliance: - Export Report Button
+    }
+    
+    state "Support Settings" as SupportSettings {
+        TicketWorkflow: Ticket Workflow Settings
+        TicketWorkflow: - Status Configuration
+        TicketWorkflow: - Automated Status Updates
+        TicketWorkflow: - Workflow Rules
+        
+        SLAConfiguration: SLA Configuration
+        SLAConfiguration: - Business Hours Definition
+        SLAConfiguration: - Priority-Based SLAs
+        SLAConfiguration: - Escalation Rules
+        SLAConfiguration: - Notification Settings
+        
+        AutomationRules: Automation Rules
+        AutomationRules: - Auto-Assignment Rules
+        AutomationRules: - Auto-Response Templates
+        AutomationRules: - Scheduled Actions
+        
+        IntegrationSettings: Integration Settings
+        IntegrationSettings: - Email Integration
+        IntegrationSettings: - SMS Notifications
+        IntegrationSettings: - Third-Party Integrations
+    }
+    
+    state "Reply to Ticket" as ReplyToTicket {
+        ReplyEditor: Reply Editor
+        ReplyEditor: - Rich Text Composer
+        ReplyEditor: - Template Selection
+        ReplyEditor: - File Attachment
+        
+        ReplyOptions: Reply Options
+        ReplyOptions: - Internal Note Toggle
+        ReplyOptions: - CC Additional Recipients
+        ReplyOptions: - Status Update Checkbox
+        
+        ReplyActions: Reply Actions
+        ReplyActions: - Send Reply Button
+        ReplyActions: - Save Draft Button
+        ReplyActions: - Cancel Button
+    }
+    
+    state "Reassign Ticket" as ReassignTicket {
+        AgentSelection: Agent Selection
+        AgentSelection: - Agent Dropdown
+        AgentSelection: - Agent Load Indicator
+        AgentSelection: - Team Assignment Option
+        
+        ReassignReason: Reassignment Reason
+        ReassignReason: - Reason Dropdown
+        ReassignReason: - Additional Notes
+        
+        NotificationOptions: Notification Options
+        NotificationOptions: - Notify Previous Agent
+        NotificationOptions: - Notify New Agent
+        NotificationOptions: - Notify Customer
+        
+        ReassignActions: Reassign Actions
+        ReassignActions: - Confirm Reassignment Button
+        ReassignActions: - Cancel Button
+    }
+    
+    state "Export Data" as ExportData {
+        DataSelection: Data Selection
+        DataSelection: - Date Range Picker
+        DataSelection: - Ticket Status Filter
+        DataSelection: - Field Selection
+        
+        FormatOptions: Format Options
+        FormatOptions: - CSV Format
+        FormatOptions: - Excel Format
+        FormatOptions: - PDF Format
+        
+        DeliveryOptions: Delivery Options
+        DeliveryOptions: - Download Now
+        DeliveryOptions: - Email Report
+        DeliveryOptions: - Schedule Regular Export
+        
+        ExportActions: Export Actions
+        ExportActions: - Generate Export Button
+        ExportActions: - Save Settings Button
+        ExportActions: - Cancel Button
+    }
+    
+    SupportPage --> HelpDeskDashboard: Click Help Desk Tab
+    SupportPage --> SupportTickets: Click Support Tickets Tab
+    SupportPage --> KnowledgeBase: Click Knowledge Base Tab
+    SupportPage --> SupportReports: Click Reports Tab
+    SupportPage --> SupportSettings: Click Settings Tab
+    
+    SupportPage --> CreateTicket: Click Create New Ticket
+    SupportTickets --> TicketDetails: Click on Ticket
+    SupportTickets --> ExportData: Click Export Data
+    
+    TicketDetails --> ReplyToTicket: Click Reply
+    TicketDetails --> ReassignTicket: Click Reassign
+    TicketDetails --> SupportTickets: Click Back
+    
+    KnowledgeBase --> CreateArticle: Click Create Article
+    
+    ReplyToTicket --> TicketDetails: After Send/Cancel
+    ReassignTicket --> TicketDetails: After Confirm/Cancel
+    CreateTicket --> SupportTickets: After Create/Cancel
+    CreateArticle --> KnowledgeBase: After Publish/Cancel
+    ExportData --> SupportTickets: After Generate/Cancel
+    
+    note right of TicketDetails
+        Ticket Details displays comprehensive 
+        information about a specific support ticket,
+        including customer information, response
+        history, and available actions.
+    end note
+    
+    note right of SupportDashboard
+        The Support Dashboard provides a real-time
+        overview of support operations with key
+        metrics, ticket summaries, and quick access
+        to common support functions.
+    end note
+    
+    note left of KnowledgeBase
+        The Knowledge Base allows administrators
+        to create, organize, and manage help articles
+        that can be accessed by users and support agents
+        to resolve common issues without creating tickets.
+    end note
+    
+    note left of SupportSettings
+        Support Settings provides configuration options
+        for ticket workflows, SLAs, automation rules,
+        and integrations to optimize the support process
+        and ensure consistent customer service.
+    end note

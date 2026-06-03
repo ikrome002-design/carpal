@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Hub | CarPal</title>
+    
+    <!-- Existing head content remains the same -->
+    
+    <style>
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .job-list {
+            margin-top: 1rem;
+        }
+        
+        .job-item {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .status-scheduled { background: #e3f2fd; color: #1976d2; }
+        .status-in-progress { background: #fff3e0; color: #f57c00; }
+        .status-completed { background: #e8f5e9; color: #388e3c; }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation remains the same -->
+    
+    <main class="main-content">
+        <!-- Header remains the same -->
+        
+        <h1 class="section-title">Service Hub</h1>
+
+        <div class="service-grid">
+            <!-- Job Scheduling & Tracking -->
+            <div class="service-card">
+                <h3>Job Scheduling & Tracking</h3>
+                <button class="primary-btn">+ New Appointment</button>
+                <div class="job-list">
+                    <div class="job-item">
+                        <span class="status-badge status-scheduled">Scheduled</span>
+                        <h4>Oil Change - KBY 223J</h4>
+                        <p>Today at 2:00 PM - John Smith</p>
+                    </div>
+                    <div class="job-item">
+                        <span class="status-badge status-in-progress">In Progress</span>
+                        <h4>Brake Replacement - KDE 445G</h4>
+                        <p>Started 10:30 AM - Mike Johnson</p>
+                    </div>
+                    <div class="job-item">
+                        <span class="status-badge status-completed">Completed</span>
+                        <h4>Engine Diagnostic - KCA 556P</h4>
+                        <p>Finished 11:45 AM - Sarah Williams</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service History Records -->
+            <div class="service-card">
+                <h3>Service History Records</h3>
+                <div class="search-filters">
+                    <input type="text" placeholder="Search by plate number or customer name" class="search-input">
+                    <div class="date-filter">
+                        <label>Date Range:</label>
+                        <select>
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 3 months</option>
+                            <option>Custom range</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="history-list">
+                    <div class="job-item">
+                        <h4>KBY 223J - Complete Service</h4>
+                        <p>Completed on Jan 12, 2025</p>
+                        <button class="secondary-btn">View Details</button>
+                    </div>
+                    <div class="job-item">
+                        <h4>KDE 445G - Tire Rotation</h4>
+                        <p>Completed on Jan 10, 2025</p>
+                        <button class="secondary-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Communication Tools -->
+            <div class="service-card">
+                <h3>Customer Communication Tools</h3>
+                <div class="communication-tools">
+                    <button class="tool-btn">
+                        <i class="fas fa-bell"></i>
+                        Send Progress Update
+                    </button>
+                    <button class="tool-btn">
+                        <i class="fas fa-envelope"></i>
+                        Send Pickup Notification
+                    </button>
+                    <button class="tool-btn">
+                        <i class="fas fa-file-invoice"></i>
+                        Send Invoice
+                    </button>
+                </div>
+                <div class="recent-communications">
+                    <h4>Recent Communications</h4>
+                    <div class="communication-item">
+                        <p><strong>Progress Update</strong> sent to John Smith (KBY 223J)</p>
+                        <span class="time">10 minutes ago</span>
+                    </div>
+                    <div class="communication-item">
+                        <p><strong>Pickup Ready</strong> sent to Mike Johnson (KDE 445G)</p>
+                        <span class="time">1 hour ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer remains the same -->
+    
+    <!-- Scripts remain the same -->
+</body>
+</html>

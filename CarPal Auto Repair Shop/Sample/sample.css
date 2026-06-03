@@ -1,0 +1,696 @@
+/* ------------------------------------------
+   Base Styles & Variables
+------------------------------------------ */
+:root {
+    /* Brand Colors */
+    --primary-yellow: #FFD700;
+    --primary-black: #000000;
+    --secondary-gray: #2D2D2D;
+    --white: #FFFFFF;
+    
+    /* Status Colors */
+    --success-green: #4CAF50;
+    --warning-orange: #FF5722;
+    --error-red: #FF0000;
+    --neutral-gray: #9E9E9E;
+    --light-gray: #e0e0e0;
+    
+    /* System Variables */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+  }
+  
+  /* ------------------------------------------
+     Typography & Reset
+  ------------------------------------------ */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--secondary-gray);
+    background-color: #f5f5f5;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  /* ------------------------------------------
+     Layout Structure
+  ------------------------------------------ */
+  .main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    min-height: 100vh;
+    transition: margin-left var(--transition-speed);
+  }
+  
+  /* ------------------------------------------
+     Navigation Sidebar
+  ------------------------------------------ */
+  .nav-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--primary-black);
+    padding: 2rem 0;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: transform var(--transition-speed);
+  }
+  
+  .logo-container {
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .logo-container img {
+    max-width: 150px;
+    height: auto;
+  }
+  
+  .nav-links {
+    list-style: none;
+  }
+  
+  .nav-links li a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: var(--white);
+    text-decoration: none;
+    transition: background-color var(--transition-speed);
+  }
+  
+  .nav-links li a i {
+    margin-right: 1rem;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .nav-links li a.active,
+  .nav-links li a:hover {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+  }
+  
+  /* ------------------------------------------
+     Header Section
+  ------------------------------------------ */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--light-gray);
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .action-button {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .action-button:hover {
+    background-color: var(--secondary-gray);
+    color: var(--primary-yellow);
+    transform: translateY(-2px);
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-yellow);
+  }
+  
+  /* ------------------------------------------
+     License Scanner Section
+  ------------------------------------------ */
+  .license-scanner-section {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+  }
+  
+  .scanner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .manual-input {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .plate-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed);
+  }
+  
+  .plate-input:focus {
+    border-color: var(--primary-yellow);
+    outline: none;
+  }
+  
+  /* Status Cards */
+  .quick-status {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .status-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: transform var(--transition-speed);
+  }
+  
+  .status-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* ------------------------------------------
+     Component Assessment
+  ------------------------------------------ */
+  .component-viewer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .vehicle-model-viewer {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+  }
+  
+  .model-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .view-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    background-color: var(--light-gray);
+    transition: all var(--transition-speed);
+  }
+  
+  .view-btn.active {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+  }
+  
+  /* Component Status Indicators */
+  .status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .status.working { 
+    background-color: var(--success-green); 
+    color: var(--white); 
+  }
+  
+  .status.fair { 
+    background-color: var(--warning-orange); 
+    color: var(--white); 
+  }
+  
+  .status.faulty { 
+    background-color: var(--error-red); 
+    color: var(--white); 
+  }
+  
+  /* ------------------------------------------
+     License Scanner Viewfinder
+  ------------------------------------------ */
+  .scanner-viewfinder {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #000;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  
+  .scanner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .scanner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .scanner-guide {
+    width: 80%;
+    height: 60%;
+    border: 2px solid var(--primary-yellow);
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .scanner-guide::before,
+  .scanner-guide::after {
+    content: '';
+    position: absolute;
+    background-color: var(--primary-yellow);
+    animation: scan 2s linear infinite;
+  }
+  
+  .scanner-guide::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+  }
+  
+  @keyframes scan {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+  }
+  
+  .scanner-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  /* ------------------------------------------
+     Vehicle Type Selection
+  ------------------------------------------ */
+  .vehicle-type-section {
+    margin-bottom: 2rem;
+  }
+  
+  .type-selector {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px var(--shadow-color);
+  }
+  
+  .type-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+  }
+  
+  .type-btn i {
+    font-size: 1.2rem;
+  }
+  
+  .type-btn.active,
+  .type-btn:hover {
+    background-color: var(--primary-yellow);
+    border-color: var(--primary-yellow);
+    color: var(--primary-black);
+  }
+  
+  /* ------------------------------------------
+     Assessment Form Section
+  ------------------------------------------ */
+  .form-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    position: relative;
+    padding: 0 2rem;
+  }
+  
+  .form-progress::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--light-gray);
+    z-index: 0;
+  }
+  
+  .progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--white);
+    border: 2px solid var(--light-gray);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    transition: all var(--transition-speed);
+  }
+  
+  .progress-step.active .step-number {
+    background-color: var(--primary-yellow);
+    border-color: var(--primary-yellow);
+    color: var(--primary-black);
+  }
+  
+  .step-label {
+    font-size: 0.875rem;
+    color: var(--secondary-gray);
+    font-weight: 500;
+  }
+  
+  /* Form Groups */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    font-weight: 500;
+    color: var(--secondary-gray);
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    transition: border-color var(--transition-speed);
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary-yellow);
+    outline: none;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Form Navigation */
+  .form-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--light-gray);
+  }
+  
+  .form-navigation button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Component Assessment */
+  .component-details {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px var(--shadow-color);
+  }
+  
+  .component-group {
+    margin-bottom: 2rem;
+  }
+  
+  .component-group h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-gray);
+  }
+  
+  .component-checks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .check-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .check-item select {
+    padding: 0.5rem;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    cursor: pointer;
+  }
+  
+  /* Voice Notes */
+  .voice-notes-section {
+    margin-top: 2rem;
+  }
+  
+  .voice-note-item {
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .note-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .play-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .waveform {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  
+  .waveform-bar {
+    width: 3px;
+    height: 20px;
+    background-color: var(--neutral-gray);
+    border-radius: 1px;
+  }
+  
+  .waveform-bar.active {
+    background-color: var(--primary-yellow);
+  }
+  
+  /* ------------------------------------------
+     Quick Tools Section
+  ------------------------------------------ */
+  .quick-tools {
+    margin-bottom: 2rem;
+  }
+  
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .tool-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    gap: 0.5rem;
+  }
+  
+  .tool-button i {
+    font-size: 1.5rem;
+    color: var(--primary-yellow);
+  }
+  
+  .tool-button:hover {
+    background-color: var(--primary-yellow);
+  }
+  
+  .tool-button:hover i {
+    color: var(--primary-black);
+  }
+  
+  /* ------------------------------------------
+     Analytics Dashboard
+  ------------------------------------------ */
+  .analytics-dashboard {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+  }
+  
+  .analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .chart-container {
+    height: 300px;
+    margin: 1rem 0;
+    position: relative;
+  }
+  
+  /* ------------------------------------------
+     Responsive Design
+  ------------------------------------------ */
+  @media (max-width: 1024px) {
+    .main-content {
+      margin-left: 0;
+    }
+  
+    .nav-sidebar {
+      transform: translateX(-100%);
+    }
+  
+    .nav-sidebar.active {
+      transform: translateX(0);
+    }
+  
+    .component-viewer {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .analytics-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .status-card {
+      padding: 1rem;
+    }
+  }
+  
+  /* ------------------------------------------
+     Dark Mode Styles
+  ------------------------------------------ */
+  [data-theme="dark"] {
+    --primary-black: #FFFFFF;
+    --secondary-gray: #F5F5F5;
+    --white: #1A1A1A;
+    --light-gray: #333333;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  [data-theme="dark"] .action-button {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+  }
+  
+  [data-theme="dark"] .status-card,
+  [data-theme="dark"] .analytics-dashboard,
+  [data-theme="dark"] .license-scanner-section {
+    background-color: #242424;
+    color: var(--white);
+  }

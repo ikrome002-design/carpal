@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | CarPal</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="create_account.css">
+
+    <!-- Google Fonts for Poppins and Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                            alt="CarPal Logo">
+                    </a>
+                </div>
+                <nav class="navigation">
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">Home</a>
+                        </li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Log In\log_in.html">Log
+                                In</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="create-account-container">
+                <h1>Create Administrator Account</h1>
+                <p class="intro-text">Complete the form below to request a CarPal Administrator account. Your request
+                    will be reviewed by an existing administrator.</p>
+
+                <!-- Account Creation Form -->
+                <form id="account-creation-form" class="account-form">
+
+                    <!-- Personal Information Section -->
+                    <section class="form-section" id="personal-info-section">
+                        <h2>Personal Information</h2>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required>
+                                <div class="error-message" id="firstName-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required>
+                                <div class="error-message" id="lastName-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="staffId">Staff ID <span class="required">*</span></label>
+                                <input type="text" id="staffId" name="staffId" required>
+                                <div class="error-message" id="staffId-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="workEmail">Work Email <span class="required">*</span></label>
+                                <input type="email" id="workEmail" name="workEmail" required>
+                                <div class="error-message" id="workEmail-error"></div>
+                                <div class="email-validation-status" id="email-validation-status"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobTitle">Job Title <span class="required">*</span></label>
+                                <input type="text" id="jobTitle" name="jobTitle" required>
+                                <div class="error-message" id="jobTitle-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="department">Department <span class="required">*</span></label>
+                                <input type="text" id="department" name="department" required>
+                                <div class="error-message" id="department-error"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Security Information Section -->
+                    <section class="form-section" id="security-info-section">
+                        <h2>Security Information</h2>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">Password <span class="required">*</span></label>
+                                <div class="password-input-container">
+                                    <input type="password" id="password" name="password" required>
+                                    <button type="button" class="toggle-password"
+                                        aria-label="Toggle password visibility">
+                                        <i class="fas fa-eye" id="password-toggle-icon"></i>
+                                    </button>
+                                </div>
+                                <div class="password-strength">
+                                    <div class="strength-bar">
+                                        <div class="strength-indicator" id="strength-indicator"></div>
+                                    </div>
+                                    <span class="strength-text" id="strength-text">Password strength</span>
+                                </div>
+                                <div class="password-requirements">
+                                    <p>Password must contain:</p>
+                                    <ul>
+                                        <li id="length-check">At least 8 characters</li>
+                                        <li id="uppercase-check">At least one uppercase letter</li>
+                                        <li id="lowercase-check">At least one lowercase letter</li>
+                                        <li id="number-check">At least one number</li>
+                                        <li id="special-check">At least one special character</li>
+                                    </ul>
+                                </div>
+                                <div class="error-message" id="password-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                                <div class="password-input-container">
+                                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                    <button type="button" class="toggle-password"
+                                        aria-label="Toggle password visibility">
+                                        <i class="fas fa-eye" id="confirm-password-toggle-icon"></i>
+                                    </button>
+                                </div>
+                                <div class="match-status" id="password-match-status"></div>
+                                <div class="error-message" id="confirmPassword-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="securityQuestion1">Security Question 1 <span
+                                        class="required">*</span></label>
+                                <select id="securityQuestion1" name="securityQuestion1" required>
+                                    <option value="">Select a security question</option>
+                                    <option value="What was the name of your first pet?">What was the name of your first
+                                        pet?</option>
+                                    <option value="In what city were you born?">In what city were you born?</option>
+                                    <option value="What was your childhood nickname?">What was your childhood nickname?
+                                    </option>
+                                    <option value="What is the name of your favorite childhood teacher?">What is the
+                                        name of your favorite childhood teacher?</option>
+                                    <option value="What was the make of your first car?">What was the make of your first
+                                        car?</option>
+                                </select>
+                                <div class="error-message" id="securityQuestion1-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="securityAnswer1">Answer 1 <span class="required">*</span></label>
+                                <input type="text" id="securityAnswer1" name="securityAnswer1" required>
+                                <div class="error-message" id="securityAnswer1-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="securityQuestion2">Security Question 2 <span
+                                        class="required">*</span></label>
+                                <select id="securityQuestion2" name="securityQuestion2" required>
+                                    <option value="">Select a security question</option>
+                                    <option value="What is your mother's maiden name?">What is your mother's maiden
+                                        name?</option>
+                                    <option value="What was the name of your first school?">What was the name of your
+                                        first school?</option>
+                                    <option value="What is your favorite movie?">What is your favorite movie?</option>
+                                    <option value="What is the name of your favorite childhood friend?">What is the name
+                                        of your favorite childhood friend?</option>
+                                    <option value="What is your favorite book?">What is your favorite book?</option>
+                                </select>
+                                <div class="error-message" id="securityQuestion2-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="securityAnswer2">Answer 2 <span class="required">*</span></label>
+                                <input type="text" id="securityAnswer2" name="securityAnswer2" required>
+                                <div class="error-message" id="securityAnswer2-error"></div>
+                            </div>
+                        </div>
+
+                        <!-- CAPTCHA Verification -->
+                        <div class="captcha-container">
+                            <label>CAPTCHA Verification <span class="required">*</span></label>
+                            <div id="captcha-box" class="captcha-box">
+                                <!-- CAPTCHA content will be inserted here by JavaScript -->
+                            </div>
+                            <div class="error-message" id="captcha-error"></div>
+                        </div>
+                    </section>
+
+                    <!-- Legal Agreements Section -->
+                    <section class="form-section" id="legal-agreements-section">
+                        <h2>Legal Agreements</h2>
+
+                        <div class="agreement-group">
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                                <label for="termsAgreement">I agree to the <a href="#" class="terms-link"
+                                        data-modal="termsModal">Terms & Conditions</a> <span
+                                        class="required">*</span></label>
+                            </div>
+                            <div class="error-message" id="termsAgreement-error"></div>
+                        </div>
+
+                        <div class="agreement-group">
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="privacyAgreement" name="privacyAgreement" required>
+                                <label for="privacyAgreement">I agree to the <a href="#" class="privacy-link"
+                                        data-modal="privacyModal">Privacy Policy</a> <span
+                                        class="required">*</span></label>
+                            </div>
+                            <div class="error-message" id="privacyAgreement-error"></div>
+                        </div>
+
+                        <div class="agreement-group">
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="dataPolicyAgreement" name="dataPolicyAgreement" required>
+                                <label for="dataPolicyAgreement">I agree to the <a href="#" class="data-policy-link"
+                                        data-modal="dataPolicyModal">Data Policy</a> <span
+                                        class="required">*</span></label>
+                            </div>
+                            <div class="error-message" id="dataPolicyAgreement-error"></div>
+                        </div>
+                    </section>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-create-account">Create Account</button>
+                    </div>
+
+                    <!-- Existing User Section -->
+                    <div class="existing-user-section">
+                        <p>Already have an account? <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Log In\log_in.html">Log
+                                In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Legal Agreement Modals -->
+    <!-- Terms and Conditions Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Terms and Conditions</h2>
+                <span class="close-modal" data-modal="termsModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroll-content" id="terms-content">
+                    <!-- Content will be loaded dynamically via JavaScript -->
+                    <p>Loading Terms and Conditions...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-close-modal" data-modal="termsModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <span class="close-modal" data-modal="privacyModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroll-content" id="privacy-content">
+                    <!-- Content will be loaded dynamically via JavaScript -->
+                    <p>Loading Privacy Policy...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-close-modal" data-modal="privacyModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Policy Modal -->
+    <div id="dataPolicyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Data Policy</h2>
+                <span class="close-modal" data-modal="dataPolicyModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroll-content" id="data-policy-content">
+                    <!-- Content will be loaded dynamically via JavaScript -->
+                    <p>Loading Data Policy...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-close-modal" data-modal="dataPolicyModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Options Popup -->
+    <div id="supportOptionsPopup" class="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Help & Support</h3>
+                <span class="close-popup">&times;</span>
+            </div>
+            <div class="popup-body">
+                <ul class="support-options">
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Footer\FAQ\faq.html"><i
+                                class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="#" id="contactSupportLink"><i class="fas fa-envelope"></i> Contact Support</a></li>
+                    <li><a href="#" id="liveChatLink"><i class="fas fa-comment"></i> Live Chat</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-indicator">
+        <div class="spinner"></div>
+        <p>Processing your request...</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="dark-mode-toggle">
+                        <button id="darkModeToggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="footer-section social-media">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/@citruske" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section legal-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Footer\Terms and Conditions\terms_of_service.html">Terms
+                                of Service</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Footer\Privacy Policy\privacy_policy.html">Privacy
+                                Policy</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Footer\Data Policy\data_policy.html">Data
+                                Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\Footer\FAQ\faq.html">FAQ</a>
+                        </li>
+                        <li><a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="create_account.js"></script>
+</body>
+
+</html>

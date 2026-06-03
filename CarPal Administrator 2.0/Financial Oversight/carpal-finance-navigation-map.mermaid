@@ -1,0 +1,360 @@
+stateDiagram-v2
+    [*] --> FinancePage
+    
+    state FinancePage {
+        [*] --> FinancialDashboard
+        
+        state FinancialDashboard {
+            RevenueSummary: Revenue Summary
+            RevenueSummary: - Total Monthly Revenue
+            RevenueSummary: - Revenue Growth Indicator
+            RevenueSummary: - Service Fee Breakdown
+            
+            PaymentMetrics: Payment Metrics
+            PaymentMetrics: - Completed Transactions
+            PaymentMetrics: - Pending Transactions
+            PaymentMetrics: - Failed Transactions
+            
+            InvoiceOverview: Invoice Overview
+            InvoiceOverview: - Recent Invoices
+            InvoiceOverview: - Pending Approvals
+            InvoiceOverview: - Overdue Invoices
+            
+            QuickActions: Quick Actions
+            QuickActions: - Generate Report Button
+            QuickActions: - Reconcile Payments Button
+            QuickActions: - View Alerts Button
+        }
+        
+        state NavigationTabs {
+            PaymentTrackingTab: Payment Tracking Tab
+            RevenueReportsTab: Revenue Reports Tab
+            InvoiceAuditsTab: Invoice Audits Tab
+            PaymentReconciliationTab: Payment Reconciliation Tab
+            FinancialReportsExportTab: Financial Reports Export Tab
+        }
+    }
+    
+    state "Payment Tracking" as PaymentTracking {
+        TransactionMonitoring: Transaction Monitoring
+        TransactionMonitoring: - Transaction List Table
+        TransactionMonitoring: - Status Indicators
+        TransactionMonitoring: - Search & Filter Controls
+        TransactionMonitoring: - View Details Button
+        
+        PaymentValidation: Payment Validation
+        PaymentValidation: - M-Pesa Transaction Validation
+        PaymentValidation: - Manual Validation Controls
+        PaymentValidation: - Batch Validation Button
+        PaymentValidation: - Validation Status Indicators
+        
+        DiscrepancyManagement: Discrepancy Management
+        DiscrepancyManagement: - Flagged Transactions
+        DiscrepancyManagement: - Discrepancy Reasons
+        DiscrepancyManagement: - Resolution Actions
+        DiscrepancyManagement: - Alert Configuration
+    }
+    
+    state "Revenue Reports" as RevenueReports {
+        RevenueMetrics: Revenue Metrics
+        RevenueMetrics: - Revenue Dashboard
+        RevenueMetrics: - Service Fee Breakdown
+        RevenueMetrics: - Business Category Distribution
+        RevenueMetrics: - Date Range Controls
+        
+        GrowthTrends: Growth Trends
+        GrowthTrends: - Growth Chart
+        GrowthTrends: - YoY/MoM Comparison
+        GrowthTrends: - Projection Tools
+        GrowthTrends: - Trend Analysis
+        
+        RevenueSourceAnalysis: Revenue Source Analysis
+        RevenueSourceAnalysis: - Business Contribution Chart
+        RevenueSourceAnalysis: - Service Type Breakdown
+        RevenueSourceAnalysis: - Geographic Distribution
+        RevenueSourceAnalysis: - Top Revenue Generators
+    }
+    
+    state "Invoice Audits" as InvoiceAudits {
+        InvoiceReview: Invoice Review
+        InvoiceReview: - Invoice List Table
+        InvoiceReview: - Status Filters
+        InvoiceReview: - Search Functionality
+        InvoiceReview: - Audit Status Indicators
+        
+        DiscrepancyResolution: Discrepancy Resolution
+        DiscrepancyResolution: - Flagged Invoices
+        DiscrepancyResolution: - Issue Categories
+        DiscrepancyResolution: - Resolution Actions
+        DiscrepancyResolution: - Comment History
+        
+        AuditTrail: Audit Trail
+        AuditTrail: - Activity Log
+        AuditTrail: - User Attribution
+        AuditTrail: - Timestamp Records
+        AuditTrail: - Audit Report Generation
+    }
+    
+    state "Payment Reconciliation" as PaymentReconciliation {
+        PaymentMatching: Payment Matching
+        PaymentMatching: - Unmatched Payments List
+        PaymentMatching: - Auto-Match Controls
+        PaymentMatching: - Manual Match Interface
+        PaymentMatching: - Match Confirmation Process
+        
+        MPesaVerification: M-Pesa Verification
+        MPesaVerification: - M-Pesa Transaction Import
+        MPesaVerification: - Transaction ID Verification
+        MPesaVerification: - Amount Verification
+        MPesaVerification: - Timestamp Validation
+        
+        ReconciliationReports: Reconciliation Reports
+        ReconciliationReports: - Reconciliation Summary
+        ReconciliationReports: - Unreconciled Transactions
+        ReconciliationReports: - Reconciliation History
+        ReconciliationReports: - Export Controls
+    }
+    
+    state "Financial Reports Export" as FinancialReportsExport {
+        CustomReportGeneration: Custom Report Generation
+        CustomReportGeneration: - Report Type Selection
+        CustomReportGeneration: - Parameter Configuration
+        CustomReportGeneration: - Data Field Selection
+        CustomReportGeneration: - Preview Controls
+        
+        ExportFormats: Export Formats
+        ExportFormats: - PDF Format
+        ExportFormats: - Excel Format
+        ExportFormats: - CSV Format
+        ExportFormats: - Format Configuration
+        
+        ScheduledReports: Scheduled Reports
+        ScheduledReports: - Schedule Configuration
+        ScheduledReports: - Recipient Management
+        ScheduledReports: - Report Template Selection
+        ScheduledReports: - Schedule History
+    }
+    
+    state "Transaction Details" as TransactionDetails {
+        TransactionInfo: Transaction Information
+        TransactionInfo: - Transaction ID
+        TransactionInfo: - Date and Time
+        TransactionInfo: - Amount
+        TransactionInfo: - Status
+        
+        BusinessInfo: Business Information
+        BusinessInfo: - Business Name
+        BusinessInfo: - Business ID
+        BusinessInfo: - Contact Person
+        BusinessInfo: - Business Profile Link
+        
+        PaymentDetails: Payment Details
+        PaymentDetails: - Payment Method
+        PaymentDetails: - M-Pesa Transaction ID
+        PaymentDetails: - Payment Receipt
+        PaymentDetails: - Verification Status
+        
+        InvoiceReference: Invoice Reference
+        InvoiceReference: - Associated Invoices
+        InvoiceReference: - Service Fee Calculation
+        InvoiceReference: - Invoice Preview
+        
+        TransactionActions: Transaction Actions
+        TransactionActions: - Verify Payment Button
+        TransactionActions: - Flag Discrepancy Button
+        TransactionActions: - View Audit Trail Button
+        TransactionActions: - Add Note Button
+    }
+    
+    state "Invoice Details" as InvoiceDetails {
+        InvoiceInformation: Invoice Information
+        InvoiceInformation: - Invoice Number
+        InvoiceInformation: - Issue Date
+        InvoiceInformation: - Due Date
+        InvoiceInformation: - Total Amount
+        
+        BusinessDetails: Business Details
+        BusinessDetails: - Business Name
+        BusinessDetails: - Contact Information
+        BusinessDetails: - Business Profile Link
+        
+        LineItems: Line Items
+        LineItems: - Service/Product Description
+        LineItems: - Quantity
+        LineItems: - Unit Price
+        LineItems: - Subtotal
+        
+        PaymentStatus: Payment Status
+        PaymentStatus: - Current Status
+        PaymentStatus: - Payment Date
+        PaymentStatus: - Payment Method
+        PaymentStatus: - Transaction Reference
+        
+        InvoiceActions: Invoice Actions
+        InvoiceActions: - Mark as Paid Button
+        InvoiceActions: - Flag for Review Button
+        InvoiceActions: - Send Reminder Button
+        InvoiceActions: - Download Invoice Button
+    }
+    
+    state "Generate Custom Report" as GenerateCustomReport {
+        ReportType: Report Type Selection
+        ReportType: - Revenue Report
+        ReportType: - Transaction Report
+        ReportType: - Invoice Report
+        ReportType: - Reconciliation Report
+        
+        DateRange: Date Range Selection
+        DateRange: - Preset Periods
+        DateRange: - Custom Range Picker
+        DateRange: - Comparison Period Option
+        
+        DataFields: Data Field Selection
+        DataFields: - Available Fields Checklist
+        DataFields: - Field Ordering Controls
+        DataFields: - Grouping Options
+        
+        FilterCriteria: Filter Criteria
+        FilterCriteria: - Business Filter
+        FilterCriteria: - Amount Range
+        FilterCriteria: - Status Filter
+        FilterCriteria: - Advanced Filters
+        
+        ReportActions: Report Actions
+        ReportActions: - Generate Report Button
+        ReportActions: - Save Template Button
+        ReportActions: - Schedule Report Button
+        ReportActions: - Cancel Button
+    }
+    
+    state "Schedule Report" as ScheduleReport {
+        ScheduleSettings: Schedule Settings
+        ScheduleSettings: - Frequency Selection
+        ScheduleSettings: - Start Date
+        ScheduleSettings: - End Date/Occurrences
+        ScheduleSettings: - Time of Day
+        
+        DeliveryOptions: Delivery Options
+        DeliveryOptions: - Email Recipients
+        DeliveryOptions: - File Format
+        DeliveryOptions: - Include Summary
+        DeliveryOptions: - Notification Options
+        
+        ReportTemplate: Report Template
+        ReportTemplate: - Saved Template Selection
+        ReportTemplate: - Template Preview
+        ReportTemplate: - Template Modification
+        
+        ScheduleActions: Schedule Actions
+        ScheduleActions: - Confirm Schedule Button
+        ScheduleActions: - Save as Draft Button
+        ScheduleActions: - Cancel Button
+    }
+    
+    state "Discrepancy Resolution" as DiscrepancyResolution {
+        DiscrepancyDetails: Discrepancy Details
+        DiscrepancyDetails: - Issue Description
+        DiscrepancyDetails: - Discovery Date
+        DiscrepancyDetails: - Affected Amount
+        DiscrepancyDetails: - Status
+        
+        ResolutionActions: Resolution Actions
+        ResolutionActions: - Approve Override Button
+        ResolutionActions: - Request Clarification Button
+        ResolutionActions: - Mark as Resolved Button
+        ResolutionActions: - Escalate Button
+        
+        CommunicationLog: Communication Log
+        CommunicationLog: - Message History
+        CommunicationLog: - Add Comment Field
+        CommunicationLog: - Notification Controls
+        
+        ResolutionStatus: Resolution Status
+        ResolutionStatus: - Current Status
+        ResolutionStatus: - Resolution Timeline
+        ResolutionStatus: - Responsible Person
+        ResolutionStatus: - Status Update Button
+    }
+    
+    state "M-Pesa Import" as MPesaImport {
+        ImportSource: Import Source
+        ImportSource: - API Integration
+        ImportSource: - CSV Upload
+        ImportSource: - Manual Entry
+        
+        DataMapping: Data Mapping
+        DataMapping: - Field Mapping Controls
+        DataMapping: - Required Fields Indicator
+        DataMapping: - Validation Rules
+        
+        ValidationResults: Validation Results
+        ValidationResults: - Validated Records Count
+        ValidationResults: - Error Records Count
+        ValidationResults: - Warnings List
+        ValidationResults: - Data Preview Table
+        
+        ImportActions: Import Actions
+        ImportActions: - Complete Import Button
+        ImportActions: - Correct Errors Button
+        ImportActions: - Cancel Import Button
+    }
+    
+    FinancePage --> PaymentTracking: Click Payment Tracking Tab
+    FinancePage --> RevenueReports: Click Revenue Reports Tab
+    FinancePage --> InvoiceAudits: Click Invoice Audits Tab
+    FinancePage --> PaymentReconciliation: Click Payment Reconciliation Tab
+    FinancePage --> FinancialReportsExport: Click Financial Reports Export Tab
+    
+    PaymentTracking --> TransactionDetails: Click View Transaction
+    InvoiceAudits --> InvoiceDetails: Click View Invoice
+    
+    FinancePage --> GenerateCustomReport: Click Generate Report
+    FinancialReportsExport --> GenerateCustomReport: Click Create Custom Report
+    GenerateCustomReport --> ScheduleReport: Click Schedule Report
+    
+    PaymentTracking --> DiscrepancyResolution: Click Resolve Discrepancy
+    InvoiceAudits --> DiscrepancyResolution: Click Resolve Discrepancy
+    
+    PaymentReconciliation --> MPesaImport: Click Import M-Pesa Transactions
+    
+    TransactionDetails --> FinancePage: Click Back
+    InvoiceDetails --> FinancePage: Click Back
+    GenerateCustomReport --> FinancePage: After Generate/Cancel
+    ScheduleReport --> FinancePage: After Confirm/Cancel
+    DiscrepancyResolution --> FinancePage: After Resolution
+    MPesaImport --> PaymentReconciliation: After Import/Cancel
+    
+    note right of PaymentTracking
+        Payment Tracking allows administrators to
+        monitor all financial transactions on the
+        platform, validate payments through M-Pesa
+        integration, and manage any discrepancies.
+    end note
+    
+    note right of RevenueReports
+        Revenue Reports provide comprehensive analytics
+        on platform revenue streams, growth trends,
+        and source distribution to support strategic
+        decision-making and financial planning.
+    end note
+    
+    note left of InvoiceAudits
+        Invoice Audits enable administrators to review
+        all invoices generated on the platform, identify
+        and resolve discrepancies, and maintain a
+        detailed audit trail for compliance purposes.
+    end note
+    
+    note left of PaymentReconciliation
+        Payment Reconciliation automates the matching
+        of invoices with payment records, verifies
+        M-Pesa transactions, and generates reconciliation
+        reports to ensure financial accuracy.
+    end note
+    
+    note right of FinancialReportsExport
+        Financial Reports Export provides tools to
+        generate customized financial reports, export
+        in various formats, and schedule recurring
+        reports for stakeholders.
+    end note

@@ -1,0 +1,113 @@
+graph TB
+    Start([User Arrives]) --> Header{Header Section}
+    Header --> Logo[Company Logo]
+    Logo -->|Click| LandingPage[Redirect to Landing Page]
+    Header --> Nav[Navigation Links]
+    Nav --> Home[Home]
+    Home -->|Click| LandingPage
+    Nav --> CreateAcc[Create Account]
+    CreateAcc -->|Click| AccountCreation[Account Creation Page]
+
+    Start --> MainContent{Main Content Area}
+    
+    MainContent --> LoginForm[Login Form Section]
+    LoginForm --> EmailField[Work Email Input Field]
+    LoginForm --> PasswordField[Password Input Field]
+    PasswordField --> PasswordVisibility[Password Visibility Toggle]
+    PasswordVisibility -->|Click| ShowPassword[Show Password]
+    PasswordVisibility -->|Click Again| HidePassword[Hide Password]
+    
+    LoginForm --> RememberMe[Remember Me Checkbox]
+    LoginForm --> ForgotPassword[Forgot Password Link]
+    ForgotPassword -->|Click| PasswordRecovery[Password Recovery Page]
+    
+    LoginForm --> LoginBtn[Login Button]
+    
+    MainContent --> SecurityInfo[Security Information]
+    SecurityInfo --> SecureConnection[Secure Connection Indicator]
+    SecurityInfo --> SessionInfo[Session Information]
+    
+    LoginBtn -->|Click| LoginProcess{Login Authentication}
+    LoginProcess --> LoadingIndicator[Show Loading Indicator]
+    
+    LoginProcess -->|Invalid Credentials| ErrorState[Error State]
+    ErrorState --> InvalidCredentials[Invalid Email/Password Message]
+    ErrorState --> RetryLogin[Retry Login]
+    ErrorState --> AccountLocked[Account Locked Warning]
+    AccountLocked -->|After Multiple Failed Attempts| LockoutTimer[Account Lockout Timer]
+    
+    LoginProcess -->|Valid Credentials| MFACheck{MFA Required?}
+    
+    MFACheck -->|Yes| MFAVerification[MFA Verification]
+    MFAVerification --> MFAOptions[MFA Options]
+    MFAOptions --> EmailCode[Email Code]
+    MFAOptions --> SMSCode[SMS Code]
+    MFAOptions --> AuthApp[Authenticator App]
+    
+    MFAVerification --> VerifyMFABtn[Verify MFA Button]
+    VerifyMFABtn -->|Click| MFAValidation{MFA Validation}
+    
+    MFAValidation -->|Invalid| MFAError[MFA Error Message]
+    MFAError --> RetryMFA[Retry MFA Verification]
+    
+    MFAValidation -->|Valid| LoginSuccess([Login Successful])
+    MFACheck -->|No| LoginSuccess
+    
+    LoginSuccess --> RedirectDashboard[Redirect to Dashboard]
+    LoginSuccess --> SessionCreation[Create User Session]
+    LoginSuccess --> ActivityLogged[Log Login Activity]
+    
+    MainContent --> NewUserSection[New User Section]
+    NewUserSection --> CreateAccountLink[Create Account Link]
+    CreateAccountLink -->|Click| AccountCreation
+    
+    MainContent --> HelpSection[Help Section]
+    HelpSection --> SupportContact[Contact Support]
+    SupportContact -->|Click| SupportOptions[Support Options Modal]
+    SupportOptions --> EmailSupport[Email Support]
+    SupportOptions --> LiveChat[Live Chat]
+    SupportOptions --> FAQLink[FAQ Link]
+    
+    HelpSection --> TroubleshootTips[Troubleshooting Tips]
+    TroubleshootTips -->|Click| TipsModal[Troubleshooting Modal]
+    
+    MainContent --> Footer{Footer Section}
+    Footer --> PrivacyLink[Privacy Policy]
+    PrivacyLink -->|Click| PrivacyPage[Privacy Policy Page]
+    Footer --> TermsLink[Terms of Service]
+    TermsLink -->|Click| TermsPage[Terms of Service Page]
+    Footer --> DataPolicy[Data Policy]
+    DataPolicy -->|Click| DataPolicyPage[Data Policy Page]
+    Footer --> Copyright[Copyright Information]
+    
+    %% Error Recovery Paths
+    ErrorState --> ForgotPassword
+    RetryLogin -->|Click| LoginForm
+    
+    %% System States
+    SystemIssue[System Issues Detected] -->|Yes| MaintenanceMode[Maintenance Mode]
+    MaintenanceMode --> MaintenanceMessage[Maintenance Message]
+    MaintenanceMessage --> EstimatedResolution[Estimated Resolution Time]
+    
+    %% Session Handling
+    BrowserClosed[Browser Closed] --> SessionHandling{Session Handling}
+    SessionHandling -->|Remember Me Checked| PersistentSession[Persistent Session]
+    SessionHandling -->|Remember Me Unchecked| SessionTerminated[Session Terminated]
+    
+    %% Mobile Responsiveness
+    MobileDetection[Mobile Device Detection] --> ResponsiveLayout[Responsive Layout Adjustment]
+    ResponsiveLayout --> OptimizedFields[Optimized Input Fields]
+    ResponsiveLayout --> TouchFriendly[Touch-Friendly Buttons]
+    
+    %% Style Classes
+    classDef section fill:#f9f,stroke:#333,stroke-width:2px;
+    class Header,MainContent,LoginForm,MFAVerification,HelpSection,Footer section;
+    
+    classDef action fill:#afd,stroke:#333,stroke-width:1px;
+    class LoginBtn,VerifyMFABtn,RetryLogin,RetryMFA action;
+    
+    classDef error fill:#faa,stroke:#333,stroke-width:1px;
+    class ErrorState,MFAError,MaintenanceMode,AccountLocked error;
+    
+    classDef success fill:#afa,stroke:#333,stroke-width:1px;
+    class LoginSuccess,SessionCreation success;

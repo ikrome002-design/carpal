@@ -1,0 +1,201 @@
+/* ------------------------------------------
+   Variables & Base Styles
+------------------------------------------ */
+:root {
+    /* Brand Colors */
+    --primary-yellow: #FFD700;
+    --primary-black: #000000;
+    --secondary-gray: #2D2D2D;
+    --white: #FFFFFF;
+    
+    /* System Variables */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+    
+    /* Typography Scale */
+    --text-xl: 2.5rem;
+    --text-lg: 1.25rem;
+    --text-base: 1rem;
+    --text-sm: 0.875rem;
+  }
+  
+  /* ------------------------------------------
+     Technicians Summary Section
+  ------------------------------------------ */
+  .technicians-summary {
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .summary-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    padding: 2.5rem;
+    transition: transform var(--transition-speed),
+                box-shadow var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, 
+      var(--primary-yellow) 0%, 
+      var(--secondary-gray) 100%
+    );
+  }
+  
+  .summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px var(--shadow-color);
+  }
+  
+  .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    transition: transform var(--transition-speed);
+    position: relative;
+  }
+  
+  .stat-item::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background-color: var(--primary-yellow);
+    border-radius: 2px;
+    transition: width var(--transition-speed);
+  }
+  
+  .stat-item:hover {
+    transform: translateY(-4px);
+  }
+  
+  .stat-item:hover::after {
+    width: 60px;
+  }
+  
+  .stat-value {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: var(--text-xl);
+    color: var(--secondary-gray);
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .stat-value::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    bottom: 4px;
+    left: 0;
+    background-color: var(--primary-yellow);
+    opacity: 0.3;
+    z-index: -1;
+  }
+  
+  .stat-label {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: var(--text-base);
+    color: var(--secondary-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Dark Mode Styles */
+  [data-theme="dark"] .summary-card {
+    background-color: var(--secondary-gray);
+  }
+  
+  [data-theme="dark"] .stat-item {
+    background-color: var(--secondary-gray);
+  }
+  
+  [data-theme="dark"] .stat-value {
+    color: var(--white);
+  }
+  
+  [data-theme="dark"] .stat-label {
+    color: var(--white);
+    opacity: 0.8;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1024px) {
+    .summary-stats {
+      gap: 2rem;
+    }
+    
+    .stat-value {
+      font-size: calc(var(--text-xl) * 0.9);
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .technicians-summary {
+      padding: 1.5rem;
+    }
+    
+    .summary-card {
+      padding: 2rem;
+    }
+    
+    .summary-stats {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .stat-item {
+      padding: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .technicians-summary {
+      padding: 1rem;
+    }
+    
+    .summary-card {
+      padding: 1.5rem;
+    }
+    
+    .summary-stats {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .stat-value {
+      font-size: var(--text-lg);
+    }
+    
+    .stat-label {
+      font-size: var(--text-sm);
+    }
+  }

@@ -1,0 +1,216 @@
+stateDiagram-v2
+    [*] --> MyProfilePage
+    
+    state MyProfilePage {
+        [*] --> ProfileOverview
+        
+        state ProfileOverview {
+            BasicInfo: Basic Information Section
+            BasicInfo: - Full Name (First/Last)
+            BasicInfo: - Email Address
+            BasicInfo: - Phone Number
+            BasicInfo: - Administrator Role
+            BasicInfo: - Edit Button
+            
+            ProfilePicture: Profile Picture Section
+            ProfilePicture: - Current Image Display
+            ProfilePicture: - Change Photo Button
+            ProfilePicture: - Remove Photo Button
+            
+            ContactPreferences: Contact Preferences Section
+            ContactPreferences: - Preferred Contact Method
+            ContactPreferences: - Notification Settings
+            ContactPreferences: - Edit Button
+            
+            AccountSecurity: Account Security Section
+            AccountSecurity: - Last Password Change Date
+            AccountSecurity: - 2FA Status Indicator
+            AccountSecurity: - Change Password Button
+            AccountSecurity: - Manage 2FA Button
+            
+            ActivitySummary: Recent Activity Summary
+            ActivitySummary: - Last Login Date/Time
+            ActivitySummary: - Login Location/Device
+            ActivitySummary: - Last Actions Performed
+            ActivitySummary: - View Activity Log Button
+        }
+    }
+    
+    state "Edit Basic Information" as EditBasicInfoForm {
+        InfoFields: Information Fields
+        InfoFields: - First Name Input
+        InfoFields: - Last Name Input
+        InfoFields: - Email Address Input
+        InfoFields: - Phone Number Input
+        InfoFields: - Administrator Role (Read-only)
+        
+        FormActions: Form Actions
+        FormActions: - Save Changes Button
+        FormActions: - Cancel Button
+    }
+    
+    state "Change Profile Picture" as ProfilePictureUpload {
+        UploadOptions: Upload Options
+        UploadOptions: - Upload from Computer
+        UploadOptions: - Take Webcam Photo
+        UploadOptions: - Remove Current Photo
+        
+        ImageEditor: Image Editor
+        ImageEditor: - Preview Area
+        ImageEditor: - Crop Controls
+        ImageEditor: - Zoom Controls
+        ImageEditor: - Rotate Controls
+        
+        UploadActions: Upload Actions
+        UploadActions: - Apply Changes Button
+        UploadActions: - Cancel Button
+    }
+    
+    state "Edit Contact Preferences" as ContactPreferencesForm {
+        ContactMethods: Contact Methods
+        ContactMethods: - Primary Contact Method Selection
+        ContactMethods: - Email Toggle
+        ContactMethods: - SMS Toggle
+        ContactMethods: - In-App Toggle
+        
+        NotificationSettings: Notification Settings
+        NotificationSettings: - System Updates Toggle
+        NotificationSettings: - Security Alerts Toggle
+        NotificationSettings: - New User Registrations Toggle
+        NotificationSettings: - Payment Notifications Toggle
+        NotificationSettings: - Business Updates Toggle
+        
+        AlertFrequency: Alert Frequency
+        AlertFrequency: - Real-time Option
+        AlertFrequency: - Daily Digest Option
+        AlertFrequency: - Weekly Summary Option
+        
+        PreferenceActions: Preference Actions
+        PreferenceActions: - Save Preferences Button
+        PreferenceActions: - Reset to Default Button
+        PreferenceActions: - Cancel Button
+    }
+    
+    state "Change Password" as ChangePasswordForm {
+        PasswordFields: Password Fields
+        PasswordFields: - Current Password Input
+        PasswordFields: - New Password Input
+        PasswordFields: - Confirm New Password Input
+        
+        PasswordStrength: Password Strength Indicator
+        PasswordStrength: - Strength Meter
+        PasswordStrength: - Requirement Checklist
+        
+        PasswordActions: Password Actions
+        PasswordActions: - Update Password Button
+        PasswordActions: - Cancel Button
+    }
+    
+    state "Manage 2FA" as Manage2FAForm {
+        TwoFactorStatus: Two-Factor Status
+        TwoFactorStatus: - Current Status Indicator
+        TwoFactorStatus: - Enable/Disable Toggle
+        
+        TwoFactorMethods: Two-Factor Methods
+        TwoFactorMethods: - SMS Authentication Option
+        TwoFactorMethods: - Authenticator App Option
+        TwoFactorMethods: - Email Authentication Option
+        
+        SetupSteps: Setup Steps
+        SetupSteps: - QR Code Display (for app)
+        SetupSteps: - Verification Code Entry
+        SetupSteps: - Recovery Codes Generation
+        
+        TwoFactorActions: Two-Factor Actions
+        TwoFactorActions: - Complete Setup Button
+        TwoFactorActions: - Cancel Button
+    }
+    
+    state "Activity Log" as ActivityLogView {
+        ActivityEntries: Activity Entries
+        ActivityEntries: - Login History
+        ActivityEntries: - Profile Changes
+        ActivityEntries: - Security Updates
+        
+        FilterOptions: Filter Options
+        FilterOptions: - Date Range Selector
+        FilterOptions: - Activity Type Filter
+        FilterOptions: - Device Filter
+        
+        LogActions: Log Actions
+        LogActions: - Export Log Button
+        LogActions: - Clear History Button
+        LogActions: - Back to Profile Button
+    }
+    
+    state "Confirmation Dialog" as ConfirmationDialog {
+        ConfirmMessage: Confirmation Message
+        ConfirmMessage: - Action Description
+        ConfirmMessage: - Warning (if applicable)
+        
+        ConfirmOptions: Confirmation Options
+        ConfirmOptions: - Confirm Button
+        ConfirmOptions: - Cancel Button
+    }
+    
+    state "Success Notification" as SuccessNotification {
+        SuccessMessage: Success Message
+        SuccessMessage: - Action Completed
+        SuccessMessage: - Next Steps (if applicable)
+        
+        DismissOption: Dismiss Option
+        DismissOption: - Dismiss Button
+    }
+    
+    MyProfilePage --> EditBasicInfoForm: Click Edit in Basic Info
+    MyProfilePage --> ProfilePictureUpload: Click Change Photo
+    MyProfilePage --> ContactPreferencesForm: Click Edit in Contact Preferences
+    MyProfilePage --> ChangePasswordForm: Click Change Password
+    MyProfilePage --> Manage2FAForm: Click Manage 2FA
+    MyProfilePage --> ActivityLogView: Click View Activity Log
+    
+    EditBasicInfoForm --> ConfirmationDialog: Click Save Changes
+    ProfilePictureUpload --> ConfirmationDialog: Click Apply Changes
+    ContactPreferencesForm --> ConfirmationDialog: Click Save Preferences
+    ChangePasswordForm --> ConfirmationDialog: Click Update Password
+    Manage2FAForm --> ConfirmationDialog: Click Complete Setup
+    
+    ProfilePictureUpload --> MyProfilePage: Click Cancel
+    EditBasicInfoForm --> MyProfilePage: Click Cancel
+    ContactPreferencesForm --> MyProfilePage: Click Cancel
+    ChangePasswordForm --> MyProfilePage: Click Cancel
+    Manage2FAForm --> MyProfilePage: Click Cancel
+    ActivityLogView --> MyProfilePage: Click Back to Profile
+    
+    ConfirmationDialog --> SuccessNotification: Click Confirm
+    ConfirmationDialog --> MyProfilePage: Click Cancel
+    
+    SuccessNotification --> MyProfilePage: Auto-dismiss/Click Dismiss
+    
+    note right of ProfileOverview
+        The Profile Overview provides administrators with
+        a comprehensive view of their account information,
+        including personal details, contact preferences,
+        security settings, and recent activity indicators.
+    end note
+    
+    note right of ContactPreferencesForm
+        The Contact Preferences form allows administrators
+        to customize how they receive platform notifications,
+        including preferred communication channels and
+        specific notification types they wish to receive.
+    end note
+    
+    note left of Manage2FAForm
+        Two-factor authentication enhances account security
+        by requiring a second verification step during login.
+        Administrators can choose between SMS, authenticator app,
+        or email verification methods based on their preference.
+    end note
+    
+    note left of ActivityLogView
+        The Activity Log provides a detailed history of
+        account-related actions including logins, profile
+        updates, and security changes for audit purposes
+        and security monitoring.
+    end note

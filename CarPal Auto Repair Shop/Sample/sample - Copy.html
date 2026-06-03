@@ -1,0 +1,295 @@
+<!-- Communication Channels -->
+<div class="analytics-card">
+    <h3>Channel Performance</h3>
+    <div class="channel-performance-grid">
+        <!-- Chart Section -->
+        <div class="chart-section">
+            <div class="chart-container">
+                <canvas id="channelsChart"></canvas>
+            </div>
+            <div class="chart-legend">
+                <div class="legend-item">
+                    <span class="legend-dot sms"></span>
+                    <span>SMS</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot email"></span>
+                    <span>Email</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot app"></span>
+                    <span>In-App</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metrics Section -->
+        <div class="metrics-section">
+            <!-- SMS Metrics -->
+            <div class="channel-metric-card">
+                <div class="metric-header">
+                    <div class="metric-icon sms">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="metric-title">
+                        <h4>SMS</h4>
+                        <span class="metric-value">45%</span>
+                    </div>
+                </div>
+                <div class="delivery-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill sms" style="width: 99.2%"></div>
+                    </div>
+                    <span class="delivery-rate">99.2% delivered</span>
+                </div>
+            </div>
+
+            <!-- Email Metrics -->
+            <div class="channel-metric-card">
+                <div class="metric-header">
+                    <div class="metric-icon email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="metric-title">
+                        <h4>Email</h4>
+                        <span class="metric-value">35%</span>
+                    </div>
+                </div>
+                <div class="delivery-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill email" style="width: 98.5%"></div>
+                    </div>
+                    <span class="delivery-rate">98.5% delivered</span>
+                </div>
+            </div>
+
+            <!-- In-App Metrics -->
+            <div class="channel-metric-card">
+                <div class="metric-header">
+                    <div class="metric-icon app">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="metric-title">
+                        <h4>In-App</h4>
+                        <span class="metric-value">20%</span>
+                    </div>
+                </div>
+                <div class="delivery-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill app" style="width: 100%"></div>
+                    </div>
+                    <span class="delivery-rate">100% delivered</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Channel Performance Styles */
+    .channel-performance-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .chart-section {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .chart-container {
+        position: relative;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .chart-legend {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .legend-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    .legend-dot.sms {
+        background-color: #FFD700;
+    }
+
+    .legend-dot.email {
+        background-color: #2D2D2D;
+    }
+
+    .legend-dot.app {
+        background-color: #4CAF50;
+    }
+
+    /* Metrics Section */
+    .metrics-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .channel-metric-card {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .metric-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .metric-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .metric-icon.sms {
+        background-color: #FFD700;
+    }
+
+    .metric-icon.email {
+        background-color: #2D2D2D;
+    }
+
+    .metric-icon.app {
+        background-color: #4CAF50;
+    }
+
+    .metric-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+    }
+
+    .metric-title h4 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .metric-value {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .delivery-progress {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .progress-bar {
+        height: 8px;
+        background-color: #e9ecef;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.3s ease;
+    }
+
+    .progress-fill.sms {
+        background-color: #FFD700;
+    }
+
+    .progress-fill.email {
+        background-color: #2D2D2D;
+    }
+
+    .progress-fill.app {
+        background-color: #4CAF50;
+    }
+
+    .delivery-rate {
+        font-size: 14px;
+        color: #6c757d;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .channel-performance-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<script>
+    // Initialize Channel Performance Chart
+    document.addEventListener('DOMContentLoaded', function () {
+        const channelsCtx = document.getElementById('channelsChart').getContext('2d');
+
+        // Channel data
+        const channelData = {
+            labels: ['SMS', 'Email', 'In-App'],
+            datasets: [{
+                data: [45, 35, 20],
+                backgroundColor: ['#FFD700', '#2D2D2D', '#4CAF50'],
+                borderWidth: 0,
+                hoverOffset: 4
+            }]
+        };
+
+        // Chart configuration
+        const config = {
+            type: 'doughnut',
+            data: channelData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '60%',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return `${context.label}: ${context.raw}%`;
+                            }
+                        },
+                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        titleColor: '#000',
+                        bodyColor: '#000',
+                        borderColor: '#ddd',
+                        borderWidth: 1,
+                        padding: 10,
+                        displayColors: false,
+                        bodyFont: {
+                            family: 'Poppins'
+                        }
+                    }
+                }
+            }
+        };
+
+        // Create the chart
+        new Chart(channelsCtx, config);
+    });
+</script>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about CarPal - Your trusted partner in revolutionizing the auto repair industry">
+    
+    <title>About Us | CarPal - Auto Repair Shop Platform</title>
+
+    <!-- Favicon configuration for different devices and browsers -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base styles */
+        :root {
+            --primary-yellow: #FFD700;
+            --primary-black: #000000;
+            --charcoal-gray: #2D2D2D;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal-gray);
+            background-color: var(--white);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: var(--primary-black);
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* Main content */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        /* Features grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: #f8f8f8;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Contact section */
+        .contact-info {
+            background-color: #f8f8f8;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-black);
+            color: var(--white);
+            padding: 1rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section with logo -->
+    <header class="header">
+        <div class="container">
+            <img src="/images/CarPal-Logo-PNG.png" alt="CarPal Logo" class="logo">
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero section -->
+            <section class="section">
+                <h1>About Us: CarPal Platform for Auto Repair Shops</h1>
+                <p>Welcome to CarPal, your trusted partner in revolutionizing the auto repair industry. We're an innovative web platform designed to streamline operations for auto repair shops, enhance customer experiences, and empower businesses to grow in the ever-evolving automotive sector.</p>
+            </section>
+
+            <!-- Mission section -->
+            <section class="section">
+                <h2>Our Mission</h2>
+                <p>At CarPal, our mission is to simplify and modernize the way auto repair shops operate by providing a user-friendly platform that integrates essential tools and resources. We aim to foster efficiency, transparency, and professionalism in the automotive repair ecosystem, making it easier for businesses to thrive.</p>
+            </section>
+
+            <!-- Company information -->
+            <section class="section">
+                <h2>Who We Are</h2>
+                <p>CarPal is developed and managed by Citrus Labs Ltd., a Kenyan-based technology company committed to delivering cutting-edge solutions for small and medium-sized enterprises. Headquartered in the heart of Nairobi at Britam Towers, our team combines technical expertise with a deep understanding of the local automotive industry to bring you a platform tailored to your needs.</p>
+            </section>
+
+            <!-- Features section -->
+            <section class="section">
+                <h2>What We Offer</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Streamlined Account Management</h3>
+                        <p>Create and manage your auto repair shop profile effortlessly. Track business details, services, and customer interactions in one place.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Invoicing and Payment Tracking</h3>
+                        <p>Generate professional invoices with ease. Keep track of pending, completed, and overdue payments. Integrate with Mpesa Till Numbers for secure payment verification.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Customer Relationship Management</h3>
+                        <p>Maintain a detailed database of your customers. Access service histories and payment records for better customer service.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact information -->
+            <section class="section">
+                <h2>Get in Touch</h2>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Email: support@citruslabs.ke</p>
+                    <p>Phone: +254 712 400 000</p>
+                    <p>Address: 27th Floor, Britam Towers, Nairobi, Kenya</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

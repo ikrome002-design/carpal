@@ -1,0 +1,281 @@
+stateDiagram-v2
+    [*] --> UsersPage
+    
+    state UsersPage {
+        [*] --> UsersOverview
+        
+        state UsersOverview {
+            UsersStats: User Statistics Dashboard
+            UsersStats: - Total Users Count
+            UsersStats: - User Status Distribution
+            UsersStats: - Recent User Activity
+            
+            QuickActions: Quick Actions Panel
+            QuickActions: - Add User Button
+            QuickActions: - Export Users Button
+            QuickActions: - Import Users Button
+        }
+        
+        state UsersTabs {
+            state "Administrator Users Tab" as AdminUsersTab
+            state "Business Users Tab" as BusinessUsersTab
+            state "Search & Filter" as SearchFilter
+            
+            SearchFilter: Search by Name, Email, Role
+            SearchFilter: Filter by Status, Date Created
+            SearchFilter: Sort Options (Name, Date, Status)
+        }
+        
+        state UsersList {
+            UserEntry: User Entry Components
+            UserEntry: - Profile Picture
+            UserEntry: - Full Name
+            UserEntry: - Email Address
+            UserEntry: - User Role
+            UserEntry: - Status Indicator
+            UserEntry: - Last Login Timestamp
+            UserEntry: - Action Menu Button
+        }
+    }
+    
+    state "User Action Menu" as UserActionMenu {
+        ActionView: View Profile
+        ActionEdit: Edit User
+        ActionReset: Reset Password
+        ActionSuspend: Suspend User
+        ActionReactivate: Reactivate User
+        ActionDelete: Delete User
+    }
+    
+    state "View User Profile" as ViewUserProfile {
+        ProfilePersonal: Personal Information
+        ProfilePersonal: - Full Name
+        ProfilePersonal: - Contact Details
+        ProfilePersonal: - Profile Picture
+        
+        ProfileAccount: Account Information
+        ProfileAccount: - User ID
+        ProfileAccount: - Account Creation Date
+        ProfileAccount: - Last Login Date
+        ProfileAccount: - Account Status
+        
+        ProfileRole: Role & Permissions
+        ProfileRole: - Assigned Role
+        ProfileRole: - Permission Groups
+        ProfileRole: - Access Level
+        
+        ProfileActivity: Recent Activity
+        ProfileActivity: - Login History
+        ProfileActivity: - Action Logs
+        ProfileActivity: - Audit Trail
+        
+        ProfileActions: Profile Actions
+        ProfileActions: - Edit Profile Button
+        ProfileActions: - Reset Password Button
+        ProfileActions: - Suspend/Reactivate Button
+        ProfileActions: - Delete User Button
+    }
+    
+    state "Edit User" as EditUser {
+        EditPersonal: Personal Information Form
+        EditPersonal: - First Name Field
+        EditPersonal: - Last Name Field
+        EditPersonal: - Email Address Field
+        EditPersonal: - Phone Number Field
+        
+        EditRole: Role Assignment
+        EditRole: - Role Dropdown
+        EditRole: - Custom Permission Checkboxes
+        
+        EditBusiness: Business Association
+        EditBusiness: - Business Selector (For Business Users)
+        
+        EditStatus: Account Status
+        EditStatus: - Status Dropdown
+        
+        EditActions: Form Actions
+        EditActions: - Save Changes Button
+        EditActions: - Cancel Button
+    }
+    
+    state "Reset Password" as ResetPassword {
+        ResetOptions: Reset Options
+        ResetOptions: - Send Reset Link to User
+        ResetOptions: - Set Temporary Password
+        
+        ResetActions: Action Buttons
+        ResetActions: - Confirm Reset Button
+        ResetActions: - Cancel Button
+    }
+    
+    state "Suspend User" as SuspendUser {
+        SuspendConfirm: Confirmation Dialog
+        SuspendConfirm: - Warning Message
+        SuspendConfirm: - Reason Dropdown
+        SuspendConfirm: - Additional Notes Field
+        
+        SuspendActions: Action Buttons
+        SuspendActions: - Confirm Suspension Button
+        SuspendActions: - Cancel Button
+    }
+    
+    state "Reactivate User" as ReactivateUser {
+        ReactivateConfirm: Confirmation Dialog
+        ReactivateConfirm: - Information Message
+        ReactivateConfirm: - Notification Option Checkbox
+        
+        ReactivateActions: Action Buttons
+        ReactivateActions: - Confirm Reactivation Button
+        ReactivateActions: - Cancel Button
+    }
+    
+    state "Delete User" as DeleteUser {
+        DeleteConfirm: Confirmation Dialog
+        DeleteConfirm: - Warning Message
+        DeleteConfirm: - Data Handling Options
+        DeleteConfirm: - Reason Field
+        
+        DeleteOTP: OTP Verification
+        DeleteOTP: - OTP Input Field
+        DeleteOTP: - Resend OTP Button
+        
+        DeleteActions: Action Buttons
+        DeleteActions: - Verify & Delete Button
+        DeleteActions: - Cancel Button
+    }
+    
+    state "Add New User" as AddNewUser {
+        AddUserType: User Type Selection
+        AddUserType: - Administrator User
+        AddUserType: - Business User
+        
+        AddPersonal: Personal Information
+        AddPersonal: - First Name Field
+        AddPersonal: - Last Name Field
+        AddPersonal: - Email Address Field
+        AddPersonal: - Phone Number Field
+        
+        AddRole: Role Assignment
+        AddRole: - Role Dropdown
+        AddRole: - Permission Checkboxes
+        
+        AddBusiness: Business Association (If Business User)
+        AddBusiness: - Business Dropdown
+        AddBusiness: - Department Field
+        
+        AddPassword: Password Options
+        AddPassword: - Generate Temporary Password
+        AddPassword: - Send Setup Email
+        
+        AddActions: Form Actions
+        AddActions: - Create User Button
+        AddActions: - Cancel Button
+    }
+    
+    state "Import Users" as ImportUsers {
+        ImportInstructions: Import Instructions
+        ImportInstructions: - Template Download Link
+        ImportInstructions: - Supported Formats Info
+        
+        ImportUpload: File Upload
+        ImportUpload: - Drag & Drop Area
+        ImportUpload: - Browse Files Button
+        
+        ImportValidation: Data Validation
+        ImportValidation: - Validation Results Table
+        ImportValidation: - Error Highlighting
+        
+        ImportConfirm: Confirmation
+        ImportConfirm: - Summary of Changes
+        ImportConfirm: - Import Button
+        ImportConfirm: - Cancel Button
+    }
+    
+    state "Export Users" as ExportUsers {
+        ExportOptions: Export Options
+        ExportOptions: - Format Selection (CSV, Excel)
+        ExportOptions: - Data Field Selection
+        ExportOptions: - Filter Options
+        
+        ExportActions: Action Buttons
+        ExportActions: - Generate Export Button
+        ExportActions: - Cancel Button
+    }
+    
+    state "OTP Authorization" as OTPAuth {
+        OTPInput: OTP Input Field
+        OTPInput: - 6-Digit Code Field
+        OTPInput: - Resend OTP Button
+        OTPInput: - Time Remaining Indicator
+        
+        OTPActions: Action Buttons
+        OTPActions: - Verify OTP Button
+        OTPActions: - Cancel Button
+    }
+    
+    UsersPage --> UserActionMenu: Click Action Menu
+    UserActionMenu --> ViewUserProfile: Click View Profile
+    UserActionMenu --> EditUser: Click Edit User
+    UserActionMenu --> ResetPassword: Click Reset Password
+    UserActionMenu --> SuspendUser: Click Suspend User
+    UserActionMenu --> ReactivateUser: Click Reactivate User
+    UserActionMenu --> DeleteUser: Click Delete User
+    
+    DeleteUser --> OTPAuth: Confirm Delete
+    EditUser --> OTPAuth: Save Significant Changes
+    SuspendUser --> OTPAuth: Confirm Suspension
+    ReactivateUser --> OTPAuth: Confirm Reactivation
+    
+    UsersPage --> AddNewUser: Click Add User
+    UsersPage --> ImportUsers: Click Import Users
+    UsersPage --> ExportUsers: Click Export Users
+    
+    AddNewUser --> OTPAuth: Click Create User
+    ImportUsers --> OTPAuth: Click Import
+    
+    ViewUserProfile --> EditUser: Click Edit Profile
+    ViewUserProfile --> ResetPassword: Click Reset Password
+    ViewUserProfile --> SuspendUser: Click Suspend User
+    ViewUserProfile --> ReactivateUser: Click Reactivate User
+    ViewUserProfile --> DeleteUser: Click Delete User
+    
+    OTPAuth --> [*]: Verification Successful
+    OTPAuth --> UsersPage: Verification Failed
+    
+    EditUser --> UsersPage: After Save/Cancel
+    AddNewUser --> UsersPage: After Create/Cancel
+    ResetPassword --> UsersPage: After Confirm/Cancel
+    ViewUserProfile --> UsersPage: Back Button
+    ImportUsers --> UsersPage: After Import/Cancel
+    ExportUsers --> UsersPage: After Export/Cancel
+    SuspendUser --> UsersPage: After Confirm/Cancel
+    ReactivateUser --> UsersPage: After Confirm/Cancel
+    DeleteUser --> UsersPage: After Delete/Cancel
+    
+    note right of OTPAuth
+        OTP Authorization is required for:
+        - Adding new users
+        - Editing critical user information
+        - Suspending/reactivating users
+        - Deleting users
+        - Importing multiple users
+    end note
+    
+    note right of UsersList
+        Users are displayed in a paginated table
+        with 10-25 users per page and include
+        visual indicators for user status:
+        - Active (Green)
+        - Suspended (Yellow)
+        - Inactive (Gray)
+    end note
+    
+    note left of ImportUsers
+        The import process includes:
+        1. File upload
+        2. Data validation
+        3. Error correction
+        4. Final review
+        5. OTP verification
+        6. Import confirmation
+    end note

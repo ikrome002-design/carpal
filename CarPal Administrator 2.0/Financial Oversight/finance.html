@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal by Citrus - Finance</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="finance.css">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                        alt="CarPal by Citrus Logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">Dashboard</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\User Management\users.html">Users</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Business Management\businesses.html">Businesses</a>
+                    </li>
+                    <li class="active">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Financial Oversight\finance.html">Finance</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Security Tools\security.html">Security</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Customer Support Tools\support.html">Support</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Controls -->
+            <div class="user-controls">
+                <!-- Notifications -->
+                <div class="notifications">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Notifications\notifications.html">
+                        <i class="fa-solid fa-bell notification-icon"></i>
+                        <span class="notification-count">5</span>
+                    </a>
+                </div>
+
+                <!-- User Profile Dropdown -->
+                <div class="user-profile-dropdown">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                        alt="User Profile" class="profile-icon">
+                    <div class="dropdown-content">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\My Profile\my_profile.html">My
+                            Profile</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Activity History\activity_history.html">Activity
+                            History</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">Log
+                            Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="finance-page">
+            <h1>Financial Management</h1>
+
+            <!-- Financial Dashboard -->
+            <section class="financial-dashboard">
+                <div class="dashboard-grid">
+                    <!-- Revenue Summary Card -->
+                    <div class="dashboard-card">
+                        <h2>Revenue Summary</h2>
+                        <div class="revenue-summary">
+                            <div class="metric-item">
+                                <span class="metric-label">Total Monthly Revenue</span>
+                                <span class="metric-value">KES. 3,542,895</span>
+                                <span class="metric-trend positive">+12.5% from last month</span>
+                            </div>
+
+                            <div class="revenue-growth">
+                                <div class="chart-placeholder">
+                                    Revenue Growth Chart
+                                </div>
+                            </div>
+
+                            <div class="fee-breakdown">
+                                <h3>Service Fee Breakdown</h3>
+                                <ul class="fee-list">
+                                    <li>
+                                        <span class="fee-type">Platform Fee</span>
+                                        <span class="fee-amount">KES. 1,546,250</span>
+                                    </li>
+                                    <li>
+                                        <span class="fee-type">Transaction Fee</span>
+                                        <span class="fee-amount">KES. 985,430</span>
+                                    </li>
+                                    <li>
+                                        <span class="fee-type">Subscription Fee</span>
+                                        <span class="fee-amount">KES. 1,011,215</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Metrics Card -->
+                    <div class="dashboard-card">
+                        <h2>Payment Metrics</h2>
+                        <div class="payment-metrics">
+                            <div class="metric-row">
+                                <div class="metric-box completed">
+                                    <h3>Completed</h3>
+                                    <span class="metric-number">2,456</span>
+                                    <span class="metric-label">Transactions</span>
+                                </div>
+
+                                <div class="metric-box pending">
+                                    <h3>Pending</h3>
+                                    <span class="metric-number">342</span>
+                                    <span class="metric-label">Transactions</span>
+                                </div>
+
+                                <div class="metric-box failed">
+                                    <h3>Failed</h3>
+                                    <span class="metric-number">87</span>
+                                    <span class="metric-label">Transactions</span>
+                                </div>
+                            </div>
+
+                            <div class="completion-rate">
+                                <span class="completion-label">Transaction Success Rate</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%;"></div>
+                                </div>
+                                <span class="completion-percentage">85%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Invoice Overview Card -->
+                    <div class="dashboard-card">
+                        <h2>Invoice Overview</h2>
+                        <div class="invoice-overview">
+                            <div class="invoice-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Recent Invoices</span>
+                                    <span class="stat-value">124</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Pending Approvals</span>
+                                    <span class="stat-value">18</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Overdue Invoices</span>
+                                    <span class="stat-value warning">23</span>
+                                </div>
+                            </div>
+
+                            <div class="recent-invoices">
+                                <h3>Recent Invoices</h3>
+                                <ul class="invoice-list">
+                                    <li class="invoice-item">
+                                        <span class="invoice-id">INV-2025-0342</span>
+                                        <span class="invoice-business">Shuttle Express Ltd</span>
+                                        <span class="invoice-amount">KES. 45,600</span>
+                                        <span class="invoice-status paid">Paid</span>
+                                    </li>
+                                    <li class="invoice-item">
+                                        <span class="invoice-id">INV-2025-0341</span>
+                                        <span class="invoice-business">SafeRide Taxi Co.</span>
+                                        <span class="invoice-amount">KES. 32,780</span>
+                                        <span class="invoice-status pending">Pending</span>
+                                    </li>
+                                    <li class="invoice-item">
+                                        <span class="invoice-id">INV-2025-0340</span>
+                                        <span class="invoice-business">Urban Mobility Inc.</span>
+                                        <span class="invoice-amount">KES. 78,250</span>
+                                        <span class="invoice-status paid">Paid</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions Card -->
+                    <div class="dashboard-card">
+                        <h2>Quick Actions</h2>
+                        <div class="action-buttons">
+                            <button class="generate-report-btn">Generate Report</button>
+                            <button class="reconcile-payments-btn">Reconcile Payments</button>
+                            <button class="view-alerts-btn">View Alerts</button>
+                        </div>
+
+                        <div class="alerts-overview">
+                            <h3>Recent Alerts</h3>
+                            <ul class="alerts-list">
+                                <li class="alert-item high">
+                                    <span class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                                    <span class="alert-message">23 overdue invoices require attention</span>
+                                </li>
+                                <li class="alert-item medium">
+                                    <span class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+                                    <span class="alert-message">5 payment reconciliation issues detected</span>
+                                </li>
+                                <li class="alert-item low">
+                                    <span class="alert-icon"><i class="fa-solid fa-circle-info"></i></span>
+                                    <span class="alert-message">Monthly revenue report is ready for review</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Tabs -->
+            <section class="navigation-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="payment-tracking">Payment Tracking</button>
+                    <button class="tab-btn" data-tab="revenue-reports">Revenue Reports</button>
+                    <button class="tab-btn" data-tab="invoice-audits">Invoice Audits</button>
+                    <button class="tab-btn" data-tab="payment-reconciliation">Payment Reconciliation</button>
+                    <button class="tab-btn" data-tab="financial-reports-export">Financial Reports Export</button>
+                </div>
+
+                <!-- Tab Content Sections -->
+                <div class="tab-content active" id="payment-tracking">
+                    <div class="tab-section">
+                        <h2>Transaction Monitoring</h2>
+                        <div class="search-filter-controls">
+                            <div class="search-container">
+                                <input type="text" class="search-input" placeholder="Search transactions...">
+                                <button class="search-btn"><i class="fa-solid fa-search"></i></button>
+                            </div>
+                            <div class="filter-container">
+                                <select class="filter-select">
+                                    <option value="all">All Statuses</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="failed">Failed</option>
+                                </select>
+                                <select class="filter-select">
+                                    <option value="all">All Date Ranges</option>
+                                    <option value="today">Today</option>
+                                    <option value="week">This Week</option>
+                                    <option value="month">This Month</option>
+                                    <option value="custom">Custom Range</option>
+                                </select>
+                                <select class="filter-select">
+                                    <option value="all">All Amounts</option>
+                                    <option value="small">Below KES. 1,000</option>
+                                    <option value="medium">KES. 1,000 - 10,000</option>
+                                    <option value="large">Above KES. 10,000</option>
+                                </select>
+                                <button class="advanced-filter-btn">Advanced Filters</button>
+                            </div>
+                        </div>
+
+                        <div class="transaction-table-container">
+                            <table class="transactions-table">
+                                <thead>
+                                    <tr>
+                                        <th>Transaction ID</th>
+                                        <th>Business</th>
+                                        <th>Date & Time</th>
+                                        <th>Amount (KES.)</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TRX-2025-0578</td>
+                                        <td>Metro Cabs Ltd</td>
+                                        <td>Mar 26, 2025 10:23 AM</td>
+                                        <td>15,400</td>
+                                        <td><span class="status-badge completed">Completed</span></td>
+                                        <td>
+                                            <button class="view-details-btn">View Details</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>TRX-2025-0577</td>
+                                        <td>City Shuttle Services</td>
+                                        <td>Mar 26, 2025 9:45 AM</td>
+                                        <td>8,750</td>
+                                        <td><span class="status-badge completed">Completed</span></td>
+                                        <td>
+                                            <button class="view-details-btn">View Details</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>TRX-2025-0576</td>
+                                        <td>SafeRide Taxi Co.</td>
+                                        <td>Mar 26, 2025 9:12 AM</td>
+                                        <td>32,780</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                        <td>
+                                            <button class="view-details-btn">View Details</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>TRX-2025-0575</td>
+                                        <td>Urban Mobility Inc.</td>
+                                        <td>Mar 26, 2025 8:47 AM</td>
+                                        <td>21,450</td>
+                                        <td><span class="status-badge failed">Failed</span></td>
+                                        <td>
+                                            <button class="view-details-btn">View Details</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>TRX-2025-0574</td>
+                                        <td>Nairobi Express Movers</td>
+                                        <td>Mar 25, 2025 6:32 PM</td>
+                                        <td>12,890</td>
+                                        <td><span class="status-badge completed">Completed</span></td>
+                                        <td>
+                                            <button class="view-details-btn">View Details</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="pagination-controls">
+                            <button class="pagination-btn prev"><i class="fa-solid fa-chevron-left"></i>
+                                Previous</button>
+                            <span class="pagination-info">Page 1 of 24</span>
+                            <button class="pagination-btn next">Next <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="tab-section">
+                        <h2>Payment Validation</h2>
+                        <div class="validation-controls">
+                            <div class="mpesa-validation">
+                                <h3>M-Pesa Transaction Validation</h3>
+                                <div class="validation-actions">
+                                    <button class="import-mpesa-btn">Import M-Pesa Transactions</button>
+                                    <button class="auto-validate-btn">Auto-Validate Transactions</button>
+                                    <button class="manual-validate-btn">Manual Validation</button>
+                                </div>
+
+                                <div class="validation-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Validated Today</span>
+                                        <span class="stat-value">342</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Pending Validation</span>
+                                        <span class="stat-value">56</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Failed Validation</span>
+                                        <span class="stat-value">12</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="validation-table-container">
+                                <h3>Recent Validations</h3>
+                                <table class="validation-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Transaction ID</th>
+                                            <th>M-Pesa Code</th>
+                                            <th>Amount (KES.)</th>
+                                            <th>Validation Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>TRX-2025-0578</td>
+                                            <td>QLS7D46GHY</td>
+                                            <td>15,400</td>
+                                            <td><span class="validation-badge validated">Validated</span></td>
+                                            <td>
+                                                <button class="view-details-btn">View Details</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>TRX-2025-0577</td>
+                                            <td>PQR895THFS</td>
+                                            <td>8,750</td>
+                                            <td><span class="validation-badge validated">Validated</span></td>
+                                            <td>
+                                                <button class="view-details-btn">View Details</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>TRX-2025-0576</td>
+                                            <td>LMQ724WKGP</td>
+                                            <td>32,780</td>
+                                            <td><span class="validation-badge pending">Pending</span></td>
+                                            <td>
+                                                <button class="validate-now-btn">Validate Now</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>TRX-2025-0575</td>
+                                            <td>KJH234LMNP</td>
+                                            <td>21,450</td>
+                                            <td><span class="validation-badge failed">Failed</span></td>
+                                            <td>
+                                                <button class="fix-issues-btn">Fix Issues</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-section">
+                        <h2>Discrepancy Management</h2>
+                        <div class="discrepancy-controls">
+                            <div class="discrepancy-stats">
+                                <div class="stat-item critical">
+                                    <span class="stat-label">Critical Issues</span>
+                                    <span class="stat-value">3</span>
+                                </div>
+                                <div class="stat-item moderate">
+                                    <span class="stat-label">Moderate Issues</span>
+                                    <span class="stat-value">8</span>
+                                </div>
+                                <div class="stat-item minor">
+                                    <span class="stat-label">Minor Issues</span>
+                                    <span class="stat-value">14</span>
+                                </div>
+                            </div>
+
+                            <div class="discrepancy-actions">
+                                <button class="resolve-all-btn">Resolve All Minor</button>
+                                <button class="escalate-btn">Escalate Critical</button>
+                                <button class="configure-alerts-btn">Configure Alerts</button>
+                            </div>
+
+                            <div class="discrepancy-table-container">
+                                <table class="discrepancy-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Type</th>
+                                            <th>Transaction</th>
+                                            <th>Amount (KES.)</th>
+                                            <th>Severity</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>DSC-231</td>
+                                            <td>Amount Mismatch</td>
+                                            <td>TRX-2025-0542</td>
+                                            <td>5,400</td>
+                                            <td><span class="severity-badge moderate">Moderate</span></td>
+                                            <td>Open</td>
+                                            <td>
+                                                <button class="resolve-btn">Resolve</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>DSC-230</td>
+                                            <td>Duplicate Payment</td>
+                                            <td>TRX-2025-0538</td>
+                                            <td>12,750</td>
+                                            <td><span class="severity-badge critical">Critical</span></td>
+                                            <td>Open</td>
+                                            <td>
+                                                <button class="resolve-btn">Resolve</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>DSC-229</td>
+                                            <td>Verification Failed</td>
+                                            <td>TRX-2025-0535</td>
+                                            <td>3,240</td>
+                                            <td><span class="severity-badge minor">Minor</span></td>
+                                            <td>In Progress</td>
+                                            <td>
+                                                <button class="view-progress-btn">View Progress</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="revenue-reports">
+                    <div class="tab-section">
+                        <h2>Revenue Metrics</h2>
+                        <div class="date-range-controls">
+                            <div class="preset-ranges">
+                                <button class="range-btn active">This Month</button>
+                                <button class="range-btn">Last Month</button>
+                                <button class="range-btn">This Quarter</button>
+                                <button class="range-btn">This Year</button>
+                                <button class="range-btn">Custom</button>
+                            </div>
+                            <div class="custom-range-picker">
+                                <span class="date-label">From:</span>
+                                <input type="date" class="date-input">
+                                <span class="date-label">To:</span>
+                                <input type="date" class="date-input">
+                                <button class="apply-range-btn">Apply</button>
+                            </div>
+                        </div>
+
+                        <div class="revenue-dashboard">
+                            <div class="revenue-overview">
+                                <div class="revenue-card total">
+                                    <h3>Total Revenue</h3>
+                                    <span class="revenue-amount">KES. 3,542,895</span>
+                                    <span class="revenue-change positive">+12.5% from previous period</span>
+                                </div>
+                                <div class="revenue-card platform">
+                                    <h3>Platform Fee</h3>
+                                    <span class="revenue-amount">KES. 1,546,250</span>
+                                    <span class="revenue-change positive">+8.3% from previous period</span>
+                                </div>
+                                <div class="revenue-card transaction">
+                                    <h3>Transaction Fee</h3>
+                                    <span class="revenue-amount">KES. 985,430</span>
+                                    <span class="revenue-change positive">+15.2% from previous period</span>
+                                </div>
+                                <div class="revenue-card subscription">
+                                    <h3>Subscription Fee</h3>
+                                    <span class="revenue-amount">KES. 1,011,215</span>
+                                    <span class="revenue-change positive">+9.7% from previous period</span>
+                                </div>
+                            </div>
+
+                            <div class="revenue-charts">
+                                <div class="chart-container">
+                                    <h3>Revenue Breakdown</h3>
+                                    <div class="chart-placeholder">
+                                        Pie Chart: Revenue by Service Fee Type
+                                    </div>
+                                </div>
+                                <div class="chart-container">
+                                    <h3>Business Category Distribution</h3>
+                                    <div class="chart-placeholder">
+                                        Bar Chart: Revenue by Business Category
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-section">
+                        <h2>Growth Trends</h2>
+                        <div class="growth-chart-controls">
+                            <div class="chart-type-selector">
+                                <button class="chart-type-btn active">Monthly</button>
+                                <button class="chart-type-btn">Quarterly</button>
+                                <button class="chart-type-btn">Yearly</button>
+                            </div>
+                            <div class="comparison-selector">
+                                <label>
+                                    <input type="checkbox" class="comparison-checkbox">
+                                    Compare with previous period
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="growth-chart-container">
+                            <div class="chart-placeholder large">
+                                Line Chart: Revenue Growth Over Time
+                            </div>
+                        </div>
+
+                        <div class="growth-metrics">
+                            <div class="metric-card">
+                                <h3>YoY Growth</h3>
+                                <span class="metric-value">+24.7%</span>
+                                <div class="mini-chart-placeholder">
+                                    Mini Year Chart
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <h3>MoM Growth</h3>
+                                <span class="metric-value">+12.5%</span>
+                                <div class="mini-chart-placeholder">
+                                    Mini Month Chart
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Projected Growth</h3>
+                                <span class="metric-value">+18.2%</span>
+                                <div class="mini-chart-placeholder">
+                                    Mini Projection Chart
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trend-analysis-section">
+                            <h3>Trend Analysis</h3>
+                            <div class="analysis-cards">
+                                <div class="analysis-card">
+                                    <h4>Growth Drivers</h4>
+                                    <ul>
+                                        <li>Increased business onboarding (+42%)</li>
+                                        <li>Higher transaction volumes (+31%)</li>
+                                        <li>New service fee structure implementation</li>
+                                    </ul>
+                                </div>
+                                <div class="analysis-card">
+                                    <h4>Challenges</h4>
+                                    <ul>
+                                        <li>Seasonal decline in rural areas (-8%)</li>
+                                        <li>Competitive pricing pressure in urban markets</li>
+                                        <li>Regulatory compliance costs increased</li>
+                                    </ul>
+                                </div>
+                                <div class="analysis-card">
+                                    <h4>Opportunities</h4>
+                                    <ul>
+                                        <li>Corporate account expansion potential</li>
+                                        <li>New value-added services rollout</li>
+                                        <li>Geographic expansion to neighboring countries</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-section">
+                        <h2>Revenue Source Analysis</h2>
+                        <div class="source-analysis-controls">
+                            <div class="view-selector">
+                                <button class="view-btn active">Business</button>
+                                <button class="view-btn">Service Type</button>
+                                <button class="view-btn">Geographic</button>
+                                <button class="view-btn">Time Period</button>
+                            </div>
+                        </div>
+
+                        <div class="source-analysis-charts">
+                            <div class="chart-container large">
+                                <h3>Business Contribution</h3>
+                                <div class="chart-placeholder">
+                                    Bar Chart: Top 10 Businesses by Revenue
+                                </div>
+                            </div>
+
+                            <div class="chart-container">
+                                <h3>Service Type Breakdown</h3>
+                                <div class="chart-placeholder">
+                                    Pie Chart: Revenue by Service Type
+                                </div>
+                            </div>
+
+                            <div class="chart-container">
+                                <h3>Geographic Distribution</h3>
+                                <div class="chart-placeholder">
+                                    Map Chart: Revenue by Region
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="top-generators">
+                            <h3>Top Revenue Generators</h3>
+                            <table class="generators-table">
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Business Name</th>
+                                        <th>Revenue Generated (KES.)</th>
+                                        <th>% of Total</th>
+                                        <th>YoY Change</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Metro Cabs Ltd</td>
+                                        <td>425,670</td>
+                                        <td>12.0%</td>
+                                        <td class="positive">+24.5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>SafeRide Taxi Co.</td>
+                                        <td>387,950</td>
+                                        <td>10.9%</td>
+                                        <td class="positive">+18.7%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Urban Mobility Inc.</td>
+                                        <td>346,780</td>
+                                        <td>9.8%</td>
+                                        <td class="positive">+31.2%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>City Shuttle Services</td>
+                                        <td>289,450</td>
+                                        <td>8.2%</td>
+                                        <td class="positive">+15.3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Nairobi Express Movers</td>
+                                        <td>254,890</td>
+                                        <td>7.2%</td>
+                                        <td class="negative">-3.8%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="invoice-audits">
+                    <div class="tab-section">
+                        <h2>Invoice Review</h2>
+                        <div class="invoice-review-controls">
+                            <div class="search-filter-bar">
+                                <input type="text" class="search-input" placeholder="Search invoices...">
+                                <div class="status-filters">
+                                    <button class="filter-btn active">All</button>
+                                    <button class="filter-btn">Paid</button>
+                                    <button class="filter-btn">Pending</button>
+                                    <button class="filter-btn">Overdue</button>
+                                    <button class="filter-btn">Flagged</button>
+                                </div>
+                                <button class="advanced-search-btn">Advanced Search</button>
+                            </div>
+                        </div>
+
+                        <div class="invoice-table-container">
+                            <table class="invoice-table">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice #</th>
+                                        <th>Business</th>
+                                        <th>Issue Date</th>
+                                        <th>Due Date</th>
+                                        <th>Amount (KES.)</th>
+                                        <th>Status</th>
+                                        <th>Audit Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>INV-2025-0342</td>
+                                        <td>Shuttle Express Ltd</td>
+                                        <td>Mar 20, 2025</td>
+                                        <td>Apr 19, 2025</td>
+                                        <td>45,600</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td><span class="audit-badge verified">Verified</span></td>
+                                        <td>
+                                            <button class="view-invoice-btn">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INV-2025-0341</td>
+                                        <td>SafeRide Taxi Co.</td>
+                                        <td>Mar 19, 2025</td>
+                                        <td>Apr 18, 2025</td>
+                                        <td>32,780</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                        <td><span class="audit-badge pending">Pending</span></td>
+                                        <td>
+                                            <button class="view-invoice-btn">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INV-2025-0340</td>
+                                        <td>Urban Mobility Inc.</td>
+                                        <td>Mar 18, 2025</td>
+                                        <td>Apr 17, 2025</td>
+                                        <td>78,250</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td><span class="audit-badge flagged">Flagged</span></td>
+                                        <td>
+                                            <button class="view-invoice-btn">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INV-2025-0339</td>
+                                        <td>City Shuttle Services</td>
+                                        <td>Mar 15, 2025</td>
+                                        <td>Apr 14, 2025</td>
+                                        <td>21,450</td>
+                                        <td><span class="status-badge overdue">Overdue</span></td>
+                                        <td><span class="audit-badge pending">Pending</span></td>
+                                        <td>
+                                            <button class="view-invoice-btn">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INV-2025-0338</td>
+                                        <td>Nairobi Express Movers</td>
+                                        <td>Mar 14, 2025</td>
+                                        <td>Apr 13, 2025</td>
+                                        <td>56,890</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td><span class="audit-badge verified">Verified</span></td>
+                                        <td>
+                                            <button class="view-invoice-btn">View</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="pagination-controls">
+                            <button class="pagination-btn prev"><i class="fa-solid fa-chevron-left"></i>
+                                Previous</button>
+                            <span class="pagination-info">Page 1 of 18</span>
+                            <button class="pagination-btn next">Next <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="tab-section">
+                        <h2>Discrepancy Resolution</h2>
+                        <div class="discrepancy-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Flagged</span>
+                                <span class="stat-value">16</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">In Progress</span>
+                                <span class="stat-value">7</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Resolved</span>
+                                <span class="stat-value">9</span>
+                            </div>
+                        </div>
+
+                        <div class="issue-categories">
+                            <h3>Issue Categories</h3>
+                            <div class="category-bars">
+                                <div class="category-bar">
+                                    <span class="category-label">Amount Mismatch</span>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 45%;"></div>
+                                    </div>
+                                    <span class="category-count">7</span>
+                                </div>
+                                <div class="category-bar">
+                                    <span class="category-label">Missing Information</span>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 25%;"></div>
+                                    </div>
+                                    <span class="category-count">4</span>
+                                </div>
+                                <div class="category-bar">
+                                    <span class="category-label">Duplicate Invoice</span>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 19%;"></div>
+                                    </div>
+                                    <span class="category-count">3</span>
+                                </div>
+                                <div class="category-bar">
+                                    <span class="category-label">Service Fee Calculation</span>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 12%;"></div>
+                                    </div>
+                                    <span class="category-count">2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flagged-invoices-table">
+                            <h3>Flagged Invoices</h3>
+                            <table class="flagged-table">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice #</th>
+                                        <th>Issue Type</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>INV-2025-0340</td>
+                                        <td>Amount Mismatch</td>
+                                        <td>Invoice amount doesn't match transaction records</td>
+                                        <td><span class="resolution-badge open">Open</span></td>
+                                        <td>
+                                            <button class="resolve-btn">Resolve</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INV-2025-0337</td>
+                                        <td>Duplicate Invoice</td>
+                                        <td>Appears to be duplicate of INV-2025-0335</td>
+                                        <td><span class="resolution-badge in-progress">In Progress</span></td>
+                                        <td>
+                                            <button class="view-progress-btn">View Progress</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INV-2025-0331</td>
+                                        <td>Missing Information</td>
+                                        <td>Service details incomplete</td>
+                                        <td><span class="resolution-badge open">Open</span></td>
+                                        <td>
+                                            <button class="resolve-btn">Resolve</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="tab-section">
+                        <h2>Audit Trail</h2>
+                        <div class="audit-filter-controls">
+                            <div class="search-filter">
+                                <input type="text" class="search-input" placeholder="Search audit logs...">
+                                <select class="filter-select">
+                                    <option value="all">All Actions</option>
+                                    <option value="creation">Invoice Creation</option>
+                                    <option value="modification">Invoice Modification</option>
+                                    <option value="status">Status Change</option>
+                                    <option value="payment">Payment Record</option>
+                                    <option value="audit">Audit Action</option>
+                                </select>
+                                <select class="filter-select">
+                                    <option value="all">All Users</option>
+                                    <option value="system">System</option>
+                                    <option value="admin">Administrators</option>
+                                    <option value="finance">Finance Team</option>
+                                    <option value="business">Business Users</option>
+                                </select>
+                                <button class="filter-apply-btn">Apply Filters</button>
+                            </div>
+                        </div>
+
+                        <div class="audit-log-table-container">
+                            <table class="audit-log-table">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>User</th>
+                                        <th>Action</th>
+                                        <th>Invoice #</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mar 26, 2025 14:32:45</td>
+                                        <td>John Doe (Admin)</td>
+                                        <td>Status Change</td>
+                                        <td>INV-2025-0342</td>
+                                        <td>Changed status from "Pending" to "Paid"</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mar 26, 2025 11:15:22</td>
+                                        <td>System</td>
+                                        <td>Payment Record</td>
+                                        <td>INV-2025-0342</td>
+                                        <td>M-Pesa payment recorded (TRX-2025-0578)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mar 25, 2025 16:47:08</td>
+                                        <td>Alice Wanjiku (Finance)</td>
+                                        <td>Audit Action</td>
+                                        <td>INV-2025-0340</td>
+                                        <td>Flagged for amount mismatch</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mar 24, 2025 09:12:33</td>
+                                        <td>System</td>
+                                        <td>Invoice Creation</td>
+                                        <td>INV-2025-0342</td>
+                                        <td>Invoice generated for Shuttle Express Ltd</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mar 23, 2025 15:28:56</td>
+                                        <td>James Maina (Finance)</td>
+                                        <td>Invoice Modification</td>
+                                        <td>INV-2025-0339</td>
+                                        <td>Modified line items - updated service quantities</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="audit-report-actions">
+                            <button class="generate-audit-report-btn">Generate Audit Report</button>
+                            <button class="export-log-btn">Export Audit Log</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="payment-reconciliation">
+                    <div class="tab-section">
+                        <h2>Payment Matching</h2>
+                        <div class="matching-controls">
+                            <div class="control-buttons">
+                                <button class="auto-match-btn">Auto-Match All</button>
+                                <button class="manual-match-btn">Manual Match Mode</button>
+                                <button class="refresh-data-btn">Refresh Data</button>
+                            </div>
+                            <div class="matching-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Matched Today</span>
+                                    <span class="stat-value">87</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Unmatched</span>
+                                    <span class="stat-value">23</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Processed</span>
+                                    <span class="stat-value">110</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="unmatched-payments-container">
+                            <h3>Unmatched Payments</h3>
+                            <table class="unmatched-table">
+                                <thead>
+                                    <tr>
+                                        <th>Payment ID</th>
+                                        <th>M-Pesa Code</th>
+                                        <th>Date & Time</th>
+                                        <th>Amount (KES.)</th>
+                                        <th>Phone Number</th>
+                                        <th>Potential Matches</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>PMT-45678</td>
+                                        <td>QLS7D46GHY</td>
+                                        <td>Mar 26, 2025 10:23 AM</td>
+                                        <td>15,400</td>
+                                        <td>+254722XXXXXX</td>
+                                        <td>3 possible invoices</td>
+                                        <td>
+                                            <button class="match-payment-btn">Match</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PMT-45677</td>
+                                        <td>PQR895THFS</td>
+                                        <td>Mar 26, 2025 9:45 AM</td>
+                                        <td>8,750</td>
+                                        <td>+254733XXXXXX</td>
+                                        <td>1 possible invoice</td>
+                                        <td>
+                                            <button class="match-payment-btn">Match</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PMT-45676</td>
+                                        <td>LMQ724WKGP</td>
+                                        <td>Mar 26, 2025 9:12 AM</td>
+                                        <td>32,780</td>
+                                        <td>+254712XXXXXX</td>
+                                        <td>No match found</td>
+                                        <td>
+                                            <button class="manual-match-btn">Manual Match</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="tab-section">
+                        <h2>M-Pesa Verification</h2>
+                        <div class="mpesa-controls">
+                            <div class="import-controls">
+                                <button class="import-statement-btn">Import M-Pesa Statement</button>
+                                <button class="api-import-btn">API Integration Import</button>
+                                <button class="manual-entry-btn">Manual Entry</button>
+                            </div>
+
+                            <div class="verification-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Verified Today</span>
+                                    <span class="stat-value">342</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Failed Verification</span>
+                                    <span class="stat-value">12</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Success Rate</span>
+                                    <span class="stat-value">96.6%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="verification-process">
+                            <h3>Verification Process</h3>
+                            <div class="verification-steps">
+                                <div class="step-item completed">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Import Transactions</h4>
+                                        <p>Import M-Pesa transactions via API, CSV upload, or manual entry</p>
+                                    </div>
+                                </div>
+                                <div class="step-item completed">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Transaction ID Verification</h4>
+                                        <p>Validate M-Pesa transaction codes against Safaricom records</p>
+                                    </div>
+                                </div>
+                                <div class="step-item active">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Amount Verification</h4>
+                                        <p>Confirm transaction amounts match expected payments</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Timestamp Validation</h4>
+                                        <p>Verify transaction times align with platform records</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="recent-verifications">
+                            <h3>Recent Verifications</h3>
+                            <table class="verification-table">
+                                <thead>
+                                    <tr>
+                                        <th>Transaction ID</th>
+                                        <th>M-Pesa Code</th>
+                                        <th>Time</th>
+                                        <th>Amount (KES.)</th>
+                                        <th>Status</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TRX-2025-0578</td>
+                                        <td>QLS7D46GHY</td>
+                                        <td>10:23 AM</td>
+                                        <td>15,400</td>
+                                        <td><span class="verification-badge success">Verified</span></td>
+                                        <td>All checks passed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TRX-2025-0577</td>
+                                        <td>PQR895THFS</td>
+                                        <td>9:45 AM</td>
+                                        <td>8,750</td>
+                                        <td><span class="verification-badge success">Verified</span></td>
+                                        <td>All checks passed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TRX-2025-0576</td>
+                                        <td>LMQ724WKGP</td>
+                                        <td>9:12 AM</td>
+                                        <td>32,780</td>
+                                        <td><span class="verification-badge warning">Pending</span></td>
+                                        <td>Awaiting timestamp validation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TRX-2025-0575</td>
+                                        <td>KJH234LMNP</td>
+                                        <td>8:47 AM</td>
+                                        <td>21,450</td>
+                                        <td><span class="verification-badge error">Failed</span></td>
+                                        <td>Amount mismatch</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="tab-section">
+                        <h2>Reconciliation Reports</h2>
+                        <div class="reconciliation-overview">
+                            <div class="overview-card">
+                                <h3>Today's Summary</h3>
+                                <div class="summary-stats">
+                                    <div class="stat-row">
+                                        <span class="stat-label">Total Transactions</span>
+                                        <span class="stat-value">456</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="stat-label">Reconciled</span>
+                                        <span class="stat-value">433</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="stat-label">Unreconciled</span>
+                                        <span class="stat-value">23</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="stat-label">Reconciliation Rate</span>
+                                        <span class="stat-value">95%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-container">
+                                <h3>Weekly Reconciliation</h3>
+                                <div class="chart-placeholder">
+                                    Line Chart: Reconciliation Rate Over Past Week
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="unreconciled-section">
+                            <h3>Unreconciled Transactions</h3>
+                            <div class="issue-categories">
+                                <div class="category-item">
+                                    <span class="category-label">Missing M-Pesa Code</span>
+                                    <span class="category-count">8</span>
+                                </div>
+                                <div class="category-item">
+                                    <span class="category-label">Amount Mismatch</span>
+                                    <span class="category-count">7</span>
+                                </div>
+                                <div class="category-item">
+                                    <span class="category-label">Duplicate Payment</span>
+                                    <span class="category-count">5</span>
+                                </div>
+                                <div class="category-item">
+                                    <span class="category-label">Other Issues</span>
+                                    <span class="category-count">3</span>
+                                </div>
+                            </div>
+
+                            <table class="unreconciled-table">
+                                <thead>
+                                    <tr>
+                                        <th>Transaction ID</th>
+                                        <th>Issue Type</th>
+                                        <th>Amount (KES.)</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TRX-2025-0576</td>
+                                        <td>Missing M-Pesa Code</td>
+                                        <td>32,780</td>
+                                        <td>Mar 26, 2025</td>
+                                        <td>
+                                            <button class="resolve-btn">Resolve</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>TRX-2025-0575</td>
+                                        <td>Amount Mismatch</td>
+                                        <td>21,450</td>
+                                        <td>Mar 26, 2025</td>
+                                        <td>
+                                            <button class="resolve-btn">Resolve</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>TRX-2025-0572</td>
+                                        <td>Duplicate Payment</td>
+                                        <td>18,900</td>
+                                        <td>Mar 25, 2025</td>
+                                        <td>
+                                            <button class="resolve-btn">Resolve</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="export-controls">
+                            <button class="generate-report-btn">Generate Full Report</button>
+                            <button class="export-unreconciled-btn">Export Unreconciled List</button>
+                            <button class="schedule-report-btn">Schedule Daily Report</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="financial-reports-export">
+                    <div class="tab-section">
+                        <h2>Custom Report Generation</h2>
+                        <div class="report-generator">
+                            <div class="report-options">
+                                <div class="option-group">
+                                    <h3>Report Type</h3>
+                                    <div class="option-items">
+                                        <label class="option-item">
+                                            <input type="radio" name="report-type" checked>
+                                            <span>Revenue Report</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="radio" name="report-type">
+                                            <span>Transaction Report</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="radio" name="report-type">
+                                            <span>Invoice Report</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="radio" name="report-type">
+                                            <span>Reconciliation Report</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="option-group">
+                                    <h3>Date Range</h3>
+                                    <div class="option-items date-range">
+                                        <div class="preset-ranges">
+                                            <button class="range-btn active">This Month</button>
+                                            <button class="range-btn">Last Month</button>
+                                            <button class="range-btn">This Quarter</button>
+                                            <button class="range-btn">This Year</button>
+                                            <button class="range-btn">Custom</button>
+                                        </div>
+                                        <div class="custom-range-inputs">
+                                            <div class="date-input-group">
+                                                <label>Start Date:</label>
+                                                <input type="date" class="date-input">
+                                            </div>
+                                            <div class="date-input-group">
+                                                <label>End Date:</label>
+                                                <input type="date" class="date-input">
+                                            </div>
+                                        </div>
+                                        <div class="comparison-option">
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>Include comparison with previous period</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="option-group">
+                                    <h3>Data Fields</h3>
+                                    <div class="option-items field-selection">
+                                        <div class="field-column">
+                                            <label class="field-item">
+                                                <input type="checkbox" checked>
+                                                <span>Total Revenue</span>
+                                            </label>
+                                            <label class="field-item">
+                                                <input type="checkbox" checked>
+                                                <span>Revenue by Service Type</span>
+                                            </label>
+                                            <label class="field-item">
+                                                <input type="checkbox" checked>
+                                                <span>Business Breakdown</span>
+                                            </label>
+                                            <label class="field-item">
+                                                <input type="checkbox">
+                                                <span>Geographic Distribution</span>
+                                            </label>
+                                        </div>
+                                        <div class="field-column">
+                                            <label class="field-item">
+                                                <input type="checkbox">
+                                                <span>Transaction Details</span>
+                                            </label>
+                                            <label class="field-item">
+                                                <input type="checkbox" checked>
+                                                <span>Growth Metrics</span>
+                                            </label>
+                                            <label class="field-item">
+                                                <input type="checkbox">
+                                                <span>Invoice Summary</span>
+                                            </label>
+                                            <label class="field-item">
+                                                <input type="checkbox">
+                                                <span>Payment Methods</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="field-ordering">
+                                        <h4>Field Order & Grouping</h4>
+                                        <button class="field-config-btn">Configure</button>
+                                    </div>
+                                </div>
+
+                                <div class="option-group">
+                                    <h3>Filter Criteria</h3>
+                                    <div class="option-items filter-criteria">
+                                        <div class="filter-row">
+                                            <label>Business Filter:</label>
+                                            <select class="filter-select">
+                                                <option value="all">All Businesses</option>
+                                                <option value="metro">Metro Cabs Ltd</option>
+                                                <option value="saferide">SafeRide Taxi Co.</option>
+                                                <option value="urban">Urban Mobility Inc.</option>
+                                                <option value="city">City Shuttle Services</option>
+                                            </select>
+                                        </div>
+                                        <div class="filter-row">
+                                            <label>Amount Range:</label>
+                                            <div class="range-inputs">
+                                                <input type="text" placeholder="Min (KES.)" class="amount-input">
+                                                <span>to</span>
+                                                <input type="text" placeholder="Max (KES.)" class="amount-input">
+                                            </div>
+                                        </div>
+                                        <div class="filter-row">
+                                            <label>Status Filter:</label>
+                                            <select class="filter-select">
+                                                <option value="all">All Statuses</option>
+                                                <option value="completed">Completed</option>
+                                                <option value="pending">Pending</option>
+                                                <option value="failed">Failed</option>
+                                            </select>
+                                        </div>
+                                        <div class="filter-row">
+                                            <button class="advanced-filters-btn">Advanced Filters</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="report-actions">
+                                <button class="generate-report-btn">Generate Report</button>
+                                <button class="save-template-btn">Save Template</button>
+                                <button class="schedule-report-btn">Schedule Report</button>
+                                <button class="cancel-btn">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-section">
+                        <h2>Export Formats</h2>
+                        <div class="export-format-options">
+                            <div class="format-cards">
+                                <div class="format-card">
+                                    <div class="format-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                                    <h3>PDF Format</h3>
+                                    <p>Professional documents ideal for presentation and printing</p>
+                                    <div class="format-options">
+                                        <label class="option-item">
+                                            <input type="checkbox" checked>
+                                            <span>Include Cover Page</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="checkbox" checked>
+                                            <span>Add Table of Contents</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="checkbox" checked>
+                                            <span>Include Charts & Graphs</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="checkbox">
+                                            <span>Include Raw Data Tables</span>
+                                        </label>
+                                    </div>
+                                    <button class="configure-format-btn">Configure PDF</button>
+                                </div>
+
+                                <div class="format-card">
+                                    <div class="format-icon"><i class="fa-solid fa-file-excel"></i></div>
+                                    <h3>Excel Format</h3>
+                                    <p>Detailed spreadsheets for further analysis and calculations</p>
+                                    <div class="format-options">
+                                        <label class="option-item">
+                                            <input type="checkbox" checked>
+                                            <span>Include Formulas</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="checkbox" checked>
+                                            <span>Add Data Visualization</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="checkbox" checked>
+                                            <span>Create Pivot Tables</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="checkbox" checked>
+                                            <span>Multiple Worksheets</span>
+                                        </label>
+                                    </div>
+                                    <button class="configure-format-btn">Configure Excel</button>
+                                </div>
+
+                                <div class="format-card">
+                                    <div class="format-icon"><i class="fa-solid fa-file-csv"></i></div>
+                                    <h3>CSV Format</h3>
+                                    <p>Simple data export for compatibility with any system</p>
+                                    <div class="format-options">
+                                        <label class="option-item">
+                                            <input type="checkbox" checked>
+                                            <span>Include Headers</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="checkbox">
+                                            <span>Separate Files by Category</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="checkbox" checked>
+                                            <span>Data Type Formatting</span>
+                                        </label>
+                                        <label class="option-item">
+                                            <input type="checkbox">
+                                            <span>Include Metadata</span>
+                                        </label>
+                                    </div>
+                                    <button class="configure-format-btn">Configure CSV</button>
+                                </div>
+                            </div>
+
+                            <div class="format-preference">
+                                <h3>Default Format</h3>
+                                <div class="preference-selection">
+                                    <label class="format-option">
+                                        <input type="radio" name="default-format" checked>
+                                        <span>PDF</span>
+                                    </label>
+                                    <label class="format-option">
+                                        <input type="radio" name="default-format">
+                                        <span>Excel</span>
+                                    </label>
+                                    <label class="format-option">
+                                        <input type="radio" name="default-format">
+                                        <span>CSV</span>
+                                    </label>
+                                    <button class="save-preference-btn">Save Preference</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-section">
+                        <h2>Scheduled Reports</h2>
+                        <div class="scheduled-reports-controls">
+                            <button class="create-schedule-btn">Create New Schedule</button>
+                            <button class="manage-recipients-btn">Manage Recipients</button>
+                            <button class="view-history-btn">View History</button>
+                        </div>
+
+                        <div class="scheduled-reports-table-container">
+                            <table class="scheduled-reports-table">
+                                <thead>
+                                    <tr>
+                                        <th>Report Name</th>
+                                        <th>Type</th>
+                                        <th>Frequency</th>
+                                        <th>Recipients</th>
+                                        <th>Next Delivery</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Monthly Revenue Summary</td>
+                                        <td>Revenue Report</td>
+                                        <td>Monthly (1st)</td>
+                                        <td>5 recipients</td>
+                                        <td>Apr 01, 2025</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>
+                                            <button class="edit-schedule-btn">Edit</button>
+                                            <button class="run-now-btn">Run Now</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Weekly Transaction Summary</td>
+                                        <td>Transaction Report</td>
+                                        <td>Weekly (Monday)</td>
+                                        <td>3 recipients</td>
+                                        <td>Apr 01, 2025</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>
+                                            <button class="edit-schedule-btn">Edit</button>
+                                            <button class="run-now-btn">Run Now</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Daily Reconciliation Report</td>
+                                        <td>Reconciliation Report</td>
+                                        <td>Daily (6PM)</td>
+                                        <td>2 recipients</td>
+                                        <td>Mar 27, 2025</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>
+                                            <button class="edit-schedule-btn">Edit</button>
+                                            <button class="run-now-btn">Run Now</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quarterly Business Analysis</td>
+                                        <td>Revenue Report</td>
+                                        <td>Quarterly</td>
+                                        <td>7 recipients</td>
+                                        <td>Jul 01, 2025</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>
+                                            <button class="edit-schedule-btn">Edit</button>
+                                            <button class="run-now-btn">Run Now</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="recipient-management-preview">
+                            <h3>Recipient Groups</h3>
+                            <div class="recipient-groups">
+                                <div class="recipient-group">
+                                    <h4>Executive Team</h4>
+                                    <span class="recipient-count">3 members</span>
+                                </div>
+                                <div class="recipient-group">
+                                    <h4>Finance Department</h4>
+                                    <span class="recipient-count">5 members</span>
+                                </div>
+                                <div class="recipient-group">
+                                    <h4>Business Analysts</h4>
+                                    <span class="recipient-count">4 members</span>
+                                </div>
+                                <div class="recipient-group">
+                                    <h4>External Auditors</h4>
+                                    <span class="recipient-count">2 members</span>
+                                </div>
+                            </div>
+                            <button class="manage-groups-btn">Manage Groups</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Dark Mode Toggle -->
+            <div class="theme-toggle">
+                <button class="dark-mode-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" class="social-icon">
+                    <i class="fa-brands fa-x"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-icon">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Site Link -->
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/">Visit Corporate Website</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Link -->
+    <script src="finance.js"></script>
+</body>
+
+</html>

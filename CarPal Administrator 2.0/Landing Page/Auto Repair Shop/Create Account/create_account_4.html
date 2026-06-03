@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your CarPal account to streamline your auto repair shop operations">
+
+    <title>CarPal | Create Account</title>
+
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="create_account.css">
+
+    <script>
+        // Sample data for demonstration
+        const sampleData = {
+            businessName: "AutoFix Pro",
+            registrationNumber: "BRN123456",
+            shopType: "general",
+            email: "info@autofixpro.com",
+            phone: "+254712345678",
+            address: "123 Mechanic Street, Nairobi",
+            ownerName: "John Doe",
+            ownerEmail: "john@autofixpro.com"
+        };
+
+        // Form validation and navigation
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize form with sample data if needed
+            if (window.location.search.includes('demo=true')) {
+                populateFormWithSampleData();
+            }
+
+            // Store form data
+            let formData = {};
+
+            function validateSection(sectionId) {
+                const section = document.getElementById(sectionId);
+                const inputs = section.querySelectorAll('input, select');
+                let isValid = true;
+
+                inputs.forEach(input => {
+                    if (input.required && !input.value) {
+                        isValid = false;
+                        showError(input, 'This field is required');
+                    } else if (input.type === 'email' && input.value) {
+                        if (!validateEmail(input.value)) {
+                            isValid = false;
+                            showError(input, 'Please enter a valid email address');
+                        }
+                    } else if (input.type === 'tel' && input.value) {
+                        if (!validatePhone(input.value)) {
+                            isValid = false;
+                            showError(input, 'Please enter a valid phone number');
+                        }
+                    }
+                });
+
+                return isValid;
+            }
+
+            function showError(input, message) {
+                const errorDiv = input.nextElementSibling;
+                if (errorDiv && errorDiv.classList.contains('error-message')) {
+                    errorDiv.textContent = message;
+                    errorDiv.style.display = 'block';
+                } else {
+                    const error = document.createElement('div');
+                    error.className = 'error-message';
+                    error.textContent = message;
+                    input.parentNode.insertBefore(error, input.nextSibling);
+                }
+            }
+
+            function validateEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            function validatePhone(phone) {
+                return /^\+?[\d\s-]{10,}$/.test(phone);
+            }
+
+            function navigateSection(current, target) {
+                if (target !== 'businessDetails' && !validateSection(current)) {
+                    return;
+                }
+
+                // Store form data
+                const currentSection = document.getElementById(current);
+                const inputs = currentSection.querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    formData[input.id] = input.value;
+                });
+
+                // Hide current and show target section
+                document.getElementById(current).classList.remove('active');
+                document.getElementById(target).classList.add('active');
+            }
+
+            function populateFormWithSampleData() {
+                Object.keys(sampleData).forEach(key => {
+                    const input = document.getElementById(key);
+                    if (input) {
+                        input.value = sampleData[key];
+                    }
+                });
+            }
+
+            // Add form submission handler
+            document.querySelector('form#legal').addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!validateSection('legal')) {
+                    return;
+                }
+
+                // Collect all form data
+                const finalFormData = { ...formData };
+                const legalInputs = document.querySelectorAll('form#legal input[type="checkbox"]');
+                legalInputs.forEach(input => {
+                    finalFormData[input.name] = input.checked;
+                });
+
+                // Here you would typically send the data to your server
+                console.log('Form submitted with data:', finalFormData);
+
+                // Show success message
+                alert('Account created successfully! Redirecting to dashboard...');
+                // Redirect to dashboard (comment out for demo)
+                // window.location.href = '/dashboard';
+            });
+
+            // Expose functions to window for button onclick handlers
+            window.navigateSection = navigateSection;
+            window.validateSection = validateSection;
+        });
+    </script>
+</head>
+
+<body>
+
+    <div> <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+            class="logo">
+            <!-- Brand Logo -->
+            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                alt="CarPal Logo" class="logo">
+        </a></div>
+
+    <div class="container">
+
+
+        <!-- Legal Details Section -->
+        <form id="legal" class="active">
+            <h1>Create Your Account</h1>
+            <h2>Let’s Make It Official</h2>
+            <p>Almost there! <br> By agreeing to our Terms of Service and Privacy Policy, you join a community committed
+                to
+                innovation and excellence. Review and confirm to start enjoying CarPal’s seamless solutions.</p>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the <a href="#">Data Policy</a>.
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the <a href="#">Privacy Policy</a>.
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the <a href="#">Terms of Service</a>.
+                </label>
+            </div>
+
+            <!-- Additional form groups... -->
+
+
+            <div class="navigation-buttons">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\Sales_Personnel_Confirmation\sales_personnel_confirmation.html">
+                    <button type="button"><i class="fas fa-create-account"></i> Back</button>
+                </a>
+
+                <button type="submit" class="cta-button"><a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop\Dashboard\dashboard.html">Create
+                        My Account</a></button>
+            </div>
+
+            <div class="login-redirect">
+                <p>Already have an account? <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\Log In\log_in.html"
+                        class="login-link">Log In Here</a></p>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - CarPal Auto Repair Shop</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon" href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #FFD700;
+            --primary-black: #000000;
+            --charcoal-gray: #2D2D2D;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+            color: var(--charcoal-gray);
+        }
+
+        /* Layout */
+        .container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            background-color: var(--primary-black);
+            color: var(--white);
+            padding: 2rem 1rem;
+            position: fixed;
+            width: 250px;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .logo {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 150px;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 1rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--primary-yellow);
+            color: var(--primary-black);
+        }
+
+        .nav-link i {
+            margin-right: 10px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem;
+            margin-left: 250px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        /* Settings Sections */
+        .settings-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .settings-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-card h3 {
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .btn {
+            background-color: var(--primary-yellow);
+            color: var(--primary-black);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-black);
+            color: var(--white);
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .dark-mode-toggle {
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background: var(--charcoal-gray);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Popups */
+        .popup {
+            display: none;
+            position: absolute;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            z-index: 1000;
+        }
+
+        .user-popup {
+            top: 100%;
+            right: 0;
+            width: 200px;
+        }
+
+        .popup-item {
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--charcoal-gray);
+            transition: background-color 0.3s;
+        }
+
+        .popup-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .popup-item i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png" alt="CarPal Logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Dashboard/dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Service Hub/service_hub.html" class="nav-link">
+                        <i class="fas fa-tools"></i>
+                        Service Hub
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-In/check_in.html" class="nav-link">
+                        <i class="fas fa-car"></i>
+                        Vehicle Check-In
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Billings & Payments/billings.html" class="nav-link">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        Billings & Payments
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle History/history.html" class="nav-link">
+                        <i class="fas fa-history"></i>
+                        Vehicle History
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-Out/check_out.html" class="nav-link">
+                        <i class="fas fa-check-circle"></i>
+                        Vehicle Check-Out
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Settings/settings.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Settings</h1>
+                <div class="user-profile" onclick="toggleUserPopup()">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png" alt="Profile Picture">
+                    <span>John Doe</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <!-- User Popup -->
+                <div class="popup user-popup" id="userPopup">
+                    <a href="C:/Users/nderu/Documents/Development/Product/CarPal/Auto Repair Shop/Landing Page/landing_page.html" class="popup-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Log Out
+                    </a>
+                </div>
+            </header>
+
+            <div class="settings-container">
+                <!-- Profile Settings -->
+                <div class="settings-card">
+                    <h3>Profile Settings</h3>
+                    <form id="profileForm">
+                        <!-- Profile Picture Section -->
+                        <div class="profile-picture-section">
+                            <div class="current-picture">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png" alt="Profile Picture" id="profilePicture">
+                            </div>
+                            <div class="picture-controls">
+                                <label for="pictureUpload" class="btn btn-secondary">Upload New Picture</label>
+                                <input type="file" id="pictureUpload" accept="image/*" style="display: none;">
+                                <button type="button" class="btn btn-danger" onclick="removeProfilePicture()">Remove Picture</button>
+                            </div>
+                        </div>
+
+                        <!-- Personal Details -->
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" value="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username *</label>
+                            <input type="text" id="username" class="form-control" value="johndoe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" value="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-control" value="+254 712 345 678" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" class="form-control" value="1990-01-01">
+                        </div>
+
+                        <!-- Job Information -->
+                        <div class="form-section">
+                            <h4>Job Information</h4>
+                            <div class="form-group">
+                                <label for="jobTitle">Job Title</label>
+                                <input type="text" id="jobTitle" class="form-control" value="Auto Repair Technician">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company/Organization</label>
+                                <input type="text" id="company" class="form-control" value="CarPal Auto Repair">
+                            </div>
+                            <div class="form-group">
+                                <label for="bio">Professional Bio</label>
+                                <textarea id="bio" class="form-control" rows="4">Experienced auto repair technician specializing in diagnostic and repair services.</textarea>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Links -->
+                        <div class="form-section">
+                            <h4>Social Media Links</h4>
+                            <div class="form-group">
+                                <label for="facebook"><i class="fab fa-facebook"></i> Facebook Profile</label>
+                                <input type="url" id="facebook" class="form-control" placeholder="https://facebook.com/username">
+                            </div>
+                            <div class="form-group">
+                                <label for="twitter"><i class="fab fa-twitter"></i> Twitter Profile</label>
+                                <input type="url" id="twitter" class="form-control" placeholder="https://twitter.com/username">
+                            </div>
+                            <div class="form-group">
+                                <label for="linkedin"><i class="fab fa-linkedin"></i> LinkedIn Profile</label>
+                                <input type="url" id="linkedin" class="form-control" placeholder="https://linkedin.com/in/username">
+                            </div>
+                            <div class="form-group">
+                                <label for="website"><i class="fas fa-globe"></i> Personal Website</label>
+                                <input type="url" id="website" class="form-control" placeholder="https://yourwebsite.com">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn">Save Changes</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </form>
+                </div>
+
+                <style>
+                    
+                </style>
+
+                <!-- Security Settings -->
+                <div class="settings-card">
+                    <h3>Security</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="current-password">Current Password</label>
+                            <input type="password" id="current-password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password">New Password</label>
+                            <input type="password" id="new-password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm New Password</label>
+                            <input type="password" id="confirm-password" class="form-control">
+                        </div>
+                        <button type="submit" class="btn">Update Password</button>
+                    </form>
+                </div>
+
+                <!-- Administrator Settings -->
+                <div class="settings-card">
+                    <h3>Administrator Settings</h3>
+                    <p>Access advanced settings and user management. Requires verification.</p>
+                    <button class="btn" onclick="requestAdminAccess()">Access Admin Settings</button>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="copyright">
+                        <a href="https://citruslabs.co.ke/" target="_blank" style="color: var(--white); text-decoration: none; margin-right: 1rem;">
+                            citruslabs.co.ke
+                        </a>
+                        <span>© 2025 Citrus Labs. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Toggle user popup
+        function toggleUserPopup() {
+            const popup = document.getElementById('userPopup');
+            popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Close popup when clicking outside
+        document.addEventListener('click', function(event) {
+            const popup = document.getElementById('userPopup');
+            const userProfile = document.querySelector('.user-profile');
+            
+            if (!userProfile.contains(event.target) && !popup.contains(event.target)) {
+                popup.style.display = 'none';
+            }
+        });
+
+        // Toggle dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('.dark-mode-toggle i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+
+        // Request admin access
+        function requestAdminAccess() {
+            // Simulate sending verification email
+            alert('A verification code has been sent to your email address.');
+            
+            // In a real implementation, this would trigger an API call to send the verification email
+            const verificationCode = prompt('Please enter the verification code:');
+            
+            if (verificationCode) {
+                // Here you would validate the code against the backend
+                // For demo purposes, we'll just show an alert
+                alert('Verification successful! Redirecting to Administrator Settings...');
+            }
+        }
+
+        // Form submission handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would handle the form submission to the backend
+                // For demo purposes, we'll just show an alert
+                alert('Changes saved successfully!');
+            });
+        });
+
+        // Initialize tooltips
+        const tooltips = document.querySelectorAll('[data-tooltip]');
+        tooltips.forEach(tooltip => {
+            tooltip.addEventListener('mouseover', function(e) {
+                const tip = document.createElement('div');
+                tip.className = 'tooltip';
+                tip.textContent = this.dataset.tooltip;
+                document.body.appendChild(tip);
+                
+                const rect = this.getBoundingClientRect();
+                tip.style.top = rect.bottom + 'px';
+                tip.style.left = rect.left + 'px';
+            });
+            
+            tooltip.addEventListener('mouseout', function() {
+                const tips = document.querySelectorAll('.tooltip');
+                tips.forEach(tip => tip.remove());
+            });
+        });
+
+        // Add dark mode styles dynamically
+        const darkModeStyles = `
+            body.dark-mode {
+                background-color: var(--charcoal-gray);
+                color: var(--white);
+            }
+
+            body.dark-mode .settings-card {
+                background-color: var(--primary-black);
+                color: var(--white);
+            }
+
+            body.dark-mode .form-control {
+                background-color: var(--charcoal-gray);
+                color: var(--white);
+                border-color: #444;
+            }
+
+            body.dark-mode .btn {
+                background-color: var(--primary-yellow);
+                color: var(--primary-black);
+            }
+
+            body.dark-mode .popup {
+                background-color: var(--primary-black);
+                color: var(--white);
+            }
+
+            body.dark-mode .popup-item {
+                color: var(--white);
+            }
+
+            body.dark-mode .popup-item:hover {
+                background-color: var(--charcoal-gray);
+            }
+        `;
+
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = darkModeStyles;
+        document.head.appendChild(styleSheet);
+    </script>
+</body>
+</html>

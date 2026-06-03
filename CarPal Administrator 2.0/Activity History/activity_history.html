@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity History | CarPal by Citrus</title>
+
+    <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="activity_history.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="header-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                            alt="CarPal by Citrus Logo">
+                    </a>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="main-nav">
+                    <ul>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\User Management\users.html">Users</a>
+                        </li>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Business Management\businesses.html">Businesses</a>
+                        </li>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Financial Oversight\finance.html">Finance</a>
+                        </li>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Security Tools\security.html">Security</a>
+                        </li>
+                        <li>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Customer Support Tools\support.html">Support</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- User Controls -->
+                <div class="user-controls">
+                    <!-- Notifications -->
+                    <div class="notifications">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Notifications\notifications.html">
+                            <i class="fa-solid fa-bell notification-icon"></i>
+                            <span class="notification-count">3</span>
+                        </a>
+                    </div>
+
+                    <!-- User Profile Dropdown -->
+                    <div class="user-profile-dropdown">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-icon">
+                        <div class="dropdown-content">
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\My Profile\my_profile.html">My
+                                Profile</a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Activity History\activity_history.html"
+                                class="active">Activity
+                                History</a>
+                            <a
+                                href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">Log
+                                Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Users Page Title -->
+            <div class="page-title">
+                <h1>Activity History</h1>
+                <p>Track all user activities and system changes</p>
+            </div>
+
+
+
+            <!-- Activity Dashboard -->
+            <section class="activity-dashboard">
+                <!-- Filter Panel -->
+                <div class="filter-panel">
+                    <div class="filter-section">
+                        <h3>Filter Activities</h3>
+                        <div class="filter-controls">
+                            <!-- Date Range Selector -->
+                            <div class="date-range-selector">
+                                <label for="dateRangeToggle">Date Range:</label>
+                                <button id="dateRangeToggle" class="date-range-toggle">
+                                    <span>Last 7 Days</span>
+                                    <i class="fas fa-calendar"></i>
+                                </button>
+
+                                <!-- Date Range Picker (Hidden by default) -->
+                                <div id="dateRangePicker" class="date-range-picker">
+                                    <div class="predefined-ranges">
+                                        <h4>Predefined Ranges</h4>
+                                        <ul>
+                                            <li><button class="range-btn" data-range="today">Today</button></li>
+                                            <li><button class="range-btn" data-range="yesterday">Yesterday</button></li>
+                                            <li><button class="range-btn active" data-range="last7days">Last 7
+                                                    Days</button></li>
+                                            <li><button class="range-btn" data-range="last30days">Last 30 Days</button>
+                                            </li>
+                                            <li><button class="range-btn" data-range="thismonth">This Month</button>
+                                            </li>
+                                            <li><button class="range-btn" data-range="lastmonth">Last Month</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="custom-range">
+                                        <h4>Custom Range</h4>
+                                        <div class="date-inputs">
+                                            <div class="date-field">
+                                                <label for="startDate">Start Date:</label>
+                                                <input type="date" id="startDate" name="startDate">
+                                            </div>
+                                            <div class="date-field">
+                                                <label for="endDate">End Date:</label>
+                                                <input type="date" id="endDate" name="endDate">
+                                            </div>
+                                        </div>
+
+                                        <div class="time-options">
+                                            <div class="checkbox-field">
+                                                <input type="checkbox" id="includeTime" name="includeTime">
+                                                <label for="includeTime">Include Time</label>
+                                            </div>
+
+                                            <div class="time-inputs">
+                                                <div class="time-field">
+                                                    <label for="startTime">Start Time:</label>
+                                                    <input type="time" id="startTime" name="startTime" disabled>
+                                                </div>
+                                                <div class="time-field">
+                                                    <label for="endTime">End Time:</label>
+                                                    <input type="time" id="endTime" name="endTime" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="range-actions">
+                                        <button class="apply-range-btn">Apply</button>
+                                        <button class="cancel-range-btn">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Category Filter -->
+                            <div class="filter-dropdown category-filter">
+                                <label for="categoryFilter">Category:</label>
+                                <select id="categoryFilter" name="categoryFilter">
+                                    <option value="all">All Categories</option>
+                                    <option value="login">Login/Logout</option>
+                                    <option value="user">User Management</option>
+                                    <option value="business">Business Management</option>
+                                    <option value="financial">Financial Actions</option>
+                                    <option value="support">Support Actions</option>
+                                    <option value="system">System Changes</option>
+                                </select>
+                            </div>
+
+                            <!-- User Filter -->
+                            <div class="filter-dropdown user-filter">
+                                <label for="userFilter">User:</label>
+                                <select id="userFilter" name="userFilter">
+                                    <option value="all">All Users</option>
+                                    <option value="admin">Admin Users</option>
+                                    <option value="business">Business Users</option>
+                                    <option value="customer">Customers</option>
+                                    <option value="system">System</option>
+                                </select>
+                            </div>
+
+                            <!-- Module Filter -->
+                            <div class="filter-dropdown module-filter">
+                                <label for="moduleFilter">Module:</label>
+                                <select id="moduleFilter" name="moduleFilter">
+                                    <option value="all">All Modules</option>
+                                    <option value="users">Users</option>
+                                    <option value="businesses">Businesses</option>
+                                    <option value="billing">Billing</option>
+                                    <option value="payments">Payments</option>
+                                    <option value="support">Support</option>
+                                    <option value="settings">Settings</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="filter-actions">
+                            <button class="apply-filters-btn">
+                                <i class="fas fa-filter"></i>
+                                Apply Filters
+                            </button>
+                            <button class="reset-filters-btn">
+                                <i class="fas fa-undo"></i>
+                                Reset Filters
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Search Section -->
+                    <div class="search-section">
+                        <div class="search-bar">
+                            <input type="text" id="searchKeyword" placeholder="Search activities...">
+                            <button class="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+
+                        <button class="advanced-search-toggle">
+                            <i class="fas fa-sliders-h"></i>
+                            Advanced Search
+                        </button>
+
+                        <!-- Advanced Search Panel (Hidden by default) -->
+                        <div id="advancedSearchPanel" class="advanced-search-panel">
+                            <h3>Advanced Search</h3>
+
+                            <div class="search-criteria">
+                                <div class="search-field">
+                                    <label for="advKeyword">Keyword:</label>
+                                    <input type="text" id="advKeyword" name="advKeyword" placeholder="Enter keyword...">
+                                </div>
+
+                                <div class="search-field operator-field">
+                                    <label for="searchOperator">Operator:</label>
+                                    <select id="searchOperator" name="searchOperator">
+                                        <option value="contains">Contains</option>
+                                        <option value="exact">Exact Match</option>
+                                        <option value="startsWith">Starts With</option>
+                                        <option value="endsWith">Ends With</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="search-criteria date-criteria">
+                                <div class="search-field">
+                                    <label for="advStartDate">Start Date:</label>
+                                    <input type="date" id="advStartDate" name="advStartDate">
+                                </div>
+
+                                <div class="search-field">
+                                    <label for="advEndDate">End Date:</label>
+                                    <input type="date" id="advEndDate" name="advEndDate">
+                                </div>
+                            </div>
+
+                            <div class="search-criteria">
+                                <div class="search-field">
+                                    <label for="advUserSelect">User:</label>
+                                    <select id="advUserSelect" name="advUserSelect">
+                                        <option value="all">All Users</option>
+                                        <option value="admin">Administrators</option>
+                                        <option value="business">Business Users</option>
+                                        <option value="customer">Customers</option>
+                                        <option value="system">System</option>
+                                    </select>
+                                </div>
+
+                                <div class="search-field">
+                                    <label for="advActivityType">Activity Type:</label>
+                                    <select id="advActivityType" name="advActivityType">
+                                        <option value="all">All Activities</option>
+                                        <option value="create">Create</option>
+                                        <option value="update">Update</option>
+                                        <option value="delete">Delete</option>
+                                        <option value="login">Login</option>
+                                        <option value="logout">Logout</option>
+                                        <option value="payment">Payment</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="saved-searches">
+                                <h4>Saved Searches</h4>
+                                <div class="saved-search-controls">
+                                    <select id="savedSearchSelect">
+                                        <option value="">-- Select Saved Search --</option>
+                                        <option value="login-attempts">Login Attempts (Last 30 Days)</option>
+                                        <option value="payment-activities">Payment Activities (This Month)</option>
+                                        <option value="admin-changes">Admin User Changes</option>
+                                    </select>
+
+                                    <div class="saved-search-buttons">
+                                        <button class="load-search-btn" disabled>
+                                            <i class="fas fa-folder-open"></i>
+                                            Load
+                                        </button>
+                                        <button class="save-search-btn">
+                                            <i class="fas fa-save"></i>
+                                            Save Current
+                                        </button>
+                                        <button class="delete-search-btn" disabled>
+                                            <i class="fas fa-trash"></i>
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="search-actions">
+                                <button class="execute-search-btn">
+                                    <i class="fas fa-search"></i>
+                                    Search
+                                </button>
+                                <button class="clear-form-btn">
+                                    <i class="fas fa-eraser"></i>
+                                    Clear Form
+                                </button>
+                                <button class="cancel-search-btn">
+                                    <i class="fas fa-times"></i>
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Timeline and Export Options -->
+                <div class="activity-container">
+                    <div class="timeline-header">
+                        <h2>Activity Timeline</h2>
+
+                        <div class="bulk-selection">
+                            <label class="bulk-checkbox">
+                                <input type="checkbox" id="selectAllActivities">
+                                <span>Select All</span>
+                            </label>
+
+                            <div class="bulk-actions" id="bulkActionsMenu" style="display: none;">
+                                <span class="selected-count">0 items selected</span>
+                                <button class="bulk-export-btn">
+                                    <i class="fas fa-file-export"></i>
+                                    Export Selected
+                                </button>
+                                <button class="bulk-delete-btn">
+                                    <i class="fas fa-trash"></i>
+                                    Delete Selected
+                                </button>
+                                <button class="bulk-cancel-btn">
+                                    <i class="fas fa-times"></i>
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="export-options">
+                            <button class="export-btn" data-format="csv">
+                                <i class="fas fa-file-csv"></i>
+                                CSV
+                            </button>
+                            <button class="export-btn" data-format="pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                PDF
+                            </button>
+                            <button class="export-btn" data-format="excel">
+                                <i class="fas fa-file-excel"></i>
+                                Excel
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Activity List -->
+                    <div class="activity-list">
+                        <!-- Activity Entry -->
+                        <div class="activity-entry">
+                            <div class="entry-checkbox">
+                                <input type="checkbox" id="activity1" class="activity-checkbox">
+                                <label for="activity1"></label>
+                            </div>
+
+                            <div class="entry-timestamp">
+                                <span class="date">Mar 28, 2025</span>
+                                <span class="time">09:45 AM</span>
+                            </div>
+
+                            <div class="entry-icon login-action">
+                                <i class="fas fa-sign-in-alt"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="user-info">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="User Avatar" class="user-avatar-small">
+                                    <span class="user-name">John Doe</span>
+                                    <span class="user-role">Administrator</span>
+                                </div>
+
+                                <div class="activity-description">
+                                    <p>User logged in successfully</p>
+                                    <span class="module-label">Authentication</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Activity Entry -->
+                        <div class="activity-entry">
+                            <div class="entry-checkbox">
+                                <input type="checkbox" id="activity2" class="activity-checkbox">
+                                <label for="activity2"></label>
+                            </div>
+
+                            <div class="entry-timestamp">
+                                <span class="date">Mar 28, 2025</span>
+                                <span class="time">09:50 AM</span>
+                            </div>
+
+                            <div class="entry-icon user-action">
+                                <i class="fas fa-user-edit"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="user-info">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="User Avatar" class="user-avatar-small">
+                                    <span class="user-name">John Doe</span>
+                                    <span class="user-role">Administrator</span>
+                                </div>
+
+                                <div class="activity-description">
+                                    <p>Updated user account for Jane Smith (ID: USR20250328-0042)</p>
+                                    <span class="module-label">User Management</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Activity Entry -->
+                        <div class="activity-entry">
+                            <div class="entry-checkbox">
+                                <input type="checkbox" id="activity3" class="activity-checkbox">
+                                <label for="activity3"></label>
+                            </div>
+
+                            <div class="entry-timestamp">
+                                <span class="date">Mar 28, 2025</span>
+                                <span class="time">10:15 AM</span>
+                            </div>
+
+                            <div class="entry-icon business-action">
+                                <i class="fas fa-building"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="user-info">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="User Avatar" class="user-avatar-small">
+                                    <span class="user-name">John Doe</span>
+                                    <span class="user-role">Administrator</span>
+                                </div>
+
+                                <div class="activity-description">
+                                    <p>Approved business verification for Acme Transports Ltd (ID: BIZ20250320-0018)</p>
+                                    <span class="module-label">Business Management</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Activity Entry -->
+                        <div class="activity-entry">
+                            <div class="entry-checkbox">
+                                <input type="checkbox" id="activity4" class="activity-checkbox">
+                                <label for="activity4"></label>
+                            </div>
+
+                            <div class="entry-timestamp">
+                                <span class="date">Mar 28, 2025</span>
+                                <span class="time">11:30 AM</span>
+                            </div>
+
+                            <div class="entry-icon payment-action">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="user-info">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="User Avatar" class="user-avatar-small">
+                                    <span class="user-name">John Doe</span>
+                                    <span class="user-role">Administrator</span>
+                                </div>
+
+                                <div class="activity-description">
+                                    <p>Processed payment refund for transaction #TRX20250327-9842</p>
+                                    <span class="module-label">Financial Management</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Activity Entry -->
+                        <div class="activity-entry">
+                            <div class="entry-checkbox">
+                                <input type="checkbox" id="activity5" class="activity-checkbox">
+                                <label for="activity5"></label>
+                            </div>
+
+                            <div class="entry-timestamp">
+                                <span class="date">Mar 27, 2025</span>
+                                <span class="time">03:15 PM</span>
+                            </div>
+
+                            <div class="entry-icon system-action">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="user-info">
+                                    <span class="system-user">System</span>
+                                </div>
+
+                                <div class="activity-description">
+                                    <p>System update deployed: CarPal v2.4.2</p>
+                                    <span class="module-label">System</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Activity Entry -->
+                        <div class="activity-entry">
+                            <div class="entry-checkbox">
+                                <input type="checkbox" id="activity6" class="activity-checkbox">
+                                <label for="activity6"></label>
+                            </div>
+
+                            <div class="entry-timestamp">
+                                <span class="date">Mar 27, 2025</span>
+                                <span class="time">02:45 PM</span>
+                            </div>
+
+                            <div class="entry-icon settings-action">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="user-info">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="User Avatar" class="user-avatar-small">
+                                    <span class="user-name">John Doe</span>
+                                    <span class="user-role">Administrator</span>
+                                </div>
+
+                                <div class="activity-description">
+                                    <p>Updated system notification settings</p>
+                                    <span class="module-label">Settings</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Activity Entry -->
+                        <div class="activity-entry">
+                            <div class="entry-checkbox">
+                                <input type="checkbox" id="activity7" class="activity-checkbox">
+                                <label for="activity7"></label>
+                            </div>
+
+                            <div class="entry-timestamp">
+                                <span class="date">Mar 27, 2025</span>
+                                <span class="time">10:30 AM</span>
+                            </div>
+
+                            <div class="entry-icon support-action">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+
+                            <div class="entry-details">
+                                <div class="user-info">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="User Avatar" class="user-avatar-small">
+                                    <span class="user-name">John Doe</span>
+                                    <span class="user-role">Administrator</span>
+                                </div>
+
+                                <div class="activity-description">
+                                    <p>Resolved support ticket #ST20250327-1234 for Fast Courier Services</p>
+                                    <span class="module-label">Support</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-actions">
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination Controls -->
+                    <div class="pagination">
+                        <div class="pagination-info">
+                            <span>Showing 1-7 of 245 activities</span>
+                        </div>
+
+                        <div class="pagination-controls">
+                            <button class="pagination-btn prev-btn" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+
+                            <ul class="page-numbers">
+                                <li class="page-number active">1</li>
+                                <li class="page-number">2</li>
+                                <li class="page-number">3</li>
+                                <li class="page-number">4</li>
+                                <li class="page-number">5</li>
+                                <li class="page-number">...</li>
+                                <li class="page-number">35</li>
+                            </ul>
+
+                            <button class="pagination-btn next-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="items-per-page">
+                            <label for="perPageSelector">Items per page:</label>
+                            <select id="perPageSelector">
+                                <option value="10">10</option>
+                                <option value="25" selected>25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity Details Section (Hidden by default) -->
+            <section class="activity-details" id="activityDetails" style="display: none;">
+                <div class="details-container">
+                    <div class="details-header">
+                        <button class="back-btn">
+                            <i class="fas fa-arrow-left"></i>
+                            <span>Back to Timeline</span>
+                        </button>
+
+                        <div class="header-info">
+                            <div class="header-main">
+                                <h2>Activity Details</h2>
+                                <div class="activity-id">ID: ACT20250328-0023</div>
+                            </div>
+
+                            <div class="header-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>March 28, 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>09:50 AM</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-tag"></i>
+                                    <span>User Management</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="details-content">
+                        <div class="user-section">
+                            <h3>User Information</h3>
+                            <div class="user-card">
+                                <div class="user-avatar-container">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                        alt="User Avatar" class="user-avatar-large">
+                                </div>
+                                <div class="user-details">
+                                    <h4>John Doe</h4>
+                                    <div class="user-meta">
+                                        <div class="meta-item">
+                                            <i class="fas fa-id-badge"></i>
+                                            <span>ID: USR20250101-0001</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-user-tag"></i>
+                                            <span>Role: Administrator</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-envelope"></i>
+                                            <span>Email: john.doe@example.com</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-section">
+                            <h3>Activity Information</h3>
+                            <div class="activity-info">
+                                <div class="info-item">
+                                    <span class="item-label">Activity Type:</span>
+                                    <span class="item-value">User Update</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="item-label">Description:</span>
+                                    <span class="item-value">Updated user account for Jane Smith (ID:
+                                        USR20250328-0042)</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="item-label">Affected Module:</span>
+                                    <span class="item-value">User Management</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="item-label">IP Address:</span>
+                                    <span class="item-value">192.168.1.45</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="item-label">Device:</span>
+                                    <span class="item-value">Desktop - Chrome 120.0.6099.130 (Windows)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="changes-section">
+                            <h3>Data Changes</h3>
+                            <div class="before-after">
+                                <div class="before-container">
+                                    <h4>Before</h4>
+                                    <div class="data-display">
+                                        <div class="data-item">
+                                            <span class="item-label">Email:</span>
+                                            <span class="item-value">jane.smith@oldmail.com</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="item-label">Phone:</span>
+                                            <span class="item-value">+1 (555) 123-4567</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="item-label">Role:</span>
+                                            <span class="item-value">Business User</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="item-label">Status:</span>
+                                            <span class="item-value">Active</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="item-label">Two-Factor Auth:</span>
+                                            <span class="item-value">Disabled</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="after-container">
+                                    <h4>After</h4>
+                                    <div class="data-display">
+                                        <div class="data-item">
+                                            <span class="item-label">Email:</span>
+                                            <span class="item-value">jane.smith@newmail.com</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="item-label">Phone:</span>
+                                            <span class="item-value">+1 (555) 987-6543</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="item-label">Role:</span>
+                                            <span class="item-value">Business Administrator</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="item-label">Status:</span>
+                                            <span class="item-value">Active</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="item-label">Two-Factor Auth:</span>
+                                            <span class="item-value">Enabled</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="related-section">
+                            <h3>Related Information</h3>
+                            <div class="related-info">
+                                <div class="related-item">
+                                    <h4>Affected User</h4>
+                                    <div class="related-user">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="User Avatar" class="user-avatar-small">
+                                        <div class="user-info">
+                                            <div class="user-name">Jane Smith</div>
+                                            <div class="user-id">ID: USR20250328-0042</div>
+                                            <a href="#" class="view-user-link">View User Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="related-item">
+                                    <h4>Associated Business</h4>
+                                    <div class="related-business">
+                                        <i class="fas fa-building"></i>
+                                        <div class="business-info">
+                                            <div class="business-name">Fast Courier Services</div>
+                                            <div class="business-id">ID: BIZ20250101-0015</div>
+                                            <a href="#" class="view-business-link">View Business Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="related-item">
+                                    <h4>Related Activities</h4>
+                                    <ul class="related-activities">
+                                        <li>
+                                            <a href="#">
+                                                <span class="activity-time">Mar 25, 2025 - 11:30 AM</span>
+                                                <span class="activity-desc">User Jane Smith last login</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="activity-time">Mar 20, 2025 - 09:15 AM</span>
+                                                <span class="activity-desc">Business Fast Courier Services
+                                                    verified</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="activity-time">Mar 15, 2025 - 02:45 PM</span>
+                                                <span class="activity-desc">User Jane Smith created</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="additional-context">
+                            <h3>System Notes</h3>
+                            <div class="system-notes">
+                                <p>This account update was performed by system administrator following the business role
+                                    upgrade request submitted on March 26, 2025. The change included enabling two-factor
+                                    authentication as part of the security protocol for business administrator accounts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="details-actions">
+                        <button class="export-activity-btn">
+                            <i class="fas fa-file-export"></i>
+                            <span>Export Activity</span>
+                        </button>
+                        <button class="view-module-btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>View User Management</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Export Activity Log Modal (Hidden by default) -->
+            <div class="export-modal" id="exportModal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Export Activity Log</h2>
+                        <button class="close-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form class="export-form">
+                            <div class="form-section">
+                                <h3>Export Format</h3>
+                                <div class="format-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="exportFormat" value="csv" checked>
+                                        <span>CSV File</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="exportFormat" value="pdf">
+                                        <span>PDF Document</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="exportFormat" value="excel">
+                                        <span>Excel Spreadsheet</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Data Options</h3>
+                                <div class="form-group">
+                                    <label>Date Range</label>
+                                    <div class="date-range-picker-small">
+                                        <div class="date-field">
+                                            <label for="exportStartDate">Start Date:</label>
+                                            <input type="date" id="exportStartDate" name="exportStartDate">
+                                        </div>
+                                        <div class="date-field">
+                                            <label for="exportEndDate">End Date:</label>
+                                            <input type="date" id="exportEndDate" name="exportEndDate">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Activity Types</label>
+                                    <div class="checkbox-options">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Login/Logout</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>User Management</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Business Management</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Financial Actions</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Support Actions</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>System Changes</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>User Selection</label>
+                                    <select class="users-dropdown">
+                                        <option value="all">All Users</option>
+                                        <option value="admin">Administrators Only</option>
+                                        <option value="business">Business Users Only</option>
+                                        <option value="customer">Customers Only</option>
+                                        <option value="system">System Activities Only</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fields to Include</label>
+                                    <div class="checkbox-options fields-options">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Activity ID</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Timestamp</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>User Information</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Activity Description</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Module</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox">
+                                            <span>IP Address</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox">
+                                            <span>Device Info</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox">
+                                            <span>Data Changes</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Delivery Options</h3>
+                                <div class="delivery-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="deliveryOption" value="download" checked>
+                                        <span>Download Directly</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="deliveryOption" value="email">
+                                        <span>Send via Email</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="deliveryOption" value="schedule">
+                                        <span>Schedule Regular Export</span>
+                                    </label>
+                                </div>
+
+                                <div class="email-options" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="emailAddress">Email Address:</label>
+                                        <input type="email" id="emailAddress" placeholder="Enter email address...">
+                                    </div>
+                                </div>
+
+                                <div class="schedule-options" style="display: none;">
+                                    <div class="form-group">
+                                        <label>Frequency:</label>
+                                        <select id="exportFrequency">
+                                            <option value="daily">Daily</option>
+                                            <option value="weekly">Weekly</option>
+                                            <option value="monthly">Monthly</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="scheduleEmail">Delivery Email:</label>
+                                        <input type="email" id="scheduleEmail" placeholder="Enter email address...">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="cancel-btn">
+                            <i class="fas fa-times"></i>
+                            <span>Cancel</span>
+                        </button>
+                        <button class="generate-btn">
+                            <i class="fas fa-file-export"></i>
+                            <span>Generate Export</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="theme-toggle">
+                    <button id="darkModeToggle" class="dark-mode-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" class="social-link">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <div class="corporate-link">
+                    <a href="https://citruslabs.co.ke/" target="_blank">citruslabs.co.ke</a>
+                </div>
+
+                <div class="copyright">
+                    &copy; 2025 Citrus Labs. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Export Selection Confirmation Dialog (Hidden by default) -->
+    <div class="confirmation-dialog" id="exportConfirmDialog" style="display: none;">
+        <div class="dialog-content">
+            <h3>Export Selected Activities</h3>
+            <p>You are about to export <span class="export-count">3</span> selected activities.</p>
+            <p>What format would you like to export in?</p>
+
+            <div class="dialog-options">
+                <button class="dialog-option" data-format="csv">
+                    <i class="fas fa-file-csv"></i>
+                    <span>CSV</span>
+                </button>
+                <button class="dialog-option" data-format="pdf">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>PDF</span>
+                </button>
+                <button class="dialog-option" data-format="excel">
+                    <i class="fas fa-file-excel"></i>
+                    <span>Excel</span>
+                </button>
+            </div>
+
+            <div class="dialog-actions">
+                <button class="cancel-btn">Cancel</button>
+                <button class="proceed-btn">Proceed</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Dialog (Hidden by default) -->
+    <div class="confirmation-dialog" id="deleteConfirmDialog" style="display: none;">
+        <div class="dialog-content">
+            <h3>Delete Selected Activities</h3>
+            <p>You are about to delete <span class="delete-count">3</span> selected activities.</p>
+            <p class="warning-text">This action cannot be undone.</p>
+
+            <div class="dialog-actions">
+                <button class="cancel-btn">Cancel</button>
+                <button class="delete-confirm-btn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript file -->
+    <script src="activity_history.js"></script>
+</body>
+
+</html>

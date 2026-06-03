@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal by Citrus - User Management</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="users.css">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                        alt="CarPal by Citrus Logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\User Management\users.html">Users</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Business Management\businesses.html">Businesses</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Financial Oversight\finance.html">Finance</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Security Tools\security.html">Security</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Customer Support Tools\support.html">Support</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Controls -->
+            <div class="user-controls">
+                <!-- Notifications -->
+                <div class="notifications">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Notifications\notifications.html">
+                        <i class="fa-solid fa-bell notification-icon"></i>
+                        <span class="notification-count">3</span>
+                    </a>
+                </div>
+
+                <!-- User Profile Dropdown -->
+                <div class="user-profile-dropdown">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                        alt="User Profile" class="profile-icon">
+                    <div class="dropdown-content">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\My Profile\my_profile.html">My
+                            Profile</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Activity History\activity_history.html">Activity
+                            History</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">Log
+                            Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Users Page Title -->
+        <div class="page-header">
+            <h1>User Management</h1>
+        </div>
+
+        <!-- Users Overview Section -->
+        <section class="users-overview">
+            <div class="stats-cards">
+                <!-- User Statistics Cards -->
+                <div class="stat-card total-users">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-value">1,247</div>
+                        <div class="stat-label">Total Users</div>
+                    </div>
+                </div>
+                <div class="stat-card active-users">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-value">1,058</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                </div>
+                <div class="stat-card suspended-users">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-user-clock"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-value">95</div>
+                        <div class="stat-label">Suspended Users</div>
+                    </div>
+                </div>
+                <div class="stat-card inactive-users">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-user-slash"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-value">94</div>
+                        <div class="stat-label">Inactive Users</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions Panel -->
+            <div class="quick-actions">
+                <button id="addUserBtn" class="btn primary-btn">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Add User
+                </button>
+                <button id="importUsersBtn" class="btn secondary-btn">
+                    <i class="fa-solid fa-file-import"></i>
+                    Import Users
+                </button>
+                <button id="exportUsersBtn" class="btn secondary-btn">
+                    <i class="fa-solid fa-file-export"></i>
+                    Export Users
+                </button>
+            </div>
+        </section>
+
+        <!-- User Tabs and Filters -->
+        <section class="users-tabs-section">
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="administrator-users">Administrator Users</button>
+                <button class="tab-btn" data-tab="business-users">Business Users</button>
+            </div>
+
+            <div class="search-filter">
+                <div class="search-container">
+                    <input type="text" id="userSearchInput" placeholder="Search by name, email, or role...">
+                    <button id="searchBtn">
+                        <i class="fa-solid fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="statusFilter">Status:</label>
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="suspended">Suspended</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="dateFilter">Date Created:</label>
+                        <select id="dateFilter">
+                            <option value="all">All Time</option>
+                            <option value="today">Today</option>
+                            <option value="last7days">Last 7 Days</option>
+                            <option value="last30days">Last 30 Days</option>
+                            <option value="last90days">Last 90 Days</option>
+                            <option value="custom">Custom Range</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sortFilter">Sort By:</label>
+                        <select id="sortFilter">
+                            <option value="nameAsc">Name (A-Z)</option>
+                            <option value="nameDesc">Name (Z-A)</option>
+                            <option value="dateDesc">Date Created (Newest)</option>
+                            <option value="dateAsc">Date Created (Oldest)</option>
+                            <option value="lastLoginDesc">Last Login (Recent)</option>
+                            <option value="lastLoginAsc">Last Login (Oldest)</option>
+                        </select>
+                    </div>
+                    <button id="applyFiltersBtn" class="btn secondary-btn">Apply Filters</button>
+                    <button id="resetFiltersBtn" class="btn outline-btn">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Users List Section -->
+        <section class="users-list-section">
+            <div class="tab-content active" id="administrator-users">
+                <div class="users-table-container">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Last Login</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Administrator User Entry 1 -->
+                            <tr class="user-entry">
+                                <td class="user-identity">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="John Mwangi" class="user-avatar">
+                                    <span class="user-name">John Mwangi</span>
+                                </td>
+                                <td class="user-email">john.mwangi@citruslabs.co.ke</td>
+                                <td class="user-role">Super Admin</td>
+                                <td class="user-status">
+                                    <span class="status-indicator active">Active</span>
+                                </td>
+                                <td class="user-last-login">2025-03-28 09:42 AM</td>
+                                <td class="user-actions">
+                                    <button class="action-menu-btn">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <div class="action-menu">
+                                        <button class="action-item view-profile" data-user-id="ADM001">
+                                            <i class="fa-solid fa-user"></i> View Profile
+                                        </button>
+                                        <button class="action-item edit-user" data-user-id="ADM001">
+                                            <i class="fa-solid fa-pen-to-square"></i> Edit User
+                                        </button>
+                                        <button class="action-item reset-password" data-user-id="ADM001">
+                                            <i class="fa-solid fa-key"></i> Reset Password
+                                        </button>
+                                        <button class="action-item suspend-user" data-user-id="ADM001">
+                                            <i class="fa-solid fa-ban"></i> Suspend User
+                                        </button>
+                                        <button class="action-item delete-user" data-user-id="ADM001">
+                                            <i class="fa-solid fa-trash"></i> Delete User
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Administrator User Entry 2 -->
+                            <tr class="user-entry">
+                                <td class="user-identity">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Jane Njoroge" class="user-avatar">
+                                    <span class="user-name">Jane Njoroge</span>
+                                </td>
+                                <td class="user-email">jane.njoroge@citruslabs.co.ke</td>
+                                <td class="user-role">Admin</td>
+                                <td class="user-status">
+                                    <span class="status-indicator active">Active</span>
+                                </td>
+                                <td class="user-last-login">2025-03-27 15:23 PM</td>
+                                <td class="user-actions">
+                                    <button class="action-menu-btn">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <div class="action-menu">
+                                        <button class="action-item view-profile" data-user-id="ADM002">
+                                            <i class="fa-solid fa-user"></i> View Profile
+                                        </button>
+                                        <button class="action-item edit-user" data-user-id="ADM002">
+                                            <i class="fa-solid fa-pen-to-square"></i> Edit User
+                                        </button>
+                                        <button class="action-item reset-password" data-user-id="ADM002">
+                                            <i class="fa-solid fa-key"></i> Reset Password
+                                        </button>
+                                        <button class="action-item suspend-user" data-user-id="ADM002">
+                                            <i class="fa-solid fa-ban"></i> Suspend User
+                                        </button>
+                                        <button class="action-item delete-user" data-user-id="ADM002">
+                                            <i class="fa-solid fa-trash"></i> Delete User
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Administrator User Entry 3 -->
+                            <tr class="user-entry">
+                                <td class="user-identity">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Alice Wambui" class="user-avatar">
+                                    <span class="user-name">Alice Wambui</span>
+                                </td>
+                                <td class="user-email">alice.wambui@citruslabs.co.ke</td>
+                                <td class="user-role">Support Manager</td>
+                                <td class="user-status">
+                                    <span class="status-indicator suspended">Suspended</span>
+                                </td>
+                                <td class="user-last-login">2025-03-15 11:05 AM</td>
+                                <td class="user-actions">
+                                    <button class="action-menu-btn">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <div class="action-menu">
+                                        <button class="action-item view-profile" data-user-id="ADM003">
+                                            <i class="fa-solid fa-user"></i> View Profile
+                                        </button>
+                                        <button class="action-item edit-user" data-user-id="ADM003">
+                                            <i class="fa-solid fa-pen-to-square"></i> Edit User
+                                        </button>
+                                        <button class="action-item reset-password" data-user-id="ADM003">
+                                            <i class="fa-solid fa-key"></i> Reset Password
+                                        </button>
+                                        <button class="action-item reactivate-user" data-user-id="ADM003">
+                                            <i class="fa-solid fa-user-check"></i> Reactivate User
+                                        </button>
+                                        <button class="action-item delete-user" data-user-id="ADM003">
+                                            <i class="fa-solid fa-trash"></i> Delete User
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Administrator User Entry 4 -->
+                            <tr class="user-entry">
+                                <td class="user-identity">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Bob Kamau" class="user-avatar">
+                                    <span class="user-name">Bob Kamau</span>
+                                </td>
+                                <td class="user-email">bob.kamau@citruslabs.co.ke</td>
+                                <td class="user-role">Finance Manager</td>
+                                <td class="user-status">
+                                    <span class="status-indicator active">Active</span>
+                                </td>
+                                <td class="user-last-login">2025-03-27 08:12 AM</td>
+                                <td class="user-actions">
+                                    <button class="action-menu-btn">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <div class="action-menu">
+                                        <button class="action-item view-profile" data-user-id="ADM004">
+                                            <i class="fa-solid fa-user"></i> View Profile
+                                        </button>
+                                        <button class="action-item edit-user" data-user-id="ADM004">
+                                            <i class="fa-solid fa-pen-to-square"></i> Edit User
+                                        </button>
+                                        <button class="action-item reset-password" data-user-id="ADM004">
+                                            <i class="fa-solid fa-key"></i> Reset Password
+                                        </button>
+                                        <button class="action-item suspend-user" data-user-id="ADM004">
+                                            <i class="fa-solid fa-ban"></i> Suspend User
+                                        </button>
+                                        <button class="action-item delete-user" data-user-id="ADM004">
+                                            <i class="fa-solid fa-trash"></i> Delete User
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Administrator User Entry 5 -->
+                            <tr class="user-entry">
+                                <td class="user-identity">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Charlie Omondi" class="user-avatar">
+                                    <span class="user-name">Charlie Omondi</span>
+                                </td>
+                                <td class="user-email">charlie.omondi@citruslabs.co.ke</td>
+                                <td class="user-role">Support Agent</td>
+                                <td class="user-status">
+                                    <span class="status-indicator inactive">Inactive</span>
+                                </td>
+                                <td class="user-last-login">2025-01-05 14:40 PM</td>
+                                <td class="user-actions">
+                                    <button class="action-menu-btn">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <div class="action-menu">
+                                        <button class="action-item view-profile" data-user-id="ADM005">
+                                            <i class="fa-solid fa-user"></i> View Profile
+                                        </button>
+                                        <button class="action-item edit-user" data-user-id="ADM005">
+                                            <i class="fa-solid fa-pen-to-square"></i> Edit User
+                                        </button>
+                                        <button class="action-item reset-password" data-user-id="ADM005">
+                                            <i class="fa-solid fa-key"></i> Reset Password
+                                        </button>
+                                        <button class="action-item reactivate-user" data-user-id="ADM005">
+                                            <i class="fa-solid fa-user-check"></i> Reactivate User
+                                        </button>
+                                        <button class="action-item delete-user" data-user-id="ADM005">
+                                            <i class="fa-solid fa-trash"></i> Delete User
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <div class="pagination-info">Showing 1-5 of 42 items</div>
+                    <div class="pagination-controls">
+                        <button class="pagination-btn" disabled>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="pagination-btn page-number active">1</button>
+                        <button class="pagination-btn page-number">2</button>
+                        <button class="pagination-btn page-number">3</button>
+                        <button class="pagination-btn page-number">4</button>
+                        <button class="pagination-btn page-number">5</button>
+                        <button class="pagination-btn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="business-users">
+                <div class="users-table-container">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Business</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Last Login</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Business User Entry 1 -->
+                            <tr class="user-entry">
+                                <td class="user-identity">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="David Kioko" class="user-avatar">
+                                    <span class="user-name">David Kioko</span>
+                                </td>
+                                <td class="user-email">david.kioko@metrocabs.co.ke</td>
+                                <td class="user-business">MetroCabs Ltd</td>
+                                <td class="user-role">Business Admin</td>
+                                <td class="user-status">
+                                    <span class="status-indicator active">Active</span>
+                                </td>
+                                <td class="user-last-login">2025-03-28 08:15 AM</td>
+                                <td class="user-actions">
+                                    <button class="action-menu-btn">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <div class="action-menu">
+                                        <button class="action-item view-profile" data-user-id="BUS001">
+                                            <i class="fa-solid fa-user"></i> View Profile
+                                        </button>
+                                        <button class="action-item edit-user" data-user-id="BUS001">
+                                            <i class="fa-solid fa-pen-to-square"></i> Edit User
+                                        </button>
+                                        <button class="action-item reset-password" data-user-id="BUS001">
+                                            <i class="fa-solid fa-key"></i> Reset Password
+                                        </button>
+                                        <button class="action-item suspend-user" data-user-id="BUS001">
+                                            <i class="fa-solid fa-ban"></i> Suspend User
+                                        </button>
+                                        <button class="action-item delete-user" data-user-id="BUS001">
+                                            <i class="fa-solid fa-trash"></i> Delete User
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Business User Entry 2 -->
+                            <tr class="user-entry">
+                                <td class="user-identity">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Eva Wanjiku" class="user-avatar">
+                                    <span class="user-name">Eva Wanjiku</span>
+                                </td>
+                                <td class="user-email">eva.wanjiku@safaritransport.co.ke</td>
+                                <td class="user-business">Safari Transport Co.</td>
+                                <td class="user-role">Business Admin</td>
+                                <td class="user-status">
+                                    <span class="status-indicator suspended">Suspended</span>
+                                </td>
+                                <td class="user-last-login">2025-03-10 11:30 AM</td>
+                                <td class="user-actions">
+                                    <button class="action-menu-btn">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <div class="action-menu">
+                                        <button class="action-item view-profile" data-user-id="BUS002">
+                                            <i class="fa-solid fa-user"></i> View Profile
+                                        </button>
+                                        <button class="action-item edit-user" data-user-id="BUS002">
+                                            <i class="fa-solid fa-pen-to-square"></i> Edit User
+                                        </button>
+                                        <button class="action-item reset-password" data-user-id="BUS002">
+                                            <i class="fa-solid fa-key"></i> Reset Password
+                                        </button>
+                                        <button class="action-item reactivate-user" data-user-id="BUS002">
+                                            <i class="fa-solid fa-user-check"></i> Reactivate User
+                                        </button>
+                                        <button class="action-item delete-user" data-user-id="BUS002">
+                                            <i class="fa-solid fa-trash"></i> Delete User
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Business User Entry 3 -->
+                            <tr class="user-entry">
+                                <td class="user-identity">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Frank Mutua" class="user-avatar">
+                                    <span class="user-name">Frank Mutua</span>
+                                </td>
+                                <td class="user-email">frank.mutua@metrocabs.co.ke</td>
+                                <td class="user-business">MetroCabs Ltd</td>
+                                <td class="user-role">Fleet Manager</td>
+                                <td class="user-status">
+                                    <span class="status-indicator active">Active</span>
+                                </td>
+                                <td class="user-last-login">2025-03-27 14:22 PM</td>
+                                <td class="user-actions">
+                                    <button class="action-menu-btn">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <div class="action-menu">
+                                        <button class="action-item view-profile" data-user-id="BUS003">
+                                            <i class="fa-solid fa-user"></i> View Profile
+                                        </button>
+                                        <button class="action-item edit-user" data-user-id="BUS003">
+                                            <i class="fa-solid fa-pen-to-square"></i> Edit User
+                                        </button>
+                                        <button class="action-item reset-password" data-user-id="BUS003">
+                                            <i class="fa-solid fa-key"></i> Reset Password
+                                        </button>
+                                        <button class="action-item suspend-user" data-user-id="BUS003">
+                                            <i class="fa-solid fa-ban"></i> Suspend User
+                                        </button>
+                                        <button class="action-item delete-user" data-user-id="BUS003">
+                                            <i class="fa-solid fa-trash"></i> Delete User
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Business User Entry 4 -->
+                            <tr class="user-entry">
+                                <td class="user-identity">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Grace Akinyi" class="user-avatar">
+                                    <span class="user-name">Grace Akinyi</span>
+                                </td>
+                                <td class="user-email">grace.akinyi@safaritransport.co.ke</td>
+                                <td class="user-business">Safari Transport Co.</td>
+                                <td class="user-role">Dispatcher</td>
+                                <td class="user-status">
+                                    <span class="status-indicator active">Active</span>
+                                </td>
+                                <td class="user-last-login">2025-03-28 07:45 AM</td>
+                                <td class="user-actions">
+                                    <button class="action-menu-btn">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <div class="action-menu">
+                                        <button class="action-item view-profile" data-user-id="BUS004">
+                                            <i class="fa-solid fa-user"></i> View Profile
+                                        </button>
+                                        <button class="action-item edit-user" data-user-id="BUS004">
+                                            <i class="fa-solid fa-pen-to-square"></i> Edit User
+                                        </button>
+                                        <button class="action-item reset-password" data-user-id="BUS004">
+                                            <i class="fa-solid fa-key"></i> Reset Password
+                                        </button>
+                                        <button class="action-item suspend-user" data-user-id="BUS004">
+                                            <i class="fa-solid fa-ban"></i> Suspend User
+                                        </button>
+                                        <button class="action-item delete-user" data-user-id="BUS004">
+                                            <i class="fa-solid fa-trash"></i> Delete User
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Business User Entry 5 -->
+                            <tr class="user-entry">
+                                <td class="user-identity">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Henry Otieno" class="user-avatar">
+                                    <span class="user-name">Henry Otieno</span>
+                                </td>
+                                <td class="user-email">henry.otieno@cityrides.co.ke</td>
+                                <td class="user-business">City Rides Co.</td>
+                                <td class="user-role">Business Admin</td>
+                                <td class="user-status">
+                                    <span class="status-indicator inactive">Inactive</span>
+                                </td>
+                                <td class="user-last-login">2024-12-15 09:33 AM</td>
+                                <td class="user-actions">
+                                    <button class="action-menu-btn">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <div class="action-menu">
+                                        <button class="action-item view-profile" data-user-id="BUS005">
+                                            <i class="fa-solid fa-user"></i> View Profile
+                                        </button>
+                                        <button class="action-item edit-user" data-user-id="BUS005">
+                                            <i class="fa-solid fa-pen-to-square"></i> Edit User
+                                        </button>
+                                        <button class="action-item reset-password" data-user-id="BUS005">
+                                            <i class="fa-solid fa-key"></i> Reset Password
+                                        </button>
+                                        <button class="action-item reactivate-user" data-user-id="BUS005">
+                                            <i class="fa-solid fa-user-check"></i> Reactivate User
+                                        </button>
+                                        <button class="action-item delete-user" data-user-id="BUS005">
+                                            <i class="fa-solid fa-trash"></i> Delete User
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <div class="pagination-info">Showing 1-5 of 1,205 items</div>
+                    <div class="pagination-controls">
+                        <button class="pagination-btn" disabled>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="pagination-btn page-number active">1</button>
+                        <button class="pagination-btn page-number">2</button>
+                        <button class="pagination-btn page-number">3</button>
+                        <button class="pagination-btn page-number">4</button>
+                        <button class="pagination-btn page-number">5</button>
+                        <button class="pagination-btn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- View User Profile Modal -->
+    <div class="modal" id="viewUserProfileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>User Profile</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                            alt="User Avatar" id="profileAvatar">
+                    </div>
+                    <div class="profile-info">
+                        <h3 id="profileName">John Mwangi</h3>
+                        <p id="profileRole">Super Admin</p>
+                        <div class="profile-status" id="profileStatus">
+                            <span class="status-indicator active">Active</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-sections">
+                    <div class="profile-section">
+                        <h4>Personal Information</h4>
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Full Name:</div>
+                                <div class="detail-value" id="profileFullName">John Mwangi</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Email Address:</div>
+                                <div class="detail-value" id="profileEmail">john.mwangi@citruslabs.co.ke</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Phone Number:</div>
+                                <div class="detail-value" id="profilePhone">+254 712 345 678</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h4>Account Information</h4>
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <div class="detail-label">User ID:</div>
+                                <div class="detail-value" id="profileUserID">ADM001</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Account Created:</div>
+                                <div class="detail-value" id="profileCreatedDate">2024-01-15</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Last Login:</div>
+                                <div class="detail-value" id="profileLastLogin">2025-03-28 09:42 AM</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Account Status:</div>
+                                <div class="detail-value" id="profileAccountStatus">Active</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h4>Role & Permissions</h4>
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Assigned Role:</div>
+                                <div class="detail-value" id="profileAssignedRole">Super Admin</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Permission Groups:</div>
+                                <div class="detail-value" id="profilePermissionGroups">All Access</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Access Level:</div>
+                                <div class="detail-value" id="profileAccessLevel">Global</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h4>Recent Activity</h4>
+                        <div class="activity-list" id="profileActivityList">
+                            <div class="activity-item">
+                                <div class="activity-timestamp">2025-03-28 09:42 AM</div>
+                                <div class="activity-description">Logged in to the system</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-timestamp">2025-03-27 17:05 PM</div>
+                                <div class="activity-description">Updated user permissions for Jane Njoroge</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-timestamp">2025-03-27 15:32 PM</div>
+                                <div class="activity-description">Viewed security logs</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-timestamp">2025-03-27 11:45 AM</div>
+                                <div class="activity-description">Generated monthly user report</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-timestamp">2025-03-27 09:15 AM</div>
+                                <div class="activity-description">Logged in to the system</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <button id="editProfileBtn" class="btn primary-btn">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        Edit Profile
+                    </button>
+                    <button id="resetPasswordProfileBtn" class="btn secondary-btn">
+                        <i class="fa-solid fa-key"></i>
+                        Reset Password
+                    </button>
+                    <button id="suspendUserProfileBtn" class="btn danger-btn">
+                        <i class="fa-solid fa-ban"></i>
+                        Suspend User
+                    </button>
+                    <button id="deleteUserProfileBtn" class="btn danger-outline-btn">
+                        <i class="fa-solid fa-trash"></i>
+                        Delete User
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div class="modal" id="editUserModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit User</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editUserForm">
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="editFirstName">First Name</label>
+                                <input type="text" id="editFirstName" name="firstName" value="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="editLastName">Last Name</label>
+                                <input type="text" id="editLastName" name="lastName" value="Mwangi" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEmail">Email Address</label>
+                            <input type="email" id="editEmail" name="email" value="john.mwangi@citruslabs.co.ke"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editPhone">Phone Number</label>
+                            <input type="tel" id="editPhone" name="phone" value="+254 712 345 678">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Role Assignment</h3>
+                        <div class="form-group">
+                            <label for="editRole">Role</label>
+                            <select id="editRole" name="role" required>
+                                <option value="super_admin" selected>Super Admin</option>
+                                <option value="admin">Admin</option>
+                                <option value="support_manager">Support Manager</option>
+                                <option value="finance_manager">Finance Manager</option>
+                                <option value="support_agent">Support Agent</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Custom Permissions</label>
+                            <div class="permissions-grid">
+                                <div class="permission-category">
+                                    <div class="permission-header">User Management</div>
+                                    <div class="permission-items">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="view_users" checked>
+                                            <span class="checkbox-label">View Users</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="create_users" checked>
+                                            <span class="checkbox-label">Create Users</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="edit_users" checked>
+                                            <span class="checkbox-label">Edit Users</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="delete_users" checked>
+                                            <span class="checkbox-label">Delete Users</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="permission-category">
+                                    <div class="permission-header">Business Management</div>
+                                    <div class="permission-items">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="view_businesses" checked>
+                                            <span class="checkbox-label">View Businesses</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="create_businesses" checked>
+                                            <span class="checkbox-label">Create Businesses</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="edit_businesses" checked>
+                                            <span class="checkbox-label">Edit Businesses</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="delete_businesses" checked>
+                                            <span class="checkbox-label">Delete Businesses</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="permission-category">
+                                    <div class="permission-header">Financial Oversight</div>
+                                    <div class="permission-items">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="view_finances" checked>
+                                            <span class="checkbox-label">View Finances</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="process_payments" checked>
+                                            <span class="checkbox-label">Process Payments</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="manage_invoices" checked>
+                                            <span class="checkbox-label">Manage Invoices</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="generate_reports" checked>
+                                            <span class="checkbox-label">Generate Reports</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="permission-category">
+                                    <div class="permission-header">Support Management</div>
+                                    <div class="permission-items">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="view_tickets" checked>
+                                            <span class="checkbox-label">View Tickets</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="respond_tickets" checked>
+                                            <span class="checkbox-label">Respond to Tickets</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="assign_tickets" checked>
+                                            <span class="checkbox-label">Assign Tickets</span>
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="permissions" value="close_tickets" checked>
+                                            <span class="checkbox-label">Close Tickets</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Account Status</h3>
+                        <div class="form-group">
+                            <label for="editStatus">Status</label>
+                            <select id="editStatus" name="status" required>
+                                <option value="active" selected>Active</option>
+                                <option value="suspended">Suspended</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelEditBtn" class="btn outline-btn">Cancel</button>
+                <button id="saveEditBtn" class="btn primary-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reset Password Modal -->
+    <div class="modal" id="resetPasswordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reset Password</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="reset-info">
+                    <p>Reset password for <strong id="resetPasswordUsername">John Mwangi</strong></p>
+                    <p class="reset-warning">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Choose how you want to reset the password for this user.
+                    </p>
+                </div>
+
+                <form id="resetPasswordForm">
+                    <div class="form-group">
+                        <label class="radio-container">
+                            <input type="radio" name="resetMethod" value="email" checked>
+                            <div class="radio-content">
+                                <div class="radio-label">Send Password Reset Link</div>
+                                <div class="radio-description">Send an email with instructions to set a new password.
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="radio-container">
+                            <input type="radio" name="resetMethod" value="temp">
+                            <div class="radio-content">
+                                <div class="radio-label">Set Temporary Password</div>
+                                <div class="radio-description">Create a temporary password that the user must change on
+                                    next login.</div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="form-group temp-password-section hidden">
+                        <label for="tempPassword">Temporary Password</label>
+                        <div class="password-input">
+                            <input type="text" id="tempPassword" name="tempPassword" readonly>
+                            <button type="button" id="generatePasswordBtn" class="btn secondary-btn">Generate</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelResetBtn" class="btn outline-btn">Cancel</button>
+                <button id="confirmResetBtn" class="btn primary-btn">Reset Password</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Suspend User Modal -->
+    <div class="modal" id="suspendUserModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Suspend User</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="suspend-info">
+                    <div class="warning-icon">
+                        <i class="fa-solid fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="warning-message">
+                        <p>You are about to suspend <strong id="suspendUsername">John Mwangi</strong></p>
+                        <p>This action will prevent the user from accessing the system but will retain all their data
+                            and
+                            account information. You can reactivate the account at any time.</p>
+                    </div>
+                </div>
+
+                <form id="suspendUserForm">
+                    <div class="form-group">
+                        <label for="suspendReason">Reason for Suspension</label>
+                        <select id="suspendReason" name="suspendReason" required>
+                            <option value="">Select a reason</option>
+                            <option value="security_concern">Security Concern</option>
+                            <option value="policy_violation">Policy Violation</option>
+                            <option value="account_misuse">Account Misuse</option>
+                            <option value="temporary_hold">Temporary Hold</option>
+                            <option value="user_request">User Request</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="suspendNotes">Additional Notes</label>
+                        <textarea id="suspendNotes" name="suspendNotes" rows="3"
+                            placeholder="Provide additional details about the suspension..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="notifyUserSuspend" name="notifyUser" checked>
+                            <span class="checkbox-label">Notify user about account suspension</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelSuspendBtn" class="btn outline-btn">Cancel</button>
+                <button id="confirmSuspendBtn" class="btn danger-btn">Suspend User</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reactivate User Modal -->
+    <div class="modal" id="reactivateUserModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reactivate User</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="reactivate-info">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-info-circle"></i>
+                    </div>
+                    <div class="info-message">
+                        <p>You are about to reactivate <strong id="reactivateUsername">Alice Wambui</strong></p>
+                        <p>This action will restore the user's access to the system and all their previous data and
+                            permissions.</p>
+                    </div>
+                </div>
+
+                <form id="reactivateUserForm">
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="notifyUserReactivate" name="notifyUser" checked>
+                            <span class="checkbox-label">Notify user about account reactivation</span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="resetPasswordReactivate" name="resetPassword">
+                            <span class="checkbox-label">Require password reset on next login</span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="reactivateNotes">Additional Notes</label>
+                        <textarea id="reactivateNotes" name="reactivateNotes" rows="3"
+                            placeholder="Add any notes about this reactivation..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelReactivateBtn" class="btn outline-btn">Cancel</button>
+                <button id="confirmReactivateBtn" class="btn primary-btn">Reactivate User</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete User Modal -->
+    <div class="modal" id="deleteUserModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Delete User</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="delete-info">
+                    <div class="danger-icon">
+                        <i class="fa-solid fa-skull-crossbones"></i>
+                    </div>
+                    <div class="danger-message">
+                        <p>You are about to permanently delete <strong id="deleteUsername">John Mwangi</strong></p>
+                        <p class="delete-warning">This action cannot be undone. The user account and all associated data
+                            will be permanently removed from the system.</p>
+                    </div>
+                </div>
+
+                <form id="deleteUserForm">
+                    <div class="form-section">
+                        <h3>Data Handling Options</h3>
+                        <div class="form-group">
+                            <label class="radio-container">
+                                <input type="radio" name="dataHandling" value="delete_all" checked>
+                                <div class="radio-content">
+                                    <div class="radio-label">Delete All Data</div>
+                                    <div class="radio-description">Permanently delete all user data and records.</div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="radio-container">
+                                <input type="radio" name="dataHandling" value="anonymize">
+                                <div class="radio-content">
+                                    <div class="radio-label">Anonymize Data</div>
+                                    <div class="radio-description">Remove personal information but retain usage data and
+                                        statistics.</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deleteReason">Reason for Deletion</label>
+                        <select id="deleteReason" name="deleteReason" required>
+                            <option value="">Select a reason</option>
+                            <option value="user_request">User Request</option>
+                            <option value="account_inactive">Account Inactive</option>
+                            <option value="policy_violation">Policy Violation</option>
+                            <option value="security_risk">Security Risk</option>
+                            <option value="data_cleanup">Data Cleanup</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deleteNotes">Additional Notes</label>
+                        <textarea id="deleteNotes" name="deleteNotes" rows="2"
+                            placeholder="Provide additional context for this deletion..."></textarea>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>OTP Verification</h3>
+                        <p class="verification-info">For security purposes, please enter the OTP sent to your email.</p>
+                        <div class="form-group">
+                            <div class="otp-input-group">
+                                <input type="text" class="otp-input" maxlength="1" autofocus>
+                                <input type="text" class="otp-input" maxlength="1">
+                                <input type="text" class="otp-input" maxlength="1">
+                                <input type="text" class="otp-input" maxlength="1">
+                                <input type="text" class="otp-input" maxlength="1">
+                                <input type="text" class="otp-input" maxlength="1">
+                            </div>
+                            <div class="resend-otp">
+                                <button type="button" id="resendOtpBtn" class="btn text-btn">Resend OTP</button>
+                                <span class="countdown-timer">Resend in <span id="otpCountdown">60</span>s</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelDeleteBtn" class="btn outline-btn">Cancel</button>
+                <button id="confirmDeleteBtn" class="btn danger-btn">Verify & Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add New User Modal -->
+    <div class="modal" id="addUserModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New User</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addUserForm">
+                    <div class="form-section">
+                        <h3>User Type</h3>
+                        <div class="user-type-selection">
+                            <div class="form-group">
+                                <label class="radio-container">
+                                    <input type="radio" name="userType" value="admin" checked>
+                                    <div class="radio-content">
+                                        <div class="radio-label">Administrator User</div>
+                                        <div class="radio-description">Platform administrators with system management
+                                            access</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="radio-container">
+                                    <input type="radio" name="userType" value="business">
+                                    <div class="radio-content">
+                                        <div class="radio-label">Business User</div>
+                                        <div class="radio-description">Users associated with specific businesses on the
+                                            platform</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="addFirstName">First Name</label>
+                                <input type="text" id="addFirstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="addLastName">Last Name</label>
+                                <input type="text" id="addLastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="addEmail">Email Address</label>
+                            <input type="email" id="addEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addPhone">Phone Number</label>
+                            <input type="tel" id="addPhone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Role Assignment</h3>
+                        <div class="form-group">
+                            <label for="addRole">Role</label>
+                            <select id="addRole" name="role" required>
+                                <option value="">Select a role</option>
+                                <!-- Administrator roles -->
+                                <optgroup label="Administrator Roles" class="admin-roles">
+                                    <option value="super_admin">Super Admin</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="support_manager">Support Manager</option>
+                                    <option value="finance_manager">Finance Manager</option>
+                                    <option value="support_agent">Support Agent</option>
+                                </optgroup>
+                                <!-- Business roles -->
+                                <optgroup label="Business Roles" class="business-roles">
+                                    <option value="business_admin">Business Admin</option>
+                                    <option value="fleet_manager">Fleet Manager</option>
+                                    <option value="dispatcher">Dispatcher</option>
+                                    <option value="accountant">Accountant</option>
+                                    <option value="staff">Staff</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section business-section" style="display: none;">
+                        <h3>Business Association</h3>
+                        <div class="form-group">
+                            <label for="addBusiness">Business</label>
+                            <select id="addBusiness" name="business">
+                                <option value="">Select a business</option>
+                                <option value="metrocabs">MetroCabs Ltd</option>
+                                <option value="safari">Safari Transport Co.</option>
+                                <option value="cityrides">City Rides Co.</option>
+                                <option value="speedy">Speedy Taxi Services</option>
+                                <option value="elite">Elite Chauffeur Ltd</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="addDepartment">Department (Optional)</label>
+                            <input type="text" id="addDepartment" name="department" placeholder="e.g., Operations">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Password Options</h3>
+                        <div class="form-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="generatePassword" name="generatePassword" checked>
+                                <span class="checkbox-label">Generate temporary password</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="sendSetupEmail" name="sendSetupEmail" checked>
+                                <span class="checkbox-label">Send account setup email</span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelAddBtn" class="btn outline-btn">Cancel</button>
+                <button id="createUserBtn" class="btn primary-btn">Create User</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Users Modal -->
+    <div class="modal" id="importUsersModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Import Users</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="import-steps">
+                    <div class="step-indicator active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Instructions</div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-indicator" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Upload</div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-indicator" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Validation</div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-indicator" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Confirmation</div>
+                    </div>
+                </div>
+
+                <div class="import-step-content active" data-step="1">
+                    <div class="import-instructions">
+                        <h3>Import Instructions</h3>
+                        <p>Follow these steps to import multiple users:</p>
+                        <ol>
+                            <li>Download the user import template</li>
+                            <li>Fill in the user details according to the template format</li>
+                            <li>Save the file in CSV or Excel format</li>
+                            <li>Upload the file on the next screen</li>
+                        </ol>
+                        <div class="template-download">
+                            <a href="#" class="btn secondary-btn">
+                                <i class="fa-solid fa-download"></i>
+                                Download Template
+                            </a>
+                        </div>
+                        <div class="import-notes">
+                            <h4>Supported Formats</h4>
+                            <ul>
+                                <li>CSV (.csv)</li>
+                                <li>Excel (.xlsx, .xls)</li>
+                            </ul>
+                            <h4>Required Fields</h4>
+                            <ul>
+                                <li>First Name</li>
+                                <li>Last Name</li>
+                                <li>Email Address</li>
+                                <li>Role</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="import-step-content" data-step="2">
+                    <div class="file-upload-section">
+                        <h3>Upload User Import File</h3>
+                        <div class="upload-container">
+                            <div class="upload-area" id="uploadArea">
+                                <div class="upload-icon">
+                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                </div>
+                                <div class="upload-text">
+                                    <p>Drag & drop your file here</p>
+                                    <p>or</p>
+                                    <label for="fileInput" class="btn secondary-btn">Browse Files</label>
+                                    <input type="file" id="fileInput" accept=".csv, .xlsx, .xls" hidden>
+                                </div>
+                            </div>
+                            <div class="upload-file-info" id="fileInfo" style="display: none;">
+                                <div class="file-details">
+                                    <div class="file-icon">
+                                        <i class="fa-solid fa-file-excel"></i>
+                                    </div>
+                                    <div class="file-name-size">
+                                        <div class="file-name" id="fileName">users_import.xlsx</div>
+                                        <div class="file-size" id="fileSize">24.5 KB</div>
+                                    </div>
+                                </div>
+                                <button class="remove-file-btn" id="removeFileBtn">
+                                    <i class="fa-solid fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="import-step-content" data-step="3">
+                    <div class="validation-section">
+                        <h3>Data Validation</h3>
+                        <div class="validation-summary">
+                            <div class="validation-stat">
+                                <div class="stat-label">Total Records</div>
+                                <div class="stat-value">25</div>
+                            </div>
+                            <div class="validation-stat valid">
+                                <div class="stat-label">Valid Records</div>
+                                <div class="stat-value">20</div>
+                            </div>
+                            <div class="validation-stat error">
+                                <div class="stat-label">Records with Errors</div>
+                                <div class="stat-value">5</div>
+                            </div>
+                        </div>
+                        <div class="validation-results">
+                            <table class="validation-table">
+                                <thead>
+                                    <tr>
+                                        <th>Row</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="valid-row">
+                                        <td>1</td>
+                                        <td>Ibrahim</td>
+                                        <td>Maina</td>
+                                        <td>ibrahim.maina@example.com</td>
+                                        <td>Business Admin</td>
+                                        <td><span class="status-pill valid">Valid</span></td>
+                                    </tr>
+                                    <tr class="valid-row">
+                                        <td>2</td>
+                                        <td>Janet</td>
+                                        <td>Kinyua</td>
+                                        <td>janet.kinyua@example.com</td>
+                                        <td>Dispatcher</td>
+                                        <td><span class="status-pill valid">Valid</span></td>
+                                    </tr>
+                                    <tr class="error-row">
+                                        <td>3</td>
+                                        <td>Kevin</td>
+                                        <td>Otieno</td>
+                                        <td>not-an-email</td>
+                                        <td>Fleet Manager</td>
+                                        <td><span class="status-pill error">Invalid Email</span></td>
+                                    </tr>
+                                    <tr class="valid-row">
+                                        <td>4</td>
+                                        <td>Lucy</td>
+                                        <td>Wangui</td>
+                                        <td>lucy.wangui@example.com</td>
+                                        <td>Accountant</td>
+                                        <td><span class="status-pill valid">Valid</span></td>
+                                    </tr>
+                                    <tr class="error-row">
+                                        <td>5</td>
+                                        <td></td>
+                                        <td>Njoroge</td>
+                                        <td>m.njoroge@example.com</td>
+                                        <td>Support Agent</td>
+                                        <td><span class="status-pill error">Missing First Name</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="validation-actions">
+                            <button class="btn secondary-btn" id="downloadErrorsBtn">
+                                <i class="fa-solid fa-download"></i>
+                                Download Errors
+                            </button>
+                            <button class="btn outline-btn" id="uploadNewFileBtn">
+                                <i class="fa-solid fa-arrow-rotate-left"></i>
+                                Upload New File
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="import-step-content" data-step="4">
+                    <div class="confirmation-section">
+                        <h3>Import Confirmation</h3>
+                        <div class="import-summary">
+                            <p>You are about to import <strong>20</strong> users to the system.</p>
+                            <div class="user-type-summary">
+                                <div class="summary-item">
+                                    <div class="summary-label">Administrator Users:</div>
+                                    <div class="summary-value">5</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Business Users:</div>
+                                    <div class="summary-value">15</div>
+                                </div>
+                            </div>
+                            <div class="otp-verification">
+                                <h4>OTP Verification</h4>
+                                <p>For security purposes, please enter the OTP sent to your email.</p>
+                                <div class="otp-input-group">
+                                    <input type="text" class="otp-input" maxlength="1" autofocus>
+                                    <input type="text" class="otp-input" maxlength="1">
+                                    <input type="text" class="otp-input" maxlength="1">
+                                    <input type="text" class="otp-input" maxlength="1">
+                                    <input type="text" class="otp-input" maxlength="1">
+                                    <input type="text" class="otp-input" maxlength="1">
+                                </div>
+                                <div class="resend-otp">
+                                    <button type="button" id="resendImportOtpBtn" class="btn text-btn">Resend
+                                        OTP</button>
+                                    <span class="countdown-timer">Resend in <span
+                                            id="importOtpCountdown">60</span>s</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelImportBtn" class="btn outline-btn">Cancel</button>
+                <button id="prevStepBtn" class="btn secondary-btn" style="display: none;">Previous</button>
+                <button id="nextStepBtn" class="btn primary-btn">Next</button>
+                <button id="importUsersConfirmBtn" class="btn primary-btn" style="display: none;">Verify &
+                    Import</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Users Modal -->
+    <div class="modal" id="exportUsersModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Export Users</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="export-options-section">
+                    <h3>Export Options</h3>
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label>Export Format</label>
+                            <div class="form-group">
+                                <label class="radio-container">
+                                    <input type="radio" name="exportFormat" value="csv" checked>
+                                    <div class="radio-content">
+                                        <div class="radio-label">CSV (.csv)</div>
+                                        <div class="radio-description">Standard comma-separated values format</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="radio-container">
+                                    <input type="radio" name="exportFormat" value="excel">
+                                    <div class="radio-content">
+                                        <div class="radio-label">Excel (.xlsx)</div>
+                                        <div class="radio-description">Microsoft Excel workbook format</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Data Fields</h3>
+                        <p class="field-selection-info">Select the fields to include in the export:</p>
+                        <div class="export-fields-selection">
+                            <div class="field-category">
+                                <div class="category-header">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="personalInfoFields" checked>
+                                        <span class="checkbox-label">Personal Information</span>
+                                    </label>
+                                </div>
+                                <div class="category-fields">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="firstName" checked>
+                                        <span class="checkbox-label">First Name</span>
+                                    </label>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="lastName" checked>
+                                        <span class="checkbox-label">Last Name</span>
+                                    </label>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="email" checked>
+                                        <span class="checkbox-label">Email Address</span>
+                                    </label>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="phone" checked>
+                                        <span class="checkbox-label">Phone Number</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="field-category">
+                                <div class="category-header">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="accountInfoFields" checked>
+                                        <span class="checkbox-label">Account Information</span>
+                                    </label>
+                                </div>
+                                <div class="category-fields">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="userId" checked>
+                                        <span class="checkbox-label">User ID</span>
+                                    </label>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="role" checked>
+                                        <span class="checkbox-label">Role</span>
+                                    </label>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="status" checked>
+                                        <span class="checkbox-label">Status</span>
+                                    </label>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="createdDate" checked>
+                                        <span class="checkbox-label">Created Date</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="field-category">
+                                <div class="category-header">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="businessInfoFields">
+                                        <span class="checkbox-label">Business Information</span>
+                                    </label>
+                                </div>
+                                <div class="category-fields">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="businessName">
+                                        <span class="checkbox-label">Business Name</span>
+                                    </label>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="department">
+                                        <span class="checkbox-label">Department</span>
+                                    </label>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="businessRole">
+                                        <span class="checkbox-label">Business Role</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="field-category">
+                                <div class="category-header">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="activityInfoFields">
+                                        <span class="checkbox-label">Activity Information</span>
+                                    </label>
+                                </div>
+                                <div class="category-fields">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="lastLogin">
+                                        <span class="checkbox-label">Last Login</span>
+                                    </label>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="loginCount">
+                                        <span class="checkbox-label">Login Count</span>
+                                    </label>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="exportFields" value="lastPasswordChange">
+                                        <span class="checkbox-label">Last Password Change</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Filter Options</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="exportUserType">User Type</label>
+                                <select id="exportUserType" name="exportUserType">
+                                    <option value="all">All Users</option>
+                                    <option value="admin">Administrator Users</option>
+                                    <option value="business">Business Users</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exportStatus">Status</label>
+                                <select id="exportStatus" name="exportStatus">
+                                    <option value="all">All Status</option>
+                                    <option value="active">Active</option>
+                                    <option value="suspended">Suspended</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group business-filter" style="display: none;">
+                            <label for="exportBusiness">Business</label>
+                            <select id="exportBusiness" name="exportBusiness">
+                                <option value="all">All Businesses</option>
+                                <option value="metrocabs">MetroCabs Ltd</option>
+                                <option value="safari">Safari Transport Co.</option>
+                                <option value="cityrides">City Rides Co.</option>
+                                <option value="speedy">Speedy Taxi Services</option>
+                                <option value="elite">Elite Chauffeur Ltd</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelExportUsersBtn" class="btn outline-btn">Cancel</button>
+                <button id="generateExportBtn" class="btn primary-btn">Generate Export</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- OTP Verification Modal -->
+    <div class="modal" id="otpVerificationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>OTP Verification</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="otp-verification-section">
+                    <div class="verification-info">
+                        <div class="verification-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="verification-message">
+                            <p>For security purposes, we've sent a verification code to your email address.</p>
+                            <p>Please enter the 6-digit code below to continue.</p>
+                        </div>
+                    </div>
+
+                    <div class="otp-input-container">
+                        <div class="otp-input-group">
+                            <input type="text" class="otp-input" maxlength="1" autofocus>
+                            <input type="text" class="otp-input" maxlength="1">
+                            <input type="text" class="otp-input" maxlength="1">
+                            <input type="text" class="otp-input" maxlength="1">
+                            <input type="text" class="otp-input" maxlength="1">
+                            <input type="text" class="otp-input" maxlength="1">
+                        </div>
+                        <div class="otp-timer">
+                            <div class="timer-indicator">
+                                <svg viewBox="0 0 36 36">
+                                    <path class="timer-bg" d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="timer-fill" stroke-dasharray="60, 100" d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                </svg>
+                                <span class="timer-text" id="otpTimerText">00:60</span>
+                            </div>
+                        </div>
+                        <div class="resend-otp">
+                            <button id="resendOtpVerificationBtn" class="btn text-btn" disabled>Resend Code</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelVerificationBtn" class="btn outline-btn">Cancel</button>
+                <button id="verifyOtpBtn" class="btn primary-btn">Verify</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Dark Mode Toggle -->
+            <div class="theme-toggle">
+                <button class="dark-mode-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" class="social-icon">
+                    <i class="fa-brands fa-x"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-icon">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Site Link -->
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/">Visit Corporate Website</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Link -->
+    <script src="users.js"></script>
+</body>
+
+</html>

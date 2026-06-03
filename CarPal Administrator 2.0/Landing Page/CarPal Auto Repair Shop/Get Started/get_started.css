@@ -1,0 +1,523 @@
+/* Root Variables for Brand Colors */
+:root {
+    --primary-yellow: #FFD700;
+    --deep-black: #000000;
+    --charcoal-gray: #2D2D2D;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    --medium-gray: #888888;
+    --error-red: #FF5252;
+    --success-green: #4CAF50;
+    --form-transition: all 0.3s ease;
+}
+
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--charcoal-gray);
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--charcoal-gray);
+    transition: var(--form-transition);
+}
+
+a:hover {
+    color: var(--primary-yellow);
+}
+
+ul, li {
+    list-style: none;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--deep-black);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.logo {
+    max-height: 60px;
+    width: auto;
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+/* Sales Copy Section */
+.sales-copy {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.sales-copy h1 {
+    color: var(--charcoal-gray);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.sales-copy p {
+    color: var(--medium-gray);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Authentication Tabs */
+.tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--medium-gray);
+    cursor: pointer;
+    position: relative;
+    transition: var(--form-transition);
+}
+
+.tab-button.active {
+    color: var(--primary-yellow);
+}
+
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-yellow);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Form Styles */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--charcoal-gray);
+}
+
+.required {
+    color: var(--error-red);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: var(--form-transition);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus {
+    border-color: var(--primary-yellow);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+.error-message {
+    color: var(--error-red);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Password Requirements */
+.password-requirements {
+    margin-top: 0.75rem;
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.password-requirements p {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.password-requirements ul li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.25rem;
+    color: var(--medium-gray);
+}
+
+.password-requirements ul li::before {
+    content: '\2715';
+    position: absolute;
+    left: 0;
+    color: var(--error-red);
+}
+
+.password-requirements ul li.valid {
+    color: var(--success-green);
+}
+
+.password-requirements ul li.valid::before {
+    content: '\2713';
+    color: var(--success-green);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--form-transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-yellow);
+    color: var(--deep-black);
+}
+
+.btn-primary:hover {
+    background-color: var(--deep-black);
+    color: var(--primary-yellow);
+}
+
+.btn-secondary {
+    background-color: var(--light-gray);
+    color: var(--charcoal-gray);
+}
+
+.btn-secondary:hover {
+    background-color: var(--medium-gray);
+    color: var(--white);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+/* Verification Message */
+.verification-message {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.email-icon {
+    font-size: 4rem;
+    color: var(--primary-yellow);
+    margin: 1.5rem 0;
+}
+
+.email-sent {
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* Sales Information */
+.sales-info {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+}
+
+.sales-info h4 {
+    margin-bottom: 1rem;
+}
+
+/* Policy Section */
+.policy-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.policy-link {
+    background-color: var(--light-gray);
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: var(--form-transition);
+}
+
+.policy-link:hover, .policy-link.active {
+    background-color: var(--primary-yellow);
+    color: var(--deep-black);
+}
+
+.policy-content {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--light-gray);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.policy-instructions {
+    text-align: center;
+    color: var(--medium-gray);
+    font-style: italic;
+}
+
+/* Success Message */
+.success-message {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.success-icon {
+    font-size: 5rem;
+    color: var(--success-green);
+    margin-bottom: 1.5rem;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    text-align: right;
+    margin-bottom: 1.5rem;
+}
+
+.forgot-password a {
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+}
+
+.forgot-password a:hover {
+    color: var(--primary-yellow);
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--white);
+    margin: 10% auto;
+    padding: 1.5rem;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: modalOpen 0.3s ease;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--medium-gray);
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--deep-black);
+}
+
+.modal-header {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--light-gray);
+    margin-bottom: 1.5rem;
+}
+
+.modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--deep-black);
+    color: var(--white);
+    padding: 1.5rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .sales-copy h1 {
+        font-size: 1.75rem;
+    }
+    
+    .sales-copy p {
+        font-size: 1rem;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .policy-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .policy-link {
+        text-align: center;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sales-copy h1 {
+        font-size: 1.5rem;
+    }
+    
+    .content-wrapper {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,67 @@
+graph TD
+    %% Main Admin Section
+    Admin[/admin - Administrator Dashboard/] --> Users[/admin/users - User Management/]
+    Admin --> Business[/admin/businesses - Business Management/]
+    Admin --> Finance[/admin/finance - Financial Oversight/]
+    Admin --> Notif[/admin/notifications - Notifications Management/]
+    Admin --> Reports[/admin/reports - Reports & Analytics/]
+    Admin --> Settings[/admin/settings - Platform Settings/]
+    Admin --> Security[/admin/security - Security Tools/]
+    Admin --> Support[/admin/support - Customer Support Tools/]
+
+    %% User Management Section
+    Users --> UsersList[/admin/users/list/]
+    Users --> UsersNew[/admin/users/new/]
+    Users --> UsersEdit[/admin/users/edit/:id/]
+    Users --> UsersActivity[/admin/users/activity/]
+    Users --> UsersRoles[/admin/users/roles/]
+
+    %% Business Management Section
+    Business --> BizReg[/admin/businesses/registrations/]
+    Business --> BizList[/admin/businesses/list/]
+    Business --> BizEdit[/admin/businesses/edit/:id/]
+    Business --> BizInvoices[/admin/businesses/invoices/]
+    Business --> BizAnalytics[/admin/businesses/analytics/]
+
+    %% Financial Section
+    Finance --> FinPayments[/admin/finance/payments/]
+    Finance --> FinRevenue[/admin/finance/revenue/]
+    Finance --> FinInvoices[/admin/finance/invoices/]
+    Finance --> FinRecon[/admin/finance/reconciliation/]
+    Finance --> FinExport[/admin/finance/export/]
+
+    %% Notifications Section
+    Notif --> NotifSystem[/admin/notifications/system/]
+    Notif --> NotifIncidents[/admin/notifications/incidents/]
+    Notif --> NotifTemplates[/admin/notifications/templates/]
+    Notif --> NotifLogs[/admin/notifications/logs/]
+
+    %% Reports Section
+    Reports --> ReportsUsers[/admin/reports/users/]
+    Reports --> ReportsServices[/admin/reports/services/]
+    Reports --> ReportsFinancial[/admin/reports/financial/]
+    Reports --> ReportsCustom[/admin/reports/custom/]
+    Reports --> ReportsArchived[/admin/reports/archived/]
+
+    %% Settings Section
+    Settings --> SettingsSystem[/admin/settings/system/]
+    Settings --> SettingsPolicies[/admin/settings/policies/]
+    Settings --> SettingsFeatures[/admin/settings/features/]
+    Settings --> SettingsBranding[/admin/settings/branding/]
+    Settings --> SettingsPrefs[/admin/settings/preferences/]
+
+    %% Security Section
+    Security --> SecurityAudit[/admin/security/audit/]
+    Security --> SecurityAccess[/admin/security/access/]
+    Security --> SecurityBackup[/admin/security/backup/]
+    Security --> SecurityPerms[/admin/security/permissions/]
+
+    %% Support Section
+    Support --> SupportHelp[/admin/support/helpdesk/]
+    Support --> SupportTickets[/admin/support/tickets/]
+    Support --> SupportKB[/admin/support/knowledge/]
+    Support --> SupportFAQ[/admin/support/faq/]
+
+    %% Styling
+    classDef section fill:#f9f,stroke:#333,stroke-width:2px
+    class Admin,Users,Business,Finance,Notif,Reports,Settings,Security,Support section

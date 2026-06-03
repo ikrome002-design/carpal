@@ -1,0 +1,241 @@
+stateDiagram-v2
+    [*] --> Dashboard
+    
+    state Dashboard {
+        [*] --> KPIPanel
+        
+        state KPIPanel {
+            state "Total Registered Users" as TotalUsers {
+                UserCount: Current User Count
+                UserCount: Percentage Change
+                UserDetails: View All Users Button
+            }
+            
+            state "Active Businesses" as ActiveBusinesses {
+                BusinessCount: Current Business Count
+                BusinessTrend: Percentage Change
+                BusinessDetails: View All Businesses Button
+            }
+            
+            state "Monthly Revenue" as MonthlyRevenue {
+                RevenueFigure: Current Month Revenue
+                RevenueTrend: Comparison to Last Month
+                RevenueDetails: Financial Details Button
+            }
+            
+            state "Service Usage" as ServiceMetrics {
+                ServiceStats: Top Services
+                ServiceTrend: Usage Trends
+                ServiceDetails: Usage Details Button
+            }
+        }
+        
+        state QuickActionsPanel {
+            state "Add New User" as AddUserBtn {
+                AddUserAction: Opens User Creation Form
+            }
+            
+            state "Add New Business" as AddBusinessBtn {
+                AddBusinessAction: Opens Business Registration Form
+            }
+            
+            state "View Notifications" as ViewNotificationsBtn {
+                NotificationAction: Opens Notifications Panel
+            }
+        }
+        
+        state RealTimeUpdatesPanel {
+            state "System Alerts" as SystemAlerts {
+                AlertsList: Recent System Alerts
+                AlertsCount: Unread Count Badge
+                AlertsAction: View All Alerts Button
+            }
+            
+            state "User Activities" as UserActivities {
+                RecentUsers: Recent User Logins
+                UserActions: Recent User Actions
+                UserActivitiesDetails: View All Activity Button
+            }
+            
+            state "Business Updates" as BusinessUpdates {
+                BusinessActivity: New Businesses
+                BusinessActivity: Recent Profile Updates
+                BusinessUpdatesDetails: View All Updates Button
+            }
+        }
+        
+        state AnalyticsDisplayPanel {
+            state "Registration Trends" as RegistrationTrendsChart {
+                RegChart: Interactive Line Chart
+                RegChartControls: Date Range Selector
+                RegChartDetails: Data Point Tooltips
+                RegChartExport: Export Chart Button
+            }
+            
+            state "Revenue Growth" as RevenueGrowthChart {
+                RevChart: Interactive Bar Chart
+                RevChartControls: Time Period Toggle
+                RevChartDetails: Trend Line Option
+                RevChartExport: Export Chart Button
+            }
+            
+            state "Business Engagement" as EngagementChart {
+                EngChart: Heat Map Visualization
+                EngChartControls: Business Type Filter
+                EngChartDetails: Engagement Metrics
+                EngChartExport: Export Chart Button
+            }
+        }
+        
+        state "Filter Panel" as FilterPanel {
+            DateFilter: Date Range Selector
+            UserTypeFilter: User Type Dropdown
+            BusinessSegmentFilter: Business Segment Dropdown
+            ApplyFilters: Apply Filters Button
+            ResetFilters: Reset Filters Button
+        }
+        
+        state "Dashboard Settings" as DashboardSettings {
+            WidgetToggle: Show/Hide Widgets
+            LayoutOptions: Arrange Dashboard Layout
+            RefreshRate: Data Refresh Interval
+            SaveSettings: Save Preferences Button
+        }
+    }
+    
+    state "User Management Module" as UserManagementModule {
+        UserList: List of All Users
+        UserCategories: Role-Based Categories
+        UserSearch: Search and Filter Options
+        UserActions: User Management Actions
+    }
+    
+    state "User Creation Form" as UserCreationForm {
+        UserFormFields: Personal Information
+        UserFormFields: Role Assignment
+        UserFormFields: Business Association
+        UserFormFields: Initial Password Setup
+        UserSubmitAction: Create User Button
+        UserCancelAction: Cancel Button
+    }
+    
+    state "Business Management Module" as BusinessManagementModule {
+        BusinessList: List of All Businesses
+        PendingApprovals: New Registration Requests
+        BusinessSearch: Search and Filter Options
+        BusinessActions: Business Management Actions
+    }
+    
+    state "Business Registration Form" as BusinessRegistrationForm {
+        BusinessFormFields: Business Information
+        BusinessFormFields: Contact Details
+        BusinessFormFields: Business Category
+        BusinessFormFields: Documentation Upload
+        BusinessSubmitAction: Register Business Button
+        BusinessCancelAction: Cancel Button
+    }
+    
+    state "Notifications Panel" as NotificationsPanel {
+        NotificationList: All System Notifications
+        NotificationCategories: Priority Categories
+        NotificationActions: Mark as Read/Unread
+        NotificationCompose: Create New Notification
+    }
+    
+    state "All Alerts View" as AllAlertsView {
+        AlertsFilters: Filter by Type
+        AlertsFilters: Filter by Date Range
+        AlertsList: Comprehensive Alert List
+        AlertsActions: Resolve/Dismiss Actions
+    }
+    
+    state "User Activity Logs" as UserActivityLogs {
+        ActivityFilters: User Filter
+        ActivityFilters: Action Type Filter
+        ActivityFilters: Date Range Filter
+        ActivityList: Detailed Activity List
+        ActivityExport: Export Activity Data
+    }
+    
+    state "Business Updates List" as BusinessUpdatesList {
+        UpdatesFilters: Business Filter
+        UpdatesFilters: Update Type Filter
+        UpdatesFilters: Date Range Filter
+        UpdatesList: Detailed Updates List
+        UpdatesExport: Export Updates Data
+    }
+    
+    state "Financial Details View" as FinancialDetailsView {
+        FinancialBreakdown: Revenue Sources
+        FinancialBreakdown: Transaction History
+        FinancialMetrics: Key Financial Indicators
+        FinancialCharts: Trend Visualizations
+        FinancialExport: Export Financial Data
+    }
+    
+    state "Service Usage Details" as ServiceUsageDetails {
+        UsageBreakdown: Feature Utilization
+        UsageByBusiness: Business-wise Usage
+        UsageTrends: Usage Over Time
+        UsageComparison: Feature Comparison
+        UsageExport: Export Usage Data
+    }
+    
+    Dashboard --> UserManagementModule: Click View All Users
+    Dashboard --> UserCreationForm: Click Add New User
+    Dashboard --> BusinessManagementModule: Click View All Businesses
+    Dashboard --> BusinessRegistrationForm: Click Add New Business
+    Dashboard --> NotificationsPanel: Click View Notifications
+    Dashboard --> AllAlertsView: Click View All Alerts
+    Dashboard --> UserActivityLogs: Click View All Activity
+    Dashboard --> BusinessUpdatesList: Click View All Updates
+    Dashboard --> FinancialDetailsView: Click Financial Details
+    Dashboard --> ServiceUsageDetails: Click Usage Details
+    
+    UserCreationForm --> Dashboard: After Submit/Cancel
+    BusinessRegistrationForm --> Dashboard: After Submit/Cancel
+    NotificationsPanel --> Dashboard: Close Panel
+    AllAlertsView --> Dashboard: Back to Dashboard
+    UserActivityLogs --> Dashboard: Back to Dashboard
+    BusinessUpdatesList --> Dashboard: Back to Dashboard
+    FinancialDetailsView --> Dashboard: Back to Dashboard
+    ServiceUsageDetails --> Dashboard: Back to Dashboard
+    
+    note right of KPIPanel
+        All KPI metrics feature:
+        - Real-time data updates
+        - Visual indicators for trends (up/down arrows)
+        - Click functionality to access detailed views
+    end note
+    
+    note right of AnalyticsDisplayPanel
+        Charts include:
+        - Interactive data points
+        - Zoom functionality
+        - Custom date range selection
+        - Data export options (CSV, PDF)
+        - Display toggles for different metrics
+    end note
+    
+    note left of QuickActionsPanel
+        Quick Action buttons:
+        - Provide direct access to high-priority tasks
+        - Include confirmation dialogs for critical actions
+        - Feature visual feedback on hover/click
+    end note
+    
+    note left of RealTimeUpdatesPanel
+        Real-time updates:
+        - Auto-refresh every 60 seconds
+        - Show notification badges for new items
+        - Allow manual refresh via button
+        - Maintain scrollable history of recent items
+    end note
+    
+    note bottom of FilterPanel
+        Filters affect all dashboard components:
+        - Apply instantly or with confirmation
+        - Save as preset for future sessions
+        - Reset to default view
+        - Share filtered view via URL
+    end note

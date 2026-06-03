@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Hub | CarPal Auto Repair Shop</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Add in <head> section after Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="service_hub.css">
+</head>
+
+<body>
+    <!-- Left Navigation Sidebar -->
+    <nav class="nav-sidebar">
+        <div> <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop\Dashboard\dashboard.html"
+                class="logo-container">
+                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                    alt="CarPal Logo">
+            </a></div>
+        <ul class="nav-links">
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Dashboard/dashboard.html">
+                    <i class="fas fa-home"></i>Dashboard
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Service Hub/service_hub.html">
+                    <i class="fas fa-tools"></i>Service Hub
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-In/check_in.html">
+                    <i class="fas fa-car"></i>Vehicle Check-In
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Billings & Payments/billings.html">
+                    <i class="fas fa-file-invoice-dollar"></i>Billings & Payments
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle History/history.html">
+                    <i class="fas fa-history"></i>Vehicle History
+                </a>
+            </li>
+            <li>
+                <a href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Technicians/technicians.html"
+                    class="active">
+                    <i class="fas fa-users-cog"></i>Technicians
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Vehicle Check-Out/check_out.html">
+                    <i class="fas fa-sign-out-alt"></i>Vehicle Check-Out
+                </a>
+            </li>
+            <li>
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Settings/settings.html">
+                    <i class="fas fa-cog"></i>Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <h1>Service Hub</h1>
+            <div class="header-actions">
+                <button class="action-button"
+                    onclick="window.open('C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop/Notifications/notifications.html', 'Notifications', 'width=400,height=600')">
+                    <i class="fas fa-bell"></i> Notifications
+                </button>
+                <div class="user-profile" id="userProfile">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                        alt="User Profile">
+                    <span>John Doe</span>
+                    <div class="popup-menu" id="userMenu">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html">
+                            <i class="fas fa-sign-out-alt"></i> Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Service Tabs -->
+        <div class="service-tabs">
+            <button class="tab-btn active" data-tab="updates">Daily Updates</button>
+            <button class="tab-btn" data-tab="bulk">Bulk Updates</button>
+            <button class="tab-btn" data-tab="analytics">Analytics</button>
+            <button class="tab-btn" data-tab="services">Services</button>
+        </div>
+
+        <!-- Daily Updates Tab -->
+        <section id="updates" class="tab-content active">
+            <div class="daily-updates-header">
+                <div class="search-bar">
+                    <div class="search-input-group">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="licensePlateSearch" placeholder="Enter license plate number..."
+                            class="search-input">
+                    </div>
+                    <button class="action-button search-btn">Search</button>
+                </div>
+                <div class="update-summary">
+                    <div class="summary-card">
+                        <i class="fas fa-clock"></i>
+                        <div class="summary-info">
+                            <span class="summary-label">Pending Updates</span>
+                            <span class="summary-value">5</span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="summary-info">
+                            <span class="summary-label">Updated Today</span>
+                            <span class="summary-value">12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="update-section">
+                <!-- Vehicle Information Card -->
+                <div class="update-card">
+                    <div class="vehicle-info">
+                        <h3>Toyota Camry (KDD 123A)</h3>
+                        <span class="owner-info">Owner: John Smith | +254 712 345678</span>
+                    </div>
+
+                    <div class="progress-tracker">
+                        <div class="progress-info">
+                            <span class="progress-label">Service Progress</span>
+                            <span class="progress-percentage">60%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+
+                    <div class="update-form">
+                        <div class="template-selector">
+                            <select class="template-dropdown">
+                                <option value="">Select Template</option>
+                                <option value="progress">Progress Update</option>
+                                <option value="delay">Delay Notice</option>
+                                <option value="completion">Completion Notice</option>
+                            </select>
+                        </div>
+
+                        <div class="rich-text-editor">
+                            <div class="editor-toolbar">
+                                <button type="button" class="editor-btn" data-command="bold">
+                                    <i class="fas fa-bold"></i>
+                                </button>
+                                <button type="button" class="editor-btn" data-command="italic">
+                                    <i class="fas fa-italic"></i>
+                                </button>
+                                <button type="button" class="editor-btn" data-command="insertUnorderedList">
+                                    <i class="fas fa-list-ul"></i>
+                                </button>
+                            </div>
+                            <div class="editor-content" contenteditable="true"
+                                data-placeholder="Enter today's update..."></div>
+                            <div class="character-counter">
+                                <span class="current">0</span>/<span class="maximum">160</span> characters
+                            </div>
+                        </div>
+
+                        <div class="image-upload-section">
+                            <label for="updateImages" class="image-upload-btn">
+                                <i class="fas fa-camera"></i>
+                                Add Photos
+                            </label>
+                            <input type="file" id="updateImages" multiple accept="image/*" hidden>
+                            <div class="image-preview"></div>
+                        </div>
+
+                        <div class="communication-options">
+                            <label class="option-checkbox">
+                                <input type="checkbox" checked>
+                                <span class="checkbox-label">Send SMS</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" checked>
+                                <span class="checkbox-label">Send Email</span>
+                            </label>
+                        </div>
+
+                        <div class="update-actions">
+                            <button type="button" class="action-button schedule-btn">
+                                <i class="fas fa-clock"></i>
+                                Schedule
+                            </button>
+                            <button type="button" class="action-button send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Update
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Reminder Section -->
+            <div class="reminder-section">
+                <div class="reminder-header">
+                    <h3>Scheduled Updates</h3>
+                    <button class="action-button">
+                        <i class="fas fa-plus"></i> New Schedule
+                    </button>
+                </div>
+                <div class="reminder-list">
+                    <div class="reminder-item">
+                        <div class="reminder-time">2:00 PM</div>
+                        <div class="reminder-content">
+                            <span class="reminder-title">Daily Progress Update</span>
+                            <span class="reminder-vehicles">5 vehicles pending</span>
+                        </div>
+                        <div class="reminder-actions">
+                            <button class="icon-button">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="icon-button">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bulk Updates Tab -->
+        <section id="bulk" class="tab-content">
+            <div class="bulk-update">
+                <h2>Bulk Update Processing</h2>
+                <div class="file-upload">
+                    <i class="fas fa-cloud-upload-alt fa-3x"></i>
+                    <p>Drag and drop CSV/Excel file or click to upload</p>
+                    <input type="file" hidden>
+                </div>
+                <!-- Preview Table will appear here -->
+                <div class="preview-table">
+                    <h3>File Preview</h3>
+                    <div class="validation-summary">
+                        <div class="validation-card success">
+                            <i class="fas fa-check-circle"></i>
+                            <span>15 Valid Records</span>
+                        </div>
+                        <div class="validation-card error">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>2 Records with Issues</span>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="bulk-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>License Plate</th>
+                                    <th>Owner Name</th>
+                                    <th>Contact Info</th>
+                                    <th>Update Message</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="valid-row">
+                                    <td><span class="status-badge success">Valid</span></td>
+                                    <td>KDD 123A</td>
+                                    <td>John Smith</td>
+                                    <td>+254 712 345678</td>
+                                    <td>Engine repair completed, ready for collection</td>
+                                    <td>
+                                        <button class="icon-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="valid-row">
+                                    <td><span class="status-badge success">Valid</span></td>
+                                    <td>KBB 456B</td>
+                                    <td>Sarah Johnson</td>
+                                    <td>+254 723 456789</td>
+                                    <td>Brake inspection in progress, 50% complete</td>
+                                    <td>
+                                        <button class="icon-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="error-row">
+                                    <td><span class="status-badge error">Error</span></td>
+                                    <td>KCC 789C</td>
+                                    <td>Mike Brown</td>
+                                    <td><span class="error-text">Invalid phone number</span></td>
+                                    <td>Oil change completed</td>
+                                    <td>
+                                        <button class="icon-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bulk-actions">
+                        <button class="action-button">
+                            <i class="fas fa-paper-plane"></i> Send Valid Updates
+                        </button>
+                        <button class="action-button secondary">
+                            <i class="fas fa-download"></i> Export Error Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Tab -->
+        <section id="analytics" class="tab-content">
+            <div class="analytics-header">
+                <div class="date-range-picker">
+                    <button class="date-range-btn active">Today</button>
+                    <button class="date-range-btn">Week</button>
+                    <button class="date-range-btn">Month</button>
+                    <button class="date-range-btn">Custom</button>
+                </div>
+                <button class="action-button export-btn">
+                    <i class="fas fa-download"></i>
+                    Export Report
+                </button>
+            </div>
+
+            <div class="analytics-grid">
+                <!-- Update Metrics -->
+                <div class="analytics-card">
+                    <h3>Update Statistics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-label">Total Updates</span>
+                                <span class="metric-value">1,234</span>
+                                <span class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    12% vs last period
+                                </span>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-label">Avg Response Time</span>
+                                <span class="metric-value">4.2 hrs</span>
+                                <span class="metric-trend negative">
+                                    <i class="fas fa-arrow-down"></i>
+                                    15 min improvement
+                                </span>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <i class="fas fa-check-double"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-label">Delivery Rate</span>
+                                <span class="metric-value">98.5%</span>
+                                <span class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    2.5% vs last period
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communication Channels -->
+                <div class="analytics-card">
+                    <h3>Channel Performance</h3>
+                    <div class="channel-performance-grid">
+                        <!-- Chart Section -->
+                        <div class="chart-section">
+                            <div class="chart-container">
+                                <canvas id="channelsChart"></canvas>
+                            </div>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="legend-dot sms"></span>
+                                    <span>SMS</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-dot email"></span>
+                                    <span>Email</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-dot app"></span>
+                                    <span>In-App</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Metrics Section -->
+                        <div class="metrics-section">
+                            <!-- SMS Metrics -->
+                            <div class="channel-metric-card">
+                                <div class="metric-header">
+                                    <div class="metric-icon sms">
+                                        <i class="fas fa-comment"></i>
+                                    </div>
+                                    <div class="metric-title">
+                                        <h4>SMS</h4>
+                                        <span class="metric-value">45%</span>
+                                    </div>
+                                </div>
+                                <div class="delivery-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill sms" style="width: 99.2%"></div>
+                                    </div>
+                                    <span class="delivery-rate">99.2% delivered</span>
+                                </div>
+                            </div>
+
+                            <!-- Email Metrics -->
+                            <div class="channel-metric-card">
+                                <div class="metric-header">
+                                    <div class="metric-icon email">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="metric-title">
+                                        <h4>Email</h4>
+                                        <span class="metric-value">35%</span>
+                                    </div>
+                                </div>
+                                <div class="delivery-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill email" style="width: 98.5%"></div>
+                                    </div>
+                                    <span class="delivery-rate">98.5% delivered</span>
+                                </div>
+                            </div>
+
+                            <!-- In-App Metrics -->
+                            <div class="channel-metric-card">
+                                <div class="metric-header">
+                                    <div class="metric-icon app">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <div class="metric-title">
+                                        <h4>In-App</h4>
+                                        <span class="metric-value">20%</span>
+                                    </div>
+                                </div>
+                                <div class="delivery-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill app" style="width: 100%"></div>
+                                    </div>
+                                    <span class="delivery-rate">100% delivered</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Feedback -->
+                <div class="analytics-card">
+                    <h3>Customer Feedback</h3>
+                    <div class="chart-container">
+                        <canvas id="feedbackChart"></canvas>
+                    </div>
+                    <div class="feedback-summary">
+                        <div class="feedback-item positive">
+                            <span class="feedback-percentage">85%</span>
+                            <span class="feedback-label">Positive</span>
+                        </div>
+                        <div class="feedback-item neutral">
+                            <span class="feedback-percentage">10%</span>
+                            <span class="feedback-label">Neutral</span>
+                        </div>
+                        <div class="feedback-item negative">
+                            <span class="feedback-percentage">5%</span>
+                            <span class="feedback-label">Negative</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Timeline -->
+                <div class="analytics-card">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-timeline">
+                        <div class="activity-item">
+                            <div class="activity-time">2 hours ago</div>
+                            <div class="activity-content">
+                                <div class="activity-icon">
+                                    <i class="fas fa-paper-plane"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <span class="activity-title">Bulk Update Sent</span>
+                                    <span class="activity-desc">15 vehicles updated</span>
+                                    <span class="activity-stats">14 delivered, 1 pending</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More activity items -->
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Services Tab -->
+        <!-- Services Tab -->
+        <section id="services" class="tab-content">
+            <!-- Header Actions -->
+            <div class="section-header">
+                <div class="search-bar">
+                    <div class="search-input-group">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search services..." class="search-input">
+                    </div>
+                    <button class="action-button">
+                        <i class="fas fa-plus"></i> Add New Service
+                    </button>
+                </div>
+                <div class="service-summary">
+                    <div class="summary-card">
+                        <i class="fas fa-tools"></i>
+                        <div class="summary-info">
+                            <span class="summary-label">Active Services</span>
+                            <span class="summary-value">24</span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="summary-info">
+                            <span class="summary-label">This Month</span>
+                            <span class="summary-value">+8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Categories -->
+            <div class="service-categories mb-8">
+                <div class="category-scroll">
+                    <button class="category-btn active">All Services</button>
+                    <button class="category-btn">Maintenance</button>
+                    <button class="category-btn">Repairs</button>
+                    <button class="category-btn">Diagnostics</button>
+                    <button class="category-btn">Custom Work</button>
+                    <button class="category-btn">Emergency</button>
+                </div>
+            </div>
+
+            <!-- Service Grid -->
+            <div class="services-grid">
+                <!-- Active Services Section -->
+                <div class="grid-section">
+                    <h3 class="section-title">Active Services</h3>
+                    <div class="service-cards">
+                        <!-- Service Card -->
+                        <div class="service-card">
+                            <div class="service-header">
+                                <i class="fas fa-cog service-icon"></i>
+                                <div class="service-status active">Active</div>
+                            </div>
+                            <h4>Basic Maintenance</h4>
+                            <p class="service-description">Regular vehicle maintenance including oil change, filter
+                                replacement, and basic inspection.</p>
+                            <div class="service-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Success Rate</span>
+                                    <span class="metric-value">98%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Avg. Time</span>
+                                    <span class="metric-value">2h</span>
+                                </div>
+                            </div>
+                            <div class="service-actions">
+                                <button class="action-button edit-btn">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="action-button view-btn">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Additional Service Cards -->
+                        <div class="service-card">
+                            <div class="service-header">
+                                <i class="fas fa-wrench service-icon"></i>
+                                <div class="service-status active">Active</div>
+                            </div>
+                            <h4>Engine Repair</h4>
+                            <p class="service-description">Complete engine diagnostic and repair services with
+                                comprehensive reporting.</p>
+                            <div class="service-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Success Rate</span>
+                                    <span class="metric-value">95%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Avg. Time</span>
+                                    <span class="metric-value">6h</span>
+                                </div>
+                            </div>
+                            <div class="service-actions">
+                                <button class="action-button edit-btn">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="action-button view-btn">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Performance -->
+                <div class="performance-section">
+                    <div class="analytics-card">
+                        <h3>Service Performance</h3>
+                        <div class="chart-container">
+                            <canvas id="servicePerformanceChart"></canvas>
+                        </div>
+                        <div class="performance-metrics">
+                            <div class="metric-item">
+                                <div class="metric-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <span class="metric-label">Average Service Time</span>
+                                    <span class="metric-value">3.5 hrs</span>
+                                    <span class="metric-trend positive">
+                                        <i class="fas fa-arrow-down"></i>
+                                        15 min improvement
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="action-btn">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Add Service</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-file-export"></i>
+                        <span>Export Report</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Communication Tools -->
+        <section class="communication-tools">
+            <div class="tool-card">
+                <i class="fas fa-sms fa-3x"></i>
+                <h3>SMS Templates</h3>
+                <div class="template-grid">
+                    <div class="template-card">Progress Update</div>
+                    <div class="template-card">Completion Notice</div>
+                </div>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-envelope fa-3x"></i>
+                <h3>Email Templates</h3>
+                <div class="template-grid">
+                    <div class="template-card">Detailed Report</div>
+                    <div class="template-card">Follow-up</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div>
+                    <a href="https://citruslabs.co.ke/" target="_blank"
+                        style="color: #FFFFFF; text-decoration: none;">Corporate Website</a>
+                </div>
+                <div>
+                    © 2025 Citrus Labs. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Tab Switching
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Tab switching logic
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Initialize Analytics Chart
+        const ctx = document.getElementById('updateChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                datasets: [{
+                    label: 'Updates Sent',
+                    data: [12, 19, 15, 17, 14],
+                    borderColor: '#FFD700',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // User Profile Popup
+        document.getElementById('userProfile').addEventListener('click', function () {
+            document.getElementById('userMenu').classList.toggle('active');
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Form Submission
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Appointment scheduled successfully!');
+        });
+
+        // Initialize Channel Performance Chart
+        document.addEventListener('DOMContentLoaded', function () {
+            const channelsCtx = document.getElementById('channelsChart').getContext('2d');
+
+            // Channel data
+            const channelData = {
+                labels: ['SMS', 'Email', 'In-App'],
+                datasets: [{
+                    data: [45, 35, 20],
+                    backgroundColor: ['#FFD700', '#2D2D2D', '#4CAF50'],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            };
+
+            // Chart configuration
+            const config = {
+                type: 'doughnut',
+                data: channelData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return `${context.label}: ${context.raw}%`;
+                                }
+                            },
+                            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                            titleColor: '#000',
+                            bodyColor: '#000',
+                            borderColor: '#ddd',
+                            borderWidth: 1,
+                            padding: 10,
+                            displayColors: false,
+                            bodyFont: {
+                                family: 'Poppins'
+                            }
+                        }
+                    }
+                }
+            };
+
+            // Create the chart
+            new Chart(channelsCtx, config);
+        });
+
+        // Add this to your existing scripts
+        // Initialize Channels Chart
+        const channelsCtx = document.getElementById('channelsChart');
+        if (channelsCtx) {
+            const channelsChart = new Chart(channelsCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['SMS', 'Email', 'In-App'],
+                    datasets: [{
+                        data: [45, 35, 20],
+                        backgroundColor: ['#FFD700', '#2D2D2D', '#4CAF50'],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return `${context.label}: ${context.raw}%`;
+                                }
+                            },
+                            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                            titleColor: '#000',
+                            bodyColor: '#000',
+                            borderColor: '#ddd',
+                            borderWidth: 1,
+                            padding: 10,
+                            displayColors: false
+                        }
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Your existing channels chart code...
+
+            // Initialize Feedback Chart
+            const feedbackCtx = document.getElementById('feedbackChart').getContext('2d');
+            if (feedbackCtx) {
+                new Chart(feedbackCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Positive', 'Neutral', 'Negative'],
+                        datasets: [{
+                            data: [85, 10, 5],
+                            backgroundColor: ['#4CAF50', '#FFC107', '#F44336'],
+                            borderWidth: 0,
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (context) {
+                                        return `${context.label}: ${context.raw}%`;
+                                    }
+                                },
+                                backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                                titleColor: '#000',
+                                bodyColor: '#000',
+                                borderColor: '#ddd',
+                                borderWidth: 1,
+                                padding: 10,
+                                displayColors: false,
+                                bodyFont: {
+                                    family: 'Poppins'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        // Rich Text Editor Functionality
+        document.querySelectorAll('.editor-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const command = this.dataset.command;
+                document.execCommand(command, false, null);
+            });
+        });
+
+        // Character Counter
+        const editor = document.querySelector('.editor-content');
+        const counter = document.querySelector('.character-counter .current');
+        editor.addEventListener('input', function () {
+            counter.textContent = this.textContent.length;
+        });
+
+        // Image Upload Preview
+        document.getElementById('updateImages').addEventListener('change', function (e) {
+            const preview = document.querySelector('.image-preview');
+            preview.innerHTML = '';
+            [...e.target.files].forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const img = document.createElement('img');
+                    img.src = event.target.result;
+                    img.className = 'preview-img';
+                    preview.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

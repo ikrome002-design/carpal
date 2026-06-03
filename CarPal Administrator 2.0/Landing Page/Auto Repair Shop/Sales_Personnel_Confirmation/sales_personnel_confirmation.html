@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal | Create Account</title>
+
+    <!-- Favicon Configuration -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\Create Account\create_account.css">
+</head>
+
+<body>
+    <!-- Header Section with Logo -->
+    <header class="logo">
+        <div> <a href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\landing_page.html"
+                class="logo">
+                <!-- Brand Logo -->
+                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Brand Identity/CarPal-Logo-PNG.png"
+                    alt="CarPal Logo" class="logo">
+            </a></div>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <h1>Confirm Sales Personnel Involvement</h1>
+
+        <p>Your registration session is linked to a sales personnel representative. <br> Please review and confirm their
+            information below before proceeding.</p>
+
+        <!-- Sales Personnel Information Section -->
+        <div class="form-group">
+            <label for="salesName">Sales Personnel Name:</label>
+            <input type="text" id="salesName">
+        </div>
+
+        <div class="form-group">
+            <label for="salesID">Sales Personnel ID:</label>
+            <input type="text" id="salesID">
+        </div>
+
+        <div class="form-group">
+            <label for="salesContact">Validation Code:</label>
+            <input type="text" id="salesContact">
+        </div>
+
+        <!-- Confirmation Message -->
+        <div class="form-group">
+            <p class="confirmation-message">
+                Thank you for partnering with CarPal! <br> Sales personnel <span id="salesPersonnelName"></span> is
+                assisting
+                you during this registration process. <br> This ensures personalized support and seamless account setup.
+            </p>
+        </div>
+
+        <!-- Error Messages (Hidden by default) -->
+        <div class="error-message" id="noSalesPersonnel">
+            Sales personnel information not found. Please re-enter the correct sales code or contact your sales
+            representative for assistance.
+        </div>
+
+        <div class="error-message" id="invalidCode">
+            The provided sales code is invalid or expired. Please enter a valid code to proceed.
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <button type="button" class="skip-button" onclick="sKip()">Skip</button>
+            <button type="button" class="back-button" onclick="goBack()">Back</button>
+            <button type="button" class="proceed-button" onclick="confirmAndProceed()">Confirm and Proceed</button>
+        </div>
+
+        <div class="login-redirect">
+            <p>Already have an account? <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\Auto Repair Shop\Log In\log_in.html"
+                    class="login-link">Log In Here</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Form Handling -->
+    <script>
+        // Function to handle back button click
+        function goBack() {
+            // Navigate to previous step
+            window.history.back();
+        }
+
+        // Function to handle confirmation and proceeding
+        function sKip() {
+            // Proceed to next step
+            window.location.href = 'C:/Users/nderu/Documents/Development/Product/CarPal/Landing Page/Auto Repair Shop/Create Account/create_account_4.html';
+        }
+
+        // Function to handle confirmation and proceeding
+        function confirmAndProceed() {
+            // Validate sales personnel information
+            if (validateSalesInfo()) {
+                // Proceed to next step
+                window.location.href = 'C:/Users/nderu/Documents/Development/Product/CarPal/Landing Page/Auto Repair Shop/Create Account/create_account_4.html';
+            } else {
+                // Show error message
+                document.getElementById('invalidCode').style.display = 'block';
+            }
+        }
+
+
+        // Function to validate sales information
+        function validateSalesInfo() {
+            // Add validation logic here
+            return true; // Placeholder return
+        }
+
+        // Function to populate sales personnel information
+        function populateSalesInfo() {
+            // Add logic to populate sales personnel information
+            // This would typically come from your backend
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function () {
+            populateSalesInfo();
+        });
+    </script>
+</body>
+
+</html>

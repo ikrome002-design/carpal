@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal by Citrus - Security</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="security.css">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                        alt="CarPal by Citrus Logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Administrator Dashboard\dashboard.html">Dashboard</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\User Management\users.html">Users</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Business Management\businesses.html">Businesses</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Financial Oversight\finance.html">Finance</a>
+                    </li>
+                    <li class="active">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Security Tools\security.html">Security</a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Customer Support Tools\support.html">Support</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Controls -->
+            <div class="user-controls">
+                <!-- Notifications -->
+                <div class="notifications">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Notifications\notifications.html">
+                        <i class="fa-solid fa-bell notification-icon"></i>
+                        <span class="notification-count">3</span>
+                    </a>
+                </div>
+
+                <!-- User Profile Dropdown -->
+                <div class="user-profile-dropdown">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                        alt="User Profile" class="profile-icon">
+                    <div class="dropdown-content">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\My Profile\my_profile.html">My
+                            Profile</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Activity History\activity_history.html">Activity
+                            History</a>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Administrator 2.0\Landing Page\landing_page.html">Log
+                            Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="security-page-container">
+            <h1>Security Dashboard</h1>
+
+            <!-- Security Dashboard -->
+            <div class="security-dashboard">
+                <div class="dashboard-grid">
+                    <!-- Security Overview -->
+                    <div class="dashboard-card security-overview">
+                        <h2>Security Overview</h2>
+                        <div class="security-status">
+                            <div class="status-indicator secure">
+                                <i class="fa-solid fa-shield-check"></i>
+                                <span class="status-text">Platform Secure</span>
+                            </div>
+                            <div class="threat-level">
+                                <span class="level-label">Threat Level:</span>
+                                <span class="level-value low">Low</span>
+                            </div>
+                        </div>
+                        <div class="recent-events">
+                            <h3>Recent Security Events</h3>
+                            <ul class="event-list">
+                                <li class="event info">
+                                    <span class="event-time">Today, 10:23 AM</span>
+                                    <span class="event-description">Administrator password changed</span>
+                                </li>
+                                <li class="event warning">
+                                    <span class="event-time">Today, 09:17 AM</span>
+                                    <span class="event-description">Multiple failed login attempts</span>
+                                </li>
+                                <li class="event info">
+                                    <span class="event-time">Yesterday, 03:45 PM</span>
+                                    <span class="event-description">System backup completed</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Quick Statistics -->
+                    <div class="dashboard-card quick-stats">
+                        <h2>Quick Statistics</h2>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-sign-in-alt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">157</span>
+                                    <span class="stat-label">Login Attempts (24h)</span>
+                                </div>
+                            </div>
+                            <div class="stat-card warning">
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-user-slash"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">12</span>
+                                    <span class="stat-label">Failed Logins (24h)</span>
+                                </div>
+                            </div>
+                            <div class="stat-card danger">
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-user-lock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">3</span>
+                                    <span class="stat-label">Locked Accounts</span>
+                                </div>
+                            </div>
+                            <div class="stat-card success">
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-database"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">Up to date</span>
+                                    <span class="stat-label">Last Backup: 6 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Alerts -->
+                    <div class="dashboard-card security-alerts">
+                        <h2>Security Alerts</h2>
+                        <div class="alerts-container">
+                            <div class="alert-group critical">
+                                <h3>
+                                    <i class="fa-solid fa-exclamation-triangle"></i>
+                                    Critical Alerts
+                                    <span class="alert-count">1</span>
+                                </h3>
+                                <ul class="alert-list">
+                                    <li class="alert-item">
+                                        <span class="alert-time">Mar 28, 9:17 AM</span>
+                                        <span class="alert-description">Multiple failed login attempts from IP
+                                            196.201.xxx.xxx</span>
+                                        <a href="#" class="alert-action">Review</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="alert-group warning">
+                                <h3>
+                                    <i class="fa-solid fa-exclamation"></i>
+                                    Warning Alerts
+                                    <span class="alert-count">2</span>
+                                </h3>
+                                <ul class="alert-list">
+                                    <li class="alert-item">
+                                        <span class="alert-time">Mar 28, 10:45 AM</span>
+                                        <span class="alert-description">Unusual access pattern detected for user
+                                            john.smith</span>
+                                        <a href="#" class="alert-action">Review</a>
+                                    </li>
+                                    <li class="alert-item">
+                                        <span class="alert-time">Mar 27, 4:30 PM</span>
+                                        <span class="alert-description">Database backup taking longer than usual</span>
+                                        <a href="#" class="alert-action">Review</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="view-all-alerts">
+                            <a href="#" class="view-all-link">View All Alerts <i
+                                    class="fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="dashboard-card quick-actions">
+                        <h2>Quick Actions</h2>
+                        <div class="action-buttons">
+                            <button id="manualBackupBtn" class="action-btn">
+                                <i class="fa-solid fa-database"></i>
+                                Manual Backup
+                            </button>
+                            <button id="securityScanBtn" class="action-btn">
+                                <i class="fa-solid fa-shield-alt"></i>
+                                Security Scan
+                            </button>
+                            <button id="viewAllLogsBtn" class="action-btn">
+                                <i class="fa-solid fa-list"></i>
+                                View All Logs
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="navigation-tabs">
+                <button class="tab-btn active" data-tab="audit-logs">Audit Logs</button>
+                <button class="tab-btn" data-tab="access-monitoring">Access Monitoring</button>
+                <button class="tab-btn" data-tab="data-backup">Data Backup</button>
+                <button class="tab-btn" data-tab="security-permissions">Security Permissions</button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-content-container">
+                <!-- Audit Logs Tab -->
+                <div id="audit-logs" class="tab-content active">
+                    <div class="tab-header">
+                        <h2>Audit Logs</h2>
+                        <div class="tab-actions">
+                            <button id="exportLogsBtn" class="primary-btn">
+                                <i class="fa-solid fa-file-export"></i>
+                                Export Logs
+                            </button>
+                            <button id="refreshLogsBtn" class="secondary-btn">
+                                <i class="fa-solid fa-sync"></i>
+                                Refresh
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filter-container">
+                        <div class="filter-group">
+                            <label for="logDateRange">Date Range:</label>
+                            <div class="date-range-picker">
+                                <input type="date" id="logStartDate" name="logStartDate">
+                                <span>to</span>
+                                <input type="date" id="logEndDate" name="logEndDate">
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label for="logUserFilter">User:</label>
+                            <select id="logUserFilter" name="logUserFilter">
+                                <option value="all">All Users</option>
+                                <option value="admin">Administrators</option>
+                                <option value="support">Support Staff</option>
+                                <option value="system">System</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="logActionFilter">Action Type:</label>
+                            <select id="logActionFilter" name="logActionFilter">
+                                <option value="all">All Actions</option>
+                                <option value="login">Login/Logout</option>
+                                <option value="create">Create</option>
+                                <option value="update">Update</option>
+                                <option value="delete">Delete</option>
+                                <option value="export">Export</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="logModuleFilter">Module:</label>
+                            <select id="logModuleFilter" name="logModuleFilter">
+                                <option value="all">All Modules</option>
+                                <option value="users">Users</option>
+                                <option value="businesses">Businesses</option>
+                                <option value="finance">Finance</option>
+                                <option value="security">Security</option>
+                                <option value="support">Support</option>
+                            </select>
+                        </div>
+                        <div class="filter-group search-filter">
+                            <input type="text" id="logSearchInput" name="logSearchInput" placeholder="Search logs...">
+                            <button id="applyLogFiltersBtn" class="filter-btn">
+                                <i class="fa-solid fa-filter"></i>
+                                Apply Filters
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table log-entries-table">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>User</th>
+                                    <th>Action</th>
+                                    <th>Module</th>
+                                    <th>Details</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="log-entry" data-entry-id="12345">
+                                    <td>Mar 28, 2025 10:23:15</td>
+                                    <td>John Mwangi</td>
+                                    <td>Password Change</td>
+                                    <td>Security</td>
+                                    <td>Administrator password changed successfully</td>
+                                    <td>
+                                        <button class="view-entry-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry warning" data-entry-id="12344">
+                                    <td>Mar 28, 2025 09:17:42</td>
+                                    <td>Unknown</td>
+                                    <td>Failed Login</td>
+                                    <td>Authentication</td>
+                                    <td>Multiple failed attempts for username admin from IP 196.201.xxx.xxx</td>
+                                    <td>
+                                        <button class="view-entry-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry" data-entry-id="12343">
+                                    <td>Mar 27, 2025 15:45:22</td>
+                                    <td>System</td>
+                                    <td>Backup Completed</td>
+                                    <td>Data Management</td>
+                                    <td>Scheduled backup completed successfully. Size: 2.3GB</td>
+                                    <td>
+                                        <button class="view-entry-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry" data-entry-id="12342">
+                                    <td>Mar 27, 2025 14:12:05</td>
+                                    <td>Jane Njoroge</td>
+                                    <td>User Created</td>
+                                    <td>User Management</td>
+                                    <td>New business account created for MetroCabs Ltd</td>
+                                    <td>
+                                        <button class="view-entry-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry" data-entry-id="12341">
+                                    <td>Mar 27, 2025 11:05:33</td>
+                                    <td>John Mwangi</td>
+                                    <td>Permission Update</td>
+                                    <td>Security</td>
+                                    <td>Modified permissions for Support Staff role</td>
+                                    <td>
+                                        <button class="view-entry-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry" data-entry-id="12340">
+                                    <td>Mar 27, 2025 10:23:15</td>
+                                    <td>Alice Wambui</td>
+                                    <td>Login</td>
+                                    <td>Authentication</td>
+                                    <td>Successful login from IP 196.201.xxx.xxx</td>
+                                    <td>
+                                        <button class="view-entry-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry" data-entry-id="12339">
+                                    <td>Mar 27, 2025 09:15:42</td>
+                                    <td>System</td>
+                                    <td>Security Scan</td>
+                                    <td>Security</td>
+                                    <td>Scheduled security scan completed. No threats detected.</td>
+                                    <td>
+                                        <button class="view-entry-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry" data-entry-id="12338">
+                                    <td>Mar 26, 2025 16:32:18</td>
+                                    <td>John Mwangi</td>
+                                    <td>Report Export</td>
+                                    <td>Finance</td>
+                                    <td>Monthly revenue report exported to PDF</td>
+                                    <td>
+                                        <button class="view-entry-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry" data-entry-id="12337">
+                                    <td>Mar 26, 2025 14:45:05</td>
+                                    <td>Jane Njoroge</td>
+                                    <td>Business Update</td>
+                                    <td>Business Management</td>
+                                    <td>Updated business profile for SafeRide Taxi Co.</td>
+                                    <td>
+                                        <button class="view-entry-btn">View</button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry warning" data-entry-id="12336">
+                                    <td>Mar 26, 2025 10:05:33</td>
+                                    <td>System</td>
+                                    <td>Backup Warning</td>
+                                    <td>Data Management</td>
+                                    <td>Backup storage approaching capacity (85%)</td>
+                                    <td>
+                                        <button class="view-entry-btn">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="pagination-btn" disabled>
+                            <i class="fa-solid fa-chevron-left"></i>
+                            Previous
+                        </button>
+                        <span class="pagination-info">Page 1 of 10</span>
+                        <button class="pagination-btn">
+                            Next
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Access Monitoring Tab -->
+                <div id="access-monitoring" class="tab-content">
+                    <div class="tab-header">
+                        <h2>Access Monitoring</h2>
+                        <div class="tab-actions">
+                            <button id="exportAccessLogsBtn" class="primary-btn">
+                                <i class="fa-solid fa-file-export"></i>
+                                Export Data
+                            </button>
+                            <button id="refreshAccessLogsBtn" class="secondary-btn">
+                                <i class="fa-solid fa-sync"></i>
+                                Refresh
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filter-container">
+                        <div class="filter-group">
+                            <label for="accessDateRange">Date Range:</label>
+                            <div class="date-range-picker">
+                                <input type="date" id="accessStartDate" name="accessStartDate">
+                                <span>to</span>
+                                <input type="date" id="accessEndDate" name="accessEndDate">
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label for="accessUserFilter">User:</label>
+                            <select id="accessUserFilter" name="accessUserFilter">
+                                <option value="all">All Users</option>
+                                <option value="admin">Administrators</option>
+                                <option value="support">Support Staff</option>
+                                <option value="business">Business Owners</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="accessStatusFilter">Status:</label>
+                            <select id="accessStatusFilter" name="accessStatusFilter">
+                                <option value="all">All Status</option>
+                                <option value="success">Success</option>
+                                <option value="failed">Failed</option>
+                                <option value="suspicious">Suspicious</option>
+                            </select>
+                        </div>
+                        <div class="filter-group search-filter">
+                            <input type="text" id="accessSearchInput" name="accessSearchInput"
+                                placeholder="Search by user or IP...">
+                            <button id="applyAccessFiltersBtn" class="filter-btn">
+                                <i class="fa-solid fa-filter"></i>
+                                Apply Filters
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="suspicious-activity-section">
+                        <h3>Suspicious Activity Flags</h3>
+                        <div class="flag-cards">
+                            <div class="flag-card">
+                                <div class="flag-icon">
+                                    <i class="fa-solid fa-map-marker-alt"></i>
+                                </div>
+                                <div class="flag-details">
+                                    <h4>Unusual Location</h4>
+                                    <p>1 login from new location</p>
+                                </div>
+                                <button class="flag-action-btn">Review</button>
+                            </div>
+                            <div class="flag-card alert">
+                                <div class="flag-icon">
+                                    <i class="fa-solid fa-user-slash"></i>
+                                </div>
+                                <div class="flag-details">
+                                    <h4>Failed Attempts</h4>
+                                    <p>Multiple failed attempts on administrator account</p>
+                                </div>
+                                <button class="flag-action-btn">Review</button>
+                            </div>
+                            <div class="flag-card">
+                                <div class="flag-icon">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div class="flag-details">
+                                    <h4>Off-hours Access</h4>
+                                    <p>2 logins outside business hours</p>
+                                </div>
+                                <button class="flag-action-btn">Review</button>
+                            </div>
+                            <div class="flag-card">
+                                <div class="flag-icon">
+                                    <i class="fa-solid fa-mobile-alt"></i>
+                                </div>
+                                <div class="flag-details">
+                                    <h4>Unusual Device</h4>
+                                    <p>3 logins from new devices</p>
+                                </div>
+                                <button class="flag-action-btn">Review</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table login-activity-table">
+                            <thead>
+                                <tr>
+                                    <th>User ID</th>
+                                    <th>Login Time</th>
+                                    <th>IP Address</th>
+                                    <th>Device Type</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="login-entry" data-session-id="87654">
+                                    <td>john.mwangi@citruslabs.co.ke</td>
+                                    <td>Mar 28, 2025 10:23:15</td>
+                                    <td>196.201.xxx.xxx</td>
+                                    <td>Chrome on Windows</td>
+                                    <td>Nairobi, Kenya</td>
+                                    <td><span class="status-badge success">Success</span></td>
+                                    <td>
+                                        <button class="view-session-btn">View</button>
+                                        <button class="action-dropdown-btn">
+                                            <i class="fa-solid fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="login-entry" data-session-id="87653">
+                                    <td>jane.njoroge@citruslabs.co.ke</td>
+                                    <td>Mar 28, 2025 09:45:22</td>
+                                    <td>196.201.xxx.xxx</td>
+                                    <td>Safari on macOS</td>
+                                    <td>Nairobi, Kenya</td>
+                                    <td><span class="status-badge success">Success</span></td>
+                                    <td>
+                                        <button class="view-session-btn">View</button>
+                                        <button class="action-dropdown-btn">
+                                            <i class="fa-solid fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="login-entry warning" data-session-id="87652">
+                                    <td>admin</td>
+                                    <td>Mar 28, 2025 09:17:42</td>
+                                    <td>196.201.xxx.xxx</td>
+                                    <td>Firefox on Windows</td>
+                                    <td>Nairobi, Kenya</td>
+                                    <td><span class="status-badge failed">Failed (5x)</span></td>
+                                    <td>
+                                        <button class="view-session-btn">View</button>
+                                        <button class="action-dropdown-btn">
+                                            <i class="fa-solid fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="login-entry" data-session-id="87651">
+                                    <td>alice.wambui@citruslabs.co.ke</td>
+                                    <td>Mar 27, 2025 16:30:05</td>
+                                    <td>196.201.xxx.xxx</td>
+                                    <td>Chrome on Android</td>
+                                    <td>Nairobi, Kenya</td>
+                                    <td><span class="status-badge success">Success</span></td>
+                                    <td>
+                                        <button class="view-session-btn">View</button>
+                                        <button class="action-dropdown-btn">
+                                            <i class="fa-solid fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="login-entry" data-session-id="87650">
+                                    <td>bob.kamau@citruslabs.co.ke</td>
+                                    <td>Mar 27, 2025 15:12:33</td>
+                                    <td>196.201.xxx.xxx</td>
+                                    <td>Safari on iOS</td>
+                                    <td>Mombasa, Kenya</td>
+                                    <td><span class="status-badge success">Success</span></td>
+                                    <td>
+                                        <button class="view-session-btn">View</button>
+                                        <button class="action-dropdown-btn">
+                                            <i class="fa-solid fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="login-entry warning" data-session-id="87649">
+                                    <td>charlie.omondi@citruslabs.co.ke</td>
+                                    <td>Mar 27, 2025 02:45:17</td>
+                                    <td>196.201.xxx.xxx</td>
+                                    <td>Chrome on Windows</td>
+                                    <td>Nairobi, Kenya</td>
+                                    <td><span class="status-badge suspicious">Off-hours</span></td>
+                                    <td>
+                                        <button class="view-session-btn">View</button>
+                                        <button class="action-dropdown-btn">
+                                            <i class="fa-solid fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="login-entry" data-session-id="87648">
+                                    <td>david.kioko@metrocabs.co.ke</td>
+                                    <td>Mar 26, 2025 16:05:29</td>
+                                    <td>196.201.xxx.xxx</td>
+                                    <td>Firefox on Windows</td>
+                                    <td>Kisumu, Kenya</td>
+                                    <td><span class="status-badge success">Success</span></td>
+                                    <td>
+                                        <button class="view-session-btn">View</button>
+                                        <button class="action-dropdown-btn">
+                                            <i class="fa-solid fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="login-entry warning" data-session-id="87647">
+                                    <td>eve.wanjiku@citruslabs.co.ke</td>
+                                    <td>Mar 26, 2025 14:12:07</td>
+                                    <td>105.161.xxx.xxx</td>
+                                    <td>Chrome on Windows</td>
+                                    <td>Kampala, Uganda</td>
+                                    <td><span class="status-badge suspicious">New Location</span></td>
+                                    <td>
+                                        <button class="view-session-btn">View</button>
+                                        <button class="action-dropdown-btn">
+                                            <i class="fa-solid fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="corrective-actions">
+                        <h3>Corrective Actions</h3>
+                        <div class="action-buttons">
+                            <button id="lockAccountBtn" class="corrective-btn">
+                                <i class="fa-solid fa-user-lock"></i>
+                                Lock Account
+                            </button>
+                            <button id="sendNotificationBtn" class="corrective-btn">
+                                <i class="fa-solid fa-bell"></i>
+                                Send Notification
+                            </button>
+                            <button id="resetPasswordBtn" class="corrective-btn">
+                                <i class="fa-solid fa-key"></i>
+                                Reset Password
+                            </button>
+                            <button id="addWatchlistBtn" class="corrective-btn">
+                                <i class="fa-solid fa-eye"></i>
+                                Add to Watchlist
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="pagination-btn" disabled>
+                            <i class="fa-solid fa-chevron-left"></i>
+                            Previous
+                        </button>
+                        <span class="pagination-info">Page 1 of 5</span>
+                        <button class="pagination-btn">
+                            Next
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Data Backup Tab -->
+                <div id="data-backup" class="tab-content">
+                    <div class="tab-header">
+                        <h2>Data Backup</h2>
+                        <div class="tab-actions">
+                            <button id="manualBackupTabBtn" class="primary-btn">
+                                <i class="fa-solid fa-database"></i>
+                                Manual Backup
+                            </button>
+                            <button id="refreshBackupsBtn" class="secondary-btn">
+                                <i class="fa-solid fa-sync"></i>
+                                Refresh
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="backup-configuration">
+                        <h3>Backup Configuration</h3>
+                        <div class="config-card-container">
+                            <div class="config-card">
+                                <h4>Schedule Settings</h4>
+                                <div class="config-form">
+                                    <div class="form-group">
+                                        <label for="backupFrequency">Frequency:</label>
+                                        <select id="backupFrequency" name="backupFrequency">
+                                            <option value="daily">Daily</option>
+                                            <option value="weekly" selected>Weekly</option>
+                                            <option value="monthly">Monthly</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="backupTime">Time:</label>
+                                        <input type="time" id="backupTime" name="backupTime" value="01:00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="backupDay">Day:</label>
+                                        <select id="backupDay" name="backupDay">
+                                            <option value="monday">Monday</option>
+                                            <option value="tuesday">Tuesday</option>
+                                            <option value="wednesday">Wednesday</option>
+                                            <option value="thursday">Thursday</option>
+                                            <option value="friday">Friday</option>
+                                            <option value="saturday" selected>Saturday</option>
+                                            <option value="sunday">Sunday</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="config-card">
+                                <h4>Storage Options</h4>
+                                <div class="config-form">
+                                    <div class="form-group">
+                                        <label for="storageLocation">Primary Location:</label>
+                                        <select id="storageLocation" name="storageLocation">
+                                            <option value="local_server">Local Server</option>
+                                            <option value="cloud" selected>Cloud Storage</option>
+                                            <option value="external">External Storage</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="secondaryStorage">Secondary Location:</label>
+                                        <select id="secondaryStorage" name="secondaryStorage">
+                                            <option value="none">None</option>
+                                            <option value="local_server" selected>Local Server</option>
+                                            <option value="cloud">Cloud Storage</option>
+                                            <option value="external">External Storage</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="encryptBackups">Encrypt Backups:</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="encryptBackups" name="encryptBackups" checked>
+                                            <span class="toggle-slider"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="config-card">
+                                <h4>Retention Policy</h4>
+                                <div class="config-form">
+                                    <div class="form-group">
+                                        <label for="keepDaily">Keep Daily Backups:</label>
+                                        <div class="input-with-unit">
+                                            <input type="number" id="keepDaily" name="keepDaily" value="7">
+                                            <span class="unit">days</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="keepWeekly">Keep Weekly Backups:</label>
+                                        <div class="input-with-unit">
+                                            <input type="number" id="keepWeekly" name="keepWeekly" value="4">
+                                            <span class="unit">weeks</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="keepMonthly">Keep Monthly Backups:</label>
+                                        <div class="input-with-unit">
+                                            <input type="number" id="keepMonthly" name="keepMonthly" value="12">
+                                            <span class="unit">months</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="config-actions">
+                            <button id="saveBackupConfigBtn" class="primary-btn">
+                                <i class="fa-solid fa-save"></i>
+                                Save Configuration
+                            </button>
+                            <button id="testBackupConfigBtn" class="secondary-btn">
+                                <i class="fa-solid fa-vial"></i>
+                                Test Configuration
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="backup-history">
+                        <h3>Backup History</h3>
+                        <div class="table-container">
+                            <table class="data-table backup-history-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date/Time</th>
+                                        <th>Type</th>
+                                        <th>Size</th>
+                                        <th>Status</th>
+                                        <th>Storage Location</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="backup-entry" data-backup-id="45678">
+                                        <td>Mar 27, 2025 01:00:15</td>
+                                        <td>Full Backup</td>
+                                        <td>2.3 GB</td>
+                                        <td><span class="status-badge success">Completed</span></td>
+                                        <td>Cloud Storage, Local Server</td>
+                                        <td>
+                                            <button class="view-backup-btn">View</button>
+                                            <button class="action-dropdown-btn">
+                                                <i class="fa-solid fa-ellipsis-v"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="backup-entry" data-backup-id="45677">
+                                        <td>Mar 20, 2025 01:00:22</td>
+                                        <td>Full Backup</td>
+                                        <td>2.2 GB</td>
+                                        <td><span class="status-badge success">Completed</span></td>
+                                        <td>Cloud Storage, Local Server</td>
+                                        <td>
+                                            <button class="view-backup-btn">View</button>
+                                            <button class="action-dropdown-btn">
+                                                <i class="fa-solid fa-ellipsis-v"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="backup-entry" data-backup-id="45676">
+                                        <td>Mar 13, 2025 01:00:05</td>
+                                        <td>Full Backup</td>
+                                        <td>2.1 GB</td>
+                                        <td><span class="status-badge success">Completed</span></td>
+                                        <td>Cloud Storage, Local Server</td>
+                                        <td>
+                                            <button class="view-backup-btn">View</button>
+                                            <button class="action-dropdown-btn">
+                                                <i class="fa-solid fa-ellipsis-v"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="backup-entry warning" data-backup-id="45675">
+                                        <td>Mar 6, 2025 01:00:18</td>
+                                        <td>Full Backup</td>
+                                        <td>2.1 GB</td>
+                                        <td><span class="status-badge warning">Delayed</span></td>
+                                        <td>Cloud Storage, Local Server</td>
+                                        <td>
+                                            <button class="view-backup-btn">View</button>
+                                            <button class="action-dropdown-btn">
+                                                <i class="fa-solid fa-ellipsis-v"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="backup-entry" data-backup-id="45674">
+                                        <td>Feb 27, 2025 01:00:10</td>
+                                        <td>Full Backup</td>
+                                        <td>2.0 GB</td>
+                                        <td><span class="status-badge success">Completed</span></td>
+                                        <td>Cloud Storage, Local Server</td>
+                                        <td>
+                                            <button class="view-backup-btn">View</button>
+                                            <button class="action-dropdown-btn">
+                                                <i class="fa-solid fa-ellipsis-v"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="storage-metrics">
+                            <h3>Storage Metrics</h3>
+                            <div class="metrics-cards">
+                                <div class="metric-card">
+                                    <div class="metric-title">Total Backup Size</div>
+                                    <div class="metric-value">15.4 GB</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-title">Storage Used</div>
+                                    <div class="metric-value">85%</div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill warning" style="width: 85%;"></div>
+                                    </div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-title">Average Backup Time</div>
+                                    <div class="metric-value">12 minutes</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-title">Last Verification</div>
+                                    <div class="metric-value">Mar 27, 2025</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Permissions Tab -->
+                <div id="security-permissions" class="tab-content">
+                    <div class="tab-header">
+                        <h2>Security Permissions</h2>
+                        <div class="tab-actions">
+                            <button id="createRoleBtn" class="primary-btn">
+                                <i class="fa-solid fa-plus"></i>
+                                Create Role
+                            </button>
+                            <button id="refreshRolesBtn" class="secondary-btn">
+                                <i class="fa-solid fa-sync"></i>
+                                Refresh
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="roles-management">
+                        <h3>Role Management</h3>
+                        <div class="table-container">
+                            <table class="data-table roles-table">
+                                <thead>
+                                    <tr>
+                                        <th>Role Name</th>
+                                        <th>Description</th>
+                                        <th>User Count</th>
+                                        <th>Last Modified</th>
+                                        <th>Created By</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="role-entry" data-role-id="1">
+                                        <td>Platform Administrator</td>
+                                        <td>Full access to all platform features and settings</td>
+                                        <td>3</td>
+                                        <td>Mar 27, 2025</td>
+                                        <td>System</td>
+                                        <td>
+                                            <button class="view-role-btn">View</button>
+                                            <button class="edit-role-btn">Edit</button>
+                                            <button class="clone-role-btn">Clone</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="role-entry" data-role-id="2">
+                                        <td>Finance Manager</td>
+                                        <td>Access to financial reports and payments</td>
+                                        <td>5</td>
+                                        <td>Mar 15, 2025</td>
+                                        <td>John Mwangi</td>
+                                        <td>
+                                            <button class="view-role-btn">View</button>
+                                            <button class="edit-role-btn">Edit</button>
+                                            <button class="clone-role-btn">Clone</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="role-entry" data-role-id="3">
+                                        <td>Support Staff</td>
+                                        <td>Access to customer support tools and limited user management</td>
+                                        <td>12</td>
+                                        <td>Mar 27, 2025</td>
+                                        <td>John Mwangi</td>
+                                        <td>
+                                            <button class="view-role-btn">View</button>
+                                            <button class="edit-role-btn">Edit</button>
+                                            <button class="clone-role-btn">Clone</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="role-entry" data-role-id="4">
+                                        <td>Business Manager</td>
+                                        <td>Access to business management features</td>
+                                        <td>8</td>
+                                        <td>Feb 15, 2025</td>
+                                        <td>John Mwangi</td>
+                                        <td>
+                                            <button class="view-role-btn">View</button>
+                                            <button class="edit-role-btn">Edit</button>
+                                            <button class="clone-role-btn">Clone</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="role-entry" data-role-id="5">
+                                        <td>User Manager</td>
+                                        <td>Access to user management features only</td>
+                                        <td>4</td>
+                                        <td>Jan 10, 2025</td>
+                                        <td>Jane Njoroge</td>
+                                        <td>
+                                            <button class="view-role-btn">View</button>
+                                            <button class="edit-role-btn">Edit</button>
+                                            <button class="clone-role-btn">Clone</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="role-entry" data-role-id="6">
+                                        <td>Read-Only Analyst</td>
+                                        <td>View-only access to reports and analytics</td>
+                                        <td>7</td>
+                                        <td>Dec 05, 2024</td>
+                                        <td>John Mwangi</td>
+                                        <td>
+                                            <button class="view-role-btn">View</button>
+                                            <button class="edit-role-btn">Edit</button>
+                                            <button class="clone-role-btn">Clone</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="access-level-control">
+                        <h3>Access Level Control</h3>
+                        <div class="module-permissions">
+                            <div class="permissions-filter">
+                                <div class="filter-group">
+                                    <label for="permissionRoleFilter">Role:</label>
+                                    <select id="permissionRoleFilter" name="permissionRoleFilter">
+                                        <option value="1">Platform Administrator</option>
+                                        <option value="2">Finance Manager</option>
+                                        <option value="3" selected>Support Staff</option>
+                                        <option value="4">Business Manager</option>
+                                        <option value="5">User Manager</option>
+                                        <option value="6">Read-Only Analyst</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="permissionModuleFilter">Module:</label>
+                                    <select id="permissionModuleFilter" name="permissionModuleFilter">
+                                        <option value="all">All Modules</option>
+                                        <option value="dashboard">Dashboard</option>
+                                        <option value="users">Users</option>
+                                        <option value="businesses">Businesses</option>
+                                        <option value="finance">Finance</option>
+                                        <option value="security">Security</option>
+                                        <option value="support">Support</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="permissions-matrix">
+                                <table class="permissions-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Module</th>
+                                            <th>View</th>
+                                            <th>Create</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                            <th>Export</th>
+                                            <th>Admin</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Dashboard</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Users</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Businesses</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Finance</td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Security</td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Support</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="permissions-actions">
+                                <div class="audit-toggle">
+                                    <label class="toggle-label">
+                                        <input type="checkbox" id="auditChangesToggle" checked>
+                                        <span class="toggle-slider"></span>
+                                        <span class="toggle-text">Audit Permission Changes</span>
+                                    </label>
+                                </div>
+                                <div class="action-buttons">
+                                    <button id="savePermissionsBtn" class="primary-btn">
+                                        <i class="fa-solid fa-save"></i>
+                                        Save Changes
+                                    </button>
+                                    <button id="resetPermissionsBtn" class="secondary-btn">
+                                        <i class="fa-solid fa-undo"></i>
+                                        Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bulk-permission-updates">
+                        <h3>Permission Updates</h3>
+                        <div class="bulk-update-options">
+                            <div class="update-options">
+                                <div class="option-group">
+                                    <h4>Bulk Update Options</h4>
+                                    <div class="option-buttons">
+                                        <button class="option-btn">
+                                            <i class="fa-solid fa-user-shield"></i>
+                                            Apply Security Template
+                                        </button>
+                                        <button class="option-btn">
+                                            <i class="fa-solid fa-users"></i>
+                                            Copy Role Permissions
+                                        </button>
+                                        <button class="option-btn">
+                                            <i class="fa-solid fa-lock"></i>
+                                            Restrict Sensitive Data
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="option-group">
+                                    <h4>Permission Templates</h4>
+                                    <select id="permissionTemplate" name="permissionTemplate">
+                                        <option value="">Select a template...</option>
+                                        <option value="minimal">Minimal Access</option>
+                                        <option value="standard">Standard User</option>
+                                        <option value="support">Support Staff</option>
+                                        <option value="manager">Department Manager</option>
+                                        <option value="admin">Administrator</option>
+                                    </select>
+                                    <button class="apply-template-btn">
+                                        <i class="fa-solid fa-check"></i>
+                                        Apply Template
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Dialogs -->
+    <!-- Log Entry Details Modal -->
+    <div class="modal" id="logEntryDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Log Entry Details</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="entry-info-section">
+                    <h3>Entry Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Log ID:</div>
+                            <div class="info-value" id="logIdValue">12345</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Timestamp:</div>
+                            <div class="info-value" id="logTimestampValue">Mar 28, 2025 10:23:15</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">User:</div>
+                            <div class="info-value" id="logUserValue">John Mwangi</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">IP Address:</div>
+                            <div class="info-value" id="logIpValue">196.201.xxx.xxx</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-details-section">
+                    <h3>Action Details</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Action Type:</div>
+                            <div class="info-value" id="logActionTypeValue">Password Change</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Module:</div>
+                            <div class="info-value" id="logModuleValue">Security</div>
+                        </div>
+                        <div class="info-item full-width">
+                            <div class="info-label">Description:</div>
+                            <div class="info-value" id="logDescriptionValue">Administrator password changed successfully
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="value-changes">
+                        <h4>Value Changes</h4>
+                        <table class="changes-table">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Before</th>
+                                    <th>After</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Password Hash</td>
+                                    <td>[encrypted]</td>
+                                    <td>[encrypted]</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Password Change</td>
+                                    <td>Feb 15, 2025</td>
+                                    <td>Mar 28, 2025</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="related-entries-section">
+                    <h3>Related Entries</h3>
+                    <div class="related-tabs">
+                        <button class="related-tab active" data-tab="user-actions">Previous Actions by User</button>
+                        <button class="related-tab" data-tab="module-actions">Related Module Actions</button>
+                    </div>
+
+                    <div class="related-content active" id="user-actions">
+                        <ul class="related-entries-list">
+                            <li>
+                                <span class="entry-time">Mar 27, 2025 11:05:33</span>
+                                <span class="entry-description">Modified permissions for Support Staff role</span>
+                            </li>
+                            <li>
+                                <span class="entry-time">Mar 26, 2025 16:32:18</span>
+                                <span class="entry-description">Monthly revenue report exported to PDF</span>
+                            </li>
+                            <li>
+                                <span class="entry-time">Mar 26, 2025 09:45:22</span>
+                                <span class="entry-description">Logged in to the system</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="related-content" id="module-actions">
+                        <ul class="related-entries-list">
+                            <li>
+                                <span class="entry-time">Mar 27, 2025 11:05:33</span>
+                                <span class="entry-description">John Mwangi modified permissions for Support Staff
+                                    role</span>
+                            </li>
+                            <li>
+                                <span class="entry-time">Mar 25, 2025 14:25:06</span>
+                                <span class="entry-description">Jane Njoroge enabled two-factor authentication</span>
+                            </li>
+                            <li>
+                                <span class="entry-time">Mar 20, 2025 10:15:42</span>
+                                <span class="entry-description">System performed scheduled security scan</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="entry-actions-section">
+                    <h3>Entry Actions</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn">
+                            <i class="fa-solid fa-flag"></i>
+                            Flag for Review
+                        </button>
+                        <button class="action-btn">
+                            <i class="fa-solid fa-note-sticky"></i>
+                            Add Note
+                        </button>
+                        <button class="action-btn">
+                            <i class="fa-solid fa-exclamation-triangle"></i>
+                            Create Security Alert
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" id="closeLogEntryBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Logs Modal -->
+    <div class="modal" id="exportLogsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Export Logs</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="export-options-section">
+                    <h3>Export Options</h3>
+                    <div class="options-group">
+                        <div class="option-item">
+                            <input type="radio" id="exportPdf" name="exportFormat" value="pdf" checked>
+                            <label for="exportPdf">PDF Format</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="exportCsv" name="exportFormat" value="csv">
+                            <label for="exportCsv">CSV Format</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="exportExcel" name="exportFormat" value="excel">
+                            <label for="exportExcel">Excel Format</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-options-section">
+                    <h3>Data Options</h3>
+                    <div class="form-group">
+                        <label for="exportDateRange">Date Range:</label>
+                        <div class="date-range-picker">
+                            <input type="date" id="exportStartDate" name="exportStartDate">
+                            <span>to</span>
+                            <input type="date" id="exportEndDate" name="exportEndDate">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Include Fields:</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="includeTimestamp" name="includeTimestamp" checked>
+                                <label for="includeTimestamp">Timestamp</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="includeUser" name="includeUser" checked>
+                                <label for="includeUser">User</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="includeIp" name="includeIp" checked>
+                                <label for="includeIp">IP Address</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="includeAction" name="includeAction" checked>
+                                <label for="includeAction">Action</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="includeModule" name="includeModule" checked>
+                                <label for="includeModule">Module</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="includeDetails" name="includeDetails" checked>
+                                <label for="includeDetails">Details</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="includeBeforeAfter" name="includeBeforeAfter">
+                                <label for="includeBeforeAfter">Before/After Values</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Filter Criteria:</label>
+                        <div class="filter-criteria">
+                            <select id="exportUserFilter" name="exportUserFilter">
+                                <option value="all">All Users</option>
+                                <option value="admin">Administrators</option>
+                                <option value="support">Support Staff</option>
+                                <option value="system">System</option>
+                            </select>
+                            <select id="exportActionFilter" name="exportActionFilter">
+                                <option value="all">All Actions</option>
+                                <option value="login">Login/Logout</option>
+                                <option value="create">Create</option>
+                                <option value="update">Update</option>
+                                <option value="delete">Delete</option>
+                                <option value="export">Export</option>
+                            </select>
+                            <select id="exportModuleFilter" name="exportModuleFilter">
+                                <option value="all">All Modules</option>
+                                <option value="users">Users</option>
+                                <option value="businesses">Businesses</option>
+                                <option value="finance">Finance</option>
+                                <option value="security">Security</option>
+                                <option value="support">Support</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="delivery-options-section">
+                    <h3>Delivery Options</h3>
+                    <div class="options-group">
+                        <div class="option-item">
+                            <input type="radio" id="downloadNow" name="deliveryMethod" value="download" checked>
+                            <label for="downloadNow">Download Now</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="emailReport" name="deliveryMethod" value="email">
+                            <label for="emailReport">Email Report</label>
+                            <input type="email" id="emailAddress" name="emailAddress" placeholder="Enter email address"
+                                disabled>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="scheduleRecurring" name="deliveryMethod" value="schedule">
+                            <label for="scheduleRecurring">Schedule Recurring</label>
+                            <div class="schedule-options disabled">
+                                <select id="scheduleFrequency" disabled>
+                                    <option value="daily">Daily</option>
+                                    <option value="weekly">Weekly</option>
+                                    <option value="monthly">Monthly</option>
+                                </select>
+                                <input type="time" id="scheduleTime" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" id="cancelExportBtn">Cancel</button>
+                <button class="primary-btn" id="generateExportBtn">Generate Export</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manual Backup Modal -->
+    <div class="modal" id="manualBackupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Manual Backup</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="backup-type-section">
+                    <h3>Backup Type</h3>
+                    <div class="options-group">
+                        <div class="option-item">
+                            <input type="radio" id="fullBackup" name="backupType" value="full" checked>
+                            <label for="fullBackup">Full Backup</label>
+                            <p class="option-description">Back up all data, including system configurations and user
+                                data.</p>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="incrementalBackup" name="backupType" value="incremental">
+                            <label for="incrementalBackup">Incremental Backup</label>
+                            <p class="option-description">Back up only data that has changed since the last backup.</p>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="specificModules" name="backupType" value="specific">
+                            <label for="specificModules">Specific Modules</label>
+                            <div class="checkbox-group module-checkboxes disabled">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="backupUsers" name="backupUsers" disabled>
+                                    <label for="backupUsers">Users & Accounts</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="backupBusinesses" name="backupBusinesses" disabled>
+                                    <label for="backupBusinesses">Businesses</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="backupFinancial" name="backupFinancial" disabled>
+                                    <label for="backupFinancial">Financial Data</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="backupLogs" name="backupLogs" disabled>
+                                    <label for="backupLogs">System Logs</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="backupConfigs" name="backupConfigs" disabled>
+                                    <label for="backupConfigs">System Configurations</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="backup-destination-section">
+                    <h3>Backup Destination</h3>
+                    <div class="options-group">
+                        <div class="option-item">
+                            <input type="radio" id="cloudStorage" name="backupDestination" value="cloud" checked>
+                            <label for="cloudStorage">Cloud Storage</label>
+                            <p class="option-description">Store backup in the configured cloud storage location.</p>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="localServer" name="backupDestination" value="local">
+                            <label for="localServer">Local Server</label>
+                            <p class="option-description">Store backup on the local server storage.</p>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="customLocation" name="backupDestination" value="custom">
+                            <label for="customLocation">Custom Location</label>
+                            <input type="text" id="customLocationPath" name="customLocationPath"
+                                placeholder="Enter path or URL" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advanced-options-section">
+                    <h3>Advanced Options</h3>
+                    <div class="form-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="encryptBackupToggle" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-text">Encrypt Backup</span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="compressionLevel">Compression Level:</label>
+                        <select id="compressionLevel" name="compressionLevel">
+                            <option value="none">None</option>
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="verificationToggle" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-text">Verify After Completion</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" id="cancelBackupBtn">Cancel</button>
+                <button class="primary-btn" id="startBackupBtn">Start Backup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lock Account Modal -->
+    <div class="modal" id="lockAccountModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Lock Account</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="account-info-section">
+                    <h3>Account Information</h3>
+                    <div class="account-details">
+                        <div class="account-avatar">
+                            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                alt="User Avatar">
+                        </div>
+                        <div class="account-info">
+                            <div class="info-item">
+                                <div class="info-label">Username:</div>
+                                <div class="info-value" id="lockAccountUsername">john.mwangi@citruslabs.co.ke</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Full Name:</div>
+                                <div class="info-value" id="lockAccountName">John Mwangi</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Role:</div>
+                                <div class="info-value" id="lockAccountRole">Platform Administrator</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Last Login:</div>
+                                <div class="info-value" id="lockAccountLastLogin">Mar 28, 2025 10:23:15</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lock-reason-section">
+                    <h3>Lock Reason</h3>
+                    <div class="form-group">
+                        <label for="lockReason">Reason:</label>
+                        <select id="lockReason" name="lockReason">
+                            <option value="">Select a reason...</option>
+                            <option value="suspicious">Suspicious Activity</option>
+                            <option value="multiple">Multiple Failed Login Attempts</option>
+                            <option value="unusual">Unusual Location Access</option>
+                            <option value="violation">Policy Violation</option>
+                            <option value="investigation">Under Investigation</option>
+                            <option value="inactive">Account Inactive</option>
+                            <option value="request">User Request</option>
+                            <option value="other">Other (Specify)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="customReason">Custom Reason:</label>
+                        <textarea id="customReason" name="customReason"
+                            placeholder="Enter custom reason if 'Other' is selected..." disabled></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="internalNotes">Internal Notes:</label>
+                        <textarea id="internalNotes" name="internalNotes"
+                            placeholder="Enter internal notes (not visible to user)..."></textarea>
+                    </div>
+                </div>
+
+                <div class="lock-duration-section">
+                    <h3>Lock Duration</h3>
+                    <div class="options-group">
+                        <div class="option-item">
+                            <input type="radio" id="temporaryLock" name="lockDuration" value="temporary" checked>
+                            <label for="temporaryLock">Temporary Lock</label>
+                            <div class="duration-selector">
+                                <select id="lockDurationValue" name="lockDurationValue">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="12">12</option>
+                                    <option value="24" selected>24</option>
+                                    <option value="48">48</option>
+                                    <option value="72">72</option>
+                                </select>
+                                <select id="lockDurationUnit" name="lockDurationUnit">
+                                    <option value="hours">Hours</option>
+                                    <option value="days">Days</option>
+                                    <option value="weeks">Weeks</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="permanentLock" name="lockDuration" value="permanent">
+                            <label for="permanentLock">Permanent Lock</label>
+                            <p class="option-description">Account will remain locked until manually unlocked by an
+                                administrator.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-options-section">
+                    <h3>Notification Options</h3>
+                    <div class="form-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="notifyUserToggle" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-text">Notify User</span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="notificationTemplate">Notification Template:</label>
+                        <select id="notificationTemplate" name="notificationTemplate">
+                            <option value="standard">Standard Lock Notification</option>
+                            <option value="security">Security Concern Notification</option>
+                            <option value="compliance">Compliance Notification</option>
+                            <option value="custom">Custom Message</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="customMessage">Custom Message:</label>
+                        <textarea id="customMessage" name="customMessage" placeholder="Enter custom message..."
+                            disabled></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" id="cancelLockBtn">Cancel</button>
+                <button class="primary-btn" id="confirmLockBtn">Confirm Lock</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Role Modal -->
+    <div class="modal" id="createRoleModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Role</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="new-role-info-section">
+                    <h3>Role Information</h3>
+                    <div class="form-group">
+                        <label for="roleName">Role Name:</label>
+                        <input type="text" id="roleName" name="roleName" placeholder="Enter role name...">
+                    </div>
+                    <div class="form-group">
+                        <label for="roleDescription">Description:</label>
+                        <textarea id="roleDescription" name="roleDescription"
+                            placeholder="Enter role description..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="baseRole">Base on Existing Role:</label>
+                        <select id="baseRole" name="baseRole">
+                            <option value="">None (Create from scratch)</option>
+                            <option value="1">Platform Administrator</option>
+                            <option value="2">Finance Manager</option>
+                            <option value="3">Support Staff</option>
+                            <option value="4">Business Manager</option>
+                            <option value="5">User Manager</option>
+                            <option value="6">Read-Only Analyst</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="permission-setup-section">
+                    <h3>Permission Setup</h3>
+                    <div class="module-access">
+                        <h4>Module Access</h4>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="moduleDashboard" name="moduleDashboard" checked>
+                                <label for="moduleDashboard">Dashboard</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="moduleUsers" name="moduleUsers">
+                                <label for="moduleUsers">Users</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="moduleBusinesses" name="moduleBusinesses">
+                                <label for="moduleBusinesses">Businesses</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="moduleFinance" name="moduleFinance">
+                                <label for="moduleFinance">Finance</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="moduleSecurity" name="moduleSecurity">
+                                <label for="moduleSecurity">Security</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="moduleSupport" name="moduleSupport">
+                                <label for="moduleSupport">Support</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="operation-permissions">
+                        <h4>Operation Permissions</h4>
+                        <table class="permissions-table">
+                            <thead>
+                                <tr>
+                                    <th>Operation</th>
+                                    <th>Allow</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>View Records</td>
+                                    <td><input type="checkbox" id="permView" name="permView" checked></td>
+                                </tr>
+                                <tr>
+                                    <td>Create Records</td>
+                                    <td><input type="checkbox" id="permCreate" name="permCreate"></td>
+                                </tr>
+                                <tr>
+                                    <td>Edit Records</td>
+                                    <td><input type="checkbox" id="permEdit" name="permEdit"></td>
+                                </tr>
+                                <tr>
+                                    <td>Delete Records</td>
+                                    <td><input type="checkbox" id="permDelete" name="permDelete"></td>
+                                </tr>
+                                <tr>
+                                    <td>Export Data</td>
+                                    <td><input type="checkbox" id="permExport" name="permExport"></td>
+                                </tr>
+                                <tr>
+                                    <td>Approve/Reject</td>
+                                    <td><input type="checkbox" id="permApprove" name="permApprove"></td>
+                                </tr>
+                                <tr>
+                                    <td>Administrative Functions</td>
+                                    <td><input type="checkbox" id="permAdmin" name="permAdmin"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="data-access-levels">
+                        <h4>Data Access Levels</h4>
+                        <div class="form-group">
+                            <label for="dataAccessLevel">Data Access Level:</label>
+                            <select id="dataAccessLevel" name="dataAccessLevel">
+                                <option value="all">All Data</option>
+                                <option value="department">Department Level</option>
+                                <option value="assigned">Assigned Only</option>
+                                <option value="own">Own Records Only</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sensitiveDataAccess">Sensitive Data Access:</label>
+                            <select id="sensitiveDataAccess" name="sensitiveDataAccess">
+                                <option value="none">No Access</option>
+                                <option value="partial">Partial Access</option>
+                                <option value="full">Full Access</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-assignment-section">
+                    <h3>User Assignment</h3>
+                    <div class="search-filter">
+                        <input type="text" id="userSearchInput" name="userSearchInput" placeholder="Search users...">
+                    </div>
+
+                    <div class="users-selection">
+                        <div class="available-users">
+                            <h4>Available Users</h4>
+                            <div class="users-list">
+                                <div class="user-item">
+                                    <input type="checkbox" id="user1" name="user1">
+                                    <label for="user1">Alice Wambui</label>
+                                </div>
+                                <div class="user-item">
+                                    <input type="checkbox" id="user2" name="user2">
+                                    <label for="user2">Bob Kamau</label>
+                                </div>
+                                <div class="user-item">
+                                    <input type="checkbox" id="user3" name="user3">
+                                    <label for="user3">Charlie Omondi</label>
+                                </div>
+                                <div class="user-item">
+                                    <input type="checkbox" id="user4" name="user4">
+                                    <label for="user4">Diana Wanja</label>
+                                </div>
+                                <div class="user-item">
+                                    <input type="checkbox" id="user5" name="user5">
+                                    <label for="user5">Eric Mbugua</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="selection-buttons">
+                            <button id="addSelectedUsers" class="action-btn">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                            <button id="removeSelectedUsers" class="action-btn">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                        </div>
+
+                        <div class="selected-users">
+                            <h4>Selected Users</h4>
+                            <div class="users-list">
+                                <!-- Selected users will appear here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" id="cancelCreateRoleBtn">Cancel</button>
+                <button class="primary-btn" id="createRoleBtn">Create Role</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Dark Mode Toggle -->
+            <div class="theme-toggle">
+                <button class="dark-mode-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" class="social-icon">
+                    <i class="fa-brands fa-x"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-icon">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" class="social-icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Site Link -->
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/">Visit Corporate Website</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Link -->
+    <script src="security.css"></script>
+</body>
+
+</html>

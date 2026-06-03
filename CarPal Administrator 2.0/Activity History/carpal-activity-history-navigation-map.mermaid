@@ -1,0 +1,203 @@
+stateDiagram-v2
+    [*] --> ActivityHistoryPage
+    
+    state ActivityHistoryPage {
+        [*] --> ActivityDashboard
+        
+        state ActivityDashboard {
+            TimelineView: Chronological Timeline
+            TimelineView: - Timestamp Indicators
+            TimelineView: - Activity Type Icons
+            TimelineView: - User Indicators
+            TimelineView: - Brief Description
+            
+            FilterPanel: Filtering Options
+            FilterPanel: - Date Range Selector
+            FilterPanel: - Category Filter Dropdown
+            FilterPanel: - User Filter Dropdown
+            FilterPanel: - Module Filter (Billing, Users, etc.)
+            FilterPanel: - Apply Filters Button
+            FilterPanel: - Reset Filters Button
+            
+            SearchSection: Search Functionality
+            SearchSection: - Keyword Search Bar
+            SearchSection: - Advanced Search Toggle
+            SearchSection: - Search Button
+            
+            PaginationControls: Pagination Controls
+            PaginationControls: - Page Numbers
+            PaginationControls: - Previous/Next Buttons
+            PaginationControls: - Items Per Page Selector
+            
+            ExportOptions: Export Options
+            ExportOptions: - Export to CSV Button
+            ExportOptions: - Export to PDF Button
+            ExportOptions: - Export to Excel Button
+        }
+        
+        state ActivityList {
+            ActivityEntry: Activity Entry
+            ActivityEntry: - Timestamp
+            ActivityEntry: - Action Icon
+            ActivityEntry: - User Name/ID
+            ActivityEntry: - Activity Description
+            ActivityEntry: - Affected Module
+            ActivityEntry: - View Details Button
+        }
+    }
+    
+    state "Activity Details" as ActivityDetails {
+        ActivityHeader: Activity Header
+        ActivityHeader: - Activity ID
+        ActivityHeader: - Timestamp
+        ActivityHeader: - User Information
+        ActivityHeader: - Activity Type
+        
+        DetailedInfo: Detailed Information
+        DetailedInfo: - Complete Activity Description
+        DetailedInfo: - Affected Data Before/After
+        DetailedInfo: - IP Address
+        DetailedInfo: - Device Information
+        
+        RelatedData: Related Data
+        RelatedData: - Affected Records
+        RelatedData: - Related Documents
+        RelatedData: - Associated Changes
+        
+        AdditionalContext: Additional Context
+        AdditionalContext: - System Notes
+        AdditionalContext: - Related Activities Link
+        
+        ActionButtons: Action Buttons
+        ActionButtons: - Back to Timeline Button
+        ActionButtons: - Export Activity Button
+        ActionButtons: - View Related Module Button
+    }
+    
+    state "Export Activity Log" as ExportActivityLog {
+        ExportFormat: Export Format Selection
+        ExportFormat: - CSV Format Option
+        ExportFormat: - PDF Format Option
+        ExportFormat: - Excel Format Option
+        
+        DataOptions: Data Options
+        DataOptions: - Date Range Selection
+        DataOptions: - Activity Types Selection
+        DataOptions: - User Selection
+        DataOptions: - Field Selection
+        
+        DeliveryOptions: Delivery Options
+        DeliveryOptions: - Download Directly
+        DeliveryOptions: - Send via Email
+        DeliveryOptions: - Schedule Regular Export
+        
+        ExportActions: Export Actions
+        ExportActions: - Generate Export Button
+        ExportActions: - Cancel Button
+    }
+    
+    state "Advanced Search" as AdvancedSearch {
+        SearchCriteria: Search Criteria
+        SearchCriteria: - Keyword Field
+        SearchCriteria: - Date Range Fields
+        SearchCriteria: - User Selection
+        SearchCriteria: - Activity Type Selection
+        
+        SearchOperators: Search Operators
+        SearchOperators: - Contains
+        SearchOperators: - Exact Match
+        SearchOperators: - Starts With
+        SearchOperators: - Ends With
+        
+        SavedSearches: Saved Searches
+        SavedSearches: - Save Current Search
+        SavedSearches: - Load Saved Search
+        SavedSearches: - Delete Saved Search
+        
+        SearchActions: Search Actions
+        SearchActions: - Execute Search Button
+        SearchActions: - Clear Form Button
+        SearchActions: - Cancel Button
+    }
+    
+    state "Date Range Picker" as DateRangePicker {
+        PredefinedRanges: Predefined Ranges
+        PredefinedRanges: - Today
+        PredefinedRanges: - Yesterday
+        PredefinedRanges: - Last 7 Days
+        PredefinedRanges: - Last 30 Days
+        PredefinedRanges: - This Month
+        PredefinedRanges: - Last Month
+        
+        CustomRange: Custom Range
+        CustomRange: - Start Date Picker
+        CustomRange: - End Date Picker
+        
+        TimeOptions: Time Options
+        TimeOptions: - Include Time Checkbox
+        TimeOptions: - Start Time Picker
+        TimeOptions: - End Time Picker
+        
+        RangeActions: Range Actions
+        RangeActions: - Apply Range Button
+        RangeActions: - Cancel Button
+    }
+    
+    state "Bulk Actions" as BulkActions {
+        SelectionSummary: Selection Summary
+        SelectionSummary: - Total Selected Items
+        SelectionSummary: - Date Range of Selection
+        
+        BulkExport: Bulk Export
+        BulkExport: - Export All Selected
+        BulkExport: - Choose Format
+        
+        BulkDelete: Bulk Delete
+        BulkDelete: - Delete Selected Logs
+        BulkDelete: - Confirm Deletion Dialog
+        
+        BulkActionsCancellation: Bulk Actions Cancellation
+        BulkActionsCancellation: - Cancel Button
+    }
+    
+    ActivityHistoryPage --> ActivityDetails: Click on Activity Entry
+    ActivityHistoryPage --> ExportActivityLog: Click Export Button
+    ActivityHistoryPage --> AdvancedSearch: Click Advanced Search
+    ActivityHistoryPage --> DateRangePicker: Click Date Range Selector
+    ActivityHistoryPage --> BulkActions: Select Multiple Entries
+    
+    ActivityDetails --> ActivityHistoryPage: Click Back
+    ExportActivityLog --> ActivityHistoryPage: After Export/Cancel
+    AdvancedSearch --> ActivityHistoryPage: After Search/Cancel
+    DateRangePicker --> ActivityHistoryPage: After Apply/Cancel
+    BulkActions --> ActivityHistoryPage: After Action Complete
+    
+    note right of ActivityDashboard
+        The Activity Dashboard provides a chronological view
+        of all platform activities with comprehensive filtering
+        and search capabilities. Each activity includes key 
+        metadata such as timestamps, user information, and 
+        affected modules.
+    end note
+    
+    note right of ActivityDetails
+        The Activity Details view offers an in-depth look at
+        a specific action, including before/after states of 
+        affected data, IP information, and contextual data
+        to provide a complete audit trail.
+    end note
+    
+    note left of ExportActivityLog
+        The Export functionality allows administrators to
+        generate comprehensive activity reports in various
+        formats for compliance, auditing, and analysis
+        purposes. Exports can be customized by date range,
+        activity type, and affected modules.
+    end note
+    
+    note left of AdvancedSearch
+        Advanced Search provides granular control over
+        activity history queries with multiple search
+        parameters, operators, and the ability to save
+        frequently used search configurations.
+    end note
