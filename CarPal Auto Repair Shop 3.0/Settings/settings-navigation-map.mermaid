@@ -1,0 +1,516 @@
+stateDiagram-v2
+    [*] --> Login
+    Login --> Dashboard
+    Dashboard --> Settings: Click "Settings" in Main Navigation
+    
+    %% Initial Settings Access Point
+    state Settings {
+        InitialSettingsPage: Staff User Settings Page
+        InitialSettingsPage: - Profile Settings
+        InitialSettingsPage: - Support & Help Resources
+        InitialSettingsPage: - System Preferences
+        InitialSettingsPage: - Audit Logs
+        InitialSettingsPage: - Admin Access Button
+    }
+    
+    %% Admin Access Authentication
+    Settings --> AdminAccessRequest: Click "Admin Access" Button
+    
+    state AdminAccessRequest {
+        AdminAuth: Administrator Authentication
+        AdminAuth: - Email Input Field
+        AdminAuth: - Verification Code Field
+        AdminAuth: - Request Code Button
+        AdminAuth: - Verify Button
+        AdminAuth: - Cancel Button
+    }
+    
+    AdminAccessRequest --> VerificationEmailSent: Click "Request Code"
+    VerificationEmailSent --> AdminAccessRequest: Enter verification code
+    AdminAccessRequest --> AdminSettings: Click "Verify" (valid code)
+    AdminAccessRequest --> AdminAuthFailure: Click "Verify" (invalid code)
+    AdminAuthFailure --> AdminAccessRequest: Try Again
+    AdminAccessRequest --> Settings: Click "Cancel"
+    
+    %% Staff User Settings
+    Settings --> ProfileSettings: Click "Profile Settings"
+    Settings --> SupportHelp: Click "Support & Help"
+    Settings --> SystemPrefs: Click "System Preferences"
+    Settings --> StaffAuditLogs: Click "Audit Logs"
+    
+    %% Profile Settings for Staff
+    state ProfileSettings {
+        ProfileForm: Profile Settings Form
+        ProfileForm: - Update Personal Information
+        ProfileForm: - Change Profile Picture
+        
+        BusinessInfo: Business Information Fields
+        BusinessInfo: - Business Name
+        BusinessInfo: - Business Address
+        BusinessInfo: - Contact Details
+        BusinessInfo: - Business Logo Upload
+        
+        SecuritySettings: Security Settings
+        SecuritySettings: - Change Password Field
+        SecuritySettings: - Current Password Input
+        SecuritySettings: - New Password Input
+        SecuritySettings: - Confirm Password Input
+        SecuritySettings: - Two-Factor Authentication Toggle
+        
+        SaveProfileButton: Save Profile Button
+        CancelProfileButton: Cancel Button
+    }
+    
+    ProfileSettings --> ConfirmProfileChanges: Click "Save Profile"
+    ConfirmProfileChanges --> Settings: Changes Saved
+    ProfileSettings --> Settings: Click "Cancel"
+    
+    %% Support and Help Resources
+    state SupportHelp {
+        HelpDocumentation: Help Documentation
+        HelpDocumentation: - User Guides
+        HelpDocumentation: - FAQs
+        HelpDocumentation: - Tutorial Videos
+        
+        ContactSupport: Contact Support
+        ContactSupport: - Support Email
+        ContactSupport: - Phone Numbers
+        ContactSupport: - Live Chat Option
+        
+        FeedbackForm: Feedback Form
+        FeedbackForm: - Issue Category Dropdown
+        FeedbackForm: - Description Text Area
+        FeedbackForm: - Attachment Upload
+        FeedbackForm: - Submit Feedback Button
+    }
+    
+    SupportHelp --> SubmitFeedback: Click "Submit Feedback"
+    SubmitFeedback --> FeedbackConfirmation: Feedback Submitted
+    FeedbackConfirmation --> SupportHelp: Return to Support
+    SupportHelp --> Settings: Click "Back to Settings"
+    
+    %% System Preferences for Staff
+    state SystemPrefs {
+        LanguageSettings: Language Settings
+        LanguageSettings: - Language Dropdown
+        
+        TimeZoneSettings: Time Zone Settings
+        TimeZoneSettings: - Time Zone Dropdown
+        
+        OperationalHours: Operational Hours
+        OperationalHours: - Weekday Hours Inputs
+        OperationalHours: - Weekend Hours Inputs
+        
+        HolidaySchedule: Holiday Schedule
+        HolidaySchedule: - Add Holiday Button
+        HolidaySchedule: - Holiday Calendar View
+        HolidaySchedule: - Remove Holiday Option
+        
+        SavePreferencesButton: Save Preferences Button
+        CancelPreferencesButton: Cancel Button
+    }
+    
+    SystemPrefs --> AddHoliday: Click "Add Holiday"
+    AddHoliday --> HolidayForm: Open Holiday Form
+    HolidayForm --> SystemPrefs: Holiday Added
+    SystemPrefs --> ConfirmPreferences: Click "Save Preferences"
+    ConfirmPreferences --> Settings: Preferences Saved
+    SystemPrefs --> Settings: Click "Cancel"
+    
+    %% Audit Logs for Staff
+    state StaffAuditLogs {
+        LogFilters: Audit Log Filters
+        LogFilters: - Date Range Selector
+        LogFilters: - User Filter
+        LogFilters: - Activity Type Filter
+        LogFilters: - Apply Filters Button
+        
+        LogsTable: Audit Logs Table
+        LogsTable: - Timestamp Column
+        LogsTable: - User Column
+        LogsTable: - Action Column
+        LogsTable: - Details Column
+        
+        ExportLogs: Export Logs
+        ExportLogs: - Export PDF Button
+        ExportLogs: - Export CSV Button
+    }
+    
+    StaffAuditLogs --> FilteredLogs: Click "Apply Filters"
+    StaffAuditLogs --> ExportLogsPDF: Click "Export PDF"
+    StaffAuditLogs --> ExportLogsCSV: Click "Export CSV"
+    FilteredLogs --> StaffAuditLogs: Filters Applied
+    ExportLogsPDF --> StaffAuditLogs: PDF Downloaded
+    ExportLogsCSV --> StaffAuditLogs: CSV Downloaded
+    StaffAuditLogs --> Settings: Click "Back to Settings"
+    
+    %% Administrator Settings
+    state AdminSettings {
+        AdminDashboard: Administrator Dashboard
+        AdminDashboard: - Shop Profile
+        AdminDashboard: - User & Staff Management
+        AdminDashboard: - Schedule & Appointments
+        AdminDashboard: - Inventory Control
+        AdminDashboard: - Billing & Payments
+        AdminDashboard: - Notifications
+        AdminDashboard: - Reports & Analytics
+        AdminDashboard: - Return to Staff View
+    }
+    
+    %% Shop Profile
+    AdminSettings --> ShopProfile: Click "Shop Profile"
+    
+    state ShopProfile {
+        ShopProfileForm: Shop Profile Form
+        ShopProfileForm: - Shop Logo Upload
+        ShopProfileForm: - Shop Name
+        ShopProfileForm: - Shop Address
+        ShopProfileForm: - Contact Details
+        ShopProfileForm: - Business Description
+        ShopProfileForm: - Operating Hours
+        
+        SaveShopButton: Save Shop Profile Button
+        CancelShopButton: Cancel Button
+    }
+    
+    ShopProfile --> ConfirmShopChanges: Click "Save Shop Profile"
+    ConfirmShopChanges --> AdminSettings: Changes Saved
+    ShopProfile --> AdminSettings: Click "Cancel"
+    
+    %% User & Staff Management
+    AdminSettings --> UserStaffManagement: Click "User & Staff Management"
+    
+    state UserStaffManagement {
+        StaffList: Staff List View
+        StaffList: - All Staff Members Table
+        StaffList: - Staff Search Field
+        StaffList: - Add New Staff Button
+        StaffList: - Edit Staff Button
+        StaffList: - Delete Staff Button
+        
+        RoleConfiguration: Role Configuration
+        RoleConfiguration: - View Roles Button
+        RoleConfiguration: - Create Role Button
+        RoleConfiguration: - Edit Role Button
+        RoleConfiguration: - Delete Role Button
+    }
+    
+    UserStaffManagement --> AddNewStaff: Click "Add New Staff"
+    UserStaffManagement --> EditStaff: Click "Edit" on any staff
+    UserStaffManagement --> DeleteStaff: Click "Delete" on any staff
+    UserStaffManagement --> ViewRoles: Click "View Roles"
+    UserStaffManagement --> CreateRole: Click "Create Role"
+    UserStaffManagement --> EditRole: Click "Edit" on any role
+    UserStaffManagement --> DeleteRole: Click "Delete" on any role
+    
+    state AddNewStaff {
+        NewStaffForm: New Staff Form
+        NewStaffForm: - First Name
+        NewStaffForm: - Last Name
+        NewStaffForm: - Email Address
+        NewStaffForm: - Phone Number
+        NewStaffForm: - Role Selection
+        NewStaffForm: - Permissions Assignment
+        NewStaffForm: - Set Temporary Password
+        
+        SaveNewStaff: Save New Staff Button
+        CancelStaffAdd: Cancel Button
+    }
+    
+    AddNewStaff --> StaffConfirmation: Click "Save New Staff"
+    StaffConfirmation --> UserStaffManagement: Staff Added
+    AddNewStaff --> UserStaffManagement: Click "Cancel"
+    
+    EditStaff --> StaffEditForm: Open Staff Edit Form
+    StaffEditForm --> UserStaffManagement: Save Changes
+    DeleteStaff --> DeleteConfirmation: Confirm Delete
+    DeleteConfirmation --> UserStaffManagement: Staff Deleted
+    
+    state ViewRoles {
+        RolesList: Roles List
+        RolesList: - Role Name
+        RolesList: - Description
+        RolesList: - Permission Count
+        RolesList: - Active Staff Count
+    }
+    
+    ViewRoles --> UserStaffManagement: Return to Staff Management
+    
+    state CreateRole {
+        RoleForm: Role Creation Form
+        RoleForm: - Role Name
+        RoleForm: - Role Description
+        RoleForm: - Permission Selection
+        RoleForm: - Save Role Button
+        RoleForm: - Cancel Button
+    }
+    
+    CreateRole --> RoleConfirmation: Click "Save Role"
+    RoleConfirmation --> UserStaffManagement: Role Created
+    CreateRole --> UserStaffManagement: Click "Cancel"
+    
+    EditRole --> RoleEditForm: Open Role Edit Form
+    RoleEditForm --> UserStaffManagement: Save Changes
+    DeleteRole --> RoleDeleteConfirmation: Confirm Delete
+    RoleDeleteConfirmation --> UserStaffManagement: Role Deleted
+    
+    UserStaffManagement --> AdminSettings: Click "Back to Admin Settings"
+    
+    %% Schedule & Appointments
+    AdminSettings --> ScheduleAppointments: Click "Schedule & Appointments"
+    
+    state ScheduleAppointments {
+        OperatingHours: Operating Hours Settings
+        OperatingHours: - Weekday Hours
+        OperatingHours: - Weekend Hours
+        OperatingHours: - Holiday Schedule
+        
+        ServiceDurations: Service Durations
+        ServiceDurations: - Default Service Time
+        ServiceDurations: - Custom Service Times
+        
+        AppointmentRules: Appointment Rules
+        AppointmentRules: - Lead Time Requirements
+        AppointmentRules: - Cancellation Policy
+        AppointmentRules: - Rescheduling Settings
+        
+        SaveScheduleButton: Save Schedule Settings Button
+        CancelScheduleButton: Cancel Button
+    }
+    
+    ScheduleAppointments --> ConfirmSchedule: Click "Save Schedule Settings"
+    ConfirmSchedule --> AdminSettings: Schedule Settings Saved
+    ScheduleAppointments --> AdminSettings: Click "Cancel"
+    
+    %% Inventory Control
+    AdminSettings --> InventoryControl: Click "Inventory Control"
+    
+    state InventoryControl {
+        PartsManagement: Parts Management
+        PartsManagement: - Default Parts Categories
+        PartsManagement: - Low Stock Thresholds
+        PartsManagement: - Inventory Settings
+        
+        SupplierManagement: Supplier Management
+        SupplierManagement: - Add Supplier Button
+        SupplierManagement: - Edit Supplier Button
+        SupplierManagement: - Delete Supplier Button
+        
+        SaveInventoryButton: Save Inventory Settings Button
+        CancelInventoryButton: Cancel Button
+    }
+    
+    InventoryControl --> AddSupplier: Click "Add Supplier"
+    InventoryControl --> EditSupplier: Click "Edit" on any supplier
+    InventoryControl --> DeleteSupplier: Click "Delete" on any supplier
+    
+    state AddSupplier {
+        SupplierForm: Supplier Form
+        SupplierForm: - Supplier Name
+        SupplierForm: - Contact Person
+        SupplierForm: - Email
+        SupplierForm: - Phone
+        SupplierForm: - Address
+        SupplierForm: - Product Categories
+        
+        SaveSupplier: Save Supplier Button
+        CancelSupplier: Cancel Button
+    }
+    
+    AddSupplier --> SupplierConfirmation: Click "Save Supplier"
+    SupplierConfirmation --> InventoryControl: Supplier Added
+    AddSupplier --> InventoryControl: Click "Cancel"
+    
+    EditSupplier --> SupplierEditForm: Open Supplier Edit Form
+    SupplierEditForm --> InventoryControl: Save Changes
+    DeleteSupplier --> SupplierDeleteConfirmation: Confirm Delete
+    SupplierDeleteConfirmation --> InventoryControl: Supplier Deleted
+    
+    InventoryControl --> ConfirmInventory: Click "Save Inventory Settings"
+    ConfirmInventory --> AdminSettings: Inventory Settings Saved
+    InventoryControl --> AdminSettings: Click "Cancel"
+    
+    
+    %% Billing & Payments
+    AdminSettings --> BillingPayments: Click "Billing & Payments"
+    
+    state BillingPayments {
+        InvoiceSettings: Invoice Settings
+        InvoiceSettings: - Business Name
+        InvoiceSettings: - Business Address
+        InvoiceSettings: - Contact Information
+        InvoiceSettings: - Business Logo Upload
+        InvoiceSettings: - Terms & Conditions
+        
+        PaymentSettings: Payment Method Settings
+        PaymentSettings: - Payment Methods List
+        PaymentSettings: - Add Payment Method Button
+        PaymentSettings: - Edit Payment Method Button
+        PaymentSettings: - Default Payment Method
+        
+        BusinessTariffs: Business Tariffs
+        BusinessTariffs: - Tariff Configuration
+        BusinessTariffs: - Commission Percentage Setting
+        BusinessTariffs: - Select Tariff Model Button
+        
+        InsuranceCompanies: Insurance Companies
+        InsuranceCompanies: - Insurance Companies List
+        InsuranceCompanies: - Add Insurance Company Button
+        InsuranceCompanies: - Edit Insurance Company Button
+        InsuranceCompanies: - Delete Insurance Company Button
+        
+        SaveBillingButton: Save Billing Settings Button
+        CancelBillingButton: Cancel Button
+    }
+    
+    BillingPayments --> AddPaymentMethod: Click "Add Payment Method"
+    BillingPayments --> EditPaymentMethod: Click "Edit" on any payment method
+    BillingPayments --> BusinessTariffsConfig: Click "Configure Tariffs"
+    BillingPayments --> AddInsurance: Click "Add Insurance Company"
+    BillingPayments --> EditInsurance: Click "Edit" on any insurance company
+    BillingPayments --> DeleteInsurance: Click "Delete" on any insurance company
+    
+    state BusinessTariffsConfig {
+        TariffOptions: Tariff Model Selection
+        TariffOptions: - Commission Percentage Input
+        
+        SharingTariff: Sub-Feature 1 - Sharing Tariff
+        SharingTariff: - Split between Merchant and Customer
+        SharingTariff: - Example: 5% from Merchant, 5% from Customer
+        
+        BusinessCentricTariff: Sub-Feature 2 - Business Centric Tariff
+        BusinessCentricTariff: - Added to Customer Invoice
+        BusinessCentricTariff: - Example: 10% added to Invoice Amount
+        
+        CustomerCentricTariff: Sub-Feature 3 - Customer Centric Tariff
+        CustomerCentricTariff: - Deducted from Merchant Revenue
+        CustomerCentricTariff: - Example: 10% deducted from Merchant
+        
+        SaveTariffButton: Save Tariff Settings Button
+        CancelTariffButton: Cancel Button
+    }
+    
+    BusinessTariffsConfig --> SelectSharingTariff: Click "Sharing Tariff" option
+    BusinessTariffsConfig --> SelectBusinessCentricTariff: Click "Business Centric" option
+    BusinessTariffsConfig --> SelectCustomerCentricTariff: Click "Customer Centric" option
+    
+    SelectSharingTariff --> TariffConfirmation: Enter commission % and save
+    SelectBusinessCentricTariff --> TariffConfirmation: Enter commission % and save
+    SelectCustomerCentricTariff --> TariffConfirmation: Enter commission % and save
+    
+    TariffConfirmation --> BusinessTariffsConfig: Tariff Model Selected
+    BusinessTariffsConfig --> BillingPayments: Click "Save Tariff Settings"
+    BusinessTariffsConfig --> BillingPayments: Click "Cancel"
+    
+    state AddPaymentMethod {
+        PaymentMethodForm: Payment Method Form
+        PaymentMethodForm: - Method Name
+        PaymentMethodForm: - Payment Instructions
+        PaymentMethodForm: - Is Default Checkbox
+        
+        SavePaymentMethod: Save Payment Method Button
+        CancelPaymentMethod: Cancel Button
+    }
+    
+    AddPaymentMethod --> PaymentMethodConfirmation: Click "Save Payment Method"
+    PaymentMethodConfirmation --> BillingPayments: Payment Method Added
+    AddPaymentMethod --> BillingPayments: Click "Cancel"
+    
+    EditPaymentMethod --> PaymentMethodEditForm: Open Payment Method Edit Form
+    PaymentMethodEditForm --> BillingPayments: Save Changes
+    
+    state AddInsurance {
+        InsuranceForm: Insurance Company Form
+        InsuranceForm: - Company Name
+        InsuranceForm: - Company Logo
+        InsuranceForm: - Contact Person
+        InsuranceForm: - Email Address
+        InsuranceForm: - Phone Number
+        InsuranceForm: - Billing Address
+        
+        SaveInsurance: Save Insurance Company Button
+        CancelInsurance: Cancel Button
+    }
+    
+    AddInsurance --> InsuranceConfirmation: Click "Save Insurance Company"
+    InsuranceConfirmation --> BillingPayments: Insurance Company Added
+    AddInsurance --> BillingPayments: Click "Cancel"
+    
+    EditInsurance --> InsuranceEditForm: Open Insurance Edit Form
+    InsuranceEditForm --> BillingPayments: Save Changes
+    DeleteInsurance --> InsuranceDeleteConfirmation: Confirm Delete
+    InsuranceDeleteConfirmation --> BillingPayments: Insurance Company Deleted
+    
+    BillingPayments --> ConfirmBilling: Click "Save Billing Settings"
+    ConfirmBilling --> AdminSettings: Billing Settings Saved
+    BillingPayments --> AdminSettings: Click "Cancel"
+    
+    %% Notifications
+    AdminSettings --> NotificationSettings: Click "Notifications"
+    
+    state NotificationSettings {
+        AppointmentNotifications: Appointment Notifications
+        AppointmentNotifications: - New Appointment
+        AppointmentNotifications: - Appointment Reminders
+        AppointmentNotifications: - Appointment Changes
+        
+        InventoryNotifications: Inventory Notifications
+        InventoryNotifications: - Low Stock Alerts
+        InventoryNotifications: - Reorder Reminders
+        
+        CustomerNotifications: Customer Notifications
+        CustomerNotifications: - Service Updates
+        CustomerNotifications: - Completion Notifications
+        CustomerNotifications: - Invoice Reminders
+        
+        NotificationChannels: Notification Channels
+        NotificationChannels: - Email Notifications Toggle
+        NotificationChannels: - SMS Notifications Toggle
+        NotificationChannels: - In-App Notifications Toggle
+        
+        SaveNotificationsButton: Save Notification Settings Button
+        CancelNotificationsButton: Cancel Button
+    }
+    
+    NotificationSettings --> ConfirmNotifications: Click "Save Notification Settings"
+    ConfirmNotifications --> AdminSettings: Notification Settings Saved
+    NotificationSettings --> AdminSettings: Click "Cancel"
+    
+    %% Reports & Analytics
+    AdminSettings --> ReportsAnalytics: Click "Reports & Analytics"
+    
+    state ReportsAnalytics {
+        PerformanceReports: Performance Reports
+        PerformanceReports: - Daily Reports
+        PerformanceReports: - Weekly Reports
+        PerformanceReports: - Monthly Reports
+        
+        ServiceReports: Service Reports
+        ServiceReports: - Service Type Analysis
+        ServiceReports: - Technician Performance
+        ServiceReports: - Customer Satisfaction
+        
+        FinancialReports: Financial Reports
+        FinancialReports: - Revenue Reports
+        FinancialReports: - Cost Analysis
+        FinancialReports: - Profit Margins
+        
+        ReportScheduling: Report Scheduling
+        ReportScheduling: - Automated Reports
+        ReportScheduling: - Email Recipients
+        ReportScheduling: - Schedule Frequency
+        
+        SaveReportsButton: Save Reports Settings Button
+        CancelReportsButton: Cancel Button
+    }
+    
+    ReportsAnalytics --> ConfirmReports: Click "Save Reports Settings"
+    ConfirmReports --> AdminSettings: Reports Settings Saved
+    ReportsAnalytics --> AdminSettings: Click "Cancel"
+    
+    %% Staff and Admin Settings Return Paths
+    AdminSettings --> Settings: Click "Return to Staff View"
+    
+    %% Return to Dashboard
+    Settings --> Dashboard: Click "Return to Dashboard"
+    AdminSettings --> Dashboard: Click "Return to Dashboard"

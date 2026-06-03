@@ -1,0 +1,58 @@
+flowchart TD
+    %% Main Entry Point
+    Start([CarPal Messaging Page]) --> FirstAccess{First Access?}
+    
+    %% Initial Flow Decision
+    FirstAccess -->|Yes| LinkButton["Display 'Link to Scribble' Button"]
+    FirstAccess -->|No| EnhancedPage["Enhanced Messaging Page\nwith 3 Integration Icons"]
+    
+    %% 1. Initial Access & Account Linking
+    LinkButton -->|Click| ConsentPopup["DATA SHARING CONSENT POP-UP\n---\nPersonal Details to share:\n- Profile Picture\n- Profile Name\n- Phone Number\n- Email Address\n\nBusiness Details to share:\n- Profile Picture\n- Profile Name\n- Phone Number\n- Email Address\n- Business Location\n\nRequires: Accept Scribble's Terms and Conditions,\nData Policy, and Privacy Policy\n---\nButtons: Accept, Cancel"]
+    
+    ConsentPopup -->|Click Cancel| LinkButton
+    ConsentPopup -->|Click Accept| RedirectScribble["Redirect to Scribble\n(https://scribble.ke/security/)"]
+    
+    RedirectScribble --> ScribbleRegistration["SCRIBBLE REGISTRATION PAGE\n---\n- Create Password Field\n- Confirm Password Field\n- Email Verification Process\n- Verification Code Entry Field\n---\nButton: Submit"]
+    
+    ScribbleRegistration -->|Create Password &\nVerify Email| ScribbleDashboard["Scribble Account Dashboard"]
+    ScribbleDashboard -->|Account Linking Complete| EnhancedPage
+    
+    %% 2. Enhanced Messaging Page
+    EnhancedPage --> ConnectIcon["Icon 1: 'Connect Contacts to Scribble'"]
+    EnhancedPage --> OpenIcon["Icon 2: 'Open Scribble'"]
+    EnhancedPage --> ManageIcon["Icon 3: 'Manage Scribble Link'"]
+    
+    %% 3. Connect Contacts Process
+    ConnectIcon -->|Click| ContactsPopup["CONTACTS SELECTION POP-UP\n---\n- List of contacts (names only)\n- No phone numbers/emails displayed\n- Option to select individual contacts\n- Option to select all contacts\n---\nButtons: Share, Cancel"]
+    
+    ContactsPopup -->|Click Cancel| EnhancedPage
+    ContactsPopup -->|Select Contacts & Click Share| ContactsShared["Selected Contacts\nAutomatically Shared with Scribble"]
+    ContactsShared --> EnhancedPage
+    
+    %% 4. Open Scribble Account
+    OpenIcon -->|Click| ScribbleLogin["SCRIBBLE LOGIN PAGE\n---\n- Email Address Field\n- Password Field\n---\nButton: Login"]
+    
+    ScribbleLogin -->|Enter Email & Password| AccessScribble["Access Scribble Account Dashboard"]
+    
+    %% 5. Manage Scribble Link (Unlinking)
+    ManageIcon -->|Click| UnlinkPopup["UNLINK CONFIRMATION POP-UP\n---\n- Confirmation Message\n- Warning about losing integration\n---\nButtons: Proceed, Cancel"]
+    
+    UnlinkPopup -->|Click Cancel| EnhancedPage
+    UnlinkPopup -->|Click Proceed| VerificationUnlink["EMAIL VERIFICATION FOR UNLINKING\n---\n- Verification code sent to user's email\n- Enter Verification Code Field\n---\nButtons: Verify, Cancel"]
+    
+    VerificationUnlink -->|Click Cancel| EnhancedPage
+    VerificationUnlink -->|Enter Code & Verify| UnlinkComplete["Account Unlinked Confirmation"]
+    
+    UnlinkComplete --> ResetPage["Messaging Page Reset\n(Scribble Icons Removed)"]
+    ResetPage --> LinkButton
+
+    %% Styling
+    classDef popup fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef mainPage fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef action fill:#bfb,stroke:#333,stroke-width:2px;
+    classDef decision fill:#fbb,stroke:#333,stroke-width:2px;
+    
+    class ConsentPopup,ContactsPopup,UnlinkPopup,VerificationUnlink,ScribbleRegistration,ScribbleLogin popup;
+    class Start,EnhancedPage,ResetPage mainPage;
+    class ContactsShared,UnlinkComplete,ScribbleDashboard,AccessScribble action;
+    class FirstAccess decision;

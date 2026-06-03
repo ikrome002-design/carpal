@@ -1,0 +1,369 @@
+graph TD
+    %% Main Layout Structure
+    Dashboard["Dashboard"] --> MainNav{Main Navigation}
+    MainNav --> BillingPayments["Billing & Payments"]
+    
+    %% Header Actions
+    BillingPayments --> HeaderActions{"Header Actions"}
+    HeaderActions --> Notifications["Notifications Icon"]
+    Notifications --> |"Click"| NotificationsPopup["Notifications Window"]
+    NotificationsPopup --> PaymentAlerts["Payment Alerts"]
+    NotificationsPopup --> InvoiceReminders["Invoice Reminders"]
+    NotificationsPopup --> SystemUpdates["System Updates"]
+    
+    HeaderActions --> UserProfile["User Profile"]
+    UserProfile --> |"Click"| UserMenu["User Menu Popup"]
+    UserMenu --> ProfileSettings["Profile Settings"]
+    UserMenu --> LogOut["Log Out"]
+    
+    %% Main Navigation Tabs
+    BillingPayments --> MainTabs{"Main Tabs"}
+    MainTabs --> CustomerBillings["Customer Billings"]
+    MainTabs --> CarPalBillings["CarPal Billings"]
+    MainTabs --> Refunds["Refunds"]
+    
+    %% Customer Billings Section
+    CustomerBillings --> CustomerSummary["Summary Cards"]
+    CustomerSummary --> TotalInvoices["Total Invoices"]
+    CustomerSummary --> TotalAmountBilled["Total Amount Billed"]
+    CustomerSummary --> TotalPaymentsReceived["Total Payments Received"]
+    CustomerSummary --> OutstandingAmount["Outstanding Amount"]
+    
+    CustomerBillings --> InvoiceOverview["Recent Invoices Table"]
+    InvoiceOverview --> InvoiceActions{"Invoice Actions"}
+    InvoiceActions --> ViewInvoice["View Invoice"]
+    ViewInvoice --> |"Click"| InvoiceDetailView["Invoice Detail View"]
+    InvoiceDetailView --> InvoiceItems["Service Items & Charges"]
+    InvoiceDetailView --> CustomerDetails["Customer Information"]
+    InvoiceDetailView --> ServiceChargeBreakdown["Service Charge Breakdown"]
+    InvoiceDetailView --> InvoiceActionButtons["Action Buttons"]
+    
+    %% Enhanced Download Feature with Billing Purpose Integration
+    InvoiceActionButtons --> DownloadInvoice["Download Invoice Button"]
+    DownloadInvoice --> |"Click"| DownloadPurposeSelection["Download Purpose Selection Popup"]
+    
+    DownloadPurposeSelection --> DownloadPurposeOptions{"Select Download Purpose"}
+    DownloadPurposeOptions --> GeneralPurposeDownload["General Purpose"]
+    DownloadPurposeOptions --> BillingPurposeDownload["Billing Purpose"]
+    
+    %% General Purpose Download Path
+    GeneralPurposeDownload --> |"Click"| GeneralDownloadOptions["General Purpose Download Options"]
+    GeneralDownloadOptions --> GeneralDocumentSelection["Document Selection Options"]
+    GeneralDocumentSelection --> SelectInvoiceOnly["Invoice Only Checkbox"]
+    GeneralDocumentSelection --> SelectServiceHistory["Service History Checkbox"]
+    GeneralDocumentSelection --> SelectSupportingDocs["Supporting Documents Checkbox"]
+    GeneralDocumentSelection --> SelectTimePeriod["Time Period Selection"]
+    GeneralDownloadOptions --> GeneralWatermarkSettings["Watermark Settings"]
+    GeneralWatermarkSettings --> EnableWatermark["Generate with Watermark Checkbox (Auto-checked)"]
+    GeneralWatermarkSettings --> WatermarkText["Watermark Text: 'Not For Billing Purposes - www.carpal.ke. A Product of Citrus Labs Limited.'"]
+    GeneralDownloadOptions --> GeneralDownloadButton["Generate General Download Button"]
+    GeneralDownloadButton --> |"Click"| GeneralDownloadProcessing["Processing General Download"]
+    GeneralDownloadProcessing --> GeneralDownloadComplete["General Download Complete"]
+    GeneralDownloadComplete --> DownloadFile["Download File to Device"]
+    
+    %% Billing Purpose Download Path  
+    BillingPurposeDownload --> |"Click"| BillingDownloadOptions["Billing Purpose Download Options"]
+    BillingDownloadOptions --> BillingDocumentSettings["Billing Document Settings"]
+    BillingDocumentSettings --> MostRecentServiceOnly["Most Recent Service History Only (Auto-selected)"]
+    BillingDocumentSettings --> AutoGenerateInvoice["Auto-generate CarPal Invoice as Front Page (Auto-enabled)"]
+    BillingDocumentSettings --> IncludeAllSupportingDocs["Include All Required Supporting Documents (Auto-enabled)"]
+    BillingDocumentSettings --> NoWatermark["No Watermark Applied (Auto-disabled)"]
+    BillingDownloadOptions --> BillingNotificationSettings["Notification Settings"]
+    BillingNotificationSettings --> NotifyVehicleOwner["Notify Vehicle Owner via Email Checkbox"]
+    BillingNotificationSettings --> EmailNotificationText["Email Notification Message Preview"]
+    BillingDownloadOptions --> BillingDownloadButton["Generate Billing Download Button"]
+    BillingDownloadButton --> |"Click"| BillingDownloadProcessing["Processing Billing Download"]
+    BillingDownloadProcessing --> AutoInvoiceGeneration["Auto-generate CarPal Invoice"]
+    AutoInvoiceGeneration --> CompileSupportingDocs["Compile All Supporting Documents"]
+    CompileSupportingDocs --> CreateBillingPDF["Create Billing Purpose PDF"]
+    CreateBillingPDF --> BillingDownloadComplete["Billing Download Complete"]
+    BillingDownloadComplete --> DownloadBillingFile["Download Billing File to Device"]
+    BillingDownloadComplete --> SendEmailNotification["Send Email Notification (if enabled)"]
+    SendEmailNotification --> EmailDeliveryConfirmation["Email Delivery Confirmation"]
+    
+    %% Enhanced Email Invoice Feature with Billing Purpose Integration
+    InvoiceActionButtons --> EmailInvoice["Email Invoice Button"]
+    EmailInvoice --> |"Click"| EmailPurposeSelection["Email Purpose Selection Popup"]
+    
+    EmailPurposeSelection --> EmailPurposeOptions{"Select Email Purpose"}
+    EmailPurposeOptions --> GeneralPurposeEmail["General Purpose Email"]
+    EmailPurposeOptions --> BillingPurposeEmail["Billing Purpose Email"]
+    
+    %% General Purpose Email Path
+    GeneralPurposeEmail --> |"Click"| GeneralEmailOptions["General Purpose Email Options"]
+    GeneralEmailOptions --> GeneralEmailDocuments["Email Document Selection"]
+    GeneralEmailDocuments --> EmailInvoiceOnly["Invoice Only Checkbox"]
+    GeneralEmailDocuments --> EmailServiceHistory["Service History Checkbox"]
+    GeneralEmailDocuments --> EmailSupportingDocs["Supporting Documents Checkbox"]
+    GeneralEmailOptions --> GeneralEmailSettings["General Email Settings"]
+    GeneralEmailSettings --> RecipientEmail["Recipient Email Address Input"]
+    GeneralEmailSettings --> EmailSubjectGeneral["Email Subject Input"]
+    GeneralEmailSettings --> EmailBodyGeneral["Email Body Textarea"]
+    GeneralEmailSettings --> GeneralWatermarkEmail["Apply Watermark Checkbox (Auto-checked)"]
+    GeneralEmailOptions --> SendGeneralEmailButton["Send General Email Button"]
+    SendGeneralEmailButton --> |"Click"| GeneralEmailProcessing["Processing General Email"]
+    GeneralEmailProcessing --> GeneralEmailSent["General Email Sent Successfully"]
+    GeneralEmailSent --> GeneralEmailConfirmation["Email Delivery Confirmation"]
+    
+    %% Billing Purpose Email Path
+    BillingPurposeEmail --> |"Click"| BillingEmailOptions["Billing Purpose Email Options"]
+    BillingEmailOptions --> BillingEmailDocuments["Billing Email Document Settings"]
+    BillingEmailDocuments --> BillingEmailMostRecent["Most Recent Service History Only (Auto-selected)"]
+    BillingEmailDocuments --> BillingEmailAutoInvoice["Auto-generate CarPal Invoice as Front Page (Auto-enabled)"]
+    BillingEmailDocuments --> BillingEmailAllDocs["Include All Required Supporting Documents (Auto-enabled)"]
+    BillingEmailDocuments --> BillingEmailNoWatermark["No Watermark Applied (Auto-disabled)"]
+    BillingEmailOptions --> BillingEmailSettings["Billing Email Settings"]
+    BillingEmailSettings --> BillingRecipientEmail["Vehicle Owner Email Address (Auto-populated)"]
+    BillingEmailSettings --> BillingEmailSubject["Email Subject: 'Official Billing Documentation - [Vehicle License Plate]' (Auto-generated)"]
+    BillingEmailSettings --> BillingEmailBody["Email Body Template (Auto-populated)"]
+    BillingEmailBody --> EmailTemplateText["Template: Professional billing documentation with service completion notice"]
+    BillingEmailSettings --> CCRecipients["CC Recipients (Optional)"]
+    BillingEmailSettings --> BillingEmailPriority["Email Priority: High (Auto-set)"]
+    BillingEmailOptions --> SendBillingEmailButton["Send Billing Email Button"]
+    SendBillingEmailButton --> |"Click"| BillingEmailProcessing["Processing Billing Email"]
+    BillingEmailProcessing --> BillingAutoInvoiceGeneration["Auto-generate CarPal Invoice"]
+    BillingAutoInvoiceGeneration --> BillingCompileDocs["Compile All Supporting Documents"]
+    BillingCompileDocs --> BillingCreatePDF["Create Billing Purpose PDF"]
+    BillingCreatePDF --> BillingEmailSent["Billing Email Sent Successfully"]
+    BillingEmailSent --> BillingEmailDeliveryConfirm["Email Delivery Confirmation"]
+    BillingEmailSent --> LogBillingEmail["Log Email in Customer Communication History"]
+    
+    %% Return paths for Download flows
+    GeneralDownloadComplete --> InvoiceDetailView
+    BillingDownloadComplete --> InvoiceDetailView
+    EmailDeliveryConfirmation --> InvoiceDetailView
+    
+    %% Return paths for Email flows
+    GeneralEmailConfirmation --> InvoiceDetailView
+    BillingEmailDeliveryConfirm --> InvoiceDetailView
+    LogBillingEmail --> InvoiceDetailView
+    
+    %% Original Action Buttons Continue
+    InvoiceActionButtons --> MarkAsPaid["Mark as Paid Button"]
+    MarkAsPaid --> |"Click"| PaymentDetailsForm["Payment Details Form"]
+    PaymentDetailsForm --> PaymentAmount["Payment Amount"]
+    PaymentDetailsForm --> PaymentDate["Payment Date"]
+    PaymentDetailsForm --> PaymentMethod["Payment Method"]
+    PaymentDetailsForm --> PaymentReference["Payment Reference"]
+    PaymentDetailsForm --> ConfirmPayment["Confirm Payment Button"]
+    ConfirmPayment --> |"Click"| GenerateReceipt["Generate Receipt"]
+    GenerateReceipt --> ReceiptPreview["Receipt Preview"]
+    ReceiptPreview --> SendReceiptToCustomer["Send Receipt to Customer"]
+    
+    InvoiceActions --> EditInvoice["Edit Invoice"]
+    EditInvoice --> |"Click"| EditInvoiceForm["Edit Invoice Form"]
+    EditInvoiceForm --> UpdateInvoiceItems["Update Service Items"]
+    EditInvoiceForm --> UpdateCustomerInfo["Update Customer Info"]
+    EditInvoiceForm --> SaveInvoiceChanges["Save Changes Button"]
+    SaveInvoiceChanges --> |"Click"| InvoiceUpdatedConfirmation["Invoice Updated Confirmation"]
+    
+    InvoiceActions --> SendReminder["Send Payment Reminder"]
+    SendReminder --> |"Click"| ReminderOptions["Reminder Options"]
+    ReminderOptions --> EmailReminder["Email Reminder"]
+    ReminderOptions --> SMSReminder["SMS Reminder"]
+    ReminderOptions --> BothChannels["Both Channels"]
+    ReminderOptions --> SendReminderButton["Send Reminder Button"]
+    SendReminderButton --> |"Click"| ReminderSentConfirmation["Reminder Sent Confirmation"]
+    
+    CustomerBillings --> CreateInvoice["Create New Invoice Form"]
+    CreateInvoice --> VehicleSelection["Vehicle Selection"]
+    VehicleSelection --> SearchByLicensePlate["Search by License Plate"]
+    VehicleSelection --> SelectFromHistory["Select from History"]
+    VehicleSelection --> ManualEntry["Manual Entry"]
+    
+    CreateInvoice --> CustomerInfo["Customer Information"]
+    CustomerInfo --> CustomerNameInput["Customer Name Input"]
+    CustomerInfo --> PhoneNumberInput["Phone Number Input"]
+    CustomerInfo --> EmailAddressInput["Email Address Input"]
+    CustomerInfo --> VehicleDetailsInput["Vehicle Details Input"]
+    
+    CreateInvoice --> ServiceDetails["Service Details"]
+    ServiceDetails --> ServiceItems["Service Items"]
+    ServiceItems --> ServiceDescription["Description Input"]
+    ServiceItems --> Quantity["Quantity Input"]
+    ServiceItems --> UnitPrice["Unit Price Input"]
+    ServiceItems --> LineTotal["Line Total (Auto-calculated)"]
+    ServiceItems --> ServiceCharge["Service Charge (Auto-calculated)"]
+    
+    ServiceDetails --> AddServiceButton["Add Service Item Button"]
+    AddServiceButton --> |"Click"| AddNewServiceRow["Add New Service Row"]
+    
+    ServiceDetails --> TotalCalculation["Total Calculation"]
+    TotalCalculation --> SubtotalAmount["Subtotal Amount"]
+    TotalCalculation --> ServiceChargeAmount["Service Charge Amount"]
+    TotalCalculation --> TotalAmount["Total Amount"]
+    
+    CreateInvoice --> PaymentDetails["Payment Details"]
+    PaymentDetails --> PaymentMethodSelect["Payment Method Select"]
+    PaymentMethodSelect --> MPesaOption["M-Pesa Option"]
+    PaymentMethodSelect --> CashOption["Cash Option"]
+    PaymentMethodSelect --> BankTransferOption["Bank Transfer Option"]
+    PaymentDetails --> PaymentDueDateInput["Due Date Input"]
+    
+    CreateInvoice --> InvoiceOptions["Invoice Options"]
+    InvoiceOptions --> SendToCustomer["Send to Customer"]
+    InvoiceOptions --> MarkAsPaidNow["Mark as Paid Now"]
+    
+    CreateInvoice --> GenerateInvoiceButton["Generate Invoice Button"]
+    GenerateInvoiceButton --> |"Click"| ServiceChargeCalculation["Service Charge Calculation"]
+    ServiceChargeCalculation --> |"10-24,999 KES"| PercentageCharge["10% Percentage Fee"]
+    ServiceChargeCalculation --> |"25,000-49,999 KES"| FixedCharge2500["Fixed 2,500 KES Fee"]
+    ServiceChargeCalculation --> |"50,000-99,999 KES"| FixedCharge5000["Fixed 5,000 KES Fee"]
+    ServiceChargeCalculation --> |"100,000+ KES"| FixedCharge15000["Fixed 15,000 KES Fee"]
+    
+    ServiceChargeCalculation --> InvoiceSuccess["Invoice Generated Successfully"]
+    InvoiceSuccess --> ViewCreatedInvoice["View Created Invoice"]
+    InvoiceSuccess --> EmailToCustomer["Email to Customer"]
+    
+    %% CarPal Billings Section
+    CarPalBillings --> CarPalSummary["Summary Cards"]
+    CarPalSummary --> TotalInvoicesIssued["Total Invoices Issued"]
+    CarPalSummary --> TotalReceiptsRecorded["Total Receipts Recorded"]
+    CarPalSummary --> CarPalTotalBilled["Total Amount Billed"]
+    CarPalSummary --> CarPalOutstanding["Outstanding Amount"]
+    
+    CarPalBillings --> WeeklyInvoiceSystem["Weekly Invoice System"]
+    WeeklyInvoiceSystem --> AutomaticGeneration["Automatic Generation (Mondays)"]
+    WeeklyInvoiceSystem --> PreviousWeekCharges["Previous Week Charges"]
+    WeeklyInvoiceSystem --> InvoiceBreakdown["Detailed Invoice Breakdown"]
+    
+    CarPalBillings --> PlatformInvoices["CarPal Platform Invoices Table"]
+    PlatformInvoices --> PlatformInvoiceActions{"Platform Invoice Actions"}
+    PlatformInvoiceActions --> ViewPlatformInvoice["View Invoice"]
+    ViewPlatformInvoice --> |"Click"| PlatformInvoiceDetail["Platform Invoice Detail"]
+    PlatformInvoiceDetail --> ServiceFeesBreakdown["Service Fees Breakdown"]
+    PlatformInvoiceDetail --> WeeklyTransactionList["Weekly Transaction List"]
+    
+    PlatformInvoiceActions --> PayNow["Pay Now Button"]
+    PayNow --> |"Click"| MPesaPayment["M-Pesa Payment Process"]
+    MPesaPayment --> PaybillNumber["Enter Paybill Number"]
+    MPesaPayment --> AccountNumber["Enter Invoice Number as Account"]
+    MPesaPayment --> ConfirmMPesaPayment["Confirm M-Pesa Payment"]
+    ConfirmMPesaPayment --> PaymentVerification["Payment Verification"]
+    PaymentVerification --> |"Success"| PaymentConfirmed["Payment Confirmed"]
+    PaymentVerification --> |"Failed"| PaymentFailed["Payment Failed"]
+    
+    %% Refunds Section
+    Refunds --> RefundSummary["Summary Cards"]
+    RefundSummary --> TotalRefundsIssued["Total Refunds Issued"]
+    RefundSummary --> TotalRefundAmount["Total Refund Amount"]
+    RefundSummary --> AverageRefundAmount["Average Refund Amount"]
+    RefundSummary --> RefundPercentage["Refund Percentage"]
+    
+    Refunds --> RefundRequestList["Refund Requests List"]
+    RefundRequestList --> RefundRequestStatus{"Refund Status"}
+    RefundRequestStatus --> PendingRequests["Pending Requests"]
+    RefundRequestStatus --> ProcessedRequests["Processed Requests"]
+    RefundRequestStatus --> RejectedRequests["Rejected Requests"]
+    
+    RefundRequestList --> RefundRequestActions{"Request Actions"}
+    RefundRequestActions --> ViewRefundRequest["View Request"]
+    ViewRefundRequest --> |"Click"| RefundRequestDetails["Refund Request Details"]
+    RefundRequestActions --> ApproveRefund["Approve Refund"]
+    ApproveRefund --> |"Click"| RefundApprovalForm["Refund Approval Form"]
+    RefundApprovalForm --> ApprovalAmount["Approval Amount"]
+    RefundApprovalForm --> ApprovalNotes["Approval Notes"]
+    RefundApprovalForm --> ConfirmApproval["Confirm Approval"]
+    ConfirmApproval --> |"Click"| ProcessRefund["Process Refund"]
+    ProcessRefund --> RefundConfirmation["Refund Confirmation"]
+    
+    RefundRequestActions --> RejectRefund["Reject Refund"]
+    RejectRefund --> |"Click"| RefundRejectionForm["Refund Rejection Form"]
+    RefundRejectionForm --> RejectionReason["Rejection Reason"]
+    RefundRejectionForm --> ConfirmRejection["Confirm Rejection"]
+    ConfirmRejection --> |"Click"| RejectionConfirmation["Rejection Confirmation"]
+    
+    Refunds --> RefundRequestForm["New Refund Request Form"]
+    RefundRequestForm --> RefundCustomerInfo["Customer Information"]
+    RefundCustomerInfo --> RefundCustomerName["Customer Name Input"]
+    RefundCustomerInfo --> InvoiceReference["Invoice Reference Input"]
+    RefundCustomerInfo --> RefundAmount["Refund Amount Input"]
+    RefundCustomerInfo --> RefundReason["Reason for Refund Select"]
+    RefundReason --> ServiceUnsatisfactory["Service Unsatisfactory Option"]
+    RefundReason --> Overcharge["Overcharge Option"]
+    RefundReason --> ServiceNotCompleted["Service Not Completed Option"]
+    RefundReason --> OtherReason["Other Option"]
+    
+    RefundRequestForm --> AdditionalComments["Additional Comments Textarea"]
+    RefundRequestForm --> SubmitRefundButton["Submit Refund Request Button"]
+    SubmitRefundButton --> |"Click"| RefundSuccess["Success Alert"]
+    
+    %% Reports and Analytics
+    BillingPayments --> ReportsAnalytics["Reports & Analytics"]
+    ReportsAnalytics --> ReportTypes{"Report Types"}
+    ReportTypes --> EarningsReport["Earnings Report"]
+    ReportTypes --> PaymentTrendsReport["Payment Trends Report"]
+    ReportTypes --> OutstandingPaymentsReport["Outstanding Payments Report"]
+    ReportTypes --> RefundAnalysisReport["Refund Analysis Report"]
+    
+    ReportsAnalytics --> ReportFilters["Report Filters"]
+    ReportFilters --> DateRangeFilter["Date Range Filter"]
+    ReportFilters --> CustomerFilter["Customer Filter"]
+    ReportFilters --> ServiceTypeFilter["Service Type Filter"]
+    
+    ReportsAnalytics --> ExportOptions["Export Options"]
+    ExportOptions --> ExportPDF["Export as PDF"]
+    ExportOptions --> ExportExcel["Export as Excel"]
+    ExportOptions --> ExportCSV["Export as CSV"]
+    
+    %% Payment History
+    BillingPayments --> PaymentHistory["Payment History"]
+    PaymentHistory --> PaymentRecords["Payment Records List"]
+    PaymentRecords --> FilterPayments["Filter Payments"]
+    FilterPayments --> FilterByDate["Filter by Date"]
+    FilterPayments --> FilterByCustomer["Filter by Customer"]
+    FilterPayments --> FilterByAmount["Filter by Amount"]
+    FilterPayments --> FilterByMethod["Filter by Payment Method"]
+    
+    PaymentRecords --> PaymentRecordActions{"Payment Record Actions"}
+    PaymentRecordActions --> ViewPaymentDetails["View Payment Details"]
+    ViewPaymentDetails --> |"Click"| PaymentDetailView["Payment Detail View"]
+    PaymentRecordActions --> PrintReceipt["Print Receipt"]
+    PaymentRecordActions --> SendReceiptEmail["Send Receipt Email"]
+    
+    %% Footer and Sidebar
+    BillingPayments --> AppFooter["App Footer"]
+    AppFooter --> DarkModeToggle["Dark Mode Toggle"]
+    DarkModeToggle --> |"Click"| ToggleDarkMode["Toggle Dark Mode"]
+    AppFooter --> SupportLink["Support Link"]
+    AppFooter --> PrivacyPolicyLink["Privacy Policy Link"]
+    
+    BillingPayments --> Sidebar["Left Navigation Sidebar"]
+    Sidebar --> SidebarDashboard["Dashboard Link"]
+    Sidebar --> ServiceHub["Service Hub Link"]
+    Sidebar --> VehicleCheckIn["Vehicle Check-In Link"]
+    Sidebar --> BillingPaymentsLink["Billing & Payments Link (Active)"]
+    Sidebar --> VehicleHistory["Vehicle History Link"]
+    Sidebar --> Technicians["Technicians Link"]
+    Sidebar --> VehicleCheckOut["Vehicle Check-Out Link"]
+    Sidebar --> Settings["Settings Link"]
+    Sidebar --> Inventory["Inventory Link"]
+    
+    %% Style Definitions
+    classDef primary fill:#2563eb,stroke:#1e40af,color:white
+    classDef secondary fill:#3b82f6,stroke:#2563eb,color:white
+    classDef decision fill:#dbeafe,stroke:#3b82f6,color:black
+    classDef action fill:#10b981,stroke:#047857,color:white
+    classDef popup fill:#34d399,stroke:#10b981,color:black
+    classDef payment fill:#f59e0b,stroke:#d97706,color:white
+    classDef warning fill:#ef4444,stroke:#b91c1c,color:white
+    classDef billing fill:#8b5cf6,stroke:#7c3aed,color:white
+    classDef download fill:#06b6d4,stroke:#0891b2,color:white
+    classDef email fill:#f97316,stroke:#ea580c,color:white
+    
+    %% Apply Styles
+    class Dashboard,BillingPayments primary
+    class MainNav,MainTabs,InvoiceActions,PlatformInvoiceActions,RefundRequestStatus,RefundRequestActions,ReportTypes decision
+    class HeaderActions,DownloadPurposeOptions,EmailPurposeOptions decision
+    class CustomerBillings,CarPalBillings,Refunds,ReportsAnalytics,PaymentHistory secondary
+    class ViewInvoice,PayNow,GenerateInvoiceButton,SubmitRefundButton,AddServiceButton,SendReminderButton action
+    class MarkAsPaid,ApproveRefund,RejectRefund,EmailToCustomer action
+    class NotificationsPopup,UserMenu,InvoiceDetailView,PaymentDetailsForm,ReminderOptions,RefundApprovalForm popup
+    class RefundRejectionForm,InvoiceSuccess,RefundSuccess,PaymentConfirmed,PaymentFailed,RejectionConfirmation popup
+    class DownloadPurposeSelection,EmailPurposeSelection,GeneralDownloadOptions,GeneralEmailOptions popup
+    class MPesaPayment,PaymentVerification,ProcessRefund payment
+    class OutstandingAmount,ServiceChargeCalculation,PaymentFailed warning
+    class BillingPurposeDownload,BillingDownloadOptions,BillingDownloadProcessing,BillingDownloadComplete billing
+    class BillingPurposeEmail,BillingEmailOptions,BillingEmailProcessing,BillingEmailSent billing
+    class DownloadInvoice,GeneralPurposeDownload,GeneralDownloadButton,DownloadFile download
+    class EmailInvoice,GeneralPurposeEmail,SendGeneralEmailButton,GeneralEmailSent email

@@ -1,0 +1,250 @@
+stateDiagram-v2
+    [*] --> Login
+    Login --> Dashboard
+    Dashboard --> VehicleCheckOut: Click "Vehicle Check-Out" in Main Navigation
+    Dashboard --> VehicleList: Click "Recent Vehicle Check-Ins" in Dashboard
+    VehicleList --> SelectVehicle: Find and select vehicle
+    
+    %% Main Vehicle Check-Out Page
+    state VehicleCheckOut {
+        SearchVehicle: Search For Vehicle
+        SearchVehicle: - License Plate Search Field
+        SearchVehicle: - Customer Name Search Field
+        SearchVehicle: - Date Range Filter
+        SearchVehicle: - Search Button
+        
+        VehicleResults: Vehicle Results List
+        VehicleResults: - License Plate Number
+        VehicleResults: - Vehicle Make and Model
+        VehicleResults: - Check-In Date
+        VehicleResults: - Service Status
+        VehicleResults: - Customer Name
+        VehicleResults: - Select Vehicle Button
+    }
+    
+    SearchVehicle --> VehicleResults: Enter search criteria and click "Search"
+    VehicleResults --> SelectVehicle: Click "Select Vehicle" for check-out
+    
+    %% Vehicle Selection and Check-Out Form
+    state SelectVehicle {
+        VehicleDetails: Vehicle Information Summary
+        VehicleDetails: - License Plate Number
+        VehicleDetails: - Vehicle Make, Model, Year
+        VehicleDetails: - VIN
+        VehicleDetails: - Check-In Date/Time
+        VehicleDetails: - Current Service Status
+        VehicleDetails: - Customer Information
+        
+        CheckOutActions: Check-Out Actions
+        CheckOutActions: - Initiate Check-Out Button
+        CheckOutActions: - View Check-In Form Button
+        CheckOutActions: - View Service History Button
+    }
+    
+    SelectVehicle --> CheckOutForm: Click "Initiate Check-Out"
+    SelectVehicle --> ViewCheckInForm: Click "View Check-In Form"
+    SelectVehicle --> ViewServiceHistory: Click "View Service History"
+    
+    %% Check-Out Form
+    state CheckOutForm {
+        ServiceCompletion: Service Completion Details
+        ServiceCompletion: - Service Tasks Completed
+        ServiceCompletion: - Parts Replaced
+        ServiceCompletion: - Additional Services Performed
+        
+        FinalUpdates: Final Updates Section
+        FinalUpdates: - Service Completion Notes
+        FinalUpdates: - Resolved Issues
+        FinalUpdates: - Last-Minute Repairs
+        
+        ConditionVerification: Condition Verification
+        ConditionVerification: - Compare to Check-In Condition
+        ConditionVerification: - Note Any New Issues
+        
+        PhotoUpload: Final Photo Upload
+        PhotoUpload: - Take Photo Button
+        PhotoUpload: - Upload Photo Button
+        PhotoUpload: - Photo Description Field
+        PhotoUpload: - Area Selection Dropdown
+        
+        CheckOutButtons: Form Action Buttons
+        CheckOutButtons: - Save Draft Button
+        CheckOutButtons: - Review Form Button
+        CheckOutButtons: - Cancel Button
+    }
+    
+    CheckOutForm --> ReviewCheckOut: Click "Review Form"
+    
+    %% Review Check-Out
+    state ReviewCheckOut {
+        ReviewSummary: Check-Out Summary Review
+        ReviewSummary: - Vehicle Information
+        ReviewSummary: - Service Details
+        ReviewSummary: - Uploaded Photos
+        ReviewSummary: - Service Notes
+        
+        EditOptions: Edit Options
+        EditOptions: - Edit Details Button
+        EditOptions: - Add More Photos Button
+        
+        ConfirmButtons: Confirmation Buttons
+        ConfirmButtons: - Approve Check-Out Button
+        ConfirmButtons: - Return to Edit Button
+    }
+    
+    ReviewCheckOut --> EditForm: Click "Return to Edit"
+    ReviewCheckOut --> ApproveCheckOut: Click "Approve Check-Out"
+    EditForm --> CheckOutForm: Redirects to Check-Out Form
+    
+    %% Approve Check-Out and Record Date
+    state ApproveCheckOut {
+        RecordCheckOutDate: Record Check-Out Date/Time
+        RecordCheckOutDate: - Auto-filled Current Date and Time
+        RecordCheckOutDate: - Manual Override Option
+        
+        UpdateHistory: Vehicle History Update
+        UpdateHistory: - Auto-save to Vehicle History
+        UpdateHistory: - Link to Check-In Form
+        
+        SummarySharing: Summary Sharing Options
+        SummarySharing: - Email to Customer Checkbox
+        SummarySharing: - Print Summary Checkbox
+        
+        CompleteButtons: Completion Buttons
+        CompleteButtons: - Complete Check-Out Button
+        CompleteButtons: - Back Button
+    }
+    
+    ApproveCheckOut --> PostRepairAssessment: Click "Complete Check-Out"
+    
+    %% Post-Repair Assessment
+    state PostRepairAssessment {
+        AutoFilledInfo: Auto-Filled Information
+        AutoFilledInfo: - Vehicle Details
+        AutoFilledInfo: - Business User Information
+        AutoFilledInfo: - Repair Order Number
+        AutoFilledInfo: - Check-In/Check-Out Times
+        AutoFilledInfo: - Customer Information
+        
+        ManualEntryFields: Manual Entry Fields
+        ManualEntryFields: - Completed Repairs List
+        ManualEntryFields: - Post-Repair Inspection Notes
+        
+        RepairRecommendations: Repair Recommendations
+        RepairRecommendations: - Immediate Repairs Required
+        RepairRecommendations: - Next Service Recommendations
+        RepairRecommendations: - Long-term Maintenance (Before 100,000 KM)
+        
+        TestDriveResults: Test Drive Results
+        TestDriveResults: - Performance Notes
+        TestDriveResults: - Issues Detected
+        
+        AdditionalRepairs: Additional Repairs Recommendations
+        AdditionalRepairs: - New Issues Identified
+        AdditionalRepairs: - Recommended Actions
+        
+        FinalApproval: Final Approval Section
+        FinalApproval: - Service Manager Sign-Off
+        FinalApproval: - Personal ID Number Field
+        FinalApproval: - OTP PIN Field (SMS Verification)
+        FinalApproval: - Complete Assessment Button
+    }
+    
+    PostRepairAssessment --> CompleteAssessment: Click "Complete Assessment"
+    
+    %% Complete Assessment and Notifications
+    state CompleteAssessment {
+        UpdateVehicleStatus: Update Vehicle Status
+        UpdateVehicleStatus: - Status Changed to "Repaired"
+        
+        CustomerNotifications: Customer Notifications
+        CustomerNotifications: - SMS Notification
+        CustomerNotifications: - Email Notification with Attachments
+        CustomerNotifications: - Post-Repair Assessment PDF
+        CustomerNotifications: - Check-Out Form PDF
+        CustomerNotifications: - Invoice PDF
+        
+        InsuranceNotification: Insurance Notification (If Applicable)
+        InsuranceNotification: - Email to Insurance Company
+        InsuranceNotification: - Repair Completion Details
+        InsuranceNotification: - Cost Breakdown
+        InsuranceNotification: - Invoice Attachment
+        
+        NextStepsButtons: Next Steps Buttons
+        NextStepsButtons: - Return to Dashboard Button
+        NextStepsButtons: - Check-Out Another Vehicle Button
+        NextStepsButtons: - View Vehicle History Button
+    }
+    
+    %% View Check-In Form Popup
+    ViewCheckInForm --> SelectVehicle: Close popup and return
+    
+    %% View Service History Popup
+    ViewServiceHistory --> SelectVehicle: Close popup and return
+    
+    %% Photo Upload Popup
+    state PhotoUploadPopup {
+        CameraAccess: Camera Options
+        CameraAccess: - Device Camera Access
+        CameraAccess: - Take Photo Button
+        CameraAccess: - Retake Photo Button
+        
+        UploadOptions: Upload Options
+        UploadOptions: - Browse Files Button
+        UploadOptions: - Drag and Drop Area
+        
+        PhotoInfo: Photo Information
+        PhotoInfo: - Description Field
+        PhotoInfo: - Vehicle Area Tag Dropdown
+        PhotoInfo: - Photo Date/Time Auto-stamp
+        
+        SaveOptions: Save Options
+        SaveOptions: - Save Photo Button
+        SaveOptions: - Cancel Button
+    }
+    
+    PhotoUpload --> PhotoUploadPopup: Click "Take Photo" or "Upload Photo"
+    PhotoUploadPopup --> CheckOutForm: Photo saved or cancelled
+    
+    %% Use Parts from Inventory Integration
+    CheckOutForm --> UsePartsFromInventory: Click "Use Parts" button
+    
+    state UsePartsFromInventory {
+        PartsSelection: Select Parts Used
+        PartsSelection: - Search Inventory Field
+        PartsSelection: - Parts List with Quantities
+        PartsSelection: - Select Part Checkbox
+        PartsSelection: - Quantity Used Field
+        
+        SelectedParts: Selected Parts Summary
+        SelectedParts: - Part Name and ID
+        SelectedParts: - Quantity Used
+        SelectedParts: - Current Inventory Level
+        
+        ConfirmSelection: Confirm Selection
+        ConfirmSelection: - Confirm Button
+        ConfirmSelection: - Cancel Button
+    }
+    
+    UsePartsFromInventory --> InventoryUpdate: Click "Confirm"
+    UsePartsFromInventory --> CheckOutForm: Click "Cancel"
+    
+    state InventoryUpdate {
+        AutoUpdated: Automatic Inventory Update
+        AutoUpdated: - Quantities Deducted from Inventory
+        AutoUpdated: - Low Stock Alerts (If Applicable)
+        AutoUpdated: - Updated Inventory Levels Displayed
+        
+        UpdateConfirmation: Update Confirmation
+        UpdateConfirmation: - Success Message
+        UpdateConfirmation: - Updated Items List
+        UpdateConfirmation: - Return to Form Button
+    }
+    
+    InventoryUpdate --> CheckOutForm: Click "Return to Form"
+    
+    %% Return paths to main screens
+    CompleteAssessment --> Dashboard: Click "Return to Dashboard"
+    CompleteAssessment --> VehicleCheckOut: Click "Check-Out Another Vehicle"
+    CompleteAssessment --> ViewUpdatedHistory: Click "View Vehicle History"
+    ViewUpdatedHistory --> Dashboard: Return to Dashboard

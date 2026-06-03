@@ -1,0 +1,344 @@
+stateDiagram-v2
+    [*] --> Login
+    Login --> Dashboard
+    Dashboard --> VehicleCheckIn: Click "Vehicle Check-In"
+    Dashboard --> QuickCheckIn: Click "Check-In Vehicle" Quick Action Button
+    
+    %% Main Vehicle Check-In Page
+    state VehicleCheckIn {
+        VehicleTypeSelection: Vehicle Type Selection
+        VehicleTypeSelection: - New Vehicle Button
+        VehicleTypeSelection: - Existing Vehicle Button
+        VehicleTypeSelection: - Search Bar for License Plate
+    }
+    
+    %% Vehicle Type Selection Routes
+    VehicleCheckIn --> NewVehicleFlow: Click "New Vehicle"
+    VehicleCheckIn --> ExistingVehicleFlow: Click "Existing Vehicle"
+    QuickCheckIn --> VehicleTypeSelection: Opens Vehicle Check-In Page
+    
+    %% New Vehicle Flow
+    state NewVehicleFlow {
+        state BasicVehicleInfo {
+            BasicVehicleForm: Basic Vehicle Form
+            BasicVehicleForm: - Make (Dropdown)
+            BasicVehicleForm: - Model (Dropdown)
+            BasicVehicleForm: - Year (Numeric Field)
+            BasicVehicleForm: - VIN (Text Field)
+            BasicVehicleForm: - License Plate (Text Field)
+            
+            OwnerInfo: Owner Information
+            OwnerInfo: - Full Name (Text Field)
+            OwnerInfo: - Phone Number (Text Field)
+            OwnerInfo: - Email (Text Field)
+            
+            CurrentMileage: Current Mileage
+            CurrentMileage: - Mileage (Numeric Field)
+            
+            ServiceSelection: Service Type Selection
+            ServiceSelection: - Service Type (Dropdown)
+            ServiceSelection: - Description of Issues (Text Area)
+            
+            VehicleHistoryNotes: Vehicle Condition & History
+            VehicleHistoryNotes: - Previous Service Records
+            VehicleHistoryNotes: - Known Issues
+            VehicleHistoryNotes: - Additional Notes
+            
+            AttachmentUpload: Attachment Upload
+            AttachmentUpload: - Upload Service Reports Button
+            AttachmentUpload: - Upload Warranty Papers Button
+            AttachmentUpload: - Upload Vehicle Photos Button
+        }
+        
+        ContinueToAssessment: Continue to Assessment Button
+    }
+    
+    %% Existing Vehicle Flow
+    state ExistingVehicleFlow {
+        VehicleSearch: Vehicle Search
+        VehicleSearch: - Search by License Plate
+        VehicleSearch: - Search by Owner Name
+        VehicleSearch: - Filter by Date of Last Service
+        
+        SelectVehicle: Select Vehicle from Results List
+        
+        PrefilledVehicleInfo: Pre-filled Vehicle Information
+        PrefilledVehicleInfo: - Auto-filled Make, Model, Year
+        PrefilledVehicleInfo: - Auto-filled VIN
+        PrefilledVehicleInfo: - Auto-filled License Plate
+        PrefilledVehicleInfo: - Auto-filled Owner Information
+        PrefilledVehicleInfo: - Previous Service History Link
+        
+        UpdateInfo: Update Information
+        UpdateInfo: - Edit Owner Details Button
+        UpdateInfo: - Current Mileage Input
+        UpdateInfo: - Service Type Selection
+        UpdateInfo: - Description of Issues
+        UpdateInfo: - Additional Notes
+    }
+    
+    %% Common Assessment Flow
+    NewVehicleFlow --> AssessmentForm: Click "Continue to Assessment"
+    ExistingVehicleFlow --> AssessmentForm: Click "Continue to Assessment"
+    
+    state AssessmentForm {
+        ComponentsNavigation: Components Navigation Tabs
+        ComponentsNavigation: - Audio Components Tab
+        ComponentsNavigation: - Interior Components Tab
+        ComponentsNavigation: - Exterior Components Tab
+        ComponentsNavigation: - Engine Components Tab
+        ComponentsNavigation: - Additional Components Tab
+        
+        %% Audio Components Section
+        state AudioComponentsTab {
+            RadioAssessment: Radio Assessment
+            RadioAssessment: - Available/Unavailable Toggle
+            RadioAssessment: - Manufacturer Field
+            RadioAssessment: - Type Field
+            RadioAssessment: - Serial Number Field
+            RadioAssessment: - Condition Dropdown
+            RadioAssessment: - Additional Information Field
+            RadioAssessment: - Take Photo Button
+            RadioAssessment: - Upload Photo Button
+            
+            SpeakersAssessment: Speakers Assessment
+            SpeakersAssessment: - Available/Unavailable Toggle
+            SpeakersAssessment: - Manufacturer Field
+            SpeakersAssessment: - Type Field
+            SpeakersAssessment: - Serial Number Field
+            SpeakersAssessment: - Quantity Field
+            SpeakersAssessment: - Condition Dropdown
+            SpeakersAssessment: - Additional Information Field
+            SpeakersAssessment: - Take Photo Button
+            SpeakersAssessment: - Upload Photo Button
+        }
+        
+        %% Interior Components Section
+        state InteriorComponentsTab {
+            KeysAssessment: Keys Assessment
+            KeysAssessment: - Quantity Field
+            KeysAssessment: - Condition Dropdown
+            KeysAssessment: - Additional Information Field
+            KeysAssessment: - Take Photo Button
+            KeysAssessment: - Upload Photo Button
+            
+            InteriorItems: Multiple Interior Items
+            InteriorItems: - Clock
+            InteriorItems: - Heater Knobs
+            InteriorItems: - Door Lock Knobs
+            InteriorItems: - Winder Handles/Switches
+            InteriorItems: - Seat Belts
+            InteriorItems: - Head Rest
+            InteriorItems: - Cigar Lighter
+            InteriorItems: - Ash Trays
+            InteriorItems: - Interior Light
+            InteriorItems: - Rear View Mirror
+            
+            CarpetsAndMats: Carpets and Mats
+            CarpetsAndMats: - Floor Carpets
+            CarpetsAndMats: - Rubber Mats
+            CarpetsAndMats: - Boot Mats
+        }
+        
+        %% Exterior Components Section
+        state ExteriorComponentsTab {
+            ExteriorItemsList: Exterior Components List
+            ExteriorItemsList: - Boot Badge
+            ExteriorItemsList: - Wheel Lock Key
+            ExteriorItemsList: - Tool Kit/Brace
+            ExteriorItemsList: - Jack/Handle
+            ExteriorItemsList: - Reflective Triangle
+            ExteriorItemsList: - Spanner
+            ExteriorItemsList: - Jumper Cables
+            ExteriorItemsList: - Pliers
+            ExteriorItemsList: - Screw Driver
+            ExteriorItemsList: - First Aid Box
+            ExteriorItemsList: - Fire Extinguisher
+            ExteriorItemsList: - Inspection Sticker
+            ExteriorItemsList: - Warms/Blades
+            ExteriorItemsList: - Bonnet Badge
+            ExteriorItemsList: - Sport Lights
+            ExteriorItemsList: - External Badges/Stickers
+            ExteriorItemsList: - External Mirrors
+            ExteriorItemsList: - Fuel Tank Cap
+            ExteriorItemsList: - Fuel Tank Lid Lock
+            ExteriorItemsList: - Aerial
+            ExteriorItemsList: - Mud Flaps
+            ExteriorItemsList: - Hub Caps
+            
+            CommonFields: Common Fields for Each Item
+            CommonFields: - Available/Unavailable Toggle
+            CommonFields: - Condition Dropdown
+            CommonFields: - Additional Information Field
+            CommonFields: - Take Photo Button
+            CommonFields: - Upload Photo Button
+        }
+        
+        %% Engine Components Section
+        state EngineComponentsTab {
+            BatteryAssessment: Battery Assessment
+            BatteryAssessment: - Available/Unavailable Toggle
+            BatteryAssessment: - Manufacturer Field
+            BatteryAssessment: - Battery Size Field
+            BatteryAssessment: - Serial Number Field
+            BatteryAssessment: - Condition Dropdown
+            BatteryAssessment: - Additional Information Field
+            BatteryAssessment: - Take Photo Button
+            BatteryAssessment: - Upload Photo Button
+            
+            EngineItemsList: Engine Components List
+            EngineItemsList: - Radiator Cap
+            EngineItemsList: - Oil Filter Cap
+            EngineItemsList: - Horns
+            EngineItemsList: - Washer Bag
+            EngineItemsList: - Relay
+            
+            WheelsAssessment: Wheels Assessment
+            WheelsAssessment: - Available/Unavailable Toggle
+            WheelsAssessment: - Manufacturer Field
+            WheelsAssessment: - Wheel Type and Size Field
+            WheelsAssessment: - Condition Dropdown
+            WheelsAssessment: - Additional Information Field
+            WheelsAssessment: - Take Photo Button
+            WheelsAssessment: - Upload Photo Button
+            
+            SpareWheelAssessment: Spare Wheel Assessment
+            SpareWheelAssessment: - Available/Unavailable Toggle
+            SpareWheelAssessment: - Manufacturer Field
+            SpareWheelAssessment: - Wheel Type and Size Field
+            SpareWheelAssessment: - Condition Dropdown
+            SpareWheelAssessment: - Additional Information Field
+            SpareWheelAssessment: - Take Photo Button
+            SpareWheelAssessment: - Upload Photo Button
+        }
+        
+        %% Additional Components Section
+        state AdditionalComponentsTab {
+            AddComponent: Add Component Button
+            AddComponent: - Name of Component Field
+            AddComponent: - Available/Unavailable Toggle
+            AddComponent: - Manufacturer Field
+            AddComponent: - Quantity or Size Field
+            AddComponent: - Serial Number Field
+            AddComponent: - Condition Dropdown
+            AddComponent: - Additional Information Field
+            AddComponent: - Take Photo Button
+            AddComponent: - Upload Photo Button
+        }
+        
+        NavigationButtons: Form Navigation
+        NavigationButtons: - Previous Button
+        NavigationButtons: - Next Button
+        NavigationButtons: - Save Progress Button
+    }
+    
+    %% Payee Information Section
+    AssessmentForm --> PayeeInformation: Complete All Component Assessments
+    
+    state PayeeInformation {
+        PayeeType: Select Payee Type
+        PayeeType: - Individual (Radio Button)
+        PayeeType: - Business (Radio Button)
+        PayeeType: - Motor Vehicle Insurance (Radio Button)
+        
+        state IndividualPayee {
+            IndividualFields: Individual Fields
+            IndividualFields: - Name Field
+            IndividualFields: - Phone Number Field
+            IndividualFields: - Email Address Field
+        }
+        
+        state BusinessPayee {
+            BusinessFields: Business Fields
+            BusinessFields: - Business Name Field
+            BusinessFields: - Business Phone Field
+            BusinessFields: - Business Email Field
+            BusinessFields: - Tax Pin Field
+        }
+        
+        state InsurancePayee {
+            InsuranceFields: Insurance Fields
+            InsuranceFields: - Insurance Provider Name (Dropdown)
+            InsuranceFields: - Policy Number Field
+            InsuranceFields: - Coverage Details Field
+            InsuranceFields: - Contact Person Field
+            InsuranceFields: - Contact Email Field
+            InsuranceFields: - Contact Phone Field
+        }
+    }
+    
+    %% Review and Submit Section
+    PayeeInformation --> ReviewSubmission: Click "Continue to Review"
+    
+    state ReviewSubmission {
+        ReviewAllDetails: Review All Information
+        ReviewAllDetails: - Vehicle Details Summary
+        ReviewAllDetails: - Owner Information Summary
+        ReviewAllDetails: - Components Assessment Summary
+        ReviewAllDetails: - Payee Information Summary
+        
+        CheckInDateTime: Check-in Date and Time
+        CheckInDateTime: - Auto-filled Current Date
+        CheckInDateTime: - Time Field
+        
+        SpecialInstructions: Special Instructions
+        SpecialInstructions: - Special Instructions Text Area
+        
+        TermsConditions: Terms and Conditions
+        TermsConditions: - OTP PIN Field (Sent via SMS)
+        TermsConditions: - Customer ID Number Field
+        TermsConditions: - Accept Terms Checkbox
+        
+        SubmitButtons: Submit Buttons
+        SubmitButtons: - Edit Information Button
+        SubmitButtons: - Submit Form Button
+    }
+    
+    %% Approval and Confirmation Flow
+    ReviewSubmission --> ApprovalConfirmation: Click "Submit Form"
+    
+    state ApprovalConfirmation {
+        FormReview: Assessment Form Review
+        FormReview: - Complete Assessment Preview
+        FormReview: - Edit Option Button
+        
+        ApprovalAction: Approval Actions
+        ApprovalAction: - Approve Button
+        ApprovalAction: - Reject Button (Returns to Edit)
+        
+        RepairOrderGeneration: Repair Order Generation
+        RepairOrderGeneration: - Generate Repair Order Number
+        RepairOrderGeneration: - Email to Customer
+        RepairOrderGeneration: - SMS Notification to Customer
+    }
+    
+    %% Return Paths
+    ApprovalConfirmation --> Dashboard: Click "Return to Dashboard"
+    ApprovalConfirmation --> VehicleCheckIn: Click "Check-In Another Vehicle"
+    
+    %% Handling Vehicle Photos
+    state PhotoUploadPopup {
+        CameraAccess: Camera Access
+        CameraAccess: - Allow Camera Access Prompt
+        CameraAccess: - Take Photo Button
+        CameraAccess: - Retake Photo Button
+        
+        UploadOptions: Upload Options
+        UploadOptions: - Browse Files Button
+        UploadOptions: - Drag and Drop Area
+        
+        PhotoPreview: Photo Preview
+        PhotoPreview: - Image Preview
+        PhotoPreview: - Add Caption Field
+        PhotoPreview: - Save Photo Button
+        PhotoPreview: - Cancel Button
+    }
+    
+    %% Popup Trigger for Photos - connects from any component's Take Photo/Upload Photo buttons
+    AudioComponentsTab --> PhotoUploadPopup: Click any "Take Photo" or "Upload Photo" button
+    InteriorComponentsTab --> PhotoUploadPopup: Click any "Take Photo" or "Upload Photo" button
+    ExteriorComponentsTab --> PhotoUploadPopup: Click any "Take Photo" or "Upload Photo" button
+    EngineComponentsTab --> PhotoUploadPopup: Click any "Take Photo" or "Upload Photo" button
+    AdditionalComponentsTab --> PhotoUploadPopup: Click any "Take Photo" or "Upload Photo" button
+    
+    PhotoUploadPopup --> AssessmentForm: Photo Saved or Cancelled

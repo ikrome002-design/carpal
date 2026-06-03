@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal by Citrus - Settings</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="settings.css">
+
+    <!-- Google Fonts: Poppins and Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                        alt="CarPal by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Dashboard/dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Vehicle Check-In/check_in.html">
+                            <i class="fas fa-car"></i>
+                            <span>Vehicle Check-In</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Service Hub/service_hub.html">
+                            <i class="fas fa-wrench"></i>
+                            <span>Service Hub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Billings & Payments/billings.html">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billing & Payments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Vehicle History/history.html">
+                            <i class="fas fa-history"></i>
+                            <span>Vehicle History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Inventory/inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Messaging\messaging.html">
+                            <i class="fas fa-comments"></i> <span>Messaging</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Technicians\technicians.html">
+                            <i class="fas fa-users-cog"></i> <span>Technicians</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Vehicle Check-Out\check_out.html">
+                            <i class="fas fa-car-side"></i> <span>Vehicle Check-Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+
+                <div class="user-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+
+                        <!-- Notifications Dropdown -->
+                        <div class="notifications-dropdown">
+                            <h3>Notifications</h3>
+                            <div class="notification-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="User">
+                                <div class="notification-content">
+                                    <p><strong>New Service Request</strong> - Toyota Camry scheduled for maintenance</p>
+                                    <span class="notification-time">10 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="User">
+                                <div class="notification-content">
+                                    <p><strong>Low Inventory Alert</strong> - Oil filters running low</p>
+                                    <span class="notification-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="User">
+                                <div class="notification-content">
+                                    <p><strong>Service Completed</strong> - Honda Civic ready for pickup</p>
+                                    <span class="notification-time">Yesterday</span>
+                                </div>
+                            </div>
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Notifications\notifications.html"
+                                class="view-all">View All Notifications</a>
+                        </div>
+                    </div>
+
+                    <div class="user-profile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile">
+
+                        <!-- Profile Dropdown -->
+                        <div class="profile-dropdown">
+                            <div class="profile-header">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                    alt="User Profile">
+                                <div class="profile-info">
+                                    <h4>John Smith</h4>
+                                    <p>Service Manager</p>
+                                </div>
+                            </div>
+
+                            <ul class="profile-menu">
+                                <li class="active">
+                                    <a
+                                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Settings\settings.html">
+                                        <i class="fas fa-cog"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="C:\Users\nderu\Documents\Development\Product\CarPal by Citrus\CarPal by Citrus Account Users\Auto Repair Shop Account\Performance & History\help.html">
+                                        <i class="fas fa-question-circle"></i> Help & Support
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\CarPal Auto Repair Shop\landing_page.html">
+                                        <i class="fas fa-sign-out-alt"></i> Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="dashboard-content">
+                <h1>Settings</h1>
+
+                <!-- Settings Navigation Tabs -->
+                <div class="settings-tabs">
+                    <button class="tab-btn active" data-tab="profile">Profile Settings</button>
+                    <button class="tab-btn" data-tab="support">Support & Help</button>
+                    <button class="tab-btn" data-tab="system">System Preferences</button>
+                    <button class="tab-btn" data-tab="logs">Audit Logs</button>
+                    <button class="tab-btn admin-access" data-tab="admin">Admin Access</button>
+                </div>
+
+                <!-- Profile Settings Tab -->
+                <div class="tab-content" id="profile-tab">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Profile Settings</h2>
+                        </div>
+                        <div class="panel-content">
+                            <form class="settings-form">
+                                <div class="form-section">
+                                    <h3>Personal Information</h3>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="first-name">First Name</label>
+                                            <input type="text" id="first-name" value="John">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="last-name">Last Name</label>
+                                            <input type="text" id="last-name" value="Smith">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" id="email" value="john.smith@example.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">Phone Number</label>
+                                            <input type="tel" id="phone" value="+1 (555) 123-4567">
+                                        </div>
+                                    </div>
+                                    <div class="form-group profile-picture">
+                                        <label>Profile Picture</label>
+                                        <div class="profile-picture-container">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                                alt="Profile Picture">
+                                            <button type="button" class="change-picture-btn">Change Picture</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h3>Business Information</h3>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="business-name">Business Name</label>
+                                            <input type="text" id="business-name" value="Citrus Auto Repair">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="business-address">Business Address</label>
+                                            <input type="text" id="business-address"
+                                                value="123 Main St, Nairobi, Kenya">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="business-email">Business Email</label>
+                                            <input type="email" id="business-email" value="info@citrusauto.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="business-phone">Business Phone</label>
+                                            <input type="tel" id="business-phone" value="+254 712 345 678">
+                                        </div>
+                                    </div>
+                                    <div class="form-group business-logo">
+                                        <label>Business Logo</label>
+                                        <div class="business-logo-container">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                                                alt="Business Logo">
+                                            <button type="button" class="change-logo-btn">Upload New Logo</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h3>Security Settings</h3>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="current-password">Current Password</label>
+                                            <input type="password" id="current-password"
+                                                placeholder="Enter current password">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="new-password">New Password</label>
+                                            <input type="password" id="new-password" placeholder="Enter new password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="confirm-password">Confirm Password</label>
+                                            <input type="password" id="confirm-password"
+                                                placeholder="Confirm new password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group toggle-group">
+                                        <label>Two-Factor Authentication</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="two-factor-auth">
+                                            <label for="two-factor-auth" class="toggle-label"></label>
+                                            <span class="toggle-text">Enabled</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" class="btn-cancel">Cancel</button>
+                                    <button type="submit" class="btn-save">Save Profile</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support & Help Tab -->
+                <div class="tab-content" id="support-tab" style="display: none;">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Support & Help Resources</h2>
+                        </div>
+                        <div class="panel-content">
+                            <div class="support-sections">
+                                <div class="support-section">
+                                    <h3>Help Documentation</h3>
+                                    <div class="documentation-links">
+                                        <a href="#" class="doc-link">
+                                            <i class="fas fa-book"></i>
+                                            <span>User Guides</span>
+                                        </a>
+                                        <a href="#" class="doc-link">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span>FAQs</span>
+                                        </a>
+                                        <a href="#" class="doc-link">
+                                            <i class="fas fa-video"></i>
+                                            <span>Tutorial Videos</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="support-section">
+                                    <h3>Contact Support</h3>
+                                    <div class="contact-info">
+                                        <div class="contact-item">
+                                            <i class="fas fa-envelope"></i>
+                                            <span>support@citruslabs.co.ke</span>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="fas fa-phone"></i>
+                                            <span>+254 712 345 678</span>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="fas fa-comments"></i>
+                                            <a href="#" class="live-chat-btn">Start Live Chat</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="support-section">
+                                    <h3>Feedback Form</h3>
+                                    <form class="feedback-form">
+                                        <div class="form-group">
+                                            <label for="issue-category">Issue Category</label>
+                                            <select id="issue-category">
+                                                <option value="" selected disabled>Select a category</option>
+                                                <option value="technical">Technical Issue</option>
+                                                <option value="account">Account Management</option>
+                                                <option value="billing">Billing Problem</option>
+                                                <option value="feature">Feature Request</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="feedback-description">Description</label>
+                                            <textarea id="feedback-description" rows="5"
+                                                placeholder="Please describe your issue or feedback..."></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="feedback-attachment">Attachments (Optional)</label>
+                                            <div class="file-upload">
+                                                <input type="file" id="feedback-attachment">
+                                                <label for="feedback-attachment">
+                                                    <i class="fas fa-paperclip"></i>
+                                                    <span>Choose File</span>
+                                                </label>
+                                            </div>
+                                            <div class="file-info">No file selected</div>
+                                        </div>
+                                        <button type="submit" class="submit-feedback-btn">Submit Feedback</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Preferences Tab -->
+                <div class="tab-content" id="system-tab" style="display: none;">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>System Preferences</h2>
+                        </div>
+                        <div class="panel-content">
+                            <form class="settings-form">
+                                <div class="form-section">
+                                    <h3>Language & Time Zone</h3>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="language">Language</label>
+                                            <select id="language">
+                                                <option value="en">English</option>
+                                                <option value="fr">French</option>
+                                                <option value="es">Spanish</option>
+                                                <option value="sw">Swahili</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timezone">Time Zone</label>
+                                            <select id="timezone">
+                                                <option value="EAT">East Africa Time (EAT)</option>
+                                                <option value="UTC">Coordinated Universal Time (UTC)</option>
+                                                <option value="EST">Eastern Standard Time (EST)</option>
+                                                <option value="PST">Pacific Standard Time (PST)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h3>Operational Hours</h3>
+                                    <div class="hours-container">
+                                        <div class="hours-day">
+                                            <span class="day-label">Monday - Friday</span>
+                                            <div class="hours-inputs">
+                                                <div class="time-input">
+                                                    <label>Open</label>
+                                                    <input type="time" value="08:00">
+                                                </div>
+                                                <span class="time-separator">to</span>
+                                                <div class="time-input">
+                                                    <label>Close</label>
+                                                    <input type="time" value="18:00">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hours-day">
+                                            <span class="day-label">Saturday</span>
+                                            <div class="hours-inputs">
+                                                <div class="time-input">
+                                                    <label>Open</label>
+                                                    <input type="time" value="09:00">
+                                                </div>
+                                                <span class="time-separator">to</span>
+                                                <div class="time-input">
+                                                    <label>Close</label>
+                                                    <input type="time" value="15:00">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hours-day">
+                                            <span class="day-label">Sunday</span>
+                                            <div class="hours-inputs">
+                                                <div class="closed-toggle">
+                                                    <input type="checkbox" id="sunday-closed" checked>
+                                                    <label for="sunday-closed">Closed</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h3>Holiday Schedule</h3>
+                                    <div class="holiday-container">
+                                        <button type="button" class="add-holiday-btn">
+                                            <i class="fas fa-plus"></i> Add Holiday
+                                        </button>
+
+                                        <div class="holiday-list">
+                                            <div class="holiday-item">
+                                                <div class="holiday-details">
+                                                    <span class="holiday-date">January 1, 2025</span>
+                                                    <span class="holiday-name">New Year's Day</span>
+                                                </div>
+                                                <button type="button" class="remove-holiday-btn">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                            <div class="holiday-item">
+                                                <div class="holiday-details">
+                                                    <span class="holiday-date">April 18, 2025</span>
+                                                    <span class="holiday-name">Good Friday</span>
+                                                </div>
+                                                <button type="button" class="remove-holiday-btn">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                            <div class="holiday-item">
+                                                <div class="holiday-details">
+                                                    <span class="holiday-date">December 25, 2025</span>
+                                                    <span class="holiday-name">Christmas Day</span>
+                                                </div>
+                                                <button type="button" class="remove-holiday-btn">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" class="btn-cancel">Cancel</button>
+                                    <button type="submit" class="btn-save">Save Preferences</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audit Logs Tab -->
+                <div class="tab-content" id="logs-tab" style="display: none;">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Audit Logs</h2>
+                        </div>
+                        <div class="panel-content">
+                            <div class="logs-filters">
+                                <div class="filter-group">
+                                    <label>Date Range</label>
+                                    <div class="date-range">
+                                        <div class="date-input">
+                                            <label for="start-date">From</label>
+                                            <input type="date" id="start-date" value="2025-03-01">
+                                        </div>
+                                        <div class="date-input">
+                                            <label for="end-date">To</label>
+                                            <input type="date" id="end-date" value="2025-03-27">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="user-filter">User</label>
+                                    <select id="user-filter">
+                                        <option value="all">All Users</option>
+                                        <option value="john">John Smith</option>
+                                        <option value="jane">Jane Doe</option>
+                                        <option value="mike">Mike Johnson</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="activity-filter">Activity Type</label>
+                                    <select id="activity-filter">
+                                        <option value="all">All Activities</option>
+                                        <option value="login">Login</option>
+                                        <option value="update">Update</option>
+                                        <option value="delete">Delete</option>
+                                        <option value="create">Create</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="apply-filters-btn">Apply Filters</button>
+                            </div>
+
+                            <div class="logs-table-container">
+                                <table class="data-table logs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>User</th>
+                                            <th>Action</th>
+                                            <th>Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2025-03-27 14:32:15</td>
+                                            <td>John Smith</td>
+                                            <td>Login</td>
+                                            <td>Successful login from IP 192.168.1.10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-03-27 10:45:22</td>
+                                            <td>Jane Doe</td>
+                                            <td>Update</td>
+                                            <td>Updated invoice #INV-2025-103</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-03-26 16:12:08</td>
+                                            <td>Mike Johnson</td>
+                                            <td>Create</td>
+                                            <td>Created new vehicle service record</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-03-26 11:34:17</td>
+                                            <td>John Smith</td>
+                                            <td>Update</td>
+                                            <td>Modified system preferences</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-03-25 14:55:33</td>
+                                            <td>Jane Doe</td>
+                                            <td>Delete</td>
+                                            <td>Removed expired appointment #APT-2025-078</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-03-25 09:22:41</td>
+                                            <td>Mike Johnson</td>
+                                            <td>Login</td>
+                                            <td>Successful login from IP 192.168.1.15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-03-24 17:08:19</td>
+                                            <td>John Smith</td>
+                                            <td>Create</td>
+                                            <td>Added new inventory item: Oil Filter</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="export-buttons">
+                                <button type="button" class="export-btn export-pdf">
+                                    <i class="fas fa-file-pdf"></i> Export PDF
+                                </button>
+                                <button type="button" class="export-btn export-csv">
+                                    <i class="fas fa-file-csv"></i> Export CSV
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Access Tab -->
+                <div class="tab-content" id="admin-tab" style="display: none;">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Administrator Authentication</h2>
+                        </div>
+                        <div class="panel-content">
+                            <div class="admin-auth-form">
+                                <p class="auth-info">Please verify your identity to access administrator settings.</p>
+
+                                <form class="auth-form">
+                                    <div class="form-group">
+                                        <label for="admin-email">Admin Email</label>
+                                        <input type="email" id="admin-email" placeholder="Enter your admin email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="verification-code">Verification Code</label>
+                                        <input type="text" id="verification-code" placeholder="Enter verification code">
+                                    </div>
+                                    <div class="auth-actions">
+                                        <button type="button" class="request-code-btn">Request Code</button>
+                                        <button type="submit" class="verify-btn">Verify</button>
+                                        <button type="button" class="cancel-btn">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Dashboard Tab (Initially Hidden) -->
+                <div class="tab-content" id="admin-dashboard-tab" style="display: none;">
+                    <div class="admin-header">
+                        <h2>Administrator Dashboard</h2>
+                        <button class="return-staff-btn">
+                            <i class="fas fa-arrow-left"></i> Return to Staff View
+                        </button>
+                    </div>
+
+                    <div class="admin-menu">
+                        <button class="admin-menu-btn active" data-section="shop-profile">Shop Profile</button>
+                        <button class="admin-menu-btn" data-section="user-staff">User & Staff Management</button>
+                        <button class="admin-menu-btn" data-section="schedule">Schedule & Appointments</button>
+                        <button class="admin-menu-btn" data-section="inventory">Inventory Control</button>
+                        <button class="admin-menu-btn" data-section="billing">Billing & Payments</button>
+                        <button class="admin-menu-btn" data-section="notifications">Notifications</button>
+                        <button class="admin-menu-btn" data-section="reports">Reports & Analytics</button>
+                    </div>
+
+                    <!-- Shop Profile Section -->
+                    <div class="admin-section" id="shop-profile-section">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h2>Shop Profile</h2>
+                            </div>
+                            <div class="panel-content">
+                                <form class="settings-form">
+                                    <div class="form-group shop-logo">
+                                        <label>Shop Logo</label>
+                                        <div class="shop-logo-container">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                                                alt="Shop Logo">
+                                            <button type="button" class="upload-logo-btn">Upload Logo</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="shop-name">Shop Name</label>
+                                            <input type="text" id="shop-name" value="Citrus Auto Repair">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="shop-email">Email</label>
+                                            <input type="email" id="shop-email" value="info@citrusauto.com">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="shop-address">Address</label>
+                                        <input type="text" id="shop-address" value="123 Main St, Nairobi, Kenya">
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="shop-phone">Phone</label>
+                                            <input type="tel" id="shop-phone" value="+254 712 345 678">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="shop-website">Website</label>
+                                            <input type="url" id="shop-website" value="https://citrusauto.co.ke">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="shop-description">Business Description</label>
+                                        <textarea id="shop-description"
+                                            rows="4">Citrus Auto Repair provides comprehensive automotive repair and maintenance services with a focus on customer satisfaction and quality workmanship.</textarea>
+                                    </div>
+
+                                    <div class="form-section">
+                                        <h3>Operating Hours</h3>
+                                        <div class="hours-container">
+                                            <div class="hours-day">
+                                                <span class="day-label">Monday - Friday</span>
+                                                <div class="hours-inputs">
+                                                    <div class="time-input">
+                                                        <label>Open</label>
+                                                        <input type="time" value="08:00">
+                                                    </div>
+                                                    <span class="time-separator">to</span>
+                                                    <div class="time-input">
+                                                        <label>Close</label>
+                                                        <input type="time" value="18:00">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hours-day">
+                                                <span class="day-label">Saturday</span>
+                                                <div class="hours-inputs">
+                                                    <div class="time-input">
+                                                        <label>Open</label>
+                                                        <input type="time" value="09:00">
+                                                    </div>
+                                                    <span class="time-separator">to</span>
+                                                    <div class="time-input">
+                                                        <label>Close</label>
+                                                        <input type="time" value="15:00">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hours-day">
+                                                <span class="day-label">Sunday</span>
+                                                <div class="hours-inputs">
+                                                    <div class="closed-toggle">
+                                                        <input type="checkbox" id="shop-sunday-closed" checked>
+                                                        <label for="shop-sunday-closed">Closed</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="button" class="btn-cancel">Cancel</button>
+                                        <button type="submit" class="btn-save">Save Shop Profile</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User & Staff Management Section -->
+                    <div class="admin-section" id="user-staff-section" style="display: none;">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h2>User & Staff Management</h2>
+                                <div class="panel-actions">
+                                    <button class="add-staff-btn">
+                                        <i class="fas fa-plus"></i> Add New Staff
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="panel-content">
+                                <div class="search-filter">
+                                    <input type="text" placeholder="Search staff...">
+                                </div>
+
+                                <table class="data-table staff-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>John Smith</td>
+                                            <td>john.smith@example.com</td>
+                                            <td>Service Manager</td>
+                                            <td><span class="status-badge approved">Active</span></td>
+                                            <td>
+                                                <a href="#" class="action-link edit-staff">Edit</a>
+                                                <a href="#" class="action-link delete-staff">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jane Doe</td>
+                                            <td>jane.doe@example.com</td>
+                                            <td>Technician</td>
+                                            <td><span class="status-badge approved">Active</span></td>
+                                            <td>
+                                                <a href="#" class="action-link edit-staff">Edit</a>
+                                                <a href="#" class="action-link delete-staff">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mike Johnson</td>
+                                            <td>mike.johnson@example.com</td>
+                                            <td>Receptionist</td>
+                                            <td><span class="status-badge approved">Active</span></td>
+                                            <td>
+                                                <a href="#" class="action-link edit-staff">Edit</a>
+                                                <a href="#" class="action-link delete-staff">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sarah Williams</td>
+                                            <td>sarah.williams@example.com</td>
+                                            <td>Administrator</td>
+                                            <td><span class="status-badge approved">Active</span></td>
+                                            <td>
+                                                <a href="#" class="action-link edit-staff">Edit</a>
+                                                <a href="#" class="action-link delete-staff">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="role-management">
+                                    <h3>Role Configuration</h3>
+                                    <div class="role-actions">
+                                        <button class="view-roles-btn">View Roles</button>
+                                        <button class="create-role-btn">Create Role</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Schedule & Appointments Section -->
+                    <div class="admin-section" id="schedule-section" style="display: none;">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h2>Schedule & Appointments</h2>
+                            </div>
+                            <div class="panel-content">
+                                <form class="settings-form">
+                                    <!-- Operating Hours Settings -->
+                                    <div class="form-section">
+                                        <h3>Operating Hours Settings</h3>
+                                        <div class="hours-container">
+                                            <div class="hours-day">
+                                                <span class="day-label">Monday - Friday</span>
+                                                <div class="hours-inputs">
+                                                    <div class="time-input">
+                                                        <label>Open</label>
+                                                        <input type="time" value="08:00">
+                                                    </div>
+                                                    <span class="time-separator">to</span>
+                                                    <div class="time-input">
+                                                        <label>Close</label>
+                                                        <input type="time" value="18:00">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hours-day">
+                                                <span class="day-label">Saturday</span>
+                                                <div class="hours-inputs">
+                                                    <div class="time-input">
+                                                        <label>Open</label>
+                                                        <input type="time" value="09:00">
+                                                    </div>
+                                                    <span class="time-separator">to</span>
+                                                    <div class="time-input">
+                                                        <label>Close</label>
+                                                        <input type="time" value="15:00">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hours-day">
+                                                <span class="day-label">Sunday</span>
+                                                <div class="hours-inputs">
+                                                    <div class="closed-toggle">
+                                                        <input type="checkbox" id="schedule-sunday-closed" checked>
+                                                        <label for="schedule-sunday-closed">Closed</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Holiday Schedule -->
+                                    <div class="form-section">
+                                        <h3>Holiday Schedule</h3>
+                                        <div class="holiday-container">
+                                            <button type="button" class="add-holiday-btn schedule-holiday-btn">
+                                                <i class="fas fa-plus"></i> Add Holiday
+                                            </button>
+
+                                            <div class="holiday-list">
+                                                <div class="holiday-item">
+                                                    <div class="holiday-details">
+                                                        <span class="holiday-date">January 1, 2025</span>
+                                                        <span class="holiday-name">New Year's Day</span>
+                                                    </div>
+                                                    <button type="button" class="remove-holiday-btn">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="holiday-item">
+                                                    <div class="holiday-details">
+                                                        <span class="holiday-date">April 18, 2025</span>
+                                                        <span class="holiday-name">Good Friday</span>
+                                                    </div>
+                                                    <button type="button" class="remove-holiday-btn">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="holiday-item">
+                                                    <div class="holiday-details">
+                                                        <span class="holiday-date">December 25, 2025</span>
+                                                        <span class="holiday-name">Christmas Day</span>
+                                                    </div>
+                                                    <button type="button" class="remove-holiday-btn">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Service Durations -->
+                                    <div class="form-section">
+                                        <h3>Service Durations</h3>
+                                        <div class="form-group">
+                                            <label for="default-service-time">Default Service Time (minutes)</label>
+                                            <input type="number" id="default-service-time" value="60" min="15"
+                                                step="15">
+                                        </div>
+
+                                        <h4 class="subsection-title">Custom Service Times</h4>
+                                        <table class="custom-durations-table data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Service Type</th>
+                                                    <th>Duration (minutes)</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Oil Change</td>
+                                                    <td>30</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-duration">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tire Rotation</td>
+                                                    <td>45</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-duration">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Full Service</td>
+                                                    <td>120</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-duration">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Brake Inspection</td>
+                                                    <td>60</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-duration">Edit</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <button type="button" class="add-service-duration-btn">
+                                            <i class="fas fa-plus"></i> Add Service Duration
+                                        </button>
+                                    </div>
+
+                                    <!-- Appointment Rules -->
+                                    <div class="form-section">
+                                        <h3>Appointment Rules</h3>
+
+                                        <div class="form-group">
+                                            <label for="lead-time">Minimum Lead Time (hours)</label>
+                                            <input type="number" id="lead-time" value="24" min="1">
+                                            <p class="field-hint">Minimum hours required before an appointment can be
+                                                booked</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="cancellation-policy">Cancellation Policy (hours)</label>
+                                            <input type="number" id="cancellation-policy" value="12" min="0">
+                                            <p class="field-hint">Hours before appointment when cancellation is
+                                                penalty-free</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="reschedule-policy">Rescheduling Policy (hours)</label>
+                                            <input type="number" id="reschedule-policy" value="6" min="0">
+                                            <p class="field-hint">Hours before appointment when rescheduling is allowed
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="button" class="btn-cancel">Cancel</button>
+                                        <button type="submit" class="btn-save">Save Schedule Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inventory Control Section -->
+                    <div class="admin-section" id="inventory-section" style="display: none;">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h2>Inventory Control</h2>
+                            </div>
+                            <div class="panel-content">
+                                <form class="settings-form">
+                                    <!-- Parts Management -->
+                                    <div class="form-section">
+                                        <h3>Parts Management</h3>
+
+                                        <div class="form-group">
+                                            <label>Default Parts Categories</label>
+                                            <div class="parts-categories">
+                                                <div class="category-item">
+                                                    <input type="checkbox" id="category-engine" checked>
+                                                    <label for="category-engine">Engine Parts</label>
+                                                </div>
+                                                <div class="category-item">
+                                                    <input type="checkbox" id="category-brakes" checked>
+                                                    <label for="category-brakes">Brake System</label>
+                                                </div>
+                                                <div class="category-item">
+                                                    <input type="checkbox" id="category-suspension" checked>
+                                                    <label for="category-suspension">Suspension</label>
+                                                </div>
+                                                <div class="category-item">
+                                                    <input type="checkbox" id="category-electrical" checked>
+                                                    <label for="category-electrical">Electrical</label>
+                                                </div>
+                                                <div class="category-item">
+                                                    <input type="checkbox" id="category-transmission" checked>
+                                                    <label for="category-transmission">Transmission</label>
+                                                </div>
+                                                <div class="category-item">
+                                                    <input type="checkbox" id="category-cooling" checked>
+                                                    <label for="category-cooling">Cooling System</label>
+                                                </div>
+                                                <div class="category-item">
+                                                    <input type="checkbox" id="category-filters" checked>
+                                                    <label for="category-filters">Filters</label>
+                                                </div>
+                                                <div class="category-item">
+                                                    <input type="checkbox" id="category-fluids" checked>
+                                                    <label for="category-fluids">Fluids</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="custom-category">Add Custom Category</label>
+                                            <div class="custom-category-input">
+                                                <input type="text" id="custom-category"
+                                                    placeholder="Enter category name">
+                                                <button type="button" class="add-category-btn">Add</button>
+                                            </div>
+                                        </div>
+
+                                        <h4 class="subsection-title">Low Stock Thresholds</h4>
+                                        <p class="field-hint">Set minimum quantity levels for inventory alert
+                                            notifications</p>
+
+                                        <table class="threshold-table data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Category</th>
+                                                    <th>Default Threshold</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Engine Parts</td>
+                                                    <td>5</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-threshold">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Brake System</td>
+                                                    <td>10</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-threshold">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Filters</td>
+                                                    <td>15</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-threshold">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Fluids</td>
+                                                    <td>20</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-threshold">Edit</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Supplier Management -->
+                                    <div class="form-section">
+                                        <h3>Supplier Management</h3>
+
+                                        <button type="button" class="add-supplier-btn supplier-btn">
+                                            <i class="fas fa-plus"></i> Add Supplier
+                                        </button>
+
+                                        <table class="suppliers-table data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Supplier Name</th>
+                                                    <th>Contact Person</th>
+                                                    <th>Email</th>
+                                                    <th>Phone</th>
+                                                    <th>Product Categories</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>AutoParts Plus</td>
+                                                    <td>John Hamilton</td>
+                                                    <td>john.h@autopartsplus.com</td>
+                                                    <td>+254 721 555 1234</td>
+                                                    <td>Engine Parts, Brake System</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-supplier">Edit</a>
+                                                        <a href="#" class="action-link delete-supplier">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kenya Filters Ltd</td>
+                                                    <td>Sarah Mwangi</td>
+                                                    <td>sarah@kenyafilters.co.ke</td>
+                                                    <td>+254 733 678 9012</td>
+                                                    <td>Filters, Fluids</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-supplier">Edit</a>
+                                                        <a href="#" class="action-link delete-supplier">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Electrical Systems EA</td>
+                                                    <td>David Ochieng</td>
+                                                    <td>dochieng@electricalsystems.co</td>
+                                                    <td>+254 722 345 6789</td>
+                                                    <td>Electrical</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-supplier">Edit</a>
+                                                        <a href="#" class="action-link delete-supplier">Delete</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="button" class="btn-cancel">Cancel</button>
+                                        <button type="submit" class="btn-save">Save Inventory Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Billing & Payments Section -->
+                    <div class="admin-section" id="billing-section" style="display: none;">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h2>Billing & Payments</h2>
+                            </div>
+                            <div class="panel-content">
+                                <form class="settings-form">
+                                    <!-- Invoice Settings -->
+                                    <div class="form-section">
+                                        <h3>Invoice Settings</h3>
+
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="invoice-business-name">Business Name</label>
+                                                <input type="text" id="invoice-business-name"
+                                                    value="Citrus Auto Repair">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="invoice-business-address">Business Address</label>
+                                                <input type="text" id="invoice-business-address"
+                                                    value="123 Main St, Nairobi, Kenya">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="invoice-phone">Phone Number</label>
+                                                <input type="tel" id="invoice-phone" value="+254 712 345 678">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="invoice-email">Email Address</label>
+                                                <input type="email" id="invoice-email" value="info@citrusauto.com">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group business-logo">
+                                            <label>Business Logo</label>
+                                            <div class="business-logo-container">
+                                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                                                    alt="Business Logo">
+                                                <button type="button" class="change-logo-btn">Upload New Logo</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="invoice-terms">Terms & Conditions</label>
+                                            <textarea id="invoice-terms"
+                                                rows="4">Payment is due within 30 days from invoice date. Late payments are subject to a 5% fee. All parts come with a 90-day warranty. Labor is warranted for 60 days after service completion.</textarea>
+                                        </div>
+                                    </div>
+
+                                    <!-- Payment Method Settings -->
+                                    <div class="form-section">
+                                        <h3>Payment Method Settings</h3>
+
+                                        <button type="button" class="add-payment-method-btn">
+                                            <i class="fas fa-plus"></i> Add Payment Method
+                                        </button>
+
+                                        <table class="payment-methods-table data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Method Name</th>
+                                                    <th>Instructions</th>
+                                                    <th>Default</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>M-Pesa</td>
+                                                    <td>Send to Till Number: 123456</td>
+                                                    <td><span class="status-badge approved">Default</span></td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-payment">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Credit Card</td>
+                                                    <td>Visa, Mastercard, and American Express accepted</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-payment">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Bank Transfer</td>
+                                                    <td>Acc Name: Citrus Auto, Acc No: 12345678, Bank: KCB</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-payment">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cash</td>
+                                                    <td>Pay at counter</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-payment">Edit</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Business Tariffs -->
+                                    <div class="form-section">
+                                        <h3>Business Tariffs</h3>
+
+                                        <div class="form-group">
+                                            <label for="commission-percentage">Commission Percentage (%)</label>
+                                            <input type="number" id="commission-percentage" value="10" min="0" max="100"
+                                                step="0.5">
+                                        </div>
+
+                                        <button type="button" class="configure-tariffs-btn">
+                                            Configure Tariff Model
+                                        </button>
+
+                                        <div class="tariff-model-info">
+                                            <h4>Current Tariff Model: <span class="tariff-model-type">Business
+                                                    Centric</span></h4>
+                                            <p class="tariff-description">10% added to customer invoice amount</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Insurance Companies -->
+                                    <div class="form-section">
+                                        <h3>Insurance Companies</h3>
+
+                                        <button type="button" class="add-insurance-btn">
+                                            <i class="fas fa-plus"></i> Add Insurance Company
+                                        </button>
+
+                                        <table class="insurance-table data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Company</th>
+                                                    <th>Contact Person</th>
+                                                    <th>Email</th>
+                                                    <th>Phone</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Jubilee Insurance</td>
+                                                    <td>Alice Kimani</td>
+                                                    <td>alice.k@jubilee.co.ke</td>
+                                                    <td>+254 723 456 7890</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-insurance">Edit</a>
+                                                        <a href="#" class="action-link delete-insurance">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>APA Insurance</td>
+                                                    <td>Brian Maina</td>
+                                                    <td>brian.m@apa.co.ke</td>
+                                                    <td>+254 734 567 8901</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-insurance">Edit</a>
+                                                        <a href="#" class="action-link delete-insurance">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Heritage Insurance</td>
+                                                    <td>Catherine Njeri</td>
+                                                    <td>catherine.n@heritage.co.ke</td>
+                                                    <td>+254 745 678 9012</td>
+                                                    <td>
+                                                        <a href="#" class="action-link edit-insurance">Edit</a>
+                                                        <a href="#" class="action-link delete-insurance">Delete</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="button" class="btn-cancel">Cancel</button>
+                                        <button type="submit" class="btn-save">Save Billing Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Section -->
+                    <div class="admin-section" id="notifications-section" style="display: none;">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h2>Notifications</h2>
+                            </div>
+                            <div class="panel-content">
+                                <form class="settings-form">
+                                    <!-- Appointment Notifications -->
+                                    <div class="form-section">
+                                        <h3>Appointment Notifications</h3>
+
+                                        <div class="notification-toggle">
+                                            <div class="notification-item">
+                                                <div class="notification-info">
+                                                    <h4>New Appointment Notification</h4>
+                                                    <p>Notify staff when a new appointment is scheduled</p>
+                                                </div>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="new-appointment-notification" checked>
+                                                    <label for="new-appointment-notification"
+                                                        class="toggle-label"></label>
+                                                </div>
+                                            </div>
+
+                                            <div class="notification-item">
+                                                <div class="notification-info">
+                                                    <h4>Appointment Reminder</h4>
+                                                    <p>Send reminders for upcoming appointments</p>
+                                                </div>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="appointment-reminder" checked>
+                                                    <label for="appointment-reminder" class="toggle-label"></label>
+                                                </div>
+                                            </div>
+
+                                            <div class="notification-item">
+                                                <div class="notification-info">
+                                                    <h4>Appointment Changes</h4>
+                                                    <p>Notify when appointments are rescheduled or canceled</p>
+                                                </div>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="appointment-changes" checked>
+                                                    <label for="appointment-changes" class="toggle-label"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Inventory Notifications -->
+                                    <div class="form-section">
+                                        <h3>Inventory Notifications</h3>
+
+                                        <div class="notification-toggle">
+                                            <div class="notification-item">
+                                                <div class="notification-info">
+                                                    <h4>Low Stock Alerts</h4>
+                                                    <p>Alert when inventory items fall below threshold</p>
+                                                </div>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="low-stock-alerts" checked>
+                                                    <label for="low-stock-alerts" class="toggle-label"></label>
+                                                </div>
+                                            </div>
+
+                                            <div class="notification-item">
+                                                <div class="notification-info">
+                                                    <h4>Reorder Reminders</h4>
+                                                    <p>Send reminders to reorder low stock items</p>
+                                                </div>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="reorder-reminders" checked>
+                                                    <label for="reorder-reminders" class="toggle-label"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Customer Notifications -->
+                                    <div class="form-section">
+                                        <h3>Customer Notifications</h3>
+
+                                        <div class="notification-toggle">
+                                            <div class="notification-item">
+                                                <div class="notification-info">
+                                                    <h4>Service Updates</h4>
+                                                    <p>Send updates to customers about service progress</p>
+                                                </div>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="service-updates" checked>
+                                                    <label for="service-updates" class="toggle-label"></label>
+                                                </div>
+                                            </div>
+
+                                            <div class="notification-item">
+                                                <div class="notification-info">
+                                                    <h4>Completion Notifications</h4>
+                                                    <p>Notify customers when their service is complete</p>
+                                                </div>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="completion-notifications" checked>
+                                                    <label for="completion-notifications" class="toggle-label"></label>
+                                                </div>
+                                            </div>
+
+                                            <div class="notification-item">
+                                                <div class="notification-info">
+                                                    <h4>Invoice Reminders</h4>
+                                                    <p>Send reminders for outstanding invoices</p>
+                                                </div>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="invoice-reminders" checked>
+                                                    <label for="invoice-reminders" class="toggle-label"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Notification Channels -->
+                                    <div class="form-section">
+                                        <h3>Notification Channels</h3>
+
+                                        <div class="notification-toggle">
+                                            <div class="notification-item">
+                                                <div class="notification-info">
+                                                    <h4>Email Notifications</h4>
+                                                    <p>Send notifications via email</p>
+                                                </div>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="email-notifications" checked>
+                                                    <label for="email-notifications" class="toggle-label"></label>
+                                                </div>
+                                            </div>
+
+                                            <div class="notification-item">
+                                                <div class="notification-info">
+                                                    <h4>SMS Notifications</h4>
+                                                    <p>Send notifications via SMS</p>
+                                                </div>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="sms-notifications" checked>
+                                                    <label for="sms-notifications" class="toggle-label"></label>
+                                                </div>
+                                            </div>
+
+                                            <div class="notification-item">
+                                                <div class="notification-info">
+                                                    <h4>In-App Notifications</h4>
+                                                    <p>Show notifications within the application</p>
+                                                </div>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="in-app-notifications" checked>
+                                                    <label for="in-app-notifications" class="toggle-label"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="button" class="btn-cancel">Cancel</button>
+                                        <button type="submit" class="btn-save">Save Notification Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reports & Analytics Section -->
+                    <div class="admin-section" id="reports-section" style="display: none;">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h2>Reports & Analytics</h2>
+                            </div>
+                            <div class="panel-content">
+                                <form class="settings-form">
+                                    <!-- Performance Reports -->
+                                    <div class="form-section">
+                                        <h3>Performance Reports</h3>
+
+                                        <div class="report-options">
+                                            <div class="report-option">
+                                                <input type="checkbox" id="daily-reports" checked>
+                                                <label for="daily-reports">Daily Reports</label>
+                                                <p class="option-description">Generate performance reports at the end of
+                                                    each business day</p>
+                                            </div>
+
+                                            <div class="report-option">
+                                                <input type="checkbox" id="weekly-reports" checked>
+                                                <label for="weekly-reports">Weekly Reports</label>
+                                                <p class="option-description">Generate comprehensive weekly performance
+                                                    reports</p>
+                                            </div>
+
+                                            <div class="report-option">
+                                                <input type="checkbox" id="monthly-reports" checked>
+                                                <label for="monthly-reports">Monthly Reports</label>
+                                                <p class="option-description">Generate detailed monthly business
+                                                    performance analysis</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Service Reports -->
+                                    <div class="form-section">
+                                        <h3>Service Reports</h3>
+
+                                        <div class="report-options">
+                                            <div class="report-option">
+                                                <input type="checkbox" id="service-type-analysis" checked>
+                                                <label for="service-type-analysis">Service Type Analysis</label>
+                                                <p class="option-description">Analyze the frequency and revenue of
+                                                    different service types</p>
+                                            </div>
+
+                                            <div class="report-option">
+                                                <input type="checkbox" id="technician-performance" checked>
+                                                <label for="technician-performance">Technician Performance</label>
+                                                <p class="option-description">Track and analyze individual technician
+                                                    performance metrics</p>
+                                            </div>
+
+                                            <div class="report-option">
+                                                <input type="checkbox" id="customer-satisfaction" checked>
+                                                <label for="customer-satisfaction">Customer Satisfaction</label>
+                                                <p class="option-description">Monitor customer feedback and satisfaction
+                                                    ratings</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Financial Reports -->
+                                    <div class="form-section">
+                                        <h3>Financial Reports</h3>
+
+                                        <div class="report-options">
+                                            <div class="report-option">
+                                                <input type="checkbox" id="revenue-reports" checked>
+                                                <label for="revenue-reports">Revenue Reports</label>
+                                                <p class="option-description">Track total revenue across different
+                                                    service categories</p>
+                                            </div>
+
+                                            <div class="report-option">
+                                                <input type="checkbox" id="cost-analysis" checked>
+                                                <label for="cost-analysis">Cost Analysis</label>
+                                                <p class="option-description">Analyze operational costs and expenses</p>
+                                            </div>
+
+                                            <div class="report-option">
+                                                <input type="checkbox" id="profit-margins" checked>
+                                                <label for="profit-margins">Profit Margins</label>
+                                                <p class="option-description">Calculate and track profit margins across
+                                                    service types</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Report Scheduling -->
+                                    <div class="form-section">
+                                        <h3>Report Scheduling</h3>
+
+                                        <div class="form-group">
+                                            <label>Automated Reports</label>
+                                            <div class="automated-report-options">
+                                                <div class="report-schedule-option">
+                                                    <input type="checkbox" id="daily-schedule" checked>
+                                                    <label for="daily-schedule">Daily</label>
+                                                    <select class="schedule-time" aria-label="Daily report time">
+                                                        <option value="18:00">6:00 PM</option>
+                                                        <option value="19:00">7:00 PM</option>
+                                                        <option value="20:00" selected>8:00 PM</option>
+                                                        <option value="21:00">9:00 PM</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="report-schedule-option">
+                                                    <input type="checkbox" id="weekly-schedule" checked>
+                                                    <label for="weekly-schedule">Weekly</label>
+                                                    <select class="schedule-day" aria-label="Weekly report day">
+                                                        <option value="monday">Monday</option>
+                                                        <option value="tuesday">Tuesday</option>
+                                                        <option value="wednesday">Wednesday</option>
+                                                        <option value="thursday">Thursday</option>
+                                                        <option value="friday" selected>Friday</option>
+                                                        <option value="saturday">Saturday</option>
+                                                        <option value="sunday">Sunday</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="report-schedule-option">
+                                                    <input type="checkbox" id="monthly-schedule" checked>
+                                                    <label for="monthly-schedule">Monthly</label>
+                                                    <select class="schedule-date" aria-label="Monthly report date">
+                                                        <option value="1">1st</option>
+                                                        <option value="2">2nd</option>
+                                                        <option value="3">3rd</option>
+                                                        <option value="4">4th</option>
+                                                        <option value="5">5th</option>
+                                                        <option value="last" selected>Last day</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="report-recipients">Email Recipients</label>
+                                            <textarea id="report-recipients" rows="3"
+                                                placeholder="Enter email addresses separated by commas">john.smith@example.com, finance@citrusauto.com, manager@citrusauto.com</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="button" class="btn-cancel">Cancel</button>
+                                        <button type="submit" class="btn-save">Save Reports Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Modal Windows -->
+
+                    <!-- Add Service Duration Modal -->
+                    <div class="modal" id="add-service-duration-modal">
+                        <div class="modal-content">
+                            <span class="close-btn">&times;</span>
+                            <h2>Add Service Duration</h2>
+                            <form class="service-duration-form">
+                                <div class="form-group">
+                                    <label for="service-name">Service Name</label>
+                                    <input type="text" id="service-name" placeholder="Enter service name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="service-duration">Duration (minutes)</label>
+                                    <input type="number" id="service-duration" min="15" step="15" value="60" required>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-cancel">Cancel</button>
+                                    <button type="submit" class="btn-save">Add Service</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Add Supplier Modal -->
+                    <div class="modal" id="add-supplier-modal">
+                        <div class="modal-content">
+                            <span class="close-btn">&times;</span>
+                            <h2>Add Supplier</h2>
+                            <form class="supplier-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="supplier-name">Supplier Name</label>
+                                        <input type="text" id="supplier-name" placeholder="Enter supplier name"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-person">Contact Person</label>
+                                        <input type="text" id="contact-person" placeholder="Enter contact person name"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="supplier-email">Email</label>
+                                        <input type="email" id="supplier-email" placeholder="Enter email address"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="supplier-phone">Phone</label>
+                                        <input type="tel" id="supplier-phone" placeholder="Enter phone number" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="supplier-address">Address</label>
+                                    <input type="text" id="supplier-address" placeholder="Enter supplier address">
+                                </div>
+                                <div class="form-group">
+                                    <label>Product Categories</label>
+                                    <div class="categories-checkboxes">
+                                        <div class="category-checkbox">
+                                            <input type="checkbox" id="supplier-engine">
+                                            <label for="supplier-engine">Engine Parts</label>
+                                        </div>
+                                        <div class="category-checkbox">
+                                            <input type="checkbox" id="supplier-brakes">
+                                            <label for="supplier-brakes">Brake System</label>
+                                        </div>
+                                        <div class="category-checkbox">
+                                            <input type="checkbox" id="supplier-suspension">
+                                            <label for="supplier-suspension">Suspension</label>
+                                        </div>
+                                        <div class="category-checkbox">
+                                            <input type="checkbox" id="supplier-electrical">
+                                            <label for="supplier-electrical">Electrical</label>
+                                        </div>
+                                        <div class="category-checkbox">
+                                            <input type="checkbox" id="supplier-transmission">
+                                            <label for="supplier-transmission">Transmission</label>
+                                        </div>
+                                        <div class="category-checkbox">
+                                            <input type="checkbox" id="supplier-cooling">
+                                            <label for="supplier-cooling">Cooling System</label>
+                                        </div>
+                                        <div class="category-checkbox">
+                                            <input type="checkbox" id="supplier-filters">
+                                            <label for="supplier-filters">Filters</label>
+                                        </div>
+                                        <div class="category-checkbox">
+                                            <input type="checkbox" id="supplier-fluids">
+                                            <label for="supplier-fluids">Fluids</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-cancel">Cancel</button>
+                                    <button type="submit" class="btn-save">Save Supplier</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Add Payment Method Modal -->
+                    <div class="modal" id="add-payment-method-modal">
+                        <div class="modal-content">
+                            <span class="close-btn">&times;</span>
+                            <h2>Add Payment Method</h2>
+                            <form class="payment-method-form">
+                                <div class="form-group">
+                                    <label for="method-name">Method Name</label>
+                                    <input type="text" id="method-name" placeholder="Enter payment method name"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment-instructions">Payment Instructions</label>
+                                    <textarea id="payment-instructions" rows="4"
+                                        placeholder="Enter payment instructions" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox-option">
+                                        <input type="checkbox" id="is-default">
+                                        <label for="is-default">Set as Default Payment Method</label>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-cancel">Cancel</button>
+                                    <button type="submit" class="btn-save">Save Payment Method</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Configure Tariff Modal -->
+                    <div class="modal" id="configure-tariff-modal">
+                        <div class="modal-content">
+                            <span class="close-btn">&times;</span>
+                            <h2>Configure Tariff Model</h2>
+                            <form class="tariff-form">
+                                <div class="form-group">
+                                    <label for="modal-commission">Commission Percentage (%)</label>
+                                    <input type="number" id="modal-commission" value="10" min="0" max="100" step="0.5"
+                                        required>
+                                </div>
+
+                                <div class="tariff-options">
+                                    <h3>Select Tariff Model</h3>
+
+                                    <div class="tariff-option">
+                                        <input type="radio" id="sharing-tariff" name="tariff-model">
+                                        <label for="sharing-tariff">Sharing Tariff</label>
+                                        <p class="tariff-description">Split between merchant and customer (e.g., 5% from
+                                            merchant, 5% from customer)</p>
+                                    </div>
+
+                                    <div class="tariff-option">
+                                        <input type="radio" id="business-centric" name="tariff-model" checked>
+                                        <label for="business-centric">Business Centric Tariff</label>
+                                        <p class="tariff-description">Added to customer invoice (e.g., 10% added to
+                                            invoice amount)</p>
+                                    </div>
+
+                                    <div class="tariff-option">
+                                        <input type="radio" id="customer-centric" name="tariff-model">
+                                        <label for="customer-centric">Customer Centric Tariff</label>
+                                        <p class="tariff-description">Deducted from merchant revenue (e.g., 10% deducted
+                                            from merchant)</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" class="btn-cancel">Cancel</button>
+                                    <button type="submit" class="btn-save">Save Tariff Settings</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Add Insurance Company Modal -->
+                    <div class="modal" id="add-insurance-modal">
+                        <div class="modal-content">
+                            <span class="close-btn">&times;</span>
+                            <h2>Add Insurance Company</h2>
+                            <form class="insurance-form">
+                                <div class="form-group">
+                                    <label for="company-name">Company Name</label>
+                                    <input type="text" id="company-name" placeholder="Enter company name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Company Logo</label>
+                                    <div class="company-logo-container">
+                                        <div class="logo-placeholder">
+                                            <i class="fas fa-building"></i>
+                                        </div>
+                                        <button type="button" class="upload-company-logo-btn">Upload Logo</button>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="insurance-contact">Contact Person</label>
+                                        <input type="text" id="insurance-contact"
+                                            placeholder="Enter contact person name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="insurance-email">Email Address</label>
+                                        <input type="email" id="insurance-email" placeholder="Enter email address"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="insurance-phone">Phone Number</label>
+                                        <input type="tel" id="insurance-phone" placeholder="Enter phone number"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="insurance-address">Billing Address</label>
+                                        <input type="text" id="insurance-address" placeholder="Enter billing address"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-cancel">Cancel</button>
+                                    <button type="submit" class="btn-save">Save Insurance Company</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Delete Confirmation Modals -->
+                    <div class="modal" id="delete-supplier-modal">
+                        <div class="modal-content">
+                            <span class="close-btn">&times;</span>
+                            <div class="delete-confirmation">
+                                <i class="fas fa-exclamation-triangle warning-icon"></i>
+                                <h2>Delete Supplier</h2>
+                                <p>Are you sure you want to delete this supplier? This action cannot be undone.</p>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-cancel">Cancel</button>
+                                    <button type="button" class="btn-delete">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal" id="delete-insurance-modal">
+                        <div class="modal-content">
+                            <span class="close-btn">&times;</span>
+                            <div class="delete-confirmation">
+                                <i class="fas fa-exclamation-triangle warning-icon"></i>
+                                <h2>Delete Insurance Company</h2>
+                                <p>Are you sure you want to delete this insurance company? This action cannot be undone.
+                                </p>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-cancel">Cancel</button>
+                                    <button type="button" class="btn-delete">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/" target="_blank">Citrus Labs</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Add Holiday Modal -->
+    <div class="modal" id="add-holiday-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add Holiday</h2>
+            <form class="holiday-form">
+                <div class="form-group">
+                    <label for="holiday-date">Date</label>
+                    <input type="date" id="holiday-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="holiday-name">Holiday Name</label>
+                    <input type="text" id="holiday-name" placeholder="Enter holiday name" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Add Holiday</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add New Staff Modal -->
+    <div class="modal" id="add-staff-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Staff</h2>
+            <form class="new-staff-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="staff-first-name">First Name</label>
+                        <input type="text" id="staff-first-name" placeholder="Enter first name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="staff-last-name">Last Name</label>
+                        <input type="text" id="staff-last-name" placeholder="Enter last name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="staff-email">Email Address</label>
+                        <input type="email" id="staff-email" placeholder="Enter email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="staff-phone">Phone Number</label>
+                        <input type="tel" id="staff-phone" placeholder="Enter phone number">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="staff-role">Role</label>
+                    <select id="staff-role" required>
+                        <option value="" selected disabled>Select a role</option>
+                        <option value="admin">Administrator</option>
+                        <option value="manager">Service Manager</option>
+                        <option value="technician">Technician</option>
+                        <option value="receptionist">Receptionist</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="staff-temp-password">Temporary Password</label>
+                    <input type="password" id="staff-temp-password" placeholder="Set temporary password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Save New Staff</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create Role Modal -->
+    <div class="modal" id="create-role-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Create Role</h2>
+            <form class="role-form">
+                <div class="form-group">
+                    <label for="role-name">Role Name</label>
+                    <input type="text" id="role-name" placeholder="Enter role name" required>
+                </div>
+                <div class="form-group">
+                    <label for="role-description">Role Description</label>
+                    <textarea id="role-description" placeholder="Enter role description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Permissions</label>
+                    <div class="permissions-list">
+                        <div class="permission-item">
+                            <input type="checkbox" id="perm-dashboard" checked>
+                            <label for="perm-dashboard">Access Dashboard</label>
+                        </div>
+                        <div class="permission-item">
+                            <input type="checkbox" id="perm-check-in">
+                            <label for="perm-check-in">Vehicle Check-In</label>
+                        </div>
+                        <div class="permission-item">
+                            <input type="checkbox" id="perm-service">
+                            <label for="perm-service">Service Hub</label>
+                        </div>
+                        <div class="permission-item">
+                            <input type="checkbox" id="perm-billing">
+                            <label for="perm-billing">Billing & Payments</label>
+                        </div>
+                        <div class="permission-item">
+                            <input type="checkbox" id="perm-history">
+                            <label for="perm-history">Vehicle History</label>
+                        </div>
+                        <div class="permission-item">
+                            <input type="checkbox" id="perm-inventory">
+                            <label for="perm-inventory">Inventory</label>
+                        </div>
+                        <div class="permission-item">
+                            <input type="checkbox" id="perm-technicians">
+                            <label for="perm-technicians">Technicians</label>
+                        </div>
+                        <div class="permission-item">
+                            <input type="checkbox" id="perm-check-out">
+                            <label for="perm-check-out">Vehicle Check-Out</label>
+                        </div>
+                        <div class="permission-item">
+                            <input type="checkbox" id="perm-settings">
+                            <label for="perm-settings">Settings</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Save Role</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Verification Email Sent Modal -->
+    <div class="modal" id="verification-email-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="verification-message">
+                <i class="fas fa-envelope-open-text verification-icon"></i>
+                <h2>Verification Email Sent</h2>
+                <p>A verification code has been sent to your email address. Please check your inbox and enter the code
+                    to continue.</p>
+                <button class="ok-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Confirmation Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="success-message">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>Success!</h2>
+                <p id="success-message-text">Your changes have been saved successfully.</p>
+                <button class="ok-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="settings.js"></script>
+</body>
+
+</html>

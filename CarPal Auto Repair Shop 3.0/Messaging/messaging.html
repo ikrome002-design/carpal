@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CarPal by Citrus Messaging - Connect with customers through integrated messaging">
+    <meta name="author" content="Citrus Labs">
+    <title>CarPal by Citrus - Messaging</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="messaging.css">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo -->
+            <div class="logo">
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Dashboard/dashboard.html">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Random Logo/logo.png"
+                        alt="CarPal by Citrus Logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Dashboard\dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Vehicle Check-In/check_in.html">
+                            <i class="fas fa-car-side"></i> Vehicle Check-In
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Service Hub/service_hub.html">
+                            <i class="fas fa-tools"></i> Service Hub
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Billings & Payments/billings.html">
+                            <i class="fas fa-file-invoice-dollar"></i> Billing & Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Vehicle History/history.html">
+                            <i class="fas fa-history"></i> Vehicle History
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Inventory/inventory.html">
+                            <i class="fas fa-boxes"></i> Inventory
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Messaging/messaging.html">
+                            <i class="fas fa-comments"></i> Messaging
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Technicians/technicians.html">
+                            <i class="fas fa-users-cog"></i> Technicians
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Vehicle Check-Out/check_out.html">
+                            <i class="fas fa-sign-out-alt"></i> Vehicle Check-Out
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="page-title">
+                    <h1>Messaging</h1>
+                    <p>Connect with customers through integrated messaging</p>
+                </div>
+
+                <div class="header-actions">
+                    <!-- Notifications Icon -->
+                    <div class="notifications-container">
+                        <div class="notification-icon">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+
+                        <!-- Notification Panel (Hidden by default) -->
+                        <div class="notification-panel">
+                            <div class="panel-header">
+                                <h3>Notifications</h3>
+                                <button class="close-btn"><i class="fas fa-times"></i></button>
+                            </div>
+                            <div class="notification-list">
+                                <div class="notification-item unread">
+                                    <div class="notif-icon lead-notif">
+                                        <i class="fas fa-comment"></i>
+                                    </div>
+                                    <div class="notif-content">
+                                        <div class="notif-title">New message received</div>
+                                        <div class="notif-text">You have a new message from John Doe.</div>
+                                        <div class="notif-time">10 minutes ago</div>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notif-icon system-notif">
+                                        <i class="fas fa-link"></i>
+                                    </div>
+                                    <div class="notif-content">
+                                        <div class="notif-title">Scribble Integration</div>
+                                        <div class="notif-text">Your Scribble account has been successfully linked.
+                                        </div>
+                                        <div class="notif-time">2 hours ago</div>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notif-icon task-notif">
+                                        <i class="fas fa-share-nodes"></i>
+                                    </div>
+                                    <div class="notif-content">
+                                        <div class="notif-title">Contacts Shared</div>
+                                        <div class="notif-text">15 contacts have been successfully shared with Scribble.
+                                        </div>
+                                        <div class="notif-time">1 day ago</div>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notif-icon system-notif">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <div class="notif-content">
+                                        <div class="notif-title">System Update</div>
+                                        <div class="notif-text">CarPal has been updated to version 3.2.0.</div>
+                                        <div class="notif-time">3 days ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="view-all-notifications">
+                                <a
+                                    href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Notifications/notifications.html">View
+                                    all notifications</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Profile -->
+                    <div class="user-profile-container">
+                        <div class="user-profile">
+                            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                                alt="User Profile" class="profile-img">
+                            <span class="user-name">Jane Smith</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+
+                        <!-- Profile Dropdown (Hidden by default) -->
+                        <div class="profile-dropdown">
+                            <ul>
+                                <li>
+                                    <a
+                                        href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Settings/settings.html">
+                                        <i class="fas fa-gear"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="C:/Users/nderu/Documents/Development/Product/CarPal/Landing Page/CarPal Auto Repair Shop/landing_page.html">
+                                        <i class="fas fa-sign-out-alt"></i> Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Messaging Content - Initial State (First Access) -->
+            <section class="messaging-content initial-state">
+                <div class="empty-state">
+                    <div class="empty-state-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h2>No Messages Yet</h2>
+                    <p>Link your account with Scribble to start messaging your customers directly from CarPal.</p>
+                    <div class="scribble-info">
+                        <h3>Why link with Scribble?</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Send and receive messages directly from CarPal</li>
+                            <li><i class="fas fa-check"></i> Share contacts from your customer database</li>
+                            <li><i class="fas fa-check"></i> Centralize all customer communications</li>
+                            <li><i class="fas fa-check"></i> Sync message history across platforms</li>
+                        </ul>
+                    </div>
+                    <button class="link-scribble-btn action-btn primary">
+                        <i class="fas fa-link"></i> Link to Scribble
+                    </button>
+                </div>
+            </section>
+
+            <!-- Messaging Content - Linked State (Hidden by default) -->
+            <section class="messaging-content linked-state hidden">
+                <div class="messaging-controls">
+                    <div class="controls-left">
+                        <button class="control-btn connect-contacts">
+                            <i class="fas fa-address-book"></i> Connect Contacts
+                        </button>
+                        <button class="control-btn open-scribble">
+                            <i class="fas fa-external-link-alt"></i> Open Scribble
+                        </button>
+                    </div>
+                    <div class="controls-right">
+                        <button class="control-btn manage-link">
+                            <i class="fas fa-cog"></i> Manage Scribble Link
+                        </button>
+                    </div>
+                </div>
+
+                <div class="message-search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="search-input" placeholder="Search messages...">
+                    </div>
+                    <div class="message-filters">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Unread</button>
+                        <button class="filter-btn">Important</button>
+                        <button class="filter-btn">Archived</button>
+                    </div>
+                </div>
+
+                <div class="messages-container">
+                    <h3 class="section-title">Recent Messages</h3>
+
+                    <div class="message-list">
+                        <div class="message-item unread">
+                            <div class="message-avatar">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="John Doe">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <div class="message-sender">John Doe - Toyota Camry</div>
+                                    <div class="message-time">10:25 AM</div>
+                                </div>
+                                <div class="message-preview">
+                                    <p>Hello, I'm inquiring about the status of my vehicle repair. Could you provide an
+                                        update on when it will be ready?</p>
+                                </div>
+                                <div class="message-meta">
+                                    <div class="message-status">
+                                        <span class="status-badge new">New</span>
+                                    </div>
+                                    <div class="message-actions">
+                                        <button class="action-icon view" title="View Message">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon reply" title="Reply">
+                                            <i class="fas fa-reply"></i>
+                                        </button>
+                                        <button class="action-icon forward" title="Forward">
+                                            <i class="fas fa-share"></i>
+                                        </button>
+                                        <button class="action-icon delete" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="message-item">
+                            <div class="message-avatar">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="Sarah Johnson">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <div class="message-sender">Sarah Johnson - Honda Civic</div>
+                                    <div class="message-time">Yesterday</div>
+                                </div>
+                                <div class="message-preview">
+                                    <p>Thanks for the quick service on my oil change. I appreciate the thorough work and
+                                        the car is running great now.</p>
+                                </div>
+                                <div class="message-meta">
+                                    <div class="message-status">
+                                        <span class="status-badge contacted">Read</span>
+                                    </div>
+                                    <div class="message-actions">
+                                        <button class="action-icon view" title="View Message">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon reply" title="Reply">
+                                            <i class="fas fa-reply"></i>
+                                        </button>
+                                        <button class="action-icon forward" title="Forward">
+                                            <i class="fas fa-share"></i>
+                                        </button>
+                                        <button class="action-icon delete" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="message-item">
+                            <div class="message-avatar">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="Michael Brown">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <div class="message-sender">Michael Brown - Ford F-150</div>
+                                    <div class="message-time">2 days ago</div>
+                                </div>
+                                <div class="message-preview">
+                                    <p>I need to reschedule my appointment for next Thursday. Something urgent came up.
+                                        Is 2 PM still available?</p>
+                                </div>
+                                <div class="message-meta">
+                                    <div class="message-status">
+                                        <span class="status-badge contacted">Read</span>
+                                    </div>
+                                    <div class="message-actions">
+                                        <button class="action-icon view" title="View Message">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon reply" title="Reply">
+                                            <i class="fas fa-reply"></i>
+                                        </button>
+                                        <button class="action-icon forward" title="Forward">
+                                            <i class="fas fa-share"></i>
+                                        </button>
+                                        <button class="action-icon delete" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="view-all-messages">
+                        <a href="#" class="view-all-link">View all messages</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="dark-mode-toggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="copyright">
+                    © 2025 Citrus Labs. All Rights Reserved.
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" class="social-icon" title="Instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" class="social-icon" title="X (Twitter)" target="_blank">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-icon"
+                        title="Facebook" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" class="social-icon" title="YouTube" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" class="social-icon" title="LinkedIn"
+                        target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <div class="corporate-site">
+                    <a href="https://citruslabs.co.ke/" target="_blank">Visit Citrus Labs</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Link Confirmation Modal -->
+    <div class="modal" id="linkConfirmModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Link to Scribble</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Link your CarPal account with Scribble to enable seamless messaging with your customers.</p>
+
+                <div class="form-section">
+                    <h3>Personal Details</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="profileName">Your Name <span class="required">*</span></label>
+                            <input type="text" id="profileName" value="Jane Smith" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="profileEmail">Email Address <span class="required">*</span></label>
+                            <input type="email" id="profileEmail" value="jane.smith@citruslabs.co.ke" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="profilePhone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="profilePhone" value="+254 712 345 678" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="profileRole">Role <span class="required">*</span></label>
+                            <input type="text" id="profileRole" value="Service Manager" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Business Details</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="businessName">Business Name <span class="required">*</span></label>
+                            <input type="text" id="businessName" value="CarPal Auto Repair Shop" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessEmail">Business Email <span class="required">*</span></label>
+                            <input type="email" id="businessEmail" value="info@carpal.co.ke" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="businessPhone">Business Phone <span class="required">*</span></label>
+                            <input type="tel" id="businessPhone" value="+254 20 123 4567" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessLocation">Business Location <span class="required">*</span></label>
+                            <input type="text" id="businessLocation" value="Nairobi, Kenya" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Terms & Conditions</h3>
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="termsAccept">
+                            <label for="termsAccept">I accept the <a href="#" target="_blank">Scribble Terms &
+                                    Conditions</a>, <a href="#" target="_blank">Data Policy</a>, and <a href="#"
+                                    target="_blank">Privacy Policy</a>.</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dataSharing">
+                            <label for="dataSharing">I understand that my contact details will be shared with Scribble
+                                for account creation purposes.</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel-btn">Cancel</button>
+                <button class="btn primary">Link Account</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Selection Modal -->
+    <div class="modal" id="contactSelectionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Connect Contacts to Scribble</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Select the contacts you want to connect with Scribble for messaging.</p>
+
+                <div class="contacts-header">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="selectAllContacts">
+                        <label for="selectAllContacts">Select All</label>
+                    </div>
+                    <div class="selected-count">0 contacts selected</div>
+                </div>
+
+                <div class="contacts-list">
+                    <div class="contact-item">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact1">
+                            <label for="contact1"></label>
+                        </div>
+                        <div class="contact-avatar">
+                            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                alt="John Doe">
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-name">John Doe</div>
+                            <div class="contact-info">Toyota Camry - #CAR12345</div>
+                            <div class="contact-phone">+254 712 345 123</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact2">
+                            <label for="contact2"></label>
+                        </div>
+                        <div class="contact-avatar">
+                            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                alt="Sarah Johnson">
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-name">Sarah Johnson</div>
+                            <div class="contact-info">Honda Civic - #CAR12346</div>
+                            <div class="contact-phone">+254 733 456 789</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact3">
+                            <label for="contact3"></label>
+                        </div>
+                        <div class="contact-avatar">
+                            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                alt="Michael Brown">
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-name">Michael Brown</div>
+                            <div class="contact-info">Ford F-150 - #CAR12347</div>
+                            <div class="contact-phone">+254 722 987 654</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact4">
+                            <label for="contact4"></label>
+                        </div>
+                        <div class="contact-avatar">
+                            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                alt="Emily Clark">
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-name">Emily Clark</div>
+                            <div class="contact-info">Nissan Altima - #CAR12348</div>
+                            <div class="contact-phone">+254 711 234 567</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact5">
+                            <label for="contact5"></label>
+                        </div>
+                        <div class="contact-avatar">
+                            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                alt="David Wilson">
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-name">David Wilson</div>
+                            <div class="contact-info">Chevrolet Malibu - #CAR12349</div>
+                            <div class="contact-phone">+254 722 345 678</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel-btn">Cancel</button>
+                <button class="btn primary">Share Selected Contacts</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link Details Modal -->
+    <div class="modal" id="linkDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Scribble Link Details</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="detail-section">
+                    <h3>Account Information</h3>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Linked Account</div>
+                            <div class="detail-value">jane.smith@citruslabs.co.ke</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Date Linked</div>
+                            <div class="detail-value">April 5, 2025</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Shared Contacts</div>
+                            <div class="detail-value">15 contacts</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Link Status</div>
+                            <div class="detail-value"><span class="status-badge closed">Active</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Scribble Account Details</h3>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Scribble Username</div>
+                            <div class="detail-value">janesmith_carpal</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Business Profile</div>
+                            <div class="detail-value">CarPal Auto Repair Shop</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Last Sync</div>
+                            <div class="detail-value">Today, 10:30 AM</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Scribble Plan</div>
+                            <div class="detail-value">Business Pro</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group text-center">
+                    <button class="btn danger-btn">
+                        <i class="fas fa-unlink"></i> Unlink from Scribble
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn primary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unlink Confirmation Modal -->
+    <div class="modal" id="unlinkConfirmModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Unlink from Scribble</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="confirm-message">
+                    <div class="warning-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Are you sure you want to unlink your account?</h3>
+                    <p>Unlinking your account from Scribble will disconnect all messaging functionality from CarPal. You
+                        will no longer be able to send or receive messages through this platform.</p>
+
+                    <div class="form-section">
+                        <h3>Email Verification</h3>
+                        <p>For security purposes, we need to verify your identity. We've sent a verification code to
+                            your email address.</p>
+                        <div class="form-group">
+                            <label for="verificationCode">Verification Code <span class="required">*</span></label>
+                            <input type="text" id="verificationCode" placeholder="Enter verification code">
+                        </div>
+                        <div class="text-center mb-3">
+                            <button class="btn">
+                                <i class="fas fa-paper-plane"></i> Resend Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel-btn">Cancel</button>
+                <button class="btn danger-btn">Confirm Unlink</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Detail Modal -->
+    <div class="modal large-modal" id="messageDetailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Message Details</h2>
+                <div class="modal-actions">
+                    <button class="action-btn">
+                        <i class="fas fa-reply"></i> Reply
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-share"></i> Forward
+                    </button>
+                    <button class="close-modal"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="message-detail-header">
+                    <div class="message-sender-info">
+                        <div class="sender-avatar">
+                            <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-64.png"
+                                alt="John Doe">
+                        </div>
+                        <div class="sender-details">
+                            <h3>John Doe</h3>
+                            <p>Toyota Camry - #CAR12345</p>
+                            <div class="message-timestamp">
+                                April 9, 2025 at 10:25 AM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-detail-content">
+                    <p>Hello Jane,</p>
+                    <p>I'm inquiring about the status of my vehicle repair. Could you provide an update on when it will
+                        be ready? I dropped it off three days ago for the brake replacement and was told it would take
+                        around 2-3 days.</p>
+                    <p>Also, have all the parts arrived that were needed for the repair? I'm planning my schedule for
+                        the week and would like to know when I can pick it up.</p>
+                    <p>Thank you for your help.</p>
+                    <p>Best regards,<br>John Doe</p>
+                </div>
+
+                <div class="message-attachments">
+                    <h4>Attachments (1)</h4>
+                    <div class="attachment-item">
+                        <i class="fas fa-file-image"></i>
+                        <span>Brake_Issue_Photo.jpg (145 KB)</span>
+                        <button class="btn"><i class="fas fa-download"></i> Download</button>
+                    </div>
+                </div>
+
+                <div class="message-related">
+                    <h4>Related Information</h4>
+                    <div class="related-item">
+                        <div class="related-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="related-content">
+                            <div class="related-title">Vehicle Details</div>
+                            <div class="related-info">Toyota Camry - Year 2022</div>
+                            <button class="view-details-link">View Vehicle Details</button>
+                        </div>
+                    </div>
+                    <div class="related-item">
+                        <div class="related-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <div class="related-content">
+                            <div class="related-title">Service History</div>
+                            <div class="related-info">3 previous services</div>
+                            <button class="view-details-link">View History</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="left-buttons">
+                    <button class="btn danger-btn">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </div>
+                <div class="right-buttons">
+                    <button class="btn">
+                        <i class="fas fa-archive"></i> Archive
+                    </button>
+                    <button class="btn primary">
+                        <i class="fas fa-reply"></i> Reply
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript Link -->
+    <script src="messaging.js"></script>
+</body>
+
+</html>

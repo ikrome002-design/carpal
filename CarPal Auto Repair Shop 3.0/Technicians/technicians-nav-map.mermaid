@@ -1,0 +1,123 @@
+graph TD
+    %% Main Navigation Entry Point
+    Dashboard --> MainNav{Main Navigation}
+    MainNav --> Technicians[Technicians]
+    
+    %% Technicians Main Page Structure
+    Technicians --> TechniciansDashboard[Technicians Dashboard]
+    TechniciansDashboard --> |"Features"| TechDashboardFeatures{"Dashboard Features"}
+    
+    %% Search and Filter Section
+    TechDashboardFeatures --> SearchFilter[Search & Filter]
+    SearchFilter --> SearchOptions{"Search Options"}
+    SearchOptions --> SearchByName["Search by Name"]
+    SearchOptions --> FilterBySkill["Filter by Skill/Specialty"]
+    SearchOptions --> FilterByDept["Filter by Department"]
+    SearchOptions --> ApplyFilters["Apply Filters"]
+    
+    %% Technician List and Profiles
+    TechDashboardFeatures --> TechnicianList[Technician List]
+    TechnicianList --> TechnicianProfile[Technician Profile]
+    TechnicianProfile --> ProfileDetails{"Profile Details"}
+    ProfileDetails --> PersonalInfo["Name, Photo & Title"]
+    ProfileDetails --> ExperienceSummary["Experience Summary"]
+    ProfileDetails --> SkillsSpecialties["Skills & Specialties"]
+    ProfileDetails --> ContactButton["Contact Button"]
+    ContactButton --> |"Click"| InternalMessaging["Internal Messaging Form"]
+    InternalMessaging --> ComposeMessage["Compose Message"]
+    InternalMessaging --> SendMessage["Send Message"]
+    
+    %% Service History Section
+    TechnicianProfile --> ServiceHistoryButton["Service History Button"]
+    ServiceHistoryButton --> |"Click"| TechServiceHistory["Technician Service History"]
+    TechServiceHistory --> PastJobs["Past Jobs Completed"]
+    TechServiceHistory --> PerformanceMetrics["Performance Metrics"]
+    
+    %% Featured Technicians Section
+    TechDashboardFeatures --> FeaturedTechnicians[Featured Technicians]
+    FeaturedTechnicians --> |"Selection Criteria"| FeaturedCriteria{"Selection Criteria"}
+    FeaturedCriteria --> TopPerformers["Top Performers"]
+    FeaturedCriteria --> Specialists["Specialists"]
+    
+    %% Admin-Only Features
+    TechDashboardFeatures --> AdminOnlyFeatures[Admin Only Features]
+    AdminOnlyFeatures --> AssignmentDashboard["Assignment Dashboard"]
+    AssignmentDashboard --> AssignJobs["Assign Jobs"]
+    AssignJobs --> |"Click"| JobAssignmentPopup["Job Assignment Popup"]
+    JobAssignmentPopup --> SelectJob["Select Job/Service Request"]
+    JobAssignmentPopup --> SetPriority["Set Priority Level"]
+    JobAssignmentPopup --> SetDeadline["Set Deadline"]
+    JobAssignmentPopup --> AssignButton["Assign Button"]
+    AssignButton --> |"Click"| NotifyTechnician["Notify Technician"]
+    
+    AdminOnlyFeatures --> PerformanceTracking["Performance Tracking"]
+    PerformanceTracking --> TrackMetrics["Track Metrics Dashboard"]
+    TrackMetrics --> JobsCompleted["Jobs Completed"]
+    TrackMetrics --> CustomerSatisfaction["Customer Satisfaction"]
+    TrackMetrics --> AvgCompletionTime["Average Completion Time"]
+    
+    AdminOnlyFeatures --> ScheduleManagement["Schedule Management"]
+    ScheduleManagement --> ViewSchedule["View Technician Schedule"]
+    ScheduleManagement --> ModifySchedule["Modify Schedule"]
+    ModifySchedule --> |"Click"| SchedulePopup["Schedule Modification Popup"]
+    SchedulePopup --> SetWorkingHours["Set Working Hours"]
+    SchedulePopup --> BlockTimeOff["Block Time Off"]
+    SchedulePopup --> SaveSchedule["Save Schedule"]
+    
+    %% Integration with Service Requests
+    TechDashboardFeatures --> ServiceIntegration[Service Integration]
+    ServiceIntegration --> ActiveRequests["Active Service Requests"]
+    ServiceIntegration --> CurrentAssignments["Current Assignments"]
+    ServiceIntegration --> UpcomingJobs["Upcoming Jobs"]
+    CurrentAssignments --> |"Click"| AssignmentDetails["Assignment Details Popup"]
+    AssignmentDetails --> VehicleInfo["Vehicle Information"]
+    AssignmentDetails --> ServiceRequired["Service Required"]
+    AssignmentDetails --> CustomerInfo["Customer Information"]
+    AssignmentDetails --> UpdateProgressButton["Update Progress Button"]
+    UpdateProgressButton --> |"Click"| ProgressUpdatePopup["Progress Update Popup"]
+    ProgressUpdatePopup --> SelectStatus["Select Status"]
+    ProgressUpdatePopup --> AddNotes["Add Notes"]
+    ProgressUpdatePopup --> UploadPhotos["Upload Photos"]
+    ProgressUpdatePopup --> SaveUpdateButton["Save Update"]
+    
+    %% Add New Technician (Admin Only)
+    AdminOnlyFeatures --> AddTechnician["Add New Technician"]
+    AddTechnician --> |"Click"| NewTechForm["New Technician Form"]
+    NewTechForm --> EnterPersonalInfo["Enter Personal Info"]
+    NewTechForm --> EnterJobTitle["Enter Job Title"]
+    NewTechForm --> UploadProfilePhoto["Upload Profile Photo"]
+    NewTechForm --> EnterBio["Enter Bio/Experience"]
+    NewTechForm --> SelectSkills["Select Skills/Specialties"]
+    NewTechForm --> SetAccess["Set System Access Level"]
+    NewTechForm --> SaveNewTech["Save New Technician"]
+    
+    %% Edit Technician Details (Admin Only)
+    AdminOnlyFeatures --> EditTechnician["Edit Technician"]
+    EditTechnician --> |"Click"| SelectTechToEdit["Select Technician to Edit"]
+    SelectTechToEdit --> |"Click"| EditTechForm["Edit Technician Form"]
+    EditTechForm --> UpdateInfo["Update Information"]
+    EditTechForm --> UpdateSkills["Update Skills"]
+    EditTechForm --> UpdateAccess["Update Access Level"]
+    EditTechForm --> SaveChanges["Save Changes"]
+    
+    %% Deactivate Technician (Admin Only)
+    AdminOnlyFeatures --> DeactivateTechnician["Deactivate Technician"]
+    DeactivateTechnician --> |"Click"| SelectTechToDeactivate["Select Technician to Deactivate"]
+    SelectTechToDeactivate --> |"Click"| DeactivateConfirm["Deactivation Confirmation"]
+    DeactivateConfirm --> ConfirmDeactivate["Confirm Deactivation"]
+    DeactivateConfirm --> CancelDeactivate["Cancel Deactivation"]
+    
+    %% Style Definitions
+    classDef primary fill:#2563eb,stroke:#1e40af,color:white
+    classDef secondary fill:#3b82f6,stroke:#2563eb,color:white
+    classDef decision fill:#dbeafe,stroke:#3b82f6,color:black
+    classDef action fill:#10b981,stroke:#047857,color:white
+    classDef popup fill:#34d399,stroke:#10b981,color:black
+    
+    %% Apply Styles
+    class Dashboard primary
+    class MainNav,TechDashboardFeatures,ProfileDetails,FeaturedCriteria,SearchOptions decision
+    class Technicians,TechniciansDashboard secondary
+    class SearchFilter,TechnicianList,TechnicianProfile,FeaturedTechnicians,ServiceIntegration,AdminOnlyFeatures secondary
+    class AssignmentDashboard,PerformanceTracking,ScheduleManagement,AddTechnician,EditTechnician,DeactivateTechnician action
+    class JobAssignmentPopup,SchedulePopup,AssignmentDetails,ProgressUpdatePopup,NewTechForm,EditTechForm,DeactivateConfirm,InternalMessaging popup

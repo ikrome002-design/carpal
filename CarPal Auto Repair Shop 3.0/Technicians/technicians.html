@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technicians - CarPal by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="technicians.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Dashboard/dashboard.html">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Random Logo/logo.png"
+                        alt="CarPal by Citrus Logo" class="logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Dashboard/dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Vehicle Check-In/check_in.html">
+                            <i class="fas fa-car"></i>
+                            <span>Vehicle Check-In</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Service Hub/service_hub.html">
+                            <i class="fas fa-wrench"></i>
+                            <span>Service Hub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Billings & Payments/billings.html">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billing & Payments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Vehicle History/history.html">
+                            <i class="fas fa-history"></i>
+                            <span>Vehicle History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Inventory/inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Messaging\messaging.html">
+                            <i class="fas fa-comments"></i> <span>Messaging</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Technicians\technicians.html">
+                            <i class="fas fa-users-cog"></i> <span>Technicians</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Vehicle Check-Out\check_out.html">
+                            <i class="fas fa-car-side"></i> <span>Vehicle Check-Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Top Bar with Search and User Actions -->
+            <div class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search technicians...">
+                </div>
+                <div class="user-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                        <div class="notifications-dropdown">
+                            <h3>Notifications</h3>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="Profile">
+                                <div class="notification-content">
+                                    <p>John Smith has completed the brake service for vehicle #KDG458Y</p>
+                                    <span class="notification-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="Profile">
+                                <div class="notification-content">
+                                    <p>Mary Johnson has requested additional parts for engine repair</p>
+                                    <span class="notification-time">5 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="Profile">
+                                <div class="notification-content">
+                                    <p>New technician Sarah Davis has been added to the system</p>
+                                    <span class="notification-time">Yesterday</span>
+                                </div>
+                            </div>
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Notifications\notifications.html"
+                                class="view-all">View All Notifications</a>
+                        </div>
+                    </div>
+                    <div class="user-profile">
+                        <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                            alt="User Profile">
+                        <div class="profile-dropdown">
+                            <div class="profile-header">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-64.png"
+                                    alt="Profile">
+                                <div class="profile-info">
+                                    <h4>Admin User</h4>
+                                    <p>admin@carpal.com</p>
+                                </div>
+                            </div>
+                            <ul class="profile-menu">
+                                <li>
+                                    <a
+                                        href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Settings/settings.html">
+                                        <i class="fas fa-cog"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="C:/Users/nderu/Documents/Development/Product/CarPal/Landing Page/CarPal Auto Repair Shop/landing_page.html">
+                                        <i class="fas fa-sign-out-alt"></i> Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technicians Dashboard Content -->
+            <div class="dashboard-content">
+                <h1>Technicians</h1>
+
+                <!-- Stats Cards -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>14</h3>
+                            <p>Total Technicians</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>86%</h3>
+                            <p>Availability Rate</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>23</h3>
+                            <p>Active Assignments</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>4.8</h3>
+                            <p>Average Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search & Filter Section -->
+                <div class="quick-actions">
+                    <h2>Search & Filter</h2>
+                    <div class="search-filter-section">
+                        <div class="filter-group">
+                            <label for="skill-filter">Filter by Skill/Specialty:</label>
+                            <select id="skill-filter">
+                                <option value="">All Skills</option>
+                                <option value="engine">Engine Specialist</option>
+                                <option value="electrical">Electrical Systems</option>
+                                <option value="brakes">Brake Specialist</option>
+                                <option value="transmission">Transmission</option>
+                                <option value="diagnostic">Diagnostics</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="department-filter">Filter by Department:</label>
+                            <select id="department-filter">
+                                <option value="">All Departments</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="repair">Repair</option>
+                                <option value="diagnostics">Diagnostics</option>
+                                <option value="bodywork">Body Work</option>
+                            </select>
+                        </div>
+                        <button class="action-btn" id="apply-filters">
+                            <i class="fas fa-filter"></i>Apply Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Technicians List -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Technicians List</h2>
+                        <a href="#" class="view-all-link">View All</a>
+                    </div>
+                    <div class="panel-content">
+                        <div class="technicians-list">
+                            <!-- Technician cards will be dynamically generated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Technicians -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Featured Technicians</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="featured-technicians">
+                            <div class="featured-tech-card">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-80.png"
+                                    alt="John Smith">
+                                <h3>John Smith</h3>
+                                <p class="tech-title">Master Technician</p>
+                                <div class="tech-specialties">
+                                    <span>Engine Specialist</span>
+                                    <span>Diagnostics</span>
+                                </div>
+                                <div class="tech-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.9</span>
+                                </div>
+                                <button class="view-profile-btn">View Profile</button>
+                            </div>
+                            <div class="featured-tech-card">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-80.png"
+                                    alt="Sarah Davis">
+                                <h3>Sarah Davis</h3>
+                                <p class="tech-title">Senior Technician</p>
+                                <div class="tech-specialties">
+                                    <span>Electrical Systems</span>
+                                    <span>Hybrid Vehicles</span>
+                                </div>
+                                <div class="tech-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                                <button class="view-profile-btn">View Profile</button>
+                            </div>
+                            <div class="featured-tech-card">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-80.png"
+                                    alt="Michael Chen">
+                                <h3>Michael Chen</h3>
+                                <p class="tech-title">Transmission Specialist</p>
+                                <div class="tech-specialties">
+                                    <span>Transmission</span>
+                                    <span>Drivetrain</span>
+                                </div>
+                                <div class="tech-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.2</span>
+                                </div>
+                                <button class="view-profile-btn">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Integration -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Current Assignments</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="data-table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Technician</th>
+                                        <th>Vehicle</th>
+                                        <th>Service</th>
+                                        <th>Start Time</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>John Smith</td>
+                                        <td>Toyota Camry (KBX-234J)</td>
+                                        <td>Brake Service</td>
+                                        <td>Today, 09:15 AM</td>
+                                        <td><span class="status-badge in-progress">In Progress</span></td>
+                                        <td>
+                                            <a href="#" class="action-link view-details">View</a>
+                                            <a href="#" class="action-link update-status">Update</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sarah Davis</td>
+                                        <td>Honda CR-V (KCY-567K)</td>
+                                        <td>Electrical Diagnostics</td>
+                                        <td>Today, 10:30 AM</td>
+                                        <td><span class="status-badge in-progress">In Progress</span></td>
+                                        <td>
+                                            <a href="#" class="action-link view-details">View</a>
+                                            <a href="#" class="action-link update-status">Update</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Chen</td>
+                                        <td>Ford F-150 (KDL-891M)</td>
+                                        <td>Transmission Repair</td>
+                                        <td>Today, 08:00 AM</td>
+                                        <td><span class="status-badge in-service">In Service</span></td>
+                                        <td>
+                                            <a href="#" class="action-link view-details">View</a>
+                                            <a href="#" class="action-link update-status">Update</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maria Rodriguez</td>
+                                        <td>BMW X5 (KAJ-111P)</td>
+                                        <td>Oil Change & Inspection</td>
+                                        <td>Today, 11:45 AM</td>
+                                        <td><span class="status-badge approved">Completed</span></td>
+                                        <td>
+                                            <a href="#" class="action-link view-details">View</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Only Features -->
+                <div class="admin-features">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Admin Actions</h2>
+                        </div>
+                        <div class="panel-content">
+                            <div class="action-buttons">
+                                <button class="action-btn" id="assign-jobs-btn">
+                                    <i class="fas fa-tasks"></i>Assign Jobs
+                                </button>
+                                <button class="action-btn" id="schedule-management-btn">
+                                    <i class="fas fa-calendar-alt"></i>Manage Schedules
+                                </button>
+                                <button class="action-btn" id="add-technician-btn">
+                                    <i class="fas fa-user-plus"></i>Add New Technician
+                                </button>
+                                <button class="action-btn" id="edit-technician-btn">
+                                    <i class="fas fa-user-edit"></i>Edit Technician
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+            </div>
+            <div class="copyright">
+                © 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Technician Profile Modal -->
+    <div class="modal" id="technician-profile-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="technician-profile-details">
+                <div class="profile-header">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-100-2.png"
+                        alt="Technician Profile" id="modal-tech-img">
+                    <div>
+                        <h2 id="modal-tech-name">Technician Name</h2>
+                        <p id="modal-tech-title">Technician Title</p>
+                    </div>
+                </div>
+                <div class="profile-body">
+                    <div class="info-section">
+                        <h3>Experience Summary</h3>
+                        <p id="modal-tech-experience">Experience details will appear here.</p>
+                    </div>
+                    <div class="info-section">
+                        <h3>Skills & Specialties</h3>
+                        <div id="modal-tech-skills" class="skills-container">
+                            <!-- Skills will be added dynamically -->
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <h3>Performance Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <span class="metric-value" id="modal-tech-completed">0</span>
+                                <span class="metric-label">Jobs Completed</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value" id="modal-tech-satisfaction">0%</span>
+                                <span class="metric-label">Satisfaction Rate</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value" id="modal-tech-time">0h</span>
+                                <span class="metric-label">Avg. Completion Time</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="action-btn" id="contact-technician-btn">
+                        <i class="fas fa-envelope"></i>Contact
+                    </button>
+                    <button class="action-btn" id="view-history-btn">
+                        <i class="fas fa-history"></i>Service History
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Assignment Modal -->
+    <div class="modal" id="job-assignment-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Assign Job</h2>
+            <form id="job-assignment-form">
+                <div class="form-group">
+                    <label for="select-job">Select Job/Service Request:</label>
+                    <select id="select-job" required>
+                        <option value="">Select a job...</option>
+                        <option value="job1">Toyota Camry - Oil Change & Inspection</option>
+                        <option value="job2">Honda Civic - Brake Replacement</option>
+                        <option value="job3">Ford F-150 - Transmission Check</option>
+                        <option value="job4">BMW X3 - Electrical System Diagnostics</option>
+                        <option value="job5">Tesla Model 3 - Battery Inspection</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="select-technician">Assign to Technician:</label>
+                    <select id="select-technician" required>
+                        <option value="">Select a technician...</option>
+                        <!-- Will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="priority-level">Priority Level:</label>
+                    <select id="priority-level" required>
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="deadline">Deadline:</label>
+                    <input type="datetime-local" id="deadline" required>
+                </div>
+                <div class="form-group">
+                    <label for="assignment-notes">Notes:</label>
+                    <textarea id="assignment-notes" rows="3"
+                        placeholder="Add any special instructions or notes..."></textarea>
+                </div>
+                <button type="submit" class="action-btn">
+                    <i class="fas fa-paper-plane"></i>Assign Job
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add New Technician Modal -->
+    <div class="modal" id="add-technician-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Technician</h2>
+            <form id="add-technician-form">
+                <div class="form-group">
+                    <label for="tech-first-name">First Name:</label>
+                    <input type="text" id="tech-first-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="tech-last-name">Last Name:</label>
+                    <input type="text" id="tech-last-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="tech-job-title">Job Title:</label>
+                    <input type="text" id="tech-job-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="tech-email">Email:</label>
+                    <input type="email" id="tech-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="tech-phone">Phone:</label>
+                    <input type="tel" id="tech-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="tech-department">Department:</label>
+                    <select id="tech-department" required>
+                        <option value="">Select a department...</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="repair">Repair</option>
+                        <option value="diagnostics">Diagnostics</option>
+                        <option value="bodywork">Body Work</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tech-skills">Skills/Specialties:</label>
+                    <div class="skills-selector">
+                        <div class="skill-checkbox">
+                            <input type="checkbox" id="skill-engine" name="skills" value="engine">
+                            <label for="skill-engine">Engine Specialist</label>
+                        </div>
+                        <div class="skill-checkbox">
+                            <input type="checkbox" id="skill-electrical" name="skills" value="electrical">
+                            <label for="skill-electrical">Electrical Systems</label>
+                        </div>
+                        <div class="skill-checkbox">
+                            <input type="checkbox" id="skill-brakes" name="skills" value="brakes">
+                            <label for="skill-brakes">Brake Specialist</label>
+                        </div>
+                        <div class="skill-checkbox">
+                            <input type="checkbox" id="skill-transmission" name="skills" value="transmission">
+                            <label for="skill-transmission">Transmission</label>
+                        </div>
+                        <div class="skill-checkbox">
+                            <input type="checkbox" id="skill-diagnostic" name="skills" value="diagnostic">
+                            <label for="skill-diagnostic">Diagnostics</label>
+                        </div>
+                        <div class="skill-checkbox">
+                            <input type="checkbox" id="skill-hybrid" name="skills" value="hybrid">
+                            <label for="skill-hybrid">Hybrid/Electric Vehicles</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tech-experience">Experience Summary:</label>
+                    <textarea id="tech-experience" rows="4" placeholder="Enter experience details..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tech-profile-photo">Profile Photo:</label>
+                    <input type="file" id="tech-profile-photo" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="tech-access-level">System Access Level:</label>
+                    <select id="tech-access-level" required>
+                        <option value="technician">Technician (Basic Access)</option>
+                        <option value="senior">Senior Technician</option>
+                        <option value="manager">Manager</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="action-btn">
+                    <i class="fas fa-user-plus"></i>Add Technician
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Schedule Management Modal -->
+    <div class="modal" id="schedule-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Schedule Management</h2>
+            <div class="schedule-content">
+                <div class="form-group">
+                    <label for="schedule-technician">Select Technician:</label>
+                    <select id="schedule-technician" required>
+                        <option value="">Select a technician...</option>
+                        <!-- Will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="calendar-container">
+                    <!-- Calendar will be rendered here -->
+                    <div class="calendar-placeholder">
+                        <div class="loader"></div>
+                        <p>Loading calendar...</p>
+                    </div>
+                </div>
+                <div class="schedule-form">
+                    <h3>Add Time Off / Block Schedule</h3>
+                    <div class="form-group">
+                        <label for="time-off-start">Start Date/Time:</label>
+                        <input type="datetime-local" id="time-off-start" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time-off-end">End Date/Time:</label>
+                        <input type="datetime-local" id="time-off-end" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time-off-reason">Reason:</label>
+                        <select id="time-off-reason" required>
+                            <option value="vacation">Vacation</option>
+                            <option value="sick">Sick Leave</option>
+                            <option value="training">Training</option>
+                            <option value="personal">Personal</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button class="action-btn" id="save-schedule-btn">
+                        <i class="fas fa-save"></i>Save Schedule
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internal Messaging Modal -->
+    <div class="modal" id="messaging-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Send Message</h2>
+            <form id="messaging-form">
+                <div class="form-group">
+                    <label for="message-recipient">To:</label>
+                    <input type="text" id="message-recipient" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="message-subject">Subject:</label>
+                    <input type="text" id="message-subject" required placeholder="Enter subject...">
+                </div>
+                <div class="form-group">
+                    <label for="message-content">Message:</label>
+                    <textarea id="message-content" rows="6" required placeholder="Type your message here..."></textarea>
+                </div>
+                <button type="submit" class="action-btn">
+                    <i class="fas fa-paper-plane"></i>Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Progress Update Modal -->
+    <div class="modal" id="progress-update-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Update Progress</h2>
+            <form id="progress-update-form">
+                <div class="form-group">
+                    <label for="service-info">Service:</label>
+                    <input type="text" id="service-info" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="status-update">Status Update:</label>
+                    <select id="status-update" required>
+                        <option value="">Select status...</option>
+                        <option value="not-started">Not Started</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="waiting-parts">Waiting for Parts</option>
+                        <option value="on-hold">On Hold</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="progress-notes">Notes:</label>
+                    <textarea id="progress-notes" rows="4"
+                        placeholder="Add notes about the work performed or issues encountered..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="progress-photos">Upload Photos (Optional):</label>
+                    <input type="file" id="progress-photos" multiple accept="image/*">
+                </div>
+                <button type="submit" class="action-btn">
+                    <i class="fas fa-save"></i>Save Update
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Link -->
+    <script src="technicians.js"></script>
+</body>
+
+</html>

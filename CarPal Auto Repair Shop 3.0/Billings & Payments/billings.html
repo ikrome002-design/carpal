@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billings & Payments - CarPal by Citrus</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="billings.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Container -->
+            <div class="logo-container">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                        alt="CarPal Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul>
+                    <!-- Dashboard -->
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Dashboard\dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Vehicle Check-In -->
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Vehicle Check-In\check_in.html">
+                            <i class="fas fa-car-side"></i>
+                            <span>Vehicle Check-In</span>
+                        </a>
+                    </li>
+
+                    <!-- Service Hub -->
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Service Hub\service_hub.html">
+                            <i class="fas fa-tools"></i>
+                            <span>Service Hub</span>
+                        </a>
+                    </li>
+
+                    <!-- Billings & Payments (Active) -->
+                    <li class="active">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Billings & Payments\billings.html">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+
+                    <!-- Vehicle History -->
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Vehicle History\history.html">
+                            <i class="fas fa-history"></i>
+                            <span>Vehicle History</span>
+                        </a>
+                    </li>
+
+                    <!-- Inventory -->
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Inventory\inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+
+                    <!-- Messaging -->
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Messaging\messaging.html">
+                            <i class="fas fa-comments"></i>
+                            <span>Messaging</span>
+                        </a>
+                    </li>
+
+                    <!-- Technicians -->
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Technicians\technicians.html">
+                            <i class="fas fa-user-cog"></i>
+                            <span>Technicians</span>
+                        </a>
+                    </li>
+
+                    <!-- Vehicle Check-Out -->
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Vehicle Check-Out\check_out.html">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Vehicle Check-Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar with Search and User Actions -->
+            <div class="top-bar">
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search invoices, customers, payments...">
+                </div>
+
+                <!-- User Actions -->
+                <div class="user-actions">
+                    <!-- Notifications -->
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+
+                        <!-- Notifications Dropdown -->
+                        <div class="notifications-dropdown">
+                            <h3>Notifications</h3>
+
+                            <!-- Payment Alert -->
+                            <div class="notification-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="User">
+                                <div class="notification-content">
+                                    <p><strong>Payment Alert:</strong> Invoice #2025-001 paid via M-Pesa</p>
+                                    <span class="notification-time">5 minutes ago</span>
+                                </div>
+                            </div>
+
+                            <!-- Invoice Reminder -->
+                            <div class="notification-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="User">
+                                <div class="notification-content">
+                                    <p><strong>Invoice Reminder:</strong> 3 invoices are overdue</p>
+                                    <span class="notification-time">1 hour ago</span>
+                                </div>
+                            </div>
+
+                            <!-- System Update -->
+                            <div class="notification-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="User">
+                                <div class="notification-content">
+                                    <p><strong>System Update:</strong> New billing features available</p>
+                                    <span class="notification-time">2 hours ago</span>
+                                </div>
+                            </div>
+
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Notifications\notifications.html"
+                                class="view-all">View All Notifications</a>
+                        </div>
+                    </div>
+
+                    <!-- User Profile -->
+                    <div class="user-profile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile">
+
+                        <!-- Profile Dropdown -->
+                        <div class="profile-dropdown">
+                            <div class="profile-header">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                    alt="User Profile">
+                                <div class="profile-info">
+                                    <h4>John Mwangi</h4>
+                                    <p>Billing Manager</p>
+                                </div>
+                            </div>
+                            <ul class="profile-menu">
+                                <li>
+                                    <a
+                                        href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Settings\settings.html">
+                                        <i class="fas fa-cog"></i>Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\CarPal Auto Repair Shop\landing_page.html">
+                                        <i class="fas fa-sign-out-alt"></i>Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Billing & Payments Content -->
+            <div class="service-hub-content">
+                <h1>Billing & Payments</h1>
+
+                <!-- Main Tabs Navigation -->
+                <div class="communication-tabs">
+                    <button class="tab-btn active" data-tab="customer-billings">Customer Billings</button>
+                    <button class="tab-btn" data-tab="carpal-billings">CarPal Billings</button>
+                    <button class="tab-btn" data-tab="refunds">Refunds</button>
+                    <button class="tab-btn" data-tab="reports">Reports & Analytics</button>
+                    <button class="tab-btn" data-tab="payment-history">Payment History</button>
+                </div>
+
+                <!-- Customer Billings Tab Content -->
+                <div class="tab-pane active" id="customer-billings">
+                    <!-- Summary Cards -->
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-file-invoice"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>245</h3>
+                                <p>Total Invoices</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>KES. 2,456,789</h3>
+                                <p>Total Amount Billed</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>KES. 2,150,000</h3>
+                                <p>Total Payments Received</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>KES. 306,789</h3>
+                                <p>Outstanding Amount</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Create New Invoice Button -->
+                    <div class="job-actions">
+                        <button class="btn-primary" onclick="showCreateInvoiceForm()">
+                            <i class="fas fa-plus"></i>Create New Invoice
+                        </button>
+
+                        <!-- Filter Options -->
+                        <div class="filter-options">
+                            <select>
+                                <option>All Invoices</option>
+                                <option>Paid</option>
+                                <option>Unpaid</option>
+                                <option>Overdue</option>
+                            </select>
+                            <select>
+                                <option>Last 30 Days</option>
+                                <option>Last 7 Days</option>
+                                <option>This Month</option>
+                                <option>Last Month</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Recent Invoices Table -->
+                    <div class="recent-messages">
+                        <h3>Recent Invoices</h3>
+                        <table class="message-table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice #</th>
+                                    <th>Customer</th>
+                                    <th>Vehicle</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Sample Invoice Row 1 -->
+                                <tr>
+                                    <td>#2025-001</td>
+                                    <td>Mary Wanjiku</td>
+                                    <td>KDB 456X</td>
+                                    <td>KES. 45,000</td>
+                                    <td class="status-delivered">Paid</td>
+                                    <td>2025-01-15</td>
+                                    <td>
+                                        <button class="btn-view-message" onclick="viewInvoice('2025-001')">View</button>
+                                        <button class="btn-edit-scheduled"
+                                            onclick="emailInvoice('2025-001')">Email</button>
+                                    </td>
+                                </tr>
+                                <!-- Sample Invoice Row 2 -->
+                                <tr>
+                                    <td>#2025-002</td>
+                                    <td>James Ochieng</td>
+                                    <td>KCA 789P</td>
+                                    <td>KES. 23,500</td>
+                                    <td class="status-failed">Unpaid</td>
+                                    <td>2025-01-14</td>
+                                    <td>
+                                        <button class="btn-view-message" onclick="viewInvoice('2025-002')">View</button>
+                                        <button class="btn-edit-scheduled" onclick="sendReminder('2025-002')">Send
+                                            Reminder</button>
+                                    </td>
+                                </tr>
+                                <!-- Sample Invoice Row 3 -->
+                                <tr>
+                                    <td>#2025-003</td>
+                                    <td>Peter Kamau</td>
+                                    <td>KBZ 321M</td>
+                                    <td>KES. 67,800</td>
+                                    <td class="status-failed">Overdue</td>
+                                    <td>2025-01-10</td>
+                                    <td>
+                                        <button class="btn-view-message" onclick="viewInvoice('2025-003')">View</button>
+                                        <button class="btn-cancel-scheduled" onclick="sendReminder('2025-003')">Send
+                                            Reminder</button>
+                                    </td>
+                                </tr>
+                                <!-- Sample Invoice Row 4 -->
+                                <tr>
+                                    <td>#2025-004</td>
+                                    <td>Grace Njeri</td>
+                                    <td>KDD 654Y</td>
+                                    <td>KES. 12,000</td>
+                                    <td class="status-delivered">Paid</td>
+                                    <td>2025-01-12</td>
+                                    <td>
+                                        <button class="btn-view-message" onclick="viewInvoice('2025-004')">View</button>
+                                        <button class="btn-edit-scheduled"
+                                            onclick="downloadInvoice('2025-004')">Download</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Create Invoice Form (Initially Hidden) -->
+                    <div class="service-section" id="create-invoice-form">
+                        <div class="section-header">
+                            <h2>Create New Invoice</h2>
+                            <button class="btn-back" onclick="hideCreateInvoiceForm()">
+                                <i class="fas fa-arrow-left"></i>Back to Invoices
+                            </button>
+                        </div>
+
+                        <form class="form-container">
+                            <!-- Vehicle Selection -->
+                            <h3>Vehicle Selection</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Search Method</label>
+                                    <select id="search-method">
+                                        <option>Search by License Plate</option>
+                                        <option>Select from History</option>
+                                        <option>Manual Entry</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>License Plate / Vehicle ID</label>
+                                    <input type="text" placeholder="e.g., KDB 456X">
+                                </div>
+                            </div>
+
+                            <!-- Customer Information -->
+                            <h3>Customer Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Customer Name</label>
+                                    <input type="text" placeholder="Enter customer name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" placeholder="0722 XXX XXX">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" placeholder="customer@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Vehicle Details</label>
+                                    <input type="text" placeholder="Make, Model, Year">
+                                </div>
+                            </div>
+
+                            <!-- Service Details -->
+                            <h3>Service Details</h3>
+                            <div id="service-items">
+                                <!-- Service Item Row -->
+                                <div class="form-row service-item-row">
+                                    <div class="form-group" style="flex: 2;">
+                                        <label>Service Description</label>
+                                        <input type="text" placeholder="e.g., Engine Oil Change">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Quantity</label>
+                                        <input type="number" value="1" min="1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Unit Price (KES.)</label>
+                                        <input type="number" placeholder="0.00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Line Total (KES.)</label>
+                                        <input type="number" placeholder="0.00" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-secondary" onclick="addServiceItem()">
+                                <i class="fas fa-plus"></i>Add Service Item
+                            </button>
+
+                            <!-- Total Calculation -->
+                            <div class="info-section" style="margin-top: 20px;">
+                                <h4>Total Calculation</h4>
+                                <div class="info-grid">
+                                    <span class="info-label">Subtotal:</span>
+                                    <span>KES. 0.00</span>
+                                    <span class="info-label">Service Charge (10%):</span>
+                                    <span>KES. 0.00</span>
+                                    <span class="info-label"><strong>Total Amount:</strong></span>
+                                    <span><strong>KES. 0.00</strong></span>
+                                </div>
+                            </div>
+
+                            <!-- Payment Details -->
+                            <h3>Payment Details</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Payment Method</label>
+                                    <select>
+                                        <option>M-Pesa</option>
+                                        <option>Cash</option>
+                                        <option>Bank Transfer</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Payment Due Date</label>
+                                    <input type="date">
+                                </div>
+                            </div>
+
+                            <!-- Invoice Options -->
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="send-to-customer">
+                                <label for="send-to-customer">Send invoice to customer via email</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="mark-as-paid">
+                                <label for="mark-as-paid">Mark as paid now</label>
+                            </div>
+
+                            <!-- Form Actions -->
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary"
+                                    onclick="hideCreateInvoiceForm()">Cancel</button>
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-file-invoice"></i>Generate Invoice
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- CarPal Billings Tab Content -->
+                <div class="tab-pane" id="carpal-billings">
+                    <!-- Summary Cards -->
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-receipt"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>52</h3>
+                                <p>Total Invoices Issued</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-check-double"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>48</h3>
+                                <p>Total Receipts Recorded</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>KES. 245,678</h3>
+                                <p>Total Amount Billed</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>KES. 23,500</h3>
+                                <p>Outstanding Amount</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Weekly Invoice System Info -->
+                    <div class="info-section">
+                        <h4>Weekly Invoice System</h4>
+                        <p>Platform invoices are automatically generated every Monday for the previous week's service
+                            charges. Each invoice includes a detailed breakdown of all transactions processed through
+                            CarPal.</p>
+                    </div>
+
+                    <!-- Platform Invoices Table -->
+                    <div class="recent-messages">
+                        <h3>CarPal Platform Invoices</h3>
+                        <table class="message-table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice #</th>
+                                    <th>Period</th>
+                                    <th>Transactions</th>
+                                    <th>Service Fees</th>
+                                    <th>Status</th>
+                                    <th>Due Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Platform Invoice Row 1 -->
+                                <tr>
+                                    <td>#CP-2025-W03</td>
+                                    <td>Jan 13-19, 2025</td>
+                                    <td>23</td>
+                                    <td>KES. 12,500</td>
+                                    <td class="status-failed">Pending</td>
+                                    <td>2025-01-26</td>
+                                    <td>
+                                        <button class="btn-view-message"
+                                            onclick="viewPlatformInvoice('CP-2025-W03')">View</button>
+                                        <button class="btn-primary" onclick="payNow('CP-2025-W03')">Pay Now</button>
+                                    </td>
+                                </tr>
+                                <!-- Platform Invoice Row 2 -->
+                                <tr>
+                                    <td>#CP-2025-W02</td>
+                                    <td>Jan 6-12, 2025</td>
+                                    <td>19</td>
+                                    <td>KES. 9,800</td>
+                                    <td class="status-delivered">Paid</td>
+                                    <td>2025-01-19</td>
+                                    <td>
+                                        <button class="btn-view-message"
+                                            onclick="viewPlatformInvoice('CP-2025-W02')">View</button>
+                                        <button class="btn-edit-scheduled"
+                                            onclick="downloadReceipt('CP-2025-W02')">Receipt</button>
+                                    </td>
+                                </tr>
+                                <!-- Platform Invoice Row 3 -->
+                                <tr>
+                                    <td>#CP-2025-W01</td>
+                                    <td>Dec 30-Jan 5, 2025</td>
+                                    <td>15</td>
+                                    <td>KES. 7,200</td>
+                                    <td class="status-delivered">Paid</td>
+                                    <td>2025-01-12</td>
+                                    <td>
+                                        <button class="btn-view-message"
+                                            onclick="viewPlatformInvoice('CP-2025-W01')">View</button>
+                                        <button class="btn-edit-scheduled"
+                                            onclick="downloadReceipt('CP-2025-W01')">Receipt</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- M-Pesa Payment Instructions -->
+                    <div class="info-section" style="margin-top: 20px;">
+                        <h4>M-Pesa Payment Instructions</h4>
+                        <div class="info-grid">
+                            <span class="info-label">Paybill Number:</span>
+                            <span><strong>522123</strong></span>
+                            <span class="info-label">Account Number:</span>
+                            <span>Use Invoice Number (e.g., CP-2025-W03)</span>
+                            <span class="info-label">Payment Confirmation:</span>
+                            <span>Automatic verification within 2 minutes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Refunds Tab Content -->
+                <div class="tab-pane" id="refunds">
+                    <!-- Summary Cards -->
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>8</h3>
+                                <p>Total Refunds Issued</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-money-bill-transfer"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>KES. 45,600</h3>
+                                <p>Total Refund Amount</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>KES. 5,700</h3>
+                                <p>Average Refund Amount</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>1.8%</h3>
+                                <p>Refund Percentage</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Refund Request Button -->
+                    <div class="job-actions">
+                        <button class="btn-primary" onclick="showRefundForm()">
+                            <i class="fas fa-plus"></i>New Refund Request
+                        </button>
+
+                        <!-- Filter Options -->
+                        <div class="filter-options">
+                            <select>
+                                <option>All Requests</option>
+                                <option>Pending</option>
+                                <option>Processed</option>
+                                <option>Rejected</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Refund Requests List -->
+                    <div class="recent-messages">
+                        <h3>Refund Requests</h3>
+                        <table class="message-table">
+                            <thead>
+                                <tr>
+                                    <th>Request ID</th>
+                                    <th>Customer</th>
+                                    <th>Invoice #</th>
+                                    <th>Amount</th>
+                                    <th>Reason</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Refund Request Row 1 -->
+                                <tr>
+                                    <td>#REF-001</td>
+                                    <td>Alice Muthoni</td>
+                                    <td>#2025-005</td>
+                                    <td>KES. 3,500</td>
+                                    <td>Service Not Completed</td>
+                                    <td style="color: orange;">Pending</td>
+                                    <td>2025-01-18</td>
+                                    <td>
+                                        <button class="btn-view-message"
+                                            onclick="viewRefundRequest('REF-001')">View</button>
+                                        <button class="btn-primary" onclick="approveRefund('REF-001')">Approve</button>
+                                        <button class="btn-cancel-scheduled"
+                                            onclick="rejectRefund('REF-001')">Reject</button>
+                                    </td>
+                                </tr>
+                                <!-- Refund Request Row 2 -->
+                                <tr>
+                                    <td>#REF-002</td>
+                                    <td>David Omondi</td>
+                                    <td>#2025-003</td>
+                                    <td>KES. 1,200</td>
+                                    <td>Overcharge</td>
+                                    <td class="status-delivered">Processed</td>
+                                    <td>2025-01-15</td>
+                                    <td>
+                                        <button class="btn-view-message"
+                                            onclick="viewRefundRequest('REF-002')">View</button>
+                                        <button class="btn-edit-scheduled">Receipt</button>
+                                    </td>
+                                </tr>
+                                <!-- Refund Request Row 3 -->
+                                <tr>
+                                    <td>#REF-003</td>
+                                    <td>Susan Wambui</td>
+                                    <td>#2024-998</td>
+                                    <td>KES. 8,000</td>
+                                    <td>Service Unsatisfactory</td>
+                                    <td class="status-failed">Rejected</td>
+                                    <td>2025-01-10</td>
+                                    <td>
+                                        <button class="btn-view-message"
+                                            onclick="viewRefundRequest('REF-003')">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Refund Request Form (Initially Hidden) -->
+                    <div class="service-section" id="refund-request-form" style="display: none;">
+                        <div class="section-header">
+                            <h2>New Refund Request</h2>
+                            <button class="btn-back" onclick="hideRefundForm()">
+                                <i class="fas fa-arrow-left"></i>Back to Refunds
+                            </button>
+                        </div>
+
+                        <form class="form-container">
+                            <h3>Customer Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Customer Name</label>
+                                    <input type="text" placeholder="Enter customer name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Invoice Reference</label>
+                                    <input type="text" placeholder="e.g., #2025-001" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Refund Amount (KES.)</label>
+                                    <input type="number" placeholder="0.00" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Reason for Refund</label>
+                                    <select required>
+                                        <option value="">Select a reason</option>
+                                        <option>Service Unsatisfactory</option>
+                                        <option>Overcharge</option>
+                                        <option>Service Not Completed</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Additional Comments</label>
+                                <textarea rows="4"
+                                    placeholder="Provide additional details about the refund request..."></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary" onclick="hideRefundForm()">Cancel</button>
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-paper-plane"></i>Submit Refund Request
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Reports & Analytics Tab Content -->
+                <div class="tab-pane" id="reports">
+                    <h2>Reports & Analytics</h2>
+
+                    <!-- Report Type Selection -->
+                    <div class="job-actions">
+                        <div class="filter-options">
+                            <select id="report-type">
+                                <option>Earnings Report</option>
+                                <option>Payment Trends Report</option>
+                                <option>Outstanding Payments Report</option>
+                                <option>Refund Analysis Report</option>
+                            </select>
+                            <input type="date" placeholder="Start Date">
+                            <input type="date" placeholder="End Date">
+                            <select>
+                                <option>All Customers</option>
+                                <option>Regular Customers</option>
+                                <option>New Customers</option>
+                            </select>
+                            <select>
+                                <option>All Services</option>
+                                <option>Engine Services</option>
+                                <option>Body Work</option>
+                                <option>Electrical</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <button class="btn-primary" onclick="generateReport()">
+                                <i class="fas fa-chart-bar"></i>Generate Report
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Sample Report Display Area -->
+                    <div class="info-section" style="margin-top: 20px;">
+                        <h4>Earnings Report - January 2025</h4>
+                        <div class="stats-row" style="margin: 20px 0;">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>KES. 456,789</h3>
+                                    <p>Total Revenue</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-arrow-trend-up"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>+15%</h3>
+                                    <p>Growth vs Last Month</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>87</h3>
+                                    <p>Unique Customers</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-receipt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>KES. 5,250</h3>
+                                    <p>Average Invoice</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Export Options -->
+                        <div class="form-actions">
+                            <button class="btn-secondary">
+                                <i class="fas fa-file-pdf"></i>Export as PDF
+                            </button>
+                            <button class="btn-secondary">
+                                <i class="fas fa-file-excel"></i>Export as Excel
+                            </button>
+                            <button class="btn-secondary">
+                                <i class="fas fa-file-csv"></i>Export as CSV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment History Tab Content -->
+                <div class="tab-pane" id="payment-history">
+                    <h2>Payment History</h2>
+
+                    <!-- Filter Options -->
+                    <div class="search-filters">
+                        <div class="filter-group">
+                            <input type="text" placeholder="Search by customer, invoice, or reference..."
+                                class="history-search">
+                        </div>
+                        <div class="filter-group">
+                            <div class="date-filter">
+                                <label>From:</label>
+                                <input type="date">
+                            </div>
+                            <div class="date-filter">
+                                <label>To:</label>
+                                <input type="date">
+                            </div>
+                            <select>
+                                <option>All Payment Methods</option>
+                                <option>M-Pesa</option>
+                                <option>Cash</option>
+                                <option>Bank Transfer</option>
+                            </select>
+                            <select>
+                                <option>All Amounts</option>
+                                <option>Below KES. 10,000</option>
+                                <option>KES. 10,000 - 50,000</option>
+                                <option>Above KES. 50,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Payment Records List -->
+                    <div class="history-records">
+                        <table class="records-table">
+                            <thead>
+                                <tr>
+                                    <th>Payment ID</th>
+                                    <th>Date & Time</th>
+                                    <th>Customer</th>
+                                    <th>Invoice #</th>
+                                    <th>Amount</th>
+                                    <th>Method</th>
+                                    <th>Reference</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Payment Record 1 -->
+                                <tr>
+                                    <td>#PAY-2025-0156</td>
+                                    <td>2025-01-18 14:30</td>
+                                    <td>Mary Wanjiku</td>
+                                    <td>#2025-001</td>
+                                    <td>KES. 45,000</td>
+                                    <td>M-Pesa</td>
+                                    <td>QAB7H8K9L2</td>
+                                    <td>
+                                        <button class="btn-view"
+                                            onclick="viewPaymentDetails('PAY-2025-0156')">View</button>
+                                        <button class="btn-view" onclick="printReceipt('PAY-2025-0156')">Print</button>
+                                        <button class="btn-view" onclick="emailReceipt('PAY-2025-0156')">Email</button>
+                                    </td>
+                                </tr>
+                                <!-- Payment Record 2 -->
+                                <tr>
+                                    <td>#PAY-2025-0155</td>
+                                    <td>2025-01-18 11:15</td>
+                                    <td>John Kiprop</td>
+                                    <td>#2025-007</td>
+                                    <td>KES. 23,500</td>
+                                    <td>Cash</td>
+                                    <td>CASH-001</td>
+                                    <td>
+                                        <button class="btn-view"
+                                            onclick="viewPaymentDetails('PAY-2025-0155')">View</button>
+                                        <button class="btn-view" onclick="printReceipt('PAY-2025-0155')">Print</button>
+                                        <button class="btn-view" onclick="emailReceipt('PAY-2025-0155')">Email</button>
+                                    </td>
+                                </tr>
+                                <!-- Payment Record 3 -->
+                                <tr>
+                                    <td>#PAY-2025-0154</td>
+                                    <td>2025-01-17 16:45</td>
+                                    <td>Grace Njeri</td>
+                                    <td>#2025-004</td>
+                                    <td>KES. 12,000</td>
+                                    <td>Bank Transfer</td>
+                                    <td>FT2025017894</td>
+                                    <td>
+                                        <button class="btn-view"
+                                            onclick="viewPaymentDetails('PAY-2025-0154')">View</button>
+                                        <button class="btn-view" onclick="printReceipt('PAY-2025-0154')">Print</button>
+                                        <button class="btn-view" onclick="emailReceipt('PAY-2025-0154')">Email</button>
+                                    </td>
+                                </tr>
+                                <!-- Payment Record 4 -->
+                                <tr>
+                                    <td>#PAY-2025-0153</td>
+                                    <td>2025-01-17 09:20</td>
+                                    <td>Peter Ouko</td>
+                                    <td>#2025-006</td>
+                                    <td>KES. 67,800</td>
+                                    <td>M-Pesa</td>
+                                    <td>QAB4M2N7P9</td>
+                                    <td>
+                                        <button class="btn-view"
+                                            onclick="viewPaymentDetails('PAY-2025-0153')">View</button>
+                                        <button class="btn-view" onclick="printReceipt('PAY-2025-0153')">Print</button>
+                                        <button class="btn-view" onclick="emailReceipt('PAY-2025-0153')">Email</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button class="btn-page" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="btn-page active">1</button>
+                            <button class="btn-page">2</button>
+                            <button class="btn-page">3</button>
+                            <button class="btn-page">4</button>
+                            <button class="btn-page">5</button>
+                            <button class="btn-page">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Invoice Details -->
+    <div class="modal" id="invoice-detail-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('invoice-detail-modal')">&times;</span>
+            <h2>Invoice Details</h2>
+
+            <!-- Invoice Header -->
+            <div class="job-vehicle-info">
+                <h3>Invoice #2025-001</h3>
+                <span class="job-status-badge in-progress">UNPAID</span>
+            </div>
+
+            <!-- Customer Information -->
+            <div class="info-section">
+                <h4>Customer Information</h4>
+                <div class="info-grid">
+                    <span class="info-label">Name:</span>
+                    <span>Mary Wanjiku</span>
+                    <span class="info-label">Phone:</span>
+                    <span>0722 123 456</span>
+                    <span class="info-label">Email:</span>
+                    <span>mary.wanjiku@email.com</span>
+                    <span class="info-label">Vehicle:</span>
+                    <span>Toyota Corolla - KDB 456X</span>
+                </div>
+            </div>
+
+            <!-- Service Items -->
+            <div class="info-section">
+                <h4>Service Items & Charges</h4>
+                <table class="records-table" style="margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Engine Oil Change</td>
+                            <td>1</td>
+                            <td>KES. 3,500</td>
+                            <td>KES. 3,500</td>
+                        </tr>
+                        <tr>
+                            <td>Oil Filter</td>
+                            <td>1</td>
+                            <td>KES. 1,200</td>
+                            <td>KES. 1,200</td>
+                        </tr>
+                        <tr>
+                            <td>Brake Pads (Front)</td>
+                            <td>2</td>
+                            <td>KES. 4,500</td>
+                            <td>KES. 9,000</td>
+                        </tr>
+                        <tr>
+                            <td>Labor Charges</td>
+                            <td>3</td>
+                            <td>KES. 2,000</td>
+                            <td>KES. 6,000</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>Subtotal:</strong></td>
+                            <td><strong>KES. 19,700</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><strong>Service Charge (10%):</strong></td>
+                            <td><strong>KES. 1,970</strong></td>
+                        </tr>
+                        <tr style="background-color: #f0f0f0;">
+                            <td colspan="3"><strong>Total Amount:</strong></td>
+                            <td><strong>KES. 21,670</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- Invoice Actions -->
+            <div class="job-actions-buttons">
+                <button class="btn-primary" onclick="markAsPaid()">
+                    <i class="fas fa-check-circle"></i>Mark as Paid
+                </button>
+                <button class="btn-secondary" onclick="editInvoice()">
+                    <i class="fas fa-edit"></i>Edit Invoice
+                </button>
+                <button class="btn-secondary" onclick="showDownloadOptions()">
+                    <i class="fas fa-download"></i>Download Invoice
+                </button>
+                <button class="btn-secondary" onclick="showEmailOptions()">
+                    <i class="fas fa-envelope"></i>Email Invoice
+                </button>
+                <button class="btn-secondary" onclick="sendPaymentReminder()">
+                    <i class="fas fa-bell"></i>Send Reminder
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Download Purpose Selection -->
+    <div class="modal" id="download-purpose-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('download-purpose-modal')">&times;</span>
+            <h2>Select Download Purpose</h2>
+
+            <div class="info-section">
+                <p>Please select the purpose for downloading this invoice:</p>
+
+                <div style="margin-top: 20px;">
+                    <button class="btn-primary" onclick="showGeneralDownloadOptions()"
+                        style="width: 100%; margin-bottom: 15px; padding: 15px;">
+                        <i class="fas fa-file-alt"></i> General Purpose
+                        <br><small style="font-weight: normal;">For records, reference, or internal use</small>
+                    </button>
+
+                    <button class="btn-primary" onclick="showBillingDownloadOptions()"
+                        style="width: 100%; padding: 15px; background-color: var(--warning-orange);">
+                        <i class="fas fa-file-invoice-dollar"></i> Billing Purpose
+                        <br><small style="font-weight: normal;">For official billing and documentation</small>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for General Purpose Download Options -->
+    <div class="modal" id="general-download-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('general-download-modal')">&times;</span>
+            <h2>General Purpose Download Options</h2>
+
+            <form class="form-container">
+                <h3>Document Selection</h3>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="dl-invoice-only" checked>
+                    <label for="dl-invoice-only">Invoice Only</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="dl-service-history">
+                    <label for="dl-service-history">Include Service History</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="dl-supporting-docs">
+                    <label for="dl-supporting-docs">Include Supporting Documents</label>
+                </div>
+
+                <div class="form-group">
+                    <label>Time Period</label>
+                    <select>
+                        <option>Current Invoice Only</option>
+                        <option>Last 30 Days</option>
+                        <option>Last 3 Months</option>
+                        <option>All History</option>
+                    </select>
+                </div>
+
+                <h3>Watermark Settings</h3>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="enable-watermark" checked disabled>
+                    <label for="enable-watermark">Generate with Watermark (Required for General Purpose)</label>
+                </div>
+                <div class="info-section">
+                    <p><small>Watermark Text: "Not For Billing Purposes - www.carpal.ke. A Product of Citrus Labs
+                            Limited."</small></p>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary"
+                        onclick="closeModal('general-download-modal')">Cancel</button>
+                    <button type="button" class="btn-primary" onclick="processGeneralDownload()">
+                        <i class="fas fa-download"></i>Generate Download
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Billing Purpose Download Options -->
+    <div class="modal" id="billing-download-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('billing-download-modal')">&times;</span>
+            <h2>Billing Purpose Download Options</h2>
+
+            <form class="form-container">
+                <h3>Billing Document Settings</h3>
+                <div class="info-section">
+                    <div class="checkbox-group">
+                        <input type="checkbox" checked disabled>
+                        <label>Most Recent Service History Only</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" checked disabled>
+                        <label>Auto-generate CarPal Invoice as Front Page</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" checked disabled>
+                        <label>Include All Required Supporting Documents</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" disabled>
+                        <label>No Watermark Applied</label>
+                    </div>
+                </div>
+
+                <h3>Notification Settings</h3>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="notify-vehicle-owner">
+                    <label for="notify-vehicle-owner">Notify Vehicle Owner via Email</label>
+                </div>
+
+                <div class="preview-box">
+                    <p><strong>Email Preview:</strong></p>
+                    <p>Dear Customer,</p>
+                    <p>Your official billing documentation for Invoice #2025-001 has been generated and is ready for
+                        download. This document includes your complete service history and all supporting documentation.
+                    </p>
+                    <p>Best regards,<br>CarPal Team</p>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary"
+                        onclick="closeModal('billing-download-modal')">Cancel</button>
+                    <button type="button" class="btn-primary" onclick="processBillingDownload()">
+                        <i class="fas fa-file-invoice"></i>Generate Billing Download
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Email Purpose Selection -->
+    <div class="modal" id="email-purpose-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('email-purpose-modal')">&times;</span>
+            <h2>Select Email Purpose</h2>
+
+            <div class="info-section">
+                <p>Please select the purpose for emailing this invoice:</p>
+
+                <div style="margin-top: 20px;">
+                    <button class="btn-primary" onclick="showGeneralEmailOptions()"
+                        style="width: 100%; margin-bottom: 15px; padding: 15px;">
+                        <i class="fas fa-envelope"></i> General Purpose Email
+                        <br><small style="font-weight: normal;">For information or follow-up</small>
+                    </button>
+
+                    <button class="btn-primary" onclick="showBillingEmailOptions()"
+                        style="width: 100%; padding: 15px; background-color: var(--warning-orange);">
+                        <i class="fas fa-envelope-open-text"></i> Billing Purpose Email
+                        <br><small style="font-weight: normal;">For official billing documentation</small>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Payment Details Form -->
+    <div class="modal" id="payment-details-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('payment-details-modal')">&times;</span>
+            <h2>Record Payment</h2>
+
+            <form class="form-container">
+                <div class="info-section">
+                    <h4>Invoice Information</h4>
+                    <div class="info-grid">
+                        <span class="info-label">Invoice Number:</span>
+                        <span>#2025-001</span>
+                        <span class="info-label">Total Amount:</span>
+                        <span>KES. 21,670</span>
+                    </div>
+                </div>
+
+                <h3>Payment Details</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Payment Amount (KES.)</label>
+                        <input type="number" value="21670" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Date</label>
+                        <input type="date" value="2025-01-19" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <select required>
+                            <option>M-Pesa</option>
+                            <option>Cash</option>
+                            <option>Bank Transfer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Reference</label>
+                        <input type="text" placeholder="e.g., M-Pesa code" required>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="send-receipt" checked>
+                    <label for="send-receipt">Send receipt to customer</label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary"
+                        onclick="closeModal('payment-details-modal')">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-check"></i>Confirm Payment
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Platform Invoice Details -->
+    <div class="modal" id="platform-invoice-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('platform-invoice-modal')">&times;</span>
+            <h2>CarPal Platform Invoice</h2>
+
+            <div class="job-vehicle-info">
+                <h3>Invoice #CP-2025-W03</h3>
+                <span class="job-status-badge in-progress">PENDING PAYMENT</span>
+            </div>
+
+            <!-- Invoice Period -->
+            <div class="info-section">
+                <h4>Invoice Period</h4>
+                <div class="info-grid">
+                    <span class="info-label">Period:</span>
+                    <span>January 13-19, 2025</span>
+                    <span class="info-label">Due Date:</span>
+                    <span>January 26, 2025</span>
+                    <span class="info-label">Total Transactions:</span>
+                    <span>23</span>
+                    <span class="info-label">Total Service Volume:</span>
+                    <span>KES. 234,500</span>
+                </div>
+            </div>
+
+            <!-- Service Fees Breakdown -->
+            <div class="info-section">
+                <h4>Service Fees Breakdown</h4>
+                <table class="records-table" style="margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th>Volume Range</th>
+                            <th>Transactions</th>
+                            <th>Volume</th>
+                            <th>Fee Rate</th>
+                            <th>Fee Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>KES. 10-24,999</td>
+                            <td>12</td>
+                            <td>KES. 145,000</td>
+                            <td>10%</td>
+                            <td>KES. 14,500</td>
+                        </tr>
+                        <tr>
+                            <td>KES. 25,000-49,999</td>
+                            <td>8</td>
+                            <td>KES. 280,000</td>
+                            <td>Fixed KES. 2,500</td>
+                            <td>KES. 20,000</td>
+                        </tr>
+                        <tr>
+                            <td>KES. 50,000-99,999</td>
+                            <td>2</td>
+                            <td>KES. 140,000</td>
+                            <td>Fixed KES. 5,000</td>
+                            <td>KES. 10,000</td>
+                        </tr>
+                        <tr>
+                            <td>KES. 100,000+</td>
+                            <td>1</td>
+                            <td>KES. 125,000</td>
+                            <td>Fixed KES. 15,000</td>
+                            <td>KES. 15,000</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr style="background-color: #f0f0f0;">
+                            <td colspan="4"><strong>Total Service Fees:</strong></td>
+                            <td><strong>KES. 59,500</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- Payment Instructions -->
+            <div class="info-section">
+                <h4>M-Pesa Payment Instructions</h4>
+                <ol style="margin-left: 20px;">
+                    <li>Go to M-Pesa on your phone</li>
+                    <li>Select Lipa na M-Pesa</li>
+                    <li>Select Pay Bill</li>
+                    <li>Enter Business Number: <strong>522123</strong></li>
+                    <li>Enter Account Number: <strong>CP-2025-W03</strong></li>
+                    <li>Enter Amount: <strong>KES. 59,500</strong></li>
+                    <li>Enter your M-Pesa PIN</li>
+                    <li>Confirm the transaction</li>
+                </ol>
+            </div>
+
+            <div class="job-actions-buttons">
+                <button class="btn-primary" onclick="initiateMpesaPayment()">
+                    <i class="fas fa-mobile-alt"></i>Pay Now via M-Pesa
+                </button>
+                <button class="btn-secondary" onclick="downloadPlatformInvoice()">
+                    <i class="fas fa-download"></i>Download Invoice
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Dark Mode Toggle -->
+            <div class="theme-toggle">
+                <i class="fas fa-moon" onclick="toggleDarkMode()"></i>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" target="_blank">
+                    <i class="fab fa-x "></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Website Link -->
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/" target="_blank">citruslabs.co.ke</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                © 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="billings.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Check-Out - CarPal by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="check_out.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Dashboard/dashboard.html">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Random Logo/logo.png"
+                        alt="CarPal by Citrus Logo" class="logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Dashboard/dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Vehicle Check-In/check_in.html">
+                            <i class="fas fa-car"></i>
+                            <span>Vehicle Check-In</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Service Hub/service_hub.html">
+                            <i class="fas fa-wrench"></i>
+                            <span>Service Hub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Billings & Payments/billings.html">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billing & Payments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Vehicle History/history.html">
+                            <i class="fas fa-history"></i>
+                            <span>Vehicle History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Inventory/inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Messaging\messaging.html">
+                            <i class="fas fa-comments"></i> <span>Messaging</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Technicians\technicians.html">
+                            <i class="fas fa-users-cog"></i> <span>Technicians</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Vehicle Check-Out\check_out.html">
+                            <i class="fas fa-car-side"></i> <span>Vehicle Check-Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Top Bar with Search and User Actions -->
+            <div class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                        <div class="notifications-dropdown">
+                            <h3>Notifications</h3>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="Profile">
+                                <div class="notification-content">
+                                    <p>Vehicle KDG 458Y is ready for check-out</p>
+                                    <span class="notification-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="Profile">
+                                <div class="notification-content">
+                                    <p>New post-repair assessment completed for vehicle KCY567K</p>
+                                    <span class="notification-time">5 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="Profile">
+                                <div class="notification-content">
+                                    <p>Customer notification sent for vehicle KDL891M</p>
+                                    <span class="notification-time">Yesterday</span>
+                                </div>
+                            </div>
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Notifications\notifications.html"
+                                class="view-all">View All Notifications</a>
+                        </div>
+                    </div>
+                    <div class="user-profile">
+                        <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                            alt="User Profile">
+                        <div class="profile-dropdown">
+                            <div class="profile-header">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-64.png"
+                                    alt="Profile">
+                                <div class="profile-info">
+                                    <h4>Admin User</h4>
+                                    <p>admin@carpal.com</p>
+                                </div>
+                            </div>
+                            <ul class="profile-menu">
+                                <li>
+                                    <a
+                                        href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Settings/settings.html">
+                                        <i class="fas fa-cog"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="C:/Users/nderu/Documents/Development/Product/CarPal/Landing Page/CarPal Auto Repair Shop/landing_page.html">
+                                        <i class="fas fa-sign-out-alt"></i> Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vehicle Check-Out Content -->
+            <div class="dashboard-content">
+                <h1>Vehicle Check-Out</h1>
+
+                <!-- Search for Vehicle Section -->
+                <div id="search-vehicle-section" class="panel">
+                    <div class="panel-header">
+                        <h2>Search for Vehicle</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="search-filters">
+                            <div class="form-group">
+                                <label for="license-plate">License Plate Number</label>
+                                <input type="text" id="license-plate" placeholder="Enter license plate">
+                            </div>
+                            <div class="form-group">
+                                <label for="customer-name">Customer Name</label>
+                                <input type="text" id="customer-name" placeholder="Enter customer name">
+                            </div>
+                            <div class="form-group date-range">
+                                <label for="date-from">Date Range</label>
+                                <div class="date-inputs">
+                                    <input type="date" id="date-from" placeholder="From">
+                                    <span class="date-separator">to</span>
+                                    <input type="date" id="date-to" placeholder="To">
+                                </div>
+                            </div>
+                            <button class="action-btn" id="search-vehicle-btn">
+                                <i class="fas fa-search"></i>Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Results Section -->
+                <div id="vehicle-results-section" class="panel">
+                    <div class="panel-header">
+                        <h2>Vehicle Results</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="data-table-container">
+                            <table class="data-table" id="vehicle-results-table">
+                                <thead>
+                                    <tr>
+                                        <th>License Plate</th>
+                                        <th>Vehicle</th>
+                                        <th>Check-In Date</th>
+                                        <th>Service Status</th>
+                                        <th>Customer</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>KDG 458Y</td>
+                                        <td>Toyota Camry (2020)</td>
+                                        <td>Mar 23, 2025</td>
+                                        <td><span class="status-badge completed">Completed</span></td>
+                                        <td>John Smith</td>
+                                        <td>
+                                            <button class="select-vehicle-btn" data-vehicle-id="V001">Select</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>KCY 567K</td>
+                                        <td>Honda CR-V (2019)</td>
+                                        <td>Mar 22, 2025</td>
+                                        <td><span class="status-badge completed">Completed</span></td>
+                                        <td>Sarah Davis</td>
+                                        <td>
+                                            <button class="select-vehicle-btn" data-vehicle-id="V002">Select</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>KDL 891M</td>
+                                        <td>Ford F-150 (2021)</td>
+                                        <td>Mar 20, 2025</td>
+                                        <td><span class="status-badge in-service">In Service</span></td>
+                                        <td>Michael Chen</td>
+                                        <td>
+                                            <button class="select-vehicle-btn" data-vehicle-id="V003">Select</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>KBT 234P</td>
+                                        <td>BMW X5 (2022)</td>
+                                        <td>Mar 19, 2025</td>
+                                        <td><span class="status-badge completed">Completed</span></td>
+                                        <td>Emily Johnson</td>
+                                        <td>
+                                            <button class="select-vehicle-btn" data-vehicle-id="V004">Select</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Details and Check-Out Section -->
+                <div id="vehicle-details-section" class="panel hidden">
+                    <div class="panel-header">
+                        <h2>Vehicle Details</h2>
+                        <div class="action-buttons-header">
+                            <button class="secondary-btn" id="back-to-search-btn">
+                                <i class="fas fa-arrow-left"></i>Back to Search
+                            </button>
+                        </div>
+                    </div>
+                    <div class="panel-content">
+                        <div class="vehicle-info-summary">
+                            <div class="vehicle-info-grid">
+                                <div class="info-group">
+                                    <h3>Vehicle Information</h3>
+                                    <div class="info-item">
+                                        <span class="info-label">License Plate:</span>
+                                        <span class="info-value" id="summary-license-plate">KDG 458Y</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Make & Model:</span>
+                                        <span class="info-value" id="summary-make-model">Toyota Camry</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Year:</span>
+                                        <span class="info-value" id="summary-year">2020</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">VIN:</span>
+                                        <span class="info-value" id="summary-vin">4T1BF1FK5LU123456</span>
+                                    </div>
+                                </div>
+                                <div class="info-group">
+                                    <h3>Service Information</h3>
+                                    <div class="info-item">
+                                        <span class="info-label">Check-In Date:</span>
+                                        <span class="info-value" id="summary-checkin-date">Mar 23, 2025 09:15 AM</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Service Status:</span>
+                                        <span class="info-value status-completed"
+                                            id="summary-service-status">Completed</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Service Type:</span>
+                                        <span class="info-value" id="summary-service-type">Brake Replacement, Oil
+                                            Change</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Repair Order #:</span>
+                                        <span class="info-value" id="summary-repair-order">RO-10542</span>
+                                    </div>
+                                </div>
+                                <div class="info-group">
+                                    <h3>Customer Information</h3>
+                                    <div class="info-item">
+                                        <span class="info-label">Name:</span>
+                                        <span class="info-value" id="summary-customer-name">John Smith</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Phone:</span>
+                                        <span class="info-value" id="summary-customer-phone">(555) 123-4567</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Email:</span>
+                                        <span class="info-value"
+                                            id="summary-customer-email">john.smith@example.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="action-btn" id="initiate-checkout-btn">
+                                    <i class="fas fa-clipboard-check"></i>Initiate Check-Out
+                                </button>
+                                <button class="secondary-btn" id="view-checkin-btn">
+                                    <i class="fas fa-file-alt"></i>View Check-In Form
+                                </button>
+                                <button class="secondary-btn" id="view-service-history-btn">
+                                    <i class="fas fa-history"></i>View Service History
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Check-Out Form Section -->
+                <div id="checkout-form-section" class="hidden">
+                    <!-- Service Completion Details -->
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Service Completion Details</h2>
+                        </div>
+                        <div class="panel-content">
+                            <div class="form-group">
+                                <label>Service Tasks Completed</label>
+                                <div class="service-tasks-list" id="service-tasks-list">
+                                    <div class="task-item">
+                                        <input type="checkbox" id="task-1" checked>
+                                        <label for="task-1">Brake pad replacement (front)</label>
+                                    </div>
+                                    <div class="task-item">
+                                        <input type="checkbox" id="task-2" checked>
+                                        <label for="task-2">Brake rotor resurfacing</label>
+                                    </div>
+                                    <div class="task-item">
+                                        <input type="checkbox" id="task-3" checked>
+                                        <label for="task-3">Oil and filter change</label>
+                                    </div>
+                                    <div class="task-item">
+                                        <input type="checkbox" id="task-4" checked>
+                                        <label for="task-4">Fluid levels check</label>
+                                    </div>
+                                </div>
+                                <button class="small-btn" id="add-task-btn">
+                                    <i class="fas fa-plus"></i>Add Task
+                                </button>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Parts Replaced</label>
+                                <div class="parts-replaced-list" id="parts-replaced-list">
+                                    <div class="part-item">
+                                        <span class="part-name">Wagner Front Brake Pads (2 sets)</span>
+                                        <span class="part-id">Part #WG-45678</span>
+                                    </div>
+                                    <div class="part-item">
+                                        <span class="part-name">Oil Filter</span>
+                                        <span class="part-id">Part #OF-12345</span>
+                                    </div>
+                                    <div class="part-item">
+                                        <span class="part-name">5W-30 Synthetic Oil (5 quarts)</span>
+                                        <span class="part-id">Part #SYN-30-5</span>
+                                    </div>
+                                </div>
+                                <button class="small-btn" id="use-parts-btn">
+                                    <i class="fas fa-boxes"></i>Use Parts from Inventory
+                                </button>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="additional-services">Additional Services Performed</label>
+                                <textarea id="additional-services" rows="3"
+                                    placeholder="Enter any additional services that were performed..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Final Updates Section -->
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Final Updates</h2>
+                        </div>
+                        <div class="panel-content">
+                            <div class="form-group">
+                                <label for="completion-notes">Service Completion Notes</label>
+                                <textarea id="completion-notes" rows="4"
+                                    placeholder="Enter notes about the completed service..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="resolved-issues">Resolved Issues</label>
+                                <textarea id="resolved-issues" rows="3"
+                                    placeholder="Enter details about issues that were resolved..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="last-minute-repairs">Last-Minute Repairs</label>
+                                <textarea id="last-minute-repairs" rows="3"
+                                    placeholder="Enter details about any last-minute repairs..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Condition Verification Section -->
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Condition Verification</h2>
+                        </div>
+                        <div class="panel-content">
+                            <div class="form-group">
+                                <label>Comparison to Check-In Condition</label>
+                                <div class="condition-comparison">
+                                    <div class="condition-column">
+                                        <h4>Check-In Condition</h4>
+                                        <div class="condition-item">
+                                            <span class="condition-label">Exterior:</span>
+                                            <span class="condition-value">Minor scratch on front passenger door</span>
+                                        </div>
+                                        <div class="condition-item">
+                                            <span class="condition-label">Interior:</span>
+                                            <span class="condition-value">Good condition, no issues</span>
+                                        </div>
+                                        <div class="condition-item">
+                                            <span class="condition-label">Mileage:</span>
+                                            <span class="condition-value">35,678 km</span>
+                                        </div>
+                                    </div>
+                                    <div class="condition-column">
+                                        <h4>Check-Out Condition</h4>
+                                        <div class="condition-item">
+                                            <span class="condition-label">Exterior:</span>
+                                            <div class="condition-input">
+                                                <input type="text" id="exterior-condition"
+                                                    placeholder="Enter current exterior condition...">
+                                            </div>
+                                        </div>
+                                        <div class="condition-item">
+                                            <span class="condition-label">Interior:</span>
+                                            <div class="condition-input">
+                                                <input type="text" id="interior-condition"
+                                                    placeholder="Enter current interior condition...">
+                                            </div>
+                                        </div>
+                                        <div class="condition-item">
+                                            <span class="condition-label">Mileage:</span>
+                                            <div class="condition-input">
+                                                <input type="number" id="current-mileage"
+                                                    placeholder="Enter current mileage...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="new-issues">Note Any New Issues</label>
+                                <textarea id="new-issues" rows="3"
+                                    placeholder="Enter details about any new issues identified..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Upload Section -->
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Final Photo Upload</h2>
+                        </div>
+                        <div class="panel-content">
+                            <div class="photos-grid" id="uploaded-photos">
+                                <!-- Photos will be added here dynamically -->
+                            </div>
+
+                            <div class="photo-upload-controls">
+                                <button class="secondary-btn" id="take-photo-btn">
+                                    <i class="fas fa-camera"></i>Take Photo
+                                </button>
+                                <button class="secondary-btn" id="upload-photo-btn">
+                                    <i class="fas fa-upload"></i>Upload Photo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Action Buttons -->
+                    <div class="form-actions">
+                        <button class="secondary-btn" id="save-draft-btn">
+                            <i class="fas fa-save"></i>Save Draft
+                        </button>
+                        <button class="action-btn" id="review-form-btn">
+                            <i class="fas fa-eye"></i>Review Form
+                        </button>
+                        <button class="cancel-btn" id="cancel-checkout-btn">
+                            <i class="fas fa-times"></i>Cancel
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Review Check-Out Section -->
+                <div id="review-checkout-section" class="panel hidden">
+                    <div class="panel-header">
+                        <h2>Review Check-Out</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="review-summary">
+                            <!-- Vehicle Information -->
+                            <div class="review-section">
+                                <h3>Vehicle Information</h3>
+                                <div class="review-info-grid">
+                                    <div class="review-info-item">
+                                        <span class="review-label">License Plate:</span>
+                                        <span class="review-value" id="review-license-plate">KDG 458Y</span>
+                                    </div>
+                                    <div class="review-info-item">
+                                        <span class="review-label">Make & Model:</span>
+                                        <span class="review-value" id="review-make-model">Toyota Camry (2020)</span>
+                                    </div>
+                                    <div class="review-info-item">
+                                        <span class="review-label">VIN:</span>
+                                        <span class="review-value" id="review-vin">4T1BF1FK5LU123456</span>
+                                    </div>
+                                    <div class="review-info-item">
+                                        <span class="review-label">Customer:</span>
+                                        <span class="review-value" id="review-customer">John Smith</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Service Details -->
+                            <div class="review-section">
+                                <h3>Service Details</h3>
+                                <div class="review-info-block">
+                                    <h4>Completed Tasks</h4>
+                                    <ul class="review-list" id="review-tasks">
+                                        <li>Brake pad replacement (front)</li>
+                                        <li>Brake rotor resurfacing</li>
+                                        <li>Oil and filter change</li>
+                                        <li>Fluid levels check</li>
+                                    </ul>
+                                </div>
+
+                                <div class="review-info-block">
+                                    <h4>Parts Replaced</h4>
+                                    <ul class="review-list" id="review-parts">
+                                        <li>Wagner Front Brake Pads (2 sets)</li>
+                                        <li>Oil Filter</li>
+                                        <li>5W-30 Synthetic Oil (5 quarts)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="review-info-block">
+                                    <h4>Additional Services</h4>
+                                    <p id="review-additional-services">Performed brake fluid flush and tire rotation as
+                                        part of the service.</p>
+                                </div>
+                            </div>
+
+                            <!-- Notes and Condition -->
+                            <div class="review-section">
+                                <h3>Notes & Condition</h3>
+                                <div class="review-info-block">
+                                    <h4>Service Notes</h4>
+                                    <p id="review-service-notes">Brake system is now functioning properly. Recommended
+                                        future inspection in 10,000 km.</p>
+                                </div>
+
+                                <div class="review-info-block">
+                                    <h4>Vehicle Condition</h4>
+                                    <div class="review-info-grid">
+                                        <div class="review-info-item">
+                                            <span class="review-label">Exterior:</span>
+                                            <span class="review-value" id="review-exterior">Minor scratch on front
+                                                passenger door (pre-existing)</span>
+                                        </div>
+                                        <div class="review-info-item">
+                                            <span class="review-label">Interior:</span>
+                                            <span class="review-value" id="review-interior">Good condition, no
+                                                issues</span>
+                                        </div>
+                                        <div class="review-info-item">
+                                            <span class="review-label">Mileage:</span>
+                                            <span class="review-value" id="review-mileage">35,704 km</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Photos -->
+                            <div class="review-section">
+                                <h3>Final Photos</h3>
+                                <div class="review-photos-grid" id="review-photos">
+                                    <div class="photo-item">
+                                        <img src="/api/placeholder/200/150" alt="Front Brakes">
+                                        <span class="photo-caption">Front Brakes - After Repair</span>
+                                    </div>
+                                    <div class="photo-item">
+                                        <img src="/api/placeholder/200/150" alt="Vehicle Exterior">
+                                        <span class="photo-caption">Vehicle Exterior - Front</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Edit Options -->
+                        <div class="edit-options">
+                            <button class="secondary-btn" id="edit-details-btn">
+                                <i class="fas fa-edit"></i>Edit Details
+                            </button>
+                            <button class="secondary-btn" id="add-photos-btn">
+                                <i class="fas fa-camera"></i>Add More Photos
+                            </button>
+                        </div>
+
+                        <!-- Confirmation Buttons -->
+                        <div class="confirmation-buttons">
+                            <button class="action-btn" id="approve-checkout-btn">
+                                <i class="fas fa-check-circle"></i>Approve Check-Out
+                            </button>
+                            <button class="secondary-btn" id="return-to-edit-btn">
+                                <i class="fas fa-arrow-left"></i>Return to Edit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Approve Check-Out Section -->
+                <div id="approve-checkout-section" class="panel hidden">
+                    <div class="panel-header">
+                        <h2>Approve Check-Out</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="approval-sections">
+                            <!-- Record Check-Out Date -->
+                            <div class="approval-section">
+                                <h3>Record Check-Out Date & Time</h3>
+                                <div class="form-group">
+                                    <label for="checkout-date">Check-Out Date & Time</label>
+                                    <div class="date-time-input">
+                                        <input type="datetime-local" id="checkout-date">
+                                        <span class="input-note">Auto-filled with current date and time</span>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="manual-override">
+                                    <label for="manual-override">Manual override</label>
+                                </div>
+                            </div>
+
+                            <!-- Vehicle History Update -->
+                            <div class="approval-section">
+                                <h3>Vehicle History Update</h3>
+                                <div class="info-item">
+                                    <span class="info-label">Auto-save to Vehicle History:</span>
+                                    <span class="info-value">Yes</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Link to Check-In Form:</span>
+                                    <span class="info-value">
+                                        <a href="#" id="checkin-form-link">View Check-In Form</a>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Summary Sharing Options -->
+                            <div class="approval-section">
+                                <h3>Summary Sharing Options</h3>
+                                <div class="form-check">
+                                    <input type="checkbox" id="email-customer" checked>
+                                    <label for="email-customer">Email summary to customer</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="print-summary">
+                                    <label for="print-summary">Print summary</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Completion Buttons -->
+                        <div class="completion-buttons">
+                            <button class="action-btn" id="complete-checkout-btn">
+                                <i class="fas fa-check-double"></i>Complete Check-Out
+                            </button>
+                            <button class="secondary-btn" id="back-to-review-btn">
+                                <i class="fas fa-arrow-left"></i>Back
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post-Repair Assessment Section -->
+                <div id="post-repair-section" class="panel hidden">
+                    <div class="panel-header">
+                        <h2>Post-Repair Assessment</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="post-repair-form">
+                            <!-- Auto-Filled Information -->
+                            <div class="form-section">
+                                <h3>Vehicle & Business Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Vehicle</label>
+                                        <input type="text" id="pra-vehicle" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Business User</label>
+                                        <input type="text" id="pra-business-user" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Repair Order #</label>
+                                        <input type="text" id="pra-repair-order" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Check-In/Out Times</label>
+                                        <input type="text" id="pra-checkin-checkout" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Customer Information</label>
+                                    <input type="text" id="pra-customer" readonly>
+                                </div>
+                            </div>
+
+                            <!-- Manual Entry Fields -->
+                            <div class="form-section">
+                                <h3>Completed Repairs</h3>
+                                <div class="form-group">
+                                    <textarea id="pra-completed-repairs" rows="4"
+                                        placeholder="List all completed repairs..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Post-Repair Inspection Notes</h3>
+                                <div class="form-group">
+                                    <textarea id="pra-inspection-notes" rows="4"
+                                        placeholder="Enter inspection notes..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Repair Recommendations -->
+                            <div class="form-section">
+                                <h3>Repair Recommendations</h3>
+                                <div class="form-group">
+                                    <label>Immediate Repairs Required</label>
+                                    <textarea id="pra-immediate-repairs" rows="3"
+                                        placeholder="List any immediate repairs required..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Next Service Recommendations</label>
+                                    <textarea id="pra-next-service" rows="3"
+                                        placeholder="Recommend next service..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Long-term Maintenance (Before 100,000 KM)</label>
+                                    <textarea id="pra-long-term" rows="3"
+                                        placeholder="Recommend long-term maintenance..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Test Drive Results -->
+                            <div class="form-section">
+                                <h3>Test Drive Results</h3>
+                                <div class="form-group">
+                                    <label>Performance Notes</label>
+                                    <textarea id="pra-performance" rows="3"
+                                        placeholder="Notes on vehicle performance during test drive..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Issues Detected</label>
+                                    <textarea id="pra-issues-detected" rows="3"
+                                        placeholder="List any issues detected during test drive..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Additional Repairs -->
+                            <div class="form-section">
+                                <h3>Additional Repairs Recommendations</h3>
+                                <div class="form-group">
+                                    <label>New Issues Identified</label>
+                                    <textarea id="pra-new-issues" rows="3"
+                                        placeholder="List any new issues identified..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Recommended Actions</label>
+                                    <textarea id="pra-recommended-actions" rows="3"
+                                        placeholder="Recommend actions for new issues..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Final Approval -->
+                            <div class="form-section">
+                                <h3>Final Approval</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Service Manager Sign-Off</label>
+                                        <input type="text" id="pra-manager" placeholder="Manager Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Personal ID Number</label>
+                                        <input type="text" id="pra-id-number" placeholder="Enter ID Number">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>OTP PIN (SMS Verification)</label>
+                                    <div class="otp-input">
+                                        <input type="text" id="pra-otp" placeholder="Enter OTP PIN" maxlength="6">
+                                        <button class="small-btn" id="send-otp-btn">Send OTP</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Complete Assessment Button -->
+                        <div class="completion-buttons">
+                            <button class="action-btn" id="complete-assessment-btn">
+                                <i class="fas fa-clipboard-check"></i>Complete Assessment
+                            </button>
+                            <button class="secondary-btn" id="back-from-assessment-btn">
+                                <i class="fas fa-arrow-left"></i>Back
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Complete Assessment Section -->
+                <div id="complete-assessment-section" class="panel hidden">
+                    <div class="panel-header">
+                        <h2>Check-Out Complete</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="completion-message">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Vehicle Successfully Checked Out</h3>
+                            <p>The vehicle has been marked as "Repaired" and all relevant notifications have been sent.
+                            </p>
+                        </div>
+
+                        <div class="completion-details">
+                            <!-- Vehicle Status Update -->
+                            <div class="detail-section">
+                                <h4>Vehicle Status Update</h4>
+                                <p>Status changed to: <span class="status-badge completed">Repaired</span></p>
+                            </div>
+
+                            <!-- Customer Notifications -->
+                            <div class="detail-section">
+                                <h4>Customer Notifications</h4>
+                                <ul class="detail-list">
+                                    <li>
+                                        <i class="fas fa-sms"></i>
+                                        SMS Notification Sent to: <span id="complete-customer-phone">0712 345 678</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-envelope"></i>
+                                        Email Notification Sent to: <span
+                                            id="complete-customer-email">john.smith@example.com</span>
+                                        <ul class="sub-list">
+                                            <li>Post-Repair Assessment PDF</li>
+                                            <li>Check-Out Form PDF</li>
+                                            <li>Invoice PDF</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Insurance Notification -->
+                            <div class="detail-section">
+                                <h4>Insurance Notification</h4>
+                                <p>Not Applicable for this service</p>
+                                <!-- or <p>Email sent to insurance company with repair completion details</p> -->
+                            </div>
+                        </div>
+
+                        <!-- Next Steps Buttons -->
+                        <div class="next-steps-buttons">
+                            <button class="action-btn" id="return-to-dashboard-btn">
+                                <i class="fas fa-home"></i>Return to Dashboard
+                            </button>
+                            <button class="secondary-btn" id="checkout-another-btn">
+                                <i class="fas fa-redo"></i>Check-Out Another Vehicle
+                            </button>
+                            <button class="secondary-btn" id="view-vehicle-history-btn">
+                                <i class="fas fa-history"></i>View Vehicle History
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a>
+            </div>
+            <div class="copyright">
+                © 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- View Check-In Form Modal -->
+    <div class="modal" id="checkin-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Check-In Form</h2>
+            <div class="checkin-details">
+                <div class="checkin-section">
+                    <h3>Vehicle Information</h3>
+                    <div class="info-item">
+                        <span class="info-label">License Plate:</span>
+                        <span class="info-value">KDG458Y</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Make & Model:</span>
+                        <span class="info-value">Toyota Camry</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Year:</span>
+                        <span class="info-value">2020</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">VIN:</span>
+                        <span class="info-value">4T1BF1FK5LU123456</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Mileage at Check-In:</span>
+                        <span class="info-value">35,678 km</span>
+                    </div>
+                </div>
+
+                <div class="checkin-section">
+                    <h3>Service Requested</h3>
+                    <ul class="checkin-list">
+                        <li>Brake pad replacement (front)</li>
+                        <li>Oil and filter change</li>
+                    </ul>
+                </div>
+
+                <div class="checkin-section">
+                    <h3>Vehicle Condition at Check-In</h3>
+                    <div class="info-item">
+                        <span class="info-label">Exterior:</span>
+                        <span class="info-value">Minor scratch on front passenger door</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Interior:</span>
+                        <span class="info-value">Good condition, no issues</span>
+                    </div>
+                </div>
+
+                <div class="checkin-section">
+                    <h3>Check-In Photos</h3>
+                    <div class="checkin-photos">
+                        <div class="photo-item">
+                            <img src="/api/placeholder/200/150" alt="Vehicle Front">
+                            <span class="photo-caption">Vehicle Front</span>
+                        </div>
+                        <div class="photo-item">
+                            <img src="/api/placeholder/200/150" alt="Vehicle Rear">
+                            <span class="photo-caption">Vehicle Rear</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Service History Modal -->
+    <div class="modal" id="service-history-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Service History</h2>
+            <div class="service-history-container">
+                <div class="service-history-entry">
+                    <div class="entry-date">January 15, 2025</div>
+                    <div class="entry-details">
+                        <h3>Regular Maintenance</h3>
+                        <p class="entry-description">Oil change, tire rotation, and filter replacement</p>
+                        <div class="entry-meta">
+                            <span class="entry-mileage">33,245 km</span>
+                            <span class="entry-technician">Technician: Michael C.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-history-entry">
+                    <div class="entry-date">October 8, 2024</div>
+                    <div class="entry-details">
+                        <h3>Battery Replacement</h3>
+                        <p class="entry-description">Replaced dead battery with new OEM battery</p>
+                        <div class="entry-meta">
+                            <span class="entry-mileage">30,120 km</span>
+                            <span class="entry-technician">Technician: Sarah D.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-history-entry">
+                    <div class="entry-date">July 22, 2024</div>
+                    <div class="entry-details">
+                        <h3>Regular Maintenance</h3>
+                        <p class="entry-description">Oil change and multi-point inspection</p>
+                        <div class="entry-meta">
+                            <span class="entry-mileage">27,560 km</span>
+                            <span class="entry-technician">Technician: John S.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo Upload Modal -->
+    <div class="modal" id="photo-upload-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Upload Photo</h2>
+            <div class="photo-upload-container">
+                <!-- Camera Access Section -->
+                <div class="camera-section">
+                    <h3>Take Photo</h3>
+                    <div class="camera-container" id="camera-container">
+                        <div class="camera-placeholder">
+                            <i class="fas fa-camera"></i>
+                            <p>Camera preview will appear here</p>
+                        </div>
+                    </div>
+                    <div class="camera-buttons">
+                        <button class="secondary-btn" id="start-camera-btn">
+                            <i class="fas fa-video"></i>Start Camera
+                        </button>
+                        <button class="action-btn" id="capture-photo-btn" disabled>
+                            <i class="fas fa-camera"></i>Take Photo
+                        </button>
+                        <button class="secondary-btn" id="retake-photo-btn" disabled>
+                            <i class="fas fa-redo"></i>Retake
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Upload Options Section -->
+                <div class="upload-section">
+                    <h3>Upload Photo</h3>
+                    <div class="upload-container">
+                        <div class="upload-area" id="upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag & drop files here or click to browse</p>
+                            <input type="file" id="file-upload" accept="image/*" hidden>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Information -->
+                <div class="photo-info-section">
+                    <h3>Photo Information</h3>
+                    <div class="form-group">
+                        <label for="photo-description">Description</label>
+                        <input type="text" id="photo-description" placeholder="Enter photo description...">
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle-area">Vehicle Area</label>
+                        <select id="vehicle-area">
+                            <option value="">Select area...</option>
+                            <option value="exterior-front">Exterior - Front</option>
+                            <option value="exterior-rear">Exterior - Rear</option>
+                            <option value="exterior-driver">Exterior - Driver Side</option>
+                            <option value="exterior-passenger">Exterior - Passenger Side</option>
+                            <option value="interior-front">Interior - Front</option>
+                            <option value="interior-rear">Interior - Rear</option>
+                            <option value="engine">Engine Bay</option>
+                            <option value="wheels">Wheels/Tires</option>
+                            <option value="brakes">Brakes</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Date/Time:</span>
+                        <span class="info-value" id="photo-timestamp">Mar 25, 2025 15:45</span>
+                    </div>
+                </div>
+
+                <!-- Save Options -->
+                <div class="save-photo-section">
+                    <button class="action-btn" id="save-photo-btn">
+                        <i class="fas fa-save"></i>Save Photo
+                    </button>
+                    <button class="cancel-btn" id="cancel-photo-btn">
+                        <i class="fas fa-times"></i>Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Use Parts from Inventory Modal -->
+    <div class="modal" id="parts-inventory-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Use Parts from Inventory</h2>
+            <div class="parts-selection-container">
+                <!-- Parts Search Section -->
+                <div class="parts-search-section">
+                    <div class="form-group">
+                        <label for="parts-search">Search Inventory</label>
+                        <div class="search-input">
+                            <input type="text" id="parts-search" placeholder="Search by part name or ID...">
+                            <button class="small-btn" id="search-parts-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parts List Section -->
+                <div class="parts-list-section">
+                    <table class="data-table" id="parts-inventory-table">
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>Part Name</th>
+                                <th>Part ID</th>
+                                <th>In Stock</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="part-select" data-part-id="P001"></td>
+                                <td>Wagner Front Brake Pads</td>
+                                <td>WG-45678</td>
+                                <td>8</td>
+                                <td>
+                                    <input type="number" class="qty-input" min="1" max="8" value="1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="part-select" data-part-id="P002"></td>
+                                <td>Oil Filter</td>
+                                <td>OF-12345</td>
+                                <td>15</td>
+                                <td>
+                                    <input type="number" class="qty-input" min="1" max="15" value="1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="part-select" data-part-id="P003"></td>
+                                <td>5W-30 Synthetic Oil (1 quart)</td>
+                                <td>SYN-30-5</td>
+                                <td>32</td>
+                                <td>
+                                    <input type="number" class="qty-input" min="1" max="32" value="1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="part-select" data-part-id="P004"></td>
+                                <td>Front Brake Rotors</td>
+                                <td>BR-78901</td>
+                                <td>4</td>
+                                <td>
+                                    <input type="number" class="qty-input" min="1" max="4" value="1">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Selected Parts Summary -->
+                <div class="selected-parts-summary">
+                    <h3>Selected Parts</h3>
+                    <div id="selected-parts-list" class="selected-parts-list">
+                        <p class="no-parts-message">No parts selected yet</p>
+                    </div>
+                </div>
+
+                <!-- Confirm Selection Buttons -->
+                <div class="parts-confirmation">
+                    <button class="action-btn" id="confirm-parts-btn">
+                        <i class="fas fa-check"></i>Confirm
+                    </button>
+                    <button class="cancel-btn" id="cancel-parts-btn">
+                        <i class="fas fa-times"></i>Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inventory Update Modal -->
+    <div class="modal" id="inventory-update-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Inventory Update</h2>
+            <div class="inventory-update-container">
+                <div class="update-success">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Inventory Updated Successfully</h3>
+                </div>
+
+                <div class="updated-items">
+                    <h3>Updated Items</h3>
+                    <table class="data-table" id="updated-items-table">
+                        <thead>
+                            <tr>
+                                <th>Part Name</th>
+                                <th>Part ID</th>
+                                <th>Quantity Used</th>
+                                <th>Remaining Stock</th>
+                            </tr>
+                        </thead>
+                        <tbody id="updated-items-list">
+                            <!-- This will be populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="low-stock-alerts" id="low-stock-alerts">
+                    <!-- Will be shown only if there are low stock items -->
+                </div>
+
+                <div class="inventory-update-actions">
+                    <button class="action-btn" id="return-to-form-btn">
+                        <i class="fas fa-arrow-left"></i>Return to Form
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Link -->
+    <script src="check_out.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,921 @@
+stateDiagram-v2
+    [*] --> Login
+    Login --> Dashboard
+    Dashboard --> ServiceHub: Click "Service Hub"
+    
+    %% Service Hub Main Page (Service History Records Removed)
+    state ServiceHub {
+        MainMenu: Service Hub Main Menu
+        MainMenu: - Job Scheduling & Tracking
+        MainMenu: - Customer Communication Tools
+    }
+    
+    %% Job Scheduling & Tracking Section (Print/Download & View Completed Vehicles Removed)
+    ServiceHub --> JobSchedulingTracking: Click "Job Scheduling & Tracking"
+    state JobSchedulingTracking {
+        JobDashboard: Job Dashboard
+        JobDashboard: - View Jobs by Status (Scheduled/In Progress Only)
+        JobDashboard: - Quick Filter Options (Status/Date/Technician)
+        JobDashboard: - Search Bar (License Plate/Customer Name/Job ID)
+        JobDashboard: - Sort Options (Date/Priority/Status)
+        
+        JobActions: Job Actions
+        JobActions: - New Appointment Button (Create New Service Job)
+        JobActions: - View Details Icon (Enhanced Job Information)
+        JobActions: - Update Progress Button (Send Customer Updates)
+        JobActions: - Edit Job Button (Modify Job Details)
+        JobActions: - Assign Technician Button (Change Assignment)
+    }
+    
+    %% New Appointment Flow
+    JobSchedulingTracking --> NewAppointmentForm: Click "New Appointment"
+    state NewAppointmentForm {
+        AppointmentWizard: New Appointment Wizard
+        
+        CustomerInfo: Step 1: Customer Information
+        CustomerInfo: - Full Name (Required)
+        CustomerInfo: - Phone Number (Required)
+        CustomerInfo: - Email Address (Optional)
+        CustomerInfo: - Physical Address (Optional)
+        CustomerInfo: - ID/Passport Number (Required)
+        CustomerInfo: - Next Button
+        
+        VehicleInfo: Step 2: Vehicle Information
+        VehicleInfo: - License Plate Number (Required)
+        VehicleInfo: - Vehicle Make & Model (Required)
+        VehicleInfo: - Year of Manufacture (Required)
+        VehicleInfo: - Engine Number (Optional)
+        VehicleInfo: - Chassis Number (Optional)
+        VehicleInfo: - Vehicle Color (Required)
+        VehicleInfo: - Mileage Reading (Required)
+        VehicleInfo: - Previous/Next Buttons
+        
+        ServiceDetails: Step 3: Service Details
+        ServiceDetails: - Service Type Selection (Dropdown)
+        ServiceDetails: - Problem Description (Text Area)
+        ServiceDetails: - Urgency Level (Low/Medium/High)
+        ServiceDetails: - Estimated Duration (Hours/Days)
+        ServiceDetails: - Special Instructions (Optional)
+        ServiceDetails: - Previous/Next Buttons
+        
+        AppointmentDetails: Step 4: Appointment Scheduling
+        AppointmentDetails: - Preferred Date Picker
+        AppointmentDetails: - Time Slot Selection
+        AppointmentDetails: - Assign Technician (Dropdown)
+        AppointmentDetails: - Alternative Date Options
+        AppointmentDetails: - Previous/Next Buttons
+        
+        CommunicationPrefs: Step 5: Communication Preferences
+        CommunicationPrefs: - SMS Notifications (Checkbox)
+        CommunicationPrefs: - Email Notifications (Checkbox)
+        CommunicationPrefs: - WhatsApp Updates (Checkbox)
+        CommunicationPrefs: - Call Preferences (Checkbox)
+        CommunicationPrefs: - Previous/Submit Buttons
+    }
+    
+    NewAppointmentForm --> AppointmentConfirmation: Click "Submit Appointment"
+    state AppointmentConfirmation {
+        ConfirmationPage: Appointment Confirmation Page
+        ConfirmationSuccess: ✓ Appointment Successfully Created
+        ConfirmationSuccess: - Unique Job ID Generated & Displayed
+        ConfirmationSuccess: - Customer Notification Sent (SMS/Email)
+        ConfirmationSuccess: - Added to Technician Schedule
+        ConfirmationSuccess: - Calendar Entry Created
+        ConfirmationSuccess: - Print Appointment Slip Option
+        ConfirmationSuccess: - Email Confirmation Copy Option
+        ConfirmationSuccess: - Return to Dashboard Button
+        ConfirmationSuccess: - Create Another Appointment Button
+    }
+    
+    AppointmentConfirmation --> JobSchedulingTracking: Click "Return to Job Scheduling"
+    AppointmentConfirmation --> NewAppointmentForm: Click "Create Another Appointment"
+    
+    %% Enhanced View Details Flow
+    JobSchedulingTracking --> DetailedJobView: Click "View Details" Icon
+    state DetailedJobView {
+        JobDetailsPopup: Enhanced Job Details Popup Window
+        DetailsTabs: Navigation Tabs
+        DetailsTabs: - 1. Details Tab (Job Information)
+        DetailsTabs: - 2. Billing Information Tab
+        DetailsTabs: - 3. Assessment Form Tab
+        DetailsTabs: - 4. Repair Images Tab
+        DetailsTabs: - 5. Supporting Documents Tab
+        DetailsTabs: - 6. Technician Notes Tab
+        DetailsTabs: - Close Popup Button (X)
+    }
+    
+    %% Details Tab
+    DetailedJobView --> DetailsTab: Click "Details" Tab (Default Active)
+    state DetailsTab {
+        DetailsLayout: Details Tab Layout
+        
+        CustomerSection: Customer Information Section
+        CustomerSection: - Full Name (View/Edit with OTP)
+        CustomerSection: - Phone Number (View/Edit with OTP)
+        CustomerSection: - Email Address (View/Edit with OTP)
+        CustomerSection: - Physical Address (View/Edit with OTP)
+        CustomerSection: - ID Number (View Only)
+        CustomerSection: - Edit Customer Info Button
+        
+        ServiceSection: Service Information Section
+        ServiceSection: - Service Type (View/Edit/Remove)
+        ServiceSection: - Problem Description (View/Edit/Remove)
+        ServiceSection: - Urgency Level (View/Edit)
+        ServiceSection: - Current Status (View/Edit)
+        ServiceSection: - Assigned Technician (View/Change)
+        ServiceSection: - Edit Service Info Button
+        
+        VehicleSection: Vehicle Information Section
+        VehicleSection: - License Plate (View/Edit with OTP)
+        VehicleSection: - Make & Model (View/Edit with OTP)
+        VehicleSection: - Year (View/Edit with OTP)
+        VehicleSection: - Color (View/Edit with OTP)
+        VehicleSection: - Mileage (View/Edit with OTP)
+        VehicleSection: - Edit Vehicle Info Button
+        
+        ActionButtons: Section Action Buttons
+        ActionButtons: - Save All Changes Button
+        ActionButtons: - Cancel Changes Button
+        ActionButtons: - Reset Form Button
+    }
+    
+    DetailsTab --> OTPVerification: Click "Edit Customer Info" or "Edit Vehicle Info"
+    state OTPVerification {
+        OTPModal: OTP Verification Modal
+        OTPForm: OTP Authorization Process
+        OTPForm: - Vehicle Owner Phone Number Display
+        OTPForm: - Send OTP Code Button
+        OTPForm: - OTP Code Input Field (6 digits)
+        OTPForm: - Resend OTP Button (60s cooldown)
+        OTPForm: - Verify OTP Button
+        OTPForm: - Cancel Authorization Button
+        OTPForm: - OTP Expiry Timer (5 minutes)
+        
+        OTPStatus: Verification Status
+        OTPStatus: - Success: "Authorization Granted - Edit Mode Enabled"
+        OTPStatus: - Error: "Invalid OTP - Please Try Again"
+        OTPStatus: - Expired: "OTP Expired - Request New Code"
+    }
+    
+    OTPVerification --> DetailsTab: Click "Verify OTP" (Success)
+    OTPVerification --> DetailsTab: Click "Cancel Authorization"
+    DetailsTab --> DetailedJobView: Click "Back to Tabs"
+    
+    %% Billing Information Tab
+    DetailedJobView --> BillingTab: Click "Billing Information" Tab
+    state BillingTab {
+        BillingLayout: Billing Information Layout
+        
+        ServiceCharges: Service Charges Section
+        ServiceCharges: - Labor Cost (Editable)
+        ServiceCharges: - Service Fee (Editable)
+        ServiceCharges: - Diagnostic Fee (Editable)
+        ServiceCharges: - Additional Services (Add/Remove)
+        
+        PartsCharges: Parts & Materials Section
+        PartsCharges: - Parts List (Add/Edit/Remove)
+        PartsCharges: - Part Name & Quantity
+        PartsCharges: - Unit Price & Total
+        PartsCharges: - Supplier Information
+        
+        PlatformCharges: CarPal Platform Charges
+        PlatformCharges: - Platform Fee (Auto-calculated 5%)
+        PlatformCharges: - SMS Charges (Auto-tracked)
+        PlatformCharges: - Processing Fee (Fixed Rate)
+        PlatformCharges: - Total Platform Charges
+        
+        TaxCalculations: Tax & Total Section
+        TaxCalculations: - Subtotal Before Tax
+        TaxCalculations: - VAT (16% Auto-calculated)
+        TaxCalculations: - Service Tax (2% Auto-calculated)
+        TaxCalculations: - Final Total Amount
+        
+        BillingActions: Billing Actions
+        BillingActions: - Edit Billing Information Button
+        BillingActions: - Add Parts/Services Button
+        BillingActions: - Generate Invoice Preview Button
+        BillingActions: - Save Billing Changes Button
+        BillingActions: - Print Estimate Button
+    }
+    
+    BillingTab --> DetailedJobView: Click "Back to Tabs"
+    
+    %% Assessment Form Tab
+    DetailedJobView --> AssessmentTab: Click "Assessment Form" Tab
+    state AssessmentTab {
+        AssessmentLayout: Assessment Form Layout
+        
+        InitialAssessment: Initial Vehicle Assessment
+        InitialAssessment: - Check-in Date & Time
+        InitialAssessment: - Receiving Technician Name
+        InitialAssessment: - Vehicle Exterior Condition
+        InitialAssessment: - Vehicle Interior Condition
+        InitialAssessment: - Engine Bay Inspection Notes
+        InitialAssessment: - Fuel Level & Mileage Record
+        
+        TechnicianUpdates: Technician Assessment Updates
+        TechnicianUpdates: - Diagnostic Results
+        TechnicianUpdates: - Problem Identification
+        TechnicianUpdates: - Required Repairs List
+        TechnicianUpdates: - Parts Needed
+        TechnicianUpdates: - Estimated Completion Time
+        TechnicianUpdates: - Work Progress Updates
+        
+        DamageDocumentation: Damage Documentation
+        DamageDocumentation: - Pre-existing Damage Notes
+        DamageDocumentation: - New Issues Discovered
+        DamageDocumentation: - Severity Assessment
+        DamageDocumentation: - Photo Reference Numbers
+        
+        RepairRecommendations: Repair Recommendations
+        RepairRecommendations: - Primary Repairs (Required)
+        RepairRecommendations: - Secondary Repairs (Recommended)
+        RepairRecommendations: - Optional Improvements
+        RepairRecommendations: - Cost Implications
+        
+        AssessmentActions: Assessment Actions
+        AssessmentActions: - View Complete Assessment Button
+        AssessmentActions: - Edit Assessment Button (OTP Required)
+        AssessmentActions: - Print Assessment Report Button
+        AssessmentActions: - Export Assessment PDF Button
+    }
+    
+    AssessmentTab --> OTPVerificationAssessment: Click "Edit Assessment"
+    state OTPVerificationAssessment {
+        AssessmentOTPModal: Assessment Edit Authorization Modal
+        AssessmentOTP: Vehicle Owner OTP Verification
+        AssessmentOTP: - Authorization Required Message
+        AssessmentOTP: - Vehicle Owner Contact Display
+        AssessmentOTP: - Send OTP Button
+        AssessmentOTP: - OTP Input Field
+        AssessmentOTP: - Verify & Allow Edit Button
+        AssessmentOTP: - Cancel Edit Request Button
+        AssessmentOTP: - Edit Reason Selection (Dropdown)
+    }
+    
+    OTPVerificationAssessment --> AssessmentTab: Click "Verify & Allow Edit"
+    AssessmentTab --> DetailedJobView: Click "Back to Tabs"
+    
+    %% Repair Images Tab
+    DetailedJobView --> RepairImagesTab: Click "Repair Images" Tab
+    state RepairImagesTab {
+        ImageGalleryLayout: Repair Images Gallery Layout
+        
+        ImageCategories: Image Organization Categories
+        ImageCategories: - Before Repair Images (Red Border)
+        ImageCategories: - During Repair Images (Yellow Border)
+        ImageCategories: - After Repair Images (Green Border)
+        ImageCategories: - Category Filter Buttons
+        ImageCategories: - View All Images Button
+        
+        ImageGrid: Image Display Grid
+        ImageGrid: - Thumbnail Grid View
+        ImageGrid: - Image Title & Description
+        ImageGrid: - Upload Date & Time
+        ImageGrid: - Technician Name
+        ImageGrid: - Click to Enlarge Images
+        ImageGrid: - Download Individual Image
+        
+        ImageActions: Image Management Actions
+        ImageActions: - Upload New Images Button
+        ImageActions: - Bulk Select Images Checkbox
+        ImageActions: - Delete Selected Images Button
+        ImageActions: - Rearrange Images Button
+        ImageActions: - Export All Images ZIP
+        
+        ImageDetails: Selected Image Details Panel
+        ImageDetails: - Full Size Image Display
+        ImageDetails: - Image Properties (Size/Format/Date)
+        ImageDetails: - Edit Image Description
+        ImageDetails: - Change Image Category
+        ImageDetails: - Delete This Image Button
+    }
+    
+    RepairImagesTab --> ImageUpload: Click "Upload New Images"
+    state ImageUpload {
+        ImageUploadModal: Image Upload Modal Window
+        UploadForm: Multi-Image Upload Form
+        UploadForm: - Drag & Drop Upload Area
+        UploadForm: - Browse Files Button (Multi-select)
+        UploadForm: - Supported Formats (JPG/PNG/HEIC/WebP)
+        UploadForm: - Max File Size (10MB per image)
+        UploadForm: - Preview Selected Images
+        
+        CategorySelection: Image Categorization
+        CategorySelection: - Before Repair Radio Button
+        CategorySelection: - During Repair Radio Button  
+        CategorySelection: - After Repair Radio Button
+        CategorySelection: - Apply to All Images Checkbox
+        
+        ImageDescriptions: Individual Image Details
+        ImageDescriptions: - Image Description Text Field
+        ImageDescriptions: - Add Description to Each Image
+        ImageDescriptions: - Auto-generate Timestamps
+        ImageDescriptions: - Technician Name Auto-fill
+        
+        UploadActions: Upload Actions
+        UploadActions: - Upload All Images Button
+        UploadActions: - Cancel Upload Button
+        UploadActions: - Upload Progress Bar
+        UploadActions: - Success/Error Messages
+    }
+    
+    ImageUpload --> RepairImagesTab: Click "Upload Complete" or "Cancel"
+    RepairImagesTab --> DetailedJobView: Click "Back to Tabs"
+    
+    %% Supporting Documents Tab
+    DetailedJobView --> SupportingDocsTab: Click "Supporting Documents" Tab
+    state SupportingDocsTab {
+        DocumentsLayout: Supporting Documents Layout
+        
+        RequiredDocs: Required Supporting Documents Checklist
+        RequiredDocs: ✓/✗ Insurance Claim Form (PDF/Word)
+        RequiredDocs: ✓/✗ Police Abstract Report (PDF)
+        RequiredDocs: ✓/✗ Vehicle Inspection Report (PDF/Word)
+        RequiredDocs: ✓/✗ Repair Estimate/Assessment Report (PDF)
+        RequiredDocs: ✓/✗ Vehicle Damage Photographs (Images/PDF)
+        RequiredDocs: ✓/✗ Copy of Vehicle Logbook (PDF/Image)
+        RequiredDocs: ✓/✗ Driver's Valid License (PDF/Image)
+        RequiredDocs: ✓/✗ Insurance Premium Payment Proof (PDF/Image)
+        RequiredDocs: ✓/✗ Excess Payment Receipt (PDF/Image)
+        RequiredDocs: - Completion Status Bar
+        
+        OptionalDocs: Optional Supporting Documents
+        OptionalDocs: - ETR Receipts for Parts/Services (PDF)
+        OptionalDocs: - Vehicle Valuation Certificate (PDF)
+        OptionalDocs: - Signed Work Completion Form (PDF/Image)
+        OptionalDocs: - Additional Insurance Documents (PDF)
+        OptionalDocs: - Warranty Information (PDF/Image)
+        
+        DocumentGrid: Documents Display Grid
+        DocumentGrid: - Document Thumbnails
+        DocumentGrid: - Document Name & Type
+        DocumentGrid: - Upload Date & Size
+        DocumentGrid: - Status Indicators
+        DocumentGrid: - View/Download/Delete Buttons
+        
+        DocActions: Document Management Actions
+        DocActions: - Upload Document Button (Multi-type)
+        DocActions: - Bulk Upload ZIP Button
+        DocActions: - Export All Documents Button
+        DocActions: - Check Completeness Button
+        DocActions: - Generate Document Report Button
+    }
+    
+    SupportingDocsTab --> DocUpload: Click "Upload Document"
+    state DocUpload {
+        DocUploadModal: Document Upload Modal
+        DocUploadForm: Document Upload Form
+        DocUploadForm: - Document Type Selection (Dropdown)
+        DocUploadForm: - Required/Optional Indicator
+        DocUploadForm: - Choose File Button
+        DocUploadForm: - Supported Formats (PDF/Word/MP4/Images)
+        DocUploadForm: - Max File Size (50MB)
+        DocUploadForm: - Document Preview Panel
+        
+        DocMetadata: Document Information
+        DocMetadata: - Document Description (Text Area)
+        DocMetadata: - Document Date (Date Picker)
+        DocMetadata: - Issuing Authority (Text Field)
+        DocMetadata: - Reference Number (Text Field)
+        DocMetadata: - Expiry Date (If Applicable)
+        
+        UploadProgress: Upload Process
+        UploadProgress: - Upload Progress Bar
+        UploadProgress: - File Validation Status
+        UploadProgress: - Upload Success/Error Messages
+        UploadProgress: - Upload Another Document Option
+        UploadProgress: - Complete Upload Button
+    }
+    
+    DocUpload --> SupportingDocsTab: Click "Upload Complete"
+    SupportingDocsTab --> DetailedJobView: Click "Back to Tabs"
+    
+    %% Technician Notes Tab
+    DetailedJobView --> TechNotesTab: Click "Technician Notes" Tab
+    state TechNotesTab {
+        NotesLayout: Technician Notes Layout
+        
+        NotesHistory: Chronological Notes History
+        NotesHistory: - Notes Timeline (Latest First)
+        NotesHistory: - Technician Name & Photo
+        NotesHistory: - Date & Time Stamps
+        NotesHistory: - Note Content & Attachments
+        NotesHistory: - Note Priority Indicators
+        NotesHistory: - Reply/Comment Options
+        
+        NotesFilter: Notes Filter Options
+        NotesFilter: - Filter by Technician
+        NotesFilter: - Filter by Date Range
+        NotesFilter: - Filter by Priority Level
+        NotesFilter: - Search Notes Content
+        NotesFilter: - Sort by Date/Priority
+        
+        NotesActions: Notes Management Actions
+        NotesActions: - Add New Note Button
+        NotesActions: - Export Notes Report Button
+        NotesActions: - Print All Notes Button
+        NotesActions: - Archive Old Notes Button
+        
+        ActiveNote: Selected Note Details
+        ActiveNote: - Full Note Content Display
+        ActiveNote: - Attached Files List
+        ActiveNote: - Edit Note Button (Own Notes Only)
+        ActiveNote: - Delete Note Button (Own Notes Only)
+        ActiveNote: - Reply to Note Button
+    }
+    
+    TechNotesTab --> AddTechNote: Click "Add New Note"
+    state AddTechNote {
+        NoteCreationModal: Add Technician Note Modal
+        NoteForm: New Note Creation Form
+        NoteForm: - Note Title (Text Field)
+        NoteForm: - Note Content (Rich Text Editor)
+        NoteForm: - Priority Level Selection (Low/Medium/High/Critical)
+        NoteForm: - Attach Files Button (Multiple Files)
+        NoteForm: - Mention Other Technicians (@username)
+        NoteForm: - Add Tags (Comma Separated)
+        
+        NotePreview: Note Preview Section
+        NotePreview: - Preview Note Formatting
+        NotePreview: - Preview Attachments
+        NotePreview: - Character Count
+        NotePreview: - Estimated Reading Time
+        
+        NoteSubmission: Note Submission
+        NoteSubmission: - Save as Draft Button
+        NoteSubmission: - Save & Notify Team Button
+        NoteSubmission: - Save Private Note Button
+        NoteSubmission: - Cancel Note Button
+        NoteSubmission: - Auto-save Indicator
+    }
+    
+    AddTechNote --> TechNotesTab: Click "Save Note"
+    TechNotesTab --> DetailedJobView: Click "Back to Tabs"
+    DetailedJobView --> JobSchedulingTracking: Click "Close Details Popup (X)"
+    
+    %% Update Progress Flow
+    JobSchedulingTracking --> UpdateProgressForm: Click "Update Progress"
+    state UpdateProgressForm {
+        ProgressUpdateModal: Progress Update Modal Window
+        ProgressUpdate: Customer Progress Update Form
+        
+        VehicleSelection: Vehicle Identification
+        VehicleSelection: - Enter Vehicle License Plate
+        VehicleSelection: - Auto-complete Suggestions
+        VehicleSelection: - Verify Vehicle Details
+        VehicleSelection: - Customer Contact Info Display
+        
+        UpdateTemplates: Update Message Templates
+        UpdateTemplates: - Template Selection Dropdown
+        UpdateTemplates: - "Work Started" Template
+        UpdateTemplates: - "Progress Update" Template  
+        UpdateTemplates: - "Waiting for Parts" Template
+        UpdateTemplates: - "Quality Check" Template
+        UpdateTemplates: - "Almost Complete" Template
+        UpdateTemplates: - Custom Message Option
+        
+        MessageCustomization: Message Customization
+        MessageCustomization: - Template Preview
+        MessageCustomization: - Edit Message Content
+        MessageCustomization: - Add Personal Note
+        MessageCustomization: - Include ETA Option
+        MessageCustomization: - Attach Images Option
+        
+        DeliveryOptions: Delivery Method Selection
+        DeliveryOptions: - SMS Notification Checkbox
+        DeliveryOptions: - Email Notification Checkbox
+        DeliveryOptions: - WhatsApp Message Checkbox
+        DeliveryOptions: - Call After Send Checkbox
+        DeliveryOptions: - Send Preview Button
+        DeliveryOptions: - Send Update Button
+    }
+    
+    UpdateProgressForm --> CustomerNotification: Click "Send Update"
+    state CustomerNotification {
+        NotificationStatus: Update Delivery Status
+        NotificationSent: ✓ Update Successfully Sent
+        NotificationSent: - SMS Delivery Status & Timestamp
+        NotificationSent: - Email Delivery Status & Timestamp
+        NotificationSent: - WhatsApp Delivery Status
+        NotificationSent: - SMS/Communication Charges Logged
+        NotificationSent: - Customer Read Receipts (If Available)
+        NotificationSent: - Delivery Failure Alerts
+        
+        DeliveryTracking: Real-time Delivery Tracking
+        DeliveryTracking: - Message Queue Status
+        DeliveryTracking: - Retry Failed Messages Button
+        DeliveryTracking: - View Message History Button
+        DeliveryTracking: - Send Follow-up Message Button
+        
+        BillingTracking: Communication Cost Tracking
+        BillingTracking: - SMS Charges Added to Invoice
+        BillingTracking: - Email Delivery (Free)
+        BillingTracking: - WhatsApp Charges (If Applicable)
+        BillingTracking: - Total Communication Costs
+    }
+    
+    CustomerNotification --> JobSchedulingTracking: Click "Return to Job Scheduling"
+    
+    %% Customer Communication Tools Section
+    ServiceHub --> CustomerCommunicationTools: Click "Customer Communication Tools"
+    state CustomerCommunicationTools {
+        CommunicationDashboard: Communication Tools Dashboard
+        
+        MessageCenter: Message Center Overview
+        MessageCenter: - Recent Updates Sent (Last 30 Days)
+        MessageCenter: - Scheduled Notifications Queue
+        MessageCenter: - Failed Message Alerts
+        MessageCenter: - Communication Cost Summary
+        MessageCenter: - Customer Response Tracking
+        
+        CommunicationTypes: Communication Type Options
+        UpdateTypes: - Repair Progress Updates
+        UpdateTypes: - Service Completion Notifications  
+        UpdateTypes: - Custom Messages
+        UpdateTypes: - Bulk Notifications
+        UpdateTypes: - Appointment Reminders
+        
+        TemplateManager: Template Management System
+        TemplateManager: - View All Templates (Grid/List)
+        TemplateManager: - Create New Template Button
+        TemplateManager: - Edit Existing Template
+        TemplateManager: - Delete Template Button
+        TemplateManager: - Template Usage Statistics
+        TemplateManager: - Import/Export Templates
+        
+        QuickActions: Quick Communication Actions
+        QuickActions: - Send Bulk Update Button
+        QuickActions: - Schedule Reminder Button
+        QuickActions: - Emergency Notification Button
+        QuickActions: - View Message History Button
+    }
+    
+    CustomerCommunicationTools --> RepairProgressUpdate: Click "Repair Progress Updates"
+    state RepairProgressUpdate {
+        ProgressCommunication: Repair Progress Communication
+        ProgressUpdateForm: Enhanced Progress Update Form
+        
+        CustomerLookup: Customer/Vehicle Lookup
+        CustomerLookup: - Vehicle License Plate Search
+        CustomerLookup: - Customer Name Search
+        CustomerLookup: - Job ID Search
+        CustomerLookup: - Recent Jobs Dropdown
+        CustomerLookup: - Customer Details Display
+        
+        ProgressTemplates: Progress Update Templates
+        ProgressTemplates: - Work Commenced Template
+        ProgressTemplates: - Parts Ordered Template
+        ProgressTemplates: - Diagnostic Complete Template
+        ProgressTemplates: - 50% Progress Template
+        ProgressTemplates: - Quality Check Template
+        ProgressTemplates: - Final Testing Template
+        
+        CustomMessage: Custom Message Builder
+        CustomMessage: - Rich Text Message Editor
+        CustomMessage: - Variable Insertion (Name/Vehicle/ETA)
+        CustomMessage: - Message Length Counter
+        CustomMessage: - Preview Message Button
+        CustomMessage: - Save as Template Option
+        
+        MediaAttachments: Message Attachments
+        MediaAttachments: - Attach Progress Images
+        MediaAttachments: - Attach Documents
+        MediaAttachments: - Include Invoice Estimate
+        MediaAttachments: - File Size Validation
+        
+        SendingOptions: Message Delivery Options
+        SendingOptions: - SMS (Cost per message shown)
+        SendingOptions: - Email (Free - includes attachments)
+        SendingOptions: - WhatsApp (Cost per message)
+        SendingOptions: - Schedule for Later Option
+        SendingOptions: - Send Immediately Button
+    }
+    
+    CustomerCommunicationTools --> ServiceCompletionNotice: Click "Service Completion Notifications"
+    state ServiceCompletionNotice {
+        CompletionCommunication: Service Completion Communication
+        CompletionForm: Service Completion Notification Form
+        
+        VehicleCompletion: Vehicle Selection & Status
+        VehicleCompletion: - Vehicle License Plate Entry
+        VehicleCompletion: - Auto-load Job Details
+        VehicleCompletion: - Verify Service Completion
+        VehicleCompletion: - Final Quality Check Confirmation
+        
+        PickupInstructions: Vehicle Pickup Information
+        PickupInstructions: - Pickup Location Details
+        PickupInstructions: - Available Pickup Hours
+        PickupInstructions: - Required Documents List
+        PickupInstructions: - Payment Instructions
+        PickupInstructions: - Special Instructions Field
+        
+        InvoiceAttachment: Invoice & Documentation
+        InvoiceAttachment: - Auto-generate Final Invoice
+        InvoiceAttachment: - Include Supporting Documents
+        InvoiceAttachment: - Add Payment QR Code
+        InvoiceAttachment: - Include Insurance Forms
+        InvoiceAttachment: - Warranty Information
+        
+        CompletionDelivery: Completion Notice Delivery
+        CompletionDelivery: - SMS with Basic Info
+        CompletionDelivery: - Email with Full Documentation
+        CompletionDelivery: - WhatsApp with Images
+        CompletionDelivery: - Include Insurance Company Option
+        CompletionDelivery: - Schedule Delivery Time
+        
+        CompletionActions: Completion Process Actions
+        CompletionActions: - Mark Vehicle as Completed Button
+        CompletionActions: - Generate Completion Certificate
+        CompletionActions: - Send Completion Notice Button
+        CompletionActions: - Schedule Pickup Appointment
+    }
+    
+    ServiceCompletionNotice --> AutoBillingGeneration: Click "Mark as Completed"
+    state AutoBillingGeneration {
+        AutoBilling: Automatic Billing Generation Process
+        AutoProcessing: Automated Document Processing
+        AutoProcessing: - Generate Comprehensive Billing PDF
+        AutoProcessing: - File Naming: "License Plate_Job ID_Date"
+        AutoProcessing: - Include CarPal Invoice as Front Page
+        AutoProcessing: - Compile All Supporting Documents
+        AutoProcessing: - Apply Digital Signatures
+        AutoProcessing: - Set Vehicle Status to "Completed"
+        AutoProcessing: - Start 60-Day Visibility Timer
+        AutoProcessing: - Archive Job in Completed Records
+        
+        DocumentCompilation: Billing Document Compilation
+        DocumentCompilation: - CarPal Professional Invoice (Page 1)
+        DocumentCompilation: - Detailed Service Breakdown
+        DocumentCompilation: - Parts & Labor Costs
+        DocumentCompilation: - Tax Calculations & Totals
+        DocumentCompilation: - All Supporting Documents
+        DocumentCompilation: - Before/After Repair Images
+        DocumentCompilation: - Quality Check Certificate
+        
+        BillingPDFActions: Generated PDF Management Actions
+        BillingActions: - Preview Complete PDF Button
+        BillingActions: - Edit Invoice/Documents Button
+        BillingActions: - Add Additional Documents Button
+        BillingActions: - Submit For Payment Button
+        BillingActions: - Download PDF Copy Button
+        BillingActions: - Email PDF to Customer Button
+        BillingActions: - Print Hard Copy Button
+    }
+    
+    AutoBillingGeneration --> EditBillingPDF: Click "Edit Invoice/Documents"
+    AutoBillingGeneration --> SubmitForPayment: Click "Submit For Payment"
+    
+    state EditBillingPDF {
+        BillingEditor: Billing PDF Editor Interface
+        EditOptions: Comprehensive Edit Options
+        
+        InvoiceEditing: Invoice Modification Section
+        InvoiceEditing: - Edit Service Line Items
+        InvoiceEditing: - Modify Parts & Labor Costs  
+        InvoiceEditing: - Adjust Tax Calculations
+        InvoiceEditing: - Update Payment Terms
+        InvoiceEditing: - Change Invoice Date
+        InvoiceEditing: - Add Discounts/Adjustments
+        
+        DocumentManagement: Supporting Documents Management
+        DocumentManagement: - Add New Supporting Documents
+        DocumentManagement: - Remove Existing Documents
+        DocumentManagement: - Rearrange Document Order
+        DocumentManagement: - Replace Documents
+        DocumentManagement: - Update Document Descriptions
+        
+        ContentReview: Content Review & Validation
+        ContentReview: - Preview Updated PDF
+        ContentReview: - Validate Required Documents
+        ContentReview: - Check Calculation Accuracy
+        ContentReview: - Verify Customer Information
+        ContentReview: - Quality Assurance Checklist
+        
+        EditActions: Editor Actions
+        EditActions: - Save Changes Button
+        EditActions: - Cancel Edits Button
+        EditActions: - Regenerate PDF Button
+        EditActions: - Export Draft Version Button
+        EditActions: - Return to Billing Options Button
+    }
+    
+    state SubmitForPayment {
+        PaymentSubmission: Payment Submission Process
+        PaymentProcess: Automated Payment Submission
+        PaymentProcess: - Generate Final Payment Package
+        PaymentProcess: - Create Payment Reference Number
+        PaymentProcess: - Prepare Multi-channel Delivery
+        PaymentProcess: - Log Submission Timestamp
+        PaymentProcess: - Initialize Delivery Tracking
+        
+        DeliveryChannels: Multi-Channel Delivery System
+        DeliveryChannels: - Email PDF to Primary Payee
+        DeliveryChannels: - WhatsApp PDF to Mobile Number
+        DeliveryChannels: - SMS Notification with Download Link
+        DeliveryChannels: - Insurance Company CC (If Selected)
+        DeliveryChannels: - Internal Record Copy
+        
+        NotificationSystem: Comprehensive Notification System
+        NotificationSystem: - SMS Payment Notification to Recipient
+        NotificationSystem: - Email Payment Confirmation
+        NotificationSystem: - WhatsApp Payment Alert
+        NotificationSystem: - Internal Team Notifications
+        NotificationSystem: - Delivery Status Updates
+        
+        DeliveryTracking: Real-time Delivery Confirmation
+        DeliveryTracking: - Email Delivery Confirmation
+        DeliveryTracking: - WhatsApp Read Receipts
+        DeliveryTracking: - SMS Delivery Reports
+        DeliveryTracking: - Failed Delivery Alerts
+        DeliveryTracking: - Retry Failed Deliveries Button
+        
+        PaymentLogging: Payment Submission Logging
+        PaymentLogging: - Log Submission in System Records
+        PaymentLogging: - Record Delivery Timestamps
+        PaymentLogging: - Track Payment Status Updates
+        PaymentLogging: - Generate Submission Report
+        PaymentLogging: - Archive Payment Documents
+    }
+    
+    EditBillingPDF --> AutoBillingGeneration: Click "Return to Billing Options"
+    SubmitForPayment --> ServiceCompletionNotice: Click "Payment Submitted Successfully"
+    AutoBillingGeneration --> ServiceCompletionNotice: Click "Return to Completion Form"
+    
+    CustomerCommunicationTools --> CustomMessageForm: Click "Custom Messages"
+    state CustomMessageForm {
+        CustomMessaging: Custom Message Creation Interface
+        CustomForm: Advanced Custom Message Form
+        
+        RecipientSelection: Recipient Management
+        RecipientSelection: - Single Recipient Option
+        RecipientSelection: - Multiple Recipients Option
+        RecipientSelection: - Customer Database Search
+        RecipientSelection: - Recent Contacts List
+        RecipientSelection: - Import Recipients from CSV
+        RecipientSelection: - Contact Group Selection
+        
+        MessageComposer: Message Content Creation
+        MessageComposer: - Rich Text Message Editor
+        MessageComposer: - Message Templates Dropdown
+        MessageComposer: - Variable Insertion Menu
+        MessageComposer: - Message Length Counter
+        MessageComposer: - Character Limit Warnings
+        MessageComposer: - Emoji Picker
+        
+        AttachmentOptions: Message Attachments
+        AttachmentOptions: - Attach Documents (PDF/Word)
+        AttachmentOptions: - Attach Images (JPG/PNG)
+        AttachmentOptions: - Attach Videos (MP4/MOV)
+        AttachmentOptions: - File Size Validation
+        AttachmentOptions: - Preview Attachments
+        AttachmentOptions: - Remove Attachments
+        
+        DeliverySettings: Message Delivery Configuration
+        DeliverySettings: - SMS Delivery (Cost Shown)
+        DeliverySettings: - Email Delivery (Free)
+        DeliverySettings: - WhatsApp Delivery (Cost Shown)
+        DeliverySettings: - Schedule Delivery Time
+        DeliverySettings: - Immediate Send Option
+        DeliverySettings: - Delivery Priority Setting
+        
+        MessageActions: Custom Message Actions
+        MessageActions: - Save as Template Button
+        MessageActions: - Preview Message Button
+        MessageActions: - Send Test Message Button
+        MessageActions: - Schedule Message Button
+        MessageActions: - Send Now Button
+        MessageActions: - Cancel Message Button
+    }
+    
+    CustomerCommunicationTools --> TemplateEditor: Click "Create New Template" or "Edit Template"
+    state TemplateEditor {
+        TemplateCreation: Template Editor Interface
+        TemplateForm: Comprehensive Template Editor Form
+        
+        TemplateBasics: Template Basic Information
+        TemplateBasics: - Template Name (Required)
+        TemplateBasics: - Template Category Selection
+        TemplateBasics: - Template Description
+        TemplateBasics: - Template Tags (Searchable)
+        TemplateBasics: - Template Language Selection
+        
+        MessageContent: Template Message Content
+        MessageContent: - Rich Text Content Editor
+        MessageContent: - Variable Placeholder Menu
+        MessageContent: - Dynamic Content Insertion
+        MessageContent: - Message Structure Options
+        MessageContent: - Content Formatting Tools
+        
+        VariablePlaceholders: Dynamic Variable System
+        VariablePlaceholders: - {CustomerName} Variable
+        VariablePlaceholders: - {VehiclePlate} Variable
+        VariablePlaceholders: - {JobID} Variable
+        VariablePlaceholders: - {TechnicianName} Variable
+        VariablePlaceholders: - {EstimatedTime} Variable
+        VariablePlaceholders: - {ServiceType} Variable
+        VariablePlaceholders: - {CompanyName} Variable
+        VariablePlaceholders: - {Date} Variable
+        VariablePlaceholders: - {Time} Variable
+        
+        TemplatePreview: Template Preview System
+        TemplatePreview: - Live Preview with Sample Data
+        TemplatePreview: - Variable Substitution Test
+        TemplatePreview: - SMS Character Count
+        TemplatePreview: - Email Format Preview
+        TemplatePreview: - WhatsApp Format Preview
+        
+        TemplateSettings: Template Configuration
+        TemplateSettings: - Default Delivery Method
+        TemplateSettings: - Template Permissions
+        TemplateSettings: - Usage Restrictions
+        TemplateSettings: - Auto-archive Option
+        TemplateSettings: - Version Control
+        
+        TemplateActions: Template Management Actions
+        TemplateActions: - Save Template Button
+        TemplateActions: - Save as New Version Button
+        TemplateActions: - Test Template Button
+        TemplateActions: - Publish Template Button
+        TemplateActions: - Cancel Editing Button
+        TemplateActions: - Delete Template Button
+    }
+    
+    RepairProgressUpdate --> MessageSentConfirmation: Click "Send Update"
+    ServiceCompletionNotice --> MessageSentConfirmation: Click "Send Completion Notice"
+    CustomMessageForm --> MessageSentConfirmation: Click "Send Message"
+    TemplateEditor --> TemplatesSaved: Click "Save Template"
+    
+    state MessageSentConfirmation {
+        DeliveryConfirmation: Message Delivery Confirmation Interface
+        SentConfirmation: ✓ Message Successfully Processed
+        
+        DeliveryStatus: Real-time Delivery Status
+        DeliveryStatus: - SMS Delivery Status & Timestamp
+        DeliveryStatus: - Email Delivery Status & Timestamp
+        DeliveryStatus: - WhatsApp Delivery Status & Timestamp
+        DeliveryStatus: - Failed Delivery Notifications
+        DeliveryStatus: - Retry Options for Failed Messages
+        
+        CostTracking: Communication Cost Tracking
+        CostTracking: - Individual Message Costs
+        CostTracking: - Total Communication Charges
+        CostTracking: - Cost Breakdown by Channel
+        CostTracking: - Invoice Line Item Creation
+        CostTracking: - Budget Usage Updates
+        
+        MessageLogging: Message Activity Logging
+        MessageLogging: - Message Content Archived
+        MessageLogging: - Recipient Information Logged
+        MessageLogging: - Delivery Attempts Recorded
+        MessageLogging: - Response Tracking Enabled
+        MessageLogging: - Message History Updated
+        
+        PostDeliveryActions: Post-Delivery Options
+        PostDeliveryActions: - Send Follow-up Message Button
+        PostDeliveryActions: - View Message History Button
+        PostDeliveryActions: - Download Delivery Report Button
+        PostDeliveryActions: - Return to Communication Tools Button
+        PostDeliveryActions: - Send Another Message Button
+    }
+    
+    state TemplatesSaved {
+        TemplateSaveConfirmation: Template Save Confirmation
+        TemplateSaved: ✓ Template Successfully Saved
+        
+        TemplateDetails: Saved Template Information
+        TemplateDetails: - Template Name & ID
+        TemplateDetails: - Save Timestamp
+        TemplateDetails: - Template Category
+        TemplateDetails: - Available for Immediate Use
+        TemplateDetails: - Template Version Number
+        
+        TemplateLibrary: Template Library Integration
+        TemplateLibrary: - Added to Template Library
+        TemplateLibrary: - Available in Template Dropdown
+        TemplateLibrary: - Searchable by Name/Tags
+        TemplateLibrary: - Usage Analytics Enabled
+        TemplateLibrary: - Version History Maintained
+        
+        NextActions: Post-Save Options
+        NextActions: - Create Another Template Button
+        NextActions: - Edit This Template Button
+        NextActions: - Test Template Button
+        NextActions: - View All Templates Button
+        NextActions: - Return to Communication Tools Button
+    }
+    
+    MessageSentConfirmation --> CustomerCommunicationTools: Click "Return to Communication Tools"
+    TemplatesSaved --> CustomerCommunicationTools: Click "Return to Communication Tools"
+    
+    %% Return Navigation Paths
+    JobSchedulingTracking --> ServiceHub: Click "Return to Service Hub"
+    CustomerCommunicationTools --> ServiceHub: Click "Return to Service Hub" 
+    ServiceHub --> Dashboard: Click "Return to Dashboard"
+    Dashboard --> Login: Click "Logout"
+    
+    %% Additional Quick Navigation
+    RepairProgressUpdate --> CustomerCommunicationTools: Click "Back to Communication Tools"
+    ServiceCompletionNotice --> CustomerCommunicationTools: Click "Back to Communication Tools"
+    CustomMessageForm --> CustomerCommunicationTools: Click "Back to Communication Tools"
+    TemplateEditor --> CustomerCommunicationTools: Click "Back to Communication Tools"

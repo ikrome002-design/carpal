@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Check-In | CarPal by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/ico"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="check_in.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Sidebar with Logo and Navigation -->
+        <aside class="sidebar">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Dashboard/dashboard.html">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Random Logo/logo.png"
+                        alt="CarPal Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Dashboard/dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Vehicle Check-In/check_in.html">
+                            <i class="fas fa-car"></i>
+                            <span>Vehicle Check-In</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Service Hub/service_hub.html">
+                            <i class="fas fa-wrench"></i>
+                            <span>Service Hub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Billings & Payments/billings.html">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billing & Payments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Vehicle History/history.html">
+                            <i class="fas fa-history"></i>
+                            <span>Vehicle History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Inventory/inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Messaging\messaging.html">
+                            <i class="fas fa-comments"></i> <span>Messaging</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Technicians\technicians.html">
+                            <i class="fas fa-users-cog"></i> <span>Technicians</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Vehicle Check-Out\check_out.html">
+                            <i class="fas fa-car-side"></i> <span>Vehicle Check-Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar with Notifications and User Profile -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search by license plate...">
+                </div>
+
+                <div class="user-actions">
+                    <!-- Notifications -->
+                    <div class="notifications" id="notificationsIcon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+
+                        <!-- Notifications Dropdown -->
+                        <div class="notifications-dropdown" id="notificationsDropdown">
+                            <h3>Notifications</h3>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="User Profile">
+                                <div class="notification-content">
+                                    <p><strong>Vehicle Check-In Complete</strong></p>
+                                    <p>KBX 123C has been checked in successfully.</p>
+                                    <span class="notification-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="User Profile">
+                                <div class="notification-content">
+                                    <p><strong>New Assessment Ready</strong></p>
+                                    <p>Assessment form for KCA 456B is ready for review.</p>
+                                    <span class="notification-time">Yesterday</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="User Profile">
+                                <div class="notification-content">
+                                    <p><strong>Customer Confirmation</strong></p>
+                                    <p>James Mwangi has confirmed service for KDD 789E.</p>
+                                    <span class="notification-time">2 days ago</span>
+                                </div>
+                            </div>
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\CarPal Auto Repair Shop 3.0\Notifications\notifications.html"
+                                class="view-all">View All Notifications</a>
+                        </div>
+                    </div>
+
+                    <!-- User Profile -->
+                    <div class="user-profile" id="userProfileIcon">
+                        <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                            alt="User Profile">
+
+                        <!-- User Profile Dropdown -->
+                        <div class="profile-dropdown" id="profileDropdown">
+                            <div class="profile-header">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-80.png"
+                                    alt="User Profile">
+                                <div class="profile-info">
+                                    <h4>John Doe</h4>
+                                    <p>Shop Manager</p>
+                                </div>
+                            </div>
+                            <ul class="profile-menu">
+                                <li>
+                                    <a
+                                        href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Settings/settings.html">
+                                        <i class="fas fa-cog"></i>
+                                        <span>Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="C:/Users/nderu/Documents/Development/Product/CarPal/Landing Page/CarPal Auto Repair Shop/landing_page.html">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <span>Log Out</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Check-In Content -->
+            <div class="check-in-content">
+                <h1>Vehicle Check-In</h1>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="check-in-progress"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <div class="step active" data-step="vehicle-selection">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Vehicle Selection</div>
+                        </div>
+                        <div class="step" data-step="vehicle-info">
+                            <div class="step-number">2</div>
+                            <div class="step-label">Vehicle Info</div>
+                        </div>
+                        <div class="step" data-step="assessment">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Assessment</div>
+                        </div>
+                        <div class="step" data-step="payee-info">
+                            <div class="step-number">4</div>
+                            <div class="step-label">Payee Info</div>
+                        </div>
+                        <div class="step" data-step="review">
+                            <div class="step-number">5</div>
+                            <div class="step-label">Review</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi-step Form -->
+                <div class="check-in-form">
+                    <!-- Step 1: Vehicle Selection -->
+                    <div class="form-step active" id="vehicle-selection-step">
+                        <div class="form-section">
+                            <h2>Vehicle Type Selection</h2>
+                            <p>Select whether this is a new vehicle or an existing vehicle in our system.</p>
+
+                            <div class="vehicle-type-options">
+                                <div class="option-card" id="new-vehicle-option">
+                                    <div class="option-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <h3>New Vehicle</h3>
+                                    <p>First time this vehicle is being serviced at our shop</p>
+                                </div>
+
+                                <div class="option-card" id="existing-vehicle-option">
+                                    <div class="option-icon">
+                                        <i class="fas fa-history"></i>
+                                    </div>
+                                    <h3>Existing Vehicle</h3>
+                                    <p>Vehicle has been serviced here before</p>
+                                </div>
+                            </div>
+
+                            <div class="search-existing-vehicle">
+                                <h3>Quick Search</h3>
+                                <div class="search-input">
+                                    <input type="text" id="license-plate-search"
+                                        placeholder="Enter license plate number...">
+                                    <button id="search-button"><i class="fas fa-search"></i> Search</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button class="btn-secondary" id="back-to-dashboard">Back to Dashboard</button>
+                            <button class="btn-primary btn-next" id="step1-next" disabled>Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Vehicle Information -->
+                    <div class="form-step" id="vehicle-info-step">
+                        <!-- This will be dynamically populated based on selection in Step 1 -->
+                        <!-- New Vehicle Form -->
+                        <div class="new-vehicle-form" style="display: none;">
+                            <div class="form-section">
+                                <h2>Basic Vehicle Information</h2>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="vehicle-make">Make</label>
+                                        <select id="vehicle-make" required>
+                                            <option value="">Select Make</option>
+                                            <option value="toyota">Toyota</option>
+                                            <option value="nissan">Nissan</option>
+                                            <option value="honda">Honda</option>
+                                            <option value="mazda">Mazda</option>
+                                            <option value="subaru">Subaru</option>
+                                            <option value="mitsubishi">Mitsubishi</option>
+                                            <option value="mercedes">Mercedes-Benz</option>
+                                            <option value="bmw">BMW</option>
+                                            <option value="audi">Audi</option>
+                                            <option value="ford">Ford</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="vehicle-model">Model</label>
+                                        <select id="vehicle-model" required>
+                                            <option value="">Select Model</option>
+                                            <!-- Will be populated based on Make selection -->
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="vehicle-year">Year</label>
+                                        <input type="number" id="vehicle-year" min="1970" max="2025"
+                                            placeholder="Vehicle Year" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="vehicle-vin">VIN</label>
+                                        <input type="text" id="vehicle-vin" placeholder="Vehicle Identification Number"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="license-plate">License Plate</label>
+                                        <input type="text" id="license-plate" placeholder="License Plate Number"
+                                            required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h2>Owner Information</h2>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="owner-name">Full Name</label>
+                                        <input type="text" id="owner-name" placeholder="Owner's Full Name" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="owner-phone">Phone Number</label>
+                                        <input type="tel" id="owner-phone" placeholder="Phone Number" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="owner-email">Email</label>
+                                        <input type="email" id="owner-email" placeholder="Email Address">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h2>Current Mileage & Service Information</h2>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="current-mileage">Current Mileage</label>
+                                        <input type="number" id="current-mileage" placeholder="Current Mileage in KM"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="service-type">Service Type</label>
+                                        <select id="service-type" required>
+                                            <option value="">Select Service Type</option>
+                                            <option value="oil-change">Oil Change</option>
+                                            <option value="full-service">Full Service</option>
+                                            <option value="brake-repair">Brake Repair</option>
+                                            <option value="engine-repair">Engine Repair</option>
+                                            <option value="tire-service">Tire Service</option>
+                                            <option value="electrical">Electrical System</option>
+                                            <option value="diagnosis">Diagnostic Check</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="issue-description">Description of Issues</label>
+                                    <textarea id="issue-description" rows="5"
+                                        placeholder="Describe the issues or service needed..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h2>Vehicle Condition & History</h2>
+
+                                <div class="form-group">
+                                    <label for="previous-service">Previous Service Records</label>
+                                    <textarea id="previous-service" rows="3"
+                                        placeholder="Any known previous service history..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="known-issues">Known Issues</label>
+                                    <textarea id="known-issues" rows="3"
+                                        placeholder="Any known existing issues with the vehicle..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="additional-notes">Additional Notes</label>
+                                    <textarea id="additional-notes" rows="3"
+                                        placeholder="Any additional information..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h2>Document Uploads</h2>
+                                <p>Upload any relevant documents or images for this vehicle.</p>
+
+                                <div class="file-upload-container">
+                                    <div class="file-upload">
+                                        <label for="service-reports">
+                                            <i class="fas fa-file-alt"></i>
+                                            <span>Service Reports</span>
+                                            <input type="file" id="service-reports" multiple accept=".pdf,.doc,.docx">
+                                        </label>
+                                    </div>
+
+                                    <div class="file-upload">
+                                        <label for="warranty-papers">
+                                            <i class="fas fa-file-contract"></i>
+                                            <span>Warranty Papers</span>
+                                            <input type="file" id="warranty-papers" multiple accept=".pdf,.doc,.docx">
+                                        </label>
+                                    </div>
+
+                                    <div class="file-upload">
+                                        <label for="vehicle-photos">
+                                            <i class="fas fa-camera"></i>
+                                            <span>Vehicle Photos</span>
+                                            <input type="file" id="vehicle-photos" multiple accept="image/*">
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="uploaded-files" id="uploaded-files-container">
+                                    <!-- Will be populated dynamically with uploaded files -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Existing Vehicle Form -->
+                        <div class="existing-vehicle-form" style="display: none;">
+                            <div class="form-section">
+                                <h2>Vehicle Search</h2>
+
+                                <div class="search-filters">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="search-license-plate">License Plate</label>
+                                            <input type="text" id="search-license-plate"
+                                                placeholder="Enter License Plate Number">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="search-owner-name">Owner Name</label>
+                                            <input type="text" id="search-owner-name" placeholder="Enter Owner Name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="search-last-service">Last Service Date</label>
+                                            <input type="date" id="search-last-service">
+                                        </div>
+                                    </div>
+
+                                    <button class="btn-primary" id="search-existing-btn">
+                                        <i class="fas fa-search"></i> Search
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="search-results">
+                                <h3>Search Results</h3>
+                                <div class="results-container" id="search-results-container">
+                                    <!-- Sample Result -->
+                                    <div class="vehicle-result">
+                                        <div class="vehicle-info">
+                                            <h4>Toyota Corolla (2018)</h4>
+                                            <p><strong>License Plate:</strong> KBX 123C</p>
+                                            <p><strong>Owner:</strong> James Kamau</p>
+                                            <p><strong>Last Service:</strong> 15 Feb 2025</p>
+                                        </div>
+                                        <button class="btn-secondary select-vehicle-btn">Select</button>
+                                    </div>
+
+                                    <div class="vehicle-result">
+                                        <div class="vehicle-info">
+                                            <h4>Honda Civic (2020)</h4>
+                                            <p><strong>License Plate:</strong> KCA 456D</p>
+                                            <p><strong>Owner:</strong> Alice Wanjiku</p>
+                                            <p><strong>Last Service:</strong> 03 Mar 2025</p>
+                                        </div>
+                                        <button class="btn-secondary select-vehicle-btn">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section" id="selected-vehicle-details" style="display: none;">
+                                <h2>Selected Vehicle Information</h2>
+
+                                <div class="vehicle-details-summary">
+                                    <div class="vehicle-summary-section">
+                                        <h3>Vehicle Details</h3>
+                                        <p><strong>Make/Model:</strong> <span id="summary-make-model">Toyota
+                                                Corolla</span></p>
+                                        <p><strong>Year:</strong> <span id="summary-year">2018</span></p>
+                                        <p><strong>VIN:</strong> <span id="summary-vin">JT2AE09V1P0046662</span></p>
+                                        <p><strong>License Plate:</strong> <span id="summary-license-plate">KBX
+                                                123C</span></p>
+                                    </div>
+
+                                    <div class="vehicle-summary-section">
+                                        <h3>Owner Information</h3>
+                                        <p><strong>Name:</strong> <span id="summary-owner-name">James Kamau</span></p>
+                                        <p><strong>Phone:</strong> <span id="summary-owner-phone">+254 712 345
+                                                678</span></p>
+                                        <p><strong>Email:</strong> <span
+                                                id="summary-owner-email">james.kamau@example.com</span></p>
+                                        <button class="btn-secondary" id="edit-owner-btn">
+                                            <i class="fas fa-edit"></i> Edit Owner Details
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="existing-current-mileage">Current Mileage</label>
+                                    <input type="number" id="existing-current-mileage"
+                                        placeholder="Current Mileage in KM" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="existing-service-type">Service Type</label>
+                                    <select id="existing-service-type" required>
+                                        <option value="">Select Service Type</option>
+                                        <option value="oil-change">Oil Change</option>
+                                        <option value="full-service">Full Service</option>
+                                        <option value="brake-repair">Brake Repair</option>
+                                        <option value="engine-repair">Engine Repair</option>
+                                        <option value="tire-service">Tire Service</option>
+                                        <option value="electrical">Electrical System</option>
+                                        <option value="diagnosis">Diagnostic Check</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="existing-issue-description">Description of Issues</label>
+                                    <textarea id="existing-issue-description" rows="5"
+                                        placeholder="Describe the issues or service needed..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="existing-additional-notes">Additional Notes</label>
+                                    <textarea id="existing-additional-notes" rows="3"
+                                        placeholder="Any additional information..."></textarea>
+                                </div>
+
+                                <div class="vehicle-history-link">
+                                    <a href="#" id="view-service-history">
+                                        <i class="fas fa-history"></i> View Previous Service History
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button class="btn-secondary btn-prev" id="step2-prev">Previous</button>
+                            <button class="btn-primary btn-next" id="step2-next">Continue to Assessment</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Assessment Form -->
+                    <div class="form-step" id="assessment-step">
+                        <div class="form-section">
+                            <h2>Vehicle Components Assessment</h2>
+                            <p>Assess the condition of various vehicle components by navigating through the tabs below.
+                            </p>
+
+                            <!-- Component Navigation Tabs -->
+                            <div class="assessment-tabs">
+                                <button class="tab-btn active" data-tab="audio-components">Audio Components</button>
+                                <button class="tab-btn" data-tab="interior-components">Interior Components</button>
+                                <button class="tab-btn" data-tab="exterior-components">Exterior Components</button>
+                                <button class="tab-btn" data-tab="engine-components">Engine Components</button>
+                                <button class="tab-btn" data-tab="additional-components">Additional Components</button>
+                            </div>
+
+                            <!-- Component Tab Content -->
+                            <div class="tab-content">
+                                <!-- Audio Components Tab -->
+                                <div class="tab-pane active" id="audio-components">
+                                    <div class="component-assessment">
+                                        <h3>Radio Assessment</h3>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label>Availability</label>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="radio-available" checked>
+                                                    <label for="radio-available" class="toggle-label">
+                                                        <span class="toggle-inner"></span>
+                                                        <span class="toggle-switch-label">Available</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row audio-details">
+                                            <div class="form-group">
+                                                <label for="radio-manufacturer">Manufacturer</label>
+                                                <input type="text" id="radio-manufacturer"
+                                                    placeholder="Radio Manufacturer">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="radio-type">Type</label>
+                                                <input type="text" id="radio-type" placeholder="Radio Type">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="radio-serial">Serial Number</label>
+                                                <input type="text" id="radio-serial" placeholder="Serial Number">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row audio-details">
+                                            <div class="form-group">
+                                                <label for="radio-condition">Condition</label>
+                                                <select id="radio-condition">
+                                                    <option value="excellent">Excellent</option>
+                                                    <option value="good" selected>Good</option>
+                                                    <option value="fair">Fair</option>
+                                                    <option value="poor">Poor</option>
+                                                    <option value="non-functional">Non-functional</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group audio-details">
+                                            <label for="radio-additional-info">Additional Information</label>
+                                            <textarea id="radio-additional-info" rows="3"
+                                                placeholder="Additional notes about the radio..."></textarea>
+                                        </div>
+
+                                        <div class="photo-actions audio-details">
+                                            <button class="btn-secondary photo-btn" data-component="radio"
+                                                data-action="take">
+                                                <i class="fas fa-camera"></i> Take Photo
+                                            </button>
+                                            <button class="btn-secondary photo-btn" data-component="radio"
+                                                data-action="upload">
+                                                <i class="fas fa-upload"></i> Upload Photo
+                                            </button>
+                                            <div class="component-photos" id="radio-photos">
+                                                <!-- Photos will be dynamically added here -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="component-assessment">
+                                        <h3>Speakers Assessment</h3>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label>Availability</label>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="speakers-available" checked>
+                                                    <label for="speakers-available" class="toggle-label">
+                                                        <span class="toggle-inner"></span>
+                                                        <span class="toggle-switch-label">Available</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row speakers-details">
+                                            <div class="form-group">
+                                                <label for="speakers-manufacturer">Manufacturer</label>
+                                                <input type="text" id="speakers-manufacturer"
+                                                    placeholder="Speaker Manufacturer">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="speakers-type">Type</label>
+                                                <input type="text" id="speakers-type" placeholder="Speaker Type">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="speakers-serial">Serial Number</label>
+                                                <input type="text" id="speakers-serial" placeholder="Serial Number">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="speakers-quantity">Quantity</label>
+                                                <input type="number" id="speakers-quantity" value="4" min="0">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row speakers-details">
+                                            <div class="form-group">
+                                                <label for="speakers-condition">Condition</label>
+                                                <select id="speakers-condition">
+                                                    <option value="excellent">Excellent</option>
+                                                    <option value="good" selected>Good</option>
+                                                    <option value="fair">Fair</option>
+                                                    <option value="poor">Poor</option>
+                                                    <option value="non-functional">Non-functional</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group speakers-details">
+                                            <label for="speakers-additional-info">Additional Information</label>
+                                            <textarea id="speakers-additional-info" rows="3"
+                                                placeholder="Additional notes about the speakers..."></textarea>
+                                        </div>
+
+                                        <div class="photo-actions speakers-details">
+                                            <button class="btn-secondary photo-btn" data-component="speakers"
+                                                data-action="take">
+                                                <i class="fas fa-camera"></i> Take Photo
+                                            </button>
+                                            <button class="btn-secondary photo-btn" data-component="speakers"
+                                                data-action="upload">
+                                                <i class="fas fa-upload"></i> Upload Photo
+                                            </button>
+                                            <div class="component-photos" id="speakers-photos">
+                                                <!-- Photos will be dynamically added here -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Interior Components Tab -->
+                                <div class="tab-pane" id="interior-components">
+                                    <div class="component-assessment">
+                                        <h3>Keys Assessment</h3>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="keys-quantity">Quantity</label>
+                                                <input type="number" id="keys-quantity" value="2" min="0">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="keys-condition">Condition</label>
+                                                <select id="keys-condition">
+                                                    <option value="excellent">Excellent</option>
+                                                    <option value="good" selected>Good</option>
+                                                    <option value="fair">Fair</option>
+                                                    <option value="poor">Poor</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="keys-additional-info">Additional Information</label>
+                                            <textarea id="keys-additional-info" rows="2"
+                                                placeholder="Additional notes about the keys..."></textarea>
+                                        </div>
+
+                                        <div class="photo-actions">
+                                            <button class="btn-secondary photo-btn" data-component="keys"
+                                                data-action="take">
+                                                <i class="fas fa-camera"></i> Take Photo
+                                            </button>
+                                            <button class="btn-secondary photo-btn" data-component="keys"
+                                                data-action="upload">
+                                                <i class="fas fa-upload"></i> Upload Photo
+                                            </button>
+                                            <div class="component-photos" id="keys-photos">
+                                                <!-- Photos will be dynamically added here -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="interior-components-list">
+                                        <h3>Interior Components</h3>
+                                        <div class="components-grid">
+                                            <!-- Clock -->
+                                            <div class="component-item">
+                                                <div class="component-header">
+                                                    <span>Clock</span>
+                                                    <div class="toggle-switch sm">
+                                                        <input type="checkbox" id="clock-available" checked>
+                                                        <label for="clock-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="component-details">
+                                                    <select class="component-condition" id="clock-condition">
+                                                        <option value="excellent">Excellent</option>
+                                                        <option value="good" selected>Good</option>
+                                                        <option value="fair">Fair</option>
+                                                        <option value="poor">Poor</option>
+                                                        <option value="non-functional">Non-functional</option>
+                                                    </select>
+                                                    <button class="btn-icon photo-btn" data-component="clock"
+                                                        data-action="take">
+                                                        <i class="fas fa-camera"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Heater Knobs -->
+                                            <div class="component-item">
+                                                <div class="component-header">
+                                                    <span>Heater Knobs</span>
+                                                    <div class="toggle-switch sm">
+                                                        <input type="checkbox" id="heater-knobs-available" checked>
+                                                        <label for="heater-knobs-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="component-details">
+                                                    <select class="component-condition" id="heater-knobs-condition">
+                                                        <option value="excellent">Excellent</option>
+                                                        <option value="good" selected>Good</option>
+                                                        <option value="fair">Fair</option>
+                                                        <option value="poor">Poor</option>
+                                                        <option value="non-functional">Non-functional</option>
+                                                    </select>
+                                                    <button class="btn-icon photo-btn" data-component="heater-knobs"
+                                                        data-action="take">
+                                                        <i class="fas fa-camera"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Door Lock Knobs -->
+                                            <div class="component-item">
+                                                <div class="component-header">
+                                                    <span>Door Lock Knobs</span>
+                                                    <div class="toggle-switch sm">
+                                                        <input type="checkbox" id="door-lock-knobs-available" checked>
+                                                        <label for="door-lock-knobs-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="component-details">
+                                                    <select class="component-condition" id="door-lock-knobs-condition">
+                                                        <option value="excellent">Excellent</option>
+                                                        <option value="good" selected>Good</option>
+                                                        <option value="fair">Fair</option>
+                                                        <option value="poor">Poor</option>
+                                                        <option value="non-functional">Non-functional</option>
+                                                    </select>
+                                                    <button class="btn-icon photo-btn" data-component="door-lock-knobs"
+                                                        data-action="take">
+                                                        <i class="fas fa-camera"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Winder Handles/Switches -->
+                                            <div class="component-item">
+                                                <div class="component-header">
+                                                    <span>Winder Handles/Switches</span>
+                                                    <div class="toggle-switch sm">
+                                                        <input type="checkbox" id="winder-handles-available" checked>
+                                                        <label for="winder-handles-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="component-details">
+                                                    <select class="component-condition" id="winder-handles-condition">
+                                                        <option value="excellent">Excellent</option>
+                                                        <option value="good" selected>Good</option>
+                                                        <option value="fair">Fair</option>
+                                                        <option value="poor">Poor</option>
+                                                        <option value="non-functional">Non-functional</option>
+                                                    </select>
+                                                    <button class="btn-icon photo-btn" data-component="winder-handles"
+                                                        data-action="take">
+                                                        <i class="fas fa-camera"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Additional interior components would be listed here in a similar pattern -->
+                                        </div>
+                                    </div>
+
+                                    <div class="component-assessment">
+                                        <h3>Carpets and Mats</h3>
+                                        <div class="carpets-container">
+                                            <!-- Floor Carpets -->
+                                            <div class="carpet-item">
+                                                <div class="carpet-header">
+                                                    <span>Floor Carpets</span>
+                                                    <div class="toggle-switch">
+                                                        <input type="checkbox" id="floor-carpets-available" checked>
+                                                        <label for="floor-carpets-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                            <span class="toggle-switch-label">Available</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="carpet-details">
+                                                    <div class="form-group">
+                                                        <label for="floor-carpets-condition">Condition</label>
+                                                        <select id="floor-carpets-condition">
+                                                            <option value="excellent">Excellent</option>
+                                                            <option value="good" selected>Good</option>
+                                                            <option value="fair">Fair</option>
+                                                            <option value="poor">Poor</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="photo-actions">
+                                                        <button class="btn-secondary photo-btn"
+                                                            data-component="floor-carpets" data-action="take">
+                                                            <i class="fas fa-camera"></i> Take Photo
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Rubber Mats -->
+                                            <div class="carpet-item">
+                                                <div class="carpet-header">
+                                                    <span>Rubber Mats</span>
+                                                    <div class="toggle-switch">
+                                                        <input type="checkbox" id="rubber-mats-available" checked>
+                                                        <label for="rubber-mats-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                            <span class="toggle-switch-label">Available</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="carpet-details">
+                                                    <div class="form-group">
+                                                        <label for="rubber-mats-condition">Condition</label>
+                                                        <select id="rubber-mats-condition">
+                                                            <option value="excellent">Excellent</option>
+                                                            <option value="good" selected>Good</option>
+                                                            <option value="fair">Fair</option>
+                                                            <option value="poor">Poor</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="photo-actions">
+                                                        <button class="btn-secondary photo-btn"
+                                                            data-component="rubber-mats" data-action="take">
+                                                            <i class="fas fa-camera"></i> Take Photo
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Boot Mats -->
+                                            <div class="carpet-item">
+                                                <div class="carpet-header">
+                                                    <span>Boot Mats</span>
+                                                    <div class="toggle-switch">
+                                                        <input type="checkbox" id="boot-mats-available" checked>
+                                                        <label for="boot-mats-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                            <span class="toggle-switch-label">Available</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="carpet-details">
+                                                    <div class="form-group">
+                                                        <label for="boot-mats-condition">Condition</label>
+                                                        <select id="boot-mats-condition">
+                                                            <option value="excellent">Excellent</option>
+                                                            <option value="good" selected>Good</option>
+                                                            <option value="fair">Fair</option>
+                                                            <option value="poor">Poor</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="photo-actions">
+                                                        <button class="btn-secondary photo-btn"
+                                                            data-component="boot-mats" data-action="take">
+                                                            <i class="fas fa-camera"></i> Take Photo
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Exterior Components Tab -->
+                                <div class="tab-pane" id="exterior-components">
+                                    <div class="exterior-components-list">
+                                        <h3>Exterior Components</h3>
+                                        <p>Check availability and condition of the following exterior components.</p>
+
+                                        <!-- Exterior components grid -->
+                                        <div class="components-grid">
+                                            <!-- Boot Badge -->
+                                            <div class="component-item">
+                                                <div class="component-header">
+                                                    <span>Boot Badge</span>
+                                                    <div class="toggle-switch sm">
+                                                        <input type="checkbox" id="boot-badge-available" checked>
+                                                        <label for="boot-badge-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="component-details">
+                                                    <select class="component-condition" id="boot-badge-condition">
+                                                        <option value="excellent">Excellent</option>
+                                                        <option value="good" selected>Good</option>
+                                                        <option value="fair">Fair</option>
+                                                        <option value="poor">Poor</option>
+                                                    </select>
+                                                    <button class="btn-icon photo-btn" data-component="boot-badge"
+                                                        data-action="take">
+                                                        <i class="fas fa-camera"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Wheel Lock Key -->
+                                            <div class="component-item">
+                                                <div class="component-header">
+                                                    <span>Wheel Lock Key</span>
+                                                    <div class="toggle-switch sm">
+                                                        <input type="checkbox" id="wheel-lock-key-available" checked>
+                                                        <label for="wheel-lock-key-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="component-details">
+                                                    <select class="component-condition" id="wheel-lock-key-condition">
+                                                        <option value="excellent">Excellent</option>
+                                                        <option value="good" selected>Good</option>
+                                                        <option value="fair">Fair</option>
+                                                        <option value="poor">Poor</option>
+                                                    </select>
+                                                    <button class="btn-icon photo-btn" data-component="wheel-lock-key"
+                                                        data-action="take">
+                                                        <i class="fas fa-camera"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Tool Kit/Brace -->
+                                            <div class="component-item">
+                                                <div class="component-header">
+                                                    <span>Tool Kit/Brace</span>
+                                                    <div class="toggle-switch sm">
+                                                        <input type="checkbox" id="tool-kit-available" checked>
+                                                        <label for="tool-kit-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="component-details">
+                                                    <select class="component-condition" id="tool-kit-condition">
+                                                        <option value="excellent">Excellent</option>
+                                                        <option value="good" selected>Good</option>
+                                                        <option value="fair">Fair</option>
+                                                        <option value="poor">Poor</option>
+                                                    </select>
+                                                    <button class="btn-icon photo-btn" data-component="tool-kit"
+                                                        data-action="take">
+                                                        <i class="fas fa-camera"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- More exterior components would be listed here -->
+                                            <!-- This would include all components from the navigational map -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Engine Components Tab -->
+                                <div class="tab-pane" id="engine-components">
+                                    <div class="component-assessment">
+                                        <h3>Battery Assessment</h3>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label>Availability</label>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="battery-available" checked>
+                                                    <label for="battery-available" class="toggle-label">
+                                                        <span class="toggle-inner"></span>
+                                                        <span class="toggle-switch-label">Available</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row battery-details">
+                                            <div class="form-group">
+                                                <label for="battery-manufacturer">Manufacturer</label>
+                                                <input type="text" id="battery-manufacturer"
+                                                    placeholder="Battery Manufacturer">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="battery-size">Battery Size</label>
+                                                <input type="text" id="battery-size" placeholder="Battery Size">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="battery-serial">Serial Number</label>
+                                                <input type="text" id="battery-serial" placeholder="Serial Number">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row battery-details">
+                                            <div class="form-group">
+                                                <label for="battery-condition">Condition</label>
+                                                <select id="battery-condition">
+                                                    <option value="excellent">Excellent</option>
+                                                    <option value="good" selected>Good</option>
+                                                    <option value="fair">Fair</option>
+                                                    <option value="poor">Poor</option>
+                                                    <option value="non-functional">Non-functional</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group battery-details">
+                                            <label for="battery-additional-info">Additional Information</label>
+                                            <textarea id="battery-additional-info" rows="3"
+                                                placeholder="Additional notes about the battery..."></textarea>
+                                        </div>
+
+                                        <div class="photo-actions battery-details">
+                                            <button class="btn-secondary photo-btn" data-component="battery"
+                                                data-action="take">
+                                                <i class="fas fa-camera"></i> Take Photo
+                                            </button>
+                                            <button class="btn-secondary photo-btn" data-component="battery"
+                                                data-action="upload">
+                                                <i class="fas fa-upload"></i> Upload Photo
+                                            </button>
+                                            <div class="component-photos" id="battery-photos">
+                                                <!-- Photos will be dynamically added here -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Engine Components List -->
+                                    <div class="engine-components-list">
+                                        <h3>Engine Components</h3>
+
+                                        <div class="components-grid">
+                                            <!-- Radiator Cap -->
+                                            <div class="component-item">
+                                                <div class="component-header">
+                                                    <span>Radiator Cap</span>
+                                                    <div class="toggle-switch sm">
+                                                        <input type="checkbox" id="radiator-cap-available" checked>
+                                                        <label for="radiator-cap-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="component-details">
+                                                    <select class="component-condition" id="radiator-cap-condition">
+                                                        <option value="excellent">Excellent</option>
+                                                        <option value="good" selected>Good</option>
+                                                        <option value="fair">Fair</option>
+                                                        <option value="poor">Poor</option>
+                                                    </select>
+                                                    <button class="btn-icon photo-btn" data-component="radiator-cap"
+                                                        data-action="take">
+                                                        <i class="fas fa-camera"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Oil Filter Cap -->
+                                            <div class="component-item">
+                                                <div class="component-header">
+                                                    <span>Oil Filter Cap</span>
+                                                    <div class="toggle-switch sm">
+                                                        <input type="checkbox" id="oil-filter-cap-available" checked>
+                                                        <label for="oil-filter-cap-available" class="toggle-label">
+                                                            <span class="toggle-inner"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="component-details">
+                                                    <select class="component-condition" id="oil-filter-cap-condition">
+                                                        <option value="excellent">Excellent</option>
+                                                        <option value="good" selected>Good</option>
+                                                        <option value="fair">Fair</option>
+                                                        <option value="poor">Poor</option>
+                                                    </select>
+                                                    <button class="btn-icon photo-btn" data-component="oil-filter-cap"
+                                                        data-action="take">
+                                                        <i class="fas fa-camera"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Additional engine components would be listed here -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Wheels Assessment -->
+                                    <div class="component-assessment">
+                                        <h3>Wheels Assessment</h3>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label>Availability</label>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="wheels-available" checked>
+                                                    <label for="wheels-available" class="toggle-label">
+                                                        <span class="toggle-inner"></span>
+                                                        <span class="toggle-switch-label">Available</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row wheels-details">
+                                            <div class="form-group">
+                                                <label for="wheels-manufacturer">Manufacturer</label>
+                                                <input type="text" id="wheels-manufacturer"
+                                                    placeholder="Wheel Manufacturer">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="wheels-type">Wheel Type & Size</label>
+                                                <input type="text" id="wheels-type" placeholder="Wheel Type and Size">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="wheels-condition">Condition</label>
+                                                <select id="wheels-condition">
+                                                    <option value="excellent">Excellent</option>
+                                                    <option value="good" selected>Good</option>
+                                                    <option value="fair">Fair</option>
+                                                    <option value="poor">Poor</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group wheels-details">
+                                            <label for="wheels-additional-info">Additional Information</label>
+                                            <textarea id="wheels-additional-info" rows="3"
+                                                placeholder="Additional notes about the wheels..."></textarea>
+                                        </div>
+
+                                        <div class="photo-actions wheels-details">
+                                            <button class="btn-secondary photo-btn" data-component="wheels"
+                                                data-action="take">
+                                                <i class="fas fa-camera"></i> Take Photo
+                                            </button>
+                                            <button class="btn-secondary photo-btn" data-component="wheels"
+                                                data-action="upload">
+                                                <i class="fas fa-upload"></i> Upload Photo
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Spare Wheel Assessment -->
+                                    <div class="component-assessment">
+                                        <h3>Spare Wheel Assessment</h3>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label>Availability</label>
+                                                <div class="toggle-switch">
+                                                    <input type="checkbox" id="spare-wheel-available" checked>
+                                                    <label for="spare-wheel-available" class="toggle-label">
+                                                        <span class="toggle-inner"></span>
+                                                        <span class="toggle-switch-label">Available</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row spare-wheel-details">
+                                            <div class="form-group">
+                                                <label for="spare-wheel-manufacturer">Manufacturer</label>
+                                                <input type="text" id="spare-wheel-manufacturer"
+                                                    placeholder="Wheel Manufacturer">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="spare-wheel-type">Wheel Type & Size</label>
+                                                <input type="text" id="spare-wheel-type"
+                                                    placeholder="Wheel Type and Size">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="spare-wheel-condition">Condition</label>
+                                                <select id="spare-wheel-condition">
+                                                    <option value="excellent">Excellent</option>
+                                                    <option value="good" selected>Good</option>
+                                                    <option value="fair">Fair</option>
+                                                    <option value="poor">Poor</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group spare-wheel-details">
+                                            <label for="spare-wheel-additional-info">Additional Information</label>
+                                            <textarea id="spare-wheel-additional-info" rows="3"
+                                                placeholder="Additional notes about the spare wheel..."></textarea>
+                                        </div>
+
+                                        <div class="photo-actions spare-wheel-details">
+                                            <button class="btn-secondary photo-btn" data-component="spare-wheel"
+                                                data-action="take">
+                                                <i class="fas fa-camera"></i> Take Photo
+                                            </button>
+                                            <button class="btn-secondary photo-btn" data-component="spare-wheel"
+                                                data-action="upload">
+                                                <i class="fas fa-upload"></i> Upload Photo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Additional Components Tab -->
+                                <div class="tab-pane" id="additional-components">
+                                    <div class="add-component-container">
+                                        <h3>Add Additional Components</h3>
+                                        <p>Add any other components not listed in the previous categories.</p>
+
+                                        <button class="btn-primary" id="add-component-btn">
+                                            <i class="fas fa-plus"></i> Add Component
+                                        </button>
+
+                                        <div id="additional-components-list">
+                                            <!-- Additional components will be added here dynamically -->
+                                            <div class="additional-component-item">
+                                                <div class="component-header">
+                                                    <input type="text" class="component-name"
+                                                        placeholder="Component Name" value="GPS Navigation">
+                                                    <button class="btn-icon remove-component-btn">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+
+                                                <div class="component-details">
+                                                    <div class="form-row">
+                                                        <div class="form-group">
+                                                            <label>Availability</label>
+                                                            <div class="toggle-switch">
+                                                                <input type="checkbox" id="additional-comp-1-available"
+                                                                    checked>
+                                                                <label for="additional-comp-1-available"
+                                                                    class="toggle-label">
+                                                                    <span class="toggle-inner"></span>
+                                                                    <span class="toggle-switch-label">Available</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="form-group">
+                                                            <label
+                                                                for="additional-comp-1-manufacturer">Manufacturer</label>
+                                                            <input type="text" id="additional-comp-1-manufacturer"
+                                                                placeholder="Manufacturer">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="additional-comp-1-qty">Quantity/Size</label>
+                                                            <input type="text" id="additional-comp-1-qty"
+                                                                placeholder="Quantity or Size">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="additional-comp-1-serial">Serial Number</label>
+                                                            <input type="text" id="additional-comp-1-serial"
+                                                                placeholder="Serial Number">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="form-group">
+                                                            <label for="additional-comp-1-condition">Condition</label>
+                                                            <select id="additional-comp-1-condition">
+                                                                <option value="excellent">Excellent</option>
+                                                                <option value="good" selected>Good</option>
+                                                                <option value="fair">Fair</option>
+                                                                <option value="poor">Poor</option>
+                                                                <option value="non-functional">Non-functional</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="additional-comp-1-info">Additional
+                                                            Information</label>
+                                                        <textarea id="additional-comp-1-info" rows="2"
+                                                            placeholder="Additional notes..."></textarea>
+                                                    </div>
+
+                                                    <div class="photo-actions">
+                                                        <button class="btn-secondary photo-btn"
+                                                            data-component="additional-comp-1" data-action="take">
+                                                            <i class="fas fa-camera"></i> Take Photo
+                                                        </button>
+                                                        <button class="btn-secondary photo-btn"
+                                                            data-component="additional-comp-1" data-action="upload">
+                                                            <i class="fas fa-upload"></i> Upload Photo
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button class="btn-secondary btn-prev" id="step3-prev">Previous</button>
+                            <button class="btn-secondary" id="save-assessment-progress">Save Progress</button>
+                            <button class="btn-primary btn-next" id="step3-next">Continue to Payee Information</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Payee Information -->
+                    <div class="form-step" id="payee-info-step">
+                        <div class="form-section">
+                            <h2>Payee Information</h2>
+                            <p>Select the type of payee for this service and provide the required information.</p>
+
+                            <div class="payee-type-selection">
+                                <div class="radio-tile-group">
+                                    <div class="radio-tile">
+                                        <input type="radio" id="individual-payee" name="payee-type" value="individual"
+                                            checked>
+                                        <label for="individual-payee">
+                                            <i class="fas fa-user"></i>
+                                            <span>Individual</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="radio-tile">
+                                        <input type="radio" id="business-payee" name="payee-type" value="business">
+                                        <label for="business-payee">
+                                            <i class="fas fa-building"></i>
+                                            <span>Business</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="radio-tile">
+                                        <input type="radio" id="insurance-payee" name="payee-type" value="insurance">
+                                        <label for="insurance-payee">
+                                            <i class="fas fa-car-crash"></i>
+                                            <span>Motor Vehicle Insurance</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Individual Payee Form -->
+                            <div class="payee-form" id="individual-payee-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="individual-name">Full Name</label>
+                                        <input type="text" id="individual-name" placeholder="Individual's Full Name"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="individual-phone">Phone Number</label>
+                                        <input type="tel" id="individual-phone" placeholder="Phone Number" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="individual-email">Email Address</label>
+                                        <input type="email" id="individual-email" placeholder="Email Address">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Business Payee Form -->
+                            <div class="payee-form" id="business-payee-form" style="display: none;">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="business-name">Business Name</label>
+                                        <input type="text" id="business-name" placeholder="Business Name" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="business-phone">Business Phone</label>
+                                        <input type="tel" id="business-phone" placeholder="Business Phone" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="business-email">Business Email</label>
+                                        <input type="email" id="business-email" placeholder="Business Email" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="tax-pin">Tax PIN</label>
+                                        <input type="text" id="tax-pin" placeholder="Tax PIN" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Insurance Payee Form -->
+                            <div class="payee-form" id="insurance-payee-form" style="display: none;">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="insurance-provider">Insurance Provider</label>
+                                        <select id="insurance-provider" required>
+                                            <option value="">Select Insurance Provider</option>
+                                            <option value="jubilee">Jubilee Insurance</option>
+                                            <option value="britam">Britam</option>
+                                            <option value="cic">CIC Insurance</option>
+                                            <option value="aaa">AAA Insurance</option>
+                                            <option value="heritage">Heritage Insurance</option>
+                                            <option value="apa">APA Insurance</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="policy-number">Policy Number</label>
+                                        <input type="text" id="policy-number" placeholder="Policy Number" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="coverage-details">Coverage Details</label>
+                                    <textarea id="coverage-details" rows="3" placeholder="Coverage Details"></textarea>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-person">Contact Person</label>
+                                        <input type="text" id="contact-person" placeholder="Contact Person Name"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="contact-email">Contact Email</label>
+                                        <input type="email" id="contact-email" placeholder="Contact Email" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="contact-phone">Contact Phone</label>
+                                        <input type="tel" id="contact-phone" placeholder="Contact Phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button class="btn-secondary btn-prev" id="step4-prev">Previous</button>
+                            <button class="btn-primary btn-next" id="step4-next">Continue to Review</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Review and Submit -->
+                    <div class="form-step" id="review-step">
+                        <div class="form-section">
+                            <h2>Review & Submit</h2>
+                            <p>Please review all information before submitting the vehicle check-in form.</p>
+
+                            <div class="review-sections">
+                                <!-- Vehicle Details Review -->
+                                <div class="review-section">
+                                    <div class="review-header">
+                                        <h3>Vehicle Details</h3>
+                                        <button class="btn-edit" data-section="vehicle-info">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-item">
+                                            <span class="review-label">Make/Model:</span>
+                                            <span class="review-value" id="review-make-model">Toyota Corolla</span>
+                                        </div>
+                                        <div class="review-item">
+                                            <span class="review-label">Year:</span>
+                                            <span class="review-value" id="review-year">2018</span>
+                                        </div>
+                                        <div class="review-item">
+                                            <span class="review-label">License Plate:</span>
+                                            <span class="review-value" id="review-license-plate">KBX 123C</span>
+                                        </div>
+                                        <div class="review-item">
+                                            <span class="review-label">VIN:</span>
+                                            <span class="review-value" id="review-vin">JT2AE09V1P0046662</span>
+                                        </div>
+                                        <div class="review-item">
+                                            <span class="review-label">Mileage:</span>
+                                            <span class="review-value" id="review-mileage">45,640 km</span>
+                                        </div>
+                                        <div class="review-item">
+                                            <span class="review-label">Service Type:</span>
+                                            <span class="review-value" id="review-service-type">Full Service</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Owner Information Review -->
+                                <div class="review-section">
+                                    <div class="review-header">
+                                        <h3>Owner Information</h3>
+                                        <button class="btn-edit" data-section="vehicle-info">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-item">
+                                            <span class="review-label">Name:</span>
+                                            <span class="review-value" id="review-owner-name">James Kamau</span>
+                                        </div>
+                                        <div class="review-item">
+                                            <span class="review-label">Phone:</span>
+                                            <span class="review-value" id="review-owner-phone">+254 712 345 678</span>
+                                        </div>
+                                        <div class="review-item">
+                                            <span class="review-label">Email:</span>
+                                            <span class="review-value"
+                                                id="review-owner-email">james.kamau@example.com</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Components Assessment Summary -->
+                                <div class="review-section">
+                                    <div class="review-header">
+                                        <h3>Components Assessment Summary</h3>
+                                        <button class="btn-edit" data-section="assessment">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="assessment-summary" id="assessment-summary">
+                                            <p>All components have been assessed. <a href="#"
+                                                    id="view-full-assessment">View Full Assessment</a></p>
+
+                                            <div class="summary-highlights">
+                                                <div class="summary-item">
+                                                    <i class="fas fa-check-circle text-success"></i>
+                                                    <span>55 components checked</span>
+                                                </div>
+                                                <div class="summary-item">
+                                                    <i class="fas fa-exclamation-triangle text-warning"></i>
+                                                    <span>3 components need attention</span>
+                                                </div>
+                                                <div class="summary-item">
+                                                    <i class="fas fa-camera"></i>
+                                                    <span>12 photos taken</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Payee Information Review -->
+                                <div class="review-section">
+                                    <div class="review-header">
+                                        <h3>Payee Information</h3>
+                                        <button class="btn-edit" data-section="payee-info">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-item">
+                                            <span class="review-label">Payee Type:</span>
+                                            <span class="review-value" id="review-payee-type">Individual</span>
+                                        </div>
+                                        <div class="review-item">
+                                            <span class="review-label">Name:</span>
+                                            <span class="review-value" id="review-payee-name">James Kamau</span>
+                                        </div>
+                                        <div class="review-item">
+                                            <span class="review-label">Contact:</span>
+                                            <span class="review-value" id="review-payee-contact">+254 712 345 678</span>
+                                        </div>
+                                        <!-- Additional payee-specific fields would be conditionally shown here -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Check-in Date and Time -->
+                            <div class="form-section">
+                                <h3>Check-in Date and Time</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="checkin-date">Date</label>
+                                        <input type="date" id="checkin-date" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="checkin-time">Time</label>
+                                        <input type="time" id="checkin-time" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Special Instructions -->
+                            <div class="form-section">
+                                <h3>Special Instructions</h3>
+                                <div class="form-group">
+                                    <textarea id="special-instructions" rows="4"
+                                        placeholder="Any special instructions or notes for the service team..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="form-section">
+                                <h3>Terms and Conditions</h3>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="otp-pin">OTP PIN (Sent via SMS)</label>
+                                        <input type="text" id="otp-pin" placeholder="Enter OTP PIN" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="customer-id">Customer ID Number</label>
+                                        <input type="text" id="customer-id" placeholder="ID Number" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="accept-terms" required>
+                                        <label for="accept-terms">I accept the <a href="#" id="view-terms">Terms and
+                                                Conditions</a> for vehicle check-in and service</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button class="btn-secondary btn-prev" id="step5-prev">Previous</button>
+                            <button class="btn-primary" id="submit-check-in">Submit Form</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="darkModeToggle"></i>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/" target="_blank">Visit Corporate Website</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Photo Upload Modal -->
+    <div class="modal" id="photo-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Take or Upload Photo</h2>
+            <div class="photo-modal-content">
+                <div class="camera-container" id="camera-container">
+                    <div class="camera-access">
+                        <div id="camera-view">
+                            <div class="camera-placeholder">
+                                <i class="fas fa-camera"></i>
+                                <p>Camera preview will appear here</p>
+                            </div>
+                        </div>
+                        <div class="camera-controls">
+                            <button class="btn-secondary" id="access-camera">
+                                <i class="fas fa-video"></i> Allow Camera Access
+                            </button>
+                            <button class="btn-primary" id="take-photo" disabled>
+                                <i class="fas fa-camera"></i> Take Photo
+                            </button>
+                            <button class="btn-secondary" id="retake-photo" style="display: none;">
+                                <i class="fas fa-redo"></i> Retake
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-container">
+                    <div class="file-drop-area">
+                        <span class="file-message">
+                            <i class="fas fa-cloud-upload-alt"></i><br>
+                            Drag & drop files here or click to browse
+                        </span>
+                        <input type="file" class="file-input" id="photo-file-input" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="photo-preview" id="photo-preview" style="display: none;">
+                    <h3>Photo Preview</h3>
+                    <div class="preview-image-container">
+                        <img id="preview-image" src="" alt="Preview">
+                    </div>
+                    <div class="form-group">
+                        <label for="photo-caption">Caption (Optional)</label>
+                        <input type="text" id="photo-caption" placeholder="Add a caption for this photo">
+                    </div>
+                    <div class="photo-actions">
+                        <button class="btn-secondary" id="cancel-photo">Cancel</button>
+                        <button class="btn-primary" id="save-photo">Save Photo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Service History Modal -->
+    <div class="modal" id="service-history-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Service History</h2>
+            <div class="service-history-content">
+                <!-- Sample service history records -->
+                <div class="service-record">
+                    <div class="service-record-header">
+                        <div>
+                            <h3>Full Service</h3>
+                            <span class="service-date">15 Feb 2025</span>
+                        </div>
+                        <span class="service-cost">KES 15,800</span>
+                    </div>
+                    <div class="service-details">
+                        <p><strong>Mileage:</strong> 42,360 km</p>
+                        <p><strong>Services Performed:</strong> Oil change, filter replacement, brake inspection, tire
+                            rotation</p>
+                        <p><strong>Notes:</strong> Replaced rear brake pads, adjusted headlights</p>
+                        <a href="#" class="service-detail-link">View Full Details</a>
+                    </div>
+                </div>
+
+                <div class="service-record">
+                    <div class="service-record-header">
+                        <div>
+                            <h3>Oil Change</h3>
+                            <span class="service-date">03 Dec 2024</span>
+                        </div>
+                        <span class="service-cost">KES 5,500</span>
+                    </div>
+                    <div class="service-details">
+                        <p><strong>Mileage:</strong> 39,120 km</p>
+                        <p><strong>Services Performed:</strong> Oil change, basic vehicle check</p>
+                        <p><strong>Notes:</strong> Recommended tire replacement in next service</p>
+                        <a href="#" class="service-detail-link">View Full Details</a>
+                    </div>
+                </div>
+
+                <div class="service-record">
+                    <div class="service-record-header">
+                        <div>
+                            <h3>Engine Diagnostic</h3>
+                            <span class="service-date">18 Oct 2024</span>
+                        </div>
+                        <span class="service-cost">KES 3,200</span>
+                    </div>
+                    <div class="service-details">
+                        <p><strong>Mileage:</strong> 37,540 km</p>
+                        <p><strong>Services Performed:</strong> Engine diagnostic scan, check engine light inspection
+                        </p>
+                        <p><strong>Notes:</strong> Faulty oxygen sensor detected and replaced</p>
+                        <a href="#" class="service-detail-link">View Full Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms and Conditions Modal -->
+    <div class="modal" id="terms-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Terms and Conditions</h2>
+            <div class="terms-content">
+                <div class="terms-section">
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By checking in your vehicle with CarPal Auto Repair Shop, you acknowledge and agree to the
+                        following terms and conditions.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>2. Vehicle Assessment</h3>
+                    <p>The assessment conducted during check-in is a visual inspection and does not constitute a
+                        comprehensive mechanical diagnosis. Additional issues may be identified during service.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>3. Authorization for Work</h3>
+                    <p>By completing the vehicle check-in process, you authorize CarPal Auto Repair Shop to perform the
+                        specified services on your vehicle.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>4. Payment Terms</h3>
+                    <p>Payment is due upon completion of services. We accept cash, mobile money, credit cards, and
+                        approved insurance claims.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>5. Vehicle Storage</h3>
+                    <p>Vehicles left for more than 30 days after service completion may incur storage fees.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>6. Personal Property</h3>
+                    <p>CarPal Auto Repair Shop is not responsible for personal items left in the vehicle.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>7. Customer Data</h3>
+                    <p>You consent to the collection and storage of your personal and vehicle information for service
+                        purposes in accordance with our privacy policy.</p>
+                </div>
+            </div>
+            <div class="terms-actions">
+                <button class="btn-primary" id="accept-terms-btn">I Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <h2>Vehicle Check-In Complete</h2>
+            <div class="confirmation-details">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p>Your vehicle has been successfully checked in.</p>
+                <div class="repair-order">
+                    <h3>Repair Order Number</h3>
+                    <p class="repair-order-number">RO-2025-0437</p>
+                </div>
+                <p>A confirmation email and SMS have been sent to the customer with the repair order details.</p>
+            </div>
+            <div class="confirmation-actions">
+                <button class="btn-secondary" id="view-another-vehicle">Check-In Another Vehicle</button>
+                <button class="btn-primary" id="return-to-dashboard">Return to Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="check_in.js"></script>
+</body>
+
+</html>

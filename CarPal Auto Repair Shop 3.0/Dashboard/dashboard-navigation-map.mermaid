@@ -1,0 +1,154 @@
+stateDiagram-v2
+    [*] --> Login
+    Login --> Dashboard: Successful Login
+    
+    %% Dashboard Main View
+    state Dashboard {
+        OverviewPanel: Overview Panel
+        OverviewPanel: - Recent Vehicle Check-Ins
+        OverviewPanel: - Pending Invoices
+        OverviewPanel: - Recent Vehicle Check-Outs
+        
+        QuickActions: Quick Actions
+        QuickActions: - Check-In Vehicle Button
+        QuickActions: - Create Invoice Button
+        
+        AdditionalFeatures: Additional Features
+        AdditionalFeatures: - Notifications and Alerts
+        AdditionalFeatures: - Service Metrics Overview
+    }
+    
+    %% Dashboard Actions
+    Dashboard --> MainNavigation: Access Main Navigation
+    
+    %% Main Navigation Menu
+    state MainNavigation {
+        ServiceHub
+        VehicleCheckIn
+        BillingPayments
+        VehicleHistory
+        Settings
+        VehicleCheckout
+        Inventory
+    }
+    
+    %% Recent Vehicle Check-Ins Functionality
+    Dashboard --> ViewCheckInDetails: Click on Vehicle Entry
+    ViewCheckInDetails --> AssessmentForm: Access Assessment Form
+    AssessmentForm --> Dashboard: Return to Dashboard
+    
+    %% Pending Invoices Functionality
+    Dashboard --> ViewInvoiceDetails: Click on Invoice Entry
+    ViewInvoiceDetails --> SendPaymentReminder: Send Payment Reminder
+    ViewInvoiceDetails --> Dashboard: Return to Dashboard
+    SendPaymentReminder --> Dashboard: Return to Dashboard
+    
+    %% Recent Vehicle Check-Outs Functionality
+    Dashboard --> ViewVehicleHistory: Click on Vehicle Entry
+    state ViewVehicleHistory {
+        CheckInAssessment: Initial Check-In Assessment
+        CheckOutAssessment: Check-Out Assessment
+        GeneratedInvoices: Generated Invoices
+    }
+    ViewVehicleHistory --> Dashboard: Return to Dashboard
+    
+    %% Check-In Vehicle Button Functionality
+    Dashboard --> CheckInVehicleForm: Click "Check-In Vehicle" Button
+    state CheckInVehicleForm {
+        VehicleType: Select Vehicle Type
+        VehicleType --> NewVehicle: New Vehicle
+        VehicleType --> ExistingVehicle: Existing Vehicle
+        
+        NewVehicle --> BasicVehicleInfo: Enter Basic Information
+        BasicVehicleInfo: - License Plate Number
+        BasicVehicleInfo: - Service Type
+        BasicVehicleInfo: - Customer Details
+        
+        ExistingVehicle --> SelectExistingVehicle: Select from List
+        SelectExistingVehicle --> BasicVehicleInfo
+        
+        BasicVehicleInfo --> ComponentsAssessment: Proceed to Assessment
+        
+        state ComponentsAssessment {
+            AudioComponents: Audio Components Assessment
+            AudioComponents: - Radio
+            AudioComponents: - Speakers
+            
+            InteriorComponents: Interior Components Assessment
+            InteriorComponents: - Keys
+            InteriorComponents: - Clock
+            InteriorComponents: - Heater Knobs
+            InteriorComponents: - Door Lock Knobs
+            InteriorComponents: - Other Components
+            
+            ExteriorComponents: Exterior Components Assessment
+            ExteriorComponents: - Boot Badge
+            ExteriorComponents: - Tool Kit
+            ExteriorComponents: - Other Components
+            
+            EngineComponents: Engine Components Assessment
+            EngineComponents: - Battery
+            EngineComponents: - Radiator Cap
+            EngineComponents: - Other Components
+            
+            UploadPhotos: Upload Photos for Assessment
+            UploadPhotos: - Exterior Photos
+            UploadPhotos: - Interior Photos
+            UploadPhotos: - Engine Photos
+        }
+        
+        ComponentsAssessment --> PayeeInfo: Enter Payee Information
+        PayeeInfo: - Individual
+        PayeeInfo: - Business
+        PayeeInfo: - Insurance
+        
+        PayeeInfo --> ReviewSubmission: Review Submission
+        ReviewSubmission --> TermsConditions: Accept Terms & Conditions
+        TermsConditions: - OTP PIN
+        TermsConditions: - Customer ID
+        
+        TermsConditions --> GenerateRepairOrder: Submit Form
+        GenerateRepairOrder: - Generate Repair Order Number
+        GenerateRepairOrder: - Email Form to Customer
+    }
+    CheckInVehicleForm --> Dashboard: Return to Dashboard
+    
+    %% Create Invoice Button Functionality
+    Dashboard --> InvoiceCreationForm: Click "Create Invoice" Button
+    state InvoiceCreationForm {
+        SelectVehicle: Select Vehicle by License Plate
+        AddServiceItems: Add Service Items and Parts
+        AddServiceItems: - Service Description
+        AddServiceItems: - Quantity
+        AddServiceItems: - Unit Price
+        AddServiceItems: - Auto-calculate 10% Service Charge
+        
+        CalculateTotal: Calculate Invoice Total
+        SendInvoice: Send Invoice to Customer
+        SendInvoice: - Email
+        SendInvoice: - SMS
+    }
+    InvoiceCreationForm --> Dashboard: Return to Dashboard
+    
+    %% Notification Bell Functionality
+    Dashboard --> NotificationDetails: Click on Notification Bell
+    NotificationDetails --> TakeAction: View Details & Take Action
+    TakeAction --> Dashboard: Return to Dashboard
+    
+    %% Main Navigation Options
+    MainNavigation --> ServiceHub: Click Service Hub
+    MainNavigation --> VehicleCheckIn: Click Vehicle Check-In
+    MainNavigation --> BillingPayments: Click Billing & Payments
+    MainNavigation --> VehicleHistory: Click Vehicle History
+    MainNavigation --> Settings: Click Settings
+    MainNavigation --> VehicleCheckout: Click Vehicle Check-Out
+    MainNavigation --> Inventory: Click Inventory
+    
+    %% Return to Dashboard
+    ServiceHub --> Dashboard: Return to Dashboard
+    VehicleCheckIn --> Dashboard: Return to Dashboard
+    BillingPayments --> Dashboard: Return to Dashboard
+    VehicleHistory --> Dashboard: Return to Dashboard
+    Settings --> Dashboard: Return to Dashboard
+    VehicleCheckout --> Dashboard: Return to Dashboard
+    Inventory --> Dashboard: Return to Dashboard

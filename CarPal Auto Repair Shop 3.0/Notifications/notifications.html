@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPal by Citrus - Notifications</title>
+
+    <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="notifications.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                        alt="CarPal by Citrus Logo" class="logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Dashboard\dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Vehicle Check-In\check_in.html">
+                            <i class="fas fa-car-side"></i>
+                            <span>Vehicle Check-In</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Service Hub\service_hub.html">
+                            <i class="fas fa-tools"></i>
+                            <span>Service Hub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Billings & Payments\billings.html">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billing & Payments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Vehicle History\history.html">
+                            <i class="fas fa-history"></i>
+                            <span>Vehicle History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Inventory\inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Messaging\messaging.html">
+                            <i class="fas fa-comments"></i> <span>Messaging</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Technicians\technicians.html">
+                            <i class="fas fa-user-wrench"></i>
+                            <span>Technicians</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Vehicle Check-Out\check_out.html">
+                            <i class="fas fa-clipboard-check"></i>
+                            <span>Vehicle Check-Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-actions">
+                    <div class="notifications" class="active">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </div>
+                    <div class="user-profile" id="userProfile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile">
+                        <!-- User Profile Dropdown -->
+                        <div class="profile-dropdown" id="profileDropdown">
+                            <div class="profile-header">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                    alt="User Profile">
+                                <div class="profile-info">
+                                    <h4>John Doe</h4>
+                                    <p>Administrator</p>
+                                </div>
+                            </div>
+                            <ul class="profile-menu">
+                                <li>
+                                    <a
+                                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Settings\settings.html">
+                                        <i class="fas fa-cog"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="C:\Users\nderu\Documents\Development\Product\CarPal by Citrus\CarPal by Citrus Account Users\Auto Repair Shop Account\Performance & History\help.html">
+                                        <i class="fas fa-question-circle"></i> Help & Support
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\CarPal Auto Repair Shop\landing_page.html">
+                                        <i class="fas fa-sign-out-alt"></i> Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification Header and Actions -->
+            <div class="notification-header">
+                <h1>Notifications</h1>
+                <div class="notification-actions">
+                    <button class="filter-btn" id="filterBtn">
+                        <i class="fas fa-filter"></i> Filter
+                    </button>
+                    <button class="sort-btn" id="sortBtn">
+                        <i class="fas fa-sort"></i> Sort
+                    </button>
+                    <button class="settings-btn" id="notifSettingsBtn">
+                        <i class="fas fa-cog"></i> Settings
+                    </button>
+                    <button class="archived-btn" id="archivedBtn">
+                        <i class="fas fa-archive"></i> View Archived
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Dropdown -->
+            <div class="filter-dropdown" id="filterDropdown">
+                <h3>Filter by Category</h3>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="appointment"> Appointment Updates
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="inventory"> Inventory Alerts
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="billing"> Billing Notifications
+                    </label>
+                </div>
+                <div class="filter-actions">
+                    <button class="apply-filter-btn">Apply Filters</button>
+                    <button class="clear-filter-btn">Clear Filters</button>
+                </div>
+            </div>
+
+            <!-- Sort Dropdown -->
+            <div class="sort-dropdown" id="sortDropdown">
+                <h3>Sort Notifications</h3>
+                <div class="sort-options">
+                    <label class="sort-option">
+                        <input type="radio" name="sort" value="newest"> Newest First
+                    </label>
+                    <label class="sort-option">
+                        <input type="radio" name="sort" value="oldest"> Oldest First
+                    </label>
+                    <label class="sort-option">
+                        <input type="radio" name="sort" value="priority"> Priority (High to Low)
+                    </label>
+                </div>
+                <div class="sort-actions">
+                    <button class="apply-sort-btn">Apply Sorting</button>
+                </div>
+            </div>
+
+            <!-- Notification Settings Panel -->
+            <div class="notification-settings-panel" id="notifSettingsPanel">
+                <div class="panel-header">
+                    <h3>Notification Settings</h3>
+                    <button class="close-panel-btn" id="closeSettingsBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="settings-section">
+                    <h4>Notification Categories</h4>
+                    <div class="category-toggles">
+                        <label class="toggle-switch">
+                            <span class="toggle-label">Appointment Updates</span>
+                            <input type="checkbox" checked id="appointmentToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <label class="toggle-switch">
+                            <span class="toggle-label">Inventory Alerts</span>
+                            <input type="checkbox" checked id="inventoryToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <label class="toggle-switch">
+                            <span class="toggle-label">Billing Notifications</span>
+                            <input type="checkbox" checked id="billingToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h4>Notification Channels</h4>
+                    <div class="channel-toggles">
+                        <label class="toggle-switch">
+                            <span class="toggle-label">In-App Notifications</span>
+                            <input type="checkbox" checked id="inAppToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <label class="toggle-switch">
+                            <span class="toggle-label">Email Notifications</span>
+                            <input type="checkbox" checked id="emailToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="save-settings-btn" id="saveSettingsBtn">Save Settings</button>
+            </div>
+
+            <!-- Archived Notifications Panel -->
+            <div class="archived-notifications-panel" id="archivedPanel">
+                <div class="panel-header">
+                    <h3>Archived Notifications</h3>
+                    <button class="close-panel-btn" id="closeArchivedBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="archived-list">
+                    <!-- Sample Archived Notification Items -->
+                    <div class="archived-item">
+                        <div class="archive-content">
+                            <div class="notification-icon inventory">
+                                <i class="fas fa-boxes"></i>
+                            </div>
+                            <div class="notification-details">
+                                <h4>Low Stock Alert: Brake Pads</h4>
+                                <p>Inventory levels for brake pads are below threshold (5 items remaining).</p>
+                                <span class="notification-time">Jan 15, 2025 - 2:45 PM</span>
+                            </div>
+                        </div>
+                        <div class="archive-actions">
+                            <button class="restore-btn">Restore</button>
+                            <button class="delete-btn">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="archived-item">
+                        <div class="archive-content">
+                            <div class="notification-icon appointment">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="notification-details">
+                                <h4>Appointment Rescheduled</h4>
+                                <p>Customer James Wilson rescheduled service for KBD 472X from Jan 10 to Jan 12.</p>
+                                <span class="notification-time">Jan 8, 2025 - 11:20 AM</span>
+                            </div>
+                        </div>
+                        <div class="archive-actions">
+                            <button class="restore-btn">Restore</button>
+                            <button class="delete-btn">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="archived-item">
+                        <div class="archive-content">
+                            <div class="notification-icon billing">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </div>
+                            <div class="notification-details">
+                                <h4>Invoice Paid</h4>
+                                <p>Invoice #INV-2025-0042 for KAT 213J has been paid. Amount: KES 12,500.</p>
+                                <span class="notification-time">Dec 28, 2024 - 3:15 PM</span>
+                            </div>
+                        </div>
+                        <div class="archive-actions">
+                            <button class="restore-btn">Restore</button>
+                            <button class="delete-btn">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unified Notifications Feed -->
+            <div class="notifications-feed" id="notificationsFeed">
+                <!-- High Priority Notification -->
+                <div class="notification-item high-priority unread">
+                    <div class="notification-content">
+                        <div class="notification-icon inventory">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="notification-details">
+                            <h4>Critical Inventory Alert: Engine Oil</h4>
+                            <p>Engine oil stock is critical (2 items remaining). Please reorder immediately.</p>
+                            <span class="notification-time">Today - 10:23 AM</span>
+                        </div>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="mark-read-btn"><i class="fas fa-check"></i></button>
+                        <button class="view-details-btn">View Details</button>
+                        <button class="archive-btn"><i class="fas fa-archive"></i></button>
+                        <button class="dismiss-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+
+                <!-- Appointment Notification -->
+                <div class="notification-item unread">
+                    <div class="notification-content">
+                        <div class="notification-icon appointment">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="notification-details">
+                            <h4>New Appointment Scheduled</h4>
+                            <p>Customer Sarah Johnson has scheduled a service for KBZ 234P on March 28, 2025, 10:00 AM.
+                            </p>
+                            <span class="notification-time">Today - 9:15 AM</span>
+                        </div>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="mark-read-btn"><i class="fas fa-check"></i></button>
+                        <button class="view-details-btn">View Details</button>
+                        <button class="archive-btn"><i class="fas fa-archive"></i></button>
+                        <button class="dismiss-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+
+                <!-- Billing Notification -->
+                <div class="notification-item unread">
+                    <div class="notification-content">
+                        <div class="notification-icon billing">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <div class="notification-details">
+                            <h4>Invoice Generated</h4>
+                            <p>Invoice #INV-2025-0147 for KDH 908Z has been generated. Amount: KES 35,750.</p>
+                            <span class="notification-time">Today - 8:42 AM</span>
+                        </div>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="mark-read-btn"><i class="fas fa-check"></i></button>
+                        <button class="view-details-btn">View Details</button>
+                        <button class="archive-btn"><i class="fas fa-archive"></i></button>
+                        <button class="dismiss-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+
+                <!-- Read Notification -->
+                <div class="notification-item">
+                    <div class="notification-content">
+                        <div class="notification-icon inventory">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <div class="notification-details">
+                            <h4>Low Stock Alert: Air Filters</h4>
+                            <p>Inventory levels for air filters are below threshold (4 items remaining).</p>
+                            <span class="notification-time">Yesterday - 4:17 PM</span>
+                        </div>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="mark-unread-btn"><i class="fas fa-envelope"></i></button>
+                        <button class="view-details-btn">View Details</button>
+                        <button class="archive-btn"><i class="fas fa-archive"></i></button>
+                        <button class="dismiss-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+
+                <!-- Vehicle Status Update -->
+                <div class="notification-item">
+                    <div class="notification-content">
+                        <div class="notification-icon appointment">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="notification-details">
+                            <h4>Vehicle Service Completed</h4>
+                            <p>Service for KCB 567M has been completed and is ready for pickup.</p>
+                            <span class="notification-time">Yesterday - 2:30 PM</span>
+                        </div>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="mark-unread-btn"><i class="fas fa-envelope"></i></button>
+                        <button class="view-details-btn">View Details</button>
+                        <button class="archive-btn"><i class="fas fa-archive"></i></button>
+                        <button class="dismiss-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+
+                <!-- Payment Notification -->
+                <div class="notification-item">
+                    <div class="notification-content">
+                        <div class="notification-icon billing">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="notification-details">
+                            <h4>Payment Received</h4>
+                            <p>Payment of KES 18,900 received for invoice #INV-2025-0132 (KBY 345X).</p>
+                            <span class="notification-time">Mar 25, 2025 - 11:05 AM</span>
+                        </div>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="mark-unread-btn"><i class="fas fa-envelope"></i></button>
+                        <button class="view-details-btn">View Details</button>
+                        <button class="archive-btn"><i class="fas fa-archive"></i></button>
+                        <button class="dismiss-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Real-time Alert Popup -->
+    <div class="real-time-alert" id="realTimeAlert">
+        <div class="alert-content">
+            <div class="alert-icon">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="alert-details">
+                <h4>Urgent: Vehicle KZN 123A Ready for Pickup</h4>
+                <p>The customer has been waiting for 30 minutes.</p>
+            </div>
+            <div class="alert-actions">
+                <button class="view-alert-btn">View</button>
+                <button class="dismiss-alert-btn">Dismiss</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="darkModeToggle"></i>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/" target="_blank">citruslabs.co.ke</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="notifications.js"></script>
+</body>
+
+</html>

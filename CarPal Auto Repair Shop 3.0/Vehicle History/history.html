@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle History - CarPal by Citrus</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon"
+        href="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Favicon\favicon.ico">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="history.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Random Logo\logo.png"
+                        alt="CarPal by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Dashboard/dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Vehicle Check-In/check_in.html">
+                            <i class="fas fa-car"></i>
+                            <span>Vehicle Check-In</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Service Hub/service_hub.html">
+                            <i class="fas fa-wrench"></i>
+                            <span>Service Hub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Billings & Payments/billings.html">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billing & Payments</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Vehicle History/history.html">
+                            <i class="fas fa-history"></i>
+                            <span>Vehicle History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/CarPal Auto Repair Shop 3.0/Inventory/inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Messaging\messaging.html">
+                            <i class="fas fa-comments"></i> <span>Messaging</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Technicians\technicians.html">
+                            <i class="fas fa-users-cog"></i> <span>Technicians</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Vehicle Check-Out\check_out.html">
+                            <i class="fas fa-car-side"></i> <span>Vehicle Check-Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search vehicles, customers...">
+                </div>
+
+                <div class="user-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+
+                        <!-- Notifications Dropdown -->
+                        <div class="notifications-dropdown">
+                            <h3>Notifications</h3>
+
+                            <div class="notification-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="User">
+                                <div class="notification-content">
+                                    <p>Vehicle KDA 432C ready for checkout</p>
+                                    <span class="notification-time">10 minutes ago</span>
+                                </div>
+                            </div>
+
+                            <div class="notification-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="User">
+                                <div class="notification-content">
+                                    <p>New service request from James Wanjiku</p>
+                                    <span class="notification-time">1 hour ago</span>
+                                </div>
+                            </div>
+
+                            <div class="notification-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="User">
+                                <div class="notification-content">
+                                    <p>Service completed for KBZ 345T</p>
+                                    <span class="notification-time">3 hours ago</span>
+                                </div>
+                            </div>
+
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Notifications\notifications.html"
+                                class="view-all">View All Notifications</a>
+                        </div>
+                    </div>
+
+                    <div class="user-profile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="Profile">
+
+                        <!-- Profile Dropdown -->
+                        <div class="profile-dropdown">
+                            <div class="profile-header">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                    alt="Profile">
+                                <div class="profile-info">
+                                    <h4>John Doe</h4>
+                                    <p>Shop Manager</p>
+                                </div>
+                            </div>
+
+                            <ul class="profile-menu">
+                                <li>
+                                    <a
+                                        href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Settings\settings.html">
+                                        <i class="fas fa-cog"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="C:\Users\nderu\Documents\Development\Product\CarPal\Landing Page\CarPal Auto Repair Shop\landing_page.html">
+                                        <i class="fas fa-sign-out-alt"></i> Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area - Vehicle History Page -->
+            <div class="history-content" id="vehicle-history-main">
+                <h1>Vehicle History</h1>
+
+                <!-- Search and Filter Options -->
+                <div class="search-filter-panel">
+                    <div class="search-options">
+                        <div class="search-group">
+                            <label for="license-plate-search">Search by License Plate</label>
+                            <input type="text" id="license-plate-search" placeholder="e.g. KDA 432C">
+                        </div>
+
+                        <div class="search-group">
+                            <label for="customer-name-search">Search by Customer Name</label>
+                            <input type="text" id="customer-name-search" placeholder="e.g. James Wanjiku">
+                        </div>
+                    </div>
+
+                    <div class="filter-options">
+                        <div class="filter-group">
+                            <label for="date-range-filter">Filter by Date Range</label>
+                            <div class="date-range">
+                                <input type="date" id="date-from" class="date-input">
+                                <span>to</span>
+                                <input type="date" id="date-to" class="date-input">
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="service-type-filter">Filter by Service Type</label>
+                            <select id="service-type-filter">
+                                <option value="">All Service Types</option>
+                                <option value="maintenance">Routine Maintenance</option>
+                                <option value="repair">Repair</option>
+                                <option value="diagnostic">Diagnostic</option>
+                                <option value="custom">Custom Service</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="sort-option">Sort By</label>
+                            <select id="sort-option">
+                                <option value="recent">Recent First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="name-asc">Customer Name (A-Z)</option>
+                                <option value="name-desc">Customer Name (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button class="search-btn primary-btn">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                        <button class="reset-btn secondary-btn">
+                            <i class="fas fa-undo"></i> Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle List with Recent Services -->
+                <div class="vehicle-list-panel">
+                    <div class="panel-header">
+                        <h2>Vehicle History List</h2>
+                        <div class="list-actions">
+                            <button class="export-btn secondary-btn">
+                                <i class="fas fa-file-export"></i> Export List
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="panel-content">
+                        <table class="data-table" id="vehicle-history-table">
+                            <thead>
+                                <tr>
+                                    <th>License Plate</th>
+                                    <th>Vehicle Make & Model</th>
+                                    <th>Last Service Date</th>
+                                    <th>Service Status</th>
+                                    <th>Customer Name</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>KDA 432C</td>
+                                    <td>Toyota Corolla (2018)</td>
+                                    <td>2025-03-18</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>James Wanjiku</td>
+                                    <td>
+                                        <button class="view-detail-btn action-btn" data-id="KDA-432C">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>KBZ 345T</td>
+                                    <td>Honda Civic (2020)</td>
+                                    <td>2025-03-15</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>Sarah Muthoni</td>
+                                    <td>
+                                        <button class="view-detail-btn action-btn" data-id="KBZ-345T">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>KCF 678P</td>
+                                    <td>Mazda CX-5 (2019)</td>
+                                    <td>2025-03-22</td>
+                                    <td><span class="status-badge in-progress">In Progress</span></td>
+                                    <td>Robert Kimani</td>
+                                    <td>
+                                        <button class="view-detail-btn action-btn" data-id="KCF-678P">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>KDD 901X</td>
+                                    <td>Nissan X-Trail (2017)</td>
+                                    <td>2025-03-10</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>Jane Njeri</td>
+                                    <td>
+                                        <button class="view-detail-btn action-btn" data-id="KDD-901X">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>KDJ 234Z</td>
+                                    <td>Subaru Forester (2021)</td>
+                                    <td>2025-03-05</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>David Otieno</td>
+                                    <td>
+                                        <button class="view-detail-btn action-btn" data-id="KDJ-234Z">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="pagination">
+                            <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                            <span class="pagination-info">Page 1 of 5</span>
+                            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vehicle History Detail View (Initially Hidden) -->
+            <div class="history-content" id="vehicle-history-detail" style="display: none;">
+                <div class="detail-header">
+                    <button class="back-btn" id="back-to-list">
+                        <i class="fas fa-arrow-left"></i> Back to Vehicle List
+                    </button>
+                    <button class="return-dashboard-btn">
+                        <i class="fas fa-tachometer-alt"></i> Return to Dashboard
+                    </button>
+                </div>
+
+                <!-- Vehicle Header Information -->
+                <div class="vehicle-header-panel">
+                    <div class="vehicle-basic-info">
+                        <h2>Vehicle Details: <span id="vehicle-plate">KDA 432C</span></h2>
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Make & Model:</span>
+                                <span class="spec-value" id="vehicle-model">Toyota Corolla</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Year:</span>
+                                <span class="spec-value" id="vehicle-year">2018</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">VIN:</span>
+                                <span class="spec-value" id="vehicle-vin">JT2BF22K1W0123456</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Owner:</span>
+                                <span class="spec-value" id="vehicle-owner">James Wanjiku</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Services Count:</span>
+                                <span class="spec-value" id="services-count">12</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vehicle-action-buttons">
+                        <button class="primary-btn" id="create-service-btn">
+                            <i class="fas fa-plus"></i> Create New Service
+                        </button>
+                        <button class="secondary-btn" id="generate-report-btn">
+                            <i class="fas fa-chart-bar"></i> Generate Report
+                        </button>
+                        <button class="secondary-btn" id="export-history-btn">
+                            <i class="fas fa-file-export"></i> Export History
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service History Tabs -->
+                <div class="service-history-tabs">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="all-services">All Services</button>
+                        <button class="tab-btn" data-tab="check-in-forms">Check-In Forms</button>
+                        <button class="tab-btn" data-tab="check-out-forms">Check-Out Forms</button>
+                        <button class="tab-btn" data-tab="invoices">Invoices</button>
+                    </div>
+
+                    <!-- All Services Tab Content -->
+                    <div class="tab-content active" id="all-services">
+                        <div class="tab-filter">
+                            <div class="filter-controls">
+                                <div class="filter-group">
+                                    <label>Date Range:</label>
+                                    <div class="date-range">
+                                        <input type="date" class="date-input tab-date-from">
+                                        <span>to</span>
+                                        <input type="date" class="date-input tab-date-to">
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <label>Service Type:</label>
+                                    <select class="tab-service-type">
+                                        <option value="">All Types</option>
+                                        <option value="maintenance">Maintenance</option>
+                                        <option value="repair">Repair</option>
+                                        <option value="diagnostic">Diagnostic</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label>Status:</label>
+                                    <select class="tab-status">
+                                        <option value="">All Statuses</option>
+                                        <option value="completed">Completed</option>
+                                        <option value="in-progress">In Progress</option>
+                                        <option value="scheduled">Scheduled</option>
+                                    </select>
+                                </div>
+                                <button class="apply-filter-btn">Apply Filter</button>
+                            </div>
+                        </div>
+
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Service Date</th>
+                                    <th>Service Type</th>
+                                    <th>Technician</th>
+                                    <th>Status</th>
+                                    <th>Invoice Amount</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-03-18</td>
+                                    <td>Routine Maintenance</td>
+                                    <td>John Kamau</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>KES. 8,500</td>
+                                    <td>
+                                        <button class="view-service-btn action-btn" data-id="SRV-001">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2025-02-05</td>
+                                    <td>Brake Repair</td>
+                                    <td>Peter Njoroge</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>KES. 12,300</td>
+                                    <td>
+                                        <button class="view-service-btn action-btn" data-id="SRV-002">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2025-01-15</td>
+                                    <td>Oil Change</td>
+                                    <td>Mary Wambui</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>KES. 4,500</td>
+                                    <td>
+                                        <button class="view-service-btn action-btn" data-id="SRV-003">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Check-In Forms Tab Content -->
+                    <div class="tab-content" id="check-in-forms">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Check-In Date</th>
+                                    <th>Repair Order #</th>
+                                    <th>Service Type</th>
+                                    <th>Received By</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-03-18</td>
+                                    <td>RO-25031801</td>
+                                    <td>Routine Maintenance</td>
+                                    <td>Susan Njau</td>
+                                    <td>
+                                        <button class="view-checkin-btn action-btn" data-id="CHK-001">
+                                            <i class="fas fa-eye"></i> View Check-In Form
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2025-02-05</td>
+                                    <td>RO-25020502</td>
+                                    <td>Brake Repair</td>
+                                    <td>Samuel Odhiambo</td>
+                                    <td>
+                                        <button class="view-checkin-btn action-btn" data-id="CHK-002">
+                                            <i class="fas fa-eye"></i> View Check-In Form
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2025-01-15</td>
+                                    <td>RO-25011503</td>
+                                    <td>Oil Change</td>
+                                    <td>Susan Njau</td>
+                                    <td>
+                                        <button class="view-checkin-btn action-btn" data-id="CHK-003">
+                                            <i class="fas fa-eye"></i> View Check-In Form
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Check-Out Forms Tab Content -->
+                    <div class="tab-content" id="check-out-forms">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Check-Out Date</th>
+                                    <th>Repair Order #</th>
+                                    <th>Service Summary</th>
+                                    <th>Processed By</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-03-18</td>
+                                    <td>RO-25031801</td>
+                                    <td>Full service maintenance completed</td>
+                                    <td>Daniel Kiprop</td>
+                                    <td>
+                                        <button class="view-checkout-btn action-btn" data-id="CHKO-001">
+                                            <i class="fas fa-eye"></i> View Check-Out Form
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2025-02-05</td>
+                                    <td>RO-25020502</td>
+                                    <td>Front and rear brake pads replaced</td>
+                                    <td>Daniel Kiprop</td>
+                                    <td>
+                                        <button class="view-checkout-btn action-btn" data-id="CHKO-002">
+                                            <i class="fas fa-eye"></i> View Check-Out Form
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2025-01-15</td>
+                                    <td>RO-25011503</td>
+                                    <td>Oil and filter change completed</td>
+                                    <td>Grace Wangari</td>
+                                    <td>
+                                        <button class="view-checkout-btn action-btn" data-id="CHKO-003">
+                                            <i class="fas fa-eye"></i> View Check-Out Form
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Invoices Tab Content -->
+                    <div class="tab-content" id="invoices">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice Date</th>
+                                    <th>Invoice #</th>
+                                    <th>Total Amount</th>
+                                    <th>Payment Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-03-18</td>
+                                    <td>INV-25031801</td>
+                                    <td>KES. 8,500</td>
+                                    <td><span class="status-badge paid">Paid</span></td>
+                                    <td>
+                                        <button class="view-invoice-btn action-btn" data-id="INV-001">
+                                            <i class="fas fa-eye"></i> View
+                                        </button>
+                                        <button class="download-invoice-btn action-btn" data-id="INV-001">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2025-02-05</td>
+                                    <td>INV-25020502</td>
+                                    <td>KES. 12,300</td>
+                                    <td><span class="status-badge paid">Paid</span></td>
+                                    <td>
+                                        <button class="view-invoice-btn action-btn" data-id="INV-002">
+                                            <i class="fas fa-eye"></i> View
+                                        </button>
+                                        <button class="download-invoice-btn action-btn" data-id="INV-002">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2025-01-15</td>
+                                    <td>INV-25011503</td>
+                                    <td>KES. 4,500</td>
+                                    <td><span class="status-badge paid">Paid</span></td>
+                                    <td>
+                                        <button class="view-invoice-btn action-btn" data-id="INV-003">
+                                            <i class="fas fa-eye"></i> View
+                                        </button>
+                                        <button class="download-invoice-btn action-btn" data-id="INV-003">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Detail View (Initially Hidden) -->
+            <div class="history-content" id="service-detail-view" style="display: none;">
+                <div class="detail-header">
+                    <button class="back-btn" id="back-to-vehicle">
+                        <i class="fas fa-arrow-left"></i> Back to Vehicle Details
+                    </button>
+                </div>
+
+                <div class="service-detail-panel">
+                    <h2>Service Details</h2>
+
+                    <div class="service-info-section">
+                        <div class="service-header">
+                            <div class="service-basic-info">
+                                <div class="info-item">
+                                    <span class="info-label">Service Date:</span>
+                                    <span class="info-value" id="service-date">March 18, 2025</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Service Type:</span>
+                                    <span class="info-value" id="service-type">Routine Maintenance</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Technician:</span>
+                                    <span class="info-value" id="service-technician">John Kamau</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Status:</span>
+                                    <span class="status-badge completed" id="service-status">Completed</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Duration:</span>
+                                    <span class="info-value" id="service-duration">2 hours 30 minutes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="service-documents">
+                            <h3>Related Documents</h3>
+                            <div class="document-links">
+                                <a href="#" class="document-link" id="link-checkin">
+                                    <i class="fas fa-clipboard-list"></i> Check-In Form
+                                </a>
+                                <a href="#" class="document-link" id="link-checkout">
+                                    <i class="fas fa-clipboard-check"></i> Check-Out Form
+                                </a>
+                                <a href="#" class="document-link" id="link-invoice">
+                                    <i class="fas fa-file-invoice-dollar"></i> Invoice
+                                </a>
+                                <a href="#" class="document-link" id="link-gallery">
+                                    <i class="fas fa-images"></i> Photo Gallery (8 photos)
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="repair-details">
+                            <h3>Repair Details</h3>
+
+                            <div class="repair-section">
+                                <h4>Parts Used</h4>
+                                <table class="parts-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Part Name</th>
+                                            <th>Part Number</th>
+                                            <th>Quantity</th>
+                                            <th>Unit Price</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Engine Oil Filter</td>
+                                            <td>OF-1234</td>
+                                            <td>1</td>
+                                            <td>KES. 800</td>
+                                            <td>KES. 800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Synthetic Oil (1L)</td>
+                                            <td>SO-5678</td>
+                                            <td>4</td>
+                                            <td>KES. 1,200</td>
+                                            <td>KES. 4,800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Air Filter</td>
+                                            <td>AF-9012</td>
+                                            <td>1</td>
+                                            <td>KES. 1,500</td>
+                                            <td>KES. 1,500</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="repair-section">
+                                <h4>Labor Performed</h4>
+                                <table class="labor-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Hours</th>
+                                            <th>Rate</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Oil Change Service</td>
+                                            <td>0.5</td>
+                                            <td>KES. 1,000/hr</td>
+                                            <td>KES. 500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Air Filter Replacement</td>
+                                            <td>0.3</td>
+                                            <td>KES. 1,000/hr</td>
+                                            <td>KES. 300</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Multi-Point Inspection</td>
+                                            <td>0.6</td>
+                                            <td>KES. 1,000/hr</td>
+                                            <td>KES. 600</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="repair-section">
+                                <h4>Technician Notes</h4>
+                                <div class="notes-box">
+                                    <p>Performed full routine maintenance service. Oil and filter changed with synthetic
+                                        oil. Air filter replaced. All fluids topped up. Tire pressure adjusted to
+                                        manufacturer specifications. Multi-point inspection completed - all systems
+                                        functioning normally. Recommended brake pad replacement in the next 3 months
+                                        based on current wear.</p>
+                                </div>
+                            </div>
+
+                            <div class="repair-section">
+                                <h4>Customer Communication</h4>
+                                <div class="communication-timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">March 18, 2025 - 08:30 AM</div>
+                                        <div class="timeline-content">
+                                            <strong>Check-In:</strong> Customer dropped off vehicle for scheduled
+                                            maintenance.
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">March 18, 2025 - 10:15 AM</div>
+                                        <div class="timeline-content">
+                                            <strong>SMS Sent:</strong> "Your service has begun. We'll update you when
+                                            it's completed."
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">March 18, 2025 - 11:45 AM</div>
+                                        <div class="timeline-content">
+                                            <strong>Phone Call:</strong> Called customer about brake pad recommendation.
+                                            Customer approved for follow-up service next month.
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">March 18, 2025 - 01:30 PM</div>
+                                        <div class="timeline-content">
+                                            <strong>SMS Sent:</strong> "Your service is complete. Your vehicle is ready
+                                            for pickup."
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">March 18, 2025 - 04:45 PM</div>
+                                        <div class="timeline-content">
+                                            <strong>Check-Out:</strong> Customer picked up vehicle. Follow-up service
+                                            scheduled for April 15th.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-action-buttons">
+                        <button class="action-btn" id="edit-service-btn">
+                            <i class="fas fa-edit"></i> Edit Service
+                        </button>
+                        <button class="action-btn" id="print-service-btn">
+                            <i class="fas fa-print"></i> Print Service Summary
+                        </button>
+                        <button class="action-btn" id="email-service-btn">
+                            <i class="fas fa-envelope"></i> Email Service Summary
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Check-In Form Detail View (Initially Hidden) -->
+            <div class="history-content" id="checkin-detail-view" style="display: none;">
+                <div class="detail-header">
+                    <button class="back-btn" id="back-to-checkin-list">
+                        <i class="fas fa-arrow-left"></i> Back to Check-In Forms
+                    </button>
+                </div>
+
+                <div class="form-detail-panel">
+                    <h2>Check-In Form Details</h2>
+
+                    <div class="form-header">
+                        <div class="form-basic-info">
+                            <div class="info-item">
+                                <span class="info-label">Check-In Date:</span>
+                                <span class="info-value">March 18, 2025 - 08:30 AM</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Repair Order:</span>
+                                <span class="info-value">RO-25031801</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Received By:</span>
+                                <span class="info-value">Susan Njau</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vehicle-condition-section">
+                        <h3>Vehicle Condition Assessment</h3>
+
+                        <div class="condition-category">
+                            <h4>Audio Components</h4>
+                            <table class="condition-table">
+                                <thead>
+                                    <tr>
+                                        <th>Component</th>
+                                        <th>Availability</th>
+                                        <th>Condition</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Radio/Media Player</td>
+                                        <td><i class="fas fa-check"></i> Present</td>
+                                        <td>Good</td>
+                                        <td>Fully functional</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Speakers</td>
+                                        <td><i class="fas fa-check"></i> Present</td>
+                                        <td>Good</td>
+                                        <td>All working properly</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Navigation System</td>
+                                        <td><i class="fas fa-times"></i> Not Present</td>
+                                        <td>N/A</td>
+                                        <td>Not equipped</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="condition-category">
+                            <h4>Interior Components</h4>
+                            <table class="condition-table">
+                                <thead>
+                                    <tr>
+                                        <th>Component</th>
+                                        <th>Availability</th>
+                                        <th>Condition</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Seats</td>
+                                        <td><i class="fas fa-check"></i> Present</td>
+                                        <td>Good</td>
+                                        <td>Minor wear on driver's seat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dashboard</td>
+                                        <td><i class="fas fa-check"></i> Present</td>
+                                        <td>Good</td>
+                                        <td>No cracks or damage</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Floor Mats</td>
+                                        <td><i class="fas fa-check"></i> Present</td>
+                                        <td>Fair</td>
+                                        <td>Some staining on driver's side</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="condition-category">
+                            <h4>Exterior Components</h4>
+                            <table class="condition-table">
+                                <thead>
+                                    <tr>
+                                        <th>Component</th>
+                                        <th>Availability</th>
+                                        <th>Condition</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Body Panels</td>
+                                        <td><i class="fas fa-check"></i> Present</td>
+                                        <td>Good</td>
+                                        <td>Small scratch on rear bumper</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lights</td>
+                                        <td><i class="fas fa-check"></i> Present</td>
+                                        <td>Good</td>
+                                        <td>All functioning properly</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wipers</td>
+                                        <td><i class="fas fa-check"></i> Present</td>
+                                        <td>Good</td>
+                                        <td>Front and rear wipers intact</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="condition-category">
+                            <h4>Engine Components</h4>
+                            <table class="condition-table">
+                                <thead>
+                                    <tr>
+                                        <th>Component</th>
+                                        <th>Availability</th>
+                                        <th>Condition</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Engine</td>
+                                        <td><i class="fas fa-check"></i> Present</td>
+                                        <td>Good</td>
+                                        <td>Running smoothly</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Battery</td>
+                                        <td><i class="fas fa-check"></i> Present</td>
+                                        <td>Good</td>
+                                        <td>Tested, strong charge</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fluids</td>
+                                        <td><i class="fas fa-check"></i> Present</td>
+                                        <td>Fair</td>
+                                        <td>Oil due for change, other fluids acceptable</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="payment-information">
+                        <h3>Payment Information</h3>
+                        <div class="payment-details">
+                            <div class="info-item">
+                                <span class="info-label">Payee Type:</span>
+                                <span class="info-value">Individual</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Payee Name:</span>
+                                <span class="info-value">James Wanjiku</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Contact Number:</span>
+                                <span class="info-value">+254 712 345 678</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Payment Method:</span>
+                                <span class="info-value">M-Pesa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-action-buttons">
+                        <button class="action-btn" id="download-checkin-btn">
+                            <i class="fas fa-download"></i> Download Form PDF
+                        </button>
+                        <button class="action-btn" id="print-checkin-btn">
+                            <i class="fas fa-print"></i> Print Form
+                        </button>
+                        <button class="action-btn" id="email-checkin-btn">
+                            <i class="fas fa-envelope"></i> Email Form
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Check-Out Form Detail View (Initially Hidden) -->
+            <div class="history-content" id="checkout-detail-view" style="display: none;">
+                <div class="detail-header">
+                    <button class="back-btn" id="back-to-checkout-list">
+                        <i class="fas fa-arrow-left"></i> Back to Check-Out Forms
+                    </button>
+                </div>
+
+                <div class="form-detail-panel">
+                    <h2>Check-Out Form Details</h2>
+
+                    <div class="form-header">
+                        <div class="form-basic-info">
+                            <div class="info-item">
+                                <span class="info-label">Check-Out Date:</span>
+                                <span class="info-value">March 18, 2025 - 04:45 PM</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Repair Order:</span>
+                                <span class="info-value">RO-25031801</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Processed By:</span>
+                                <span class="info-value">Daniel Kiprop</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-completion-section">
+                        <h3>Service Completion Details</h3>
+
+                        <div class="completion-category">
+                            <h4>Services Performed</h4>
+                            <ul class="services-list">
+                                <li>Oil and filter change</li>
+                                <li>Air filter replacement</li>
+                                <li>Cabin filter replacement</li>
+                                <li>Tire rotation and pressure adjustment</li>
+                                <li>Multi-point inspection</li>
+                                <li>Fluid top-up (coolant, brake, power steering, washer)</li>
+                            </ul>
+                        </div>
+
+                        <div class="completion-category">
+                            <h4>Parts Replaced</h4>
+                            <table class="parts-table">
+                                <thead>
+                                    <tr>
+                                        <th>Part Name</th>
+                                        <th>Part Number</th>
+                                        <th>Quantity</th>
+                                        <th>Warranty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Engine Oil Filter</td>
+                                        <td>OF-1234</td>
+                                        <td>1</td>
+                                        <td>6 months</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Air Filter</td>
+                                        <td>AF-9012</td>
+                                        <td>1</td>
+                                        <td>12 months</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cabin Filter</td>
+                                        <td>CF-5678</td>
+                                        <td>1</td>
+                                        <td>12 months</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="completion-category">
+                            <h4>Condition Updates</h4>
+                            <div class="condition-updates">
+                                <p>All service items completed successfully. Vehicle is operating normally and meets
+                                    manufacturer specifications. Fluids topped up to appropriate levels. Tire pressure
+                                    adjusted to recommended specs. Battery tested and performing well.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-repair-section">
+                        <h3>Post-Repair Assessment</h3>
+
+                        <div class="assessment-category">
+                            <h4>Immediate Repairs Required</h4>
+                            <div class="assessment-content">
+                                <p>None - all systems functioning normally.</p>
+                            </div>
+                        </div>
+
+                        <div class="assessment-category">
+                            <h4>Next Service Recommendations</h4>
+                            <ul class="recommendations-list">
+                                <li><strong>Brake pad replacement</strong> - Front brake pads showing 30% remaining.
+                                    Recommend replacement within 3 months.</li>
+                                <li><strong>Next oil change</strong> - Due at 10,000 km or 6 months, whichever comes
+                                    first.</li>
+                            </ul>
+                        </div>
+
+                        <div class="assessment-category">
+                            <h4>Long-term Maintenance Suggestions</h4>
+                            <ul class="recommendations-list">
+                                <li><strong>Timing belt inspection</strong> - Recommended at 100,000 km (currently at
+                                    85,000 km).</li>
+                                <li><strong>Transmission fluid change</strong> - Consider at next service interval.</li>
+                                <li><strong>Battery replacement</strong> - Current battery is 3 years old. Typical
+                                    lifespan is 4-5 years.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="checkout-photos">
+                        <h3>Check-Out Photos</h3>
+                        <div class="photo-gallery-preview">
+                            <div class="photo-thumbnail">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-80.png"
+                                    alt="Photo placeholder">
+                                <span class="photo-caption">Engine after service</span>
+                            </div>
+                            <div class="photo-thumbnail">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-80.png"
+                                    alt="Photo placeholder">
+                                <span class="photo-caption">New air filter</span>
+                            </div>
+                            <div class="photo-thumbnail">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-80.png"
+                                    alt="Photo placeholder">
+                                <span class="photo-caption">Tire condition</span>
+                            </div>
+                            <div class="photo-thumbnail">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-80.png"
+                                    alt="Photo placeholder">
+                                <span class="photo-caption">Break pads condition</span>
+                            </div>
+                        </div>
+                        <button class="view-all-photos-btn">
+                            <i class="fas fa-images"></i> View All Photos
+                        </button>
+                    </div>
+
+                    <div class="form-action-buttons">
+                        <button class="action-btn" id="download-checkout-btn">
+                            <i class="fas fa-download"></i> Download Form PDF
+                        </button>
+                        <button class="action-btn" id="print-checkout-btn">
+                            <i class="fas fa-print"></i> Print Form
+                        </button>
+                        <button class="action-btn" id="email-checkout-btn">
+                            <i class="fas fa-envelope"></i> Email Form
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invoice Detail View (Initially Hidden) -->
+            <div class="history-content" id="invoice-detail-view" style="display: none;">
+                <div class="detail-header">
+                    <button class="back-btn" id="back-to-invoice-list">
+                        <i class="fas fa-arrow-left"></i> Back to Invoices
+                    </button>
+                </div>
+
+                <div class="invoice-detail-panel">
+                    <div class="invoice-header">
+                        <div class="invoice-title">
+                            <h2>Invoice #INV-25031801</h2>
+                        </div>
+                        <div class="invoice-meta">
+                            <div class="info-item">
+                                <span class="info-label">Issue Date:</span>
+                                <span class="info-value">March 18, 2025</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Due Date:</span>
+                                <span class="info-value">March 25, 2025</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Status:</span>
+                                <span class="status-badge paid">Paid</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="invoice-party-details">
+                        <div class="invoice-from">
+                            <h4>From:</h4>
+                            <p><strong>CarPal Auto Repair Shop</strong></p>
+                            <p>123 Ngong Road, Nairobi</p>
+                            <p>Kenya</p>
+                            <p>Tel: +254 20 123 4567</p>
+                            <p>Email: service@carpal.co.ke</p>
+                        </div>
+                        <div class="invoice-to">
+                            <h4>To:</h4>
+                            <p><strong>James Wanjiku</strong></p>
+                            <p>456 Kimathi Street, Nairobi</p>
+                            <p>Kenya</p>
+                            <p>Tel: +254 712 345 678</p>
+                            <p>Email: james.wanjiku@example.com</p>
+                        </div>
+                        <div class="invoice-vehicle">
+                            <h4>Vehicle:</h4>
+                            <p><strong>Toyota Corolla (2018)</strong></p>
+                            <p>License Plate: KDA 432C</p>
+                            <p>VIN: JT2BF22K1W0123456</p>
+                            <p>Odometer: 85,123 km</p>
+                        </div>
+                    </div>
+
+                    <div class="invoice-items-section">
+                        <h3>Invoice Items</h3>
+                        <table class="invoice-items-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>Parts</strong>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Engine Oil Filter (OF-1234)</td>
+                                    <td>1</td>
+                                    <td>KES. 800</td>
+                                    <td>KES. 800</td>
+                                </tr>
+                                <tr>
+                                    <td>Synthetic Oil (1L) (SO-5678)</td>
+                                    <td>4</td>
+                                    <td>KES. 1,200</td>
+                                    <td>KES. 4,800</td>
+                                </tr>
+                                <tr>
+                                    <td>Air Filter (AF-9012)</td>
+                                    <td>1</td>
+                                    <td>KES. 1,500</td>
+                                    <td>KES. 1,500</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Labor</strong>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Oil Change Service</td>
+                                    <td>0.5 hrs</td>
+                                    <td>KES. 1,000/hr</td>
+                                    <td>KES. 500</td>
+                                </tr>
+                                <tr>
+                                    <td>Air Filter Replacement</td>
+                                    <td>0.3 hrs</td>
+                                    <td>KES. 1,000/hr</td>
+                                    <td>KES. 300</td>
+                                </tr>
+                                <tr>
+                                    <td>Multi-Point Inspection</td>
+                                    <td>0.6 hrs</td>
+                                    <td>KES. 1,000/hr</td>
+                                    <td>KES. 600</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="invoice-totals">
+                        <div class="total-row">
+                            <span class="total-label">Subtotal:</span>
+                            <span class="total-value">KES. 8,500</span>
+                        </div>
+                        <div class="total-row">
+                            <span class="total-label">VAT (16%):</span>
+                            <span class="total-value">KES. 0</span>
+                        </div>
+                        <div class="total-row">
+                            <span class="total-label">Service Charge (0%):</span>
+                            <span class="total-value">KES. 0</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span class="total-label">Total:</span>
+                            <span class="total-value">KES. 8,500</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-info-section">
+                        <h3>Payment Information</h3>
+                        <div class="payment-details">
+                            <div class="info-item">
+                                <span class="info-label">Payment Status:</span>
+                                <span class="status-badge paid">Paid</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Payment Method:</span>
+                                <span class="info-value">M-Pesa</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Payment Date:</span>
+                                <span class="info-value">March 18, 2025</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Transaction Reference:</span>
+                                <span class="info-value">MPESA123456789</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="invoice-notes">
+                        <h3>Notes</h3>
+                        <p>Thank you for your business. Next service recommended in 6 months or 10,000 km.</p>
+                    </div>
+
+                    <div class="invoice-action-buttons">
+                        <button class="action-btn" id="mark-paid-btn" style="display: none;">
+                            <i class="fas fa-check-circle"></i> Mark as Paid
+                        </button>
+                        <button class="action-btn" id="send-reminder-btn" style="display: none;">
+                            <i class="fas fa-bell"></i> Send Reminder
+                        </button>
+                        <button class="action-btn" id="download-invoice-pdf-btn">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                        <button class="action-btn" id="print-invoice-btn">
+                            <i class="fas fa-print"></i> Print Invoice
+                        </button>
+                        <button class="action-btn" id="email-invoice-btn">
+                            <i class="fas fa-envelope"></i> Email Invoice
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Gallery Modal (Initially Hidden) -->
+            <div class="modal" id="photo-gallery-modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Photo Gallery</h2>
+
+                    <div class="gallery-display">
+                        <div class="main-photo">
+                            <img id="current-photo"
+                                src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                alt="Vehicle photo">
+                            <p id="photo-description">Engine after service - March 18, 2025</p>
+                        </div>
+
+                        <div class="photo-controls">
+                            <button class="photo-nav-btn" id="prev-photo-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="photo-nav-btn" id="next-photo-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="photo-thumbnails">
+                            <div class="thumbnail active" data-index="0">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Thumbnail 1">
+                            </div>
+                            <div class="thumbnail" data-index="1">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Thumbnail 2">
+                            </div>
+                            <div class="thumbnail" data-index="2">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Thumbnail 3">
+                            </div>
+                            <div class="thumbnail" data-index="3">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Thumbnail 4">
+                            </div>
+                            <div class="thumbnail" data-index="4">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Thumbnail 5">
+                            </div>
+                            <div class="thumbnail" data-index="5">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Thumbnail 6">
+                            </div>
+                            <div class="thumbnail" data-index="6">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Thumbnail 7">
+                            </div>
+                            <div class="thumbnail" data-index="7">
+                                <img src="C:\Users\nderu\Documents\Development\Product\CarPal\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Thumbnail 8">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="photo-actions">
+                        <button class="action-btn" id="download-photo-btn">
+                            <i class="fas fa-download"></i> Download Photo
+                        </button>
+                        <button class="action-btn" id="print-photo-btn">
+                            <i class="fas fa-print"></i> Print Photo
+                        </button>
+                        <button class="action-btn" id="email-photo-btn">
+                            <i class="fas fa-envelope"></i> Email Photo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create New Service Modal (Initially Hidden) -->
+            <div class="modal" id="create-service-modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Create New Service</h2>
+
+                    <form id="new-service-form">
+                        <div class="form-section">
+                            <h3>Select Service Type</h3>
+                            <div class="service-type-options">
+                                <div class="service-type-option">
+                                    <input type="radio" id="service-maintenance" name="service-type" value="maintenance"
+                                        checked>
+                                    <label for="service-maintenance">
+                                        <i class="fas fa-tools"></i>
+                                        <span>Routine Maintenance</span>
+                                    </label>
+                                </div>
+                                <div class="service-type-option">
+                                    <input type="radio" id="service-repair" name="service-type" value="repair">
+                                    <label for="service-repair">
+                                        <i class="fas fa-wrench"></i>
+                                        <span>Repair</span>
+                                    </label>
+                                </div>
+                                <div class="service-type-option">
+                                    <input type="radio" id="service-diagnostic" name="service-type" value="diagnostic">
+                                    <label for="service-diagnostic">
+                                        <i class="fas fa-search"></i>
+                                        <span>Diagnostic</span>
+                                    </label>
+                                </div>
+                                <div class="service-type-option">
+                                    <input type="radio" id="service-custom" name="service-type" value="custom">
+                                    <label for="service-custom">
+                                        <i class="fas fa-cog"></i>
+                                        <span>Custom Service</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Service Details</h3>
+
+                            <div class="form-group">
+                                <label for="service-description">Service Description</label>
+                                <textarea id="service-description" rows="3"
+                                    placeholder="Describe the service to be performed..."></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="technician-assign">Assign Technician</label>
+                                    <select id="technician-assign">
+                                        <option value="">Select Technician</option>
+                                        <option value="john-kamau">John Kamau</option>
+                                        <option value="peter-njoroge">Peter Njoroge</option>
+                                        <option value="mary-wambui">Mary Wambui</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="completion-date">Estimated Completion Date</label>
+                                    <input type="date" id="completion-date">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service-instructions">Special Instructions</label>
+                                <textarea id="service-instructions" rows="3"
+                                    placeholder="Any special instructions for the technician..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Confirm Creation</h3>
+                            <p>Please review the information above before creating the service.</p>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn">Cancel</button>
+                            <button type="submit" class="submit-btn">Create Service</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Generate Report Modal (Initially Hidden) -->
+            <div class="modal" id="generate-report-modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Generate Report</h2>
+
+                    <form id="report-form">
+                        <div class="form-section">
+                            <h3>Select Report Type</h3>
+                            <div class="report-type-options">
+                                <div class="report-type-option">
+                                    <input type="radio" id="report-summary" name="report-type" value="summary" checked>
+                                    <label for="report-summary">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>Service History Summary</span>
+                                    </label>
+                                </div>
+                                <div class="report-type-option">
+                                    <input type="radio" id="report-maintenance" name="report-type" value="maintenance">
+                                    <label for="report-maintenance">
+                                        <i class="fas fa-tools"></i>
+                                        <span>Maintenance History</span>
+                                    </label>
+                                </div>
+                                <div class="report-type-option">
+                                    <input type="radio" id="report-expense" name="report-type" value="expense">
+                                    <label for="report-expense">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>Expense Report</span>
+                                    </label>
+                                </div>
+                                <div class="report-type-option">
+                                    <input type="radio" id="report-custom" name="report-type" value="custom">
+                                    <label for="report-custom">
+                                        <i class="fas fa-file-contract"></i>
+                                        <span>Custom Report</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Report Parameters</h3>
+
+                            <div class="form-group">
+                                <label>Date Range</label>
+                                <div class="date-range">
+                                    <input type="date" id="report-date-from" class="date-input">
+                                    <span>to</span>
+                                    <input type="date" id="report-date-to" class="date-input">
+                                </div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="include-photos" checked>
+                                <label for="include-photos">Include Photos</label>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="include-cost-details" checked>
+                                <label for="include-cost-details">Include Cost Details</label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn">Cancel</button>
+                            <button type="submit" class="submit-btn">Generate Report</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Export History Modal (Initially Hidden) -->
+            <div class="modal" id="export-history-modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Export Vehicle History</h2>
+
+                    <form id="export-form">
+                        <div class="form-section">
+                            <h3>Select Content to Export</h3>
+                            <div class="export-content-options">
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="export-all-history" checked>
+                                    <label for="export-all-history">All Service History</label>
+                                </div>
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="export-checkin-forms">
+                                    <label for="export-checkin-forms">Check-In Forms Only</label>
+                                </div>
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="export-checkout-forms">
+                                    <label for="export-checkout-forms">Check-Out Forms Only</label>
+                                </div>
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="export-invoices">
+                                    <label for="export-invoices">Invoices Only</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Select Format</h3>
+                            <div class="export-format-options">
+                                <div class="export-format-option">
+                                    <input type="radio" id="export-pdf" name="export-format" value="pdf" checked>
+                                    <label for="export-pdf">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <span>PDF</span>
+                                    </label>
+                                </div>
+                                <div class="export-format-option">
+                                    <input type="radio" id="export-excel" name="export-format" value="excel">
+                                    <label for="export-excel">
+                                        <i class="fas fa-file-excel"></i>
+                                        <span>Excel</span>
+                                    </label>
+                                </div>
+                                <div class="export-format-option">
+                                    <input type="radio" id="export-csv" name="export-format" value="csv">
+                                    <label for="export-csv">
+                                        <i class="fas fa-file-csv"></i>
+                                        <span>CSV</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Export Action</h3>
+                            <div class="export-action-options">
+                                <div class="export-action-option">
+                                    <input type="radio" id="action-download" name="export-action" value="download"
+                                        checked>
+                                    <label for="action-download">
+                                        <i class="fas fa-download"></i>
+                                        <span>Download Files</span>
+                                    </label>
+                                </div>
+                                <div class="export-action-option">
+                                    <input type="radio" id="action-email" name="export-action" value="email">
+                                    <label for="action-email">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Email Files</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="email-input-group" style="display: none;">
+                                <label for="email-address">Email Address</label>
+                                <input type="email" id="email-address" placeholder="Enter email address">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn">Cancel</button>
+                            <button type="submit" class="submit-btn">Export History</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Report Preview Modal (Initially Hidden) -->
+            <div class="modal" id="report-preview-modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Report Preview</h2>
+
+                    <div class="report-preview-content">
+                        <div class="report-preview-header">
+                            <h3>Service History Summary</h3>
+                            <p>Vehicle: Toyota Corolla (2018) - KDA 432C</p>
+                            <p>Owner: James Wanjiku</p>
+                            <p>Date Range: January 1, 2025 - March 24, 2025</p>
+                        </div>
+
+                        <div class="report-preview-body">
+                            <p>This report contains a summary of all service history for the specified vehicle.</p>
+
+                            <div class="report-section">
+                                <h4>Service Summary</h4>
+                                <table class="report-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Service Date</th>
+                                            <th>Service Type</th>
+                                            <th>Description</th>
+                                            <th>Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>March 18, 2025</td>
+                                            <td>Routine Maintenance</td>
+                                            <td>Full service, oil change, filters</td>
+                                            <td>KES. 8,500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>February 5, 2025</td>
+                                            <td>Brake Repair</td>
+                                            <td>Brake pad replacement</td>
+                                            <td>KES. 12,300</td>
+                                        </tr>
+                                        <tr>
+                                            <td>January 15, 2025</td>
+                                            <td>Oil Change</td>
+                                            <td>Oil and filter change</td>
+                                            <td>KES. 4,500</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="3" class="text-right"><strong>Total</strong></td>
+                                            <td><strong>KES. 25,300</strong></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            <div class="report-section">
+                                <h4>Next Service Recommendations</h4>
+                                <ul>
+                                    <li>Brake pad replacement - Recommended within 3 months</li>
+                                    <li>Next oil change - Due September 18, 2025 or 10,000 km</li>
+                                    <li>Timing belt inspection - At 100,000 km</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="report-actions">
+                        <div class="export-options">
+                            <button class="action-btn" id="export-pdf-btn">
+                                <i class="fas fa-file-pdf"></i> Export as PDF
+                            </button>
+                            <button class="action-btn" id="export-excel-btn">
+                                <i class="fas fa-file-excel"></i> Export as Excel
+                            </button>
+                            <button class="action-btn" id="export-csv-btn">
+                                <i class="fas fa-file-csv"></i> Export as CSV
+                            </button>
+                        </div>
+                        <div class="other-actions">
+                            <button class="action-btn" id="print-report-btn">
+                                <i class="fas fa-print"></i> Print Report
+                            </button>
+                            <button class="action-btn" id="email-report-btn">
+                                <i class="fas fa-envelope"></i> Email Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/" target="_blank">Visit our corporate website</a>
+            </div>
+
+            <div class="copyright">
+                © 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="history.js"></script>
+</body>
+
+</html>

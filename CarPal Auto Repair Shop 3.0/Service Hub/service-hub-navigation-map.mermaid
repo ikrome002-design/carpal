@@ -1,0 +1,233 @@
+stateDiagram-v2
+    [*] --> Login
+    Login --> Dashboard
+    Dashboard --> ServiceHub: Click "Service Hub"
+    
+    %% Service Hub Main Page
+    state ServiceHub {
+        MainMenu: Service Hub Main Menu
+        MainMenu: - Job Scheduling & Tracking
+        MainMenu: - Service History Records
+        MainMenu: - Customer Communication Tools
+    }
+    
+    %% Job Scheduling & Tracking Section
+    ServiceHub --> JobSchedulingTracking: Click "Job Scheduling & Tracking"
+    state JobSchedulingTracking {
+        JobDashboard: Job Dashboard
+        JobDashboard: - View Jobs by Status
+        JobDashboard: - Quick Filter Options
+        JobDashboard: - Search Bar
+        
+        JobActions: Job Actions
+        JobActions: - New Appointment Button
+        JobActions: - Track Jobs Feature
+        JobActions: - Update Progress Button
+    }
+    
+    %% New Appointment Flow
+    JobSchedulingTracking --> NewAppointmentForm: Click "New Appointment"
+    state NewAppointmentForm {
+        CustomerInfo: Customer Information
+        CustomerInfo: - Name
+        CustomerInfo: - Phone
+        CustomerInfo: - Email
+        
+        VehicleInfo: Vehicle Information
+        VehicleInfo: - License Plate
+        VehicleInfo: - Service Type
+        
+        AppointmentDetails: Appointment Details
+        AppointmentDetails: - Preferred Date & Time
+        AppointmentDetails: - Assign Technician
+        
+        CommunicationPrefs: Communication Preferences
+        CommunicationPrefs: - SMS
+        CommunicationPrefs: - Email
+        CommunicationPrefs: - Both
+        
+        ConfirmButton: Appointment Confirmation Button
+    }
+    
+    NewAppointmentForm --> AppointmentConfirmation: Click "Confirm Appointment"
+    state AppointmentConfirmation {
+        ConfirmationSuccess: Appointment Confirmed
+        ConfirmationSuccess: - Appointment ID Generated
+        ConfirmationSuccess: - Customer Notification Sent
+        ConfirmationSuccess: - Added to Schedule
+    }
+    
+    AppointmentConfirmation --> JobSchedulingTracking: Return to Job Scheduling
+    
+    %% Track Jobs Flow
+    JobSchedulingTracking --> JobStatusView: Click any job entry
+    state JobStatusView {
+        StatusTabs: Job Status Tabs
+        StatusTabs: - Scheduled
+        StatusTabs: - In Progress
+        StatusTabs: - Completed
+        
+        JobDetails: Job Details
+        JobDetails: - Customer Information
+        JobDetails: - Vehicle Details
+        JobDetails: - Appointment Time
+        JobDetails: - Current Status
+        
+        DetailedActions: Detailed Actions
+        DetailedActions: - View Assessment Form
+        DetailedActions: - Update Progress
+        DetailedActions: - Add Technician Notes
+        DetailedActions: - Upload Repair Images
+    }
+    
+    JobStatusView --> ViewAssessmentForm: Click "View Assessment Form"
+    JobStatusView --> UpdateProgressForm: Click "Update Progress"
+    JobStatusView --> AddTechnicianNotes: Click "Add Technician Notes"
+    JobStatusView --> UploadRepairImages: Click "Upload Repair Images"
+    
+    ViewAssessmentForm --> JobStatusView: Return to Job Status
+    AddTechnicianNotes --> JobStatusView: Save Notes & Return
+    UploadRepairImages --> JobStatusView: Upload Complete & Return
+    
+    %% Update Progress Flow
+    UpdateProgressForm --> CustomerNotification: Click "Send Update"
+    state UpdateProgressForm {
+        EnterLicensePlate: Enter Vehicle License Plate
+        UpdateOptions: Update Options
+        UpdateOptions: - Select Template
+        UpdateOptions: - Custom Message
+        
+        PreviewMessage: Preview Message
+        PreviewMessage: - SMS Preview
+        PreviewMessage: - Email Preview
+        
+        SendButton: Send Update Button
+    }
+    
+    state CustomerNotification {
+        MessageSent: Update Sent to Customer
+        MessageSent: - SMS Notification
+        MessageSent: - Email Notification
+        MessageSent: - SMS Charge Logged for Invoice
+    }
+    
+    CustomerNotification --> JobStatusView: Return to Job Status
+    
+    %% Service History Records Section
+    ServiceHub --> ServiceHistoryRecords: Click "Service History Records"
+    state ServiceHistoryRecords {
+        SearchTools: Search & Filter Tools
+        SearchTools: - By Customer Name
+        SearchTools: - By Vehicle License
+        SearchTools: - By Service Date
+        
+        RecordsList: Service Records List
+        RecordsList: - Sorted by Date (Recent First)
+        RecordsList: - Basic Vehicle & Service Info
+    }
+    
+    ServiceHistoryRecords --> DetailedServiceRecord: Click any record
+    state DetailedServiceRecord {
+        RecordDetails: Service Record Details
+        RecordDetails: - Complete Vehicle Info
+        RecordDetails: - Service Timeline
+        RecordDetails: - Repair Progress Notes
+        RecordDetails: - Uploaded Images
+        
+        LinkedDocuments: Linked Documents
+        LinkedDocuments: - Check-In Assessment
+        LinkedDocuments: - Check-Out Assessment
+        LinkedDocuments: - Invoices
+        LinkedDocuments: - Payment Records
+        
+        ExportOptions: Export Options
+        ExportOptions: - Print Record
+        ExportOptions: - Export as PDF
+        ExportOptions: - Email to Customer
+    }
+    
+    DetailedServiceRecord --> ServiceHistoryRecords: Return to Service History
+    
+    %% Customer Communication Tools Section
+    ServiceHub --> CustomerCommunicationTools: Click "Customer Communication Tools"
+    state CustomerCommunicationTools {
+        MessageCenter: Message Center
+        MessageCenter: - Recent Updates Sent
+        MessageCenter: - Scheduled Notifications
+        
+        UpdateTypes: Communication Types
+        UpdateTypes: - Repair Progress Updates
+        UpdateTypes: - Service Completion Notifications
+        UpdateTypes: - Custom Messages
+        
+        TemplateManager: Template Manager
+        TemplateManager: - View Existing Templates
+        TemplateManager: - Create New Template
+        TemplateManager: - Edit Template
+    }
+    
+    CustomerCommunicationTools --> RepairProgressUpdate: Click "Repair Progress Updates"
+    state RepairProgressUpdate {
+        ProgressUpdateForm: Progress Update Form
+        ProgressUpdateForm: - Vehicle License Plate
+        ProgressUpdateForm: - Template Selection
+        ProgressUpdateForm: - Custom Message
+        ProgressUpdateForm: - Send Options (SMS/Email)
+    }
+    
+    CustomerCommunicationTools --> ServiceCompletionNotice: Click "Service Completion Notifications"
+    state ServiceCompletionNotice {
+        CompletionForm: Service Completion Form
+        CompletionForm: - Vehicle License Plate
+        CompletionForm: - Pickup Instructions
+        CompletionForm: - Invoice Attachment
+        CompletionForm: - Send Options (SMS/Email)
+        CompletionForm: - Include Insurance Option
+    }
+    
+    CustomerCommunicationTools --> CustomMessageForm: Click "Custom Messages"
+    state CustomMessageForm {
+        CustomForm: Custom Message Form
+        CustomForm: - Recipient Selection
+        CustomForm: - Message Content
+        CustomForm: - Attachments
+        CustomForm: - Send Options (SMS/Email)
+    }
+    
+    CustomerCommunicationTools --> TemplateEditor: Click "Create New Template" or "Edit Template"
+    state TemplateEditor {
+        TemplateForm: Template Editor Form
+        TemplateForm: - Template Name
+        TemplateForm: - Message Content
+        TemplateForm: - Variable Placeholders
+        TemplateForm: - Preview
+        
+        SaveTemplate: Save Template Button
+    }
+    
+    RepairProgressUpdate --> MessageSentConfirmation: Click "Send"
+    ServiceCompletionNotice --> MessageSentConfirmation: Click "Send"
+    CustomMessageForm --> MessageSentConfirmation: Click "Send"
+    TemplateEditor --> TemplatesSaved: Click "Save Template"
+    
+    state MessageSentConfirmation {
+        SentConfirmation: Message Sent Successfully
+        SentConfirmation: - Delivery Status
+        SentConfirmation: - Cost Tracking for Billing
+    }
+    
+    state TemplatesSaved {
+        TemplateSaved: Template Saved Successfully
+        TemplateSaved: - Available for Future Use
+    }
+    
+    MessageSentConfirmation --> CustomerCommunicationTools: Return to Communication Tools
+    TemplatesSaved --> CustomerCommunicationTools: Return to Communication Tools
+    
+    %% Return Paths to ServiceHub
+    JobSchedulingTracking --> ServiceHub: Return to Service Hub
+    ServiceHistoryRecords --> ServiceHub: Return to Service Hub
+    CustomerCommunicationTools --> ServiceHub: Return to Service Hub
+    
+    %% Return to Dashboard
+    ServiceHub --> Dashboard: Return to Dashboard

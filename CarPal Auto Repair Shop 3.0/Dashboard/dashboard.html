@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CarPal by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/ico"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/favicon.ico">
+    <link rel="apple-touch-icon"
+        href="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Favicon/apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Sidebar with Logo and Navigation -->
+        <aside class="sidebar">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a
+                    href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Dashboard/dashboard.html">
+                    <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Random Logo/logo.png"
+                        alt="CarPal Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav">
+                <ul>
+                    <li class="active">
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Dashboard/dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Vehicle Check-In/check_in.html">
+                            <i class="fas fa-car"></i>
+                            <span>Vehicle Check-In</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Service Hub/service_hub.html">
+                            <i class="fas fa-wrench"></i>
+                            <span>Service Hub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Billings & Payments/billings.html">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billing & Payments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Vehicle History/history.html">
+                            <i class="fas fa-history"></i>
+                            <span>Vehicle History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Inventory/inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Messaging\messaging.html">
+                            <i class="fas fa-comments"></i> <span>Messaging</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Technicians\technicians.html">
+                            <i class="fas fa-users-cog"></i> <span>Technicians</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Vehicle Check-Out\check_out.html">
+                            <i class="fas fa-car-side"></i> <span>Vehicle Check-Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar with Notifications and User Profile -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+
+                <div class="user-actions">
+                    <!-- Notifications -->
+                    <div class="notifications" id="notificationsIcon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+
+                        <!-- Notifications Dropdown -->
+                        <div class="notifications-dropdown" id="notificationsDropdown">
+                            <h3>Notifications</h3>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="User Profile">
+                                <div class="notification-content">
+                                    <p><strong>Vehicle Check-In Complete</strong></p>
+                                    <p>KBX 123C has been checked in successfully.</p>
+                                    <span class="notification-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="User Profile">
+                                <div class="notification-content">
+                                    <p><strong>Payment Received</strong></p>
+                                    <p>Invoice #2023-045 has been paid in full.</p>
+                                    <span class="notification-time">Yesterday</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-40.png"
+                                    alt="User Profile">
+                                <div class="notification-content">
+                                    <p><strong>Inventory Alert</strong></p>
+                                    <p>Brake pads inventory running low.</p>
+                                    <span class="notification-time">2 days ago</span>
+                                </div>
+                            </div>
+                            <a href="C:\Users\nderu\Documents\Development\Product\CarPal\JavaScript\CarPal Auto Repair Shop 3.0\Notifications\notifications.html"
+                                class="view-all">View All Notifications</a>
+                        </div>
+                    </div>
+
+                    <!-- User Profile -->
+                    <div class="user-profile" id="userProfileIcon">
+                        <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                            alt="User Profile">
+
+                        <!-- User Profile Dropdown -->
+                        <div class="profile-dropdown" id="profileDropdown">
+                            <div class="profile-header">
+                                <img src="C:/Users/nderu/Documents/Development/Product/CarPal/Technical Writings/Images/Icons/icons8-profile-picture-80.png"
+                                    alt="User Profile">
+                                <div class="profile-info">
+                                    <h4>John Doe</h4>
+                                    <p>Shop Manager</p>
+                                </div>
+                            </div>
+                            <ul class="profile-menu">
+                                <li>
+                                    <a
+                                        href="C:/Users/nderu/Documents/Development/Product/CarPal/JavaScript/CarPal Auto Repair Shop 3.0/Settings/settings.html">
+                                        <i class="fas fa-cog"></i>
+                                        <span>Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="C:/Users/nderu/Documents/Development/Product/CarPal/Landing Page/CarPal Auto Repair Shop/landing_page.html">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <span>Log Out</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <h1>Dashboard</h1>
+
+                <!-- Dashboard Stats -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>15</h3>
+                            <p>Active Vehicles</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>8</h3>
+                            <p>Pending Invoices</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-toolbox"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Services in Progress</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>7</h3>
+                            <p>Completed Today</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="action-buttons">
+                        <button id="checkInVehicleBtn" class="action-btn">
+                            <i class="fas fa-car-side"></i>
+                            <span>Check-In Vehicle</span>
+                        </button>
+
+                        <button id="createInvoiceBtn" class="action-btn">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Create Invoice</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Metrics Overview -->
+                <div class="dashboard-metrics">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Service Metrics Overview</h2>
+                        </div>
+                        <div class="panel-content metrics-container">
+                            <div class="metric-chart">
+                                <canvas id="serviceTypeChart"></canvas>
+                            </div>
+                            <div class="metric-chart">
+                                <canvas id="monthlyRevenueChart"></canvas>
+                            </div>
+                            <div class="metric-chart">
+                                <canvas id="customerSatisfactionChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Section -->
+                <div class="dashboard-panels">
+                    <!-- Recent Vehicle Check-Ins -->
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Recent Vehicle Check-Ins</h2>
+                            <a href="#" class="view-all-link">View All</a>
+                        </div>
+                        <div class="panel-content">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>License Plate</th>
+                                        <th>Vehicle</th>
+                                        <th>Customer</th>
+                                        <th>Check-In Time</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>KBX 123C</td>
+                                        <td>Toyota Corolla</td>
+                                        <td>James Kamau</td>
+                                        <td>Today, 10:30 AM</td>
+                                        <td><span class="status-badge in-progress">In Assessment</span></td>
+                                        <td><a href="#" class="action-link">View Details</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>KCZ 456D</td>
+                                        <td>Honda Civic</td>
+                                        <td>Alice Wanjiku</td>
+                                        <td>Today, 09:15 AM</td>
+                                        <td><span class="status-badge approved">Assessment Complete</span></td>
+                                        <td><a href="#" class="action-link">View Details</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>KDD 789E</td>
+                                        <td>Nissan X-Trail</td>
+                                        <td>John Mbugua</td>
+                                        <td>Yesterday, 15:45 PM</td>
+                                        <td><span class="status-badge in-service">In Service</span></td>
+                                        <td><a href="#" class="action-link">View Details</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Pending Invoices -->
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Pending Invoices</h2>
+                            <a href="#" class="view-all-link">View All</a>
+                        </div>
+                        <div class="panel-content">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice #</th>
+                                        <th>Customer</th>
+                                        <th>Vehicle</th>
+                                        <th>Amount</th>
+                                        <th>Due Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>INV-2023-045</td>
+                                        <td>Peter Kimani</td>
+                                        <td>KBY 321D</td>
+                                        <td>KES. 15,800</td>
+                                        <td>Mar 25, 2025</td>
+                                        <td>
+                                            <a href="#" class="action-link">View Invoice</a>
+                                            <a href="#" class="action-link">Send Reminder</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INV-2023-044</td>
+                                        <td>Sarah Odhiambo</td>
+                                        <td>KCF 654G</td>
+                                        <td>KES. 8,500</td>
+                                        <td>Mar 24, 2025</td>
+                                        <td>
+                                            <a href="#" class="action-link">View Invoice</a>
+                                            <a href="#" class="action-link">Send Reminder</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INV-2023-043</td>
+                                        <td>David Mwangi</td>
+                                        <td>KDG 987H</td>
+                                        <td>KES. 22,300</td>
+                                        <td>Mar 23, 2025</td>
+                                        <td>
+                                            <a href="#" class="action-link">View Invoice</a>
+                                            <a href="#" class="action-link">Send Reminder</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Recent Vehicle Check-Outs -->
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>Recent Vehicle Check-Outs</h2>
+                            <a href="#" class="view-all-link">View All</a>
+                        </div>
+                        <div class="panel-content">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>License Plate</th>
+                                        <th>Vehicle</th>
+                                        <th>Customer</th>
+                                        <th>Service Type</th>
+                                        <th>Check-Out Time</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>KBZ 111A</td>
+                                        <td>Subaru Forester</td>
+                                        <td>Nancy Wangari</td>
+                                        <td>Full Service</td>
+                                        <td>Today, 12:30 PM</td>
+                                        <td><a href="#" class="action-link">View History</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>KCA 222B</td>
+                                        <td>Mazda Demio</td>
+                                        <td>Robert Otieno</td>
+                                        <td>Oil Change</td>
+                                        <td>Yesterday, 16:45 PM</td>
+                                        <td><a href="#" class="action-link">View History</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>KDB 333C</td>
+                                        <td>Toyota Prado</td>
+                                        <td>Elizabeth Njeri</td>
+                                        <td>Brake Repair</td>
+                                        <td>Mar 22, 2025, 11:20 AM</td>
+                                        <td><a href="#" class="action-link">View History</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="darkModeToggle"></i>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/@citruske" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/LabsCitrus" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="corporate-site">
+                <a href="https://citruslabs.co.ke/" target="_blank">Visit Corporate Website</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Citrus Labs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Forms -->
+    <!-- Check-In Vehicle Modal -->
+    <div class="modal" id="checkInModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Check-In Vehicle</h2>
+            <p>Redirecting to vehicle check-in page...</p>
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <!-- Create Invoice Modal -->
+    <div class="modal" id="invoiceModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Create Invoice</h2>
+            <p>Redirecting to invoice creation page...</p>
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <!-- Chart.js for metrics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

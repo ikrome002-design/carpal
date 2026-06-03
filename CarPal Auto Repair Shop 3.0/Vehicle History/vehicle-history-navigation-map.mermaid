@@ -1,0 +1,339 @@
+stateDiagram-v2
+    [*] --> Login
+    Login --> Dashboard
+    Dashboard --> VehicleHistory: Click "Vehicle History"
+    Dashboard --> DashboardHistory: Click on Vehicle Entry in "Recent Vehicle Check-Ins/Check-Outs"
+    
+    %% Main Vehicle History Page
+    state VehicleHistory {
+        MainPanel: Vehicle History Main Panel
+        MainPanel: - Search Bar
+        MainPanel: - Filters and Sorting Options
+        MainPanel: - Vehicle List with Recent Services
+        
+        SearchOptions: Search and Filter Options
+        SearchOptions: - Search by License Plate
+        SearchOptions: - Search by Customer Name
+        SearchOptions: - Filter by Date Range
+        SearchOptions: - Filter by Service Type
+        SearchOptions: - Sort Options (Recent First/Oldest First)
+        
+        VehicleList: Vehicle List
+        VehicleList: - License Plate Number
+        VehicleList: - Vehicle Make and Model
+        VehicleList: - Last Service Date
+        VehicleList: - Service Status
+        VehicleList: - Customer Name
+        VehicleList: - View Details Button
+    }
+    
+    DashboardHistory --> VehicleHistoryDetail: Redirects to Vehicle Details
+    VehicleHistory --> VehicleHistoryDetail: Click "View Details" on any vehicle
+    
+    %% Vehicle Detail View
+    state VehicleHistoryDetail {
+        VehicleHeader: Vehicle Header Information
+        VehicleHeader: - License Plate Number
+        VehicleHeader: - Make, Model, Year
+        VehicleHeader: - VIN
+        VehicleHeader: - Owner Information
+        VehicleHeader: - Total Services Count
+        
+        ServiceHistoryTabs: Service History Tabs
+        ServiceHistoryTabs: - All Services Tab
+        ServiceHistoryTabs: - Check-In Forms Tab
+        ServiceHistoryTabs: - Check-Out Forms Tab
+        ServiceHistoryTabs: - Invoices Tab
+        
+        ActionButtons: Action Buttons
+        ActionButtons: - Create New Service Button
+        ActionButtons: - Generate Report Button
+        ActionButtons: - Export History Button
+    }
+    
+    %% All Services Tab Content
+    ServiceHistoryTabs --> AllServicesTab: Click "All Services"
+    
+    state AllServicesTab {
+        ServicesList: Services List
+        ServicesList: - Service Date
+        ServicesList: - Service Type
+        ServicesList: - Technician Name
+        ServicesList: - Service Status
+        ServicesList: - Invoice Amount
+        ServicesList: - View Service Details Button
+        
+        FilterOptions: Filter Options
+        FilterOptions: - Date Range Selector
+        FilterOptions: - Service Type Filter
+        FilterOptions: - Status Filter
+    }
+    
+    %% Check-In Forms Tab Content
+    ServiceHistoryTabs --> CheckInFormsTab: Click "Check-In Forms"
+    
+    state CheckInFormsTab {
+        CheckInList: Check-In Forms List
+        CheckInList: - Check-In Date
+        CheckInList: - Repair Order Number
+        CheckInList: - Service Type
+        CheckInList: - Received By
+        CheckInList: - View Check-In Form Button
+    }
+    
+    %% Check-Out Forms Tab Content
+    ServiceHistoryTabs --> CheckOutFormsTab: Click "Check-Out Forms"
+    
+    state CheckOutFormsTab {
+        CheckOutList: Check-Out Forms List
+        CheckOutList: - Check-Out Date
+        CheckOutList: - Repair Order Number
+        CheckOutList: - Service Summary
+        CheckOutList: - Processed By
+        CheckOutList: - View Check-Out Form Button
+    }
+    
+    %% Invoices Tab Content
+    ServiceHistoryTabs --> InvoicesTab: Click "Invoices"
+    
+    state InvoicesTab {
+        InvoicesList: Invoices List
+        InvoicesList: - Invoice Date
+        InvoicesList: - Invoice Number
+        InvoicesList: - Total Amount
+        InvoicesList: - Payment Status
+        InvoicesList: - View Invoice Button
+        InvoicesList: - Download Invoice Button
+        InvoicesList: - Mark as Paid Button (if unpaid)
+    }
+    
+    %% Service Detail View from All Services
+    AllServicesTab --> ServiceDetailView: Click "View Service Details"
+    
+    state ServiceDetailView {
+        ServiceInfo: Service Information
+        ServiceInfo: - Service Date and Time
+        ServiceInfo: - Service Type and Description
+        ServiceInfo: - Technician Information
+        ServiceInfo: - Service Status
+        ServiceInfo: - Service Duration
+        
+        DocumentsSection: Related Documents
+        DocumentsSection: - Check-In Form Link
+        DocumentsSection: - Check-Out Form Link
+        DocumentsSection: - Invoice Link
+        DocumentsSection: - Photo Gallery
+        
+        RepairDetails: Repair Details
+        RepairDetails: - Parts Used
+        RepairDetails: - Labor Performed
+        RepairDetails: - Technician Notes
+        RepairDetails: - Customer Communication History
+        
+        ActionButtons: Action Buttons
+        ActionButtons: - Edit Service Button
+        ActionButtons: - Print Service Summary Button
+        ActionButtons: - Email Service Summary Button
+    }
+    
+    %% Check-In Form Detail View
+    CheckInFormsTab --> CheckInDetailView: Click "View Check-In Form"
+    
+    state CheckInDetailView {
+        CheckInHeader: Check-In Information
+        CheckInHeader: - Check-In Date and Time
+        CheckInHeader: - Repair Order Number
+        CheckInHeader: - Received By
+        
+        VehicleCondition: Vehicle Condition Assessment
+        VehicleCondition: - Audio Components Section
+        VehicleCondition: - Interior Components Section
+        VehicleCondition: - Exterior Components Section
+        VehicleCondition: - Engine Components Section
+        
+        ComponentDetails: Component Details
+        ComponentDetails: - Availability Status
+        ComponentDetails: - Condition Notes
+        ComponentDetails: - Photos Taken at Check-In
+        
+        PaymentInformation: Payment Information
+        PaymentInformation: - Payee Type (Individual/Business/Insurance)
+        PaymentInformation: - Payee Details
+        
+        FormActionButtons: Form Actions
+        FormActionButtons: - Download Form PDF
+        FormActionButtons: - Print Form
+        FormActionButtons: - Email Form
+    }
+    
+    %% Check-Out Form Detail View
+    CheckOutFormsTab --> CheckOutDetailView: Click "View Check-Out Form"
+    
+    state CheckOutDetailView {
+        CheckOutHeader: Check-Out Information
+        CheckOutHeader: - Check-Out Date and Time
+        CheckOutHeader: - Repair Order Number
+        CheckOutHeader: - Processed By
+        
+        ServiceCompletion: Service Completion Details
+        ServiceCompletion: - Services Performed
+        ServiceCompletion: - Parts Replaced
+        ServiceCompletion: - Condition Updates
+        
+        PostRepairAssessment: Post-Repair Assessment
+        PostRepairAssessment: - Immediate Repairs Required
+        PostRepairAssessment: - Next Service Recommendations
+        PostRepairAssessment: - Long-term Maintenance Suggestions
+        
+        CheckOutPhotos: Check-Out Photos
+        CheckOutPhotos: - Photo Gallery of Completed Work
+        CheckOutPhotos: - Before/After Comparison
+        
+        FormActionButtons: Form Actions
+        FormActionButtons: - Download Form PDF
+        FormActionButtons: - Print Form
+        FormActionButtons: - Email Form
+    }
+    
+    %% Invoice Detail View
+    InvoicesTab --> InvoiceDetailView: Click "View Invoice"
+    
+    state InvoiceDetailView {
+        InvoiceHeader: Invoice Header
+        InvoiceHeader: - Invoice Number
+        InvoiceHeader: - Issue Date
+        InvoiceHeader: - Due Date
+        InvoiceHeader: - Customer Information
+        InvoiceHeader: - Vehicle Information
+        
+        LineItems: Invoice Line Items
+        LineItems: - Service Items
+        LineItems: - Parts Used
+        LineItems: - Labor Charges
+        LineItems: - Service Charge (10%)
+        
+        TotalSection: Invoice Totals
+        TotalSection: - Subtotal
+        TotalSection: - Taxes
+        TotalSection: - Grand Total
+        
+        PaymentStatus: Payment Information
+        PaymentStatus: - Payment Status
+        PaymentStatus: - Payment Method
+        PaymentStatus: - Payment Date
+        
+        InvoiceActions: Invoice Actions
+        InvoiceActions: - Mark as Paid Button
+        InvoiceActions: - Send Reminder Button
+        InvoiceActions: - Download PDF Button
+        InvoiceActions: - Print Invoice Button
+        InvoiceActions: - Email Invoice Button
+    }
+    
+    %% Create New Service Flow
+    VehicleHistoryDetail --> CreateNewService: Click "Create New Service"
+    
+    state CreateNewService {
+        ServiceType: Select Service Type
+        ServiceType: - Routine Maintenance
+        ServiceType: - Repair
+        ServiceType: - Diagnostic
+        ServiceType: - Custom Service
+        
+        ServiceDetails: Enter Service Details
+        ServiceDetails: - Service Description
+        ServiceDetails: - Assign Technician
+        ServiceDetails: - Estimated Completion Date
+        ServiceDetails: - Special Instructions
+        
+        ConfirmCreate: Confirm Creation
+        ConfirmCreate: - Review Information
+        ConfirmCreate: - Create Service Button
+    }
+    
+    CreateNewService --> VehicleCheckIn: Redirects to Vehicle Check-In Process
+    
+    %% Generate Report Flow
+    VehicleHistoryDetail --> GenerateReportOptions: Click "Generate Report"
+    
+    state GenerateReportOptions {
+        ReportType: Select Report Type
+        ReportType: - Service History Summary
+        ReportType: - Maintenance History
+        ReportType: - Expense Report
+        ReportType: - Custom Report
+        
+        ReportParameters: Set Report Parameters
+        ReportParameters: - Date Range
+        ReportParameters: - Include Photos Option
+        ReportParameters: - Include Cost Details Option
+        
+        GenerateButton: Generate Report Button
+    }
+    
+    GenerateReportOptions --> ReportPreview: Click "Generate Report"
+    
+    state ReportPreview {
+        PreviewContent: Report Preview
+        ExportOptions: Export Options
+        ExportOptions: - PDF Format
+        ExportOptions: - Excel Format
+        ExportOptions: - CSV Format
+        ExportOptions: - Print Report
+        ExportOptions: - Email Report
+    }
+    
+    %% Export History Flow
+    VehicleHistoryDetail --> ExportHistoryOptions: Click "Export History"
+    
+    state ExportHistoryOptions {
+        SelectExportContent: Select Content to Export
+        SelectExportContent: - All Service History
+        SelectExportContent: - Check-In Forms Only
+        SelectExportContent: - Check-Out Forms Only
+        SelectExportContent: - Invoices Only
+        SelectExportContent: - Custom Selection
+        
+        ExportFormat: Select Format
+        ExportFormat: - PDF
+        ExportFormat: - Excel
+        ExportFormat: - CSV
+        
+        ExportAction: Export Action
+        ExportAction: - Download Files
+        ExportAction: - Email Files
+    }
+    
+    %% Photo Gallery View
+    ServiceDetailView --> PhotoGalleryView: Click on Photo Gallery
+    CheckInDetailView --> PhotoGalleryView: Click on any photo
+    CheckOutDetailView --> PhotoGalleryView: Click on any photo
+    
+    state PhotoGalleryView {
+        GalleryDisplay: Photo Gallery Display
+        GalleryDisplay: - Large Photo View
+        GalleryDisplay: - Thumbnail Navigation
+        GalleryDisplay: - Photo Description
+        GalleryDisplay: - Photo Date and Time
+        
+        PhotoActions: Photo Actions
+        PhotoActions: - Download Photo
+        PhotoActions: - Print Photo
+        PhotoActions: - Email Photo
+        PhotoActions: - Zoom In/Out
+        PhotoActions: - Next/Previous Photo
+    }
+    
+    %% Return Paths
+    VehicleHistoryDetail --> VehicleHistory: Click "Back to Vehicle List"
+    ServiceDetailView --> VehicleHistoryDetail: Click "Back to Vehicle Details"
+    CheckInDetailView --> CheckInFormsTab: Click "Back to Check-In Forms"
+    CheckOutDetailView --> CheckOutFormsTab: Click "Back to Check-Out Forms"
+    InvoiceDetailView --> InvoicesTab: Click "Back to Invoices"
+    PhotoGalleryView --> PreviousView: Click "Close Gallery"
+    ReportPreview --> VehicleHistoryDetail: Click "Back to Vehicle Details"
+    ExportHistoryOptions --> VehicleHistoryDetail: Click "Cancel" or after Export
+    
+    %% Dashboard Return
+    VehicleHistory --> Dashboard: Click "Return to Dashboard"
+    VehicleHistoryDetail --> Dashboard: Click "Return to Dashboard"

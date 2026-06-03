@@ -1,0 +1,86 @@
+stateDiagram-v2
+    %% Main States
+    [*] --> NotificationsPage: User clicks Notifications icon
+    
+    %% Notifications Page and its components
+    NotificationsPage --> UnifiedFeed: Default view
+
+    %% Unified Feed Section
+    UnifiedFeed --> NotificationItem: User clicks notification
+    NotificationItem --> MarkRead: User clicks "Mark as Read" button
+    MarkRead --> UnifiedFeed: Updates notification status
+    
+    NotificationItem --> MarkUnread: User clicks "Mark as Unread" button
+    MarkUnread --> UnifiedFeed: Updates notification status
+    
+    NotificationItem --> DismissNotification: User clicks "Dismiss" button
+    DismissNotification --> UnifiedFeed: Removes notification from active list
+    
+    NotificationItem --> ArchiveNotification: User clicks "Archive" button
+    ArchiveNotification --> UnifiedFeed: Moves to archive list
+    
+    NotificationItem --> ViewDetails: User clicks "View Details" button
+    ViewDetails --> RelatedContent: Navigates to source page
+    RelatedContent --> NotificationsPage: User returns to notifications
+    
+    %% Filtering & Sorting Section
+    UnifiedFeed --> FilterNotifications: User clicks "Filter" button
+    FilterNotifications --> CategoryFilter: User selects category filter
+    CategoryFilter --> ApplyFilters: Filter by appointment/inventory/billing
+    ApplyFilters --> FilteredResults: Shows filtered notifications
+    FilteredResults --> UnifiedFeed: User clears filters
+    
+    UnifiedFeed --> SortNotifications: User clicks "Sort" button
+    SortNotifications --> SortByDate: User selects "Sort by Date"
+    SortNotifications --> SortByPriority: User selects "Sort by Priority"
+    SortByDate --> SortedResults: Shows date sorted notifications
+    SortByPriority --> SortedResults: Shows priority sorted notifications
+    SortedResults --> UnifiedFeed: User clears sorting
+    
+    %% Notification Settings
+    NotificationsPage --> NotificationSettings: User clicks "Settings" button
+    NotificationSettings --> CategorySettings: Configure notification categories 
+    CategorySettings --> ToggleAppointmentNotifs: Toggle appointment notifications
+    CategorySettings --> ToggleInventoryNotifs: Toggle inventory notifications
+    CategorySettings --> ToggleBillingNotifs: Toggle billing notifications
+    
+    NotificationSettings --> ChannelSettings: Configure notification channels
+    ChannelSettings --> ToggleInAppNotifs: Toggle in-app notifications
+    ChannelSettings --> ToggleEmailNotifs: Toggle email notifications
+    
+    ToggleAppointmentNotifs --> SaveSettings: User saves changes
+    ToggleInventoryNotifs --> SaveSettings: User saves changes
+    ToggleBillingNotifs --> SaveSettings: User saves changes
+    ToggleInAppNotifs --> SaveSettings: User saves changes
+    ToggleEmailNotifs --> SaveSettings: User saves changes
+    
+    SaveSettings --> NotificationsPage: Return to notifications with updated settings
+    
+    %% Archived Notifications
+    NotificationsPage --> ArchivedNotifications: User clicks "View Archived" button
+    ArchivedNotifications --> ArchivedItem: User clicks archived notification
+    ArchivedItem --> RestoreNotification: User clicks "Restore" button
+    RestoreNotification --> ArchivedNotifications: Removes from archive list
+    ArchivedItem --> DeleteNotification: User clicks "Delete" button
+    DeleteNotification --> ArchivedNotifications: Permanently removes notification
+    ArchivedNotifications --> NotificationsPage: User returns to active notifications
+    
+    %% Real-time Alert Mechanism
+    NotificationsPage --> RealTimeAlert: New critical notification arrives
+    RealTimeAlert --> AlertPopup: Shows popup with notification details
+    AlertPopup --> ViewAlertDetails: User clicks "View" button
+    ViewAlertDetails --> RelatedContent: Navigates to source page
+    AlertPopup --> DismissAlert: User clicks "Dismiss" button
+    DismissAlert --> NotificationsPage: Closes popup, notification still in feed
+    
+    %% Style Definitions
+    classDef primary fill:#2563eb,stroke:#1e40af,color:white
+    classDef secondary fill:#3b82f6,stroke:#2563eb,color:white
+    classDef action fill:#34d399,stroke:#10b981,color:black
+    classDef alert fill:#ef4444,stroke:#b91c1c,color:white
+    
+    %% Apply Styles
+    class NotificationsPage,UnifiedFeed,NotificationSettings,ArchivedNotifications primary
+    class NotificationItem,FilterNotifications,SortNotifications,CategorySettings,ChannelSettings,ArchivedItem secondary
+    class MarkRead,MarkUnread,DismissNotification,ArchiveNotification,ViewDetails,SaveSettings,RestoreNotification,DeleteNotification action
+    class RealTimeAlert,AlertPopup alert

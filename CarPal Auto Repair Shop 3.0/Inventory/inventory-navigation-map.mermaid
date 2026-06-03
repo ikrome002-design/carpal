@@ -1,0 +1,326 @@
+stateDiagram-v2
+    [*] --> Login
+    Login --> Dashboard
+    Dashboard --> Inventory: Click "Inventory" in Main Navigation
+    
+    %% Main Inventory Dashboard
+    state Inventory {
+        InventoryDashboard: Inventory Dashboard
+        InventoryDashboard: - Inventory Overview Metrics
+        InventoryDashboard: - Quick Filter Options
+        InventoryDashboard: - Navigation Tabs
+    }
+    
+    %% Dashboard Navigation Options
+    InventoryDashboard --> InventoryList: Click "Inventory List" Tab
+    InventoryDashboard --> StockLevels: Click "Stock Levels" Tab
+    InventoryDashboard --> UsageLogging: Click "Usage Logging" Tab
+    InventoryDashboard --> ReorderSection: Click "Reorder Needed" Tab
+    InventoryDashboard --> InventoryReports: Click "Inventory Reports" Tab
+    
+    %% Inventory List Section
+    state InventoryList {
+        ItemsTable: Inventory Items Table
+        ItemsTable: - Item Name
+        ItemsTable: - Category
+        ItemsTable: - Current Quantity
+        ItemsTable: - Low Stock Threshold
+        ItemsTable: - Status Indicator
+        
+        ListActions: List Actions
+        ListActions: - Search Bar
+        ListActions: - Category Filter Dropdown
+        ListActions: - Sort Options
+        ListActions: - Add New Item Button
+        ListActions: - Item Action Buttons (Edit/Remove)
+    }
+    
+    %% Add New Item Flow
+    InventoryList --> AddItem: Click "Add New Item"
+    
+    state AddItem {
+        ItemDetailsForm: Item Details Form
+        ItemDetailsForm: - Item Name Input
+        ItemDetailsForm: - Category Selection Dropdown
+        ItemDetailsForm: - Initial Quantity Input
+        ItemDetailsForm: - Low Stock Threshold Input
+        ItemDetailsForm: - Supplier Information (Optional)
+        ItemDetailsForm: - Unit Cost (Optional)
+        ItemDetailsForm: - Notes/Description Field
+        
+        FormActions: Form Actions
+        FormActions: - Save Item Button
+        FormActions: - Cancel Button
+    }
+    
+    AddItem --> SaveConfirmation: Click "Save Item"
+    SaveConfirmation --> InventoryList: Item saved successfully
+    AddItem --> InventoryList: Click "Cancel"
+    
+    %% Edit Item Flow
+    InventoryList --> EditItem: Click "Edit" on any item
+    
+    state EditItem {
+        UpdateItemForm: Update Item Form
+        UpdateItemForm: - Pre-filled Current Item Details
+        UpdateItemForm: - Editable Fields
+        UpdateItemForm: - Update Details Fields
+        
+        UpdateActions: Update Actions
+        UpdateActions: - Save Changes Button
+        UpdateActions: - Cancel Button
+    }
+    
+    EditItem --> SaveChangesConfirmation: Click "Save Changes"
+    SaveChangesConfirmation --> InventoryList: Changes saved successfully
+    EditItem --> InventoryList: Click "Cancel"
+    
+    %% Remove Item Flow
+    InventoryList --> RemoveItem: Click "Remove" on any item
+    
+    state RemoveItem {
+        DeleteConfirmation: Delete Confirmation Dialog
+        DeleteConfirmation: - Warning Message
+        DeleteConfirmation: - Item Details
+        DeleteConfirmation: - Confirm Delete Button
+        DeleteConfirmation: - Cancel Button
+    }
+    
+    RemoveItem --> ConfirmDelete: Click "Confirm Delete"
+    ConfirmDelete --> InventoryList: Item removed successfully
+    RemoveItem --> InventoryList: Click "Cancel"
+    
+    %% Stock Levels Section
+    state StockLevels {
+        CurrentStockView: Current Stock View
+        CurrentStockView: - Stock Level Charts
+        CurrentStockView: - Item Categories Breakdown
+        CurrentStockView: - Stock Value Summary
+        
+        LowStockAlerts: Low Stock Alerts
+        LowStockAlerts: - Items Below Threshold
+        LowStockAlerts: - Critical Level Indicators
+        LowStockAlerts: - Alert Details
+    }
+    
+    LowStockAlerts --> AlertsList: Click "View All Alerts"
+    
+    state AlertsList {
+        AlertItems: Alert Items List
+        AlertItems: - Item Name
+        AlertItems: - Current Quantity
+        AlertItems: - Threshold
+        AlertItems: - Status (Critical/Warning)
+        
+        AlertActions: Alert Actions
+        AlertActions: - Mark as Reviewed Button
+        AlertActions: - Reorder Now Button
+        AlertActions: - Sort by Criticality
+        AlertActions: - Filter Options
+    }
+    
+    AlertsList --> MarkAlertReviewed: Click "Mark as Reviewed"
+    MarkAlertReviewed --> AlertsList: Alert marked as reviewed
+    AlertsList --> ReorderSection: Click "Reorder Now"
+    AlertsList --> StockLevels: Click "Back to Stock Levels"
+    
+    %% Usage Logging Section
+    state UsageLogging {
+        UsageOverview: Usage Overview
+        UsageOverview: - Recent Usage Activities
+        UsageOverview: - Automatic Deductions Log
+        UsageOverview: - Manual Adjustments Log
+        
+        UsageFilters: Usage Filters
+        UsageFilters: - Date Range Selector
+        UsageFilters: - Item Category Filter
+        UsageFilters: - Activity Type Filter
+    }
+    
+    UsageLogging --> AutomaticDeduction: View Automatic Deductions
+    UsageLogging --> ManualAdjustment: Click "Record Manual Adjustment"
+    
+    state AutomaticDeduction {
+        AutoDeductionLog: Automatic Deduction Log
+        AutoDeductionLog: - Timestamp
+        AutoDeductionLog: - Item Name
+        AutoDeductionLog: - Quantity Deducted
+        AutoDeductionLog: - Related Vehicle/Job
+        AutoDeductionLog: - User Who Processed
+        
+        DeductionFilters: Deduction Filters
+        DeductionFilters: - Date Range
+        DeductionFilters: - Item Filter
+        DeductionFilters: - Job Number Filter
+    }
+    
+    AutomaticDeduction --> UsageLogging: Return to Usage Logging
+    
+    state ManualAdjustment {
+        AdjustmentForm: Manual Adjustment Form
+        AdjustmentForm: - Select Item Dropdown
+        AdjustmentForm: - Current Quantity Display
+        AdjustmentForm: - Adjust Quantity Field (Add/Subtract)
+        AdjustmentForm: - Adjustment Reason Field
+        AdjustmentForm: - Date and Time Selector
+        
+        AdjustmentActions: Adjustment Actions
+        AdjustmentActions: - Save Adjustment Button
+        AdjustmentActions: - Cancel Button
+    }
+    
+    ManualAdjustment --> SaveAdjustment: Click "Save Adjustment"
+    SaveAdjustment --> AdjustmentConfirmation: Confirm Adjustment
+    AdjustmentConfirmation --> UsageLogging: Adjustment saved successfully
+    ManualAdjustment --> UsageLogging: Click "Cancel"
+    
+    %% Reorder Needed Section
+    state ReorderSection {
+        ReorderDashboard: Reorder Dashboard
+        ReorderDashboard: - Items Needing Reorder
+        ReorderDashboard: - Reorder History
+        ReorderDashboard: - Supplier Information
+        
+        ReorderFilters: Reorder Filters
+        ReorderFilters: - Category Filter
+        ReorderFilters: - Priority Level Filter
+        ReorderFilters: - Supplier Filter
+    }
+    
+    ReorderSection --> ReorderItemsList: View Items Needing Reorder
+    
+    state ReorderItemsList {
+        ItemsToReorder: Items Needing Reorder
+        ItemsToReorder: - Item Name
+        ItemsToReorder: - Current Quantity
+        ItemsToReorder: - Recommended Order Quantity
+        ItemsToReorder: - Supplier
+        ItemsToReorder: - Priority Level
+        
+        ReorderActions: Reorder Actions
+        ReorderActions: - Mark as Ordered Button
+        ReorderActions: - Record Restock Button
+        ReorderActions: - Select Multiple Items
+        ReorderActions: - Generate Order List Button
+    }
+    
+    ReorderItemsList --> MarkAsOrdered: Click "Mark as Ordered"
+    MarkAsOrdered --> OrderDetailsForm: Enter Order Details
+    OrderDetailsForm --> ReorderItemsList: Order marked as pending
+    
+    ReorderItemsList --> RecordRestockButton: Click "Record Restock"
+    
+    state RecordRestockButton {
+        RestockForm: Restock Form
+        RestockForm: - Select Item Dropdown
+        RestockForm: - Current Quantity Display
+        RestockForm: - Restock Quantity Input
+        RestockForm: - Restock Date Selection
+        RestockForm: - Supplier Information
+        RestockForm: - Invoice/Order Reference
+        RestockForm: - Notes Field
+        
+        RestockActions: Restock Actions
+        RestockActions: - Save Restock Button
+        RestockActions: - Cancel Button
+    }
+    
+    RecordRestockButton --> SelectRestockItem: Select Item
+    SelectRestockItem --> RestockQuantity: Enter Quantity
+    RestockQuantity --> RestockDate: Select Date
+    RestockDate --> SaveRestock: Click "Save Restock"
+    SaveRestock --> ReorderItemsList: Restock recorded successfully
+    RestockForm --> ReorderItemsList: Click "Cancel"
+    
+    %% Inventory Reports Section
+    state InventoryReports {
+        ReportsOverview: Reports Overview
+        ReportsOverview: - Available Report Types
+        ReportsOverview: - Recently Generated Reports
+        ReportsOverview: - Report Templates
+        
+        ReportOptions: Report Options
+        ReportOptions: - Create New Report Button
+        ReportOptions: - Scheduled Reports
+        ReportOptions: - Custom Report Builder
+    }
+    
+    InventoryReports --> UsageTrendsReport: Click "Usage Trends Report"
+    InventoryReports --> StockStatusReport: Click "Stock Status Report"
+    InventoryReports --> ExportInventoryData: Click "Export Data"
+    
+    state UsageTrendsReport {
+        TrendsParameters: Report Parameters
+        TrendsParameters: - Date Range Selection
+        TrendsParameters: - Category Selection
+        TrendsParameters: - Include Charts Option
+        TrendsParameters: - Group By Options
+        
+        GenerateReport: Generate Report Button
+        ViewResults: View Report Results
+        ViewResults: - Usage Trend Graphs
+        ViewResults: - Tabular Data
+        ViewResults: - Insights and Recommendations
+    }
+    
+    UsageTrendsReport --> InventoryReports: Return to Reports
+    
+    state StockStatusReport {
+        StatusParameters: Report Parameters
+        StatusParameters: - Current Status vs. Historical
+        StatusParameters: - Category Selection
+        StatusParameters: - Low Stock Focus Option
+        StatusParameters: - Value Analysis Option
+        
+        GenerateStatusReport: Generate Report Button
+        ViewStatusResults: View Report Results
+        ViewStatusResults: - Stock Level Charts
+        ViewStatusResults: - Comparison Tables
+        ViewStatusResults: - Value Breakdown
+    }
+    
+    StockStatusReport --> InventoryReports: Return to Reports
+    
+    state ExportInventoryData {
+        ExportOptions: Export Options
+        ExportOptions: - Select Data to Export
+        ExportOptions: - Date Range
+        ExportOptions: - Categories to Include
+        ExportOptions: - Detail Level Selection
+        
+        ExportFormat: Select Format
+        ExportFormat: - CSV Option
+        ExportFormat: - PDF Option
+        ExportFormat: - Excel Option
+    }
+    
+    ExportInventoryData --> ExportCSV: Click "Export as CSV"
+    ExportInventoryData --> ExportPDF: Click "Export as PDF"
+    ExportInventoryData --> ExportExcel: Click "Export as Excel"
+    
+    ExportCSV --> DownloadFile: File download initiated
+    ExportPDF --> DownloadFile: File download initiated
+    ExportExcel --> DownloadFile: File download initiated
+    
+    DownloadFile --> InventoryReports: Return to Reports
+    
+    %% Integration with Vehicle Check-Out
+    InventoryList --> UsedInRepair: Parts used in vehicle repair
+    
+    state UsedInRepair {
+        SelectPartsForRepair: Select Parts for Repair
+        SelectPartsForRepair: - Vehicle Repair Context
+        SelectPartsForRepair: - Available Parts List
+        SelectPartsForRepair: - Quantity Selection
+        SelectPartsForRepair: - Add to Repair Button
+        
+        InventoryUpdate: Auto Update Inventory
+        InventoryUpdate: - Quantities Automatically Deducted
+        InventoryUpdate: - Usage Logged in System
+        InventoryUpdate: - Low Stock Alerts Triggered If Applicable
+    }
+    
+    UsedInRepair --> AutomaticDeduction: Recorded in usage log
+    
+    %% Return to Dashboard
+    Inventory --> Dashboard: Click "Return to Dashboard"
